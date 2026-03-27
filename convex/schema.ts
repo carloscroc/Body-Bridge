@@ -208,55 +208,7 @@ export default defineSchema({
     updatedAt: v.number(),
   }).index("by_coach", ["coachId"]).searchIndex("search_title", { searchField: "title" }),
 
-  courses: defineTable({
-    coachId: v.id("profiles"),
-    title: v.string(),
-    subtitle: v.string(),
-    description: v.string(),
-    coverImage: v.optional(v.string()),
-    thumbnail: v.optional(v.string()),
-    price: v.number(),
-    currency: v.string(),
-    isPublished: v.boolean(),
-    visibility: v.union(v.literal("public"), v.literal("private"), v.literal("unlisted")),
-    category: v.string(),
-    difficulty: v.union(v.literal("Beginner"), v.literal("Intermediate"), v.literal("Advanced")),
-    estimatedDuration: v.string(),
-    tags: v.array(v.string()),
-    modules: v.array(
-      v.object({
-        id: v.string(),
-        title: v.string(),
-        description: v.string(),
-        order: v.number(),
-        lessons: v.array(
-          v.object({
-            id: v.string(),
-            title: v.string(),
-            content: v.string(),
-            type: v.union(
-              v.literal("video"),
-              v.literal("text"),
-              v.literal("quiz"),
-              v.literal("assignment"),
-            ),
-            duration: v.optional(v.string()),
-            videoUrl: v.optional(v.string()),
-            imageUrl: v.optional(v.string()),
-            isPublished: v.boolean(),
-            order: v.number(),
-          }),
-        ),
-      }),
-    ),
-    enrolledCount: v.number(),
-    rating: v.number(),
-    createdAt: v.number(),
-    updatedAt: v.number(),
-  })
-    .index("by_coach", ["coachId"])
-    .index("by_coach_and_updatedAt", ["coachId", "updatedAt"])
-    .index("by_coach_and_isPublished", ["coachId", "isPublished"]),
+  
 
   programAssignments: defineTable({
     programId: v.id("workoutPrograms"),
@@ -403,9 +355,5 @@ export default defineSchema({
   })
     .index("by_userId_createdAt", ["userId", "createdAt"])
     .index("by_userId_isRead_createdAt", ["userId", "isRead", "createdAt"]),
-  classroomProgress: defineTable({
-    userId: v.id("profiles"),
-    progress: v.any(),
-    updatedAt: v.number(),
-  }).index("by_user", ["userId"]),
+  
 });

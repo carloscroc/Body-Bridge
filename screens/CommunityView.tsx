@@ -34,12 +34,9 @@ import { useMutation, useQuery } from 'convex/react';
 import { api } from '../convex/_generated/api';
 import { useAuth } from '../services/AuthContext';
 
-import { ClassroomRoot } from './Classroom';
-import { useClassroomStore, ACHIEVEMENTS_DATA } from './Classroom/store';
+type CommunitySubTab = 'Community' | 'Leaderboards' | 'About';
 
-type CommunitySubTab = 'Community' | 'Classroom' | 'Leaderboards' | 'About';
-
-const SUB_TABS: CommunitySubTab[] = ['Community', 'Classroom', 'Leaderboards', 'About'];
+const SUB_TABS: CommunitySubTab[] = ['Community', 'Leaderboards', 'About'];
 
 const timeAgoShort = (iso: string): 'now' | `${number}s` | `${number}m` | `${number}h` | `${number}d` => {
   const t = new Date(iso).getTime();
@@ -120,7 +117,6 @@ const CommunityView: React.FC<{ onBack: () => void }> = ({ onBack }) => {
   const renderSubTabContent = () => {
     switch (activeSubTab) {
       case 'Community': return <CommunityTab onOpenProfile={setActiveProfileName} />;
-      case 'Classroom': return <ClassroomRoot />;
       case 'Leaderboards': return <LeaderboardsTab />;
       case 'About': return <AboutTab />;
     }
@@ -433,8 +429,9 @@ const CommunityTab = ({ onOpenProfile }: { onOpenProfile: (name: string) => void
 };
 
 const LeaderboardsTab = () => {
-  const { progress } = useClassroomStore();
-  const unlockedBadges = ACHIEVEMENTS_DATA.filter(b => progress.unlockedAchievements[b.id]);
+  // TODO: Replace with actual leaderboard data from community/social
+  const progress = { level: 1 };
+  const unlockedBadges: any[] = [];
 
   return (
     <div className="p-6 pt-12 pb-32 flex flex-col items-center">
