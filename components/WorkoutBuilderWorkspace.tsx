@@ -39,7 +39,7 @@ const WorkoutBuilderWorkspace: React.FC<WorkoutBuilderWorkspaceProps> = ({
   const [activeWorkout, setActiveWorkout] = useState<UserWorkout | null>(null);
   const [isEditingTitle, setIsEditingTitle] = useState(false);
   const [titleValue, setTitleValue] = useState('');
-  const [selectedFormat, setSelectedFormat] = useState<WorkoutFormat>(WorkoutFormat.FOLLOW_ALONG);
+  const [selectedFormat, setSelectedFormat] = useState<WorkoutFormat>(WorkoutFormat.USER_PACED);
   
   // Current exercise configuration
   const [sets, setSets] = useState(3);
@@ -101,7 +101,7 @@ const WorkoutBuilderWorkspace: React.FC<WorkoutBuilderWorkspaceProps> = ({
           description: 'Custom training routine',
           intensity: 'Medium',
           image: exercise?.image || 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&q=80&w=800',
-          format: WorkoutFormat.FOLLOW_ALONG,
+          format: WorkoutFormat.USER_PACED,
           focus: exercise ? [exercise.muscleGroup] : [],
           warmupExercises: [],
           exercises: [],

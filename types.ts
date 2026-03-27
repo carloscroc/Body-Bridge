@@ -128,9 +128,7 @@ export type WorkoutSlotType = 'morning' | 'afternoon' | 'evening';
 export type MealType = 'breakfast' | 'lunch' | 'dinner' | 'snack';
 
 export enum WorkoutFormat {
-  FOLLOW_ALONG = 'follow_along',
-  USER_PACED = 'user_paced',
-  BOTH = 'both'
+  USER_PACED = 'user_paced'
 }
 
 export interface Workout {

@@ -99,7 +99,7 @@ const HeroWorkout: React.FC<HeroWorkoutProps> = ({
           <div className="px-4 py-2 bg-black/40 blur-surface rounded-full border border-white/10 flex items-center gap-2.5 shadow-lg">
             <div className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse shadow-[0_0_8px_#3b82f6]" />
             <span className="text-[10px] font-black uppercase tracking-[0.2em] text-white">
-              {isInPlan ? 'Planned Activity' : 'Trainer Suggestion'}
+              {isInPlan ? 'Planned Activity' : 'Workout Suggestion'}
             </span>
           </div>
         </div>

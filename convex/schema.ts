@@ -90,7 +90,7 @@ export default defineSchema({
     title: v.string(),
     subtitle: v.optional(v.string()),
     duration: v.optional(v.string()),
-    format: v.optional(v.union(v.literal("follow_along"), v.literal("user_paced"), v.literal("both"))),
+    format: v.optional(v.literal("user_paced")),
     exercises: v.array(v.any()),
     completed: v.boolean(),
     date: v.number(),

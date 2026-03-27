@@ -8,7 +8,6 @@ import {
   Loader2
 } from 'lucide-react';
 import { Workout, Exercise } from '../types';
-import FollowAlongPlayer from '../components/players/FollowAlongPlayer';
 import UserPacedPlayer from '../components/players/UserPacedPlayer';
 import WorkoutFormatSelection from '../components/WorkoutFormatSelection';
 import { useSessionTimer } from '../components/hooks/useSessionTimer';
@@ -62,7 +61,7 @@ const WorkoutDetail: React.FC<WorkoutDetailProps> = ({ workout, onBack, onSelect
   const [isBookmarked, setIsBookmarked] = useState(false);
   const [sessionState, setSessionState] = useState<SessionState>('idle');
   const [currentExerciseIdx, setCurrentExerciseIdx] = useState(0);
-  const [selectedFormat, setSelectedFormat] = useState<'follow_along' | 'user_paced'>('follow_along');
+  const [selectedFormat, setSelectedFormat] = useState<'user_paced'>('user_paced');
   const [visibleExercises, setVisibleExercises] = useState<Set<number>>(new Set());
 
   // Shared session timer
@@ -115,8 +114,7 @@ const WorkoutDetail: React.FC<WorkoutDetailProps> = ({ workout, onBack, onSelect
     setSessionState('preparing');
   };
 
-  const handleFormatSelect = (format: 'follow_along' | 'user_paced') => {
-    setSelectedFormat(format);
+  const handleFormatSelect = () => {
     setSessionState('playing');
     resetTimer();
     startTimer();
@@ -201,26 +199,14 @@ const WorkoutDetail: React.FC<WorkoutDetailProps> = ({ workout, onBack, onSelect
 
   if (sessionState === 'playing' || sessionState === 'resting') {
     return (
-      <>
-        {selectedFormat === 'follow_along' && (
-          <FollowAlongPlayer
-            workout={workout}
-            currentIdx={currentExerciseIdx}
-            onSelectNext={(nextIdx) => setCurrentExerciseIdx(nextIdx)}
-            onSessionComplete={() => setSessionState('summary')}
-          />
-        )}
-        {selectedFormat === 'user_paced' && (
-          <UserPacedPlayer
-            workout={workout}
-            onComplete={() => setSessionState('summary')}
-            totalTimeElapsed={totalTimeElapsed}
-            isTimerRunning={isTimerRunning}
-            onToggleTimer={() => isTimerRunning ? pauseTimer() : startTimer()}
-            onExit={() => setSessionState('idle')}
-          />
-        )}
-      </>
+      <UserPacedPlayer
+        workout={workout}
+        onComplete={() => setSessionState('summary')}
+        totalTimeElapsed={totalTimeElapsed}
+        isTimerRunning={isTimerRunning}
+        onToggleTimer={() => isTimerRunning ? pauseTimer() : startTimer()}
+        onExit={() => setSessionState('idle')}
+      />
     );
   }
 
@@ -234,7 +220,7 @@ const WorkoutDetail: React.FC<WorkoutDetailProps> = ({ workout, onBack, onSelect
           <ChevronLeft size={24} className="text-white/60" />
         </button>
 
-        <WorkoutFormatSelection workout={workout} onSelect={handleFormatSelect} />
+        <WorkoutFormatSelection workout={workout} onStart={handleFormatSelect} />
       </div>
     );
   }
