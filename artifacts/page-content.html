@@ -1,0 +1,118 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob: https:; connect-src 'self' https: wss:; media-src 'self' blob: https:; frame-src 'self' https://www.youtube-nocookie.com https://www.youtube.com https://player.vimeo.com; upgrade-insecure-requests">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Forge Fitness</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Bricolage+Grotesque:opsz,wght@12..96,200..800&amp;family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&amp;display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --app-padding: 24px;
+      --card-radius: 40px;
+      --bg-color: #050505;
+      --surface-elevated: #121212;
+      --accent-color: #ffffff;
+      --secondary-color: #8E8E93;
+      --accent-warm: rgba(255, 220, 180, 0.15);
+      --accent-cool: rgba(180, 200, 255, 0.12);
+      --accent-gold: rgba(255, 215, 150, 0.2);
+      --glow-white: 0 0 60px -20px rgba(255, 255, 255, 0.4);
+    }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg-color);
+      color: #fff;
+      overflow-x: hidden;
+      -webkit-tap-highlight-color: transparent;
+      margin: 0;
+    }
+    .font-bricolage { font-family: 'Bricolage Grotesque', sans-serif; }
+    .font-fraunces { font-family: 'Fraunces', serif; }
+
+    .custom-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .grain-overlay {
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      pointer-events: none;
+      z-index: 999;
+      opacity: 0.015;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    }
+    .header-glow {
+      position: fixed;
+      top: -10%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 140vw;
+      height: 40vh;
+      background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 75%);
+      filter: blur(80px);
+      z-index: -1;
+      pointer-events: none;
+    }
+    .vignette {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background: radial-gradient(circle at center, transparent 85%, rgba(0,0,0,0.3) 100%);
+      z-index: 50;
+    }
+    .blur-surface {
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+    }
+    .press-scale:active {
+      transform: scale(0.96);
+      transition: transform 0.1s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .inner-stroke {
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+    }
+    .glass-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(12px);
+    }
+    .editorial-title {
+      font-family: 'Bricolage Grotesque', sans-serif;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      line-height: 0.9;
+    }
+    .editorial-serif {
+      font-family: 'Fraunces', serif;
+      font-style: italic;
+      font-weight: 400;
+    }
+    @keyframes silkSlideUp {
+      from { transform: translateY(30px); opacity: 0; filter: blur(12px); }
+      to { transform: translateY(0); opacity: 1; filter: blur(0); }
+    }
+    .animate-silk-up {
+      animation: silkSlideUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+    @keyframes shimmer {
+      0% { background-position: -200% 0; }
+      100% { background-position: 200% 0; }
+    }
+    .animate-shimmer {
+      animation: shimmer 2s infinite linear;
+      background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.02) 50%, transparent 100%);
+      background-size: 200% 100%;
+    }
+    .accordion-transition {
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+  </style>
+  <script type="module" crossorigin="" src="/assets/index-90FfGevA.js"></script>
+  <link rel="stylesheet" crossorigin="" href="/assets/index-CE69m3oS.css">
+</head>
+<body>
+  <div class="grain-overlay"></div>
+  <div class="header-glow"></div>
+  <div class="vignette"></div>
+  <div id="root"><div class="relative h-screen w-full bg-black text-white overflow-hidden"><div class="h-full overflow-y-auto custom-scrollbar transition-opacity duration-300"><div style="padding: 24px; max-width: 600px; margin: 0px auto;"><h1 style="font-size: 18px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.25em;">Settings</h1><section style="margin-top: 20px;"><h3 style="font-size: 12px; font-weight: 800; text-transform: uppercase; opacity: 0.6;">Profile Identity</h3><p style="margin-top: 8px; color: rgb(204, 204, 204);">Name: Developer</p></section><section style="margin-top: 20px;"><h3 style="font-size: 12px; font-weight: 800; text-transform: uppercase; opacity: 0.6;">Training Plan</h3><p style="margin-top: 8px; color: rgb(204, 204, 204);">Goal: Strength</p></section><section style="margin-top: 20px;"><h3 style="font-size: 12px; font-weight: 800; text-transform: uppercase; opacity: 0.6;">Membership Hub</h3><p style="margin-top: 8px; color: rgb(204, 204, 204);">Plan: Pro</p></section><div style="margin-top: 28px;"><button aria-label="Save Changes" style="padding: 10px 14px; font-weight: 800;">Save Changes</button></div></div></div></div></div>
+
+
+</body></html>

@@ -1,0 +1,8 @@
+{
+  "name": "Forge Personal Trainer",
+  "description": "A luxury dark-themed fitness app featuring personalized workouts, meal plans, and a vibrant community powered by Gemini AI.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}

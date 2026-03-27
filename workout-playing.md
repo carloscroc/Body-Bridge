@@ -1,0 +1,48 @@
+- generic [ref=e219] [cursor=pointer]:
+  - generic:
+    - generic:
+      - generic:
+        - generic: REMAINING
+        - generic: 2:36
+    - generic:
+      - generic:
+        - generic:
+          - generic: Dynamic Warmup
+        - generic: TAP TO RESTORE CONTROLS
+  - generic:
+    - generic:
+      - button:
+        - img
+      - generic:
+        - generic:
+          - generic: LIVE TRAINER SESSION
+        - generic: Zaire Septimus • 20 Minutes, Practicing Punches As Fast As The Wind
+      - generic:
+        - button "Enter Focus Mode":
+          - img
+        - button "Coach Cues":
+          - img
+  - generic:
+    - generic:
+      - heading "Dynamic Warmup" [level=2]
+      - generic: 2:36
+      - generic:
+        - paragraph: ROUND 1 OF 5
+  - generic:
+    - button:
+      - img
+    - generic:
+      - button:
+        - img
+    - button:
+      - img
+  - generic:
+    - generic:
+      - img "Next"
+    - generic:
+      - generic: NEXT UP
+      - heading "Speed Bag Drills" [level=4]
+      - paragraph: 2:00
+    - generic:
+      - generic:
+        - img

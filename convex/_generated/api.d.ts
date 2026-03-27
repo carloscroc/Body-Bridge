@@ -1,0 +1,113 @@
+/* eslint-disable */
+/**
+ * Generated `api` utility.
+ *
+ * THIS CODE IS AUTOMATICALLY GENERATED.
+ *
+ * To regenerate, run `npx convex dev`.
+ * @module
+ */
+
+import type * as account from "../account.js";
+import type * as aiChat from "../aiChat.js";
+import type * as ai_calendar from "../ai_calendar.js";
+import type * as auth from "../auth.js";
+import type * as auth_helpers from "../auth_helpers.js";
+import type * as calendar_api from "../calendar_api.js";
+import type * as classroom from "../classroom.js";
+import type * as coach from "../coach.js";
+import type * as courses from "../courses.js";
+import type * as exercises from "../exercises.js";
+import type * as functions_auth from "../functions/auth.js";
+import type * as http from "../http.js";
+import type * as internal_adminAuthReset from "../internal/adminAuthReset.js";
+import type * as lib_auth from "../lib/auth.js";
+import type * as lib_fitnessExercises from "../lib/fitnessExercises.js";
+import type * as llm_aiHttp from "../llm/aiHttp.js";
+import type * as llm_config from "../llm/config.js";
+import type * as llm_errors from "../llm/errors.js";
+import type * as llm_openaiCompat from "../llm/openaiCompat.js";
+import type * as messages from "../messages.js";
+import type * as notifications from "../notifications.js";
+import type * as profiles from "../profiles.js";
+import type * as programs from "../programs.js";
+import type * as progress from "../progress.js";
+import type * as schema_calendar from "../schema_calendar.js";
+import type * as schema_calendar_events from "../schema_calendar_events.js";
+import type * as seedNotifications from "../seedNotifications.js";
+import type * as social from "../social.js";
+import type * as stats from "../stats.js";
+import type * as tables_coachClientRelationships from "../tables/coachClientRelationships.js";
+import type * as tables_profiles from "../tables/profiles.js";
+import type * as userPlans from "../userPlans.js";
+import type * as workouts from "../workouts.js";
+
+import type {
+  ApiFromModules,
+  FilterApi,
+  FunctionReference,
+} from "convex/server";
+
+declare const fullApi: ApiFromModules<{
+  account: typeof account;
+  aiChat: typeof aiChat;
+  ai_calendar: typeof ai_calendar;
+  auth: typeof auth;
+  auth_helpers: typeof auth_helpers;
+  calendar_api: typeof calendar_api;
+  classroom: typeof classroom;
+  coach: typeof coach;
+  courses: typeof courses;
+  exercises: typeof exercises;
+  "functions/auth": typeof functions_auth;
+  http: typeof http;
+  "internal/adminAuthReset": typeof internal_adminAuthReset;
+  "lib/auth": typeof lib_auth;
+  "lib/fitnessExercises": typeof lib_fitnessExercises;
+  "llm/aiHttp": typeof llm_aiHttp;
+  "llm/config": typeof llm_config;
+  "llm/errors": typeof llm_errors;
+  "llm/openaiCompat": typeof llm_openaiCompat;
+  messages: typeof messages;
+  notifications: typeof notifications;
+  profiles: typeof profiles;
+  programs: typeof programs;
+  progress: typeof progress;
+  schema_calendar: typeof schema_calendar;
+  schema_calendar_events: typeof schema_calendar_events;
+  seedNotifications: typeof seedNotifications;
+  social: typeof social;
+  stats: typeof stats;
+  "tables/coachClientRelationships": typeof tables_coachClientRelationships;
+  "tables/profiles": typeof tables_profiles;
+  userPlans: typeof userPlans;
+  workouts: typeof workouts;
+}>;
+
+/**
+ * A utility for referencing Convex functions in your app's public API.
+ *
+ * Usage:
+ * ```js
+ * const myFunctionReference = api.myModule.myFunction;
+ * ```
+ */
+export declare const api: FilterApi<
+  typeof fullApi,
+  FunctionReference<any, "public">
+>;
+
+/**
+ * A utility for referencing Convex functions in your app's internal API.
+ *
+ * Usage:
+ * ```js
+ * const myFunctionReference = internal.myModule.myFunction;
+ * ```
+ */
+export declare const internal: FilterApi<
+  typeof fullApi,
+  FunctionReference<any, "internal">
+>;
+
+export declare const components: {};

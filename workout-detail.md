@@ -1,0 +1,83 @@
+- generic [ref=e3]:
+  - generic [ref=e5]:
+    - generic [ref=e6]:
+      - generic [ref=e7]:
+        - paragraph [ref=e8]: Monday, February 23
+        - heading "Hi, New Member!" [level=1] [ref=e9]
+      - generic [ref=e10]:
+        - button [ref=e11]:
+          - img [ref=e12]
+        - button [ref=e16]:
+          - img [ref=e17]
+    - generic [ref=e21]:
+      - generic [ref=e22]:
+        - heading "Today's Plan" [level=2] [ref=e24]
+        - button [ref=e26]:
+          - img [ref=e27]
+      - paragraph [ref=e30]: Core Training
+      - generic [ref=e31]:
+        - img "Core Training" [ref=e32]
+        - generic [ref=e37]: Trainer Suggestion
+        - generic [ref=e38]:
+          - heading "20 Minutes, Practicing Punches As Fast As The Wind" [level=3] [ref=e39]
+          - generic [ref=e40]:
+            - button "Engage" [ref=e41]:
+              - img [ref=e42]
+              - text: Engage
+            - generic [ref=e45]:
+              - generic [ref=e46]: 20 min
+              - generic [ref=e47]: Time
+    - generic [ref=e48]:
+      - generic [ref=e49]:
+        - heading "Fuel & Recovery" [level=2] [ref=e51]
+        - button "Manage" [ref=e53]
+      - paragraph [ref=e55]: Nutrition
+      - generic [ref=e56]:
+        - img [ref=e58]
+        - generic [ref=e61]: Establish Nutrition Plan
+    - generic [ref=e62]:
+      - heading "Daily Inspiration" [level=2] [ref=e65]
+      - generic [ref=e66]:
+        - img "Podcast" [ref=e67]
+        - generic [ref=e69]:
+          - generic [ref=e70]: Podcast of the day
+          - heading "Unlock Endless Motivation With Your \"Why\"" [level=3] [ref=e71]
+        - button [ref=e72]:
+          - img [ref=e73]
+    - generic [ref=e75]:
+      - generic [ref=e76]:
+        - heading "Recommended" [level=2] [ref=e78]
+        - img [ref=e80]
+      - generic [ref=e82]:
+        - generic [ref=e83]:
+          - img "Grilled Salmon with Quinoa" [ref=e85]
+          - heading "Grilled Salmon with Quinoa" [level=3] [ref=e86]
+          - paragraph [ref=e87]: 25 min
+        - generic [ref=e88]:
+          - img "Avocado Energy Bowl" [ref=e90]
+          - heading "Avocado Energy Bowl" [level=3] [ref=e91]
+          - paragraph [ref=e92]: 15 min
+        - generic [ref=e93]:
+          - img "Mediterranean Chickpea Bowl" [ref=e95]
+          - heading "Mediterranean Chickpea Bowl" [level=3] [ref=e96]
+          - paragraph [ref=e97]: 20 min
+        - generic [ref=e98]:
+          - img "Herbed Chicken Quinoa Bowl" [ref=e100]
+          - heading "Herbed Chicken Quinoa Bowl" [level=3] [ref=e101]
+          - paragraph [ref=e102]: 30 min
+        - generic [ref=e103]:
+          - img "Tofu Stir-Fry with Veggies" [ref=e105]
+          - heading "Tofu Stir-Fry with Veggies" [level=3] [ref=e106]
+          - paragraph [ref=e107]: 25 min
+  - generic [ref=e110]:
+    - button "Home" [ref=e111]:
+      - img [ref=e113]
+      - generic [ref=e116]: Home
+    - button [ref=e117]:
+      - img [ref=e119]
+    - button [ref=e125]:
+      - img [ref=e127]
+    - button [ref=e129]:
+      - img [ref=e131]
+    - button [ref=e134]:
+      - img [ref=e136]

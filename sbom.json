@@ -1,0 +1,146 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.5",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2026-02-15T18:21:29Z",
+    "tools": [
+      {
+        "name": "Dependency Scanner",
+        "version": "1.0.0"
+      }
+    ]
+  },
+  "components": [
+    {
+      "type": "library",
+      "name": "forge-personal-trainer",
+      "version": "0.0.0",
+      "purl": "pkg:npm/forge-personal-trainer@0.0.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "UNLICENSED"
+          }
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "react",
+      "version": "19.2.4",
+      "purl": "pkg:npm/react@19.2.4",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "react-dom",
+      "version": "19.2.4",
+      "purl": "pkg:npm/react-dom@19.2.4",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@google/genai",
+      "version": "1.40.0",
+      "purl": "pkg:npm/@google/genai@1.40.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "framer-motion",
+      "version": "12.34.0",
+      "purl": "pkg:npm/framer-motion@12.34.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "lucide-react",
+      "version": "0.563.0",
+      "purl": "pkg:npm/lucide-react@0.563.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "ISC"
+          }
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "vite",
+      "version": "6.4.1",
+      "purl": "pkg:npm/vite@6.4.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "typescript",
+      "version": "5.8.3",
+      "purl": "pkg:npm/typescript@5.8.3",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@types/node",
+      "version": "22.19.10",
+      "purl": "pkg:npm/@types/node@22.19.10",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@vitejs/plugin-react",
+      "version": "5.1.3",
+      "purl": "pkg:npm/@vitejs/plugin-react@5.1.3",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    }
+  ]
+}

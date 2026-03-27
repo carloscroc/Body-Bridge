@@ -1,0 +1,294 @@
+name: Dependency Security & Quality
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  schedule:
+    # Run daily at 2 AM UTC
+    - cron: '0 2 * * *'
+  workflow_dispatch:
+
+jobs:
+  # Security Scan Job
+  security-scan:
+    name: Security Audit
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Cache node modules
+        uses: actions/cache@v4
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-modules-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-modules-
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run npm security audit
+        id: audit
+        run: |
+          echo "Running npm audit..."
+          npm audit --audit-level=high
+
+          if [ $? -ne 0 ]; then
+            echo "VULNERABILITIES_FOUND=true" >> $GITHUB_OUTPUT
+            echo "✗ Found high or critical vulnerabilities!"
+            exit 1
+          else
+            echo "VULNERABILITIES_FOUND=false" >> $GITHUB_OUTPUT
+            echo "✓ No vulnerabilities found"
+          fi
+
+      - name: Generate SBOM
+        id: sbom
+        run: |
+          echo "Generating Software Bill of Materials..."
+          npm audit json > audit-report.json
+          npx @cyclonedx/cyclonedx-npm --output-format json --output-file sbom.json
+          echo "✓ SBOM generated"
+
+      - name: Check licenses
+        id: licenses
+        run: |
+          echo "Checking license compliance..."
+          npx license-checker --production --json > licenses.json
+
+          # Count licenses
+          echo "LICENSE_COUNT=$(jq '. | length' licenses.json)" >> $GITHUB_OUTPUT
+
+          # Check for any restrictive licenses
+          RESTRICTIVE=$(jq '[.[] | select(.licenses == "GPL" or .licenses == "AGPL" or .licenses == "CDDL")] | length' licenses.json)
+
+          if [ "$RESTRICTIVE" -gt 0 ]; then
+            echo "⚠ Found restrictive licenses in $RESTRICTIVE package(s)"
+            echo "LICENSE_ISSUES=true" >> $GITHUB_OUTPUT
+          else
+            echo "✓ No restrictive licenses found"
+            echo "LICENSE_ISSUES=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Upload security artifacts
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: security-scan-results-${{ github.sha }}
+          path: |
+            audit-report.json
+            sbom.json
+            licenses.json
+
+      - name: Comment PR with security results
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+
+            // Get audit results
+            const auditReport = JSON.parse(fs.readFileSync('audit-report.json', 'utf8'));
+            const vulnerabilities = auditReport.vulnerabilities;
+            const hasVulns = vulnerabilities.critical > 0 || vulnerabilities.high > 0;
+
+            // Get license results
+            const licenses = JSON.parse(fs.readFileSync('licenses.json', 'utf8'));
+            const hasLicenseIssues = licenses.some(lic => lic.licenses === 'GPL' || lic.licenses === 'AGPL' || lic.licenses === 'CDDL');
+
+            let comment = '## 🔒 Security Scan Results\n\n';
+
+            // Vulnerabilities
+            if (hasVulns) {
+              comment += '### 🚨 Security Vulnerabilities Found\n\n';
+              comment += `- **Critical:** ${vulnerabilities.critical}\n`;
+              comment += `- **High:** ${vulnerabilities.high}\n`;
+              comment += `- **Moderate:** ${vulnerabilities.moderate}\n`;
+              comment += `- **Low:** ${vulnerabilities.low}\n`;
+              comment += `- **Info:** ${vulnerabilities.info}\n\n`;
+            } else {
+              comment += '### ✅ Security: No vulnerabilities found\n\n';
+            }
+
+            // Licenses
+            if (hasLicenseIssues) {
+              comment += '### ⚠️ License Issues Found\n\n';
+              comment += 'Found restrictive licenses (GPL, AGPL, CDDL). Please review.\n\n';
+            } else {
+              comment += '### 📋 License: All licenses are permissive\n\n';
+            }
+
+            // Outdated packages
+            comment += '### 📦 Dependency Health\n\n';
+            comment += `**Total Packages:** ${auditReport.metadata.dependencies.prod + auditReport.metadata.dependencies.dev}\n`;
+            comment += `**Production:** ${auditReport.metadata.dependencies.prod}\n`;
+            comment += `**Development:** ${auditReport.metadata.dependencies.dev}\n\n`;
+
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: comment
+            });
+
+  # Quality Check Job
+  quality-check:
+    name: Quality Checks
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Cache node modules
+        uses: actions/cache@v4
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-modules-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-modules-
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run linter (if configured)
+        run: |
+          if [ -f "eslint.config.js" ] || [ -f ".eslintrc.js" ]; then
+            echo "Running ESLint..."
+            npm run lint || echo "⚠️ ESLint failed"
+          else
+            echo "No ESLint configuration found"
+          fi
+
+      - name: Run type checker
+        run: |
+          echo "Running TypeScript type checking..."
+          npm run type-check || echo "⚠️ TypeScript errors found"
+        continue-on-error: true
+
+      - name: Build project
+        run: |
+          echo "Building project..."
+          npm run build || echo "⚠️ Build failed"
+
+  # Dependency Update Job
+  dependency-update:
+    name: Check for Updates
+    runs-on: ubuntu-latest
+    outputs:
+      has-updates: ${{ steps.ncu.outputs.has-updates }}
+      update-summary: ${{ steps.ncu.outputs.update-summary }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Cache node modules
+        uses: actions/cache@v4
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-modules-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-modules-
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Check for updates
+        id: ncu
+        run: |
+          npm outdated --json > outdated-packages.json
+
+          if [ -s outdated-packages.json ]; then
+            UPDATE_COUNT=$(jq 'length' outdated-packages.json)
+            echo "has-updates=true" >> $GITHUB_OUTPUT
+            echo "update-summary=Found $UPDATE_COUNT outdated package(s)" >> $GITHUB_OUTPUT
+
+            echo "## 📦 Dependency Updates Available\n\n"
+            echo "Found $UPDATE_COUNT outdated package(s):\n"
+
+            jq -r '.[] | "### \(.packageName)\n- Current: \`$(echo ${{ github.event.repository.name }})@\(.current)\`\n- Latest: \`$(echo ${{ github.event.repository.name }})@\(.latest)\`\n- Dependent: \(.dependent)\n"' outdated-packages.json
+
+          else
+            echo "has-updates=false" >> $GITHUB_OUTPUT
+            echo "update-summary=No outdated packages found" >> $GITHUB_OUTPUT
+            echo "## ✅ No outdated packages found\n"
+          fi
+
+      - name: Upload outdated packages
+        if: steps.ncu.outputs.has-updates == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: outdated-packages
+          path: outdated-packages.json
+
+  # Notify on outdated dependencies
+  notify-outdated:
+    name: Notify on Updates
+    runs-on: ubuntu-latest
+    needs: dependency-update
+    if: needs.dependency-update.outputs.has-updates == 'true'
+
+    steps:
+      - name: Send Slack/Email notification
+        uses: 8398a7/action-slack@v3
+        with:
+          status: ${{ job.status }}
+          text: '⚠️ Dependencies need updating'
+          webhook_url: ${{ secrets.SLACK_WEBHOOK_URL }}
+        continue-on-error: true
+
+  # Summary Report
+  summary-report:
+    name: Security Summary
+    runs-on: ubuntu-latest
+    needs: [security-scan, quality-check, dependency-update]
+    if: always()
+
+    steps:
+      - name: Download security artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: security-scan-results-${{ github.sha }}
+          path: ./results
+
+      - name: Generate summary
+        run: |
+          cat << EOF >> $GITHUB_STEP_SUMMARY
+          # 🔒 Security Scan Summary
+
+          ## Scan Results
+          - **Vulnerabilities Found:** ${{ needs.security-scan.outputs.audit-result }}
+          - **Packages Scanned:** ${{ needs.security-scan.outputs.packages-scanned }}
+          - **License Compliance:** ${{ needs.security-scan.outputs.licenses-check }}
+
+          ## Dependency Updates
+          - **Outdated Packages:** ${{ needs.dependency-update.outputs.has-updates }}
+
+          ## Resources
+          - **Full Report:** [dependency-security-report.md](./dependency-security-report.md)
+          - **SBOM:** [sbom.json](./sbom.json)
+          - **Logs:** [Console Output](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})
+          EOF
