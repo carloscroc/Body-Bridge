@@ -1,6 +1,6 @@
-# Calendar Tab Standalone
+# Forge
 
-A standalone React/TypeScript application originally extracted from a Git worktree.
+A fitness and workout application built with React, TypeScript, and Convex.
 
 ## Prerequisites
 
