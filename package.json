@@ -4,9 +4,10 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
-    "dev:convex": "npx convex dev",
-    "dev:all": "concurrently \"npm run dev:convex\" \"npm run dev:server\" \"npm run dev:client\"",
+    "dev": "npm run dev:all",
+    "dev:app": "concurrently -k \"npm run dev:server\" \"npm run dev:client\"",
+    "dev:convex": "node scripts/runConvexDev.mjs",
+    "dev:all": "concurrently -k \"npm run dev:convex\" \"npm run dev:server\" \"npm run dev:client\"",
     "dev:client": "vite",
     "dev:server": "node server/server.js",
     "build": "vite build && node scripts/postbuild-csp.mjs",

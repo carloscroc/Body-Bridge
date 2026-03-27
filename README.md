@@ -19,12 +19,18 @@ A fitness and workout application built with React, TypeScript, and Convex.
    ```bash
    cp .env.local.example .env.local
    ```
+   Required for local app + database startup:
+   - `VITE_CONVEX_URL`
+   - `CONVEX_DEPLOYMENT`
+
+   Optional for AI endpoints only:
+   - `GEMINI_API_KEY`
 
 3. Run the development server:
    ```bash
    npm run dev
    ```
-   This starts both the backend API proxy on port 3000 and the frontend on port 7770.
+   This starts Convex, the backend API proxy on port 3000, and the frontend on port 7770.
 
 ## Project Structure
 
@@ -36,6 +42,8 @@ A fitness and workout application built with React, TypeScript, and Convex.
 
 ## Development
 
+- Full stack: `npm run dev` (Convex + Express + Vite)
+- App only: `npm run dev:app` (Express + Vite)
 - Frontend: `npm run dev:client` (Vite dev server on port 7770)
 - Backend: `npm run dev:server` (Express server on port 3000)
 - Convex: `npm run dev:convex` (Convex development server)

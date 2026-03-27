@@ -42,6 +42,7 @@ export default function App() {
   const { isAuthenticated: isNetworkAuthenticated, isAuthLoading, user, login, logout } = useAuth();
   const [authView, setAuthView] = useState<AuthView>('landing');
   const [signupData, setSignupData] = useState<{ name?: string; email?: string } | null>(null);
+  const [authTimedOut, setAuthTimedOut] = useState(false);
 
   const todayStr = useMemo(() => new Date().toISOString().split('T')[0], []);
   const todayPlans = useQuery(api.userPlans.getDailyPlan, { date: todayStr });
@@ -204,6 +205,19 @@ export default function App() {
       setAuthView('onboarding');
     }
   }, [isNetworkAuthenticated, isAuthLoading, user]);
+
+  useEffect(() => {
+    if (!isAuthLoading) {
+      setAuthTimedOut(false);
+      return;
+    }
+
+    const timer = window.setTimeout(() => {
+      setAuthTimedOut(true);
+    }, 6000);
+
+    return () => window.clearTimeout(timer);
+  }, [isAuthLoading]);
 
   const [calendarInitialDate, setCalendarInitialDate] = useState<Date | null>(null);
 
@@ -437,9 +451,20 @@ export default function App() {
   return (
     <div className="relative h-screen w-full bg-black text-white overflow-hidden">
       {/* Auth Flow */}
-      {isAuthLoading && (
+      {isAuthLoading && !authTimedOut && (
         <div className="h-full flex items-center justify-center">
           <div className="text-white/30 text-sm">Restoring session...</div>
+        </div>
+      )}
+
+      {isAuthLoading && authTimedOut && (
+        <div className="h-full flex items-center justify-center px-6">
+          <div className="max-w-md text-center space-y-3">
+            <h1 className="text-lg font-semibold text-white">Connection required</h1>
+            <p className="text-sm text-white/60">
+              Forge could not restore the Convex session. Confirm that `npm run dev` started Convex successfully and that your local Convex deployment is active.
+            </p>
+          </div>
         </div>
       )}
 

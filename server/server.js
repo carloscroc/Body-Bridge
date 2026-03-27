@@ -21,8 +21,8 @@ import {
 
 // Configuration
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-dotenv.config({ path: path.join(__dirname, '../.env.local') });
-dotenv.config({ path: path.join(__dirname, '../.env') });
+dotenv.config({ path: path.join(__dirname, '../.env.local'), quiet: true });
+dotenv.config({ path: path.join(__dirname, '../.env'), quiet: true });
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -86,16 +86,27 @@ const aiLimiter = rateLimit({
 });
 
 // Initialize Gemini Client
-const apiKey = process.env.GEMINI_API_KEY;
-if (!apiKey) {
-  logger.error('CRITICAL: GEMINI_API_KEY is missing.');
-  process.exit(1);
+const apiKey = process.env.GEMINI_API_KEY?.trim();
+const hasGeminiKey = Boolean(apiKey && apiKey !== 'PLACEHOLDER_API_KEY');
+const ai = hasGeminiKey ? new GoogleGenAI({ apiKey }) : null;
+
+if (!hasGeminiKey) {
+  logger.warn('GEMINI_API_KEY is missing; AI endpoints will return 503 until it is configured.');
 }
-const ai = new GoogleGenAI({ apiKey });
 
 // Helper to catch async errors
 const asyncHandler = (fn) => (req, res, next) => {
   Promise.resolve(fn(req, res, next)).catch(next);
+};
+
+const requireAi = (req, res, next) => {
+  if (ai) {
+    return next();
+  }
+
+  return res.status(503).json({
+    error: 'AI features are unavailable. Set GEMINI_API_KEY in .env.local and restart the server.',
+  });
 };
 
 // --- ROUTES ---
@@ -141,6 +152,7 @@ app.get('/api/auth/me', authenticateToken, (req, res) => {
 app.post('/api/analyze-meal', 
   authenticateToken, 
   aiLimiter, 
+  requireAi,
   validateAnalyzeMeal, // Includes validation middleware
   asyncHandler(async (req, res) => {
     // Validation handled by middleware
@@ -171,6 +183,7 @@ app.post('/api/analyze-meal',
 app.post('/api/search-fitness', 
   authenticateToken, 
   aiLimiter, 
+  requireAi,
   validateSearchFitness,
   asyncHandler(async (req, res) => {
     const { query } = req.body;
@@ -199,6 +212,7 @@ app.post('/api/search-fitness',
 app.post('/api/exercise-guide', 
   authenticateToken, 
   aiLimiter, 
+  requireAi,
   validateExerciseGuide,
   asyncHandler(async (req, res) => {
     const { exerciseName } = req.body;
