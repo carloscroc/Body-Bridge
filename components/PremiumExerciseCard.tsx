@@ -1,7 +1,9 @@
 import React, { useState, useRef, useCallback } from 'react';
 import { motion, AnimatePresence, useMotionValue, useSpring, useTransform } from 'framer-motion';
-import { Plus, Target, Check, Sparkles } from 'lucide-react';
+import { Plus, Target, Check, Sparkles, Dumbbell } from 'lucide-react';
 import { Exercise } from '../types';
+
+const PLACEHOLDER_IMAGE = 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&q=80&w=400';
 
 interface RipplePoint {
   id: number;
@@ -295,17 +297,23 @@ export const PremiumExerciseCard: React.FC<PremiumExerciseCardProps> = ({
 
       {/* Main image with scale effect */}
       <motion.div 
-        className="absolute inset-0"
+        className="absolute inset-0 bg-zinc-900"
         animate={{
           scale: isHovered && !isSelected ? 1.08 : isSelected ? 1.05 : 1,
         }}
         transition={{ duration: 0.6, ease: [0.23, 1, 0.32, 1] }}
       >
-        <img 
-          src={exercise.image} 
-          alt={exercise.name} 
-          className="w-full h-full object-cover"
-        />
+        {exercise.image && exercise.image !== '' ? (
+          <img 
+            src={exercise.image} 
+            alt={exercise.name} 
+            className="w-full h-full object-cover"
+          />
+        ) : (
+          <div className="w-full h-full flex items-center justify-center bg-white/5">
+            <Dumbbell size={40} className="text-white/10" />
+          </div>
+        )}
       </motion.div>
 
       {/* Dark overlay with animated gradient */}

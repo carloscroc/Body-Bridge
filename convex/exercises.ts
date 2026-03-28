@@ -104,11 +104,11 @@ export const advancedSearch = query({
       };
       const results = await ctx.db
         .query("exercises")
-        .withSearchIndex("search_name", (q) => {
+        .withSearchIndex("search_name", (q: any) => {
           let search = q.search("name", args.query!);
           if (args.category && args.category !== "All") search = search.eq("category", args.category);
           if (args.muscle && args.muscle !== "All") search = search.eq("muscleGroup", args.muscle);
-          if (args.difficulty && args.difficulty as string !== "All") search = search.eq("difficulty", args.difficulty);
+          if (args.difficulty && (args.difficulty as string) !== "All") search = search.eq("difficulty", args.difficulty);
            if (coachFilterId) search = search.eq("coachId", coachFilterId);
            return search;
           })
@@ -136,7 +136,7 @@ export const advancedSearch = query({
     }
 
     // 2. Index-based filtering (if no text search)
-    let paginatedResult;
+    let paginatedResult: any;
 
     const poNonSearch = (args.paginationOpts ?? {}) as any;
     const cursorNon = poNonSearch?.cursor ?? args.cursor ?? null;
@@ -271,6 +271,170 @@ export const advancedSearch = query({
       status: paginatedResult.isDone ? "Exhausted" : "CanLoadMore",
       numItems: paginatedResult.page.length,
     };
+  },
+});
+
+const MOCK_EXERCISES = [
+  {
+    name: "Barbell Squat",
+    category: "Strength",
+    muscleGroup: "Legs",
+    primaryMuscles: ["Quadriceps", "Glutes", "Hamstrings"],
+    secondaryMuscles: ["Lower Back", "Core"],
+    equipment: ["Barbell", "Squat Rack"],
+    difficulty: "Intermediate",
+    sets: "3",
+    reps: "12",
+    instructions: [
+      "Set up the barbell on the rack at shoulder height.",
+      "Step under the bar and rest it on your upper traps.",
+      "Unrack the bar and take two steps back.",
+      "Lower your hips back and down until your thighs are parallel to the floor.",
+      "Drive back up to the starting position."
+    ],
+    imageUrl: "https://images.unsplash.com/photo-1567598508481-65985588e295?auto=format&fit=crop&q=80&w=400"
+  },
+  {
+    name: "Dumbbell Press",
+    category: "Strength",
+    muscleGroup: "Chest",
+    primaryMuscles: ["Pectorals", "Triceps", "Shoulders"],
+    secondaryMuscles: ["Core"],
+    equipment: ["Dumbbells", "Bench"],
+    difficulty: "Beginner",
+    sets: "3",
+    reps: "10",
+    instructions: [
+      "Lie back on a flat bench with a dumbbell in each hand.",
+      "Hold the weights above your chest with arms extended.",
+      "Lower the weights to your chest level.",
+      "Press them back up to the starting position."
+    ],
+    imageUrl: "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&q=80&w=400"
+  },
+  {
+    name: "Deadlift",
+    category: "Power",
+    muscleGroup: "Back",
+    primaryMuscles: ["Hamstrings", "Glutes", "Lower Back"],
+    secondaryMuscles: ["Upper Back", "Forearms", "Core"],
+    equipment: ["Barbell"],
+    difficulty: "Advanced",
+    sets: "3",
+    reps: "8",
+    instructions: [
+      "Stand with feet hip-width apart, barbell over mid-foot.",
+      "Bend at the hips and knees to grip the bar.",
+      "Keep your back flat and chest up.",
+      "Lift the bar by extending your hips and knees.",
+      "Lower the bar back to the floor with control."
+    ],
+    imageUrl: "https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?auto=format&fit=crop&q=80&w=400"
+  },
+  {
+    name: "Push-ups",
+    category: "Strength",
+    muscleGroup: "Chest",
+    primaryMuscles: ["Pectorals", "Triceps", "Shoulders"],
+    secondaryMuscles: ["Core"],
+    equipment: ["Bodyweight"],
+    difficulty: "Beginner",
+    sets: "3",
+    reps: "15",
+    instructions: [
+      "Start in a plank position with hands slightly wider than shoulders.",
+      "Lower your body until your chest nearly touches the floor.",
+      "Push back up to the starting position.",
+      "Keep your core engaged and back straight throughout."
+    ],
+    imageUrl: "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&q=80&w=400"
+  },
+  {
+    name: "Pull-ups",
+    category: "Strength",
+    muscleGroup: "Back",
+    primaryMuscles: ["Lats", "Biceps", "Upper Back"],
+    secondaryMuscles: ["Shoulders", "Core"],
+    equipment: ["Pull-up Bar"],
+    difficulty: "Advanced",
+    sets: "3",
+    reps: "8",
+    instructions: [
+      "Grip the pull-up bar with hands wider than shoulders.",
+      "Pull your body up until your chin is over the bar.",
+      "Lower yourself back down with control.",
+      "Avoid swinging your legs."
+    ],
+    imageUrl: "https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?auto=format&fit=crop&q=80&w=400"
+  },
+  {
+    name: "Plank",
+    category: "Core",
+    muscleGroup: "Core",
+    primaryMuscles: ["Abs", "Obliques"],
+    secondaryMuscles: ["Shoulders", "Back"],
+    equipment: ["None"],
+    difficulty: "Beginner",
+    sets: "3",
+    reps: "60s",
+    instructions: [
+      "Start in a push-up position but with weight on your forearms.",
+      "Keep your body in a straight line from head to heels.",
+      "Engage your core and hold the position."
+    ],
+    imageUrl: "https://images.unsplash.com/photo-1566241142559-40e1dab26d16?auto=format&fit=crop&q=80&w=400"
+  }
+];
+
+export const seed = mutation({
+  args: {
+    clearExisting: v.optional(v.boolean()),
+    adminSecret: v.optional(v.string()),
+  },
+  handler: async (ctx, args) => {
+    const userId = await getAuthUserId(ctx);
+    const isAdmin = args.adminSecret === process.env.ADMIN_SCRIPT_SECRET;
+    const isDev = process.env.VITE_DEV_AUTH === "true";
+    
+    if (!userId && !isAdmin && !isDev) {
+      throw new Error("Unauthenticated");
+    }
+
+    if (args.clearExisting) {
+      const existing = await ctx.db.query("exercises").collect();
+      for (const ex of existing) {
+        await ctx.db.delete(ex._id);
+      }
+      
+      // Also clear usage to avoid broken references
+      const usages = await ctx.db.query("exerciseUsage").collect();
+      for (const u of usages) {
+        await ctx.db.delete(u._id);
+      }
+    }
+
+    let count = 0;
+    for (const ex of MOCK_EXERCISES) {
+      const existing = await ctx.db
+        .query("exercises")
+        .withIndex("by_name", (q) => q.eq("name", ex.name))
+        .first();
+      
+      if (!existing || args.clearExisting) {
+        await ctx.db.insert("exercises", {
+          ...ex,
+          libraryId: `seed-${ex.name.toLowerCase().replace(/\s+/g, "-")}`,
+          overview: `${ex.name} is a great exercise for targeting ${ex.muscleGroup.toLowerCase()}.`,
+          benefits: ["Increased strength", "Improved muscle tone", "Better functional movement"],
+          tags: [ex.category.toLowerCase(), ex.muscleGroup.toLowerCase()],
+          difficultyOrder: ex.difficulty === "Beginner" ? 1 : ex.difficulty === "Intermediate" ? 2 : 3,
+          createdAt: Date.now(),
+        } as any);
+        count++;
+      }
+    }
+
+    return { ok: true, seededCount: count };
   },
 });
 

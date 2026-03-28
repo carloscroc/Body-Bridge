@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useEffect, useCallback, useRef } from 'react';
-import { Search, Filter } from 'lucide-react';
+import { Search, Filter, Dumbbell } from 'lucide-react';
 import { useQuery, useMutation } from 'convex/react';
 import { api } from '../convex/_generated/api';
 import type { Exercise } from '../types';
@@ -202,13 +202,19 @@ const ExercisesView: React.FC<ExercisesViewProps> = ({ onSelect }) => {
               <div
                 key={ex.id}
                 onClick={() => onSelect(ex)}
-                className="relative aspect-[4/5] rounded-[28px] overflow-hidden press-scale group shadow-xl border border-white/5"
+                className="relative aspect-[4/5] rounded-[28px] overflow-hidden press-scale group shadow-xl border border-white/5 bg-zinc-900"
               >
-                <img 
-                  src={ex.image} 
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
-                  alt={ex.name} 
-                />
+                {ex.image && ex.image !== '' ? (
+                  <img 
+                    src={ex.image} 
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
+                    alt={ex.name} 
+                  />
+                ) : (
+                  <div className="w-full h-full flex items-center justify-center bg-white/5">
+                    <Dumbbell size={32} className="text-white/10" />
+                  </div>
+                )}
                 <div className="absolute inset-0 scrim-overlay opacity-60 group-hover:opacity-90 transition-opacity" />
                 <div className="absolute bottom-5 left-5 right-5">
                   <h3 className="text-xs font-bold leading-tight text-white">{ex.name}</h3>

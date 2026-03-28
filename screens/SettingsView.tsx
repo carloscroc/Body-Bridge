@@ -223,6 +223,7 @@ const SettingsView: React.FC<SettingsViewProps> = ({ onBack, onLogout }) => {
   const profileData = useQuery(api.profiles.getMe);
   const updateProfileMutation = useMutation(api.profiles.updateMe);
   const deleteAccount = useMutation(api.account.deleteAccount);
+  const seedExercises = useMutation(api.exercises.seed);
 
   const [isSaving, setIsSaving] = useState(false);
   const [toast, setToast] = useState<{ message: string, type: 'success' | 'error' } | null>(null);
@@ -653,6 +654,21 @@ const SettingsView: React.FC<SettingsViewProps> = ({ onBack, onLogout }) => {
               { label: 'Kilometers', value: 'km' },
               { label: 'Miles', value: 'mi' },
             ]}
+          />
+        </Section>
+        <Section title="Developer Tools">
+          <ActionItem 
+            label="Seed Exercises" 
+            sublabel="Populate library with real data"
+            onClick={async () => {
+              try {
+                const result = await seedExercises({ clearExisting: true });
+                setToast({ message: `Seeded ${result.seededCount} exercises`, type: 'success' });
+              } catch (e) {
+                setToast({ message: 'Seeding failed', type: 'error' });
+              }
+            }} 
+            icon={RefreshCw} 
           />
         </Section>
       </SettingsSheet>

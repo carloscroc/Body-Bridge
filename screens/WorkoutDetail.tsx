@@ -5,7 +5,7 @@ import { useAuth } from '../services/AuthContext';
 import { 
   ChevronLeft, Clock, Zap, Flame, Share2, Bookmark, 
   CheckCircle2, ChevronRight,
-  Loader2
+  Loader2, Dumbbell
 } from 'lucide-react';
 import { Workout, Exercise } from '../types';
 import UserPacedPlayer from '../components/players/UserPacedPlayer';
@@ -388,15 +388,21 @@ const WorkoutDetail: React.FC<WorkoutDetailProps> = ({ workout, onBack, onSelect
                         transition: `all 0.5s cubic-bezier(0.16, 1, 0.3, 1) ${delay + 100}ms`,
                       }}
                     >
-                      <img 
-                        src={ex.image} 
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" 
-                        alt={ex.name}
-                        style={{
-                          filter: isVisible ? 'blur(0px)' : 'blur(8px)',
-                          transition: `filter 0.6s ease ${delay + 200}ms`,
-                        }}
-                      />
+                      {ex.image && ex.image !== '' ? (
+                        <img 
+                          src={ex.image} 
+                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" 
+                          alt={ex.name}
+                          style={{
+                            filter: isVisible ? 'blur(0px)' : 'blur(8px)',
+                            transition: `filter 0.6s ease ${delay + 200}ms`,
+                          }}
+                        />
+                      ) : (
+                        <div className="w-full h-full flex items-center justify-center bg-white/5">
+                          <Dumbbell size={24} className="text-white/10" />
+                        </div>
+                      )}
                       <div className="absolute inset-0 bg-gradient-to-tr from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                     </div>
                     <div 
