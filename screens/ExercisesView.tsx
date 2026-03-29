@@ -3,6 +3,7 @@ import { Search, Filter, Dumbbell } from 'lucide-react';
 import { useQuery, useMutation } from 'convex/react';
 import { api } from '../convex/_generated/api';
 import type { Exercise } from '../types';
+import { MOCK_EXERCISES } from '../constants';
 import { resolveHighEndExerciseImage } from '../utils/imageResolver';
 import PremiumHeader from '../components/PremiumHeader';
 import PremiumSectionHeader from '../components/PremiumSectionHeader';
@@ -128,8 +129,9 @@ const ExercisesView: React.FC<ExercisesViewProps> = ({ onSelect }) => {
     }
   }, [result, loadingMore]);
 
-  const exercises: Exercise[] = accumulated;
   const isLoading = result === undefined;
+  // Use MOCK_EXERCISES as a base fallback if the query is loading or empty (especially useful when backend is down)
+  const exercises: Exercise[] = (accumulated.length > 0) ? accumulated : MOCK_EXERCISES;
 
   const handleSortChange = (newSort: SortOption) => {
     setSortBy(newSort);

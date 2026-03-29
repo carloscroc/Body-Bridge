@@ -53,6 +53,7 @@ export default function App() {
   const isOnboardingComplete = !!user?.onboardingComplete;
   const isAuthenticated = isNetworkAuthenticated && isOnboardingComplete;
 
+
   const [activeTab, setActiveTab] = useState<Tab>(Tab.HOME);
   const [selectedWorkout, setSelectedWorkout] = useState<Workout | null>(null);
   const [selectedMeal, setSelectedMeal] = useState<Meal | null>(null);
