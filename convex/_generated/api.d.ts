@@ -16,7 +16,6 @@ import type * as auth_helpers from "../auth_helpers.js";
 import type * as calendar_api from "../calendar_api.js";
 import type * as classroom from "../classroom.js";
 import type * as coach from "../coach.js";
-import type * as courses from "../courses.js";
 import type * as exercises from "../exercises.js";
 import type * as functions_auth from "../functions/auth.js";
 import type * as http from "../http.js";
@@ -57,7 +56,6 @@ declare const fullApi: ApiFromModules<{
   calendar_api: typeof calendar_api;
   classroom: typeof classroom;
   coach: typeof coach;
-  courses: typeof courses;
   exercises: typeof exercises;
   "functions/auth": typeof functions_auth;
   http: typeof http;
