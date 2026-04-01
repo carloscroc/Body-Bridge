@@ -2,11 +2,12 @@
   "version": 1,
   "workspace": {
     "name": "Forge",
-    "createdAt": 1774974056890,
+    "createdAt": 1774977174055,
     "preset": "starter"
   },
   "authorizedRoots": [
-    "C:\\Users\\thebe\\AppData\\Local\\Temp\\vibe-kanban\\worktrees\\63a6-workout-exercise\\Forge"
+    "C:\\Users\\thebe\\AppData\\Local\\Temp\\vibe-kanban\\worktrees\\63a6-workout-exercise\\Forge",
+    "C:\\Users\\thebe\\AppData\\Local\\Temp\\vibe-kanban\\worktrees\\e458-calendar\\Forge"
   ],
   "blueprint": {
     "emptyState": {
@@ -65,15 +66,15 @@
     ],
     "materialized": {
       "sessions": {
-        "hydratedAt": 1774974162805,
+        "hydratedAt": 1774977184268,
         "items": [
           {
             "templateId": "welcome-to-openwork",
-            "sessionId": "ses_2bb4ba9c1ffe170tAdd1NLWClk"
+            "sessionId": "ses_2bb1d946affeKGt9ocGJV9CJCB"
           },
           {
             "templateId": "csv-playbook",
-            "sessionId": "ses_2bb4ba937ffelwl2B7QKjILCyk"
+            "sessionId": "ses_2bb1d8e01ffe4b1LUrilvs6s1V"
           }
         ]
       }

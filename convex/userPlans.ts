@@ -157,3 +157,69 @@ export const getPlansInRange = query({
       .collect();
   },
 });
+
+export const getStreak = query({
+  args: {},
+  handler: async (ctx) => {
+    const userId = await getAuthUserId(ctx);
+    if (!userId) return { currentStreak: 0, longestStreak: 0 };
+
+    const profile = await ctx.db
+      .query("profiles")
+      .withIndex("by_userId", (q) => q.eq("userId", userId))
+      .unique();
+
+    if (!profile) return { currentStreak: 0, longestStreak: 0 };
+
+    // Get all completed plans
+    const allPlans = await ctx.db
+      .query("userPlans")
+      .withIndex("by_user_date", (q) => q.eq("userId", profile._id))
+      .collect();
+
+    // Group by date and check if all items for that date are completed
+    const dateCompletion: Record<string, boolean> = {};
+    allPlans.forEach(plan => {
+      if (!dateCompletion[plan.scheduledDate]) {
+        dateCompletion[plan.scheduledDate] = plan.completed;
+      } else {
+        dateCompletion[plan.scheduledDate] = dateCompletion[plan.scheduledDate] && plan.completed;
+      }
+    });
+
+    // Get sorted dates
+    const sortedDates = Object.keys(dateCompletion).sort();
+    
+    // Calculate current streak (consecutive days from today backwards)
+    let currentStreak = 0;
+    const today = new Date().toISOString().split('T')[0];
+    let checkDate = new Date(today);
+    
+    while (true) {
+      const dateStr = checkDate.toISOString().split('T')[0];
+      if (dateCompletion[dateStr]) {
+        currentStreak++;
+        checkDate.setDate(checkDate.getDate() - 1);
+      } else {
+        break;
+      }
+    }
+
+    // Calculate longest streak
+    let longestStreak = 0;
+    let tempStreak = 0;
+    
+    for (let i = 0; i < sortedDates.length; i++) {
+      if (dateCompletion[sortedDates[i]]) {
+        tempStreak++;
+        if (tempStreak > longestStreak) {
+          longestStreak = tempStreak;
+        }
+      } else {
+        tempStreak = 0;
+      }
+    }
+
+    return { currentStreak, longestStreak };
+  },
+});
