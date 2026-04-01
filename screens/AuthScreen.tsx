@@ -27,6 +27,11 @@ const AuthScreen: React.FC<AuthScreenProps> = ({ onAuth, initialMode = 'landing'
 
   useEffect(() => {
     setMode(initialMode);
+    // Clear fields when mode changes
+    setEmail('');
+    setPassword('');
+    setName('');
+    setAuthError(null);
   }, [initialMode]);
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -190,6 +195,7 @@ const AuthScreen: React.FC<AuthScreenProps> = ({ onAuth, initialMode = 'landing'
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   placeholder="FULL NAME"
+                  autoComplete="off"
                   required
                   className="w-full h-16 bg-white/[0.03] border border-white/10 rounded-2xl pl-16 pr-6 text-white text-xs font-bold uppercase tracking-widest outline-none focus:border-[#FFB800]/50 transition-all placeholder:text-white/10"
                 />
@@ -205,6 +211,7 @@ const AuthScreen: React.FC<AuthScreenProps> = ({ onAuth, initialMode = 'landing'
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="EMAIL ADDRESS"
+                autoComplete="new-email"
                 required
                 className="w-full h-16 bg-white/[0.03] border border-white/10 rounded-2xl pl-16 pr-6 text-white text-xs font-bold uppercase tracking-widest outline-none focus:border-[#FFB800]/50 transition-all placeholder:text-white/10"
               />
@@ -219,6 +226,7 @@ const AuthScreen: React.FC<AuthScreenProps> = ({ onAuth, initialMode = 'landing'
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="SECURE PASSWORD"
+                autoComplete="new-password"
                 required
                 className="w-full h-16 bg-white/[0.03] border border-white/10 rounded-2xl pl-16 pr-6 text-white text-xs font-bold uppercase tracking-widest outline-none focus:border-[#FFB800]/50 transition-all placeholder:text-white/10"
               />
@@ -246,6 +254,9 @@ const AuthScreen: React.FC<AuthScreenProps> = ({ onAuth, initialMode = 'landing'
             type="button"
             onClick={() => {
               setAuthError(null);
+              setEmail('');
+              setPassword('');
+              setName('');
               setMode(mode === 'login' ? 'signup' : 'login');
             }}
             className="text-[10px] font-black uppercase tracking-[0.2em] text-white/30 hover:text-white transition-colors"

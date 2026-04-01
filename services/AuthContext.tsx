@@ -63,12 +63,13 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
         
         // Save a flag to indicate we're in the middle of a login transition
         localStorage.setItem('auth_transitioning', '1');
+        localStorage.setItem('auth_flow', args.flow);
 
         // Force a page refresh/redirect to ensure session is picked up
         setTimeout(() => {
-          console.log('[Auth] Redirecting to dashboard');
-          window.location.href = '/dashboard';
-        }, 1000);
+          console.log('[Auth] Redirecting to root for session refresh');
+          window.location.href = '/';
+        }, 800);
       } catch (signInErr: any) {
         console.error('[Auth] signIn error in block:', signInErr);
         // 2. If we reach here, we know the account exists (for signIn) or doesn't exist (for signUp).
@@ -105,7 +106,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
 
   const value = useMemo(
     () => ({ isAuthenticated: isAuthenticatedFinal, isAuthLoading: isAuthLoading && !isForced, user, login, logout, isLoading, error }),
-    [isAuthenticatedFinal, isAuthLoading, isForced, user, login, logout, isLoading, error]
+    [isAuthenticatedFinal, isAuthLoading, user, login, logout, isLoading, error]
   );
 
   return (

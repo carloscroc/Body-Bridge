@@ -74,21 +74,22 @@ export default function App() {
 
   const [calendarIntent, setCalendarIntent] = useState<{ kind: 'workout' | 'meal'; dateStr: string } | null>(null);
   const [isCalendarOpen, setIsCalendarOpen] = useState(false);
+  const [calendarInitialDate, setCalendarInitialDate] = useState<Date | null>(null);
 
-  // Dev helper
-  useEffect(() => {
-    try {
-      const params = new URL(window.location.href).searchParams;
-      if (params.get('forceSettings') === '1') {
-        setAuthView('authenticated');
-        setActiveTab(Tab.SETTINGS);
-      } else if (params.get('forceExercises') === '1') {
-        setAuthView('authenticated');
-        setActiveTab(Tab.EXERCISES);
-      }
-    } catch (e) {
-      // silent
-    }
+  const openCalendar = React.useCallback((date?: Date) => {
+    setCalendarInitialDate(date ?? null);
+    setIsCalendarOpen(true);
+  }, []);
+
+  const handleTabChange = React.useCallback((tab: Tab) => {
+    setIsTransitioning(true);
+    setTimeout(() => {
+      setActiveTab(tab);
+      setSelectedWorkout(null);
+      setSelectedMeal(null);
+      setSelectedExercise(null);
+      setIsTransitioning(false);
+    }, 200);
   }, []);
 
   // Handle global navigation events (e.g. from notifications)
@@ -112,7 +113,7 @@ export default function App() {
     
     window.addEventListener('app-navigate', handleNavigate);
     return () => window.removeEventListener('app-navigate', handleNavigate);
-  }, []);
+  }, [handleTabChange, openCalendar]);
   
   const createSelfNotification = useMutation(api.notifications.createSelfNotification);
 
@@ -192,9 +193,12 @@ export default function App() {
 
     if (isAuthLoading) return;
 
+    const transitionState = localStorage.getItem('auth_transitioning');
+    const transitionFlow = localStorage.getItem('auth_flow');
+
     if (!isNetworkAuthenticated) {
       // If we are transitionning, don't show landing yet
-      if (localStorage.getItem('auth_transitioning') === '1') {
+      if (transitionState === '1') {
          return;
       }
       setAuthView('landing');
@@ -203,15 +207,16 @@ export default function App() {
 
     // Login successful
     localStorage.removeItem('auth_transitioning');
+    localStorage.removeItem('auth_flow');
 
     const onboardingComplete = !!user?.onboardingComplete;
     
     if (onboardingComplete) {
       setAuthView('authenticated');
-    } else if (authView !== 'onboarding') {
+    } else if (authView !== 'onboarding' || transitionFlow === 'signUp') {
       setAuthView('onboarding');
     }
-  }, [isNetworkAuthenticated, isAuthLoading, user]);
+  }, [isNetworkAuthenticated, isAuthLoading, user, authView]);
 
   useEffect(() => {
     if (!isAuthLoading) {
@@ -225,24 +230,6 @@ export default function App() {
 
     return () => window.clearTimeout(timer);
   }, [isAuthLoading]);
-
-  const [calendarInitialDate, setCalendarInitialDate] = useState<Date | null>(null);
-
-  const openCalendar = (date?: Date) => {
-    setCalendarInitialDate(date ?? null);
-    setIsCalendarOpen(true);
-  };
-
-  const handleTabChange = (tab: Tab) => {
-    setIsTransitioning(true);
-    setTimeout(() => {
-      setActiveTab(tab);
-      setSelectedWorkout(null);
-      setSelectedMeal(null);
-      setSelectedExercise(null);
-      setIsTransitioning(false);
-    }, 200);
-  };
 
   // DEV: Expose a production-safe global hook for automated verification
   useEffect(() => {
@@ -421,7 +408,7 @@ export default function App() {
               <p style={{ marginTop: 8, color: '#ccc' }}>Plan: Pro</p>
             </section>
             <div style={{ marginTop: 28 }}>
-              <button aria-label="Save Changes" style={{ padding: '10px 14px', fontWeight: 800 }}>Save Changes</button>
+              <button type="button" aria-label="Save Changes" style={{ padding: '10px 14px', fontWeight: 800 }}>Save Changes</button>
             </div>
           </div>
         </div>
@@ -429,10 +416,21 @@ export default function App() {
     );
   }
 
+  const isTransitioningAuth = localStorage.getItem('auth_transitioning') === '1';
+
   return (
     <div className="relative h-screen w-full bg-black text-white overflow-hidden">
       {/* Auth Flow */}
-      {isAuthLoading && !authTimedOut && (
+      {isTransitioningAuth && (
+        <div className="h-full flex flex-col items-center justify-center space-y-6">
+          <div className="w-12 h-12 border-2 border-white/20 border-t-white rounded-full animate-spin" />
+          <div className="editorial-title text-2xl italic text-white/40 uppercase tracking-widest">
+            FORGING PROFILE...
+          </div>
+        </div>
+      )}
+
+      {isAuthLoading && !authTimedOut && !isTransitioningAuth && (
         <div className="h-full flex items-center justify-center">
           <div className="text-white/30 text-sm">Restoring session...</div>
         </div>
