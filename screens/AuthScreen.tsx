@@ -37,7 +37,9 @@ const AuthScreen: React.FC<AuthScreenProps> = ({ onAuth, initialMode = 'landing'
       await onAuth({ name, email, password, method: mode as 'login' | 'signup' });
     } catch (err: any) {
       console.error('Auth submit error:', err);
-      setAuthError(err?.message || 'Authentication failed. Please try again.');
+      // Display user-friendly error messages
+      const errorMessage = err?.message || 'Authentication failed. Please try again.';
+      setAuthError(errorMessage);
     } finally {
       setIsLoading(false);
     }
