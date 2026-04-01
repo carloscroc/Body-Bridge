@@ -485,14 +485,22 @@ export default function App() {
           onAuth={async (data) => {
             setSignupData({ name: data.name, email: data.email });
             localStorage.removeItem('app_logged_out');
-            await login({
-              email: data.email,
-              password: data.password,
-              name: data.name,
-              flow: data.method === 'login' ? 'signIn' : 'signUp',
-            });
-
-            setAuthView(data.method === 'login' ? 'authenticated' : 'onboarding');
+            try {
+              await login({
+                email: data.email,
+                password: data.password,
+                name: data.name,
+                flow: data.method === 'login' ? 'signIn' : 'signUp',
+              });
+              // Local Dev Redirect
+              if (data.method === 'login') {
+                setAuthView('authenticated');
+              } else {
+                setAuthView('onboarding');
+              }
+            } catch (err) {
+              // error handled in login component
+            }
           }}
           initialMode={authView === 'landing' ? 'landing' : (authView === 'signup' ? 'signup' : 'login')}
         />

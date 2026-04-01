@@ -25,7 +25,7 @@ dotenv.config({ path: path.join(__dirname, '../.env.local'), quiet: true });
 dotenv.config({ path: path.join(__dirname, '../.env'), quiet: true });
 
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3001;
 
 // Security Middleware
 // This server currently hosts API endpoints (not the HTML document), so CSP here isn't the primary control.

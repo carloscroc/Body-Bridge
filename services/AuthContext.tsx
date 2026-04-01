@@ -58,6 +58,12 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
       
       try {
         await signIn('password', formData);
+        // Force a brief delay and check if we're still on the auth page
+        setTimeout(() => {
+          if (window.location.pathname === '/' || window.location.hash === '#/auth') {
+            window.location.href = '/dashboard';
+          }
+        }, 800);
       } catch (signInErr: any) {
         // 2. If we reach here, we know the account exists (for signIn) or doesn't exist (for signUp).
         // Since Convex masks the exact reason with a 500 Server Error, we can now confidently infer it.

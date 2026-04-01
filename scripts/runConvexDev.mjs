@@ -16,34 +16,48 @@ if (existsSync(envPath)) {
   dotenv.config({ path: envPath, override: false, quiet: true });
 }
 
-const deployment = 'local';
-const looksConfigured = true;
+const {
+  CONVEX_DEPLOYMENT,
+  CONVEX_URL,
+  VITE_CONVEX_URL,
+  VITE_CONVEX_SITE_URL,
+  VITE_SUPABASE_URL,
+  CONVEX_SELF_HOSTED_URL,
+  CONVEX_SITE_URL,
+  CONVEX_SELF_HOSTED_ADMIN_KEY,
+  ...cleanEnv
+} = process.env;
 
-if (!looksConfigured) {
-  console.error('[dev:convex] Missing CONVEX_DEPLOYMENT in .env.local.');
-  console.error('[dev:convex] Copy .env.local.example to .env.local and set both VITE_CONVEX_URL and CONVEX_DEPLOYMENT before running npm run dev.');
-  process.exit(1);
+if (!CONVEX_DEPLOYMENT) {
+  cleanEnv.CONVEX_SELF_HOSTED_URL = CONVEX_SELF_HOSTED_URL || 'http://localhost:8443';
 }
+cleanEnv.CONVEX_SITE_URL = CONVEX_SITE_URL || 'http://127.0.0.1:3210';
 
 const command = process.platform === 'win32' ? 'npx.cmd' : 'npx';
-const child = spawn(command, ['convex', 'dev', '--local'], {
+const child = spawn(command, [
+  'convex', 'dev',
+  '--typecheck', 'disable',
+  '--configure', 'existing',
+  '--dev-deployment', 'local',
+  '--team', 'thebest-croc',
+  '--project', 'fitness-03cc8',
+  '--local-force-upgrade',
+], {
   cwd: rootDir,
   stdio: 'inherit',
-  env: process.env,
+  env: cleanEnv,
   shell: process.platform === 'win32',
 });
 
 child.on('exit', (code, signal) => {
   if (signal) {
-    console.warn(`[dev:convex] Convex dev server received signal: ${signal}. Staying alive to allow frontend development.`);
+    console.warn(`[dev:convex] Convex dev server received signal: ${signal}.`);
     return;
   }
   if (code !== 0) {
     console.error(`[dev:convex] Convex dev server failed with code ${code}.`);
-    console.error(`[dev:convex] This is likely due to your Convex account being disabled or exceeding plan limits.`);
     console.error(`[dev:convex] PROCEEDING WITH FRONTEND DEVELOPMENT ONLY (Offline mode).`);
     
-    // Keep this process alive so concurrently doesn't kill the other services
     setInterval(() => {}, 1000 * 60 * 60);
   } else {
     process.exit(0);
