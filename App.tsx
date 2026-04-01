@@ -47,32 +47,22 @@ export default function App() {
   // Dev override: force the Settings screen or Exercises screen
   let devForceSettings = false;
   let devForceExercises = false;
-  try {
-    if (typeof window !== 'undefined') {
-      const params = new URL(window.location.href).searchParams;
-      devForceSettings = params.get('forceSettings') === '1';
-      devForceExercises = params.get('forceExercises') === '1';
-    }
-  } catch (e) {
-    devForceSettings = false;
-    devForceExercises = false;
-  }
-
+  
   const todayStr = useMemo(() => new Date().toISOString().split('T')[0], []);
   
   // Conditionally skip queries in forced dev mode to avoid crashes when provider is missing or backend is down
-  const todayPlans = useQuery(api.userPlans.getDailyPlan, devForceExercises || devForceSettings ? 'skip' : { date: todayStr });
-  const allPlans = useQuery(api.userPlans.getAllPlans, devForceExercises || devForceSettings ? 'skip' : undefined);
+  const todayPlans = useQuery(api.userPlans.getDailyPlan, { date: todayStr });
+  const allPlans = useQuery(api.userPlans.getAllPlans, undefined);
   
   // Mutations cannot be easily skipped with hooks, so we'll wrap their usage or mock them
   const completeOnboardingInternal = useMutation(api.functions.auth.completeOnboarding);
   const updateMeInternal = useMutation(api.profiles.updateMe);
 
-  const completeOnboarding = devForceExercises || devForceSettings ? async () => ({}) : completeOnboardingInternal;
-  const updateMe = devForceExercises || devForceSettings ? async () => ({}) : updateMeInternal;
+  const completeOnboarding = completeOnboardingInternal;
+  const updateMe = updateMeInternal;
 
   const isOnboardingComplete = !!user?.onboardingComplete;
-  const isAuthenticated = (isNetworkAuthenticated && isOnboardingComplete) || devForceExercises || devForceSettings;
+  const isAuthenticated = (isNetworkAuthenticated && isOnboardingComplete);
 
 
   const [activeTab, setActiveTab] = useState<Tab>(Tab.HOME);
@@ -250,34 +240,8 @@ export default function App() {
   };
 
   // DEV: Expose a production-safe global hook for automated verification
-  // This allows external tooling (Playwright) to force the app into the
-  // authenticated + Settings view without relying on DOM selectors or
-  // broadcasting CustomEvents that might be gated by runtime state.
   useEffect(() => {
-    try {
-      if (typeof window !== 'undefined') {
-        // Attach a named property without narrowing window's type (avoid `as any`).
-        (window as unknown)['__openSettings'] = () => {
-          try {
-            try { console.log('[DEV DEBUG] __openSettings called'); } catch (e) {}
-            setAuthView('authenticated');
-            setActiveTab(Tab.SETTINGS);
-          } catch (e) {
-            // swallow errors in this debug helper
-          }
-        };
-      }
-    } catch (e) {
-      // noop
-    }
     return () => {
-      try {
-        if (typeof window !== 'undefined') {
-          delete (window as unknown)['__openSettings'];
-        }
-      } catch (e) {
-        // noop
-      }
     };
   }, []);
 

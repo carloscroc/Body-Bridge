@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom/client';
 import { ConvexReactClient } from 'convex/react';
 import { ConvexAuthProvider } from '@convex-dev/auth/react';
 import App from './App';
-import { AuthProvider, AuthContext } from './services/AuthContext';
+import { AuthProvider } from './services/AuthContext';
 import ErrorBoundary from './components/ErrorBoundary';
 
 const convexUrl = import.meta.env.VITE_CONVEX_URL;
@@ -12,8 +12,6 @@ const hasValidConvexUrl = Boolean(
   convexUrl && convexUrl !== 'YOUR_CONVEX_URL_HERE'
 );
 const convex = hasValidConvexUrl ? new ConvexReactClient(convexUrl) : null;
-
-const isForced = typeof window !== 'undefined' && (new URL(window.location.href).searchParams.get('forceExercises') === '1' || new URL(window.location.href).searchParams.get('forceSettings') === '1');
 
 const rootElement = document.getElementById('root');
 if (!rootElement) {
@@ -51,7 +49,7 @@ function StartupIssueScreen() {
           <div className="rounded-2xl border border-white/10 bg-black/30 p-4">
             <p className="font-semibold text-white">Also check</p>
             <p className="mt-1 text-white/65">
-              Your backend server also failed to bind to port `3000`, so API requests will not reach Forge until that port conflict is resolved.
+              Your backend server also failed to bind to port `3001`, so API requests will not reach Forge until that port conflict is resolved.
             </p>
           </div>
         </div>
@@ -60,48 +58,18 @@ function StartupIssueScreen() {
   );
 }
 
-if (isForced) {
-  const mockValue = {
-    isAuthenticated: true,
-    isAuthLoading: false,
-    user: { onboardingComplete: true, fullName: 'Local Developer' },
-    login: async () => {},
-    logout: async () => {},
-    isLoading: false,
-    error: null,
-  };
-
-  root.render(
-    <React.StrictMode>
-      <ErrorBoundary>
-        {convex ? (
-          <ConvexAuthProvider client={convex}>
-            <AuthContext.Provider value={mockValue}>
-              <App />
-            </AuthContext.Provider>
-          </ConvexAuthProvider>
-        ) : (
-          <AuthContext.Provider value={mockValue}>
+root.render(
+  <React.StrictMode>
+    <ErrorBoundary>
+      {convex ? (
+        <ConvexAuthProvider client={convex}>
+          <AuthProvider>
             <App />
-          </AuthContext.Provider>
-        )}
-      </ErrorBoundary>
-    </React.StrictMode>
-  );
-} else {
-  root.render(
-    <React.StrictMode>
-      <ErrorBoundary>
-        {convex ? (
-          <ConvexAuthProvider client={convex}>
-            <AuthProvider>
-              <App />
-            </AuthProvider>
-          </ConvexAuthProvider>
-        ) : (
-          <StartupIssueScreen />
-        )}
-      </ErrorBoundary>
-    </React.StrictMode>
-  );
-}
+          </AuthProvider>
+        </ConvexAuthProvider>
+      ) : (
+        <StartupIssueScreen />
+      )}
+    </ErrorBoundary>
+  </React.StrictMode>
+);

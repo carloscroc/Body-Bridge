@@ -21,7 +21,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
   const convex = useConvex();
 
   // Dev override
-  const isForced = typeof window !== 'undefined' && (new URL(window.location.href).searchParams.get('forceExercises') === '1' || new URL(window.location.href).searchParams.get('forceSettings') === '1');
+  const isForced = false;
 
   const userQuery = useQuery(api.functions.auth.getCurrentUser, isForced ? 'skip' : { authSource: 'client' });
   
