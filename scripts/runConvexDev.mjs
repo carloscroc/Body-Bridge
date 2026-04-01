@@ -16,8 +16,8 @@ if (existsSync(envPath)) {
   dotenv.config({ path: envPath, override: false, quiet: true });
 }
 
-const deployment = process.env.CONVEX_DEPLOYMENT?.trim();
-const looksConfigured = deployment && !deployment.includes('your-convex-project');
+const deployment = 'local';
+const looksConfigured = true;
 
 if (!looksConfigured) {
   console.error('[dev:convex] Missing CONVEX_DEPLOYMENT in .env.local.');

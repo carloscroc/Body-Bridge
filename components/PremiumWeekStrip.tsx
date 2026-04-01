@@ -4,6 +4,7 @@ interface PremiumWeekStripProps {
   selectedDate: string; // ISO date string YYYY-MM-DD
   onSelectDate: (date: string) => void;
   className?: string;
+  eventDays?: Record<string, { hasWorkout: boolean; hasMeal: boolean }>; // Map of date ISO string to event info
 }
 
 const DAY_LABELS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'] as const;
@@ -12,6 +13,7 @@ const PremiumWeekStrip: React.FC<PremiumWeekStripProps> = ({
   selectedDate,
   onSelectDate,
   className = '',
+  eventDays = {},
 }) => {
   const weekDays = useMemo(() => {
     const today = new Date();
@@ -38,6 +40,9 @@ const PremiumWeekStrip: React.FC<PremiumWeekStripProps> = ({
         {weekDays.map((day) => {
           const isSelected = day.iso === selectedDate;
           const isToday = day.iso === todayIso;
+          const dayEvents = eventDays[day.iso];
+          const hasWorkout = dayEvents?.hasWorkout;
+          const hasMeal = dayEvents?.hasMeal;
 
           return (
             <button
@@ -64,12 +69,17 @@ const PremiumWeekStrip: React.FC<PremiumWeekStripProps> = ({
               >
                 {day.date}
               </span>
-              {isToday && !isSelected && (
-                <div className="w-1 h-1 rounded-full bg-blue-500 shadow-[0_0_6px_#3b82f6]" />
-              )}
-              {isToday && isSelected && (
-                <div className="w-1 h-1 rounded-full bg-black/40" />
-              )}
+              <div className="flex gap-1">
+                {hasWorkout && (
+                  <div className={`w-1 h-1 rounded-full ${isSelected ? 'bg-blue-500' : 'bg-blue-400'} shadow-[0_0_6px_#3b82f6]`} />
+                )}
+                {hasMeal && (
+                  <div className={`w-1 h-1 rounded-full ${isSelected ? 'bg-emerald-500' : 'bg-emerald-400'} shadow-[0_0_6px_#10b981]`} />
+                )}
+                {isToday && !hasWorkout && !hasMeal && (
+                  <div className="w-1 h-1 rounded-full bg-blue-500 shadow-[0_0_6px_#3b82f6]" />
+                )}
+              </div>
             </button>
           );
         })}

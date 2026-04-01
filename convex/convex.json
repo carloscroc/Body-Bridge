@@ -1,0 +1,8 @@
+{
+  "projectId": "e458-calendar",
+  "deployment": "local",
+  "selfHosted": {
+    "port": 8443,
+    "backend": "http://localhost:8443"
+  }
+}
