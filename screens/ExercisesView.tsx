@@ -75,7 +75,7 @@ const ExercisesView: React.FC<ExercisesViewProps> = ({ onSelect }) => {
     }
   );
 
-  const mapExercise = (ex: any): Exercise => {
+  const mapExercise = useCallback((ex: any): Exercise => {
     const baseEx: Exercise = {
       id: ex._id,
       name: ex.name,
@@ -95,7 +95,7 @@ const ExercisesView: React.FC<ExercisesViewProps> = ({ onSelect }) => {
     };
     baseEx.image = resolveHighEndExerciseImage(baseEx);
     return baseEx;
-  };
+  }, []);
 
   useEffect(() => {
     if (!result) return;
@@ -114,7 +114,7 @@ const ExercisesView: React.FC<ExercisesViewProps> = ({ onSelect }) => {
     setPaginationStatus(
       result.status === 'Exhausted' ? 'Exhausted' : 'CanLoadMore'
     );
-  }, [result, cursor]);
+  }, [result, cursor, mapExercise]);
 
   const handleLoadMore = useCallback(() => {
     if (!result || paginationStatus === 'Exhausted' || loadingMore) return;
@@ -131,7 +131,13 @@ const ExercisesView: React.FC<ExercisesViewProps> = ({ onSelect }) => {
 
   const isLoading = result === undefined;
   // Use MOCK_EXERCISES as a base fallback if the query is loading or empty (especially useful when backend is down)
-  const exercises: Exercise[] = (accumulated.length > 0) ? accumulated : MOCK_EXERCISES;
+  // Ensure we ALWAYS have some exercises to show if the backend is taking too long or empty
+  const exercises: Exercise[] = useMemo(() => {
+    if (accumulated.length > 0) return accumulated;
+    return MOCK_EXERCISES || [];
+  }, [accumulated]);
+
+  const showBackendIssue = isLoading && accumulated.length === 0;
 
   const handleSortChange = (newSort: SortOption) => {
     setSortBy(newSort);
@@ -154,6 +160,17 @@ const ExercisesView: React.FC<ExercisesViewProps> = ({ onSelect }) => {
         }
       />
 
+      {showBackendIssue && (
+        <div className="mb-6 p-4 rounded-2xl bg-amber-500/10 border border-amber-500/20">
+          <p className="text-[10px] font-bold text-amber-500 uppercase tracking-wider mb-1">
+            Backend Connectivity Issue
+          </p>
+          <p className="text-[9px] text-amber-500/70 leading-relaxed">
+            We're having trouble reaching the movement database. Showing local library instead.
+          </p>
+        </div>
+      )}
+
       <div className="space-y-4 mb-8">
         <div className="relative">
           <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-white/20" size={14} />
@@ -170,9 +187,10 @@ const ExercisesView: React.FC<ExercisesViewProps> = ({ onSelect }) => {
         </div>
 
         <div className="flex gap-2 overflow-x-auto custom-scrollbar -mx-6 px-6">
-          {categories.map(cat => (
+            {categories.map(cat => (
             <button
               key={cat}
+              type="button"
               onClick={() => {
                 setActiveCategory(cat);
                 resetPagination();
@@ -201,10 +219,11 @@ const ExercisesView: React.FC<ExercisesViewProps> = ({ onSelect }) => {
         <>
           <div className="grid grid-cols-2 gap-3.5 animate-slide-up">
             {exercises.map(ex => (
-              <div
+              <button
                 key={ex.id}
+                type="button"
                 onClick={() => onSelect(ex)}
-                className="relative aspect-[4/5] rounded-[28px] overflow-hidden press-scale group shadow-xl border border-white/5 bg-zinc-900"
+                className="relative aspect-[4/5] rounded-[28px] overflow-hidden press-scale group shadow-xl border border-white/5 bg-zinc-900 text-left"
               >
                 {ex.image && ex.image !== '' ? (
                   <img 
@@ -222,7 +241,7 @@ const ExercisesView: React.FC<ExercisesViewProps> = ({ onSelect }) => {
                   <h3 className="text-xs font-bold leading-tight text-white">{ex.name}</h3>
                   <p className="text-[8px] font-black uppercase tracking-widest text-white/30 mt-1.5">{ex.muscleGroup}</p>
                 </div>
-              </div>
+              </button>
             ))}
           </div>
 
@@ -230,12 +249,14 @@ const ExercisesView: React.FC<ExercisesViewProps> = ({ onSelect }) => {
             {paginationStatus === 'CanLoadMore' ? (
               <button
                 onClick={handleLoadMore}
+                type="button"
                 disabled={loadingMore}
                 className="h-10 px-5 rounded-full bg-white/10 border border-white/20 text-[10px] font-black uppercase tracking-[0.2em] text-white/90 disabled:opacity-60 disabled:cursor-not-allowed"
               >
                 {loadingMore ? 'Loading...' : 'Load More'}
               </button>
             ) : paginationStatus === 'Exhausted' && exercises.length > 0 ? (
+
               <div className="text-white/40 text-[10px] font-black uppercase tracking-[0.2em]">
                 All exercises loaded
               </div>

@@ -35,10 +35,19 @@ const child = spawn(command, ['convex', 'dev', '--local'], {
 
 child.on('exit', (code, signal) => {
   if (signal) {
-    process.kill(process.pid, signal);
+    console.warn(`[dev:convex] Convex dev server received signal: ${signal}. Staying alive to allow frontend development.`);
     return;
   }
-  process.exit(code ?? 0);
+  if (code !== 0) {
+    console.error(`[dev:convex] Convex dev server failed with code ${code}.`);
+    console.error(`[dev:convex] This is likely due to your Convex account being disabled or exceeding plan limits.`);
+    console.error(`[dev:convex] PROCEEDING WITH FRONTEND DEVELOPMENT ONLY (Offline mode).`);
+    
+    // Keep this process alive so concurrently doesn't kill the other services
+    setInterval(() => {}, 1000 * 60 * 60);
+  } else {
+    process.exit(0);
+  }
 });
 
 child.on('error', (error) => {

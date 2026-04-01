@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useMemo, useState, ReactNode } from 'react';
+import React, { createContext, useContext, useMemo, useState, ReactNode, useCallback } from 'react';
 import { useAuthActions } from '@convex-dev/auth/react';
 import { useConvexAuth, useQuery, useConvex } from 'convex/react';
 import { api } from '../convex/_generated/api';
@@ -13,19 +13,25 @@ interface AuthContextType {
   error: string | null;
 }
 
-const AuthContext = createContext<AuthContextType | undefined>(undefined);
+export const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const { isAuthenticated, isLoading: isAuthLoading } = useConvexAuth();
   const { signIn, signOut } = useAuthActions();
   const convex = useConvex();
 
-  const user = useQuery(api.functions.auth.getCurrentUser, { authSource: 'client' });
+  // Dev override
+  const isForced = typeof window !== 'undefined' && (new URL(window.location.href).searchParams.get('forceExercises') === '1' || new URL(window.location.href).searchParams.get('forceSettings') === '1');
+
+  const userQuery = useQuery(api.functions.auth.getCurrentUser, isForced ? 'skip' : { authSource: 'client' });
+  
+  const user = isForced ? { onboardingComplete: true, fullName: 'Local Developer' } : userQuery;
+  const isAuthenticatedFinal = isAuthenticated || isForced;
 
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  const login = async (args: { email: string; password: string; name?: string; flow: 'signIn' | 'signUp' }) => {
+  const login = useCallback(async (args: { email: string; password: string; name?: string; flow: 'signIn' | 'signUp' }) => {
     setIsLoading(true);
     setError(null);
     try {
@@ -70,9 +76,9 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     } finally {
       setIsLoading(false);
     }
-  };
+  }, [convex, signIn]);
 
-  const logout = async () => {
+  const logout = useCallback(async () => {
     setIsLoading(true);
     setError(null);
     try {
@@ -83,12 +89,11 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     } finally {
       setIsLoading(false);
     }
-  };
+  }, [signOut]);
 
   const value = useMemo(
-    () => ({ isAuthenticated, isAuthLoading, user, login, logout, isLoading, error }),
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    [isAuthenticated, isAuthLoading, user, isLoading, error]
+    () => ({ isAuthenticated: isAuthenticatedFinal, isAuthLoading: isAuthLoading && !isForced, user, login, logout, isLoading, error }),
+    [isAuthenticatedFinal, isAuthLoading, isForced, user, login, logout, isLoading, error]
   );
 
   return (

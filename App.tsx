@@ -44,14 +44,35 @@ export default function App() {
   const [signupData, setSignupData] = useState<{ name?: string; email?: string } | null>(null);
   const [authTimedOut, setAuthTimedOut] = useState(false);
 
+  // Dev override: force the Settings screen or Exercises screen
+  let devForceSettings = false;
+  let devForceExercises = false;
+  try {
+    if (typeof window !== 'undefined') {
+      const params = new URL(window.location.href).searchParams;
+      devForceSettings = params.get('forceSettings') === '1';
+      devForceExercises = params.get('forceExercises') === '1';
+    }
+  } catch (e) {
+    devForceSettings = false;
+    devForceExercises = false;
+  }
+
   const todayStr = useMemo(() => new Date().toISOString().split('T')[0], []);
-  const todayPlans = useQuery(api.userPlans.getDailyPlan, { date: todayStr });
-  const allPlans = useQuery(api.userPlans.getAllPlans);
-  const completeOnboarding = useMutation(api.functions.auth.completeOnboarding);
-  const updateMe = useMutation(api.profiles.updateMe);
+  
+  // Conditionally skip queries in forced dev mode to avoid crashes when provider is missing or backend is down
+  const todayPlans = useQuery(api.userPlans.getDailyPlan, devForceExercises || devForceSettings ? 'skip' : { date: todayStr });
+  const allPlans = useQuery(api.userPlans.getAllPlans, devForceExercises || devForceSettings ? 'skip' : undefined);
+  
+  // Mutations cannot be easily skipped with hooks, so we'll wrap their usage or mock them
+  const completeOnboardingInternal = useMutation(api.functions.auth.completeOnboarding);
+  const updateMeInternal = useMutation(api.profiles.updateMe);
+
+  const completeOnboarding = devForceExercises || devForceSettings ? async () => ({}) : completeOnboardingInternal;
+  const updateMe = devForceExercises || devForceSettings ? async () => ({}) : updateMeInternal;
 
   const isOnboardingComplete = !!user?.onboardingComplete;
-  const isAuthenticated = isNetworkAuthenticated && isOnboardingComplete;
+  const isAuthenticated = (isNetworkAuthenticated && isOnboardingComplete) || devForceExercises || devForceSettings;
 
 
   const [activeTab, setActiveTab] = useState<Tab>(Tab.HOME);
@@ -64,26 +85,16 @@ export default function App() {
   const [calendarIntent, setCalendarIntent] = useState<{ kind: 'workout' | 'meal'; dateStr: string } | null>(null);
   const [isCalendarOpen, setIsCalendarOpen] = useState(false);
 
-  // Dev override: force the Settings screen when URL contains ?forceSettings=1
-  let devForceSettings = false;
-  try {
-    if (typeof window !== 'undefined') {
-      devForceSettings = new URL(window.location.href).searchParams.get('forceSettings') === '1';
-      // DEV DEBUG: log forceSettings detection in production bundle
-      try { console.log('[DEV DEBUG] devForceSettings=', devForceSettings, 'url=', window.location.href); } catch (e) {}
-    }
-  } catch (e) {
-    devForceSettings = false;
-  }
-
-  // Dev helper: allow forcing the Settings screen by adding ?forceSettings=1 to the URL
+  // Dev helper
   useEffect(() => {
     try {
       const params = new URL(window.location.href).searchParams;
       if (params.get('forceSettings') === '1') {
-        // Force app into authenticated + settings tab for visual verification in dev
         setAuthView('authenticated');
         setActiveTab(Tab.SETTINGS);
+      } else if (params.get('forceExercises') === '1') {
+        setAuthView('authenticated');
+        setActiveTab(Tab.EXERCISES);
       }
     } catch (e) {
       // silent

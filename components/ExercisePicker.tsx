@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import { useQuery } from 'convex/react';
 import { api } from '../convex/_generated/api';
 import { Exercise, WorkoutExercise } from '../types';
@@ -105,8 +105,7 @@ const ExercisePicker: React.FC<ExercisePickerProps> = ({
     setPaginationStatus(
       result.status === 'Exhausted' ? 'Exhausted' : 'CanLoadMore'
     );
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [result]);
+  }, [result, cursor]);
 
   // Load more handler
   const handleLoadMore = useCallback(() => {
@@ -116,7 +115,10 @@ const ExercisePicker: React.FC<ExercisePickerProps> = ({
   }, [result, paginationStatus, isLoading]);
 
   // Use accumulated exercises for display, with mock fallback if needed
-  const exercises = accumulated.length > 0 ? accumulated : MOCK_EXERCISES;
+  const exercises = useMemo(() => {
+    if (accumulated.length > 0) return accumulated;
+    return MOCK_EXERCISES || [];
+  }, [accumulated]);
 
   if (!isOpen) return null;
 
@@ -152,6 +154,7 @@ const ExercisePicker: React.FC<ExercisePickerProps> = ({
             </span>
           </div>
           <button 
+            type="button"
             onClick={onClose}
             className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center press-scale"
           >
@@ -161,6 +164,16 @@ const ExercisePicker: React.FC<ExercisePickerProps> = ({
 
         {/* Search and Filter */}
         <div className="px-6 pb-4">
+          {isLoading && accumulated.length === 0 && (
+            <div className="mb-4 p-3 rounded-xl bg-amber-500/10 border border-amber-500/20">
+              <p className="text-[9px] font-bold text-amber-500 uppercase tracking-wider mb-0.5">
+                Backend Issue
+              </p>
+              <p className="text-[8px] text-amber-500/70 leading-tight">
+                Showing local movements while we reconnect.
+              </p>
+            </div>
+          )}
           <div className="relative mb-4">
             <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-white/30" size={14} />
             <input 
@@ -176,6 +189,7 @@ const ExercisePicker: React.FC<ExercisePickerProps> = ({
             {CATEGORIES.map(cat => (
               <button
                 key={cat}
+                type="button"
                 onClick={() => setActiveCategory(cat)}
                 className={`px-4 h-9 rounded-full whitespace-nowrap text-[9px] font-black uppercase tracking-wider transition-all border flex-shrink-0 ${
                   activeCategory === cat 
@@ -225,6 +239,7 @@ const ExercisePicker: React.FC<ExercisePickerProps> = ({
                 {showLoadMore ? (
                   <button
                     onClick={handleLoadMore}
+                    type="button"
                     disabled={isLoading}
                     className={`px-6 h-11 rounded-full text-[10px] font-black uppercase tracking-widest transition-all border flex items-center gap-2 ${
                       isLoading

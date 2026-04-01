@@ -613,7 +613,6 @@ export const getCategories = query({
 
 export const batchCreate = mutation({
   args: {
-    adminSecret: v.optional(v.string()),
     exercises: v.array(v.object({
       name: v.string(),
       muscleGroup: v.string(),
@@ -648,19 +647,7 @@ export const batchCreate = mutation({
     })),
   },
   handler: async (ctx, args) => {
-    let coachId: Id<"profiles"> | undefined;
-    if (isAdminSecret(args.adminSecret)) {
-      // Find or create an admin profile
-      const adminProfile = await ctx.db
-        .query("profiles")
-        .withIndex("by_authSource", (q) => q.eq("authSource", "trainer"))
-        .first();
-      coachId = adminProfile?._id;
-    } else {
-      const profile = await requireTrainer(ctx);
-      coachId = profile._id;
-    }
-
+    const profile = await requireTrainer(ctx);
     for (const ex of args.exercises) {
       // Check for duplicates by libraryId first (preferred)
       const existingByLibraryId = ex.libraryId
@@ -688,7 +675,7 @@ export const batchCreate = mutation({
           overview: ex.overview || ex.name,
           benefits: ex.benefits || [],
           libraryId: ex.libraryId || `batch-${Date.now()}-${Math.floor(Math.random() * 1000)}`,
-          coachId,
+          coachId: profile._id,
           createdAt: Date.now(),
         });
       }

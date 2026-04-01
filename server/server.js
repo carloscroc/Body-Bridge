@@ -238,6 +238,29 @@ app.use((err, req, res, next) => {
   res.status(500).json({ error: 'Internal Server Error' });
 });
 
-app.listen(port, () => {
-  logger.info(`Backend secure proxy running on http://localhost:${port}`);
+const server = app.listen(port, () => {
+  console.log(`Backend secure proxy running on http://localhost:${port}`);
+});
+
+server.on('error', (e) => {
+  console.error('Server error:', e);
+});
+
+// Explicitly keep the event loop alive
+const stayAlive = setInterval(() => {
+  // noop
+}, 60000);
+
+process.on('SIGTERM', () => {
+  console.log('Received SIGTERM, shutting down...');
+  clearInterval(stayAlive);
+  server.close();
+  process.exit(0);
+});
+
+process.on('SIGINT', () => {
+  console.log('Received SIGINT, shutting down...');
+  clearInterval(stayAlive);
+  server.close();
+  process.exit(0);
 });
