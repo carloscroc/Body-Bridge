@@ -193,11 +193,16 @@ export default function App() {
     if (isAuthLoading) return;
 
     if (!isNetworkAuthenticated) {
+      // If we are transitionning, don't show landing yet
+      if (localStorage.getItem('auth_transitioning') === '1') {
+         return;
+      }
       setAuthView('landing');
       return;
     }
 
-    if (user === undefined) return; // profile still loading
+    // Login successful
+    localStorage.removeItem('auth_transitioning');
 
     const onboardingComplete = !!user?.onboardingComplete;
     

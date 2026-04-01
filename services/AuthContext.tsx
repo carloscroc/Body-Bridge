@@ -57,14 +57,20 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
       }
       
       try {
+        console.log('[Auth] Attempting signIn:', args.flow, args.email);
         await signIn('password', formData);
-        // Force a brief delay and check if we're still on the auth page
+        console.log('[Auth] signIn call finished');
+        
+        // Save a flag to indicate we're in the middle of a login transition
+        localStorage.setItem('auth_transitioning', '1');
+
+        // Force a page refresh/redirect to ensure session is picked up
         setTimeout(() => {
-          if (window.location.pathname === '/' || window.location.hash === '#/auth') {
-            window.location.href = '/dashboard';
-          }
-        }, 800);
+          console.log('[Auth] Redirecting to dashboard');
+          window.location.href = '/dashboard';
+        }, 1000);
       } catch (signInErr: any) {
+        console.error('[Auth] signIn error in block:', signInErr);
         // 2. If we reach here, we know the account exists (for signIn) or doesn't exist (for signUp).
         // Since Convex masks the exact reason with a 500 Server Error, we can now confidently infer it.
         if (args.flow === 'signIn') {
