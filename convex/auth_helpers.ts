@@ -14,3 +14,13 @@ export const checkAccountExists = query({
     return !!existingAccount;
   },
 });
+
+export const getProfileForBootstrap = query({
+  args: { email: v.string() },
+  handler: async (ctx, args) => {
+    return await ctx.db
+      .query("profiles")
+      .withIndex("by_email_authSource", (q) => q.eq("email", args.email).eq("authSource", "client"))
+      .first();
+  },
+});

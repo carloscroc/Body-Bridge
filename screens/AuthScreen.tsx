@@ -15,9 +15,10 @@ export type AuthMode = 'landing' | 'login' | 'signup';
 interface AuthScreenProps {
   onAuth: (data: { name?: string; email: string; password: string; method: 'login' | 'signup' }) => void | Promise<void>;
   initialMode?: AuthMode;
+  onModeChange?: (mode: AuthMode) => void;
 }
 
-const AuthScreen: React.FC<AuthScreenProps> = ({ onAuth, initialMode = 'landing' }) => {
+const AuthScreen: React.FC<AuthScreenProps> = ({ onAuth, initialMode = 'landing', onModeChange }) => {
   const [mode, setMode] = useState<AuthMode>(initialMode);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -33,6 +34,11 @@ const AuthScreen: React.FC<AuthScreenProps> = ({ onAuth, initialMode = 'landing'
     setName('');
     setAuthError(null);
   }, [initialMode]);
+
+  const updateMode = (nextMode: AuthMode) => {
+    setMode(nextMode);
+    onModeChange?.(nextMode);
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -130,7 +136,7 @@ const AuthScreen: React.FC<AuthScreenProps> = ({ onAuth, initialMode = 'landing'
       >
         <button
           type="button"
-          onClick={() => setMode('signup')}
+          onClick={() => updateMode('signup')}
           className="h-16 rounded-2xl bg-white text-black text-xs font-black uppercase tracking-[0.2em] press-scale shadow-2xl"
         >
           Start Training
@@ -138,7 +144,7 @@ const AuthScreen: React.FC<AuthScreenProps> = ({ onAuth, initialMode = 'landing'
         
         <button
           type="button"
-          onClick={() => setMode('login')}
+          onClick={() => updateMode('login')}
           className="h-16 rounded-2xl border border-white/10 text-white text-xs font-black uppercase tracking-[0.2em] press-scale bg-white/[0.02]"
         >
           Sign In
@@ -157,7 +163,7 @@ const AuthScreen: React.FC<AuthScreenProps> = ({ onAuth, initialMode = 'landing'
     >
       <button 
         type="button"
-        onClick={() => setMode('landing')}
+        onClick={() => updateMode('landing')}
         className="absolute top-8 left-6 w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-white/60 press-scale blur-surface bg-white/[0.03] z-50"
       >
         <ChevronLeft size={20} />
@@ -257,7 +263,7 @@ const AuthScreen: React.FC<AuthScreenProps> = ({ onAuth, initialMode = 'landing'
               setEmail('');
               setPassword('');
               setName('');
-              setMode(mode === 'login' ? 'signup' : 'login');
+              updateMode(mode === 'login' ? 'signup' : 'login');
             }}
             className="text-[10px] font-black uppercase tracking-[0.2em] text-white/30 hover:text-white transition-colors"
           >

@@ -39,7 +39,7 @@ function dayDiffYYYYMMDD(base: string, target: string): number {
 type AuthView = 'landing' | 'signup' | 'login' | 'onboarding' | 'authenticated';
 
 export default function App() {
-  const { isAuthenticated: isNetworkAuthenticated, isAuthLoading, user, login, logout } = useAuth();
+  const { isAuthenticated: isNetworkAuthenticated, isAuthLoading, user, login, logout, isLoading: isAuthTransitioning } = useAuth();
   const [authView, setAuthView] = useState<AuthView>('landing');
   const [signupData, setSignupData] = useState<{ name?: string; email?: string } | null>(null);
   const [authTimedOut, setAuthTimedOut] = useState(false);
@@ -193,27 +193,21 @@ export default function App() {
 
     if (isAuthLoading) return;
 
-    const transitionState = localStorage.getItem('auth_transitioning');
-    const transitionFlow = localStorage.getItem('auth_flow');
-
     if (!isNetworkAuthenticated) {
-      // If we are transitionning, don't show landing yet
-      if (transitionState === '1') {
-         return;
+      // Keep the current login/signup form visible after a failed auth attempt.
+      if (authView === 'authenticated' || authView === 'onboarding') {
+        setAuthView('landing');
       }
-      setAuthView('landing');
       return;
     }
 
-    // Login successful
-    localStorage.removeItem('auth_transitioning');
-    localStorage.removeItem('auth_flow');
+    if (user === undefined) return;
 
     const onboardingComplete = !!user?.onboardingComplete;
     
     if (onboardingComplete) {
       setAuthView('authenticated');
-    } else if (authView !== 'onboarding' || transitionFlow === 'signUp') {
+    } else if (authView !== 'onboarding') {
       setAuthView('onboarding');
     }
   }, [isNetworkAuthenticated, isAuthLoading, user, authView]);
@@ -416,12 +410,10 @@ export default function App() {
     );
   }
 
-  const isTransitioningAuth = localStorage.getItem('auth_transitioning') === '1';
-
   return (
     <div className="relative h-screen w-full bg-black text-white overflow-hidden">
       {/* Auth Flow */}
-      {isTransitioningAuth && (
+      {isAuthTransitioning && !isNetworkAuthenticated && (
         <div className="h-full flex flex-col items-center justify-center space-y-6">
           <div className="w-12 h-12 border-2 border-white/20 border-t-white rounded-full animate-spin" />
           <div className="editorial-title text-2xl italic text-white/40 uppercase tracking-widest">
@@ -430,7 +422,7 @@ export default function App() {
         </div>
       )}
 
-      {isAuthLoading && !authTimedOut && !isTransitioningAuth && (
+      {isAuthLoading && !authTimedOut && !isAuthTransitioning && (
         <div className="h-full flex items-center justify-center">
           <div className="text-white/30 text-sm">Restoring session...</div>
         </div>
@@ -447,7 +439,7 @@ export default function App() {
         </div>
       )}
 
-      {!isAuthLoading && !isNetworkAuthenticated && authView !== 'onboarding' && !devForceSettings && (
+      {!isNetworkAuthenticated && authView !== 'onboarding' && !devForceSettings && (!isAuthLoading || authView !== 'landing') && (
         <AuthScreen
           onAuth={async (data) => {
             setSignupData({ name: data.name, email: data.email });
@@ -469,6 +461,7 @@ export default function App() {
               // error handled in login component
             }
           }}
+          onModeChange={setAuthView}
           initialMode={authView === 'landing' ? 'landing' : (authView === 'signup' ? 'signup' : 'login')}
         />
       )}

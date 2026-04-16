@@ -19,8 +19,6 @@ import {
   Globe
 } from 'lucide-react';
 import { Member, UserSettings, TrainingGoal, ExperienceLevel } from '../types';
-import { useMutation } from 'convex/react';
-import { api } from '../convex/_generated/api';
 
 const MagneticButton = ({ children, onClick, className, disabled }: any) => {
   const ref = useRef<HTMLButtonElement>(null);
@@ -93,10 +91,12 @@ const SelectionCard = ({ selected, onClick, children, icon: Icon }: any) => (
 const FloatingLabelInput = ({ label, value, onChange, placeholder, type = 'text' }: any) => {
   const [isFocused, setIsFocused] = useState(false);
   const hasValue = value && value.length > 0;
+  const inputId = `onboarding-${label.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`;
 
   return (
     <div className={`relative pt-6 group`}>
       <motion.label
+        htmlFor={inputId}
         animate={{
           y: isFocused || hasValue ? -22 : 0,
           scale: isFocused || hasValue ? 0.8 : 1,
@@ -108,6 +108,7 @@ const FloatingLabelInput = ({ label, value, onChange, placeholder, type = 'text'
         {label}
       </motion.label>
       <input
+        id={inputId}
         type={type}
         value={value}
         onChange={onChange}
@@ -132,7 +133,6 @@ const TRAINING_GOALS: TrainingGoal[] = ['Fat Loss', 'Strength', 'Hypertrophy', '
 const EXPERIENCE_LEVELS: ExperienceLevel[] = ['Beginner', 'Intermediate', 'Advanced', 'Elite'];
 
 const OnboardingFlow: React.FC<OnboardingFlowProps> = ({ onComplete, initialData }) => {
-  const updateMe = useMutation(api.profiles.updateMe);
   const [currentStep, setCurrentStep] = useState<OnboardingStep>('identity');
   const [direction, setDirection] = useState(0);
   const stepIndex = STEPS.indexOf(currentStep);
@@ -151,16 +151,6 @@ const OnboardingFlow: React.FC<OnboardingFlowProps> = ({ onComplete, initialData
   const prevStep = () => { if (stepIndex > 0) { setDirection(-1); setCurrentStep(STEPS[stepIndex - 1]); } };
 
   const handleComplete = async () => {
-    await updateMe({
-      fullName: formData.name,
-      bio: formData.bio,
-      location: formData.location,
-      goal: formData.settings?.training?.goal,
-      experienceLevel: formData.settings?.training?.experienceLevel,
-      trainingDaysPerWeek: formData.settings?.training?.trainingDaysPerWeek,
-      equipmentAccess: formData.settings?.training?.equipmentAccess,
-      units: formData.settings?.units,
-    });
     onComplete(formData as any);
   };
 
@@ -209,7 +199,7 @@ const OnboardingFlow: React.FC<OnboardingFlowProps> = ({ onComplete, initialData
             <h1 className="text-6xl font-black italic uppercase tracking-tighter text-white">Frequency</h1>
             <div className="grid grid-cols-4 gap-4">
               {[3, 4, 5, 6].map(day => (
-                <button key={day} onClick={() => updateSettings({ trainingDaysPerWeek: day })} className={`h-20 rounded-2xl font-black text-2xl border transition-all ${formData.settings.training.trainingDaysPerWeek === day ? 'bg-white text-black border-white' : 'bg-white/5 text-white/40 border-white/10'}`}>{day}</button>
+                <button type="button" key={day} onClick={() => updateSettings({ trainingDaysPerWeek: day })} className={`h-20 rounded-2xl font-black text-2xl border transition-all ${formData.settings.training.trainingDaysPerWeek === day ? 'bg-white text-black border-white' : 'bg-white/5 text-white/40 border-white/10'}`}>{day}</button>
               ))}
             </div>
           </div>
@@ -237,7 +227,7 @@ const OnboardingFlow: React.FC<OnboardingFlowProps> = ({ onComplete, initialData
 
       <div className="fixed bottom-0 left-0 right-0 p-8 md:p-12 flex justify-between items-center bg-gradient-to-t from-black to-transparent pointer-events-none">
         {stepIndex > 0 ? (
-          <button onClick={prevStep} className="w-14 h-14 rounded-full bg-white/5 flex items-center justify-center text-white border border-white/10 pointer-events-auto"><ChevronLeft /></button>
+            <button type="button" onClick={prevStep} className="w-14 h-14 rounded-full bg-white/5 flex items-center justify-center text-white border border-white/10 pointer-events-auto"><ChevronLeft /></button>
         ) : <div />}
         <MagneticButton onClick={currentStep === 'complete' ? handleComplete : nextStep} className="h-16 px-10 rounded-full bg-white text-black font-black uppercase tracking-widest text-xs flex items-center gap-3 shadow-2xl pointer-events-auto">
           {currentStep === 'complete' ? 'Initialize' : 'Next Phase'} <ChevronRight size={18} />

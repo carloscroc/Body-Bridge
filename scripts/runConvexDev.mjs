@@ -19,6 +19,7 @@ if (existsSync(envPath)) {
 const {
   CONVEX_DEPLOYMENT,
   CONVEX_URL,
+  CONVEX_AGENT_MODE,
   VITE_CONVEX_URL,
   VITE_CONVEX_SITE_URL,
   VITE_SUPABASE_URL,
@@ -31,17 +32,14 @@ const {
 if (!CONVEX_DEPLOYMENT) {
   cleanEnv.CONVEX_SELF_HOSTED_URL = CONVEX_SELF_HOSTED_URL || 'http://localhost:8443';
 }
-cleanEnv.CONVEX_SITE_URL = CONVEX_SITE_URL || 'http://127.0.0.1:3210';
+cleanEnv.CONVEX_AGENT_MODE = CONVEX_AGENT_MODE || 'anonymous';
+cleanEnv.CONVEX_SITE_URL = CONVEX_SITE_URL || 'http://127.0.0.1:3211';
 
 const command = process.platform === 'win32' ? 'npx.cmd' : 'npx';
 const child = spawn(command, [
   'convex', 'dev',
+  '--local',
   '--typecheck', 'disable',
-  '--configure', 'existing',
-  '--dev-deployment', 'local',
-  '--team', 'thebest-croc',
-  '--project', 'fitness-03cc8',
-  '--local-force-upgrade',
 ], {
   cwd: rootDir,
   stdio: 'inherit',

@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useMemo, useState, ReactNode, useCallback } from 'react';
+import React, { createContext, useContext, useMemo, useState, ReactNode, useCallback, useEffect } from 'react';
 import { useAuthActions } from '@convex-dev/auth/react';
 import { useConvexAuth, useQuery, useConvex } from 'convex/react';
 import { api } from '../convex/_generated/api';
@@ -24,9 +24,170 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
   const isForced = false;
 
   const userQuery = useQuery(api.functions.auth.getCurrentUser, isForced ? 'skip' : { authSource: 'client' });
-  
-  const user = isForced ? { onboardingComplete: true, fullName: 'Local Developer' } : userQuery;
-  const isAuthenticatedFinal = isAuthenticated || isForced;
+  const [sessionUser, setSessionUser] = useState<any | null>(null);
+
+  const hasStoredAuthTokens = useCallback(() => {
+    if (typeof window === 'undefined') return false;
+    return Object.keys(window.localStorage).some(
+      (key) => key.startsWith('__convexAuthJWT_') || key.startsWith('__convexAuthRefreshToken_'),
+    );
+  }, []);
+
+  const getStoredAccessToken = useCallback(() => {
+    if (typeof window === 'undefined') return null;
+    const tokenKey = Object.keys(window.localStorage).find((key) => key.startsWith('__convexAuthJWT_'));
+    return tokenKey ? window.localStorage.getItem(tokenKey) : null;
+  }, []);
+
+  const getBootstrappedEmail = useCallback(() => {
+    if (typeof window === 'undefined') return null;
+    return window.localStorage.getItem('forge_last_auth_email');
+  }, []);
+
+  const setBootstrappedIdentity = useCallback((profile: any | null, email?: string) => {
+    if (typeof window === 'undefined') return;
+    if (profile?.email || email) {
+      window.localStorage.setItem('forge_last_auth_email', profile?.email ?? email ?? '');
+    }
+  }, []);
+
+  const clearBootstrappedIdentity = useCallback(() => {
+    if (typeof window === 'undefined') return;
+    window.localStorage.removeItem('forge_last_auth_email');
+  }, []);
+
+  const fetchBootstrapProfile = useCallback(async (email?: string | null) => {
+    const targetEmail = email ?? getBootstrappedEmail();
+    if (!targetEmail) {
+      return null;
+    }
+
+    return await convex.query(api.auth_helpers.getProfileForBootstrap, { email: targetEmail });
+  }, [convex, getBootstrappedEmail]);
+
+  const fetchCurrentUserWithStoredToken = useCallback(async () => {
+    const token = getStoredAccessToken();
+    const convexUrl = import.meta.env.VITE_CONVEX_URL;
+
+    if (!token || !convexUrl) {
+      return null;
+    }
+
+    const response = await fetch(`${convexUrl}/api/query`, {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json',
+        authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify({
+        path: 'functions/auth:getCurrentUser',
+        format: 'convex_encoded_json',
+        args: [{ authSource: 'client' }],
+      }),
+    });
+
+    if (!response.ok) {
+      return null;
+    }
+
+    const payload = await response.json();
+    if (payload?.status !== 'success') {
+      return null;
+    }
+
+    return payload.value ?? null;
+  }, [getStoredAccessToken]);
+
+  const waitForAuthenticatedUser = useCallback(async () => {
+    for (let attempt = 0; attempt < 12; attempt += 1) {
+      const currentUser = await fetchCurrentUserWithStoredToken();
+      if (currentUser) {
+        return currentUser;
+      }
+      await new Promise((resolve) => window.setTimeout(resolve, 250));
+    }
+    return null;
+  }, [fetchCurrentUserWithStoredToken]);
+
+  useEffect(() => {
+    if (userQuery) {
+      setSessionUser(userQuery);
+      setBootstrappedIdentity(userQuery);
+      return;
+    }
+
+    if (isAuthenticated || !hasStoredAuthTokens()) {
+      setSessionUser(null);
+      if (!hasStoredAuthTokens()) {
+        clearBootstrappedIdentity();
+      }
+    }
+  }, [userQuery, isAuthenticated, hasStoredAuthTokens, setBootstrappedIdentity, clearBootstrappedIdentity]);
+
+  useEffect(() => {
+    if (isForced || isAuthenticated || userQuery || !hasStoredAuthTokens()) {
+      return;
+    }
+
+    let cancelled = false;
+
+    void waitForAuthenticatedUser().then((currentUser) => {
+      if (!cancelled && currentUser) {
+        setSessionUser(currentUser);
+        setBootstrappedIdentity(currentUser);
+      }
+    });
+
+    return () => {
+      cancelled = true;
+    };
+  }, [isAuthenticated, userQuery, hasStoredAuthTokens, waitForAuthenticatedUser, setBootstrappedIdentity]);
+
+  useEffect(() => {
+    if (userQuery || sessionUser || !getBootstrappedEmail()) {
+      return;
+    }
+
+    let cancelled = false;
+
+    void fetchBootstrapProfile().then((profile) => {
+      if (!cancelled && profile) {
+        setSessionUser(profile);
+      }
+    });
+
+    return () => {
+      cancelled = true;
+    };
+  }, [userQuery, sessionUser, getBootstrappedEmail, fetchBootstrapProfile]);
+
+  useEffect(() => {
+    const convexClient = convex as typeof convex & {
+      setAuth?: (fetchToken: (args: { forceRefreshToken: boolean }) => Promise<string | null>, onChange?: (isAuthenticated: boolean) => void) => void;
+      clearAuth?: () => void;
+    };
+
+    if (!convexClient.setAuth) {
+      return;
+    }
+
+    if (!hasStoredAuthTokens()) {
+      convexClient.clearAuth?.();
+      return;
+    }
+
+    convexClient.setAuth(
+      async () => getStoredAccessToken(),
+      (authenticated) => {
+        if (!authenticated && !hasStoredAuthTokens()) {
+          setSessionUser(null);
+        }
+      },
+    );
+  }, [convex, getStoredAccessToken, hasStoredAuthTokens]);
+
+  const user = isForced ? { onboardingComplete: true, fullName: 'Local Developer' } : (userQuery ?? sessionUser);
+  const isAuthenticatedFinal = isAuthenticated || !!sessionUser || isForced;
 
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -60,16 +221,17 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
         console.log('[Auth] Attempting signIn:', args.flow, args.email);
         await signIn('password', formData);
         console.log('[Auth] signIn call finished');
-        
-        // Save a flag to indicate we're in the middle of a login transition
-        localStorage.setItem('auth_transitioning', '1');
-        localStorage.setItem('auth_flow', args.flow);
-
-        // Force a page refresh/redirect to ensure session is picked up
-        setTimeout(() => {
-          console.log('[Auth] Redirecting to root for session refresh');
-          window.location.href = '/';
-        }, 800);
+        const currentUser = await waitForAuthenticatedUser();
+        if (currentUser) {
+          setSessionUser(currentUser);
+          setBootstrappedIdentity(currentUser, args.email);
+        } else {
+          const bootstrapProfile = await fetchBootstrapProfile(args.email);
+          if (bootstrapProfile) {
+            setSessionUser(bootstrapProfile);
+            setBootstrappedIdentity(bootstrapProfile, args.email);
+          }
+        }
       } catch (signInErr: any) {
         console.error('[Auth] signIn error in block:', signInErr);
         // 2. If we reach here, we know the account exists (for signIn) or doesn't exist (for signUp).
@@ -89,20 +251,24 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     } finally {
       setIsLoading(false);
     }
-  }, [convex, signIn]);
+  }, [convex, signIn, waitForAuthenticatedUser, fetchBootstrapProfile, setBootstrappedIdentity]);
 
   const logout = useCallback(async () => {
     setIsLoading(true);
     setError(null);
     try {
       await signOut();
+      setSessionUser(null);
+      clearBootstrappedIdentity();
+      const convexClient = convex as typeof convex & { clearAuth?: () => void };
+      convexClient.clearAuth?.();
     } catch (err: any) {
       setError(err?.message || 'Logout failed');
       throw err;
     } finally {
       setIsLoading(false);
     }
-  }, [signOut]);
+  }, [clearBootstrappedIdentity, convex, signOut]);
 
   const value = useMemo(
     () => ({ isAuthenticated: isAuthenticatedFinal, isAuthLoading: isAuthLoading && !isForced, user, login, logout, isLoading, error }),
