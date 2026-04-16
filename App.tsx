@@ -39,7 +39,7 @@ function dayDiffYYYYMMDD(base: string, target: string): number {
 type AuthView = 'landing' | 'signup' | 'login' | 'onboarding' | 'authenticated';
 
 export default function App() {
-  const { isAuthenticated: isNetworkAuthenticated, isAuthLoading, user, login, logout, isLoading: isAuthTransitioning } = useAuth();
+  const { isAuthenticated: isNetworkAuthenticated, isAuthLoading, user: authUser, login, logout, isLoading: isAuthTransitioning } = useAuth();
   const [authView, setAuthView] = useState<AuthView>('landing');
   const [signupData, setSignupData] = useState<{ name?: string; email?: string } | null>(null);
   const [authTimedOut, setAuthTimedOut] = useState(false);
@@ -48,12 +48,6 @@ export default function App() {
   let devForceSettings = false;
   let devForceExercises = false;
   
-  const todayStr = useMemo(() => new Date().toISOString().split('T')[0], []);
-  
-  // Conditionally skip queries in forced dev mode to avoid crashes when provider is missing or backend is down
-  const todayPlans = useQuery(api.userPlans.getDailyPlan, { date: todayStr });
-  const allPlans = useQuery(api.userPlans.getAllPlans, undefined);
-  
   // Mutations cannot be easily skipped with hooks, so we'll wrap their usage or mock them
   const completeOnboardingInternal = useMutation(api.functions.auth.completeOnboarding);
   const updateMeInternal = useMutation(api.profiles.updateMe);
@@ -61,8 +55,15 @@ export default function App() {
   const completeOnboarding = completeOnboardingInternal;
   const updateMe = updateMeInternal;
 
+  const user = authUser;
   const isOnboardingComplete = !!user?.onboardingComplete;
   const isAuthenticated = (isNetworkAuthenticated && isOnboardingComplete);
+
+  const todayStr = useMemo(() => new Date().toISOString().split('T')[0], []);
+  
+  // Conditionally skip queries in forced dev mode to avoid crashes when provider is missing or backend is down
+  const todayPlans = useQuery(api.userPlans.getDailyPlan, { date: todayStr });
+  const allPlans = useQuery(api.userPlans.getAllPlans, undefined);
 
 
   const [activeTab, setActiveTab] = useState<Tab>(Tab.HOME);
@@ -118,14 +119,14 @@ export default function App() {
   const createSelfNotification = useMutation(api.notifications.createSelfNotification);
 
   useEffect(() => {
-    if (!isAuthenticated || !todayPlans || !allPlans || !user) return;
+    if (!isAuthenticated || user === null || !todayPlans || !allPlans) return;
 
     const sendReminders = async () => {
       // --- Plan summary reminder ---
       if (user.planSummaryLastShown !== todayStr) {
         try {
           const todayCount = todayPlans.length;
-          const upcoming = allPlans.filter((p) => {
+          const upcoming = allPlans.filter((p: any) => {
             return p.scheduledDate > todayStr && p.scheduledDate <= datePlusDaysUTC(todayStr, 7);
           });
 

@@ -1,0 +1,26 @@
+{
+  "chunk_num": 1,
+  "files": [
+    "02-workouts-tab.png",
+    "03-creation-hub-overlay.png",
+    "04-creation-hub-fullpage.png",
+    "05-single-workout-builder.png",
+    "06-training-program-builder.png",
+    "07-creation-hub-bottom-zindex.png",
+    "08-creation-hub-viewport-check.png",
+    "09-workouts-after-dismiss.png",
+    "after-signup.png",
+    "app-load-check.png",
+    "app-verification.png",
+    "app_screenshot.png",
+    "auto_auth_result.png",
+    "dashboard.png",
+    "debug_onboarding_final.png",
+    "exercise-picker.png",
+    "final-complete-onboarding.png",
+    "final_app.png",
+    "final_step_1.png",
+    "final_step_10.png"
+  ],
+  "total_files": 20
+}

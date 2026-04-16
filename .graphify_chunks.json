@@ -1,0 +1,376 @@
+[
+  [
+    {
+      "path": "02-workouts-tab.png",
+      "type": "image"
+    },
+    {
+      "path": "03-creation-hub-overlay.png",
+      "type": "image"
+    },
+    {
+      "path": "04-creation-hub-fullpage.png",
+      "type": "image"
+    },
+    {
+      "path": "05-single-workout-builder.png",
+      "type": "image"
+    },
+    {
+      "path": "06-training-program-builder.png",
+      "type": "image"
+    },
+    {
+      "path": "07-creation-hub-bottom-zindex.png",
+      "type": "image"
+    },
+    {
+      "path": "08-creation-hub-viewport-check.png",
+      "type": "image"
+    },
+    {
+      "path": "09-workouts-after-dismiss.png",
+      "type": "image"
+    },
+    {
+      "path": "after-signup.png",
+      "type": "image"
+    },
+    {
+      "path": "app-load-check.png",
+      "type": "image"
+    },
+    {
+      "path": "app-verification.png",
+      "type": "image"
+    },
+    {
+      "path": "app_screenshot.png",
+      "type": "image"
+    },
+    {
+      "path": "auto_auth_result.png",
+      "type": "image"
+    },
+    {
+      "path": "dashboard.png",
+      "type": "image"
+    },
+    {
+      "path": "debug_onboarding_final.png",
+      "type": "image"
+    },
+    {
+      "path": "exercise-picker.png",
+      "type": "image"
+    },
+    {
+      "path": "final-complete-onboarding.png",
+      "type": "image"
+    },
+    {
+      "path": "final_app.png",
+      "type": "image"
+    },
+    {
+      "path": "final_step_1.png",
+      "type": "image"
+    },
+    {
+      "path": "final_step_10.png",
+      "type": "image"
+    }
+  ],
+  [
+    {
+      "path": "final_step_2.png",
+      "type": "image"
+    },
+    {
+      "path": "final_step_3.png",
+      "type": "image"
+    },
+    {
+      "path": "final_step_4.png",
+      "type": "image"
+    },
+    {
+      "path": "final_step_5.png",
+      "type": "image"
+    },
+    {
+      "path": "final_step_6.png",
+      "type": "image"
+    },
+    {
+      "path": "final_step_7.png",
+      "type": "image"
+    },
+    {
+      "path": "final_step_8.png",
+      "type": "image"
+    },
+    {
+      "path": "final_step_9.png",
+      "type": "image"
+    },
+    {
+      "path": "final_verification.png",
+      "type": "image"
+    },
+    {
+      "path": "final_visibility_check.png",
+      "type": "image"
+    },
+    {
+      "path": "home-verification.png",
+      "type": "image"
+    },
+    {
+      "path": "homeview-final.png",
+      "type": "image"
+    },
+    {
+      "path": "homeview-test.png",
+      "type": "image"
+    },
+    {
+      "path": "home_screen_fixed.png",
+      "type": "image"
+    },
+    {
+      "path": "iphone_phase_1.png",
+      "type": "image"
+    },
+    {
+      "path": "iphone_phase_10.png",
+      "type": "image"
+    },
+    {
+      "path": "iphone_phase_2.png",
+      "type": "image"
+    },
+    {
+      "path": "iphone_phase_3.png",
+      "type": "image"
+    },
+    {
+      "path": "iphone_phase_4.png",
+      "type": "image"
+    },
+    {
+      "path": "iphone_phase_5.png",
+      "type": "image"
+    }
+  ],
+  [
+    {
+      "path": "iphone_phase_6.png",
+      "type": "image"
+    },
+    {
+      "path": "iphone_phase_7.png",
+      "type": "image"
+    },
+    {
+      "path": "iphone_phase_8.png",
+      "type": "image"
+    },
+    {
+      "path": "iphone_phase_9.png",
+      "type": "image"
+    },
+    {
+      "path": "landing-page.png",
+      "type": "image"
+    },
+    {
+      "path": "landing_page.png",
+      "type": "image"
+    },
+    {
+      "path": "library-final-redesign.png",
+      "type": "image"
+    },
+    {
+      "path": "library-menu-open.png",
+      "type": "image"
+    },
+    {
+      "path": "menu-open.png",
+      "type": "image"
+    },
+    {
+      "path": "notifications-members-dropdown.png",
+      "type": "image"
+    },
+    {
+      "path": "onboarding_only.png",
+      "type": "image"
+    },
+    {
+      "path": "phase_1.png",
+      "type": "image"
+    },
+    {
+      "path": "phase_10.png",
+      "type": "image"
+    },
+    {
+      "path": "phase_2.png",
+      "type": "image"
+    },
+    {
+      "path": "phase_3.png",
+      "type": "image"
+    },
+    {
+      "path": "phase_4.png",
+      "type": "image"
+    },
+    {
+      "path": "phase_5.png",
+      "type": "image"
+    },
+    {
+      "path": "phase_6.png",
+      "type": "image"
+    },
+    {
+      "path": "phase_7.png",
+      "type": "image"
+    },
+    {
+      "path": "phase_8.png",
+      "type": "image"
+    }
+  ],
+  [
+    {
+      "path": "phase_9.png",
+      "type": "image"
+    },
+    {
+      "path": "settings_screen.png",
+      "type": "image"
+    },
+    {
+      "path": "step1-training-architect.png",
+      "type": "image"
+    },
+    {
+      "path": "step2-build-blueprint.png",
+      "type": "image"
+    },
+    {
+      "path": "step_1.png",
+      "type": "image"
+    },
+    {
+      "path": "step_10.png",
+      "type": "image"
+    },
+    {
+      "path": "step_1_Identity.png",
+      "type": "image"
+    },
+    {
+      "path": "step_2.png",
+      "type": "image"
+    },
+    {
+      "path": "step_3.png",
+      "type": "image"
+    },
+    {
+      "path": "step_4.png",
+      "type": "image"
+    },
+    {
+      "path": "step_5.png",
+      "type": "image"
+    },
+    {
+      "path": "step_6.png",
+      "type": "image"
+    },
+    {
+      "path": "step_7.png",
+      "type": "image"
+    },
+    {
+      "path": "step_8.png",
+      "type": "image"
+    },
+    {
+      "path": "step_9.png",
+      "type": "image"
+    },
+    {
+      "path": "task-2-picker-load-more.png",
+      "type": "image"
+    },
+    {
+      "path": "task-3-library-pagination.png",
+      "type": "image"
+    },
+    {
+      "path": "training-architect-bottom.png",
+      "type": "image"
+    },
+    {
+      "path": "training-architect-header.png",
+      "type": "image"
+    },
+    {
+      "path": "training-architect-step2-full.png",
+      "type": "image"
+    }
+  ],
+  [
+    {
+      "path": "ux-freestyle-player-360x640.png",
+      "type": "image"
+    },
+    {
+      "path": "ux-freestyle-player-current.png",
+      "type": "image"
+    },
+    {
+      "path": "verify-onboarding-fix.png",
+      "type": "image"
+    },
+    {
+      "path": "visibility-test.png",
+      "type": "image"
+    },
+    {
+      "path": "workout-session-playing.png",
+      "type": "image"
+    },
+    {
+      "path": "workout-video-playing-fixed.png",
+      "type": "image"
+    },
+    {
+      "path": "workouts-header.png",
+      "type": "image"
+    },
+    {
+      "path": "artifacts\\settings-after-click.png",
+      "type": "image"
+    },
+    {
+      "path": "artifacts\\settings-error.png",
+      "type": "image"
+    },
+    {
+      "path": "artifacts\\settings-not-found.png",
+      "type": "image"
+    },
+    {
+      "path": "convex_deploy_artifacts\\auto_auth_result.png",
+      "type": "image"
+    }
+  ]
+]

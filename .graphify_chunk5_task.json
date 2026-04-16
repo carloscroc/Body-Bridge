@@ -1,0 +1,17 @@
+{
+  "chunk_num": 5,
+  "files": [
+    "ux-freestyle-player-360x640.png",
+    "ux-freestyle-player-current.png",
+    "verify-onboarding-fix.png",
+    "visibility-test.png",
+    "workout-session-playing.png",
+    "workout-video-playing-fixed.png",
+    "workouts-header.png",
+    "artifacts\\settings-after-click.png",
+    "artifacts\\settings-error.png",
+    "artifacts\\settings-not-found.png",
+    "convex_deploy_artifacts\\auto_auth_result.png"
+  ],
+  "total_files": 11
+}

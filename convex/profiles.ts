@@ -47,7 +47,7 @@ export const getMe = query({
     return await ctx.db
       .query("profiles")
       .withIndex("by_userId", (q) => q.eq("userId", userId))
-      .unique();
+      .first();
   },
 });
 
@@ -74,7 +74,7 @@ export const updateMe = mutation({
     const profile = await ctx.db
       .query("profiles")
       .withIndex("by_userId", (q) => q.eq("userId", userId))
-      .unique();
+      .first();
     console.log("updateMe profile:", profile);
 
     if (!profile) throw new Error("Profile not found");
