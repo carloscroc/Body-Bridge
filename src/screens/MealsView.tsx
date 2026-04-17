@@ -6,7 +6,7 @@ import CalendarPreviewModal from '../components/CalendarPreviewModal';
 import PlanningBanner from '../components/PlanningBanner';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useMutation } from 'convex/react';
-import { api } from '../convex/_generated/api';
+import { api } from '@convex/_generated/api';
 
 interface MealsViewProps {
   onSelect: (m: Meal) => void;

@@ -31,7 +31,7 @@ import {
 import { CommunityPostTag, CommunityPostAttachment } from '../types';
 import NotificationBell from '../components/NotificationBell';
 import { useMutation, useQuery } from 'convex/react';
-import { api } from '../convex/_generated/api';
+import { api } from '@convex/_generated/api';
 import { useAuth } from '../services/AuthContext';
 
 type CommunitySubTab = 'Community' | 'Leaderboards' | 'About';

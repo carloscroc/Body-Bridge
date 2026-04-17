@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useMutation } from 'convex/react';
-import { api } from '../convex/_generated/api';
+import { api } from '@convex/_generated/api';
 import { useAuth } from '../services/AuthContext';
 import { 
   ChevronLeft, Clock, Zap, Flame, Share2, Bookmark, 

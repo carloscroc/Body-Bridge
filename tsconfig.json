@@ -20,7 +20,10 @@
     "jsx": "react-jsx",
     "paths": {
       "@/*": [
-        "./*"
+        "./src/*"
+      ],
+      "@convex/*": [
+        "./convex/*"
       ]
     },
     "allowImportingTsExtensions": true,

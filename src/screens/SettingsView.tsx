@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo, useRef } from 'react';
 import { useMutation, useQuery } from 'convex/react';
-import { api } from '../convex/_generated/api';
+import { api } from '@convex/_generated/api';
 import { useAuth } from '../services/AuthContext';
 import {
   ArrowLeft, Camera, Bell, Shield,

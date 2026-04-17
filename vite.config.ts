@@ -25,9 +25,10 @@ export default defineConfig(({ mode }) => {
       },
       plugins: [react()],
       resolve: {
-        alias: {
-          '@': path.resolve(__dirname, '.'),
-        }
-      }
+         alias: {
+           '@': path.resolve(__dirname, './src'),
+           '@convex': path.resolve(__dirname, './convex'),
+         }
+       }
     };
 });
