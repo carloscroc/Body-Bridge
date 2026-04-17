@@ -255,8 +255,9 @@ export const advancedSearch = query({
 
     // Apply equipment filtering to non-search results if needed
     if (args.equipment && args.equipment.length > 0 && paginatedResult) {
-      paginatedResult.page = paginatedResult.page.filter(ex =>
-        ex.equipment?.some((eq: string) => args.equipment!.includes(eq))
+      const equipmentToFilter = args.equipment;
+      paginatedResult.page = paginatedResult.page.filter((ex: any) =>
+        ex.equipment?.some((eq: string) => equipmentToFilter.includes(eq))
       );
     }
 

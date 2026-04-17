@@ -12,7 +12,7 @@ export default defineConfig(({ mode }) => {
         allowedHosts: ['carlos-caban.tail68c757.ts.net'],
         proxy: {
           '/api': {
-            target: 'http://localhost:3000',
+            target: 'http://localhost:3001',
             changeOrigin: true,
           }
         }

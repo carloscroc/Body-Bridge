@@ -36,7 +36,7 @@ export const { auth, signIn, signOut, store, isAuthenticated } = convexAuth({
         // Check if profile already exists for this email (migration/re-auth case)
         const profileByEmail = await ctx.db
           .query("profiles")
-          .withIndex("by_email", (q) => q.eq("email", args.profile.email))
+          .filter((q) => q.eq(q.field("email"), args.profile.email))
           .first();
 
         if (profileByEmail) {
@@ -56,7 +56,7 @@ export const { auth, signIn, signOut, store, isAuthenticated } = convexAuth({
         // Check if profile already exists for this user by userId
         const existingProfile = await ctx.db
           .query("profiles")
-          .withIndex("by_userId", (q) => q.eq("userId", userId))
+          .filter((q) => q.eq(q.field("userId"), userId))
           .first();
 
         if (existingProfile) {

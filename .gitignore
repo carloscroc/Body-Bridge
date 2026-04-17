@@ -31,3 +31,4 @@ nul
 
 # Git worktrees for isolated workspace
 .worktrees/
+.gstack/

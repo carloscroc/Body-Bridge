@@ -1,7 +1,7 @@
 import { v } from "convex/values";
 import { query, mutation } from "./_generated/server";
 import { paginationOptsValidator } from "convex/server";
-import type { Id } from "./_generated/dataModel";
+import type { Id, Doc } from "./_generated/dataModel";
 
 // ============== POSTS ==============
 
@@ -305,7 +305,7 @@ export const getLikeStatus = query({
   },
   returns: v.boolean(),
   handler: async (ctx, args) => {
-    let like;
+    let like: Doc<"socialLikes"> | null = null;
     if (args.postId) {
       like = await ctx.db
         .query("socialLikes")
@@ -337,7 +337,7 @@ export const toggleLike = mutation({
   }),
   handler: async (ctx, args) => {
     const now = Date.now();
-    let existingLike;
+    let existingLike: Doc<"socialLikes"> | null = null;
 
     if (args.postId) {
       existingLike = await ctx.db
@@ -735,16 +735,18 @@ export const getTopFollowers = query({
       .map(async (item) => {
         const user = await ctx.db.get(item.userId);
         if (!user) return null;
+        const profile = user as Doc<"profiles">;
         return {
-          userId: user._id as Id<"profiles">,
-          userName: user.fullName || user.email,
-          userAvatar: user.avatarUrl,
-          userRole: user.authSource,
+          userId: profile._id,
+          userName: profile.fullName || profile.email,
+          userAvatar: profile.avatarUrl,
+          userRole: profile.authSource,
           followerCount: item.followerCount,
         };
       });
 
-    return (await Promise.all(sorted)).filter(Boolean);
+    const results = await Promise.all(sorted);
+    return results.filter((r): r is NonNullable<typeof r> => r !== null);
   },
 });
 
@@ -834,31 +836,34 @@ export const getCommunityAnalytics = query({
     const newFollowers = weekFollows.length;
 
     // Engagement rate
-    const engagementRate = totalPosts > 0
+    const engagementRateStr = totalPosts > 0
       ? ((totalLikes + totalComments) / totalPosts * 100).toFixed(1)
-      : 0;
+      : "0";
 
     // Top contributors (most posts)
     const postCounts = new Map();
     allPosts.forEach((post) => {
-      const count = postCounts.get(post.authorId) || 0;
-      postCounts.set(post.authorId, count + 1);
+      postCounts.set(post.authorId, (postCounts.get(post.authorId) || 0) + 1);
     });
 
-    const topContributors = Array.from(postCounts.entries())
+    const contributorPromises = Array.from(postCounts.entries())
       .map(([userId, count]) => ({ userId, postCount: count }))
       .sort((a, b) => b.postCount - a.postCount)
       .slice(0, 5)
       .map(async (item) => {
         const user = await ctx.db.get(item.userId);
         if (!user) return null;
+        const profile = user as Doc<"profiles">;
         return {
-          userId: user._id as Id<"profiles">,
-          userName: user.fullName || user.email,
-          userAvatar: user.avatarUrl,
+          userId: profile._id,
+          userName: profile.fullName || profile.email,
+          userAvatar: profile.avatarUrl,
           postCount: item.postCount,
         };
       });
+
+    const topContributorsRaw = await Promise.all(contributorPromises);
+    const topContributors = topContributorsRaw.filter((c): c is NonNullable<typeof c> => c !== null);
 
     // Recent activity (last 10)
     const recentActivity = await ctx.db
@@ -884,9 +889,9 @@ export const getCommunityAnalytics = query({
       totalComments,
       totalFollowers,
       activeUsers,
-      engagementRate: parseFloat(engagementRate),
+      engagementRate: parseFloat(engagementRateStr),
       newFollowers,
-      topContributors: (await Promise.all(topContributors)).filter(Boolean),
+      topContributors,
       recentActivity: formattedActivity,
     };
   },
@@ -946,16 +951,16 @@ export const getEngagementTrend = query({
         )
         .collect();
 
-      const engagement = dayPosts.length > 0
+      const engagementStr = dayPosts.length > 0
         ? ((dayLikes.length + dayComments.length) / dayPosts.length * 100).toFixed(1)
-        : 0;
+        : "0";
 
       trend.push({
         date: date.toISOString().split('T')[0],
         posts: dayPosts.length,
         likes: dayLikes.length,
         comments: dayComments.length,
-        engagement: parseFloat(engagement),
+        engagement: parseFloat(engagementStr),
       });
     }
 

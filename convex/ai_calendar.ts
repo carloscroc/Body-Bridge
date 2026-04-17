@@ -5,6 +5,7 @@ import { action } from "./_generated/server";
 import { api, internal } from "./_generated/api";
 import { requireIdentity } from "./lib/auth";
 import { getAuthUserId } from "@convex-dev/auth/server";
+import { Doc } from "./_generated/dataModel";
 
 /**
  * AI Chat with Calendar and Exercise Management Tools
@@ -19,7 +20,7 @@ export const sendTrainerCalendarChat = action({
     message: v.string(),
     clientId: v.optional(v.id("profiles")),
   },
-  handler: async (ctx, args) => {
+  handler: async (ctx, args): Promise<{ reply: string }> => {
     const identity = await requireIdentity(ctx);
     // Get the Convex user ID
     const userId = await getAuthUserId(ctx);
@@ -56,10 +57,10 @@ export const sendTrainerCalendarChat = action({
       last && last.role === "user" && last.text === userMessage ? chatHistory.slice(0, -1) : chatHistory;
 
     // Fetch exercises for context
-    const allExercises = await ctx.runQuery(api.exercises.fetchExercises);
+    const allExercises = await ctx.runQuery(api.exercises.list, {});
     // Fetch relationship and events if clientId provided
     let relationship = null;
-    let calendarEvents: any[] = [];
+    let calendarEvents: Array<Doc<"calendarEvents">> = [];
     if (args.clientId) {
       relationship = await ctx.runQuery(api.tables.coachClientRelationships.getRelationship, {
         coachId: coachProfile._id,
@@ -79,7 +80,7 @@ export const sendTrainerCalendarChat = action({
     }
 
     // AI Call
-    const aiResult = await ctx.runAction(internal.llm.aiHttp.executeAIAction, {
+    const aiResult: any = await ctx.runAction(internal.llm.aiHttp.executeAIAction, {
       kind: "trainerCalendarChat",
       chatHistory: historyWithoutLast,
       userMessage,
@@ -96,7 +97,7 @@ Context:
 - Today is ${new Date().toDateString()}
 - Coach: ${coachProfile.fullName || coachProfile.email}
 - Client Profile: ${args.clientId || "None selected"}
-- Available Exercises: ${allExercises.map(e => e.name).join(", ")}
+- Available Exercises: ${allExercises.map((e: any) => e.name).join(", ")}
 `,
       allExercises,
       calendarEvents,
