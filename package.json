@@ -19,7 +19,6 @@
   },
   "dependencies": {
     "@auth/core": "0.37.0",
-    "@capacitor/cli": "^8.3.1",
     "@capacitor/core": "^8.3.1",
     "@convex-dev/auth": "^0.0.90",
     "@google/genai": "^1.40.0",
@@ -53,6 +52,9 @@
     "winston": "^3.19.0"
   },
   "devDependencies": {
+    "@capacitor/cli": "^8.3.1",
+    "@capacitor/android": "^8.3.1",
+    "@capacitor/ios": "^8.3.1",
     "@playwright/test": "^1.58.2",
     "@tailwindcss/postcss": "^4.1.18",
     "@types/dompurify": "^3.0.5",

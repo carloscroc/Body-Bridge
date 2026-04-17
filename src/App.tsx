@@ -1,22 +1,31 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect, useMemo, lazy, Suspense } from 'react';
 import { useMutation, useQuery } from 'convex/react';
 import { api } from '@convex/_generated/api';
 import { useAuth } from './services/AuthContext';
 import { Tab, Workout, Meal, Exercise } from './types';
-import AuthScreen from './screens/AuthScreen';
-import OnboardingFlow from './screens/OnboardingFlow';
-import HomeView from './screens/HomeView';
-import ExercisesView from './screens/ExercisesView';
-import WorkoutsView from './screens/WorkoutsView';
-import MealsView from './screens/MealsView';
-import CommunityView from './screens/CommunityView';
-import MembersView from './screens/MembersView';
-import SettingsView from './screens/SettingsView';
-import WorkoutDetail from './screens/WorkoutDetail';
-import MealDetail from './screens/MealDetail';
-import ExerciseDetail from './screens/ExerciseDetail';
-import TabBar from './components/TabBar';
-import CalendarView from './screens/Calendar';
+
+const AuthScreen = lazy(() => import('./screens/AuthScreen'));
+const OnboardingFlow = lazy(() => import('./screens/OnboardingFlow'));
+const HomeView = lazy(() => import('./screens/HomeView'));
+const ExercisesView = lazy(() => import('./screens/ExercisesView'));
+const WorkoutsView = lazy(() => import('./screens/WorkoutsView'));
+const MealsView = lazy(() => import('./screens/MealsView'));
+const CommunityView = lazy(() => import('./screens/CommunityView'));
+const MembersView = lazy(() => import('./screens/MembersView'));
+const SettingsView = lazy(() => import('./screens/SettingsView'));
+const WorkoutDetail = lazy(() => import('./screens/WorkoutDetail'));
+const MealDetail = lazy(() => import('./screens/MealDetail'));
+const ExerciseDetail = lazy(() => import('./screens/ExerciseDetail'));
+const CalendarView = lazy(() => import('./screens/Calendar'));
+const TabBar = lazy(() => import('./components/TabBar'));
+
+function ViewLoader() {
+  return (
+    <div className="h-full flex items-center justify-center">
+      <div className="w-8 h-8 border-2 border-white/20 border-t-white rounded-full animate-spin" />
+    </div>
+  );
+}
 
 // Helpers to keep day calculations stable across timezones
 // - Parse YYYY-MM-DD as UTC midnight
@@ -441,102 +450,114 @@ export default function App() {
       )}
 
       {!isNetworkAuthenticated && authView !== 'onboarding' && !devForceSettings && (!isAuthLoading || authView !== 'landing') && (
-        <AuthScreen
-          onAuth={async (data) => {
-            setSignupData({ name: data.name, email: data.email });
-            localStorage.removeItem('app_logged_out');
-            try {
-              await login({
-                email: data.email,
-                password: data.password,
-                name: data.name,
-                flow: data.method === 'login' ? 'signIn' : 'signUp',
-              });
-              // Local Dev Redirect
-              if (data.method === 'login') {
-                setAuthView('authenticated');
-              } else {
-                setAuthView('onboarding');
+        <Suspense fallback={<ViewLoader />}>
+          <AuthScreen
+            onAuth={async (data) => {
+              setSignupData({ name: data.name, email: data.email });
+              localStorage.removeItem('app_logged_out');
+              try {
+                await login({
+                  email: data.email,
+                  password: data.password,
+                  name: data.name,
+                  flow: data.method === 'login' ? 'signIn' : 'signUp',
+                });
+                // Local Dev Redirect
+                if (data.method === 'login') {
+                  setAuthView('authenticated');
+                } else {
+                  setAuthView('onboarding');
+                }
+              } catch (err) {
+                // error handled in login component
               }
-            } catch (err) {
-              // error handled in login component
-            }
-          }}
-          onModeChange={setAuthView}
-          initialMode={authView === 'landing' ? 'landing' : (authView === 'signup' ? 'signup' : 'login')}
-        />
+            }}
+            onModeChange={setAuthView}
+            initialMode={authView === 'landing' ? 'landing' : (authView === 'signup' ? 'signup' : 'login')}
+          />
+        </Suspense>
       )}
 
       {!isAuthLoading && isNetworkAuthenticated && user !== undefined && !isOnboardingComplete && (
-        <OnboardingFlow 
-          initialData={signupData || undefined}
-          onComplete={async (local) => {
-            await completeOnboarding({
-              fullName: local.name,
-              avatarUrl: local.avatar,
-              goal: local.settings?.training?.goal,
-              experienceLevel: local.settings?.training?.experienceLevel,
-              trainingDaysPerWeek: local.settings?.training?.trainingDaysPerWeek,
-              equipmentAccess: local.settings?.training?.equipmentAccess,
-              bio: local.bio,
-              location: local.location,
-              units: local.settings?.units,
-              migratedFromLocal: true,
-            });
-            setAuthView('authenticated');
-          }} 
-        />
+        <Suspense fallback={<ViewLoader />}>
+          <OnboardingFlow 
+            initialData={signupData || undefined}
+            onComplete={async (local) => {
+              await completeOnboarding({
+                fullName: local.name,
+                avatarUrl: local.avatar,
+                goal: local.settings?.training?.goal,
+                experienceLevel: local.settings?.training?.experienceLevel,
+                trainingDaysPerWeek: local.settings?.training?.trainingDaysPerWeek,
+                equipmentAccess: local.settings?.training?.equipmentAccess,
+                bio: local.bio,
+                location: local.location,
+                units: local.settings?.units,
+                migratedFromLocal: true,
+              });
+              setAuthView('authenticated');
+            }} 
+          />
+        </Suspense>
       )}
 
       {!isAuthLoading && (devForceSettings ? (
         // DEV: force-show settings for visual verification
         <div className="h-full overflow-y-auto custom-scrollbar transition-opacity duration-300">
-          <SettingsView onBack={() => setActiveTab(Tab.HOME)} onLogout={() => {}} />
+          <Suspense fallback={<ViewLoader />}>
+            <SettingsView onBack={() => setActiveTab(Tab.HOME)} onLogout={() => {}} />
+          </Suspense>
         </div>
       ) : isAuthenticated ? (
         <div 
           className={`h-full overflow-y-auto custom-scrollbar transition-opacity duration-300 ${isTransitioning ? 'opacity-0' : 'opacity-100'}`}
         >
-          {renderContent()}
+          <Suspense fallback={<ViewLoader />}>
+            {renderContent()}
+          </Suspense>
         </div>
       ) : null)}
 
       {isCalendarOpen && (
         <div className="fixed inset-0 z-[260] bg-[#050505]">
-          <CalendarView
-            initialDate={calendarInitialDate ?? undefined}
-            onClose={() => setIsCalendarOpen(false)}
-            onSelectWorkout={(workout) => {
-              setIsCalendarOpen(false);
-              setSelectedWorkout(workout);
-            }}
-            onSelectMeal={(meal) => {
-              setIsCalendarOpen(false);
-              setSelectedMeal(meal);
-            }}
-            onNavigateToWorkouts={() => {
-              setIsCalendarOpen(false);
-              handleTabChange(Tab.WORKOUTS);
-            }}
-            onNavigateToMeals={() => {
-              setIsCalendarOpen(false);
-              handleTabChange(Tab.MEALS);
-            }}
-            onCalendarRequest={(kind, date) => {
-              const dateStr = date.toISOString().split('T')[0];
-              setIsCalendarOpen(false);
-              setCalendarIntent({ kind, dateStr });
-              handleTabChange(kind === 'workout' ? Tab.WORKOUTS : Tab.MEALS);
-            }}
-          />
+          <Suspense fallback={<ViewLoader />}>
+            <CalendarView
+              initialDate={calendarInitialDate ?? undefined}
+              onClose={() => setIsCalendarOpen(false)}
+              onSelectWorkout={(workout) => {
+                setIsCalendarOpen(false);
+                setSelectedWorkout(workout);
+              }}
+              onSelectMeal={(meal) => {
+                setIsCalendarOpen(false);
+                setSelectedMeal(meal);
+              }}
+              onNavigateToWorkouts={() => {
+                setIsCalendarOpen(false);
+                handleTabChange(Tab.WORKOUTS);
+              }}
+              onNavigateToMeals={() => {
+                setIsCalendarOpen(false);
+                handleTabChange(Tab.MEALS);
+              }}
+              onCalendarRequest={(kind, date) => {
+                const dateStr = date.toISOString().split('T')[0];
+                setIsCalendarOpen(false);
+                setCalendarIntent({ kind, dateStr });
+                handleTabChange(kind === 'workout' ? Tab.WORKOUTS : Tab.MEALS);
+              }}
+            />
+          </Suspense>
         </div>
       )}
 
       {isAuthenticated && !isDetailOpen && !isCommunityView && !isSettingsView && !isCalendarOpen && (
-        <TabBar
-          activeTab={activeTab}
-          onTabChange={handleTabChange}
-        />
+        <Suspense fallback={null}>
+          <TabBar
+            activeTab={activeTab}
+            onTabChange={handleTabChange}
+          />
+        </Suspense>
       )}
     </div>
   );
