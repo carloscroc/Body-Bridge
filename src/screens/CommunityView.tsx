@@ -44,15 +44,15 @@ import { useAuth } from '../services/AuthContext';
 type CommunitySubTab = 'Community' | 'Leaderboards' | 'About';
 const SUB_TABS: CommunitySubTab[] = ['Community', 'Leaderboards', 'About'];
 
-const FILTER_CATEGORIES = [
+const FILTER_CATEGORIES: ReadonlyArray<{ key: string; label: string; icon?: React.ComponentType<{ size?: number; className?: string }> }> = [
   { key: 'All', label: 'All' },
-  { key: 'General Discussion', label: 'General' },
-  { key: 'PR', label: 'PR' },
-  { key: 'Ask', label: 'Ask' },
-  { key: 'Wins', label: 'Wins' },
-  { key: 'Form Check', label: 'Form Check' },
-  { key: 'Meal', label: 'Meal' },
-] as const;
+  { key: 'General Discussion', label: 'General', icon: MessageSquare },
+  { key: 'PR', label: 'PR', icon: Zap },
+  { key: 'Ask', label: 'Ask', icon: QuestionIcon },
+  { key: 'Wins', label: 'Wins', icon: CheckCircle2 },
+  { key: 'Form Check', label: 'Form Check', icon: Eye },
+  { key: 'Meal', label: 'Meal', icon: Apple },
+];
 
 const POST_TAGS: Array<{ tag: CommunityPostTag; label: string; icon: React.ReactNode }> = [
   { tag: 'General Discussion', label: 'General', icon: <MessageSquare size={16} /> },
@@ -62,6 +62,15 @@ const POST_TAGS: Array<{ tag: CommunityPostTag; label: string; icon: React.React
   { tag: 'Form Check', label: 'Form Check', icon: <Eye size={16} /> },
   { tag: 'Meal', label: 'Meal', icon: <Apple size={16} /> },
 ];
+
+const CATEGORY_DISPLAY: Record<string, { label: string; emoji: string }> = {
+  'General Discussion': { label: 'General', emoji: '💬' },
+  'PR': { label: 'PR', emoji: '⚡' },
+  'Ask': { label: 'Ask', emoji: '❓' },
+  'Wins': { label: 'Wins', emoji: '🏆' },
+  'Form Check': { label: 'Form Check', emoji: '👁' },
+  'Meal': { label: 'Meal', emoji: '🍎' },
+};
 
 // ============== HELPERS ==============
 
@@ -95,6 +104,10 @@ const getLevelFromPostCount = (count: number): { level: number; label: string; c
   return { level: 1, label: 'New', color: 'bg-zinc-500' };
 };
 
+const getCategoryDisplay = (category: string): { label: string; emoji: string } => {
+  return CATEGORY_DISPLAY[category] ?? { label: category, emoji: '' };
+};
+
 // ============== PROFILE HELPERS ==============
 
 type MemberProfile = {
@@ -120,6 +133,255 @@ const getProfileForName = (name: string): MemberProfile => {
   };
 };
 
+// ============== LOCAL COMPONENTS ==============
+
+// --- Community Notice Bar ---
+const CommunityNoticeBar = ({
+  icon: Icon,
+  secondaryIcon: SecondaryIcon,
+  text,
+  onDismiss,
+}: {
+  icon: React.ComponentType<{ size?: number; className?: string }>;
+  secondaryIcon?: React.ComponentType<{ size?: number; className?: string }>;
+  text: string;
+  onDismiss?: () => void;
+}) => (
+  <div className="mx-5 mb-4 bg-[#1c1c1e] rounded-2xl px-4 py-3 flex items-center gap-3 border border-white/[0.05]">
+    <Icon size={16} className="text-amber-400 shrink-0" />
+    {SecondaryIcon && <SecondaryIcon size={12} className="text-zinc-600 shrink-0" />}
+    <span className="flex-1 text-[13px] text-zinc-300 font-medium leading-snug">{text}</span>
+    {onDismiss && (
+      <button type="button" onClick={onDismiss} className="text-zinc-600 hover:text-white transition-colors shrink-0 ml-1">
+        <X size={14} />
+      </button>
+    )}
+  </div>
+);
+
+// --- Avatar with Level Badge ---
+const AvatarWithBadge = ({
+  src,
+  alt,
+  level,
+  onClick,
+  size = 36,
+}: {
+  src: string;
+  alt: string;
+  level: number;
+  onClick?: () => void;
+  size?: number;
+}) => (
+  <button
+    type="button"
+    onClick={onClick}
+    className="relative shrink-0 rounded-full border border-white/10 overflow-visible"
+    style={{ width: size, height: size }}
+    aria-label={alt}
+  >
+    <img
+      src={src}
+      className="w-full h-full rounded-full object-cover"
+      alt=""
+    />
+    <div
+      className="absolute -bottom-0.5 -right-0.5 w-[16px] h-[16px] rounded-full bg-blue-500 border-2 border-[#050505] flex items-center justify-center text-[7px] font-black text-white leading-none"
+    >
+      {level}
+    </div>
+  </button>
+);
+
+// --- Post Meta Row ---
+const PostMetaRow = ({
+  authorName,
+  createdAt,
+  category,
+  onAuthorClick,
+}: {
+  authorName: string;
+  createdAt: string;
+  category: string;
+  onAuthorClick: () => void;
+}) => {
+  const catDisplay = getCategoryDisplay(category);
+  return (
+    <div className="flex items-center gap-3">
+      <AvatarWithBadge
+        src={`https://i.pravatar.cc/100?u=${authorName}`}
+        alt={`View ${authorName}'s profile`}
+        level={1}
+        onClick={onAuthorClick}
+      />
+      <div className="min-w-0">
+        <div className="flex items-center gap-2">
+          <button
+            type="button"
+            className="text-[14px] font-bold text-white truncate bg-transparent border-0 p-0 cursor-pointer"
+            onClick={onAuthorClick}
+          >
+            {authorName}
+          </button>
+        </div>
+        <div className="flex items-center gap-1.5 text-[11px] text-zinc-500 font-bold">
+          <span>{timeAgoShort(new Date(createdAt).toISOString())}</span>
+          <span className="text-zinc-800">·</span>
+          <span>{catDisplay.emoji} {catDisplay.label}</span>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// --- Post Media Thumbnail ---
+const PostMediaThumb = ({ src, isVideo }: { src: string; isVideo?: boolean }) => (
+  <div className="w-20 h-20 rounded-xl overflow-hidden shrink-0 mt-1 relative">
+    <img src={src} className="w-full h-full object-cover" alt="" />
+    {isVideo && (
+      <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
+        <div className="w-8 h-8 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
+          <Play size={14} fill="white" className="text-white ml-0.5" />
+        </div>
+      </div>
+    )}
+  </div>
+);
+
+// --- Post Action Row ---
+const PostActionRow = ({
+  likeCount,
+  commentCount,
+  onLike,
+  onComment,
+  onShare,
+}: {
+  likeCount: number;
+  commentCount: number;
+  onLike: () => void;
+  onComment: () => void;
+  onShare: () => void;
+}) => (
+  <div className="flex items-center gap-6 mt-3">
+    <button type="button" onClick={onLike}
+      className="flex items-center gap-1.5 text-[12px] font-bold text-zinc-500 hover:text-white transition-colors"
+    >
+      <Heart size={15} />
+      {likeCount > 0 && <span>{likeCount}</span>}
+    </button>
+    <button type="button" onClick={onComment}
+      className="flex items-center gap-1.5 text-[12px] font-bold text-zinc-500 hover:text-white transition-colors"
+    >
+      <MessageCircle size={15} />
+      {commentCount > 0 && <span>{commentCount}</span>}
+    </button>
+    <button type="button" onClick={onShare}
+      className="flex items-center gap-1.5 text-[12px] font-bold text-zinc-500 hover:text-white transition-colors"
+    >
+      <Share2 size={15} />
+    </button>
+  </div>
+);
+
+// --- Community Post Card ---
+const CommunityPostCard = ({
+  post,
+  isOwn,
+  freshness,
+  onProfile,
+  onLike,
+  onComment,
+  onShare,
+  onEdit,
+}: {
+  post: any;
+  isOwn: boolean;
+  freshness: string | null;
+  onProfile: (name: string) => void;
+  onLike: () => void;
+  onComment: () => void;
+  onShare: () => void;
+  onEdit: () => void;
+}) => {
+  const hasMedia = post.mediaUrls && post.mediaUrls.length > 0;
+  const isVideo = hasMedia && post.mediaUrls[0]?.includes('video');
+
+  return (
+    <div className="py-4">
+      <div className="flex gap-3">
+        {/* Left gutter — activity dot aligned with title area */}
+        <div className="flex flex-col items-center pt-8">
+          <div
+            className={`w-2 h-2 rounded-full ${
+              post.isPinned ? 'bg-amber-400' : freshness ? 'bg-blue-400' : 'bg-transparent'
+            }`}
+          />
+        </div>
+
+        {/* Center content column */}
+        <div className="flex-1 min-w-0 flex flex-col">
+          {/* Author header row */}
+          <div className="flex items-start justify-between gap-2">
+            <PostMetaRow
+              authorName={post.authorName}
+              createdAt={post.createdAt}
+              category={post.category || 'General'}
+              onAuthorClick={() => onProfile(post.authorName)}
+            />
+
+            {/* Pinned indicator + overflow */}
+            <div className="flex items-center gap-2 shrink-0">
+              {post.isPinned && (
+                <span className="flex items-center gap-1 text-amber-400 text-[10px] font-black uppercase tracking-wider">
+                  <Pin size={12} /> Pinned
+                </span>
+              )}
+              {isOwn && (
+                <button type="button" onClick={onEdit}
+                  className="text-zinc-700 hover:text-white transition-colors p-1"
+                >
+                  <MoreHorizontal size={16} />
+                </button>
+              )}
+            </div>
+          </div>
+
+          {/* Post title — boldest element */}
+          {post.title && (
+            <h3 className="text-[15px] font-extrabold text-white mt-2.5 leading-snug tracking-tight">
+              {post.title}
+            </h3>
+          )}
+
+          {/* Post body */}
+          <p className="text-[13px] text-zinc-400 mt-1.5 leading-relaxed line-clamp-3">
+            {post.content}
+          </p>
+
+          {/* Action bar */}
+          <PostActionRow
+            likeCount={post.likeCount ?? 0}
+            commentCount={post.commentCount ?? 0}
+            onLike={onLike}
+            onComment={onComment}
+            onShare={onShare}
+          />
+
+          {/* Freshness indicator — anchored at bottom */}
+          {freshness && (
+            <p className="text-[11px] font-bold text-blue-400 mt-2">{freshness}</p>
+          )}
+        </div>
+
+        {/* Right media thumbnail */}
+        {hasMedia && (
+          <PostMediaThumb src={post.mediaUrls[0]} isVideo={isVideo} />
+        )}
+      </div>
+    </div>
+  );
+};
+
 // ============== MAIN VIEW ==============
 
 const CommunityView: React.FC<{ onBack: () => void }> = ({ onBack }) => {
@@ -139,8 +401,7 @@ const CommunityView: React.FC<{ onBack: () => void }> = ({ onBack }) => {
       <header className="sticky top-0 z-[60] bg-[#050505]/95 backdrop-blur-xl border-b border-white/[0.03] pt-12">
         <div className="px-6 flex items-center justify-between mb-5">
           <div className="flex items-center gap-4">
-            <button
-              onClick={onBack}
+            <button type="button" onClick={onBack}
               className="w-10 h-10 -ml-2 rounded-full flex items-center justify-center text-white/40 hover:text-white hover:bg-white/5 transition-all active:scale-90"
               aria-label="Go back"
             >
@@ -154,7 +415,7 @@ const CommunityView: React.FC<{ onBack: () => void }> = ({ onBack }) => {
             </div>
           </div>
           <div className="flex items-center gap-2">
-            <button className="w-9 h-9 rounded-full bg-white/[0.03] border border-white/10 flex items-center justify-center press-scale transition-colors hover:bg-white/10">
+            <button type="button" className="w-9 h-9 rounded-full bg-white/[0.03] border border-white/10 flex items-center justify-center press-scale transition-colors hover:bg-white/10">
               <Search size={15} className="text-white/40" />
             </button>
             <NotificationBell />
@@ -164,6 +425,7 @@ const CommunityView: React.FC<{ onBack: () => void }> = ({ onBack }) => {
         <nav className="flex items-center gap-6 overflow-x-auto custom-scrollbar px-6">
           {SUB_TABS.map((tab) => (
             <button
+              type="button"
               key={tab}
               onClick={() => setActiveSubTab(tab)}
               className={`pb-3 text-[14px] font-bold whitespace-nowrap transition-all relative ${
@@ -255,11 +517,11 @@ const PostComposerModal = ({
           <h4 className="text-white font-bold text-[15px]">{isEditing ? 'Edit Post' : 'Create Post'}</h4>
           <div className="flex items-center gap-2">
             {isEditing && editingPost && onDelete && (
-              <button onClick={() => { if (window.confirm('Delete this post?')) { onDelete(editingPost); onClose(); } }} className="w-10 h-10 rounded-full bg-red-500/10 flex items-center justify-center text-red-400 hover:bg-red-500/20 transition-colors">
+              <button type="button" onClick={() => { if (window.confirm('Delete this post?')) { onDelete(editingPost); onClose(); } }} className="w-10 h-10 rounded-full bg-red-500/10 flex items-center justify-center text-red-400 hover:bg-red-500/20 transition-colors">
                 <Trash2 size={18} />
               </button>
             )}
-            <button onClick={onClose} className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-zinc-500 hover:text-white transition-colors">
+            <button type="button" onClick={onClose} className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-zinc-500 hover:text-white transition-colors">
               <X size={18} />
             </button>
           </div>
@@ -286,6 +548,7 @@ const PostComposerModal = ({
         <div className="flex flex-wrap gap-2 mt-4 mb-6">
           {POST_TAGS.map(({ tag, label, icon }) => (
             <button
+              type="button"
               key={tag}
               onClick={() => setCategory(tag)}
               className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[12px] font-bold transition-all ${
@@ -301,7 +564,7 @@ const PostComposerModal = ({
 
         {/* Media attach button */}
         <div className="flex items-center gap-3 mb-6">
-          <button className="w-10 h-10 rounded-full bg-white/[0.05] border border-white/10 flex items-center justify-center text-zinc-500 hover:text-white transition-colors">
+          <button type="button" className="w-10 h-10 rounded-full bg-white/[0.05] border border-white/10 flex items-center justify-center text-zinc-500 hover:text-white transition-colors">
             <Camera size={18} />
           </button>
           {attachments.length > 0 && (
@@ -310,7 +573,7 @@ const PostComposerModal = ({
         </div>
 
         <div className="border-t border-white/[0.03] pt-4">
-          <button onClick={submit} disabled={!canPost} className={`w-full h-14 rounded-2xl text-[12px] font-black uppercase tracking-widest shadow-xl transition-all ${canPost ? 'bg-white text-black' : 'bg-white/10 text-white/30'}`}>
+          <button type="button" onClick={submit} disabled={!canPost} className={`w-full h-14 rounded-2xl text-[12px] font-black uppercase tracking-widest shadow-xl transition-all ${canPost ? 'bg-white text-black' : 'bg-white/10 text-white/30'}`}>
             {isEditing ? 'Save Changes' : 'Post to Community'}
           </button>
         </div>
@@ -381,16 +644,14 @@ const CommentsSheet = ({
           </div>
           <div className="text-zinc-400 text-[13px] mt-0.5 leading-relaxed">{c.content}</div>
           <div className="flex items-center gap-4 mt-1.5">
-            <button
-              onClick={() => onToggleLike(c._id)}
+            <button type="button" onClick={() => onToggleLike(c._id)}
               className="flex items-center gap-1 text-zinc-600 hover:text-white transition-colors"
             >
               <Heart size={12} />
               {c.likeCount > 0 && <span className="text-[10px] font-bold">{c.likeCount}</span>}
             </button>
             {!isReply && (
-              <button
-                onClick={() => setReplyTo({ id: c._id, name: c.authorName })}
+              <button type="button" onClick={() => setReplyTo({ id: c._id, name: c.authorName })}
                 className="flex items-center gap-1 text-zinc-600 hover:text-white transition-colors"
               >
                 <Reply size={12} />
@@ -417,7 +678,7 @@ const CommentsSheet = ({
               <h2 className="text-[18px] font-black text-white">Comments</h2>
               <p className="text-zinc-600 text-[11px] font-bold mt-0.5">{post.commentCount} comment{post.commentCount !== 1 ? 's' : ''}</p>
             </div>
-            <button onClick={onClose} className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/60 hover:text-white transition-colors">
+            <button type="button" onClick={onClose} className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/60 hover:text-white transition-colors">
               <X size={18} />
             </button>
           </div>
@@ -440,7 +701,7 @@ const CommentsSheet = ({
             <span className="text-[11px] text-zinc-500 font-bold">
               Replying to <span className="text-white">{replyTo.name}</span>
             </span>
-            <button onClick={() => setReplyTo(null)} className="text-zinc-600 hover:text-white">
+            <button type="button" onClick={() => setReplyTo(null)} className="text-zinc-600 hover:text-white">
               <X size={12} />
             </button>
           </div>
@@ -457,8 +718,7 @@ const CommentsSheet = ({
               rows={1}
               onKeyDown={(e) => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); handleSubmit(); } }}
             />
-            <button
-              disabled={!canSend}
+            <button type="button" disabled={!canSend}
               onClick={handleSubmit}
               className={`w-12 h-12 rounded-2xl flex items-center justify-center border ${
                 canSend ? 'bg-white text-black' : 'bg-white/5 text-white/25'
@@ -487,7 +747,7 @@ const ProfileSheet = ({ profileName, isOpen, onClose }: { profileName: string | 
         <img src={`https://i.pravatar.cc/200?u=${profile.handle}`} className="w-24 h-24 rounded-full border-4 border-white/10 mx-auto mb-6 shadow-2xl" alt={profile.name} />
         <h3 className="text-2xl font-black text-white italic uppercase tracking-tighter">{profile.name}</h3>
         <p className="text-zinc-500 font-bold text-sm mb-8">{profile.handle}</p>
-        <button onClick={onClose} className="h-14 w-full bg-white/5 text-white/60 font-black uppercase tracking-widest text-xs rounded-2xl border border-white/10 press-scale">Close Profile</button>
+        <button type="button" onClick={onClose} className="h-14 w-full bg-white/5 text-white/60 font-black uppercase tracking-widest text-xs rounded-2xl border border-white/10 press-scale">Close Profile</button>
       </div>
     </div>
   );
@@ -505,6 +765,7 @@ const CommunityTab = ({ onOpenProfile }: { onOpenProfile: (name: string) => void
   const [activeCommentsPostId, setActiveCommentsPostId] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
   const [showSearch, setShowSearch] = useState(false);
+  const [showNotice, setShowNotice] = useState(true);
 
   // Queries
   const postsData = useQuery(
@@ -617,18 +878,30 @@ const CommunityTab = ({ onOpenProfile }: { onOpenProfile: (name: string) => void
     <div className="space-y-0 pt-4">
       {/* Composer Launcher Card */}
       <div className="px-5 mb-4">
-        <button
-          onClick={() => setIsModalOpen(true)}
-          className="w-full bg-[#1c1c1e] rounded-[20px] h-[54px] px-5 flex items-center gap-4 border border-white/[0.05] transition-all hover:bg-white/[0.04]"
+        <button type="button" onClick={() => setIsModalOpen(true)}
+          className="w-full bg-[#1c1c1e] rounded-[20px] h-[54px] px-5 flex items-center justify-between border border-white/[0.05] transition-all hover:bg-white/[0.04]"
         >
-          <img
-            src={user?.avatarUrl || "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&q=80&w=100"}
-            className="w-9 h-9 rounded-full border border-white/10"
-            alt=""
-          />
-          <span className="text-zinc-600 font-medium text-[14px]">Write something...</span>
+          <div className="flex items-center gap-4">
+            <img
+              src={user?.avatarUrl || "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&q=80&w=100"}
+              className="w-9 h-9 rounded-full border border-white/10"
+              alt=""
+            />
+            <span className="text-zinc-600 font-medium text-[14px]">Write something...</span>
+          </div>
+          <Plus size={18} className="text-zinc-600 shrink-0" />
         </button>
       </div>
+
+      {/* Notice / Event Alert */}
+      {showNotice && (
+        <CommunityNoticeBar
+          icon={Calendar}
+          secondaryIcon={Lock}
+          text="Q&A w/ Nate is happening in 4 days"
+          onDismiss={() => setShowNotice(false)}
+        />
+      )}
 
       {/* Search bar (toggleable) */}
       {showSearch && (
@@ -642,8 +915,7 @@ const CommunityTab = ({ onOpenProfile }: { onOpenProfile: (name: string) => void
               placeholder="Search posts..."
               className="w-full bg-[#1c1c1e] rounded-full h-11 pl-11 pr-10 text-white text-[14px] font-medium outline-none border border-white/[0.05] placeholder:text-zinc-700"
             />
-            <button
-              onClick={() => { setShowSearch(false); setSearchQuery(''); }}
+            <button type="button" onClick={() => { setShowSearch(false); setSearchQuery(''); }}
               className="absolute right-3 top-1/2 -translate-y-1/2 text-zinc-600 hover:text-white"
             >
               <X size={16} />
@@ -652,24 +924,28 @@ const CommunityTab = ({ onOpenProfile }: { onOpenProfile: (name: string) => void
         </div>
       )}
 
-      {/* Filter Chips Row */}
-      <div className="flex items-center gap-2 px-5 mb-5 overflow-x-auto custom-scrollbar scrollbar-none">
-        {FILTER_CATEGORIES.map((cat) => (
-          <button
-            key={cat.key}
-            onClick={() => setActiveCategory(cat.key)}
-            className={`px-4 py-2 rounded-full text-[12px] font-bold whitespace-nowrap transition-all ${
-              activeCategory === cat.key
-                ? 'bg-white text-black shadow-[0_0_12px_rgba(255,255,255,0.1)]'
-                : 'bg-white/[0.03] text-zinc-500 border border-white/10 hover:bg-white/[0.06]'
-            }`}
-          >
-            {cat.label}
-          </button>
-        ))}
+      {/* Filter Chips Row — with icons */}
+      <div className="flex items-center gap-2 px-5 mb-5 pb-1 overflow-x-auto custom-scrollbar scrollbar-none">
+        {FILTER_CATEGORIES.map((cat) => {
+          const IconComp = cat.icon;
+          return (
+            <button
+              type="button"
+              key={cat.key}
+              onClick={() => setActiveCategory(cat.key)}
+              className={`px-4 py-2 rounded-full text-[12px] font-bold whitespace-nowrap transition-all flex items-center gap-1.5 ${
+                activeCategory === cat.key
+                  ? 'bg-white text-black shadow-[0_0_12px_rgba(255,255,255,0.1)]'
+                  : 'bg-white/[0.03] text-zinc-500 border border-white/10 hover:bg-white/[0.06]'
+              }`}
+            >
+              {IconComp && <IconComp size={12} />}
+              {cat.label}
+            </button>
+          );
+        })}
         {/* Search toggle */}
-        <button
-          onClick={() => setShowSearch(!showSearch)}
+        <button type="button" onClick={() => setShowSearch(!showSearch)}
           className={`w-9 h-9 rounded-full flex items-center justify-center border shrink-0 transition-all ${
             showSearch
               ? 'bg-white text-black border-white'
@@ -692,135 +968,22 @@ const CommunityTab = ({ onOpenProfile }: { onOpenProfile: (name: string) => void
         {posts.map((post: any, index: number) => {
           const freshness = getFreshnessText(post);
           const isOwn = user && post.authorId === user.profileId;
-          const categoryTag = post.category || 'General';
-          const categoryIcon = POST_TAGS.find(t => t.tag === categoryTag)?.icon;
 
           return (
             <div key={post._id}>
               {/* Thin warm divider */}
-              {index > 0 && <div className="h-px bg-amber-900/20 mx-2 my-1" />}
+              {index > 0 && <div className="h-px bg-amber-900/15 mx-2 my-1" />}
 
-              <div className="py-4">
-                {/* 3-lane layout */}
-                <div className="flex gap-3">
-                  {/* Left gutter - activity dot */}
-                  <div className="flex flex-col items-center pt-2">
-                    <div className={`w-2 h-2 rounded-full ${post.isPinned ? 'bg-amber-400' : freshness ? 'bg-blue-400' : 'bg-transparent'}`} />
-                  </div>
-
-                  {/* Main content */}
-                  <div className="flex-1 min-w-0">
-                    {/* Author header row */}
-                    <div className="flex items-start justify-between gap-2">
-                      <div className="flex items-center gap-3">
-                        <button
-                          type="button"
-                          onClick={() => onOpenProfile(post.authorName)}
-                          className="w-9 h-9 rounded-full border border-white/10 shrink-0 overflow-hidden"
-                          aria-label={`View ${post.authorName}'s profile`}
-                        >
-                          <img
-                            src={post.authorAvatar || `https://i.pravatar.cc/100?u=${post.authorName}`}
-                            className="w-full h-full object-cover"
-                            alt=""
-                          />
-                        </button>
-                        <div className="min-w-0">
-                          <div className="flex items-center gap-2">
-                            <button type="button" className="text-[14px] font-bold text-white truncate bg-transparent border-0 p-0 cursor-pointer" onClick={() => onOpenProfile(post.authorName)}>
-                              {post.authorName}
-                            </button>
-                            {/* Level badge */}
-                            <span className="w-5 h-5 rounded-full bg-blue-500/80 flex items-center justify-center text-[8px] font-black text-white shrink-0">
-                              {post.authorRole === 'trainer' ? 'C' : '1'}
-                            </span>
-                          </div>
-                          <div className="flex items-center gap-1.5 text-[11px] text-zinc-600 font-bold">
-                            <span>{timeAgoShort(new Date(post.createdAt).toISOString())}</span>
-                            <span className="text-zinc-800">·</span>
-                            <span className="flex items-center gap-0.5">{categoryIcon}{categoryTag}</span>
-                          </div>
-                        </div>
-                      </div>
-
-                      {/* Pinned indicator + overflow */}
-                      <div className="flex items-center gap-2 shrink-0">
-                        {post.isPinned && (
-                          <span className="flex items-center gap-1 text-amber-400 text-[10px] font-black uppercase tracking-wider">
-                            <Pin size={12} /> Pinned
-                          </span>
-                        )}
-                        {isOwn && (
-                          <button
-                            onClick={() => { setEditingPost(post); setIsModalOpen(true); }}
-                            className="text-zinc-700 hover:text-white transition-colors p-1"
-                          >
-                            <MoreHorizontal size={16} />
-                          </button>
-                        )}
-                      </div>
-                    </div>
-
-                    {/* Post title */}
-                    {post.title && (
-                      <h3 className="text-[15px] font-bold text-white mt-3 leading-snug">
-                        {post.title}
-                      </h3>
-                    )}
-
-                    {/* Post body */}
-                    <p className="text-[13px] text-zinc-400 mt-1.5 leading-relaxed line-clamp-3">
-                      {post.content}
-                    </p>
-
-                    {/* Action bar */}
-                    <div className="flex items-center gap-6 mt-3">
-                      <button
-                        onClick={() => toggleLike(post._id)}
-                        className="flex items-center gap-1.5 text-[12px] font-bold text-zinc-500 hover:text-white transition-colors"
-                      >
-                        <Heart size={15} />
-                        {post.likeCount > 0 && <span>{post.likeCount}</span>}
-                      </button>
-                      <button
-                        onClick={() => setActiveCommentsPostId(post._id)}
-                        className="flex items-center gap-1.5 text-[12px] font-bold text-zinc-500 hover:text-white transition-colors"
-                      >
-                        <MessageCircle size={15} />
-                        {post.commentCount > 0 && <span>{post.commentCount}</span>}
-                      </button>
-                      <button
-                        onClick={() => handleShare(post)}
-                        className="flex items-center gap-1.5 text-[12px] font-bold text-zinc-500 hover:text-white transition-colors"
-                      >
-                        <Share2 size={15} />
-                      </button>
-                    </div>
-
-                    {/* Freshness indicator */}
-                    {freshness && (
-                      <p className="text-[11px] font-bold text-blue-400 mt-2">{freshness}</p>
-                    )}
-                  </div>
-
-                  {/* Right media thumbnail */}
-                  {post.mediaUrls && post.mediaUrls.length > 0 && (
-                    <div className="w-20 h-20 rounded-xl overflow-hidden shrink-0 mt-1 relative">
-                      <img
-                        src={post.mediaUrls[0]}
-                        className="w-full h-full object-cover"
-                        alt=""
-                      />
-                      {/* Play overlay for video */}
-                      {post.mediaUrls[0]?.includes('video') && (
-                        <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
-                          <Play size={20} fill="white" className="text-white" />
-                        </div>
-                      )}
-                    </div>
-                  )}
-                </div>
-              </div>
+              <CommunityPostCard
+                post={post}
+                isOwn={isOwn}
+                freshness={freshness}
+                onProfile={onOpenProfile}
+                onLike={() => toggleLike(post._id)}
+                onComment={() => setActiveCommentsPostId(post._id)}
+                onShare={() => handleShare(post)}
+                onEdit={() => { setEditingPost(post); setIsModalOpen(true); }}
+              />
             </div>
           );
         })}
