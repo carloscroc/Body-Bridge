@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { PlanItem, Workout, Meal } from '../../types';
 import { ArrowLeft, Calendar, CalendarDays, ChevronLeft, ChevronRight, LayoutGrid, List, Menu, Plus, X, Dumbbell, Utensils, Zap, Copy } from 'lucide-react';
 import { useQuery, useMutation } from 'convex/react';
-import { api } from '../../convex/_generated/api';
+import { api } from '@convex/_generated/api';
 import ListView from './ListView';
 import DayView from './DayView';
 import WeekView from './WeekView';

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { X, Plus, Check, Dumbbell, Clock, ChevronRight } from 'lucide-react';
 import { Exercise, UserWorkout, WorkoutExercise } from '../types';
 import { useMutation, useQuery } from 'convex/react';
-import { api } from '../convex/_generated/api';
+import { api } from '@convex/_generated/api';
 
 interface AddToWorkoutModalProps {
   isOpen: boolean;

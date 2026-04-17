@@ -4,7 +4,7 @@ import { X, Clock, Flame, Utensils, ArrowLeft, Check, Calendar, ChevronRight, Za
 import { Meal } from '../types';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useMutation } from 'convex/react';
-import { api } from '../convex/_generated/api';
+import { api } from '@convex/_generated/api';
 
 interface MealDetailProps {
   meal: Meal;

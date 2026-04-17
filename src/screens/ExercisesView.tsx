@@ -1,7 +1,7 @@
 import React, { useState, useMemo, useEffect, useCallback, useRef } from 'react';
 import { Search, Filter, Dumbbell } from 'lucide-react';
 import { useQuery, useMutation } from 'convex/react';
-import { api } from '../convex/_generated/api';
+import { api } from '@convex/_generated/api';
 import type { Exercise } from '../types';
 import { MOCK_EXERCISES } from '../constants';
 import { resolveHighEndExerciseImage } from '../utils/imageResolver';

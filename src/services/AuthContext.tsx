@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useMemo, useState, ReactNode, useCallback, useEffect } from 'react';
 import { useAuthActions } from '@convex-dev/auth/react';
 import { useConvexAuth, useQuery, useConvex } from 'convex/react';
-import { api } from '../convex/_generated/api';
+import { api } from '@convex/_generated/api';
 
 interface AuthContextType {
   isAuthenticated: boolean;

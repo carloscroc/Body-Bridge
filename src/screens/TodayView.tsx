@@ -3,7 +3,7 @@ import { Workout, Meal } from '../types';
 import { ChevronDown, Dumbbell, Utensils, CheckCircle2, Circle, Trash2, Clock } from 'lucide-react';
 import PremiumHeader from '../components/PremiumHeader';
 import { useQuery, useMutation } from 'convex/react';
-import { api } from '../convex/_generated/api';
+import { api } from '@convex/_generated/api';
 
 interface TodayViewProps {
   onSelectWorkout: (workout: Workout) => void;

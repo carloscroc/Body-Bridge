@@ -8,7 +8,7 @@ import {
 } from 'lucide-react';
 import { Exercise, UserWorkout, WorkoutExercise, Workout, WorkoutFormat } from '../types';
 import { useMutation, useQuery } from 'convex/react';
-import { api } from '../convex/_generated/api';
+import { api } from '@convex/_generated/api';
 import ExercisePicker from './ExercisePicker';
 import EditWorkoutExerciseModal from './EditWorkoutExerciseModal';
 

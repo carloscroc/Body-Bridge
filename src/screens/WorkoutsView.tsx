@@ -1,6 +1,6 @@
 import React, { useCallback, useMemo, useRef, useState } from 'react';
 import { useMutation, useQuery } from 'convex/react';
-import { api } from '../convex/_generated/api';
+import { api } from '@convex/_generated/api';
 import { MOCK_WORKOUTS } from '../constants';
 import { UserWorkout, Workout } from '../types';
 import { Calendar, Clock, Copy, Dumbbell, Edit3, Flame, Layers, MoreHorizontal, Play, Plus, Search, Trash2 } from 'lucide-react';

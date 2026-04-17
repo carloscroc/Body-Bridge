@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useMutation } from 'convex/react';
-import { api } from '../convex/_generated/api';
+import { api } from '@convex/_generated/api';
 import { WorkoutExercise } from '../types';
 import { X, Plus, ChevronUp, ChevronDown, Trash2, Dumbbell, ImageIcon, Upload } from 'lucide-react';
 import ExercisePicker from './ExercisePicker';

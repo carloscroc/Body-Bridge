@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { useMutation, useQuery } from 'convex/react';
-import { api } from './convex/_generated/api';
+import { api } from '@convex/_generated/api';
 import { useAuth } from './services/AuthContext';
 import { Tab, Workout, Meal, Exercise } from './types';
 import AuthScreen from './screens/AuthScreen';

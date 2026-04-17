@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import { useQuery } from 'convex/react';
-import { api } from '../convex/_generated/api';
+import { api } from '@convex/_generated/api';
 import { Exercise, WorkoutExercise } from '../types';
 import { MOCK_EXERCISES } from '../constants';
 import { Search, X, Dumbbell, Loader2 } from 'lucide-react';

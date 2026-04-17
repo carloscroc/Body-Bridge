@@ -11,7 +11,7 @@ import PremiumTimeline from '../components/PremiumTimeline';
 import PremiumStreakCounter from '../components/PremiumStreakCounter';
 import { CardSkeleton, MealCardSkeleton, TimelineSkeleton, StreakCounterSkeleton } from '../components/LoadingSkeleton';
 import { useQuery, useMutation } from 'convex/react';
-import { api } from '../convex/_generated/api';
+import { api } from '@convex/_generated/api';
 
 interface HomeViewProps {
   onSelectWorkout: (workout: Workout) => void;
