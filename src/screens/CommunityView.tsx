@@ -792,7 +792,7 @@ const CommunityTab = ({ onOpenProfile }: { onOpenProfile: (name: string) => void
   const pinPostMutation = useMutation(api.social.pinPost);
 
   const posts = useMemo(() => {
-    let all = postsData?.page || [];
+    let all: any[] = postsData?.page || [];
     if (searchQuery.trim()) {
       const q = searchQuery.toLowerCase();
       all = all.filter((p: any) =>
