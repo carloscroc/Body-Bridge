@@ -208,7 +208,7 @@ export interface Post {
   time: string;
 }
 
-export type CommunityPostTag = 'PR' | 'Done' | 'Meal' | 'Ask' | 'Wins' | 'Form Check';
+export type CommunityPostTag = 'PR' | 'Done' | 'Meal' | 'Ask' | 'Wins' | 'Form Check' | 'General Discussion';
 
 export type CommunityPostAttachmentKind = 'image';
 

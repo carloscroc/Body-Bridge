@@ -1,0 +1,51 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e3]:
+  - generic [ref=e5]:
+    - banner [ref=e6]:
+      - generic [ref=e7]:
+        - generic [ref=e8]:
+          - button "Go back" [ref=e9]:
+            - img [ref=e10]
+          - generic [ref=e12]:
+            - generic [ref=e13]: F
+            - heading "Forge Elite" [level=1] [ref=e14]
+        - generic [ref=e15]:
+          - button [ref=e16]:
+            - img [ref=e17]
+          - button [ref=e21]:
+            - img [ref=e22]
+      - navigation [ref=e26]:
+        - button "Community" [ref=e27]: Community
+        - button "Leaderboards" [ref=e29]
+        - button "About" [ref=e30]
+    - generic [ref=e32]:
+      - button "Write something..." [ref=e34]:
+        - generic [ref=e35]: Write something...
+      - generic [ref=e36]:
+        - button "All" [ref=e37]
+        - button "General" [ref=e38]
+        - button "PR" [ref=e39]
+        - button "Ask" [ref=e40]
+        - button "Wins" [ref=e41]
+        - button "Form Check" [ref=e42]
+        - button "Meal" [ref=e43]
+        - button [ref=e44]:
+          - img [ref=e45]
+      - generic [ref=e49]:
+        - paragraph [ref=e50]: No posts yet
+        - paragraph [ref=e51]: Be the first to share something!
+  - generic [ref=e53]:
+    - button [ref=e54]:
+      - img [ref=e56]
+    - button [ref=e59]:
+      - img [ref=e61]
+    - button [ref=e67]:
+      - img [ref=e69]
+    - button [ref=e71]:
+      - img [ref=e73]
+    - button "Community" [ref=e76]:
+      - img [ref=e78]
+      - generic [ref=e83]: Community
+```

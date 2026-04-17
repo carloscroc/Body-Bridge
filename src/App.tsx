@@ -551,7 +551,7 @@ export default function App() {
         </div>
       )}
 
-      {isAuthenticated && !isDetailOpen && !isCommunityView && !isSettingsView && !isCalendarOpen && (
+      {isAuthenticated && !isDetailOpen && !isSettingsView && !isCalendarOpen && (
         <Suspense fallback={null}>
           <TabBar
             activeTab={activeTab}

@@ -260,17 +260,22 @@ export default defineSchema({
     authorName: v.string(),
     authorAvatar: v.optional(v.string()),
     authorRole: v.union(v.literal("trainer"), v.literal("client")),
+    title: v.optional(v.string()),
     content: v.string(),
+    category: v.optional(v.string()),
     mediaUrls: v.optional(v.array(v.string())),
     isPinned: v.boolean(),
     isDeleted: v.boolean(),
     likeCount: v.number(),
     commentCount: v.number(),
+    lastCommentAt: v.optional(v.number()),
     createdAt: v.number(),
     updatedAt: v.optional(v.number()),
   }).index("by_isDeleted", ["isDeleted"])
     .index("by_author", ["authorId"])
-    .index("by_createdAt", ["createdAt"]),
+    .index("by_createdAt", ["createdAt"])
+    .index("by_category", ["category", "createdAt"])
+    .index("by_isPinned", ["isPinned", "createdAt"]),
 
   socialComments: defineTable({
     postId: v.id("socialPosts"),

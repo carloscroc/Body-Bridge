@@ -17,12 +17,15 @@ export const getPosts = query({
       authorName: v.string(),
       authorAvatar: v.optional(v.string()),
       authorRole: v.union(v.literal("trainer"), v.literal("client")),
+      title: v.optional(v.string()),
       content: v.string(),
+      category: v.optional(v.string()),
       mediaUrls: v.optional(v.array(v.string())),
       isPinned: v.boolean(),
       isDeleted: v.boolean(),
       likeCount: v.number(),
       commentCount: v.number(),
+      lastCommentAt: v.optional(v.number()),
       createdAt: v.number(),
       updatedAt: v.optional(v.number()),
     })),
@@ -32,11 +35,34 @@ export const getPosts = query({
     splitCursor: v.optional(v.union(v.string(), v.null())),
   }),
   handler: async (ctx, args) => {
-    return await ctx.db
+    // Fetch pinned posts first, then regular feed sorted by most recent activity
+    const pinned = await ctx.db
+      .query("socialPosts")
+      .withIndex("by_isPinned", (q) => q.eq("isPinned", true))
+      .filter((q) => q.eq(q.field("isDeleted"), false))
+      .order("desc")
+      .collect();
+
+    const regular = await ctx.db
       .query("socialPosts")
       .withIndex("by_isDeleted", (q) => q.eq("isDeleted", false))
       .order("desc")
       .paginate(args.paginationOpts);
+
+    // Merge pinned posts at the top of the first page
+    const pinnedIds = new Set(pinned.map((p) => p._id));
+    const filteredRegular = regular.page.filter((p) => !pinnedIds.has(p._id));
+    const page = args.paginationOpts.cursor === null
+      ? [...pinned, ...filteredRegular]
+      : filteredRegular;
+
+    return {
+      page,
+      isDone: regular.isDone,
+      continueCursor: regular.continueCursor,
+      pageStatus: regular.pageStatus,
+      splitCursor: regular.splitCursor,
+    };
   },
 });
 
@@ -53,12 +79,15 @@ export const getPostById = query({
       authorName: v.string(),
       authorAvatar: v.optional(v.string()),
       authorRole: v.union(v.literal("trainer"), v.literal("client")),
+      title: v.optional(v.string()),
       content: v.string(),
+      category: v.optional(v.string()),
       mediaUrls: v.optional(v.array(v.string())),
       isPinned: v.boolean(),
       isDeleted: v.boolean(),
       likeCount: v.number(),
       commentCount: v.number(),
+      lastCommentAt: v.optional(v.number()),
       createdAt: v.number(),
       updatedAt: v.optional(v.number()),
     })
@@ -78,7 +107,9 @@ export const createPost = mutation({
     authorName: v.string(),
     authorAvatar: v.optional(v.string()),
     authorRole: v.union(v.literal("trainer"), v.literal("client")),
+    title: v.optional(v.string()),
     content: v.string(),
+    category: v.optional(v.string()),
     mediaUrls: v.optional(v.array(v.string())),
   },
   returns: v.id("socialPosts"),
@@ -89,12 +120,15 @@ export const createPost = mutation({
       authorName: args.authorName,
       authorAvatar: args.authorAvatar,
       authorRole: args.authorRole,
+      title: args.title,
       content: args.content,
+      category: args.category ?? "General",
       mediaUrls: args.mediaUrls,
       isPinned: false,
       isDeleted: false,
       likeCount: 0,
       commentCount: 0,
+      lastCommentAt: now,
       createdAt: now,
       updatedAt: now,
     });
@@ -228,6 +262,7 @@ export const createComment = mutation({
 
     await ctx.db.patch(args.postId, {
       commentCount: post.commentCount + 1,
+      lastCommentAt: now,
       updatedAt: now,
     });
     // Notify post owner about the new comment (if not commenting on own post)
@@ -436,6 +471,105 @@ export const toggleLike = mutation({
       }
       return { liked: true, likeCount: 1 };
     }
+  },
+});
+
+// ============== CATEGORY FILTERED FEED ==============
+
+export const getPostsByCategory = query({
+  args: {
+    category: v.optional(v.string()),
+    paginationOpts: paginationOptsValidator,
+  },
+  returns: v.object({
+    page: v.array(v.object({
+      _id: v.id("socialPosts"),
+      _creationTime: v.number(),
+      authorId: v.id("profiles"),
+      authorName: v.string(),
+      authorAvatar: v.optional(v.string()),
+      authorRole: v.union(v.literal("trainer"), v.literal("client")),
+      title: v.optional(v.string()),
+      content: v.string(),
+      category: v.optional(v.string()),
+      mediaUrls: v.optional(v.array(v.string())),
+      isPinned: v.boolean(),
+      isDeleted: v.boolean(),
+      likeCount: v.number(),
+      commentCount: v.number(),
+      lastCommentAt: v.optional(v.number()),
+      createdAt: v.number(),
+      updatedAt: v.optional(v.number()),
+    })),
+    isDone: v.boolean(),
+    continueCursor: v.union(v.string(), v.null()),
+    pageStatus: v.optional(v.union(v.string(), v.null())),
+    splitCursor: v.optional(v.union(v.string(), v.null())),
+  }),
+  handler: async (ctx, args) => {
+    if (!args.category || args.category === "All") {
+      // Delegate to getPosts logic (pinned first, then regular)
+      const pinned = await ctx.db
+        .query("socialPosts")
+        .withIndex("by_isPinned", (q) => q.eq("isPinned", true))
+        .filter((q) => q.eq(q.field("isDeleted"), false))
+        .order("desc")
+        .collect();
+
+      const regular = await ctx.db
+        .query("socialPosts")
+        .withIndex("by_isDeleted", (q) => q.eq("isDeleted", false))
+        .order("desc")
+        .paginate(args.paginationOpts);
+
+      const pinnedIds = new Set(pinned.map((p) => p._id));
+      const filteredRegular = regular.page.filter((p) => !pinnedIds.has(p._id));
+      const page = args.paginationOpts.cursor === null
+        ? [...pinned, ...filteredRegular]
+        : filteredRegular;
+
+      return {
+        page,
+        isDone: regular.isDone,
+        continueCursor: regular.continueCursor,
+        pageStatus: regular.pageStatus,
+        splitCursor: regular.splitCursor,
+      };
+    }
+
+    // Filter by specific category
+    const pinned = await ctx.db
+      .query("socialPosts")
+      .withIndex("by_isPinned", (q) => q.eq("isPinned", true))
+      .filter((q) =>
+        q.and(
+          q.eq(q.field("isDeleted"), false),
+          q.eq(q.field("category"), args.category),
+        )
+      )
+      .order("desc")
+      .collect();
+
+    const regular = await ctx.db
+      .query("socialPosts")
+      .withIndex("by_category", (q) => q.eq("category", args.category))
+      .filter((q) => q.eq(q.field("isDeleted"), false))
+      .order("desc")
+      .paginate(args.paginationOpts);
+
+    const pinnedIds = new Set(pinned.map((p) => p._id));
+    const filteredRegular = regular.page.filter((p) => !pinnedIds.has(p._id));
+    const page = args.paginationOpts.cursor === null
+      ? [...pinned, ...filteredRegular]
+      : filteredRegular;
+
+    return {
+      page,
+      isDone: regular.isDone,
+      continueCursor: regular.continueCursor,
+      pageStatus: regular.pageStatus,
+      splitCursor: regular.splitCursor,
+    };
   },
 });
 
