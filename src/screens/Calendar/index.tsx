@@ -30,7 +30,7 @@ const CalendarView: React.FC<CalendarViewProps> = ({
   onNavigateToMeals,
   onCalendarRequest
 }) => {
-  const [currentView, setCurrentView] = useState<ViewType>('day');
+  const [currentView, setCurrentView] = useState<ViewType>('week');
   const [selectedDate, setSelectedDate] = useState<Date>(initialDate ?? new Date());
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
