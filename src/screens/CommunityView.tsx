@@ -37,7 +37,9 @@ import { CommunityPostTag, CommunityPostAttachment } from '../types';
 import NotificationBell from '../components/NotificationBell';
 import { useMutation, useQuery } from 'convex/react';
 import { api } from '@convex/_generated/api';
+import { Id } from '@convex/_generated/dataModel';
 import { useAuth } from '../services/AuthContext';
+import { useCurrentUser } from '../hooks/useCurrentUser';
 
 // ============== CONSTANTS ==============
 
@@ -106,31 +108,6 @@ const getLevelFromPostCount = (count: number): { level: number; label: string; c
 
 const getCategoryDisplay = (category: string): { label: string; emoji: string } => {
   return CATEGORY_DISPLAY[category] ?? { label: category, emoji: '' };
-};
-
-// ============== PROFILE HELPERS ==============
-
-type MemberProfile = {
-  name: string;
-  handle: string;
-  joined: string;
-  levelLabel: string;
-  roleLabel?: string;
-};
-
-const getProfileForName = (name: string): MemberProfile => {
-  const slug = name
-    .trim()
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/(^-|-$)/g, '')
-    .slice(0, 18);
-  return {
-    name,
-    handle: `@${slug || 'member'}`,
-    joined: '—',
-    levelLabel: 'Member',
-  };
 };
 
 // ============== LOCAL COMPONENTS ==============
@@ -209,7 +186,7 @@ const PostMetaRow = ({
   return (
     <div className="flex items-center gap-3">
       <AvatarWithBadge
-        src={`https://i.pravatar.cc/100?u=${authorName}`}
+        src={authorAvatar || "/avatar-placeholder.jpg"}
         alt={`View ${authorName}'s profile`}
         level={1}
         onClick={onAuthorClick}
@@ -633,7 +610,7 @@ const CommentsSheet = ({
     <div key={c._id} className={`${isReply ? 'ml-8 border-l-2 border-white/[0.06] pl-4' : ''}`}>
       <div className="flex gap-3 py-2">
         <img
-          src={c.authorAvatar || `https://i.pravatar.cc/100?u=${c.authorName}`}
+          src={c.authorAvatar || "/avatar-placeholder.jpg"}
           className={`rounded-full border border-white/10 ${isReply ? 'w-6 h-6' : 'w-8 h-8'}`}
           alt=""
         />
@@ -736,17 +713,42 @@ const CommentsSheet = ({
 // ============== PROFILE SHEET ==============
 
 const ProfileSheet = ({ profileName, isOpen, onClose }: { profileName: string | null; isOpen: boolean; onClose: () => void }) => {
-  const profile = profileName ? getProfileForName(profileName) : null;
-  if (!isOpen || !profile) return null;
+  // Look up real profile from Convex by name
+  const profile = useQuery(api.profiles.getByName, profileName ? { name: profileName } : 'skip');
+
+  if (!isOpen || !profileName) return null;
+  if (profile === undefined) {
+    // Loading state
+    return (
+      <div className="fixed inset-0 z-[230] flex items-center justify-center px-4 pb-[5vh]">
+        <div className="absolute inset-0 bg-black/90 backdrop-blur-sm" onClick={onClose} />
+        <div className="relative w-full max-w-md rounded-[34px] border border-white/[0.08] bg-[#111112] shadow-[0_40px_90px_-20px_rgba(0,0,0,0.9)] p-10 text-center animate-silk-up">
+          <div className="w-24 h-24 rounded-full border-4 border-white/10 mx-auto mb-6 shadow-2xl bg-white/10 animate-pulse" />
+          <div className="h-6 w-32 bg-white/10 rounded mx-auto mb-2 animate-pulse" />
+          <div className="h-4 w-20 bg-white/10 rounded mx-auto mb-8 animate-pulse" />
+          <button type="button" onClick={onClose} className="h-14 w-full bg-white/5 text-white/60 font-black uppercase tracking-widest text-xs rounded-2xl border border-white/10 press-scale">Close Profile</button>
+        </div>
+      </div>
+    );
+  }
+
+  const displayName = profile?.fullName || profileName;
+  const avatarSrc = profile?.avatarUrl || '';
 
   return (
     <div className="fixed inset-0 z-[230] flex items-center justify-center px-4 pb-[5vh]">
       {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions */}
       <div className="absolute inset-0 bg-black/90 backdrop-blur-sm" onClick={onClose} onKeyDown={(e) => { if (e.key === 'Escape') onClose(); }} />
       <div className="relative w-full max-w-md rounded-[34px] border border-white/[0.08] bg-[#111112] shadow-[0_40px_90px_-20px_rgba(0,0,0,0.9)] p-10 text-center animate-silk-up">
-        <img src={`https://i.pravatar.cc/200?u=${profile.handle}`} className="w-24 h-24 rounded-full border-4 border-white/10 mx-auto mb-6 shadow-2xl" alt={profile.name} />
-        <h3 className="text-2xl font-black text-white italic uppercase tracking-tighter">{profile.name}</h3>
-        <p className="text-zinc-500 font-bold text-sm mb-8">{profile.handle}</p>
+        {avatarSrc ? (
+          <img src={avatarSrc} className="w-24 h-24 rounded-full border-4 border-white/10 mx-auto mb-6 shadow-2xl" alt={displayName} />
+        ) : (
+          <div className="w-24 h-24 rounded-full border-4 border-white/10 mx-auto mb-6 shadow-2xl bg-white/10 flex items-center justify-center">
+            <span className="text-2xl font-black text-white">{displayName.charAt(0).toUpperCase()}</span>
+          </div>
+        )}
+        <h3 className="text-2xl font-black text-white italic uppercase tracking-tighter">{displayName}</h3>
+        <p className="text-zinc-500 font-bold text-sm mb-8">{profile?.bio || 'Member'}</p>
         <button type="button" onClick={onClose} className="h-14 w-full bg-white/5 text-white/60 font-black uppercase tracking-widest text-xs rounded-2xl border border-white/10 press-scale">Close Profile</button>
       </div>
     </div>
@@ -757,6 +759,7 @@ const ProfileSheet = ({ profileName, isOpen, onClose }: { profileName: string | 
 
 const CommunityTab = ({ onOpenProfile }: { onOpenProfile: (name: string) => void }) => {
   const { user } = useAuth();
+  const { profileId, displayName, avatarUrl, authSource } = useCurrentUser();
 
   // State
   const [activeCategory, setActiveCategory] = useState<string>('All');
@@ -780,7 +783,7 @@ const CommunityTab = ({ onOpenProfile }: { onOpenProfile: (name: string) => void
   const activePostComments = useQuery(
     api.social.getCommentsByPost,
     activeCommentsPostId
-      ? { postId: activeCommentsPostId as any, paginationOpts: { numItems: 50, cursor: null } }
+      ? { postId: activeCommentsPostId as Id<"posts">, paginationOpts: { numItems: 50, cursor: null } }
       : "skip"
   );
 
@@ -806,12 +809,8 @@ const CommunityTab = ({ onOpenProfile }: { onOpenProfile: (name: string) => void
 
   // Handlers
   const handleCreatePost = async ({ title, content, category, attachments }: { title?: string; content: string; category: string; tag: CommunityPostTag; attachments: CommunityPostAttachment[] }) => {
-    if (!user) return;
+    if (!profileId) return;
     await createPostMutation({
-      authorId: user.profileId as any,
-      authorName: user.fullName || 'Member',
-      authorAvatar: user.avatarUrl,
-      authorRole: user.authSource as any,
       title,
       content,
       category,
@@ -826,24 +825,20 @@ const CommunityTab = ({ onOpenProfile }: { onOpenProfile: (name: string) => void
 
   const toggleLike = async (postId: string) => {
     if (!user) return;
-    await toggleLikeMutation({ postId: postId as any, userId: user.profileId as any });
+    await toggleLikeMutation({ postId: postId as Id<"posts"> });
   };
 
   const toggleCommentLike = async (commentId: string) => {
     if (!user) return;
-    await toggleLikeMutation({ commentId: commentId as any, userId: user.profileId as any });
+    await toggleLikeMutation({ commentId: commentId as Id<"comments"> });
   };
 
   const addComment = async (content: string, parentCommentId?: string) => {
-    if (!user || !activeCommentsPostId) return;
+    if (!profileId || !activeCommentsPostId) return;
     await createCommentMutation({
-      postId: activeCommentsPostId as any,
-      authorId: user.profileId as any,
-      authorName: user.fullName || 'Member',
-      authorAvatar: user.avatarUrl,
-      authorRole: user.authSource as any,
+      postId: activeCommentsPostId as Id<"posts">,
       content,
-      parentCommentId: parentCommentId as any,
+      parentCommentId: parentCommentId as Id<"comments"> | undefined,
     });
   };
 
@@ -967,7 +962,7 @@ const CommunityTab = ({ onOpenProfile }: { onOpenProfile: (name: string) => void
 
         {posts.map((post: any, index: number) => {
           const freshness = getFreshnessText(post);
-          const isOwn = user && post.authorId === user.profileId;
+          const isOwn = profileId && post.authorId === profileId;
 
           return (
             <div key={post._id}>
@@ -1013,7 +1008,7 @@ const CommunityTab = ({ onOpenProfile }: { onOpenProfile: (name: string) => void
         onClose={() => setActiveCommentsPostId(null)}
         onAddComment={addComment}
         onToggleLike={toggleCommentLike}
-        userId={user?.profileId as any}
+        userId={profileId as Id<"profiles">}
       />
     </div>
   );

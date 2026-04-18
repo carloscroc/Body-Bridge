@@ -1,7 +1,39 @@
 import { v } from "convex/values";
 import { mutation, query } from "./_generated/server";
-import { requireIdentity } from "./lib/auth";
+import { requireIdentity, requireProfileId } from "./lib/auth";
 import type { Id } from "./_generated/dataModel";
+
+// Reuse schema-level validators for consistency
+const exerciseItemValidator = v.object({
+  id: v.optional(v.string()),
+  exerciseId: v.optional(v.string()),
+  name: v.optional(v.string()),
+  image: v.optional(v.string()),
+  muscleGroup: v.optional(v.string()),
+  sets: v.optional(v.union(v.string(), v.number())),
+  reps: v.optional(v.union(v.string(), v.number())),
+  weight: v.optional(v.string()),
+  rest: v.optional(v.union(v.string(), v.number())),
+  restSeconds: v.optional(v.number()),
+  duration: v.optional(v.string()),
+  notes: v.optional(v.string()),
+  completed: v.optional(v.boolean()),
+  order: v.optional(v.number()),
+  videoUrl: v.optional(v.string()),
+  libraryId: v.optional(v.string()),
+});
+
+const measurementsValidator = v.object({
+  chest: v.optional(v.number()),
+  waist: v.optional(v.number()),
+  hips: v.optional(v.number()),
+  biceps: v.optional(v.number()),
+  thighs: v.optional(v.number()),
+  neck: v.optional(v.number()),
+  shoulders: v.optional(v.number()),
+  calves: v.optional(v.number()),
+  forearms: v.optional(v.number()),
+});
 
 
 export const getClientProgress = query({
@@ -17,19 +49,24 @@ export const getClientProgress = query({
 
 export const createProgressEntry = mutation({
   args: {
-    userId: v.id("profiles"),
     date: v.number(),
     weight: v.optional(v.number()),
     bodyFat: v.optional(v.number()),
-    measurements: v.optional(v.any()),
+    measurements: v.optional(measurementsValidator),
     photos: v.optional(v.array(v.string())),
     notes: v.optional(v.string()),
   },
   handler: async (ctx, args) => {
-    await requireIdentity(ctx);
+    const userId = await requireProfileId(ctx);
 
     return await ctx.db.insert("progressEntries", {
-      ...args,
+      userId,
+      date: args.date,
+      weight: args.weight,
+      bodyFat: args.bodyFat,
+      measurements: args.measurements,
+      photos: args.photos,
+      notes: args.notes,
       createdAt: Date.now(),
     });
   },
@@ -42,7 +79,7 @@ export const updateProgressEntry = mutation({
       date: v.optional(v.number()),
       weight: v.optional(v.number()),
       bodyFat: v.optional(v.number()),
-      measurements: v.optional(v.any()),
+      measurements: v.optional(measurementsValidator),
       photos: v.optional(v.array(v.string())),
       notes: v.optional(v.string()),
     }),
@@ -72,15 +109,20 @@ export const getClientWorkoutLogs = query({
 
 export const createWorkoutLog = mutation({
   args: {
-    userId: v.id("profiles"),
     date: v.number(),
-    exercises: v.array(v.any()),
+    exercises: v.array(exerciseItemValidator),
     duration: v.optional(v.number()),
     notes: v.optional(v.string()),
   },
   handler: async (ctx, args) => {
+    const userId = await requireProfileId(ctx);
+
     const workoutLogId = await ctx.db.insert("workoutLogs", {
-      ...args,
+      userId,
+      date: args.date,
+      exercises: args.exercises,
+      duration: args.duration,
+      notes: args.notes,
       createdAt: Date.now(),
     });
 
@@ -128,7 +170,7 @@ export const createWorkoutLog = mutation({
         const existingUsage = await ctx.db
           .query("exerciseUsage")
           .withIndex("by_user_exercise", (q) => q
-            .eq("userId", args.userId)
+            .eq("userId", userId)
             .eq("exerciseId", exerciseDoc._id))
           .first();
 
@@ -136,7 +178,7 @@ export const createWorkoutLog = mutation({
           await ctx.db.patch(existingUsage._id, { count: existingUsage.count + 1 });
         } else {
           await ctx.db.insert("exerciseUsage", {
-            userId: args.userId,
+            userId,
             exerciseId: exerciseDoc._id,
             count: 1,
           });

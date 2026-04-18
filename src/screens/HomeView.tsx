@@ -2,7 +2,6 @@ import React, { useState, useEffect, useMemo, memo } from 'react';
 import { Play, ChevronRight, CheckCircle2, Utensils, Calendar as CalendarIcon, Flame, LayoutGrid, Clock } from 'lucide-react';
 import NotificationBell from '../components/NotificationBell';
 import { useAuth } from '../services/AuthContext';
-import { MOCK_WORKOUTS, MOCK_MEALS } from '../constants';
 import { Workout, Meal } from '../types';
 import PremiumHeader from '../components/PremiumHeader';
 import PremiumSectionHeader from '../components/PremiumSectionHeader';
@@ -94,14 +93,12 @@ const HomeView: React.FC<HomeViewProps> = ({
         title: item.type === 'workout' ? workout.title : meal.title,
         type: item.type === 'workout' ? 'workout' : 'nutrition',
         startTime: item.scheduledTime || '09:00',
-        endTime: item.scheduledEndTime || '10:00',
         completed: item.completed
       };
     });
   }, [dailyPlanData]);
 
   const [profileName, setProfileName] = useState(user?.fullName || 'Member');
-  const featuredWorkout = MOCK_WORKOUTS[0];
 
   useEffect(() => {
     setMounted(true);
@@ -113,7 +110,7 @@ const HomeView: React.FC<HomeViewProps> = ({
   const workoutsInPlan = dailyPlanData.filter(item => item.type === 'workout');
   const mealsInPlan = dailyPlanData.filter(item => item.type === 'meal');
 
-  const heroWorkout = workoutsInPlan.length > 0 ? (workoutsInPlan[0].item as Workout) : featuredWorkout;
+  const heroWorkout = workoutsInPlan.length > 0 ? (workoutsInPlan[0].item as Workout) : null;
   const isHeroInPlan = workoutsInPlan.length > 0;
   const heroPlanId = isHeroInPlan ? workoutsInPlan[0]._id : null;
 
@@ -199,59 +196,73 @@ const HomeView: React.FC<HomeViewProps> = ({
         />
 
         {viewMode === 'grid' ? (
-          <>
-            <button
-              type="button"
-              onClick={() => onSelectWorkout(heroWorkout)}
-              className="relative h-[280px] md:h-[400px] rounded-[56px] overflow-hidden press-scale shadow-2xl group border border-white/10 w-full text-left"
-            >
-              <img src={heroWorkout.image} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[4s] ease-out" alt="Core Training" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
+          heroWorkout ? (
+            <>
+              <button
+                type="button"
+                onClick={() => onSelectWorkout(heroWorkout)}
+                className="relative h-[280px] md:h-[400px] rounded-[56px] overflow-hidden press-scale shadow-2xl group border border-white/10 w-full text-left"
+              >
+                <img src={heroWorkout.image} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[4s] ease-out" alt="Core Training" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
 
-              <div className="absolute top-8 left-8">
-                <div className="px-4 py-2 bg-black/40 blur-surface rounded-full border border-white/10 flex items-center gap-2.5 shadow-lg">
-                  <div className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse shadow-[0_0_8px_#3b82f6]" />
-                  <span className="text-[10px] font-black uppercase tracking-[0.2em] text-white">
-                    {isHeroInPlan ? 'Planned Activity' : 'Trainer Suggestion'}
-                  </span>
+                <div className="absolute top-8 left-8">
+                  <div className="px-4 py-2 bg-black/40 blur-surface rounded-full border border-white/10 flex items-center gap-2.5 shadow-lg">
+                    <div className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse shadow-[0_0_8px_#3b82f6]" />
+                    <span className="text-[10px] font-black uppercase tracking-[0.2em] text-white">Planned Activity</span>
+                  </div>
                 </div>
-              </div>
 
-              {isHeroInPlan && (
-                <button
-                  type="button"
-                  onClick={(e) => handleToggleComplete(e, heroPlanId)}
-                  className={`absolute top-8 right-8 w-14 h-14 rounded-full border-2 flex items-center justify-center transition-all z-20 ${
-                    workoutsInPlan[0].completed
-                      ? 'bg-white border-white shadow-[0_0_30px_rgba(255,255,255,0.4)]'
-                      : 'bg-black/20 blur-surface border-white/30 text-white/40'
-                  }`}
-                >
-                  <CheckCircle2 size={20} className={workoutsInPlan[0].completed ? 'text-black' : 'text-current'} />
-                </button>
-              )}
-
-              <div className="absolute bottom-12 md:bottom-16 left-10 right-10">
-                <h3 className="text-[28px] md:text-[36px] font-black leading-[0.95] tracking-tighter mb-8 text-white uppercase italic">
-                  {heroWorkout.title}
-                </h3>
-
-                <div className="flex items-center justify-between">
-                  <button type="button" className="h-12 px-8 md:h-14 md:px-10 bg-white text-black font-black uppercase tracking-[0.2em] text-[11px] rounded-full flex items-center gap-3 shadow-[0_10px_40px_rgba(255,255,255,0.2)] press-scale">
-                    <Play fill="black" size={14} />
-                    Engage
+                {isHeroInPlan && (
+                  <button
+                    type="button"
+                    onClick={(e) => handleToggleComplete(e, heroPlanId)}
+                    className={`absolute top-8 right-8 w-14 h-14 rounded-full border-2 flex items-center justify-center transition-all z-20 ${
+                      workoutsInPlan[0].completed
+                        ? 'bg-white border-white shadow-[0_0_30px_rgba(255,255,255,0.4)]'
+                        : 'bg-black/20 blur-surface border-white/30 text-white/40'
+                    }`}
+                  >
+                    <CheckCircle2 size={20} className={workoutsInPlan[0].completed ? 'text-black' : 'text-current'} />
                   </button>
+                )}
 
-                  <div className="flex gap-6">
-                    <div className="flex flex-col items-end">
-                      <span className="text-[16px] md:text-[18px] font-black text-white drop-shadow-lg">{heroWorkout.duration}</span>
-                      <span className="text-[8px] font-black uppercase text-white/60 tracking-widest">Time</span>
+                <div className="absolute bottom-12 md:bottom-16 left-10 right-10">
+                  <h3 className="text-[28px] md:text-[36px] font-black leading-[0.95] tracking-tighter mb-8 text-white uppercase italic">
+                    {heroWorkout.title}
+                  </h3>
+
+                  <div className="flex items-center justify-between">
+                    <button type="button" className="h-12 px-8 md:h-14 md:px-10 bg-white text-black font-black uppercase tracking-[0.2em] text-[11px] rounded-full flex items-center gap-3 shadow-[0_10px_40px_rgba(255,255,255,0.2)] press-scale">
+                      <Play fill="black" size={14} />
+                      Engage
+                    </button>
+
+                    <div className="flex gap-6">
+                      <div className="flex flex-col items-end">
+                        <span className="text-[16px] md:text-[18px] font-black text-white drop-shadow-lg">{heroWorkout.duration}</span>
+                        <span className="text-[8px] font-black uppercase text-white/60 tracking-widest">Time</span>
+                      </div>
                     </div>
                   </div>
                 </div>
+              </button>
+            </>
+          ) : (
+            <button
+              type="button"
+              onClick={onOpenCalendar}
+              className="relative h-[280px] md:h-[400px] bg-zinc-900/20 border border-white/8 rounded-[56px] flex flex-col items-center justify-center gap-4 group press-scale w-full text-left"
+            >
+              <div className="w-16 h-16 rounded-full bg-white/5 border border-white/10 flex items-center justify-center transition-transform group-hover:scale-110">
+                <Play size={28} className="text-white/30" />
+              </div>
+              <div className="text-center">
+                <span className="text-[11px] font-bold text-white/40 uppercase tracking-widest">Plan your first workout</span>
+                <span className="text-[10px] text-white/30 mt-1 block">Open the calendar to get started</span>
               </div>
             </button>
-          </>
+          )
         ) : (
           <div className="h-[600px] rounded-[40px] bg-zinc-900/30 border border-white/10 overflow-hidden">
             {isLoading ? (
@@ -368,20 +379,37 @@ const HomeView: React.FC<HomeViewProps> = ({
           rightElement={<button type="button"><ChevronRight size={16} className="text-white/20" /></button>}
         />
         <div className="flex gap-4 overflow-x-auto custom-scrollbar -mx-6 px-6 scroll-fade">
-          {MOCK_MEALS.map((meal) => (
+          {mealsInPlan.length > 0 ? (
+            mealsInPlan.map((item) => {
+              const meal = item.item as Meal;
+              return (
+                <button
+                  type="button"
+                  key={item._id}
+                  onClick={() => onSelectMeal(meal)}
+                  className="flex-shrink-0 w-60 group active:scale-[0.98] transition-all text-left"
+                >
+                  <div className="h-40 rounded-[32px] overflow-hidden mb-3 shadow-lg bg-zinc-900 border border-white/10">
+                    {meal.image && <img src={meal.image} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt={meal.title} />}
+                  </div>
+                  <h3 className="font-bold text-base leading-tight tracking-tight mb-1 text-white/90">{meal.title}</h3>
+                  <p className="text-[10px] font-bold text-white/60 uppercase tracking-widest">{meal.prepTime}</p>
+                </button>
+              );
+            })
+          ) : (
             <button
               type="button"
-              key={meal.id}
-              onClick={() => onSelectMeal(meal)}
+              onClick={onNavigateToNutritionPlan}
               className="flex-shrink-0 w-60 group active:scale-[0.98] transition-all text-left"
             >
-              <div className="h-40 rounded-[32px] overflow-hidden mb-3 shadow-lg bg-zinc-900 border border-white/10">
-                <img src={meal.image} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt={meal.title} />
+              <div className="h-40 rounded-[32px] overflow-hidden mb-3 bg-zinc-900/20 border border-dashed border-white/10 flex items-center justify-center">
+                <Utensils size={24} className="text-white/20" />
               </div>
-              <h3 className="font-bold text-base leading-tight tracking-tight mb-1 text-white/90">{meal.title}</h3>
-              <p className="text-[10px] font-bold text-white/60 uppercase tracking-widest">{meal.prepTime}</p>
+              <h3 className="font-bold text-base leading-tight tracking-tight mb-1 text-white/40">Plan your meals</h3>
+              <p className="text-[10px] font-bold text-white/30 uppercase tracking-widest">Get started</p>
             </button>
-          ))}
+          )}
           <div className="flex-shrink-0 w-4" />
         </div>
       </div>

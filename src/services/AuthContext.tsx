@@ -233,8 +233,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
           }
         }
       } catch (signInErr: any) {
-        console.error('[Auth] signIn error in block:', signInErr);
-        // 2. If we reach here, we know the account exists (for signIn) or doesn't exist (for signUp).
+        // If we reach here, we know the account exists (for signIn) or doesn't exist (for signUp).
         // Since Convex masks the exact reason with a 500 Server Error, we can now confidently infer it.
         if (args.flow === 'signIn') {
           throw new Error('Incorrect password. Please try again.');
@@ -284,7 +283,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
 
 export const useAuth = () => {
   const context = useContext(AuthContext);
-  if (context === undefined) {
+  if (!context) {
     throw new Error('useAuth must be used within an AuthProvider');
   }
   return context;

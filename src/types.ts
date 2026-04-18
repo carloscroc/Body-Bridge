@@ -84,6 +84,7 @@ export interface Member {
   status: 'online' | 'offline' | 'training';
   bio: string;
   location?: string;
+  /** Stats are populated from the getUserStats query, not stored directly on the profile */
   stats: {
     workoutsCompleted: number;
     streakDays: number;
@@ -101,13 +102,24 @@ export interface Exercise {
   image: string;
   category: string;
   muscleGroup: string;
+  // Muscle targeting — primaryMuscles/secondaryMuscles from Convex, agonistMuscles as legacy alias
+  primaryMuscles?: string[];
+  secondaryMuscles?: string[];
   agonistMuscles?: string[];
-  equipment: string;
-  difficulty: string;
+  equipment: string;           // Display string (joined from Convex array in mapExercise)
+  difficulty: 'Beginner' | 'Intermediate' | 'Advanced' | string;
   instructions?: string[];
+  overview?: string;
+  benefits?: string[];
+  tags?: string[];
+  tempo?: string;
+  rest?: string;
+  weight?: string;
+  sets?: string;
   duration?: string;
   reps?: string;
   videoUrl?: string;
+  libraryId?: string;
 }
 
 export interface WorkoutExercise {
@@ -131,6 +143,12 @@ export enum WorkoutFormat {
   USER_PACED = 'user_paced'
 }
 
+/**
+ * Frontend Workout representation.
+ * NOTE: Some fields (coach, intensity, kcal, focus, equipment, coachNotes)
+ * are UI-only and don't map to the Convex workouts table.
+ * These will be reconciled when workout creation moves to Phase 3.
+ */
 export interface Workout {
   id: string;
   title: string;

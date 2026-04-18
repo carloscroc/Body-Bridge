@@ -9,15 +9,22 @@ import { requireProfileId } from "./lib/auth";
 
 // Validator for a single exercise within a workout
 const workoutExerciseValidator = v.object({
-  id: v.string(),
-  name: v.string(),
+  id: v.optional(v.string()),
+  exerciseId: v.optional(v.string()),
+  name: v.optional(v.string()),
   image: v.optional(v.string()),
-  sets: v.optional(v.string()),
-  reps: v.optional(v.string()),
+  muscleGroup: v.optional(v.string()),
+  sets: v.optional(v.union(v.string(), v.number())),
+  reps: v.optional(v.union(v.string(), v.number())),
   weight: v.optional(v.string()),
-  rest: v.optional(v.string()),
+  rest: v.optional(v.union(v.string(), v.number())),
+  restSeconds: v.optional(v.number()),
+  duration: v.optional(v.string()),
   notes: v.optional(v.string()),
   completed: v.optional(v.boolean()),
+  order: v.optional(v.number()),
+  videoUrl: v.optional(v.string()),
+  libraryId: v.optional(v.string()),
 });
 
 /**
@@ -28,7 +35,7 @@ export const create = mutation({
     title: v.string(),
     subtitle: v.optional(v.string()),
     duration: v.optional(v.string()),
-    exercises: v.array(v.any()), // Use any for flexibility with frontend types
+    exercises: v.array(workoutExerciseValidator),
     completed: v.boolean(),
     date: v.number(),
   },
@@ -90,7 +97,7 @@ export const update = mutation({
     title: v.optional(v.string()),
     subtitle: v.optional(v.string()),
     duration: v.optional(v.string()),
-    exercises: v.optional(v.array(v.any())),
+    exercises: v.optional(v.array(workoutExerciseValidator)),
     completed: v.optional(v.boolean()),
   },
   handler: async (ctx, args) => {

@@ -3,7 +3,6 @@ import { Search, Filter, Dumbbell } from 'lucide-react';
 import { useQuery, useMutation } from 'convex/react';
 import { api } from '@convex/_generated/api';
 import type { Exercise } from '../types';
-import { MOCK_EXERCISES } from '../constants';
 import { resolveHighEndExerciseImage } from '../utils/imageResolver';
 import PremiumHeader from '../components/PremiumHeader';
 import PremiumSectionHeader from '../components/PremiumSectionHeader';
@@ -130,12 +129,8 @@ const ExercisesView: React.FC<ExercisesViewProps> = ({ onSelect }) => {
   }, [result, loadingMore]);
 
   const isLoading = result === undefined;
-  // Use MOCK_EXERCISES as a base fallback if the query is loading or empty (especially useful when backend is down)
-  // Ensure we ALWAYS have some exercises to show if the backend is taking too long or empty
-  const exercises: Exercise[] = useMemo(() => {
-    if (accumulated.length > 0) return accumulated;
-    return MOCK_EXERCISES || [];
-  }, [accumulated]);
+  // Use exercises loaded from Convex backend
+  const exercises: Exercise[] = useMemo(() => accumulated, [accumulated]);
 
   const showBackendIssue = isLoading && accumulated.length === 0;
 

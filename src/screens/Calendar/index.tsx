@@ -4,6 +4,7 @@ import { PlanItem, Workout, Meal } from '../../types';
 import { ArrowLeft, Calendar, CalendarDays, ChevronLeft, ChevronRight, LayoutGrid, List, Menu, Plus, X, Dumbbell, Utensils, Zap, Copy } from 'lucide-react';
 import { useQuery, useMutation } from 'convex/react';
 import { api } from '@convex/_generated/api';
+import { Id } from '@convex/_generated/dataModel';
 import ListView from './ListView';
 import DayView from './DayView';
 import WeekView from './WeekView';
@@ -142,7 +143,7 @@ const CalendarView: React.FC<CalendarViewProps> = ({
   ];
 
   const onUpdatePlanItemForViews = async (id: string, updates: any) => {
-    await updateItem({ id: id as any, updates });
+    await updateItem({ id: id as Id<"userPlans">, updates });
   };
 
   const renderView = () => {
@@ -487,12 +488,12 @@ const CalendarView: React.FC<CalendarViewProps> = ({
              setEditingEvent(null);
            }}
            onDelete={async () => {
-             await removeItem({ id: editingEvent.id as any });
+              await removeItem({ id: editingEvent.id as Id<"userPlans"> });
              setEditingEvent(null);
            }}
            onConfirm={async (data) => {
-             await updateItem({ 
-               id: editingEvent.id as any, 
+              await updateItem({ 
+                id: editingEvent.id as Id<"userPlans">,
                updates: {
                  scheduledTime: data.specificTime,
                  mealType: data.slot,

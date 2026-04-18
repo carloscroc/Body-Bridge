@@ -26,6 +26,7 @@ import type * as llm_aiHttp from "../llm/aiHttp.js";
 import type * as llm_config from "../llm/config.js";
 import type * as llm_errors from "../llm/errors.js";
 import type * as llm_openaiCompat from "../llm/openaiCompat.js";
+import type * as meals from "../meals.js";
 import type * as messages from "../messages.js";
 import type * as notifications from "../notifications.js";
 import type * as profiles from "../profiles.js";
@@ -66,6 +67,7 @@ declare const fullApi: ApiFromModules<{
   "llm/config": typeof llm_config;
   "llm/errors": typeof llm_errors;
   "llm/openaiCompat": typeof llm_openaiCompat;
+  meals: typeof meals;
   messages: typeof messages;
   notifications: typeof notifications;
   profiles: typeof profiles;

@@ -51,6 +51,19 @@ export const getMe = query({
   },
 });
 
+/** Look up a profile by full name — used by community profile sheets */
+export const getByName = query({
+  args: { name: v.string() },
+  handler: async (ctx, { name }) => {
+    const userId = await getAuthUserId(ctx);
+    if (!userId) return null;
+
+    // No index on fullName, so collect and filter
+    const profiles = await ctx.db.query("profiles").collect();
+    return profiles.find((p) => p.fullName === name) ?? null;
+  },
+});
+
 export const updateMe = mutation({
     args: {
     fullName: v.optional(v.string()),
@@ -61,7 +74,11 @@ export const updateMe = mutation({
     experienceLevel: v.optional(v.string()),
     trainingDaysPerWeek: v.optional(v.number()),
     equipmentAccess: v.optional(v.array(v.string())),
-    units: v.optional(v.any()),
+    units: v.optional(v.object({
+      weight: v.union(v.literal("lb"), v.literal("kg")),
+      height: v.union(v.literal("cm"), v.literal("ft")),
+      distance: v.union(v.literal("mi"), v.literal("km")),
+    })),
     sortPreference: v.optional(v.union(v.literal("popular"), v.literal("difficulty"), v.literal("alphabetical"))),
     planSummaryLastShown: v.optional(v.string()),
     subRenewalLastShown: v.optional(v.string()),
@@ -75,8 +92,6 @@ export const updateMe = mutation({
       .query("profiles")
       .withIndex("by_userId", (q) => q.eq("userId", userId))
       .first();
-    console.log("updateMe profile:", profile);
-
     if (!profile) throw new Error("Profile not found");
 
     await ctx.db.patch(profile._id, {

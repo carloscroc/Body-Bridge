@@ -2,7 +2,6 @@ import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import { useQuery } from 'convex/react';
 import { api } from '@convex/_generated/api';
 import { Exercise, WorkoutExercise } from '../types';
-import { MOCK_EXERCISES } from '../constants';
 import { Search, X, Dumbbell, Loader2 } from 'lucide-react';
 import { PremiumExerciseGrid } from './PremiumExerciseCard';
 import { resolveHighEndExerciseImage } from '../utils/imageResolver';
@@ -114,11 +113,8 @@ const ExercisePicker: React.FC<ExercisePickerProps> = ({
     setCurrentLimit(LOAD_MORE_LIMIT);
   }, [result, paginationStatus, isLoading]);
 
-  // Use accumulated exercises for display, with mock fallback if needed
-  const exercises = useMemo(() => {
-    if (accumulated.length > 0) return accumulated;
-    return MOCK_EXERCISES || [];
-  }, [accumulated]);
+  // Use accumulated exercises for display (loaded from Convex backend)
+  const exercises = useMemo(() => accumulated, [accumulated]);
 
   if (!isOpen) return null;
 

@@ -2,6 +2,7 @@ import { v } from "convex/values";
 import { query, mutation } from "./_generated/server";
 import { paginationOptsValidator } from "convex/server";
 import type { Id, Doc } from "./_generated/dataModel";
+import { requireProfileId } from "./lib/auth";
 
 // ============== POSTS ==============
 
@@ -103,10 +104,6 @@ export const getPostById = query({
 
 export const createPost = mutation({
   args: {
-    authorId: v.id("profiles"),
-    authorName: v.string(),
-    authorAvatar: v.optional(v.string()),
-    authorRole: v.union(v.literal("trainer"), v.literal("client")),
     title: v.optional(v.string()),
     content: v.string(),
     category: v.optional(v.string()),
@@ -114,12 +111,18 @@ export const createPost = mutation({
   },
   returns: v.id("socialPosts"),
   handler: async (ctx, args) => {
+    const profileId = await requireProfileId(ctx);
+    const profile = await ctx.db.get(profileId) as Doc<"profiles"> | null;
+    const authorName = profile?.fullName ?? "Member";
+    const authorAvatar = profile?.avatarUrl;
+    const authorRole = (profile?.authSource ?? "client") as "trainer" | "client";
+
     const now = Date.now();
     return await ctx.db.insert("socialPosts", {
-      authorId: args.authorId,
-      authorName: args.authorName,
-      authorAvatar: args.authorAvatar,
-      authorRole: args.authorRole,
+      authorId: profileId,
+      authorName,
+      authorAvatar,
+      authorRole,
       title: args.title,
       content: args.content,
       category: args.category ?? "General",
@@ -143,9 +146,13 @@ export const updatePost = mutation({
   },
   returns: v.null(),
   handler: async (ctx, args) => {
+    const profileId = await requireProfileId(ctx);
     const post = await ctx.db.get(args.postId);
     if (!post) {
       throw new Error("Post not found");
+    }
+    if (post.authorId !== profileId) {
+      throw new Error("Not authorized to edit this post");
     }
     await ctx.db.patch(args.postId, {
       content: args.content,
@@ -162,9 +169,13 @@ export const deletePost = mutation({
   },
   returns: v.null(),
   handler: async (ctx, args) => {
+    const profileId = await requireProfileId(ctx);
     const post = await ctx.db.get(args.postId);
     if (!post) {
       throw new Error("Post not found");
+    }
+    if (post.authorId !== profileId) {
+      throw new Error("Not authorized to delete this post");
     }
     await ctx.db.patch(args.postId, {
       isDeleted: true,
@@ -232,15 +243,17 @@ export const getCommentsByPost = query({
 export const createComment = mutation({
   args: {
     postId: v.id("socialPosts"),
-    authorId: v.id("profiles"),
-    authorName: v.string(),
-    authorAvatar: v.optional(v.string()),
-    authorRole: v.union(v.literal("trainer"), v.literal("client")),
     content: v.string(),
     parentCommentId: v.optional(v.id("socialComments")),
   },
   returns: v.id("socialComments"),
   handler: async (ctx, args) => {
+    const profileId = await requireProfileId(ctx);
+    const profile = await ctx.db.get(profileId) as Doc<"profiles"> | null;
+    const authorName = profile?.fullName ?? "Member";
+    const authorAvatar = profile?.avatarUrl;
+    const authorRole = (profile?.authSource ?? "client") as "trainer" | "client";
+
     const post = await ctx.db.get(args.postId);
     if (!post || post.isDeleted) {
       throw new Error("Post not found");
@@ -249,10 +262,10 @@ export const createComment = mutation({
     const now = Date.now();
     const commentId = await ctx.db.insert("socialComments", {
       postId: args.postId,
-      authorId: args.authorId,
-      authorName: args.authorName,
-      authorAvatar: args.authorAvatar,
-      authorRole: args.authorRole,
+      authorId: profileId,
+      authorName,
+      authorAvatar,
+      authorRole,
       content: args.content,
       parentCommentId: args.parentCommentId,
       likeCount: 0,
@@ -267,7 +280,7 @@ export const createComment = mutation({
     });
     // Notify post owner about the new comment (if not commenting on own post)
     const postOwnerId = post.authorId;
-    if (postOwnerId && postOwnerId !== args.authorId) {
+    if (postOwnerId && postOwnerId !== profileId) {
       const owner = await ctx.db.get(postOwnerId);
       const ownerName = (owner as any)?.fullName ?? "User";
       // Notification already contains commentId from above
@@ -275,7 +288,7 @@ export const createComment = mutation({
         userId: postOwnerId as any,
         type: "comment",
         title: "New comment on your post",
-        message: `${args.authorName} commented on your post`,
+        message: `${authorName} commented on your post`,
         payload: { postId: args.postId, commentId },
         link: `/posts/${args.postId}`,
         isRead: false,
@@ -294,9 +307,13 @@ export const updateComment = mutation({
   },
   returns: v.null(),
   handler: async (ctx, args) => {
+    const profileId = await requireProfileId(ctx);
     const comment = await ctx.db.get(args.commentId);
     if (!comment) {
       throw new Error("Comment not found");
+    }
+    if (comment.authorId !== profileId) {
+      throw new Error("Not authorized to edit this comment");
     }
     await ctx.db.patch(args.commentId, {
       content: args.content,
@@ -312,9 +329,13 @@ export const deleteComment = mutation({
   },
   returns: v.null(),
   handler: async (ctx, args) => {
+    const profileId = await requireProfileId(ctx);
     const comment = await ctx.db.get(args.commentId);
     if (!comment) {
       throw new Error("Comment not found");
+    }
+    if (comment.authorId !== profileId) {
+      throw new Error("Not authorized to delete this comment");
     }
 
     const post = await ctx.db.get(comment.postId);
@@ -364,13 +385,13 @@ export const toggleLike = mutation({
   args: {
     postId: v.optional(v.id("socialPosts")),
     commentId: v.optional(v.id("socialComments")),
-    userId: v.id("profiles"),
   },
   returns: v.object({
     liked: v.boolean(),
     likeCount: v.number(),
   }),
   handler: async (ctx, args) => {
+    const userId = await requireProfileId(ctx);
     const now = Date.now();
     let existingLike: Doc<"socialLikes"> | null = null;
 
@@ -378,14 +399,14 @@ export const toggleLike = mutation({
       existingLike = await ctx.db
         .query("socialLikes")
         .withIndex("by_post_user", (q) =>
-          q.eq("postId", args.postId).eq("userId", args.userId)
+          q.eq("postId", args.postId).eq("userId", userId)
         )
         .unique();
     } else if (args.commentId) {
       existingLike = await ctx.db
         .query("socialLikes")
         .withIndex("by_comment_user", (q) =>
-          q.eq("commentId", args.commentId).eq("userId", args.userId)
+          q.eq("commentId", args.commentId).eq("userId", userId)
         )
         .unique();
     } else {
@@ -424,7 +445,7 @@ export const toggleLike = mutation({
         postId?: Id<"socialPosts">;
         commentId?: Id<"socialComments">;
       } = {
-        userId: args.userId,
+        userId: userId,
         createdAt: now,
       };
       
@@ -442,8 +463,8 @@ export const toggleLike = mutation({
           });
 
           // Notify post owner about the like (not self-like)
-          if (post.authorId !== args.userId) {
-            const actor = await ctx.db.get(args.userId);
+          if (post.authorId !== userId) {
+            const actor = await ctx.db.get(userId);
             const actorName = (actor as any)?.fullName ?? "Someone";
             await ctx.db.insert("notifications", {
               userId: post.authorId as any,
@@ -598,19 +619,20 @@ export const getGroupMembers = query({
 });
 
 export const addGroupMember = mutation({
-  args: {
-    userId: v.id("profiles"),
-    fullName: v.string(),
-    avatarUrl: v.optional(v.string()),
-    role: v.union(v.literal("trainer"), v.literal("client")),
-  },
+  args: {},
   returns: v.id("groupMembers"),
-  handler: async (ctx, args) => {
+  handler: async (ctx, _args) => {
+    const profileId = await requireProfileId(ctx);
+    const profile = await ctx.db.get(profileId);
+    const authorName = profile?.fullName ?? "Member";
+    const authorAvatar = profile?.avatarUrl;
+    const authorRole = (profile?.authSource ?? "client") as "trainer" | "client";
+
     const now = Date.now();
     
     const existing = await ctx.db
       .query("groupMembers")
-      .withIndex("by_user", (q) => q.eq("userId", args.userId))
+      .withIndex("by_user", (q) => q.eq("userId", profileId))
       .unique();
     
     if (existing) {
@@ -622,10 +644,10 @@ export const addGroupMember = mutation({
     }
 
     return await ctx.db.insert("groupMembers", {
-      userId: args.userId,
-      fullName: args.fullName,
-      avatarUrl: args.avatarUrl,
-      role: args.role,
+      userId: profileId,
+      fullName: authorName,
+      avatarUrl: authorAvatar,
+      role: authorRole,
       joinedAt: now,
       lastActiveAt: now,
       isActive: true,
@@ -639,6 +661,17 @@ export const removeGroupMember = mutation({
   },
   returns: v.null(),
   handler: async (ctx, args) => {
+    const profileId = await requireProfileId(ctx);
+    const member = await ctx.db.get(args.memberId);
+    if (!member) {
+      throw new Error("Member not found");
+    }
+    // Only the member themselves or a trainer can deactivate
+    const profile = await ctx.db.get(profileId);
+    const isTrainer = (profile?.authSource ?? "client") === "trainer";
+    if (member.userId !== profileId && !isTrainer) {
+      throw new Error("Not authorized to remove this member");
+    }
     await ctx.db.patch(args.memberId, {
       isActive: false,
     });
@@ -647,14 +680,13 @@ export const removeGroupMember = mutation({
 });
 
 export const updateMemberActivity = mutation({
-  args: {
-    userId: v.id("profiles"),
-  },
+  args: {},
   returns: v.null(),
-  handler: async (ctx, args) => {
+  handler: async (ctx, _args) => {
+    const profileId = await requireProfileId(ctx);
     const member = await ctx.db
       .query("groupMembers")
-      .withIndex("by_user", (q) => q.eq("userId", args.userId))
+      .withIndex("by_user", (q) => q.eq("userId", profileId))
       .unique();
     
     if (member) {
@@ -670,18 +702,23 @@ export const updateMemberActivity = mutation({
 
 export const createFollow = mutation({
   args: {
-    followerId: v.id("profiles"),
     followingId: v.id("profiles"),
   },
   returns: v.id("socialFollows"),
   handler: async (ctx, args) => {
+    const followerId = await requireProfileId(ctx);
     const now = Date.now();
+
+    // Can't follow yourself
+    if (followerId === args.followingId) {
+      throw new Error("Cannot follow yourself");
+    }
 
     // Check if already following
     const existing = await ctx.db
       .query("socialFollows")
       .withIndex("by_both", (q) =>
-        q.eq("followerId", args.followerId).eq("followingId", args.followingId)
+        q.eq("followerId", followerId).eq("followingId", args.followingId)
       )
       .unique();
 
@@ -690,7 +727,7 @@ export const createFollow = mutation({
     }
 
     return await ctx.db.insert("socialFollows", {
-      followerId: args.followerId,
+      followerId,
       followingId: args.followingId,
       createdAt: now,
     });
@@ -703,6 +740,14 @@ export const deleteFollow = mutation({
   },
   returns: v.null(),
   handler: async (ctx, args) => {
+    const profileId = await requireProfileId(ctx);
+    const follow = await ctx.db.get(args.followId);
+    if (!follow) {
+      throw new Error("Follow not found");
+    }
+    if (follow.followerId !== profileId) {
+      throw new Error("Not authorized to delete this follow");
+    }
     await ctx.db.delete(args.followId);
     return null;
   },

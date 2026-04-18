@@ -1,7 +1,6 @@
 import React, { useCallback, useMemo, useRef, useState } from 'react';
 import { useMutation, useQuery } from 'convex/react';
 import { api } from '@convex/_generated/api';
-import { MOCK_WORKOUTS } from '../constants';
 import { UserWorkout, Workout } from '../types';
 import { Calendar, Clock, Copy, Dumbbell, Edit3, Flame, Layers, MoreHorizontal, Play, Plus, Search, Trash2 } from 'lucide-react';
 import TrainingArchitect from '../components/TrainingArchitect';
@@ -72,7 +71,7 @@ const WorkoutsView: React.FC<WorkoutsViewProps> = ({
   }, [editWorkoutId, onEditWorkoutConsumed, customWorkouts]);
 
   const handleDeleteWorkout = async (workout: UserWorkout) => {
-    await removeWorkout({ id: workout.id as any });
+    await removeWorkout({ id: workout.id as Id<"savedWorkouts"> });
     setWorkoutToDelete(null);
   };
 
@@ -190,14 +189,14 @@ const WorkoutsView: React.FC<WorkoutsViewProps> = ({
   }, [programsQuery, convertProgramToWorkout]);
 
   const allWorkouts = [
-    ...MOCK_WORKOUTS,
+    ...savedPrograms,
     ...customWorkouts.map(convertUserWorkout)
   ];
 
   const filteredWorkouts = (activeTab === 'all' 
     ? allWorkouts 
     : activeTab === 'preset'
-    ? MOCK_WORKOUTS
+    ? savedPrograms
     : customWorkouts.map(convertUserWorkout)
   ).filter(w => 
     w.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
@@ -260,7 +259,7 @@ const WorkoutsView: React.FC<WorkoutsViewProps> = ({
       <div className="flex gap-2 mb-8 animate-silk-up" style={{ animationDelay: '0.1s' }}>
         {[
           { id: 'all', label: 'All', count: allWorkouts.length },
-          { id: 'preset', label: 'Preset', count: MOCK_WORKOUTS.length },
+          { id: 'preset', label: 'Preset', count: savedPrograms.length },
           { id: 'custom', label: 'My Blueprints', count: customWorkouts.length }
         ].map(tab => (
           <button

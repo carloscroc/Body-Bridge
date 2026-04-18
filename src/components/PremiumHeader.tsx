@@ -54,7 +54,7 @@ const PremiumHeader: React.FC<PremiumHeaderProps> = ({
             onClick={() => {
               try {
                 onNavigateToSettings?.();
-                try { console.log('[DEV DEBUG] PremiumHeader clicked - onNavigateToSettings called'); } catch (e) {}
+
               } catch (e) {
                 // ignore
               }

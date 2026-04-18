@@ -3,6 +3,7 @@ import { useMutation, useQuery } from 'convex/react';
 import { api } from '@convex/_generated/api';
 import { useAuth } from './services/AuthContext';
 import { Tab, Workout, Meal, Exercise } from './types';
+import { ErrorBoundary } from './components/ErrorBoundary';
 
 const AuthScreen = lazy(() => import('./screens/AuthScreen'));
 const OnboardingFlow = lazy(() => import('./screens/OnboardingFlow'));
@@ -512,9 +513,11 @@ export default function App() {
         <div 
           className={`h-full overflow-y-auto custom-scrollbar transition-opacity duration-300 ${isTransitioning ? 'opacity-0' : 'opacity-100'}`}
         >
-          <Suspense fallback={<ViewLoader />}>
-            {renderContent()}
-          </Suspense>
+          <ErrorBoundary>
+            <Suspense fallback={<ViewLoader />}>
+              {renderContent()}
+            </Suspense>
+          </ErrorBoundary>
         </div>
       ) : null)}
 

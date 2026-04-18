@@ -2,6 +2,59 @@ import { defineSchema, defineTable } from "convex/server";
 import { v } from "convex/values";
 import { authTables } from "@convex-dev/auth/server";
 
+// ============== Shared Validators ==============
+
+const unitsValidator = v.object({
+  weight: v.union(v.literal("lb"), v.literal("kg")),
+  height: v.union(v.literal("cm"), v.literal("ft")),
+  distance: v.union(v.literal("mi"), v.literal("km")),
+});
+
+const subscriptionValidator = v.object({
+  plan: v.union(v.literal("Free"), v.literal("Pro"), v.literal("Elite")),
+  status: v.union(v.literal("active"), v.literal("cancelled"), v.literal("expired")),
+  renewalDate: v.optional(v.string()),
+});
+
+/** Exercise item within a workout or workout log */
+const exerciseItemValidator = v.object({
+  id: v.optional(v.string()),
+  exerciseId: v.optional(v.string()),
+  name: v.optional(v.string()),
+  image: v.optional(v.string()),
+  muscleGroup: v.optional(v.string()),
+  sets: v.optional(v.union(v.string(), v.number())),
+  reps: v.optional(v.union(v.string(), v.number())),
+  weight: v.optional(v.string()),
+  rest: v.optional(v.union(v.string(), v.number())),
+  restSeconds: v.optional(v.number()),
+  duration: v.optional(v.string()),
+  notes: v.optional(v.string()),
+  completed: v.optional(v.boolean()),
+  order: v.optional(v.number()),
+  videoUrl: v.optional(v.string()),
+  libraryId: v.optional(v.string()),
+  // Allow extra fields from frontend for forward compatibility
+});
+
+/** Body measurements for progress entries */
+const measurementsValidator = v.object({
+  chest: v.optional(v.number()),
+  waist: v.optional(v.number()),
+  hips: v.optional(v.number()),
+  biceps: v.optional(v.number()),
+  thighs: v.optional(v.number()),
+  neck: v.optional(v.number()),
+  shoulders: v.optional(v.number()),
+  calves: v.optional(v.number()),
+  forearms: v.optional(v.number()),
+});
+
+/** Plan item payload — discriminated by type field on the parent */
+const planItemValidator = v.any(); // Intentionally flexible: holds serialized Workout/Meal/UserWorkout objects
+
+// ============== Schema ==============
+
 export default defineSchema({
   ...authTables,
   users: defineTable({
@@ -31,8 +84,8 @@ export default defineSchema({
     equipmentAccess: v.optional(v.array(v.string())),
     bio: v.optional(v.string()),
     location: v.optional(v.string()),
-    units: v.optional(v.any()),
-    subscription: v.optional(v.any()),
+    units: v.optional(unitsValidator),
+    subscription: v.optional(subscriptionValidator),
     createdAt: v.number(),
     planSummaryLastShown: v.optional(v.string()), // YYYY-MM-DD
     subRenewalLastShown: v.optional(v.string()), // YYYY-MM-DD
@@ -101,7 +154,7 @@ export default defineSchema({
     subtitle: v.optional(v.string()),
     duration: v.optional(v.string()),
     format: v.optional(v.literal("user_paced")),
-    exercises: v.array(v.any()),
+    exercises: v.array(exerciseItemValidator),
     completed: v.boolean(),
     date: v.number(),
     createdAt: v.number(),
@@ -164,8 +217,8 @@ export default defineSchema({
     status: v.union(v.literal("scheduled"), v.literal("in_progress"), v.literal("completed"), v.literal("missed"), v.literal("cancelled")),
     assignedBy: v.id("profiles"),
     assignedTo: v.id("profiles"),
-    exercises: v.optional(v.array(v.any())),
-    mealData: v.optional(v.any()),
+    exercises: v.optional(v.array(exerciseItemValidator)),
+    mealData: v.optional(v.record(v.string(), v.any())),
     metadata: v.optional(v.any()),
     createdAt: v.number(),
     updatedAt: v.number(),
@@ -240,7 +293,7 @@ export default defineSchema({
     date: v.number(),
     weight: v.optional(v.number()),
     bodyFat: v.optional(v.number()),
-    measurements: v.optional(v.any()),
+    measurements: v.optional(measurementsValidator),
     photos: v.optional(v.array(v.string())),
     notes: v.optional(v.string()),
     createdAt: v.number(),
@@ -249,7 +302,7 @@ export default defineSchema({
   workoutLogs: defineTable({
     userId: v.id("profiles"),
     date: v.number(),
-    exercises: v.array(v.any()),
+    exercises: v.array(exerciseItemValidator),
     duration: v.optional(v.number()),
     notes: v.optional(v.string()),
     createdAt: v.number(),
@@ -339,7 +392,7 @@ export default defineSchema({
   userPlans: defineTable({
     userId: v.id("profiles"),
     type: v.union(v.literal("meal"), v.literal("workout")),
-    item: v.any(), 
+    item: planItemValidator, 
     scheduledDate: v.string(), 
     scheduledTime: v.optional(v.string()),
     mealType: v.optional(v.string()),

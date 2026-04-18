@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useMutation } from 'convex/react';
 import { api } from '@convex/_generated/api';
 import { useAuth } from '../services/AuthContext';
+import { useCurrentUser } from '../hooks/useCurrentUser';
 import { 
   ChevronLeft, Clock, Zap, Flame, Share2, Bookmark, 
   CheckCircle2, ChevronRight,
@@ -69,6 +70,7 @@ const WorkoutDetail: React.FC<WorkoutDetailProps> = ({ workout, onBack, onSelect
 
   // Auth & API mutation integration
   const { user } = useAuth();
+  const { profileId } = useCurrentUser();
   const createWorkoutLog = useMutation(api.progress.createWorkoutLog);
 
   // Finishing state for FINISH SESSION flow
@@ -133,7 +135,7 @@ const WorkoutDetail: React.FC<WorkoutDetailProps> = ({ workout, onBack, onSelect
       return;
     }
     // If user not authenticated, exit gracefully
-    if (!user?._id) {
+    if (!profileId) {
       onBack();
       return;
     }
@@ -143,12 +145,24 @@ const WorkoutDetail: React.FC<WorkoutDetailProps> = ({ workout, onBack, onSelect
 
     try {
       await createWorkoutLog({
-        userId: user._id,
         date: Date.now(),
-        exercises: workout.exercises,
+        exercises: workout.exercises.map((ex) => ({
+          id: ex.id,
+          exerciseId: ex.id,
+          name: ex.name,
+          image: ex.image,
+          muscleGroup: ex.muscleGroup,
+          sets: ex.sets,
+          reps: ex.reps,
+          duration: ex.duration,
+          rest: ex.rest,
+          weight: ex.weight,
+          notes: ex.notes,
+          completed: false,
+        })),
         duration: totalTimeElapsed,
         notes: workout.title,
-      } as any);
+      });
       onBack();
     } catch (err) {
       setFinishError('Unable to save your workout log. Please try again or exit.');

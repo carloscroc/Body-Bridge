@@ -49,7 +49,7 @@ export const getAllPlans = query({
 export const addToPlan = mutation({
   args: {
     type: v.union(v.literal("meal"), v.literal("workout")),
-    item: v.any(),
+    item: v.any(), // Serialized Workout/Meal/UserWorkout — intentionally flexible
     scheduledDate: v.string(),
     mealType: v.optional(v.string()),
     notes: v.optional(v.string()),
@@ -100,8 +100,13 @@ export const updatePlanItem = mutation({
     const existing = await ctx.db.get(args.id);
     if (!existing) throw new Error("Plan item not found");
 
-    // In a real app, we'd check if existing.userId matches the current user's profile._id
-    
+    const profile = await ctx.db
+      .query("profiles")
+      .withIndex("by_userId", (q) => q.eq("userId", userId))
+      .unique();
+    if (!profile) throw new Error("Profile not found");
+    if (existing.userId !== profile._id) throw new Error("Not authorized to modify this plan item");
+
     await ctx.db.patch(args.id, {
       ...args.updates,
       updatedAt: Date.now(),
@@ -115,6 +120,16 @@ export const removeFromPlan = mutation({
     const userId = await getAuthUserId(ctx);
     if (!userId) throw new Error("Not authenticated");
 
+    const existing = await ctx.db.get(args.id);
+    if (!existing) throw new Error("Plan item not found");
+
+    const profile = await ctx.db
+      .query("profiles")
+      .withIndex("by_userId", (q) => q.eq("userId", userId))
+      .unique();
+    if (!profile) throw new Error("Profile not found");
+    if (existing.userId !== profile._id) throw new Error("Not authorized to delete this plan item");
+
     await ctx.db.delete(args.id);
   },
 });
@@ -127,6 +142,13 @@ export const togglePlanItemStatus = mutation({
 
     const existing = await ctx.db.get(args.id);
     if (!existing) throw new Error("Plan item not found");
+
+    const profile = await ctx.db
+      .query("profiles")
+      .withIndex("by_userId", (q) => q.eq("userId", userId))
+      .unique();
+    if (!profile) throw new Error("Profile not found");
+    if (existing.userId !== profile._id) throw new Error("Not authorized to modify this plan item");
 
     await ctx.db.patch(args.id, {
       completed: !existing.completed,

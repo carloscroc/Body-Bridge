@@ -19,7 +19,11 @@ const profileValidator = v.object({
   equipmentAccess: v.optional(v.array(v.string())),
   bio: v.optional(v.string()),
   location: v.optional(v.string()),
-  units: v.optional(v.any()),
+  units: v.optional(v.object({
+    weight: v.union(v.literal("lb"), v.literal("kg")),
+    height: v.union(v.literal("cm"), v.literal("ft")),
+    distance: v.union(v.literal("mi"), v.literal("km")),
+  })),
   sortPreference: v.optional(v.union(v.literal("popular"), v.literal("difficulty"), v.literal("alphabetical"))),
   planSummaryLastShown: v.optional(v.string()),
   subRenewalLastShown: v.optional(v.string()),
@@ -134,7 +138,11 @@ export const completeOnboarding = mutation({
   equipmentAccess: v.optional(v.array(v.string())),
   bio: v.optional(v.string()),
   location: v.optional(v.string()),
-  units: v.optional(v.any()),
+  units: v.optional(v.object({
+    weight: v.union(v.literal("lb"), v.literal("kg")),
+    height: v.union(v.literal("cm"), v.literal("ft")),
+    distance: v.union(v.literal("mi"), v.literal("km")),
+  })),
   },
   returns: v.union(profileValidator, v.null()),
   handler: async (ctx, args) => {
