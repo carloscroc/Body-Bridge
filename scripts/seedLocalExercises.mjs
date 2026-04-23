@@ -50,7 +50,7 @@ async function main() {
         reps: "10",
         tags: ex.tags || [],
         imageUrl: ex.image_url || '',
-        videoUrl: ex.video_url || ''
+        videoUrl: ex.video || ''
       };
     });
 
