@@ -1,0 +1,9 @@
+{
+	"id": "qnEXjfp2fE5lXZP",
+	"json": "{\"id\":\"qnEXjfp2fE5lXZP\",\"url\":\"https://www.forksoverknives.com/recipes/vegan-menus-collections/healthy-southern-vegan-recipes/\",\"loadedUrl\":\"https://www.forksoverknives.com/recipes/vegan-menus-collections/healthy-southern-vegan-recipes/\",\"uniqueKey\":\"https://www.forksoverknives.com/recipes/vegan-menus-collections/healthy-southern-vegan-recipes\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":1,\"state\":4}},\"handledAt\":\"2026-04-23T16:10:08.720Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.forksoverknives.com/recipes/vegan-menus-collections/healthy-southern-vegan-recipes",
+	"url": "https://www.forksoverknives.com/recipes/vegan-menus-collections/healthy-southern-vegan-recipes/"
+}

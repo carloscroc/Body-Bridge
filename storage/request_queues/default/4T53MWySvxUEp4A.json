@@ -1,0 +1,9 @@
+{
+	"id": "4T53MWySvxUEp4A",
+	"json": "{\"id\":\"4T53MWySvxUEp4A\",\"url\":\"https://www.forksoverknives.com/recipes/vegan-menus-collections/vegan-mushroom-recipes/\",\"loadedUrl\":\"https://www.forksoverknives.com/recipes/vegan-menus-collections/vegan-mushroom-recipes/\",\"uniqueKey\":\"https://www.forksoverknives.com/recipes/vegan-menus-collections/vegan-mushroom-recipes\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":1,\"state\":4}},\"handledAt\":\"2026-04-23T16:08:23.151Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.forksoverknives.com/recipes/vegan-menus-collections/vegan-mushroom-recipes",
+	"url": "https://www.forksoverknives.com/recipes/vegan-menus-collections/vegan-mushroom-recipes/"
+}

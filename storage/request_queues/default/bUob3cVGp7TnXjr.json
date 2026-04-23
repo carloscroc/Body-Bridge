@@ -1,6 +1,6 @@
 {
 	"id": "bUob3cVGp7TnXjr",
-	"json": "{\"id\":\"bUob3cVGp7TnXjr\",\"url\":\"https://www.forksoverknives.com/recipes/vegan-menus-collections/\",\"loadedUrl\":\"https://www.forksoverknives.com/recipes/vegan-menus-collections/\",\"uniqueKey\":\"https://www.forksoverknives.com/recipes/vegan-menus-collections\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-23T13:37:02.674Z\"}",
+	"json": "{\"id\":\"bUob3cVGp7TnXjr\",\"url\":\"https://www.forksoverknives.com/recipes/vegan-menus-collections/\",\"loadedUrl\":\"https://www.forksoverknives.com/recipes/vegan-menus-collections/\",\"uniqueKey\":\"https://www.forksoverknives.com/recipes/vegan-menus-collections\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-23T16:10:52.403Z\"}",
 	"method": "GET",
 	"orderNo": null,
 	"retryCount": 0,

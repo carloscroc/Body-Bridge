@@ -115,20 +115,63 @@ const SITES = {
 // AUTO-SCROLL (for lazy-loaded listing pages)
 // ═══════════════════════════════════════════════════════════════════
 
-async function autoScroll(page, maxScrolls = 8) {
+async function autoScroll(page, maxScrolls = 15) {
   try {
-    await page.evaluate(
-      (max) =>
-        new Promise((resolve) => {
-          let count = 0;
-          const timer = setInterval(() => {
-            window.scrollBy(0, 600);
-            if (++count >= max) { clearInterval(timer); resolve(); }
-          }, 250);
-        }),
-      maxScrolls,
-    );
-    await page.waitForTimeout(500);
+    // First wait for initial page load
+    await page.waitForTimeout(2000);
+
+    // Check if JSON-LD is already loaded
+    const jsonLdExists = await page.evaluate(() => {
+      return !!document.querySelector('script[type="application/ld+json"]');
+    });
+
+    if (!jsonLdExists) {
+      // Scroll to trigger lazy content loading
+      for (let i = 0; i < maxScrolls; i++) {
+        await page.evaluate(() => {
+          window.scrollBy(0, 600);
+          window.dispatchEvent(new Event('scroll'));
+        });
+        // Wait a bit between scrolls
+        await page.waitForTimeout(300);
+
+        // Check if JSON-LD loaded after each scroll
+        const hasJsonLd = await page.evaluate(() => {
+          const scripts = document.querySelectorAll('script[type="application/ld+json"]');
+          for (const s of scripts) {
+            try {
+              const data = JSON.parse(s.textContent);
+              if (Array.isArray(data)) {
+                for (const item of data) {
+                   const types = Array.isArray(item['@type']) ? item['@type'] : [item['@type']];
+                   if (types.includes('Recipe')) return true;
+                }
+              }
+              if (data['@type'] && data['@type'].includes('Recipe')) return true;
+              if (data['@graph']) {
+                const r = data['@graph'].find((g) => {
+                   const t = Array.isArray(g['@type']) ? g['@type'] : [g['@type']];
+                   return t.includes('Recipe');
+                });
+                if (r) return true;
+              }
+              const types = Array.isArray(data['@type']) ? data['@type'] : [data['@type']];
+              if (types.includes('Recipe')) return true;
+            } catch {}
+          }
+          return false;
+        });
+
+        if (hasJsonLd) {
+          // Wait a bit more for JS to parse JSON-LD
+          await page.waitForTimeout(1000);
+          break;
+        }
+      }
+    }
+
+    // Final wait for any remaining dynamic content
+    await page.waitForTimeout(2000);
   } catch { /* page may have navigated away */ }
 }
 
@@ -183,7 +226,7 @@ async function scrapeSite(siteKey, options = {}) {
   let storedCount = 0;
 
   const crawler = new PlaywrightCrawler({
-    maxRequestsPerCrawl: limit ? limit * 4 : 5000,
+    maxRequestsPerCrawl: limit ? limit * 20 : 5000, // Increased multiplier to find more pages
     maxConcurrency: concurrency,
     navigationTimeoutSecs: 45,
     requestHandlerTimeoutSecs: 120,

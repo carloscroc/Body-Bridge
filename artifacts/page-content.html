@@ -92,6 +92,14 @@
     .animate-silk-up {
       animation: silkSlideUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     }
+    @media (prefers-reduced-motion: reduce) {
+      .animate-silk-up {
+        animation: none;
+        transform: none;
+        opacity: 1;
+        filter: none;
+      }
+    }
     @keyframes shimmer {
       0% { background-position: -200% 0; }
       100% { background-position: 200% 0; }
@@ -105,14 +113,20 @@
       transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     }
   </style>
-  <script type="module" crossorigin="" src="/assets/index-90FfGevA.js"></script>
-  <link rel="stylesheet" crossorigin="" href="/assets/index-CE69m3oS.css">
+
+  <script type="module" crossorigin="" src="./assets/index-60JFKrwO.js"></script>
+  <link rel="modulepreload" crossorigin="" href="./assets/vendor-react-BL4MPuCm.js">
+  <link rel="modulepreload" crossorigin="" href="./assets/vendor-react-dom-m2Yz0AcL.js">
+  <link rel="modulepreload" crossorigin="" href="./assets/vendor-convex-C4MVr2m4.js">
+  <link rel="modulepreload" crossorigin="" href="./assets/vendor-icons-DXR6XtmR.js">
+  <link rel="stylesheet" crossorigin="" href="./assets/index-Ca_j9gUe.css">
 </head>
 <body>
   <div class="grain-overlay"></div>
   <div class="header-glow"></div>
   <div class="vignette"></div>
-  <div id="root"><div class="relative h-screen w-full bg-black text-white overflow-hidden"><div class="h-full overflow-y-auto custom-scrollbar transition-opacity duration-300"><div style="padding: 24px; max-width: 600px; margin: 0px auto;"><h1 style="font-size: 18px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.25em;">Settings</h1><section style="margin-top: 20px;"><h3 style="font-size: 12px; font-weight: 800; text-transform: uppercase; opacity: 0.6;">Profile Identity</h3><p style="margin-top: 8px; color: rgb(204, 204, 204);">Name: Developer</p></section><section style="margin-top: 20px;"><h3 style="font-size: 12px; font-weight: 800; text-transform: uppercase; opacity: 0.6;">Training Plan</h3><p style="margin-top: 8px; color: rgb(204, 204, 204);">Goal: Strength</p></section><section style="margin-top: 20px;"><h3 style="font-size: 12px; font-weight: 800; text-transform: uppercase; opacity: 0.6;">Membership Hub</h3><p style="margin-top: 8px; color: rgb(204, 204, 204);">Plan: Pro</p></section><div style="margin-top: 28px;"><button aria-label="Save Changes" style="padding: 10px 14px; font-weight: 800;">Save Changes</button></div></div></div></div></div>
+  <div id="root"><div class="min-h-screen bg-black text-white px-6 py-10 flex items-center justify-center"><div class="w-full max-w-xl rounded-[32px] border border-white/10 bg-white/[0.03] p-6 md:p-8"><p class="text-[11px] font-black uppercase tracking-[0.3em] text-white/45">Startup Check</p><h1 class="mt-4 text-3xl font-black tracking-[-0.04em]">Forge is running, but Convex is not reachable.</h1><p class="mt-4 text-sm leading-6 text-white/70">The UI was blank because the app crashed during startup when Convex was unavailable. Forge now shows this screen instead of failing silently.</p><div class="mt-6 space-y-3 text-sm text-white/80"><div class="rounded-2xl border border-white/10 bg-black/30 p-4"><p class="font-semibold text-white">Issue detected</p><p class="mt-1 text-white/65">The frontend found `VITE_CONVEX_URL`, but the local Convex service did not respond in time.</p></div><div class="rounded-2xl border border-white/10 bg-black/30 p-4"><p class="font-semibold text-white">What to fix</p><p class="mt-1 text-white/65">Run `npm run dev` again after Convex finishes starting, or run `npm run dev:client` separately if you only need the UI shell.</p></div><div class="rounded-2xl border border-white/10 bg-black/30 p-4"><p class="font-semibold text-white">Also check</p><p class="mt-1 text-white/65">If Convex asks to upgrade in the terminal, update the `convex` package or run the upgrade interactively before retrying.</p></div></div></div></div></div>
+
 
 
 </body></html>

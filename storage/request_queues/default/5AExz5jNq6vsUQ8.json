@@ -1,0 +1,9 @@
+{
+	"id": "5AExz5jNq6vsUQ8",
+	"json": "{\"id\":\"5AExz5jNq6vsUQ8\",\"url\":\"https://www.forksoverknives.com/recipes/vegan-menus-collections/20-minute-vegan-meals-recipes/\",\"loadedUrl\":\"https://www.forksoverknives.com/recipes/vegan-menus-collections/20-minute-vegan-meals-recipes/\",\"uniqueKey\":\"https://www.forksoverknives.com/recipes/vegan-menus-collections/20-minute-vegan-meals-recipes\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":1,\"state\":4}},\"handledAt\":\"2026-04-23T16:09:30.489Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.forksoverknives.com/recipes/vegan-menus-collections/20-minute-vegan-meals-recipes",
+	"url": "https://www.forksoverknives.com/recipes/vegan-menus-collections/20-minute-vegan-meals-recipes/"
+}

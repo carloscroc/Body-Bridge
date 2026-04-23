@@ -1,0 +1,9 @@
+{
+	"id": "k6oZt1Y9TAUNMU3",
+	"json": "{\"id\":\"k6oZt1Y9TAUNMU3\",\"url\":\"https://www.forksoverknives.com/recipes/vegan-baked-stuffed/sheet-pan-supper-with-broccoli-spuds-and-balsamic-chickpeas/\",\"loadedUrl\":\"https://www.forksoverknives.com/recipes/vegan-baked-stuffed/sheet-pan-supper-with-broccoli-spuds-and-balsamic-chickpeas/\",\"uniqueKey\":\"https://www.forksoverknives.com/recipes/vegan-baked-stuffed/sheet-pan-supper-with-broccoli-spuds-and-balsamic-chickpeas\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-23T16:11:43.012Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.forksoverknives.com/recipes/vegan-baked-stuffed/sheet-pan-supper-with-broccoli-spuds-and-balsamic-chickpeas",
+	"url": "https://www.forksoverknives.com/recipes/vegan-baked-stuffed/sheet-pan-supper-with-broccoli-spuds-and-balsamic-chickpeas/"
+}

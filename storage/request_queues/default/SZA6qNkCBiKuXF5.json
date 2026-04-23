@@ -1,0 +1,9 @@
+{
+	"id": "SZA6qNkCBiKuXF5",
+	"json": "{\"id\":\"SZA6qNkCBiKuXF5\",\"url\":\"https://www.forksoverknives.com/recipes/vegan-menus-collections/grab-and-go-lunches-for-busy-days/\",\"loadedUrl\":\"https://www.forksoverknives.com/recipes/vegan-menus-collections/grab-and-go-lunches-for-busy-days/\",\"uniqueKey\":\"https://www.forksoverknives.com/recipes/vegan-menus-collections/grab-and-go-lunches-for-busy-days\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":1,\"state\":4}},\"handledAt\":\"2026-04-23T16:09:28.427Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.forksoverknives.com/recipes/vegan-menus-collections/grab-and-go-lunches-for-busy-days",
+	"url": "https://www.forksoverknives.com/recipes/vegan-menus-collections/grab-and-go-lunches-for-busy-days/"
+}

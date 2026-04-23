@@ -118,7 +118,7 @@ const MealsView: React.FC<MealsViewProps> = ({ onSelect, calendarDateStr, onCale
   const [activeCategory, setActiveCategory] = useState('All');
   const [previewMeal, setPreviewMeal] = useState<Meal | null>(null);
   const addToPlanMutation = useMutation(api.userPlans.addToPlan);
-  const mealsQuery = useQuery(api.meals.getMeals);
+  const mealsQuery = useQuery(api.meals.getUserMeals);
 
   const isScheduling = Boolean(calendarDateStr);
 

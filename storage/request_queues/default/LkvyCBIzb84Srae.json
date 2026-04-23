@@ -1,0 +1,9 @@
+{
+	"id": "LkvyCBIzb84Srae",
+	"json": "{\"id\":\"LkvyCBIzb84Srae\",\"url\":\"https://www.forksoverknives.com/recipes/vegan-menus-collections/our-most-popular-vegan-dips/\",\"loadedUrl\":\"https://www.forksoverknives.com/recipes/vegan-menus-collections/our-most-popular-vegan-dips/\",\"uniqueKey\":\"https://www.forksoverknives.com/recipes/vegan-menus-collections/our-most-popular-vegan-dips\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":1,\"state\":4}},\"handledAt\":\"2026-04-23T16:08:58.321Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.forksoverknives.com/recipes/vegan-menus-collections/our-most-popular-vegan-dips",
+	"url": "https://www.forksoverknives.com/recipes/vegan-menus-collections/our-most-popular-vegan-dips/"
+}

@@ -1,0 +1,9 @@
+{
+	"id": "JhnGLtTrZLnhkfI",
+	"json": "{\"id\":\"JhnGLtTrZLnhkfI\",\"url\":\"https://www.forksoverknives.com/recipes/vegan-menus-collections/5-ingredient-vegan-recipes/\",\"loadedUrl\":\"https://www.forksoverknives.com/recipes/vegan-menus-collections/5-ingredient-vegan-recipes/\",\"uniqueKey\":\"https://www.forksoverknives.com/recipes/vegan-menus-collections/5-ingredient-vegan-recipes\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":1,\"state\":4}},\"handledAt\":\"2026-04-23T16:08:23.732Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.forksoverknives.com/recipes/vegan-menus-collections/5-ingredient-vegan-recipes",
+	"url": "https://www.forksoverknives.com/recipes/vegan-menus-collections/5-ingredient-vegan-recipes/"
+}
