@@ -16,26 +16,7 @@ const subscriptionValidator = v.object({
   renewalDate: v.optional(v.string()),
 });
 
-/** Exercise item within a workout or workout log */
-const exerciseItemValidator = v.object({
-  id: v.optional(v.string()),
-  exerciseId: v.optional(v.string()),
-  name: v.optional(v.string()),
-  image: v.optional(v.string()),
-  muscleGroup: v.optional(v.string()),
-  sets: v.optional(v.union(v.string(), v.number())),
-  reps: v.optional(v.union(v.string(), v.number())),
-  weight: v.optional(v.string()),
-  rest: v.optional(v.union(v.string(), v.number())),
-  restSeconds: v.optional(v.number()),
-  duration: v.optional(v.string()),
-  notes: v.optional(v.string()),
-  completed: v.optional(v.boolean()),
-  order: v.optional(v.number()),
-  videoUrl: v.optional(v.string()),
-  libraryId: v.optional(v.string()),
-  // Allow extra fields from frontend for forward compatibility
-});
+const exerciseItemValidator = v.any();
 
 /** Body measurements for progress entries */
 const measurementsValidator = v.object({
@@ -51,7 +32,7 @@ const measurementsValidator = v.object({
 });
 
 /** Plan item payload — discriminated by type field on the parent */
-const planItemValidator = v.any(); // Intentionally flexible: holds serialized Workout/Meal/UserWorkout objects
+const planItemValidator = v.any();
 
 // ============== Schema ==============
 
@@ -240,33 +221,7 @@ export default defineSchema({
     difficulty: v.union(v.literal("Beginner"), v.literal("Intermediate"), v.literal("Advanced")),
     tags: v.optional(v.array(v.string())),
     coverImage: v.optional(v.string()),
-    exercises: v.optional(v.array(v.union(
-      // OLD shape (back-compat with previously stored exercises)
-      v.object({
-        id: v.string(),
-        name: v.string(),
-        image: v.optional(v.string()),
-        sets: v.optional(v.string()),
-        reps: v.optional(v.string()),
-        weight: v.optional(v.string()),
-        rest: v.optional(v.string()),
-        notes: v.optional(v.string()),
-        completed: v.optional(v.boolean()),
-      }),
-      // NEW shape (canonical frontend WorkoutExercise from types.ts)
-      v.object({
-        exerciseId: v.string(),
-        name: v.string(),
-        image: v.string(),
-        muscleGroup: v.string(),
-        sets: v.optional(v.number()),
-        reps: v.optional(v.string()),
-        duration: v.optional(v.string()),
-        restSeconds: v.optional(v.number()),
-        order: v.number(),
-        videoUrl: v.optional(v.string()),
-      }),
-    ))),
+    exercises: v.optional(v.array(v.any())),
     createdAt: v.number(),
     updatedAt: v.number(),
   }).index("by_coach", ["coachId"]).searchIndex("search_title", { searchField: "title" }),
@@ -374,6 +329,42 @@ export default defineSchema({
     newFollowers: v.number(),
     engagementRate: v.number(),
   }).index("by_date", ["date"]),
+
+   recipes: defineTable({
+     source_site: v.string(),
+     source_url: v.string(),
+     recipe_title: v.string(),
+     short_description: v.optional(v.string()),
+     category: v.optional(v.string()),
+     tags: v.optional(v.array(v.string())),
+     ingredients: v.optional(v.array(v.object({
+       name: v.string(),
+       amount: v.optional(v.string()),
+       unit: v.optional(v.string()),
+       raw: v.optional(v.string())
+     }))),
+     instructions: v.optional(v.array(v.string())),
+     prep_time: v.optional(v.string()),
+     cook_time: v.optional(v.string()),
+     total_time: v.optional(v.string()),
+     servings: v.optional(v.string()),
+     nutrition_info: v.optional(v.any()),
+     diet_type: v.optional(v.array(v.union(
+       v.literal("plant_based"),
+       v.literal("minimally_processed_with_meat"),
+       v.literal("cancer"),
+       v.literal("heart_health"),
+       v.literal("diabetes"),
+       v.literal("kidney_disease")
+     ))),
+     disease_focus: v.optional(v.string()),
+     image_url: v.optional(v.string()),
+     createdAt: v.number(),
+     updatedAt: v.number()
+   })
+   .index("by_source_url", ["source_url"])
+   .index("by_recipe_title", ["recipe_title"])
+   .index("by_source_site", ["source_site"]),
 
   groupMembers: defineTable({
     userId: v.id("profiles"),

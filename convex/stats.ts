@@ -17,15 +17,15 @@ export const getUserStats = query({
     // 2. Total Volume (Weight Lifted)
     let weightLiftedKg = 0;
     for (const log of workoutLogs) {
-      if (Array.isArray(log.exercises)) {
-        for (const ex of log.exercises) {
-          // Calculation logic: sets * reps * weight
-          const sets = parseInt(ex.sets) || 0;
-          const reps = parseInt(ex.reps) || 0;
-          const weight = parseFloat(ex.weight) || 0;
-          weightLiftedKg += sets * reps * weight;
-        }
-      }
+       if (Array.isArray(log.exercises)) {
+         for (const ex of log.exercises) {
+           // Calculation logic: sets * reps * weight
+           const sets = typeof ex.sets === 'string' ? parseInt(ex.sets) : (ex.sets || 0);
+           const reps = typeof ex.reps === 'string' ? parseInt(ex.reps) : (ex.reps || 0);
+           const weight = typeof ex.weight === 'string' ? parseFloat(ex.weight) : (ex.weight || 0);
+           weightLiftedKg += sets * reps * weight;
+         }
+       }
     }
 
     // 3. Streak Days

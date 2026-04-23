@@ -18,6 +18,7 @@ import type * as classroom from "../classroom.js";
 import type * as coach from "../coach.js";
 import type * as exercises from "../exercises.js";
 import type * as functions_auth from "../functions/auth.js";
+import type * as functions_recipes from "../functions/recipes.js";
 import type * as http from "../http.js";
 import type * as internal_adminAuthReset from "../internal/adminAuthReset.js";
 import type * as lib_auth from "../lib/auth.js";
@@ -59,6 +60,7 @@ declare const fullApi: ApiFromModules<{
   coach: typeof coach;
   exercises: typeof exercises;
   "functions/auth": typeof functions_auth;
+  "functions/recipes": typeof functions_recipes;
   http: typeof http;
   "internal/adminAuthReset": typeof internal_adminAuthReset;
   "lib/auth": typeof lib_auth;

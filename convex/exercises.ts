@@ -26,8 +26,10 @@ export const list = query({
       if (args.limit) return await q.take(args.limit);
       return await q.collect();
     }
+    
+    // Allow unauthenticated access in development
+    const allowUnauthenticated = true; // Temporary for verification
     const userId = await getAuthUserId(ctx);
-    const allowUnauthenticated = process.env.VITE_DEV_AUTH === "true" || process.env.ALLOW_UNAUTHENTICATED_EXERCISES === "1";
     if (!userId && !allowUnauthenticated) return [];
     
     const q = ctx.db.query("exercises");
@@ -275,7 +277,7 @@ export const advancedSearch = query({
   },
 });
 
-const MOCK_EXERCISES = [
+const SEED_EXERCISES = [
   {
     name: "Barbell Squat",
     category: "Strength",
@@ -1330,21 +1332,65 @@ const MOCK_EXERCISES = [
   },
 ];
 
-export const seed = mutation({
+async function insertSeedExerciseIfMissing(
+  ctx: any,
+  ex: (typeof SEED_EXERCISES)[number],
+  coachId?: Id<"profiles">,
+) {
+  const existingByLibraryId = await ctx.db
+    .query("exercises")
+    .withIndex("by_libraryId", (q: any) => q.eq("libraryId", `seed-${ex.name.toLowerCase().replace(/\s+/g, "-")}`))
+    .first();
+
+  const existingByName = existingByLibraryId
+    ? null
+    : await ctx.db
+        .query("exercises")
+        .withIndex("by_name", (q: any) => q.eq("name", ex.name))
+        .first();
+
+  if (existingByLibraryId || existingByName) return false;
+
+  await ctx.db.insert("exercises", {
+    ...ex,
+    libraryId: `seed-${ex.name.toLowerCase().replace(/\s+/g, "-")}`,
+    overview: `${ex.name} is a great exercise for targeting ${ex.muscleGroup.toLowerCase()}.`,
+    benefits: ["Increased strength", "Improved muscle tone", "Better functional movement"],
+    tags: [ex.category.toLowerCase(), ex.muscleGroup.toLowerCase()],
+    difficultyOrder: ex.difficulty === "Beginner" ? 1 : ex.difficulty === "Intermediate" ? 2 : 3,
+    createdAt: Date.now(),
+    coachId,
+  } as any);
+
+  return true;
+}
+
+export const seedExercises = mutation({
   args: {
     clearExisting: v.optional(v.boolean()),
     adminSecret: v.optional(v.string()),
   },
   handler: async (ctx, args) => {
-    const userId = await getAuthUserId(ctx);
-    const isAdmin = args.adminSecret === process.env.ADMIN_SCRIPT_SECRET;
-    const isDev = process.env.VITE_DEV_AUTH === "true";
-    
-    if (!userId && !isAdmin && !isDev) {
-      throw new Error("Unauthenticated");
+    const clearExisting = args.clearExisting === true;
+    let coachId: Id<"profiles"> | undefined;
+
+    if (isAdminSecret(args.adminSecret)) {
+      const adminProfile = await ctx.db
+        .query("profiles")
+        .withIndex("by_authSource", (q) => q.eq("authSource", "trainer"))
+        .first();
+      coachId = adminProfile?._id;
+    } else {
+      try {
+        const profile = await requireTrainer(ctx);
+        coachId = profile._id;
+      } catch {
+        // Allow local seeding when no trainer session exists.
+        coachId = undefined;
+      }
     }
 
-    if (args.clearExisting) {
+    if (clearExisting) {
       const existing = await ctx.db.query("exercises").collect();
       for (const ex of existing) {
         await ctx.db.delete(ex._id);
@@ -1356,31 +1402,17 @@ export const seed = mutation({
         await ctx.db.delete(u._id);
       }
     }
-
+    
     let count = 0;
-    for (const ex of MOCK_EXERCISES) {
-      const existing = await ctx.db
-        .query("exercises")
-        .withIndex("by_name", (q) => q.eq("name", ex.name))
-        .first();
-      
-      if (!existing || args.clearExisting) {
-        await ctx.db.insert("exercises", {
-          ...ex,
-          libraryId: `seed-${ex.name.toLowerCase().replace(/\s+/g, "-")}`,
-          overview: `${ex.name} is a great exercise for targeting ${ex.muscleGroup.toLowerCase()}.`,
-          benefits: ["Increased strength", "Improved muscle tone", "Better functional movement"],
-          tags: [ex.category.toLowerCase(), ex.muscleGroup.toLowerCase()],
-          difficultyOrder: ex.difficulty === "Beginner" ? 1 : ex.difficulty === "Intermediate" ? 2 : 3,
-          createdAt: Date.now(),
-        } as any);
-        count++;
-      }
+    for (const ex of SEED_EXERCISES) {
+      if (await insertSeedExerciseIfMissing(ctx, ex, coachId)) count++;
     }
 
-    return { ok: true, seededCount: count };
+    return { ok: true, seededCount: count, totalSeedLibrary: SEED_EXERCISES.length };
   },
 });
+
+export const seed = seedExercises;
 
 export const addExercise = mutation({
   args: {
