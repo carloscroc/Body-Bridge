@@ -25,11 +25,13 @@ function StartupIssueScreen({
   issue,
   fix,
   extra,
+  onRetry,
 }: {
   title: string;
   issue: string;
   fix: string;
   extra: string;
+  onRetry?: () => void;
 }) {
   return (
     <div className="min-h-screen bg-black text-white px-6 py-10 flex items-center justify-center">
@@ -63,6 +65,15 @@ function StartupIssueScreen({
             </p>
           </div>
         </div>
+
+        {onRetry && (
+          <button
+            onClick={onRetry}
+            className="mt-8 w-full rounded-2xl bg-white px-6 py-4 text-sm font-bold text-black transition-all hover:bg-white/90 active:scale-[0.98]"
+          >
+            Retry Connection
+          </button>
+        )}
       </div>
     </div>
   );
@@ -84,6 +95,7 @@ function LoadingScreen() {
 
 function BootstrapRoot() {
   const [convexStatus, setConvexStatus] = useState<'checking' | 'ready' | 'offline'>(convex ? 'checking' : 'offline');
+  const [retryNonce, setRetryNonce] = useState(0);
 
   useEffect(() => {
     if (!normalizedConvexUrl) {
@@ -91,9 +103,12 @@ function BootstrapRoot() {
       return;
     }
 
+    setConvexStatus('checking');
+
     let cancelled = false;
     const controller = new AbortController();
-    const timeoutId = window.setTimeout(() => controller.abort(), 2500);
+    // Increased timeout to 15s to account for slow local backend startup
+    const timeoutId = window.setTimeout(() => controller.abort(), 15000);
 
     void fetch(normalizedConvexUrl, {
       method: 'GET',
@@ -119,7 +134,7 @@ function BootstrapRoot() {
       window.clearTimeout(timeoutId);
       controller.abort();
     };
-  }, []);
+  }, [retryNonce]);
 
   if (!convex) {
     return (
@@ -128,6 +143,7 @@ function BootstrapRoot() {
         issue="`VITE_CONVEX_URL` is missing or still set to the placeholder value in `.env.local`."
         fix="Set a real Convex deployment URL in `.env.local`, then restart `npm run dev`."
         extra="Your backend server also needs port `3001` available so proxied API calls can succeed."
+        onRetry={() => setRetryNonce(n => n + 1)}
       />
     );
   }
@@ -143,6 +159,7 @@ function BootstrapRoot() {
         issue="The frontend found `VITE_CONVEX_URL`, but the local Convex service did not respond in time."
         fix="Run `npm run dev` again after Convex finishes starting, or run `npm run dev:client` separately if you only need the UI shell."
         extra="If Convex asks to upgrade in the terminal, update the `convex` package or run the upgrade interactively before retrying."
+        onRetry={() => setRetryNonce(n => n + 1)}
       />
     );
   }
