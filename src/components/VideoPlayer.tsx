@@ -13,7 +13,8 @@ type Props = {
   style?: React.CSSProperties;
 };
 
-const VideoPlayer = forwardRef<HTMLVideoElement, Props>(function VideoPlayer({ source, className, poster, autoPlay = false, muted = false, controls = true, playsInline = true, preload = "metadata", style }, ref) {
+const VideoPlayer = forwardRef<HTMLVideoElement, Props>(function VideoPlayer(props, ref) {
+  const { source, className, poster, autoPlay = false, muted = false, controls = true, playsInline = true, preload = "metadata", style } = props;
   const resolved = useMemo(() => resolveVideoSource(source), [source]);
   if (!resolved) return null;
 
@@ -28,6 +29,10 @@ const VideoPlayer = forwardRef<HTMLVideoElement, Props>(function VideoPlayer({ s
         style={{ width: '100%', height: '100%', border: 0, ...style }}
         allow="autoplay; fullscreen"
         allowFullScreen
+        onLoad={() => {
+           console.log('[VIDEO DEBUG] iframe onLoad');
+           if ((props as any).onReady) (props as any).onReady();
+        }}
       />
     );
   }
@@ -45,6 +50,12 @@ const VideoPlayer = forwardRef<HTMLVideoElement, Props>(function VideoPlayer({ s
       playsInline={playsInline}
       preload={preload as any}
       style={{ width: '100%', height: '100%', ...style }}
+      onLoadStart={() => {
+        if ((props as any).onLoadStart) (props as any).onLoadStart();
+      }}
+      onCanPlay={() => {
+        if ((props as any).onReady) (props as any).onReady();
+      }}
     />
   );
 });

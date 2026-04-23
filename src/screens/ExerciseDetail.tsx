@@ -437,8 +437,14 @@ const ExerciseDetail: React.FC<ExerciseDetailProps> = ({
                       controls
                       playsInline
                       className="w-full h-full"
-                      onLoadStart={() => setVideoReady(false)}
-                      onReady={() => setVideoReady(true)}
+                      onLoadStart={() => {
+                        console.log('[VIDEO DEBUG] onLoadStart');
+                        setVideoReady(false);
+                      }}
+                      onReady={() => {
+                        console.log('[VIDEO DEBUG] onReady');
+                        setVideoReady(true);
+                      }}
                     />
                   </div>
 
