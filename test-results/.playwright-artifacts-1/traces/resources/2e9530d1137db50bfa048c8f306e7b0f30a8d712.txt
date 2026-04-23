@@ -1,1 +1,0 @@
-This Convex deployment is running. See https://docs.convex.dev/.

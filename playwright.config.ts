@@ -1,29 +1,23 @@
-import { defineConfig, devices } from "@playwright/test";
+import { defineConfig, devices } from '@playwright/test';
 
 export default defineConfig({
-  testDir: "./tests",
-  // Increase test timeout to allow slower machines and CI environments
-  timeout: 60_000,
-  expect: { timeout: 5_000 },
+  testDir: './tests',
   fullyParallel: true,
-  retries: 1,
-  reporter: "html",
+  forbidOnly: !!process.env.CI,
+  retries: process.env.CI ? 2 : 0,
+  workers: process.env.CI ? 1 : undefined,
+  reporter: 'html',
   use: {
-    baseURL: "http://localhost:7770",
-    trace: "on-first-retry",
+    baseURL: 'http://127.0.0.1:7770',
+    trace: 'on-first-retry',
+    video: 'on', // Record video for all tests
+    screenshot: 'on',
+    headless: false, // Run in headed mode
   },
   projects: [
     {
-      name: "chromium",
-      use: { ...devices["Desktop Chrome"] },
+      name: 'chromium',
+      use: { ...devices['Desktop Chrome'] },
     },
   ],
-  /* Start the Vite dev server before running tests */
-  webServer: {
-    command: "npm run dev",
-    url: "http://localhost:7770",
-    reuseExistingServer: true,
-    // Increase web server startup timeout
-    timeout: 120_000,
-  },
 });
