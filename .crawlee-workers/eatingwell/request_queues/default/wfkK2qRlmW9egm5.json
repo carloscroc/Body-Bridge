@@ -1,0 +1,9 @@
+{
+	"id": "wfkK2qRlmW9egm5",
+	"json": "{\"id\":\"wfkK2qRlmW9egm5\",\"url\":\"https://www.eatingwell.com/recipe/249451/orzo-salad-with-chickpeas-artichoke-hearts/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/249451/orzo-salad-with-chickpeas-artichoke-hearts/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/249451/orzo-salad-with-chickpeas-artichoke-hearts\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T14:16:21.846Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/249451/orzo-salad-with-chickpeas-artichoke-hearts",
+	"url": "https://www.eatingwell.com/recipe/249451/orzo-salad-with-chickpeas-artichoke-hearts/"
+}

@@ -1,0 +1,9 @@
+{
+	"id": "IXGU6goYypxSslk",
+	"json": "{\"id\":\"IXGU6goYypxSslk\",\"url\":\"https://www.eatingwell.com/recipe/252970/banana-blueberry-buttermilk-bread/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/252970/banana-blueberry-buttermilk-bread/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/252970/banana-blueberry-buttermilk-bread\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:20:00.311Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/252970/banana-blueberry-buttermilk-bread",
+	"url": "https://www.eatingwell.com/recipe/252970/banana-blueberry-buttermilk-bread/"
+}

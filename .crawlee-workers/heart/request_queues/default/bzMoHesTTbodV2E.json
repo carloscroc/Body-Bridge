@@ -1,0 +1,9 @@
+{
+	"id": "bzMoHesTTbodV2E",
+	"json": "{\"id\":\"bzMoHesTTbodV2E\",\"url\":\"https://recipes.heart.org/en/recipes/beef-sliders-with-lettuce-tomato-and-cucumber\",\"loadedUrl\":\"https://recipes.heart.org/en/recipes/beef-sliders-with-lettuce-tomato-and-cucumber\",\"uniqueKey\":\"https://recipes.heart.org/en/recipes/beef-sliders-with-lettuce-tomato-and-cucumber\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":5,\"state\":4}},\"handledAt\":\"2026-04-21T12:55:23.957Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recipes.heart.org/en/recipes/beef-sliders-with-lettuce-tomato-and-cucumber",
+	"url": "https://recipes.heart.org/en/recipes/beef-sliders-with-lettuce-tomato-and-cucumber"
+}

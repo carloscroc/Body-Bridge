@@ -1,0 +1,9 @@
+{
+	"id": "8Qd5a74tRFM2UIB",
+	"json": "{\"id\":\"8Qd5a74tRFM2UIB\",\"url\":\"https://www.eatingwell.com/recipes/18242/ingredients/dairy/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/18242/ingredients/dairy/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/18242/ingredients/dairy\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:34:07.920Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/18242/ingredients/dairy",
+	"url": "https://www.eatingwell.com/recipes/18242/ingredients/dairy/"
+}

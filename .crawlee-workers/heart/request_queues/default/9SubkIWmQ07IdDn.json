@@ -1,0 +1,9 @@
+{
+	"id": "9SubkIWmQ07IdDn",
+	"json": "{\"id\":\"9SubkIWmQ07IdDn\",\"url\":\"https://recipes.heart.org/en/recipes/pollo-guisado\",\"loadedUrl\":\"https://recipes.heart.org/en/recipes/pollo-guisado\",\"uniqueKey\":\"https://recipes.heart.org/en/recipes/pollo-guisado\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":6,\"state\":4}},\"handledAt\":\"2026-04-21T13:14:20.722Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recipes.heart.org/en/recipes/pollo-guisado",
+	"url": "https://recipes.heart.org/en/recipes/pollo-guisado"
+}

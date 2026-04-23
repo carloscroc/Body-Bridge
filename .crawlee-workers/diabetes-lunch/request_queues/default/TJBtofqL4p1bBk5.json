@@ -1,0 +1,9 @@
+{
+	"id": "TJBtofqL4p1bBk5",
+	"json": "{\"id\":\"TJBtofqL4p1bBk5\",\"url\":\"https://diabetesfoodhub.org/recipes/corn-and-zucchini-tacos\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/corn-and-zucchini-tacos\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/corn-and-zucchini-tacos\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":5,\"state\":4}},\"handledAt\":\"2026-04-21T19:07:52.795Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/corn-and-zucchini-tacos",
+	"url": "https://diabetesfoodhub.org/recipes/corn-and-zucchini-tacos"
+}

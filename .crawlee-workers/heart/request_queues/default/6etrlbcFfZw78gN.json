@@ -1,0 +1,9 @@
+{
+	"id": "6etrlbcFfZw78gN",
+	"json": "{\"id\":\"6etrlbcFfZw78gN\",\"url\":\"https://recipes.heart.org/en/recipes/chinese-flank-steak\",\"loadedUrl\":\"https://recipes.heart.org/en/recipes/chinese-flank-steak\",\"uniqueKey\":\"https://recipes.heart.org/en/recipes/chinese-flank-steak\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":11,\"state\":4}},\"handledAt\":\"2026-04-21T13:51:33.711Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recipes.heart.org/en/recipes/chinese-flank-steak",
+	"url": "https://recipes.heart.org/en/recipes/chinese-flank-steak"
+}

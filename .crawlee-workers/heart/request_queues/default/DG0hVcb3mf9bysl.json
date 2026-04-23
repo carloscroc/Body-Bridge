@@ -1,0 +1,9 @@
+{
+	"id": "DG0hVcb3mf9bysl",
+	"json": "{\"id\":\"DG0hVcb3mf9bysl\",\"url\":\"https://recipes.heart.org/en/recipes/black-bean-salad-or-salsa\",\"loadedUrl\":\"https://recipes.heart.org/en/recipes/black-bean-salad-or-salsa\",\"uniqueKey\":\"https://recipes.heart.org/en/recipes/black-bean-salad-or-salsa\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":5,\"state\":4}},\"handledAt\":\"2026-04-21T12:55:36.750Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recipes.heart.org/en/recipes/black-bean-salad-or-salsa",
+	"url": "https://recipes.heart.org/en/recipes/black-bean-salad-or-salsa"
+}

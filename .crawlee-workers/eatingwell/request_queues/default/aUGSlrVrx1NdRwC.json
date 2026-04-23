@@ -1,0 +1,9 @@
+{
+	"id": "aUGSlrVrx1NdRwC",
+	"json": "{\"id\":\"aUGSlrVrx1NdRwC\",\"url\":\"https://www.eatingwell.com/recipe/281428/chicken-tamale-casserole/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/281428/chicken-tamale-casserole/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/281428/chicken-tamale-casserole\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T13:48:47.902Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/281428/chicken-tamale-casserole",
+	"url": "https://www.eatingwell.com/recipe/281428/chicken-tamale-casserole/"
+}

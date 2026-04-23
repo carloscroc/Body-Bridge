@@ -1,0 +1,9 @@
+{
+	"id": "emkg1DVM3xRGUaH",
+	"json": "{\"id\":\"emkg1DVM3xRGUaH\",\"url\":\"https://www.eatingwell.com/recipe/261628/peanut-butter-banana-cinnamon-toast/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/261628/peanut-butter-banana-cinnamon-toast/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/261628/peanut-butter-banana-cinnamon-toast\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:38:07.435Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/261628/peanut-butter-banana-cinnamon-toast",
+	"url": "https://www.eatingwell.com/recipe/261628/peanut-butter-banana-cinnamon-toast/"
+}

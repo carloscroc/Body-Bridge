@@ -1,0 +1,9 @@
+{
+	"id": "UtFuczVbh0EWftk",
+	"json": "{\"id\":\"UtFuczVbh0EWftk\",\"url\":\"https://www.kidney.org/nutrition/recipes/onion-bagel-chips?page=18\",\"loadedUrl\":\"https://www.kidney.org/nutrition/recipes/onion-bagel-chips?page=18\",\"uniqueKey\":\"https://www.kidney.org/nutrition/recipes/onion-bagel-chips?page=18\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":19,\"state\":4}},\"handledAt\":\"2026-04-21T22:44:07.239Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.kidney.org/nutrition/recipes/onion-bagel-chips?page=18",
+	"url": "https://www.kidney.org/nutrition/recipes/onion-bagel-chips?page=18"
+}

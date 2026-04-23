@@ -1,0 +1,9 @@
+{
+	"id": "xgYwWsNEdhhyio0",
+	"json": "{\"id\":\"xgYwWsNEdhhyio0\",\"url\":\"https://www.eatingwell.com/recipe/280176/pita-panzanella-salad-with-meatballs/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/280176/pita-panzanella-salad-with-meatballs/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/280176/pita-panzanella-salad-with-meatballs\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T13:49:13.530Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/280176/pita-panzanella-salad-with-meatballs",
+	"url": "https://www.eatingwell.com/recipe/280176/pita-panzanella-salad-with-meatballs/"
+}

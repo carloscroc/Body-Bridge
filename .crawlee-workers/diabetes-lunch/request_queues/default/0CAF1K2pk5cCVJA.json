@@ -1,0 +1,9 @@
+{
+	"id": "0CAF1K2pk5cCVJA",
+	"json": "{\"id\":\"0CAF1K2pk5cCVJA\",\"url\":\"https://diabetesfoodhub.org/recipes/banana-chocolate-ice-cream\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/banana-chocolate-ice-cream\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/banana-chocolate-ice-cream\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T17:35:03.993Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/banana-chocolate-ice-cream",
+	"url": "https://diabetesfoodhub.org/recipes/banana-chocolate-ice-cream"
+}

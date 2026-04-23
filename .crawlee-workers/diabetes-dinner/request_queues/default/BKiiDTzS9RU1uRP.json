@@ -1,0 +1,9 @@
+{
+	"id": "BKiiDTzS9RU1uRP",
+	"json": "{\"id\":\"BKiiDTzS9RU1uRP\",\"url\":\"https://diabetesfoodhub.org/recipes/roasted-radishes\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/roasted-radishes\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/roasted-radishes\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":4,\"state\":4}},\"handledAt\":\"2026-04-21T18:26:29.357Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/roasted-radishes",
+	"url": "https://diabetesfoodhub.org/recipes/roasted-radishes"
+}

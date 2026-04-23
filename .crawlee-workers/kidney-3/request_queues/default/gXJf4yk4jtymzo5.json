@@ -1,0 +1,9 @@
+{
+	"id": "gXJf4yk4jtymzo5",
+	"json": "{\"id\":\"gXJf4yk4jtymzo5\",\"url\":\"https://www.kidney.org/nutrition/recipes/yogurt-covered-fruit-salad?page=3\",\"loadedUrl\":\"https://www.kidney.org/nutrition/recipes/yogurt-covered-fruit-salad?page=3\",\"uniqueKey\":\"https://www.kidney.org/nutrition/recipes/yogurt-covered-fruit-salad?page=3\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":13,\"state\":4}},\"handledAt\":\"2026-04-21T19:52:28.602Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.kidney.org/nutrition/recipes/yogurt-covered-fruit-salad?page=3",
+	"url": "https://www.kidney.org/nutrition/recipes/yogurt-covered-fruit-salad?page=3"
+}

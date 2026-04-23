@@ -1,0 +1,9 @@
+{
+	"id": "7KqVrWSxNvFl5cz",
+	"json": "{\"id\":\"7KqVrWSxNvFl5cz\",\"url\":\"https://www.eatingwell.com/recipe/262105/cranberry-balsamic-chicken-thighs/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/262105/cranberry-balsamic-chicken-thighs/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/262105/cranberry-balsamic-chicken-thighs\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T13:55:39.140Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/262105/cranberry-balsamic-chicken-thighs",
+	"url": "https://www.eatingwell.com/recipe/262105/cranberry-balsamic-chicken-thighs/"
+}

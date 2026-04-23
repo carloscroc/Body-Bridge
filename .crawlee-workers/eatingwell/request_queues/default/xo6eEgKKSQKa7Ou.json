@@ -1,0 +1,9 @@
+{
+	"id": "xo6eEgKKSQKa7Ou",
+	"json": "{\"id\":\"xo6eEgKKSQKa7Ou\",\"url\":\"https://www.eatingwell.com/recipe/258254/purple-fruit-salad/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/258254/purple-fruit-salad/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/258254/purple-fruit-salad\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T14:13:23.612Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/258254/purple-fruit-salad",
+	"url": "https://www.eatingwell.com/recipe/258254/purple-fruit-salad/"
+}

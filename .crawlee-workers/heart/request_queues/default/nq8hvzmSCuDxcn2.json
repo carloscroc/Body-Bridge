@@ -1,0 +1,9 @@
+{
+	"id": "nq8hvzmSCuDxcn2",
+	"json": "{\"id\":\"nq8hvzmSCuDxcn2\",\"url\":\"https://recipes.heart.org/en/recipes/chicken-zucchini-enchiladas\",\"loadedUrl\":\"https://recipes.heart.org/en/recipes/chicken-zucchini-enchiladas\",\"uniqueKey\":\"https://recipes.heart.org/en/recipes/chicken-zucchini-enchiladas\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":7,\"state\":4}},\"handledAt\":\"2026-04-21T13:32:42.162Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recipes.heart.org/en/recipes/chicken-zucchini-enchiladas",
+	"url": "https://recipes.heart.org/en/recipes/chicken-zucchini-enchiladas"
+}

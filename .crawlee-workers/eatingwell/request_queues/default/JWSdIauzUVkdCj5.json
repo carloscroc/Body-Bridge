@@ -1,0 +1,9 @@
+{
+	"id": "JWSdIauzUVkdCj5",
+	"json": "{\"id\":\"JWSdIauzUVkdCj5\",\"url\":\"https://www.eatingwell.com/recipe/262452/cabbage-roll-chicken-enchiladas/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/262452/cabbage-roll-chicken-enchiladas/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/262452/cabbage-roll-chicken-enchiladas\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T13:43:05.427Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/262452/cabbage-roll-chicken-enchiladas",
+	"url": "https://www.eatingwell.com/recipe/262452/cabbage-roll-chicken-enchiladas/"
+}

@@ -1,0 +1,9 @@
+{
+	"id": "IAzMzLkzm0eYXSn",
+	"json": "{\"id\":\"IAzMzLkzm0eYXSn\",\"url\":\"https://recipes.heart.org/en/recipes/pork-chops-with-balsamicpeach-glaze-roasted-sweet-potatoes-and-broccoli\",\"loadedUrl\":\"https://recipes.heart.org/en/recipes/pork-chops-with-balsamicpeach-glaze-roasted-sweet-potatoes-and-broccoli\",\"uniqueKey\":\"https://recipes.heart.org/en/recipes/pork-chops-with-balsamicpeach-glaze-roasted-sweet-potatoes-and-broccoli\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":7,\"state\":4}},\"handledAt\":\"2026-04-21T13:26:38.158Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recipes.heart.org/en/recipes/pork-chops-with-balsamicpeach-glaze-roasted-sweet-potatoes-and-broccoli",
+	"url": "https://recipes.heart.org/en/recipes/pork-chops-with-balsamicpeach-glaze-roasted-sweet-potatoes-and-broccoli"
+}

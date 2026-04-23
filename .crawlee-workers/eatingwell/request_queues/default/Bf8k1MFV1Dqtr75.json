@@ -1,0 +1,9 @@
+{
+	"id": "Bf8k1MFV1Dqtr75",
+	"json": "{\"id\":\"Bf8k1MFV1Dqtr75\",\"url\":\"https://www.eatingwell.com/recipe/273386/medium-boiled-eggs/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/273386/medium-boiled-eggs/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/273386/medium-boiled-eggs\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T14:05:32.953Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/273386/medium-boiled-eggs",
+	"url": "https://www.eatingwell.com/recipe/273386/medium-boiled-eggs/"
+}

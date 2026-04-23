@@ -1,0 +1,9 @@
+{
+	"id": "hXteo5zi8u0Ecwq",
+	"json": "{\"id\":\"hXteo5zi8u0Ecwq\",\"url\":\"https://recipes.heart.org/en/recipes/chicken-and-ham-jambalaya\",\"loadedUrl\":\"https://recipes.heart.org/en/recipes/chicken-and-ham-jambalaya\",\"uniqueKey\":\"https://recipes.heart.org/en/recipes/chicken-and-ham-jambalaya\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":6,\"state\":4}},\"handledAt\":\"2026-04-21T13:15:18.429Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recipes.heart.org/en/recipes/chicken-and-ham-jambalaya",
+	"url": "https://recipes.heart.org/en/recipes/chicken-and-ham-jambalaya"
+}

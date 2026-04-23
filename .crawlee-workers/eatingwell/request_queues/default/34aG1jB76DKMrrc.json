@@ -1,0 +1,9 @@
+{
+	"id": "34aG1jB76DKMrrc",
+	"json": "{\"id\":\"34aG1jB76DKMrrc\",\"url\":\"https://www.eatingwell.com/recipe/269815/chicken-quinoa-sweet-potato-casserole/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/269815/chicken-quinoa-sweet-potato-casserole/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/269815/chicken-quinoa-sweet-potato-casserole\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T13:56:31.947Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/269815/chicken-quinoa-sweet-potato-casserole",
+	"url": "https://www.eatingwell.com/recipe/269815/chicken-quinoa-sweet-potato-casserole/"
+}

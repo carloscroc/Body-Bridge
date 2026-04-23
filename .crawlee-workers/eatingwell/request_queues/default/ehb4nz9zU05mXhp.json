@@ -1,0 +1,9 @@
+{
+	"id": "ehb4nz9zU05mXhp",
+	"json": "{\"id\":\"ehb4nz9zU05mXhp\",\"url\":\"https://www.eatingwell.com/recipe/8020820/cabbage-white-bean-soup/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/8020820/cabbage-white-bean-soup/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/8020820/cabbage-white-bean-soup\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T14:00:24.938Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/8020820/cabbage-white-bean-soup",
+	"url": "https://www.eatingwell.com/recipe/8020820/cabbage-white-bean-soup/"
+}

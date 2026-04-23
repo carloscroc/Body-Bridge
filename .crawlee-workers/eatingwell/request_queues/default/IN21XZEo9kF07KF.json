@@ -1,0 +1,9 @@
+{
+	"id": "IN21XZEo9kF07KF",
+	"json": "{\"id\":\"IN21XZEo9kF07KF\",\"url\":\"https://www.eatingwell.com/recipe/250466/simple-green-salad-with-citronette/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/250466/simple-green-salad-with-citronette/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/250466/simple-green-salad-with-citronette\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T14:12:42.175Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/250466/simple-green-salad-with-citronette",
+	"url": "https://www.eatingwell.com/recipe/250466/simple-green-salad-with-citronette/"
+}

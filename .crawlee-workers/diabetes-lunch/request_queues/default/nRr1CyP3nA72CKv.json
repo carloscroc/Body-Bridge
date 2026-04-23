@@ -1,0 +1,9 @@
+{
+	"id": "nRr1CyP3nA72CKv",
+	"json": "{\"id\":\"nRr1CyP3nA72CKv\",\"url\":\"https://diabetesfoodhub.org/recipes/recetas-en-espanol\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/recetas-en-espanol\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/recetas-en-espanol\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":5,\"state\":4}},\"handledAt\":\"2026-04-21T18:57:55.264Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/recetas-en-espanol",
+	"url": "https://diabetesfoodhub.org/recipes/recetas-en-espanol"
+}

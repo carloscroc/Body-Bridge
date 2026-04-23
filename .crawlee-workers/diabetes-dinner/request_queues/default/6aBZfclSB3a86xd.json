@@ -1,0 +1,9 @@
+{
+	"id": "6aBZfclSB3a86xd",
+	"json": "{\"id\":\"6aBZfclSB3a86xd\",\"url\":\"https://diabetesfoodhub.org/recipes/classic-meatloaf\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/classic-meatloaf\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/classic-meatloaf\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":11,\"state\":4}},\"handledAt\":\"2026-04-21T21:44:26.086Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/classic-meatloaf",
+	"url": "https://diabetesfoodhub.org/recipes/classic-meatloaf"
+}

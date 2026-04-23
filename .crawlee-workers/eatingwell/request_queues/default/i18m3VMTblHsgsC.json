@@ -1,0 +1,9 @@
+{
+	"id": "i18m3VMTblHsgsC",
+	"json": "{\"id\":\"i18m3VMTblHsgsC\",\"url\":\"https://www.eatingwell.com/recipes/21673/ingredients/vegetables/greens/lettuce/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/21673/ingredients/vegetables/greens/lettuce\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":4}}}",
+	"method": "GET",
+	"orderNo": 1776779256089,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/21673/ingredients/vegetables/greens/lettuce",
+	"url": "https://www.eatingwell.com/recipes/21673/ingredients/vegetables/greens/lettuce/"
+}

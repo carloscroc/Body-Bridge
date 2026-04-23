@@ -1,0 +1,9 @@
+{
+	"id": "27tNyECJ7OBnD8L",
+	"json": "{\"id\":\"27tNyECJ7OBnD8L\",\"url\":\"https://www.eatingwell.com/recipe/273190/chicken-veggie-fajitas/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/273190/chicken-veggie-fajitas\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3}}}",
+	"method": "GET",
+	"orderNo": 1776778834984,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/273190/chicken-veggie-fajitas",
+	"url": "https://www.eatingwell.com/recipe/273190/chicken-veggie-fajitas/"
+}

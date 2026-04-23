@@ -1,0 +1,9 @@
+{
+	"id": "SPjRa5RRQsKsJDa",
+	"json": "{\"id\":\"SPjRa5RRQsKsJDa\",\"url\":\"https://www.eatingwell.com/recipes/17910/main-dishes/bean/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/17910/main-dishes/bean/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/17910/main-dishes/bean\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:09:26.288Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/17910/main-dishes/bean",
+	"url": "https://www.eatingwell.com/recipes/17910/main-dishes/bean/"
+}

@@ -1,0 +1,9 @@
+{
+	"id": "T79xriHhhfZ2S8T",
+	"json": "{\"id\":\"T79xriHhhfZ2S8T\",\"url\":\"https://diabetesfoodhub.org/recipes/pork-tacos\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/pork-tacos\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/pork-tacos\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":13,\"state\":4}},\"handledAt\":\"2026-04-21T22:09:40.522Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/pork-tacos",
+	"url": "https://diabetesfoodhub.org/recipes/pork-tacos"
+}

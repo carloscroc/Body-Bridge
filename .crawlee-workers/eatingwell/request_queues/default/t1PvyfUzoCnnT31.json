@@ -1,0 +1,9 @@
+{
+	"id": "t1PvyfUzoCnnT31",
+	"json": "{\"id\":\"t1PvyfUzoCnnT31\",\"url\":\"https://www.eatingwell.com/recipe/249972/sauteed-brussels-sprouts-with-bacon-onions/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/249972/sauteed-brussels-sprouts-with-bacon-onions/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/249972/sauteed-brussels-sprouts-with-bacon-onions\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:29:56.428Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/249972/sauteed-brussels-sprouts-with-bacon-onions",
+	"url": "https://www.eatingwell.com/recipe/249972/sauteed-brussels-sprouts-with-bacon-onions/"
+}

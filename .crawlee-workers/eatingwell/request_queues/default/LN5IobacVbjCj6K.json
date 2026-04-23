@@ -1,0 +1,9 @@
+{
+	"id": "LN5IobacVbjCj6K",
+	"json": "{\"id\":\"LN5IobacVbjCj6K\",\"url\":\"https://www.eatingwell.com/recipes/18345/health-condition/diabetic/dinner/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/18345/health-condition/diabetic/dinner/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/18345/health-condition/diabetic/dinner\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:05:12.644Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/18345/health-condition/diabetic/dinner",
+	"url": "https://www.eatingwell.com/recipes/18345/health-condition/diabetic/dinner/"
+}

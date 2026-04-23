@@ -1,0 +1,9 @@
+{
+	"id": "MfyL6gBSFqWNUFy",
+	"json": "{\"id\":\"MfyL6gBSFqWNUFy\",\"url\":\"https://recipes.heart.org/en/recipes/red-beans-and-rice-with-corn-on-the-cob\",\"loadedUrl\":\"https://recipes.heart.org/en/recipes/red-beans-and-rice-with-corn-on-the-cob\",\"uniqueKey\":\"https://recipes.heart.org/en/recipes/red-beans-and-rice-with-corn-on-the-cob\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":5,\"state\":4}},\"handledAt\":\"2026-04-21T12:56:37.774Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recipes.heart.org/en/recipes/red-beans-and-rice-with-corn-on-the-cob",
+	"url": "https://recipes.heart.org/en/recipes/red-beans-and-rice-with-corn-on-the-cob"
+}

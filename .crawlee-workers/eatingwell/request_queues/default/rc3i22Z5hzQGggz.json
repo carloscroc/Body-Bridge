@@ -1,0 +1,9 @@
+{
+	"id": "rc3i22Z5hzQGggz",
+	"json": "{\"id\":\"rc3i22Z5hzQGggz\",\"url\":\"https://www.eatingwell.com/recipe/7938176/red-lentil-soup-with-saffron/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/7938176/red-lentil-soup-with-saffron/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/7938176/red-lentil-soup-with-saffron\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T14:00:00.943Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/7938176/red-lentil-soup-with-saffron",
+	"url": "https://www.eatingwell.com/recipe/7938176/red-lentil-soup-with-saffron/"
+}

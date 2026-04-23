@@ -1,0 +1,9 @@
+{
+	"id": "rCxxckkfIbUS3TY",
+	"json": "{\"id\":\"rCxxckkfIbUS3TY\",\"url\":\"https://www.eatingwell.com/recipes/23413/drinks/smoothies/weight-loss/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/23413/drinks/smoothies/weight-loss/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/23413/drinks/smoothies/weight-loss\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:03:11.364Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/23413/drinks/smoothies/weight-loss",
+	"url": "https://www.eatingwell.com/recipes/23413/drinks/smoothies/weight-loss/"
+}

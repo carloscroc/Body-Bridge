@@ -1,0 +1,9 @@
+{
+	"id": "JWQNC8Xm4rkmM12",
+	"json": "{\"id\":\"JWQNC8Xm4rkmM12\",\"url\":\"https://diabetesfoodhub.org/recipes/pasta-fagioli\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/pasta-fagioli\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/pasta-fagioli\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":12,\"state\":4}},\"handledAt\":\"2026-04-21T21:51:43.544Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/pasta-fagioli",
+	"url": "https://diabetesfoodhub.org/recipes/pasta-fagioli"
+}

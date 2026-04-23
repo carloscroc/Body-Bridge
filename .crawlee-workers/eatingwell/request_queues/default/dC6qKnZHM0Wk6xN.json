@@ -1,0 +1,9 @@
+{
+	"id": "dC6qKnZHM0Wk6xN",
+	"json": "{\"id\":\"dC6qKnZHM0Wk6xN\",\"url\":\"https://www.eatingwell.com/recipe/8005833/chupe-de-quinoa/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/8005833/chupe-de-quinoa/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/8005833/chupe-de-quinoa\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T12:58:19.570Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/8005833/chupe-de-quinoa",
+	"url": "https://www.eatingwell.com/recipe/8005833/chupe-de-quinoa/"
+}

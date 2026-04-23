@@ -1,0 +1,9 @@
+{
+	"id": "myL9h6sLMauL61L",
+	"json": "{\"id\":\"myL9h6sLMauL61L\",\"url\":\"https://diabetesfoodhub.org/recipes/stuffed-mushrooms\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/stuffed-mushrooms\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/stuffed-mushrooms\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":10,\"state\":4}},\"handledAt\":\"2026-04-21T21:19:09.358Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/stuffed-mushrooms",
+	"url": "https://diabetesfoodhub.org/recipes/stuffed-mushrooms"
+}

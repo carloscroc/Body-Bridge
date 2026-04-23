@@ -1,0 +1,9 @@
+{
+	"id": "57rfQcUW6Me3LCG",
+	"json": "{\"id\":\"57rfQcUW6Me3LCG\",\"url\":\"https://www.eatingwell.com/recipe/257003/banana-bread-french-toast/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/257003/banana-bread-french-toast/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/257003/banana-bread-french-toast\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:21:52.218Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/257003/banana-bread-french-toast",
+	"url": "https://www.eatingwell.com/recipe/257003/banana-bread-french-toast/"
+}

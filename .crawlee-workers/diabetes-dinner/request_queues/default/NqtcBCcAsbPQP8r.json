@@ -1,0 +1,9 @@
+{
+	"id": "NqtcBCcAsbPQP8r",
+	"json": "{\"id\":\"NqtcBCcAsbPQP8r\",\"url\":\"https://diabetesfoodhub.org/recipes/lemon-thyme-greek-frozen-yogurt\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/lemon-thyme-greek-frozen-yogurt\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/lemon-thyme-greek-frozen-yogurt\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":8,\"state\":4}},\"handledAt\":\"2026-04-21T20:36:58.194Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/lemon-thyme-greek-frozen-yogurt",
+	"url": "https://diabetesfoodhub.org/recipes/lemon-thyme-greek-frozen-yogurt"
+}

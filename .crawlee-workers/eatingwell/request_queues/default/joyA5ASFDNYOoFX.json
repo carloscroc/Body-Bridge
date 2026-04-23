@@ -1,0 +1,9 @@
+{
+	"id": "joyA5ASFDNYOoFX",
+	"json": "{\"id\":\"joyA5ASFDNYOoFX\",\"url\":\"https://www.eatingwell.com/recipes/18245/ingredients/grains/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/18245/ingredients/grains/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/18245/ingredients/grains\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:34:24.220Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/18245/ingredients/grains",
+	"url": "https://www.eatingwell.com/recipes/18245/ingredients/grains/"
+}

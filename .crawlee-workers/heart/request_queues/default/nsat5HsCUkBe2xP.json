@@ -1,0 +1,9 @@
+{
+	"id": "nsat5HsCUkBe2xP",
+	"json": "{\"id\":\"nsat5HsCUkBe2xP\",\"url\":\"https://recipes.heart.org/en/recipes/summer-veggie-pizza-with-cauliflower-crust\",\"loadedUrl\":\"https://recipes.heart.org/en/recipes/summer-veggie-pizza-with-cauliflower-crust\",\"uniqueKey\":\"https://recipes.heart.org/en/recipes/summer-veggie-pizza-with-cauliflower-crust\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":11,\"state\":4}},\"handledAt\":\"2026-04-21T13:50:51.929Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recipes.heart.org/en/recipes/summer-veggie-pizza-with-cauliflower-crust",
+	"url": "https://recipes.heart.org/en/recipes/summer-veggie-pizza-with-cauliflower-crust"
+}

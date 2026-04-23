@@ -1,0 +1,9 @@
+{
+	"id": "bEDDwbsKSfT654Z",
+	"json": "{\"id\":\"bEDDwbsKSfT654Z\",\"url\":\"https://www.eatingwell.com/recipe/256338/chicken-curry-cup-of-noodles/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/256338/chicken-curry-cup-of-noodles/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/256338/chicken-curry-cup-of-noodles\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T13:58:02.931Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/256338/chicken-curry-cup-of-noodles",
+	"url": "https://www.eatingwell.com/recipe/256338/chicken-curry-cup-of-noodles/"
+}

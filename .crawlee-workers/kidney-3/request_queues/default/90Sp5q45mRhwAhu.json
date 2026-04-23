@@ -1,0 +1,9 @@
+{
+	"id": "90Sp5q45mRhwAhu",
+	"json": "{\"id\":\"90Sp5q45mRhwAhu\",\"url\":\"https://www.kidney.org/nutrition/recipes/codfish-eggplant?page=0\",\"loadedUrl\":\"https://www.kidney.org/nutrition/recipes/codfish-eggplant?page=0\",\"uniqueKey\":\"https://www.kidney.org/nutrition/recipes/codfish-eggplant?page=0\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":11,\"state\":4}},\"handledAt\":\"2026-04-21T19:08:41.672Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.kidney.org/nutrition/recipes/codfish-eggplant?page=0",
+	"url": "https://www.kidney.org/nutrition/recipes/codfish-eggplant?page=0"
+}

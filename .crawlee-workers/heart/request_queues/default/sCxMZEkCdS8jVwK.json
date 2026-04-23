@@ -1,0 +1,9 @@
+{
+	"id": "sCxMZEkCdS8jVwK",
+	"json": "{\"id\":\"sCxMZEkCdS8jVwK\",\"url\":\"https://recipes.heart.org/en/recipes/kid-friendly-hawaiian-chicken-kebabs-with-brown-rice\",\"loadedUrl\":\"https://recipes.heart.org/en/recipes/kid-friendly-hawaiian-chicken-kebabs-with-brown-rice\",\"uniqueKey\":\"https://recipes.heart.org/en/recipes/kid-friendly-hawaiian-chicken-kebabs-with-brown-rice\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":4,\"state\":4}},\"handledAt\":\"2026-04-21T12:40:13.335Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recipes.heart.org/en/recipes/kid-friendly-hawaiian-chicken-kebabs-with-brown-rice",
+	"url": "https://recipes.heart.org/en/recipes/kid-friendly-hawaiian-chicken-kebabs-with-brown-rice"
+}

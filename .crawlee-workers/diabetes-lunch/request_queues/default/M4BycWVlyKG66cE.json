@@ -1,0 +1,9 @@
+{
+	"id": "M4BycWVlyKG66cE",
+	"json": "{\"id\":\"M4BycWVlyKG66cE\",\"url\":\"https://diabetesfoodhub.org/recipes/egg-and-avocado-toasts\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/egg-and-avocado-toasts\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/egg-and-avocado-toasts\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":15,\"state\":4}},\"handledAt\":\"2026-04-21T22:28:28.881Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/egg-and-avocado-toasts",
+	"url": "https://diabetesfoodhub.org/recipes/egg-and-avocado-toasts"
+}

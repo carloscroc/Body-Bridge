@@ -1,0 +1,9 @@
+{
+	"id": "xz8zAjO4YRbDRtQ",
+	"json": "{\"id\":\"xz8zAjO4YRbDRtQ\",\"url\":\"https://diabetesfoodhub.org/recipes/low-carb?page=15\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/low-carb?page=15\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/low-carb?page=15\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":16,\"state\":4}},\"handledAt\":\"2026-04-21T22:41:22.791Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/low-carb?page=15",
+	"url": "https://diabetesfoodhub.org/recipes/low-carb?page=15"
+}

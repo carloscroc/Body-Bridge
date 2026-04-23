@@ -1,0 +1,9 @@
+{
+	"id": "AfmiI5QWvRSS5rw",
+	"json": "{\"id\":\"AfmiI5QWvRSS5rw\",\"url\":\"https://recipes.heart.org/en/recipes/black-bean-soup\",\"loadedUrl\":\"https://recipes.heart.org/en/recipes/black-bean-soup\",\"uniqueKey\":\"https://recipes.heart.org/en/recipes/black-bean-soup\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":6,\"state\":4}},\"handledAt\":\"2026-04-21T13:05:24.118Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recipes.heart.org/en/recipes/black-bean-soup",
+	"url": "https://recipes.heart.org/en/recipes/black-bean-soup"
+}

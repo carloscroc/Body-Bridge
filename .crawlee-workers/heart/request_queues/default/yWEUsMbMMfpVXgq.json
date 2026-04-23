@@ -1,0 +1,9 @@
+{
+	"id": "yWEUsMbMMfpVXgq",
+	"json": "{\"id\":\"yWEUsMbMMfpVXgq\",\"url\":\"https://recipes.heart.org/en/recipes/chipotle-chicken-bowls-with-cilantro-lime-quinoa\",\"loadedUrl\":\"https://recipes.heart.org/en/recipes/chipotle-chicken-bowls-with-cilantro-lime-quinoa\",\"uniqueKey\":\"https://recipes.heart.org/en/recipes/chipotle-chicken-bowls-with-cilantro-lime-quinoa\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":5,\"state\":4}},\"handledAt\":\"2026-04-21T12:46:20.053Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recipes.heart.org/en/recipes/chipotle-chicken-bowls-with-cilantro-lime-quinoa",
+	"url": "https://recipes.heart.org/en/recipes/chipotle-chicken-bowls-with-cilantro-lime-quinoa"
+}

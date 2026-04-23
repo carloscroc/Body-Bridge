@@ -1,0 +1,9 @@
+{
+	"id": "kFiYQe6A8OyluwS",
+	"json": "{\"id\":\"kFiYQe6A8OyluwS\",\"url\":\"https://www.eatingwell.com/recipe/270350/shredded-chicken-tacos/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/270350/shredded-chicken-tacos\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3}}}",
+	"method": "GET",
+	"orderNo": 1776776723269,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/270350/shredded-chicken-tacos",
+	"url": "https://www.eatingwell.com/recipe/270350/shredded-chicken-tacos/"
+}

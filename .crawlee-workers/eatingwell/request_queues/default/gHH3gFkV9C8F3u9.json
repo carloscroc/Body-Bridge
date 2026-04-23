@@ -1,0 +1,9 @@
+{
+	"id": "gHH3gFkV9C8F3u9",
+	"json": "{\"id\":\"gHH3gFkV9C8F3u9\",\"url\":\"https://www.eatingwell.com/recipes/22898/healthy-kids/desserts/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/22898/healthy-kids/desserts/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/22898/healthy-kids/desserts\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:35:56.349Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/22898/healthy-kids/desserts",
+	"url": "https://www.eatingwell.com/recipes/22898/healthy-kids/desserts/"
+}

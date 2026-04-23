@@ -1,0 +1,9 @@
+{
+	"id": "z6HXR97GaPjrnSt",
+	"json": "{\"id\":\"z6HXR97GaPjrnSt\",\"url\":\"https://diabetesfoodhub.org/recipes/cooking-1-or-2?page=3\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/cooking-1-or-2?page=3\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/cooking-1-or-2?page=3\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":5,\"state\":4}},\"handledAt\":\"2026-04-21T19:20:46.267Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/cooking-1-or-2?page=3",
+	"url": "https://diabetesfoodhub.org/recipes/cooking-1-or-2?page=3"
+}

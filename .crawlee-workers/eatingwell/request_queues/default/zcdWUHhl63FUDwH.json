@@ -1,0 +1,9 @@
+{
+	"id": "zcdWUHhl63FUDwH",
+	"json": "{\"id\":\"zcdWUHhl63FUDwH\",\"url\":\"https://www.eatingwell.com/recipe/266493/salmon-crab-cakes/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/266493/salmon-crab-cakes/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/266493/salmon-crab-cakes\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T13:57:00.952Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/266493/salmon-crab-cakes",
+	"url": "https://www.eatingwell.com/recipe/266493/salmon-crab-cakes/"
+}

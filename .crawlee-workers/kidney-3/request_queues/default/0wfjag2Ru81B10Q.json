@@ -1,0 +1,9 @@
+{
+	"id": "0wfjag2Ru81B10Q",
+	"json": "{\"id\":\"0wfjag2Ru81B10Q\",\"url\":\"https://www.kidney.org/nutrition/recipes/fruit-crisp?page=12\",\"loadedUrl\":\"https://www.kidney.org/nutrition/recipes/fruit-crisp?page=12\",\"uniqueKey\":\"https://www.kidney.org/nutrition/recipes/fruit-crisp?page=12\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":17,\"state\":4}},\"handledAt\":\"2026-04-21T21:54:22.535Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.kidney.org/nutrition/recipes/fruit-crisp?page=12",
+	"url": "https://www.kidney.org/nutrition/recipes/fruit-crisp?page=12"
+}

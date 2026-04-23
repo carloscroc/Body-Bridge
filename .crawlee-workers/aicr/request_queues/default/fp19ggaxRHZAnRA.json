@@ -1,0 +1,9 @@
+{
+	"id": "fp19ggaxRHZAnRA",
+	"json": "{\"id\":\"fp19ggaxRHZAnRA\",\"url\":\"https://www.aicr.org/cancer-prevention/recipes/hummus/\",\"loadedUrl\":\"https://www.aicr.org/cancer-prevention/recipes/hummus/\",\"uniqueKey\":\"https://www.aicr.org/cancer-prevention/recipes/hummus\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":1,\"state\":4}},\"handledAt\":\"2026-04-21T12:35:03.304Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.aicr.org/cancer-prevention/recipes/hummus",
+	"url": "https://www.aicr.org/cancer-prevention/recipes/hummus/"
+}

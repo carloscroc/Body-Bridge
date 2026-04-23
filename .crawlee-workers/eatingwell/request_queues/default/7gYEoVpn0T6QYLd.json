@@ -1,0 +1,9 @@
+{
+	"id": "7gYEoVpn0T6QYLd",
+	"json": "{\"id\":\"7gYEoVpn0T6QYLd\",\"url\":\"https://www.eatingwell.com/recipe/280038/grilled-red-snapper/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/280038/grilled-red-snapper/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/280038/grilled-red-snapper\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T13:50:05.071Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/280038/grilled-red-snapper",
+	"url": "https://www.eatingwell.com/recipe/280038/grilled-red-snapper/"
+}

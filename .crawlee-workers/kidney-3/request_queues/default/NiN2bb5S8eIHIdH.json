@@ -1,0 +1,9 @@
+{
+	"id": "NiN2bb5S8eIHIdH",
+	"json": "{\"id\":\"NiN2bb5S8eIHIdH\",\"url\":\"https://www.kidney.org/nutrition/recipes/scrambled-egg-muffins\",\"loadedUrl\":\"https://www.kidney.org/nutrition/recipes/scrambled-egg-muffins\",\"uniqueKey\":\"https://www.kidney.org/nutrition/recipes/scrambled-egg-muffins\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":15,\"state\":4}},\"handledAt\":\"2026-04-21T20:34:16.205Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.kidney.org/nutrition/recipes/scrambled-egg-muffins",
+	"url": "https://www.kidney.org/nutrition/recipes/scrambled-egg-muffins"
+}

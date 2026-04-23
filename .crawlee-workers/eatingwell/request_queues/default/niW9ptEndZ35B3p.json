@@ -1,0 +1,9 @@
+{
+	"id": "niW9ptEndZ35B3p",
+	"json": "{\"id\":\"niW9ptEndZ35B3p\",\"url\":\"https://www.eatingwell.com/recipes/18664/mealtimes/breakfast-brunch/waffles/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/18664/mealtimes/breakfast-brunch/waffles/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/18664/mealtimes/breakfast-brunch/waffles\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T12:44:45.684Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/18664/mealtimes/breakfast-brunch/waffles",
+	"url": "https://www.eatingwell.com/recipes/18664/mealtimes/breakfast-brunch/waffles/"
+}

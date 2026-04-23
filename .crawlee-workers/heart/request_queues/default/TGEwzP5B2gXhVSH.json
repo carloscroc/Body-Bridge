@@ -1,0 +1,9 @@
+{
+	"id": "TGEwzP5B2gXhVSH",
+	"json": "{\"id\":\"TGEwzP5B2gXhVSH\",\"url\":\"https://recipes.heart.org/en/recipes/blackberry-cobbler\",\"loadedUrl\":\"https://recipes.heart.org/en/recipes/blackberry-cobbler\",\"uniqueKey\":\"https://recipes.heart.org/en/recipes/blackberry-cobbler\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":12,\"state\":4}},\"handledAt\":\"2026-04-21T13:54:59.387Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recipes.heart.org/en/recipes/blackberry-cobbler",
+	"url": "https://recipes.heart.org/en/recipes/blackberry-cobbler"
+}

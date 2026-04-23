@@ -1,0 +1,9 @@
+{
+	"id": "uDyO2o43HHtv2w1",
+	"json": "{\"id\":\"uDyO2o43HHtv2w1\",\"url\":\"https://www.eatingwell.com/recipes/18356/health-condition/diabetic/holidays-events/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/18356/health-condition/diabetic/holidays-events/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/18356/health-condition/diabetic/holidays-events\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:06:17.379Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/18356/health-condition/diabetic/holidays-events",
+	"url": "https://www.eatingwell.com/recipes/18356/health-condition/diabetic/holidays-events/"
+}

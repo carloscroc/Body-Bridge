@@ -1,0 +1,9 @@
+{
+	"id": "GgrRXuWnOF2EsCJ",
+	"json": "{\"id\":\"GgrRXuWnOF2EsCJ\",\"url\":\"https://www.eatingwell.com/recipe/251394/classic-dill-chicken-salad/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/251394/classic-dill-chicken-salad/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/251394/classic-dill-chicken-salad\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T14:11:35.017Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/251394/classic-dill-chicken-salad",
+	"url": "https://www.eatingwell.com/recipe/251394/classic-dill-chicken-salad/"
+}

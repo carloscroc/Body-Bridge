@@ -1,0 +1,9 @@
+{
+	"id": "t5sT3saVs3WTq8V",
+	"json": "{\"id\":\"t5sT3saVs3WTq8V\",\"url\":\"https://www.eatingwell.com/recipe/259596/pork-chops-with-red-cabbage-and-pears/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/259596/pork-chops-with-red-cabbage-and-pears/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/259596/pork-chops-with-red-cabbage-and-pears\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:24:48.589Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/259596/pork-chops-with-red-cabbage-and-pears",
+	"url": "https://www.eatingwell.com/recipe/259596/pork-chops-with-red-cabbage-and-pears/"
+}

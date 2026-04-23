@@ -1,0 +1,9 @@
+{
+	"id": "qLOIdSOy2GglYNz",
+	"json": "{\"id\":\"qLOIdSOy2GglYNz\",\"url\":\"https://diabetesfoodhub.org/recipes/veggie-rich?page=5\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/veggie-rich?page=5\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/veggie-rich?page=5\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":6,\"state\":4}},\"handledAt\":\"2026-04-21T19:35:52.345Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/veggie-rich?page=5",
+	"url": "https://diabetesfoodhub.org/recipes/veggie-rich?page=5"
+}

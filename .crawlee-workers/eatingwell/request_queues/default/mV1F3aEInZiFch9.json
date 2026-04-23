@@ -1,0 +1,9 @@
+{
+	"id": "mV1F3aEInZiFch9",
+	"json": "{\"id\":\"mV1F3aEInZiFch9\",\"url\":\"https://www.eatingwell.com/recipes/17965/main-dishes/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/17965/main-dishes/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/17965/main-dishes\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":1,\"state\":4}},\"handledAt\":\"2026-04-21T12:34:50.137Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/17965/main-dishes",
+	"url": "https://www.eatingwell.com/recipes/17965/main-dishes/"
+}

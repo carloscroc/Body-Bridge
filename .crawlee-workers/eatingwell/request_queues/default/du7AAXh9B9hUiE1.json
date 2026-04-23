@@ -1,0 +1,9 @@
+{
+	"id": "du7AAXh9B9hUiE1",
+	"json": "{\"id\":\"du7AAXh9B9hUiE1\",\"url\":\"https://www.eatingwell.com/recipe/262885/sauteed-peppers-asparagus-and-zucchini/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/262885/sauteed-peppers-asparagus-and-zucchini/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/262885/sauteed-peppers-asparagus-and-zucchini\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T14:17:52.018Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/262885/sauteed-peppers-asparagus-and-zucchini",
+	"url": "https://www.eatingwell.com/recipe/262885/sauteed-peppers-asparagus-and-zucchini/"
+}

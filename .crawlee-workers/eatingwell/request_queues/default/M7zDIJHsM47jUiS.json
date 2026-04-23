@@ -1,0 +1,9 @@
+{
+	"id": "M7zDIJHsM47jUiS",
+	"json": "{\"id\":\"M7zDIJHsM47jUiS\",\"url\":\"https://www.eatingwell.com/recipe/280863/sesame-instant-ramen-noodles-with-broccoli-soft-boiled-egg/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/280863/sesame-instant-ramen-noodles-with-broccoli-soft-boiled-egg/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/280863/sesame-instant-ramen-noodles-with-broccoli-soft-boiled-egg\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T13:46:36.867Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/280863/sesame-instant-ramen-noodles-with-broccoli-soft-boiled-egg",
+	"url": "https://www.eatingwell.com/recipe/280863/sesame-instant-ramen-noodles-with-broccoli-soft-boiled-egg/"
+}

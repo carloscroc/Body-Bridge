@@ -1,0 +1,9 @@
+{
+	"id": "PFA0QeJTHJOU1yx",
+	"json": "{\"id\":\"PFA0QeJTHJOU1yx\",\"url\":\"https://www.eatingwell.com/recipe/262574/taco-stuffed-avocados/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/262574/taco-stuffed-avocados\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":4}}}",
+	"method": "GET",
+	"orderNo": 1776778985338,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/262574/taco-stuffed-avocados",
+	"url": "https://www.eatingwell.com/recipe/262574/taco-stuffed-avocados/"
+}

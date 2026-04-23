@@ -1,0 +1,9 @@
+{
+	"id": "LNjGsCxWbz6o145",
+	"json": "{\"id\":\"LNjGsCxWbz6o145\",\"url\":\"https://www.eatingwell.com/recipe/270481/sauteed-broccoli-with-peanut-sauce/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/270481/sauteed-broccoli-with-peanut-sauce/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/270481/sauteed-broccoli-with-peanut-sauce\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:28:49.036Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/270481/sauteed-broccoli-with-peanut-sauce",
+	"url": "https://www.eatingwell.com/recipe/270481/sauteed-broccoli-with-peanut-sauce/"
+}

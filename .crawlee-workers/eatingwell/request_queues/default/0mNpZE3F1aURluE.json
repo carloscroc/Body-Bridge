@@ -1,0 +1,9 @@
+{
+	"id": "0mNpZE3F1aURluE",
+	"json": "{\"id\":\"0mNpZE3F1aURluE\",\"url\":\"https://www.eatingwell.com/recipe/249544/black-bean-smothered-sweet-potatoes/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/249544/black-bean-smothered-sweet-potatoes/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/249544/black-bean-smothered-sweet-potatoes\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T13:45:50.773Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/249544/black-bean-smothered-sweet-potatoes",
+	"url": "https://www.eatingwell.com/recipe/249544/black-bean-smothered-sweet-potatoes/"
+}

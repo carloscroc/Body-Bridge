@@ -1,0 +1,9 @@
+{
+	"id": "VoWGIle3BMYQSOe",
+	"json": "{\"id\":\"VoWGIle3BMYQSOe\",\"url\":\"https://www.eatingwell.com/recipe/262982/basil-tomato-chicken-skillet/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/262982/basil-tomato-chicken-skillet/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/262982/basil-tomato-chicken-skillet\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T13:57:58.200Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/262982/basil-tomato-chicken-skillet",
+	"url": "https://www.eatingwell.com/recipe/262982/basil-tomato-chicken-skillet/"
+}

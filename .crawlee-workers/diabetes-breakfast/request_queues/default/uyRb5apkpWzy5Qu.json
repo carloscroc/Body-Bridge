@@ -1,0 +1,9 @@
+{
+	"id": "uyRb5apkpWzy5Qu",
+	"json": "{\"id\":\"uyRb5apkpWzy5Qu\",\"url\":\"https://diabetesfoodhub.org/recipes/veggie-gumbo\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/veggie-gumbo\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/veggie-gumbo\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":14,\"state\":4}},\"handledAt\":\"2026-04-21T22:26:25.329Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/veggie-gumbo",
+	"url": "https://diabetesfoodhub.org/recipes/veggie-gumbo"
+}

@@ -1,0 +1,9 @@
+{
+	"id": "70UAIjmUAnhN7Dn",
+	"json": "{\"id\":\"70UAIjmUAnhN7Dn\",\"url\":\"https://www.eatingwell.com/recipes/17915/bread/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/17915/bread/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/17915/bread\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":1,\"state\":4}},\"handledAt\":\"2026-04-21T12:35:27.062Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/17915/bread",
+	"url": "https://www.eatingwell.com/recipes/17915/bread/"
+}

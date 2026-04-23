@@ -1,0 +1,9 @@
+{
+	"id": "NEomglJMVc2KmW2",
+	"json": "{\"id\":\"NEomglJMVc2KmW2\",\"url\":\"https://www.eatingwell.com/recipes/17918/mealtimes/dinner/budget/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/17918/mealtimes/dinner/budget/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/17918/mealtimes/dinner/budget\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T12:37:07.722Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/17918/mealtimes/dinner/budget",
+	"url": "https://www.eatingwell.com/recipes/17918/mealtimes/dinner/budget/"
+}

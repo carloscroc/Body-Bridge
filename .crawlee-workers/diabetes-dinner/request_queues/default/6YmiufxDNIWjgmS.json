@@ -1,0 +1,9 @@
+{
+	"id": "6YmiufxDNIWjgmS",
+	"json": "{\"id\":\"6YmiufxDNIWjgmS\",\"url\":\"https://diabetesfoodhub.org/recipes/beef-fajitas\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/beef-fajitas\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/beef-fajitas\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":4,\"state\":4}},\"handledAt\":\"2026-04-21T18:36:12.486Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/beef-fajitas",
+	"url": "https://diabetesfoodhub.org/recipes/beef-fajitas"
+}

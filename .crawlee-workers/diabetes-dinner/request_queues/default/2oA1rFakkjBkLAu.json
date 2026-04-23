@@ -1,0 +1,9 @@
+{
+	"id": "2oA1rFakkjBkLAu",
+	"json": "{\"id\":\"2oA1rFakkjBkLAu\",\"url\":\"https://diabetesfoodhub.org/recipes/roasted-rainbow-carrots\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/roasted-rainbow-carrots\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/roasted-rainbow-carrots\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":9,\"state\":4}},\"handledAt\":\"2026-04-21T21:12:52.236Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/roasted-rainbow-carrots",
+	"url": "https://diabetesfoodhub.org/recipes/roasted-rainbow-carrots"
+}

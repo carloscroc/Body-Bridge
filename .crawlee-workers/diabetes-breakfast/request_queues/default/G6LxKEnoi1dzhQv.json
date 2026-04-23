@@ -1,0 +1,9 @@
+{
+	"id": "G6LxKEnoi1dzhQv",
+	"json": "{\"id\":\"G6LxKEnoi1dzhQv\",\"url\":\"https://diabetesfoodhub.org/recipes/cinnamon-flan?page=1\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/cinnamon-flan?page=1\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/cinnamon-flan?page=1\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":6,\"state\":4}},\"handledAt\":\"2026-04-21T19:28:29.910Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/cinnamon-flan?page=1",
+	"url": "https://diabetesfoodhub.org/recipes/cinnamon-flan?page=1"
+}

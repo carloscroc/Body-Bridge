@@ -1,0 +1,9 @@
+{
+	"id": "K1DYWJ1UE4PDNJ6",
+	"json": "{\"id\":\"K1DYWJ1UE4PDNJ6\",\"url\":\"https://recipes.heart.org/en/recipes/apple-walnut-cake\",\"loadedUrl\":\"https://recipes.heart.org/en/recipes/apple-walnut-cake\",\"uniqueKey\":\"https://recipes.heart.org/en/recipes/apple-walnut-cake\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":9,\"state\":4}},\"handledAt\":\"2026-04-21T13:42:59.759Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recipes.heart.org/en/recipes/apple-walnut-cake",
+	"url": "https://recipes.heart.org/en/recipes/apple-walnut-cake"
+}

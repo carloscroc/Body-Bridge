@@ -1,0 +1,9 @@
+{
+	"id": "ozngz7lvJDWUIvB",
+	"json": "{\"id\":\"ozngz7lvJDWUIvB\",\"url\":\"https://www.eatingwell.com/recipe/271088/strawberry-blueberry-banana-smoothie/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/271088/strawberry-blueberry-banana-smoothie/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/271088/strawberry-blueberry-banana-smoothie\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:36:35.389Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/271088/strawberry-blueberry-banana-smoothie",
+	"url": "https://www.eatingwell.com/recipe/271088/strawberry-blueberry-banana-smoothie/"
+}

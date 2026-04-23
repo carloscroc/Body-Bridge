@@ -1,0 +1,9 @@
+{
+	"id": "CqtmdJ5sIXbjQuT",
+	"json": "{\"id\":\"CqtmdJ5sIXbjQuT\",\"url\":\"https://www.eatingwell.com/recipe/252665/ginger-beet-juice/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/252665/ginger-beet-juice/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/252665/ginger-beet-juice\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:32:04.739Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/252665/ginger-beet-juice",
+	"url": "https://www.eatingwell.com/recipe/252665/ginger-beet-juice/"
+}

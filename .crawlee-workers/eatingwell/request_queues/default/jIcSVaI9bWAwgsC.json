@@ -1,0 +1,9 @@
+{
+	"id": "jIcSVaI9bWAwgsC",
+	"json": "{\"id\":\"jIcSVaI9bWAwgsC\",\"url\":\"https://www.eatingwell.com/recipe/256336/gluten-free-banana-bread/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/256336/gluten-free-banana-bread\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3}}}",
+	"method": "GET",
+	"orderNo": 1776775528050,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/256336/gluten-free-banana-bread",
+	"url": "https://www.eatingwell.com/recipe/256336/gluten-free-banana-bread/"
+}

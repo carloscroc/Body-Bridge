@@ -1,0 +1,9 @@
+{
+	"id": "3SFKz3ERfi4cxMd",
+	"json": "{\"id\":\"3SFKz3ERfi4cxMd\",\"url\":\"https://www.eatingwell.com/recipes/18043/ingredients/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/18043/ingredients/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/18043/ingredients\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":1,\"state\":4}},\"handledAt\":\"2026-04-21T12:36:34.530Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/18043/ingredients",
+	"url": "https://www.eatingwell.com/recipes/18043/ingredients/"
+}

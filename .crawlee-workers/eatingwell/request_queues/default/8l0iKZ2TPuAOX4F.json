@@ -1,0 +1,9 @@
+{
+	"id": "8l0iKZ2TPuAOX4F",
+	"json": "{\"id\":\"8l0iKZ2TPuAOX4F\",\"url\":\"https://www.eatingwell.com/recipe/250622/mushroom-beef-noodle-soup/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/250622/mushroom-beef-noodle-soup/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/250622/mushroom-beef-noodle-soup\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T14:25:46.599Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/250622/mushroom-beef-noodle-soup",
+	"url": "https://www.eatingwell.com/recipe/250622/mushroom-beef-noodle-soup/"
+}

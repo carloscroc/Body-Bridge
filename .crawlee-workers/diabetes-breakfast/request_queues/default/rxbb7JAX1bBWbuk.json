@@ -1,0 +1,9 @@
+{
+	"id": "rxbb7JAX1bBWbuk",
+	"json": "{\"id\":\"rxbb7JAX1bBWbuk\",\"url\":\"https://diabetesfoodhub.org/recipes/gluten-free?page=13\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/gluten-free?page=13\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/gluten-free?page=13\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":15,\"state\":4}},\"handledAt\":\"2026-04-21T22:33:54.816Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/gluten-free?page=13",
+	"url": "https://diabetesfoodhub.org/recipes/gluten-free?page=13"
+}

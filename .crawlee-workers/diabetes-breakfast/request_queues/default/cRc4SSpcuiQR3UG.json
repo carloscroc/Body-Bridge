@@ -1,0 +1,9 @@
+{
+	"id": "cRc4SSpcuiQR3UG",
+	"json": "{\"id\":\"cRc4SSpcuiQR3UG\",\"url\":\"https://diabetesfoodhub.org/recipes/colorful-pasta-salad\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/colorful-pasta-salad\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/colorful-pasta-salad\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T17:40:30.525Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/colorful-pasta-salad",
+	"url": "https://diabetesfoodhub.org/recipes/colorful-pasta-salad"
+}

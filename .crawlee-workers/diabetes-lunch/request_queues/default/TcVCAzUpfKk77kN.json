@@ -1,0 +1,9 @@
+{
+	"id": "TcVCAzUpfKk77kN",
+	"json": "{\"id\":\"TcVCAzUpfKk77kN\",\"url\":\"https://diabetesfoodhub.org/recipes/beef-teriyaki\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/beef-teriyaki\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/beef-teriyaki\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":9,\"state\":4}},\"handledAt\":\"2026-04-21T21:13:39.594Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/beef-teriyaki",
+	"url": "https://diabetesfoodhub.org/recipes/beef-teriyaki"
+}

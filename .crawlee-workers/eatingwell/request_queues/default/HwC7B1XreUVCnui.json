@@ -1,0 +1,9 @@
+{
+	"id": "HwC7B1XreUVCnui",
+	"json": "{\"id\":\"HwC7B1XreUVCnui\",\"url\":\"https://www.eatingwell.com/recipes/18231/main-dishes/savory-pies/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/18231/main-dishes/savory-pies/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/18231/main-dishes/savory-pies\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:11:07.495Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/18231/main-dishes/savory-pies",
+	"url": "https://www.eatingwell.com/recipes/18231/main-dishes/savory-pies/"
+}

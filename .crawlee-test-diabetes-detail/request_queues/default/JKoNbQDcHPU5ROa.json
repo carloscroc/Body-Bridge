@@ -1,0 +1,9 @@
+{
+	"id": "JKoNbQDcHPU5ROa",
+	"json": "{\"id\":\"JKoNbQDcHPU5ROa\",\"url\":\"https://diabetesfoodhub.org/recipes/desserts\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/dessert\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/desserts\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":1,\"state\":4}},\"handledAt\":\"2026-04-21T17:13:10.856Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/desserts",
+	"url": "https://diabetesfoodhub.org/recipes/desserts"
+}

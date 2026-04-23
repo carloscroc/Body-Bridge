@@ -1,0 +1,9 @@
+{
+	"id": "9L8akr7VjZyU1mq",
+	"json": "{\"id\":\"9L8akr7VjZyU1mq\",\"url\":\"https://diabetesfoodhub.org/recipes/fiesta-tostadas-mexican-pizza\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/fiesta-tostadas-mexican-pizza\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/fiesta-tostadas-mexican-pizza\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":16,\"state\":4}},\"handledAt\":\"2026-04-21T22:41:48.070Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/fiesta-tostadas-mexican-pizza",
+	"url": "https://diabetesfoodhub.org/recipes/fiesta-tostadas-mexican-pizza"
+}

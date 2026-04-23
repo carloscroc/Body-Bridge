@@ -1,0 +1,9 @@
+{
+	"id": "5rbIfBAeJn2hQLi",
+	"json": "{\"id\":\"5rbIfBAeJn2hQLi\",\"url\":\"https://diabetesfoodhub.org/recipes/caribbean\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/caribbean\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/caribbean\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T17:48:08.987Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/caribbean",
+	"url": "https://diabetesfoodhub.org/recipes/caribbean"
+}

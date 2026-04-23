@@ -1,0 +1,9 @@
+{
+	"id": "1PtFQkZ4qRzl1VR",
+	"json": "{\"id\":\"1PtFQkZ4qRzl1VR\",\"url\":\"https://www.kidney.org/nutrition/recipes/smoked-chicken-and-apple-soup?page=5\",\"loadedUrl\":\"https://www.kidney.org/nutrition/recipes/smoked-chicken-and-apple-soup?page=5\",\"uniqueKey\":\"https://www.kidney.org/nutrition/recipes/smoked-chicken-and-apple-soup?page=5\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":11,\"state\":4}},\"handledAt\":\"2026-04-21T19:13:53.754Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.kidney.org/nutrition/recipes/smoked-chicken-and-apple-soup?page=5",
+	"url": "https://www.kidney.org/nutrition/recipes/smoked-chicken-and-apple-soup?page=5"
+}

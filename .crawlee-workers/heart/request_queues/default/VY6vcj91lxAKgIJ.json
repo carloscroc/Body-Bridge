@@ -1,0 +1,9 @@
+{
+	"id": "VY6vcj91lxAKgIJ",
+	"json": "{\"id\":\"VY6vcj91lxAKgIJ\",\"url\":\"https://recipes.heart.org/en/recipes/cantaloupe-cucumber-gazpacho\",\"loadedUrl\":\"https://recipes.heart.org/en/recipes/cantaloupe-cucumber-gazpacho\",\"uniqueKey\":\"https://recipes.heart.org/en/recipes/cantaloupe-cucumber-gazpacho\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":6,\"state\":4}},\"handledAt\":\"2026-04-21T13:15:05.523Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recipes.heart.org/en/recipes/cantaloupe-cucumber-gazpacho",
+	"url": "https://recipes.heart.org/en/recipes/cantaloupe-cucumber-gazpacho"
+}

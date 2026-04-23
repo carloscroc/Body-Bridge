@@ -1,0 +1,9 @@
+{
+	"id": "EEa57u6r8EvLQvl",
+	"json": "{\"id\":\"EEa57u6r8EvLQvl\",\"url\":\"https://www.eatingwell.com/recipe/252521/general-tsos-chicken/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/252521/general-tsos-chicken/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/252521/general-tsos-chicken\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T13:48:44.396Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/252521/general-tsos-chicken",
+	"url": "https://www.eatingwell.com/recipe/252521/general-tsos-chicken/"
+}

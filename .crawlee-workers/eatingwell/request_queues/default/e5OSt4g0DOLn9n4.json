@@ -1,0 +1,9 @@
+{
+	"id": "e5OSt4g0DOLn9n4",
+	"json": "{\"id\":\"e5OSt4g0DOLn9n4\",\"url\":\"https://www.eatingwell.com/recipes/18614/drinks/smoothies/vegetable/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/18614/drinks/smoothies/vegetable/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/18614/drinks/smoothies/vegetable\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:02:37.348Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/18614/drinks/smoothies/vegetable",
+	"url": "https://www.eatingwell.com/recipes/18614/drinks/smoothies/vegetable/"
+}

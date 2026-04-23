@@ -1,0 +1,9 @@
+{
+	"id": "jGRiaawPKAFRX9G",
+	"json": "{\"id\":\"jGRiaawPKAFRX9G\",\"url\":\"https://www.eatingwell.com/recipe/252138/green-goddess-salad/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/252138/green-goddess-salad/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/252138/green-goddess-salad\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T14:05:49.771Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/252138/green-goddess-salad",
+	"url": "https://www.eatingwell.com/recipe/252138/green-goddess-salad/"
+}

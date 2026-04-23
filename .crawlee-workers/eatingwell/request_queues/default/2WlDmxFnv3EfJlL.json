@@ -1,0 +1,9 @@
+{
+	"id": "2WlDmxFnv3EfJlL",
+	"json": "{\"id\":\"2WlDmxFnv3EfJlL\",\"url\":\"https://www.eatingwell.com/recipe/248205/one-bowl-chocolate-cake/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/248205/one-bowl-chocolate-cake\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3}}}",
+	"method": "GET",
+	"orderNo": 1776776337265,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/248205/one-bowl-chocolate-cake",
+	"url": "https://www.eatingwell.com/recipe/248205/one-bowl-chocolate-cake/"
+}

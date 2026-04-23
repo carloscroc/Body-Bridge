@@ -1,0 +1,9 @@
+{
+	"id": "EsHlic5FXpcOZ5b",
+	"json": "{\"id\":\"EsHlic5FXpcOZ5b\",\"url\":\"https://www.eatingwell.com/recipe/380249/shredded-chicken-avocado-nacho-salad/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/380249/shredded-chicken-avocado-nacho-salad/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/380249/shredded-chicken-avocado-nacho-salad\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T13:55:03.958Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/380249/shredded-chicken-avocado-nacho-salad",
+	"url": "https://www.eatingwell.com/recipe/380249/shredded-chicken-avocado-nacho-salad/"
+}

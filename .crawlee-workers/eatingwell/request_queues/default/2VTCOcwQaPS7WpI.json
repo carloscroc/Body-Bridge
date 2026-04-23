@@ -1,0 +1,9 @@
+{
+	"id": "2VTCOcwQaPS7WpI",
+	"json": "{\"id\":\"2VTCOcwQaPS7WpI\",\"url\":\"https://www.eatingwell.com/recipes/19254/ingredients/pasta-noodle/pasta-by-shape/gnocchi/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/19254/ingredients/pasta-noodle/pasta-by-shape/gnocchi\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3}}}",
+	"method": "GET",
+	"orderNo": 1776778079411,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/19254/ingredients/pasta-noodle/pasta-by-shape/gnocchi",
+	"url": "https://www.eatingwell.com/recipes/19254/ingredients/pasta-noodle/pasta-by-shape/gnocchi/"
+}

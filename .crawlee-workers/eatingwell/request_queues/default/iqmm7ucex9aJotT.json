@@ -1,0 +1,9 @@
+{
+	"id": "iqmm7ucex9aJotT",
+	"json": "{\"id\":\"iqmm7ucex9aJotT\",\"url\":\"https://www.eatingwell.com/recipe/280125/cinnamon-toasted-oats/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/280125/cinnamon-toasted-oats/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/280125/cinnamon-toasted-oats\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:37:20.715Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/280125/cinnamon-toasted-oats",
+	"url": "https://www.eatingwell.com/recipe/280125/cinnamon-toasted-oats/"
+}

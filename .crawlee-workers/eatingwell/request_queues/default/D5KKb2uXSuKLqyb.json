@@ -1,0 +1,9 @@
+{
+	"id": "D5KKb2uXSuKLqyb",
+	"json": "{\"id\":\"D5KKb2uXSuKLqyb\",\"url\":\"https://www.eatingwell.com/recipes/18203/soup/cold/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/18203/soup/cold/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/18203/soup/cold\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T12:56:28.754Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/18203/soup/cold",
+	"url": "https://www.eatingwell.com/recipes/18203/soup/cold/"
+}

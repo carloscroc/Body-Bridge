@@ -1,0 +1,9 @@
+{
+	"id": "XHm8nz0w23N4wBP",
+	"json": "{\"id\":\"XHm8nz0w23N4wBP\",\"url\":\"https://recipes.heart.org/en/recipes/red-wine-vinaigrette-quick-salad-dressing\",\"loadedUrl\":\"https://recipes.heart.org/en/recipes/red-wine-vinaigrette-quick-salad-dressing\",\"uniqueKey\":\"https://recipes.heart.org/en/recipes/red-wine-vinaigrette-quick-salad-dressing\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":4,\"state\":4}},\"handledAt\":\"2026-04-21T12:43:59.752Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recipes.heart.org/en/recipes/red-wine-vinaigrette-quick-salad-dressing",
+	"url": "https://recipes.heart.org/en/recipes/red-wine-vinaigrette-quick-salad-dressing"
+}

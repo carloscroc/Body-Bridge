@@ -1,0 +1,9 @@
+{
+	"id": "t4aO6IPkc1BT3cM",
+	"json": "{\"id\":\"t4aO6IPkc1BT3cM\",\"url\":\"https://www.eatingwell.com/recipes/18167/appetizer/cheese/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/18167/appetizer/cheese/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/18167/appetizer/cheese\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T12:46:45.508Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/18167/appetizer/cheese",
+	"url": "https://www.eatingwell.com/recipes/18167/appetizer/cheese/"
+}

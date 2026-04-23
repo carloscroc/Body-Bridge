@@ -1,0 +1,9 @@
+{
+	"id": "aldh6XqT5yjbbFU",
+	"json": "{\"id\":\"aldh6XqT5yjbbFU\",\"url\":\"https://www.eatingwell.com/recipe/252455/ravioli-vegetable-soup/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/252455/ravioli-vegetable-soup/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/252455/ravioli-vegetable-soup\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T13:53:39.143Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/252455/ravioli-vegetable-soup",
+	"url": "https://www.eatingwell.com/recipe/252455/ravioli-vegetable-soup/"
+}

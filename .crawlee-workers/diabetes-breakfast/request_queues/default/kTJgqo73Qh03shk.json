@@ -1,0 +1,9 @@
+{
+	"id": "kTJgqo73Qh03shk",
+	"json": "{\"id\":\"kTJgqo73Qh03shk\",\"url\":\"https://diabetesfoodhub.org/recipes/chicken-apple-crunch-salad\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/chicken-apple-crunch-salad\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/chicken-apple-crunch-salad\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T17:41:01.625Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/chicken-apple-crunch-salad",
+	"url": "https://diabetesfoodhub.org/recipes/chicken-apple-crunch-salad"
+}

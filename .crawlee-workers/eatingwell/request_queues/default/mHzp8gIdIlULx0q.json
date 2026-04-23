@@ -1,0 +1,9 @@
+{
+	"id": "mHzp8gIdIlULx0q",
+	"json": "{\"id\":\"mHzp8gIdIlULx0q\",\"url\":\"https://www.eatingwell.com/recipes/19182/ingredients/fish-seafood/shellfish/scallops/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/19182/ingredients/fish-seafood/shellfish/scallops\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":4}}}",
+	"method": "GET",
+	"orderNo": 1776779422889,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/19182/ingredients/fish-seafood/shellfish/scallops",
+	"url": "https://www.eatingwell.com/recipes/19182/ingredients/fish-seafood/shellfish/scallops/"
+}

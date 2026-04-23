@@ -1,0 +1,9 @@
+{
+	"id": "HSmRICoUeN2oCKF",
+	"json": "{\"id\":\"HSmRICoUeN2oCKF\",\"url\":\"https://www.eatingwell.com/recipes/18665/mealtimes/breakfast-brunch/yogurt/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/18665/mealtimes/breakfast-brunch/yogurt/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/18665/mealtimes/breakfast-brunch/yogurt\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T12:44:54.687Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/18665/mealtimes/breakfast-brunch/yogurt",
+	"url": "https://www.eatingwell.com/recipes/18665/mealtimes/breakfast-brunch/yogurt/"
+}

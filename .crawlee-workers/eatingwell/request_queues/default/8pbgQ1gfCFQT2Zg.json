@@ -1,0 +1,9 @@
+{
+	"id": "8pbgQ1gfCFQT2Zg",
+	"json": "{\"id\":\"8pbgQ1gfCFQT2Zg\",\"url\":\"https://www.eatingwell.com/recipe/252077/vegetarian-hot-pot/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/252077/vegetarian-hot-pot/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/252077/vegetarian-hot-pot\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T14:24:13.032Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/252077/vegetarian-hot-pot",
+	"url": "https://www.eatingwell.com/recipe/252077/vegetarian-hot-pot/"
+}

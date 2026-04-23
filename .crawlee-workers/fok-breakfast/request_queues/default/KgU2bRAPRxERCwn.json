@@ -1,0 +1,9 @@
+{
+	"id": "KgU2bRAPRxERCwn",
+	"json": "{\"id\":\"KgU2bRAPRxERCwn\",\"url\":\"https://www.forksoverknives.com/recipes/vegan-breakfast/banana-pancakes/\",\"loadedUrl\":\"https://www.forksoverknives.com/recipes/vegan-breakfast/banana-pancakes/\",\"uniqueKey\":\"https://www.forksoverknives.com/recipes/vegan-breakfast/banana-pancakes\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T12:46:48.433Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.forksoverknives.com/recipes/vegan-breakfast/banana-pancakes",
+	"url": "https://www.forksoverknives.com/recipes/vegan-breakfast/banana-pancakes/"
+}

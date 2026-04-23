@@ -1,0 +1,9 @@
+{
+	"id": "xWklXQBuauNLMYs",
+	"json": "{\"id\":\"xWklXQBuauNLMYs\",\"url\":\"https://www.eatingwell.com/recipes/18859/soup/cold/gazpacho/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/18859/soup/cold/gazpacho\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3}}}",
+	"method": "GET",
+	"orderNo": 1776776188243,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/18859/soup/cold/gazpacho",
+	"url": "https://www.eatingwell.com/recipes/18859/soup/cold/gazpacho/"
+}

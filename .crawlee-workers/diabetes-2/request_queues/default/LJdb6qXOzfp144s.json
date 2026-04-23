@@ -1,0 +1,9 @@
+{
+	"id": "LJdb6qXOzfp144s",
+	"json": "{\"id\":\"LJdb6qXOzfp144s\",\"url\":\"https://diabetesfoodhub.org/recipes?&&&&page=54\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes?&&&&page=54\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes?page=54\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":54,\"state\":4}},\"handledAt\":\"2026-04-21T14:59:47.385Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes?page=54",
+	"url": "https://diabetesfoodhub.org/recipes?&&&&page=54"
+}

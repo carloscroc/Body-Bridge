@@ -1,0 +1,9 @@
+{
+	"id": "Pk6pDprB5nAo6Uh",
+	"json": "{\"id\":\"Pk6pDprB5nAo6Uh\",\"url\":\"https://www.eatingwell.com/recipes/18017/drinks/smoothies/low-fat/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/18017/drinks/smoothies/low-fat/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/18017/drinks/smoothies/low-fat\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:01:48.355Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/18017/drinks/smoothies/low-fat",
+	"url": "https://www.eatingwell.com/recipes/18017/drinks/smoothies/low-fat/"
+}

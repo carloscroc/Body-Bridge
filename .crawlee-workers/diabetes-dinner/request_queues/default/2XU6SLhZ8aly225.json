@@ -1,0 +1,9 @@
+{
+	"id": "2XU6SLhZ8aly225",
+	"json": "{\"id\":\"2XU6SLhZ8aly225\",\"url\":\"https://diabetesfoodhub.org/recipes/no-cook?page=9\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/no-cook?page=9\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/no-cook?page=9\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":12,\"state\":4}},\"handledAt\":\"2026-04-21T21:50:18.943Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/no-cook?page=9",
+	"url": "https://diabetesfoodhub.org/recipes/no-cook?page=9"
+}

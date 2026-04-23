@@ -1,0 +1,9 @@
+{
+	"id": "0u8hzrqePNCX1GQ",
+	"json": "{\"id\":\"0u8hzrqePNCX1GQ\",\"url\":\"https://www.eatingwell.com/recipe/248685/zucchini-frittata/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/248685/zucchini-frittata/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/248685/zucchini-frittata\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T13:43:25.675Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/248685/zucchini-frittata",
+	"url": "https://www.eatingwell.com/recipe/248685/zucchini-frittata/"
+}

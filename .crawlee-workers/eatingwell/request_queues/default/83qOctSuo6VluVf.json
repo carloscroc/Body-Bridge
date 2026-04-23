@@ -1,0 +1,9 @@
+{
+	"id": "83qOctSuo6VluVf",
+	"json": "{\"id\":\"83qOctSuo6VluVf\",\"url\":\"https://www.eatingwell.com/recipe/280178/basil-pesto-pasta-with-grilled-vegetables/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/280178/basil-pesto-pasta-with-grilled-vegetables/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/280178/basil-pesto-pasta-with-grilled-vegetables\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T14:21:21.090Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/280178/basil-pesto-pasta-with-grilled-vegetables",
+	"url": "https://www.eatingwell.com/recipe/280178/basil-pesto-pasta-with-grilled-vegetables/"
+}

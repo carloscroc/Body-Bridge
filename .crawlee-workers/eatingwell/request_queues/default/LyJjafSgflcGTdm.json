@@ -1,0 +1,9 @@
+{
+	"id": "LyJjafSgflcGTdm",
+	"json": "{\"id\":\"LyJjafSgflcGTdm\",\"url\":\"https://www.eatingwell.com/recipe/250881/avocado-tomato-chicken-sandwich/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/250881/avocado-tomato-chicken-sandwich/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/250881/avocado-tomato-chicken-sandwich\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:37:38.455Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/250881/avocado-tomato-chicken-sandwich",
+	"url": "https://www.eatingwell.com/recipe/250881/avocado-tomato-chicken-sandwich/"
+}

@@ -1,0 +1,9 @@
+{
+	"id": "JOuFiiH7e2ZPUVe",
+	"json": "{\"id\":\"JOuFiiH7e2ZPUVe\",\"url\":\"https://www.eatingwell.com/recipes/17968/mealtimes/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/17968/mealtimes/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/17968/mealtimes\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":1,\"state\":4}},\"handledAt\":\"2026-04-21T12:35:49.946Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/17968/mealtimes",
+	"url": "https://www.eatingwell.com/recipes/17968/mealtimes/"
+}

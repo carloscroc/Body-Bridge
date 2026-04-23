@@ -1,0 +1,9 @@
+{
+	"id": "9oJ50MksiTI8PnX",
+	"json": "{\"id\":\"9oJ50MksiTI8PnX\",\"url\":\"https://www.eatingwell.com/recipes/22800/desserts/frozen/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/22800/desserts/frozen/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/22800/desserts/frozen\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:01:16.811Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/22800/desserts/frozen",
+	"url": "https://www.eatingwell.com/recipes/22800/desserts/frozen/"
+}

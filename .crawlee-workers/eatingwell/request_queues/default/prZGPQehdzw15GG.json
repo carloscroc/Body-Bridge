@@ -1,0 +1,9 @@
+{
+	"id": "prZGPQehdzw15GG",
+	"json": "{\"id\":\"prZGPQehdzw15GG\",\"url\":\"https://www.eatingwell.com/recipe/270524/scallion-pancakes/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/270524/scallion-pancakes\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3}}}",
+	"method": "GET",
+	"orderNo": 1776775782703,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/270524/scallion-pancakes",
+	"url": "https://www.eatingwell.com/recipe/270524/scallion-pancakes/"
+}

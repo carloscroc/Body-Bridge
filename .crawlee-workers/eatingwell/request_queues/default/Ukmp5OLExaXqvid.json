@@ -1,0 +1,9 @@
+{
+	"id": "Ukmp5OLExaXqvid",
+	"json": "{\"id\":\"Ukmp5OLExaXqvid\",\"url\":\"https://www.eatingwell.com/recipes/18065/drinks/tea/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/18065/drinks/tea/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/18065/drinks/tea\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:03:43.619Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/18065/drinks/tea",
+	"url": "https://www.eatingwell.com/recipes/18065/drinks/tea/"
+}

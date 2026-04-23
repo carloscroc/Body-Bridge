@@ -1,0 +1,9 @@
+{
+	"id": "YtYsyKlJKWevg82",
+	"json": "{\"id\":\"YtYsyKlJKWevg82\",\"url\":\"https://www.eatingwell.com/recipe/252402/caramelized-spiced-pears/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/252402/caramelized-spiced-pears/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/252402/caramelized-spiced-pears\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T14:02:24.792Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/252402/caramelized-spiced-pears",
+	"url": "https://www.eatingwell.com/recipe/252402/caramelized-spiced-pears/"
+}

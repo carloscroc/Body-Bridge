@@ -1,0 +1,9 @@
+{
+	"id": "u1hCi9zzNfHKlOr",
+	"json": "{\"id\":\"u1hCi9zzNfHKlOr\",\"url\":\"https://www.aicr.org/cancer-prevention/recipes/sweet-potato-chili-with-peanuts/\",\"loadedUrl\":\"https://www.aicr.org/cancer-prevention/recipes/sweet-potato-chili-with-peanuts/\",\"uniqueKey\":\"https://www.aicr.org/cancer-prevention/recipes/sweet-potato-chili-with-peanuts\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":1,\"state\":4}},\"handledAt\":\"2026-04-21T12:43:38.360Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.aicr.org/cancer-prevention/recipes/sweet-potato-chili-with-peanuts",
+	"url": "https://www.aicr.org/cancer-prevention/recipes/sweet-potato-chili-with-peanuts/"
+}

@@ -1,0 +1,9 @@
+{
+	"id": "5GJnAc2jIHakE2k",
+	"json": "{\"id\":\"5GJnAc2jIHakE2k\",\"url\":\"https://www.eatingwell.com/recipes/18134/salad/bean/edamame/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/18134/salad/bean/edamame\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3}}}",
+	"method": "GET",
+	"orderNo": 1776775947539,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/18134/salad/bean/edamame",
+	"url": "https://www.eatingwell.com/recipes/18134/salad/bean/edamame/"
+}

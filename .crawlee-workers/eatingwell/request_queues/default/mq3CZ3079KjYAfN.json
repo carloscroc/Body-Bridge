@@ -1,0 +1,9 @@
+{
+	"id": "mq3CZ3079KjYAfN",
+	"json": "{\"id\":\"mq3CZ3079KjYAfN\",\"url\":\"https://www.eatingwell.com/recipe/252518/chicken-thighs-with-couscous-kale/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/252518/chicken-thighs-with-couscous-kale\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3}}}",
+	"method": "GET",
+	"orderNo": 1776776682891,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/252518/chicken-thighs-with-couscous-kale",
+	"url": "https://www.eatingwell.com/recipe/252518/chicken-thighs-with-couscous-kale/"
+}

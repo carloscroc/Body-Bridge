@@ -1,0 +1,9 @@
+{
+	"id": "7CZvgv9SwY8CAjL",
+	"json": "{\"id\":\"7CZvgv9SwY8CAjL\",\"url\":\"https://recipes.heart.org/en/recipes/tortilla-soup-with-grilled-chicken\",\"loadedUrl\":\"https://recipes.heart.org/en/recipes/tortilla-soup-with-grilled-chicken\",\"uniqueKey\":\"https://recipes.heart.org/en/recipes/tortilla-soup-with-grilled-chicken\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":6,\"state\":4}},\"handledAt\":\"2026-04-21T13:02:35.320Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recipes.heart.org/en/recipes/tortilla-soup-with-grilled-chicken",
+	"url": "https://recipes.heart.org/en/recipes/tortilla-soup-with-grilled-chicken"
+}

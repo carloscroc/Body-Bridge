@@ -1,0 +1,9 @@
+{
+	"id": "x5eKWnpYYQvBjXP",
+	"json": "{\"id\":\"x5eKWnpYYQvBjXP\",\"url\":\"https://www.eatingwell.com/recipe/7882770/spinach-omelet/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/7882770/spinach-omelet/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/7882770/spinach-omelet\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T14:07:27.548Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/7882770/spinach-omelet",
+	"url": "https://www.eatingwell.com/recipe/7882770/spinach-omelet/"
+}

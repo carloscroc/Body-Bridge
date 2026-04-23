@@ -1,0 +1,9 @@
+{
+	"id": "s3GIZsDHbPLHmKz",
+	"json": "{\"id\":\"s3GIZsDHbPLHmKz\",\"url\":\"https://www.eatingwell.com/recipes/19694/cooking-methods-styles/quick-easy/dessert/cake/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/19694/cooking-methods-styles/quick-easy/dessert/cake/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/19694/cooking-methods-styles/quick-easy/dessert/cake\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T14:01:45.248Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/19694/cooking-methods-styles/quick-easy/dessert/cake",
+	"url": "https://www.eatingwell.com/recipes/19694/cooking-methods-styles/quick-easy/dessert/cake/"
+}

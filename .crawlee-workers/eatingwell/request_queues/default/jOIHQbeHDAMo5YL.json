@@ -1,0 +1,9 @@
+{
+	"id": "jOIHQbeHDAMo5YL",
+	"json": "{\"id\":\"jOIHQbeHDAMo5YL\",\"url\":\"https://www.eatingwell.com/recipes/18653/mealtimes/breakfast-brunch/eggs/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/18653/mealtimes/breakfast-brunch/eggs/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/18653/mealtimes/breakfast-brunch/eggs\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T12:44:16.528Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/18653/mealtimes/breakfast-brunch/eggs",
+	"url": "https://www.eatingwell.com/recipes/18653/mealtimes/breakfast-brunch/eggs/"
+}

@@ -1,0 +1,9 @@
+{
+	"id": "k6Ax4zQOF5oZDa7",
+	"json": "{\"id\":\"k6Ax4zQOF5oZDa7\",\"url\":\"https://www.eatingwell.com/recipe/261428/chocolate-peanut-butter-protein-shake/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/261428/chocolate-peanut-butter-protein-shake/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/261428/chocolate-peanut-butter-protein-shake\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:36:19.371Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/261428/chocolate-peanut-butter-protein-shake",
+	"url": "https://www.eatingwell.com/recipe/261428/chocolate-peanut-butter-protein-shake/"
+}

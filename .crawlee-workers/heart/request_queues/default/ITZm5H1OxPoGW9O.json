@@ -1,0 +1,9 @@
+{
+	"id": "ITZm5H1OxPoGW9O",
+	"json": "{\"id\":\"ITZm5H1OxPoGW9O\",\"url\":\"https://recipes.heart.org/en/recipes/rosemary-balsamic-roasted-vegetables\",\"loadedUrl\":\"https://recipes.heart.org/en/recipes/rosemary-balsamic-roasted-vegetables\",\"uniqueKey\":\"https://recipes.heart.org/en/recipes/rosemary-balsamic-roasted-vegetables\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":7,\"state\":4}},\"handledAt\":\"2026-04-21T13:32:58.478Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recipes.heart.org/en/recipes/rosemary-balsamic-roasted-vegetables",
+	"url": "https://recipes.heart.org/en/recipes/rosemary-balsamic-roasted-vegetables"
+}

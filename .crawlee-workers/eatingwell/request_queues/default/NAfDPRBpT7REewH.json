@@ -1,0 +1,9 @@
+{
+	"id": "NAfDPRBpT7REewH",
+	"json": "{\"id\":\"NAfDPRBpT7REewH\",\"url\":\"https://www.eatingwell.com/recipe/262955/philly-cheese-steak-sloppy-joes/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/262955/philly-cheese-steak-sloppy-joes/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/262955/philly-cheese-steak-sloppy-joes\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T13:42:48.365Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/262955/philly-cheese-steak-sloppy-joes",
+	"url": "https://www.eatingwell.com/recipe/262955/philly-cheese-steak-sloppy-joes/"
+}

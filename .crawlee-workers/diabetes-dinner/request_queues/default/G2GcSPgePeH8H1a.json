@@ -1,0 +1,9 @@
+{
+	"id": "G2GcSPgePeH8H1a",
+	"json": "{\"id\":\"G2GcSPgePeH8H1a\",\"url\":\"https://diabetesfoodhub.org/recipes/veggie-breakfast-wrap\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/veggie-breakfast-wrap\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/veggie-breakfast-wrap\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T18:15:38.228Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/veggie-breakfast-wrap",
+	"url": "https://diabetesfoodhub.org/recipes/veggie-breakfast-wrap"
+}

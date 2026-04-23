@@ -1,0 +1,9 @@
+{
+	"id": "WoVCZLNvwBaa48U",
+	"json": "{\"id\":\"WoVCZLNvwBaa48U\",\"url\":\"https://www.eatingwell.com/recipe/269639/old-fashioned-oatmeal/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/269639/old-fashioned-oatmeal/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/269639/old-fashioned-oatmeal\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:30:12.855Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/269639/old-fashioned-oatmeal",
+	"url": "https://www.eatingwell.com/recipe/269639/old-fashioned-oatmeal/"
+}

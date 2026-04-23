@@ -1,0 +1,9 @@
+{
+	"id": "eeU2kHNSmW5awmX",
+	"json": "{\"id\":\"eeU2kHNSmW5awmX\",\"url\":\"https://recipes.heart.org/en/recipes/parfaits-de-yogur-y-avena-con-frutas\",\"loadedUrl\":\"https://recipes.heart.org/en/recipes/parfaits-de-yogur-y-avena-con-frutas\",\"uniqueKey\":\"https://recipes.heart.org/en/recipes/parfaits-de-yogur-y-avena-con-frutas\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":5,\"state\":4}},\"handledAt\":\"2026-04-21T12:44:36.518Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recipes.heart.org/en/recipes/parfaits-de-yogur-y-avena-con-frutas",
+	"url": "https://recipes.heart.org/en/recipes/parfaits-de-yogur-y-avena-con-frutas"
+}

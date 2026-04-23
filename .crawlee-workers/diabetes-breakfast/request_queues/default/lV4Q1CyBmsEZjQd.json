@@ -1,0 +1,9 @@
+{
+	"id": "lV4Q1CyBmsEZjQd",
+	"json": "{\"id\":\"lV4Q1CyBmsEZjQd\",\"url\":\"https://diabetesfoodhub.org/recipes/steamed-green-beans\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/steamed-green-beans\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/steamed-green-beans\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":10,\"state\":4}},\"handledAt\":\"2026-04-21T21:15:34.041Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/steamed-green-beans",
+	"url": "https://diabetesfoodhub.org/recipes/steamed-green-beans"
+}

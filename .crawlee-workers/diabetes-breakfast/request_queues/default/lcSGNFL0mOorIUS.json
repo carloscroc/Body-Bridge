@@ -1,0 +1,9 @@
+{
+	"id": "lcSGNFL0mOorIUS",
+	"json": "{\"id\":\"lcSGNFL0mOorIUS\",\"url\":\"https://diabetesfoodhub.org/recipes/whole-grain-pasta-cooked\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/whole-grain-pasta-cooked\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/whole-grain-pasta-cooked\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":5,\"state\":4}},\"handledAt\":\"2026-04-21T19:05:22.997Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/whole-grain-pasta-cooked",
+	"url": "https://diabetesfoodhub.org/recipes/whole-grain-pasta-cooked"
+}

@@ -1,0 +1,9 @@
+{
+	"id": "36sKb081hw2Plxw",
+	"json": "{\"id\":\"36sKb081hw2Plxw\",\"url\":\"https://diabetesfoodhub.org/recipes/ham-and-broccoli-frittata\",\"loadedUrl\":\"https://diabetesfoodhub.org/\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/ham-and-broccoli-frittata\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":1,\"state\":4}},\"handledAt\":\"2026-04-21T17:27:12.940Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/ham-and-broccoli-frittata",
+	"url": "https://diabetesfoodhub.org/recipes/ham-and-broccoli-frittata"
+}

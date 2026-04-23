@@ -1,0 +1,9 @@
+{
+	"id": "jh5AZHCQrkTdqSx",
+	"json": "{\"id\":\"jh5AZHCQrkTdqSx\",\"url\":\"https://www.eatingwell.com/recipe/257796/quick-strawberry-cheesecake/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/257796/quick-strawberry-cheesecake/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/257796/quick-strawberry-cheesecake\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T14:03:36.682Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/257796/quick-strawberry-cheesecake",
+	"url": "https://www.eatingwell.com/recipe/257796/quick-strawberry-cheesecake/"
+}

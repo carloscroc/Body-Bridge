@@ -1,0 +1,9 @@
+{
+	"id": "WdmxS7KBzZWdXm4",
+	"json": "{\"id\":\"WdmxS7KBzZWdXm4\",\"url\":\"https://www.eatingwell.com/recipe/280098/whipped-frozen-lemonade/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/280098/whipped-frozen-lemonade\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3}}}",
+	"method": "GET",
+	"orderNo": 1776777178465,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/280098/whipped-frozen-lemonade",
+	"url": "https://www.eatingwell.com/recipe/280098/whipped-frozen-lemonade/"
+}

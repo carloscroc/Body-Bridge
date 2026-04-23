@@ -1,0 +1,9 @@
+{
+	"id": "9NxlNhVynxzuOgH",
+	"json": "{\"id\":\"9NxlNhVynxzuOgH\",\"url\":\"https://www.eatingwell.com/recipe/269135/loaded-cauliflower-casserole/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/269135/loaded-cauliflower-casserole/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/269135/loaded-cauliflower-casserole\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T13:55:09.237Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/269135/loaded-cauliflower-casserole",
+	"url": "https://www.eatingwell.com/recipe/269135/loaded-cauliflower-casserole/"
+}

@@ -1,0 +1,9 @@
+{
+	"id": "B4eKY8z9NW5skTo",
+	"json": "{\"id\":\"B4eKY8z9NW5skTo\",\"url\":\"https://www.eatingwell.com/recipe/258084/peanut-butter-oat-energy-balls/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/258084/peanut-butter-oat-energy-balls/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/258084/peanut-butter-oat-energy-balls\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:36:31.214Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/258084/peanut-butter-oat-energy-balls",
+	"url": "https://www.eatingwell.com/recipe/258084/peanut-butter-oat-energy-balls/"
+}

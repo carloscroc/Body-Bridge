@@ -1,0 +1,9 @@
+{
+	"id": "9qVBDJLMh3q7DS2",
+	"json": "{\"id\":\"9qVBDJLMh3q7DS2\",\"url\":\"https://www.eatingwell.com/recipes/18344/health-condition/diabetic/snacks/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/18344/health-condition/diabetic/snacks/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/18344/health-condition/diabetic/snacks\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:05:03.633Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/18344/health-condition/diabetic/snacks",
+	"url": "https://www.eatingwell.com/recipes/18344/health-condition/diabetic/snacks/"
+}

@@ -1,0 +1,9 @@
+{
+	"id": "YPyehN5OUNVEDSD",
+	"json": "{\"id\":\"YPyehN5OUNVEDSD\",\"url\":\"https://www.eatingwell.com/recipe/280824/pasta-e-fagioli-with-instant-ramen-noodles/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/280824/pasta-e-fagioli-with-instant-ramen-noodles/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/280824/pasta-e-fagioli-with-instant-ramen-noodles\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T13:46:24.490Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/280824/pasta-e-fagioli-with-instant-ramen-noodles",
+	"url": "https://www.eatingwell.com/recipe/280824/pasta-e-fagioli-with-instant-ramen-noodles/"
+}

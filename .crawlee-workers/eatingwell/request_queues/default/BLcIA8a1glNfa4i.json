@@ -1,0 +1,9 @@
+{
+	"id": "BLcIA8a1glNfa4i",
+	"json": "{\"id\":\"BLcIA8a1glNfa4i\",\"url\":\"https://www.eatingwell.com/recipes/18028/side-dishes/vegetable/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/18028/side-dishes/vegetable/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/18028/side-dishes/vegetable\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T12:51:20.917Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/18028/side-dishes/vegetable",
+	"url": "https://www.eatingwell.com/recipes/18028/side-dishes/vegetable/"
+}

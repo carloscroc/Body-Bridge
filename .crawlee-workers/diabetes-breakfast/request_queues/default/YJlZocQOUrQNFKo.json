@@ -1,0 +1,9 @@
+{
+	"id": "YJlZocQOUrQNFKo",
+	"json": "{\"id\":\"YJlZocQOUrQNFKo\",\"url\":\"https://diabetesfoodhub.org/recipes/sauces\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/sauces\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/sauces\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":4,\"state\":4}},\"handledAt\":\"2026-04-21T18:39:34.350Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/sauces",
+	"url": "https://diabetesfoodhub.org/recipes/sauces"
+}

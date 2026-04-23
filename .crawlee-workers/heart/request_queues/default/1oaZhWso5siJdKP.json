@@ -1,0 +1,9 @@
+{
+	"id": "1oaZhWso5siJdKP",
+	"json": "{\"id\":\"1oaZhWso5siJdKP\",\"url\":\"https://recipes.heart.org/en/recipes/apple-bread-pudding\",\"loadedUrl\":\"https://recipes.heart.org/en/recipes/apple-bread-pudding\",\"uniqueKey\":\"https://recipes.heart.org/en/recipes/apple-bread-pudding\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":7,\"state\":4}},\"handledAt\":\"2026-04-21T13:32:34.194Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recipes.heart.org/en/recipes/apple-bread-pudding",
+	"url": "https://recipes.heart.org/en/recipes/apple-bread-pudding"
+}

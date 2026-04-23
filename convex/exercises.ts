@@ -295,7 +295,8 @@ const SEED_EXERCISES = [
       "Lower your hips back and down until your thighs are parallel to the floor.",
       "Drive back up to the starting position."
     ],
-    imageUrl: "https://images.unsplash.com/photo-1567598508481-65985588e295?auto=format&fit=crop&q=80&w=400"
+    imageUrl: "https://images.unsplash.com/photo-1567598508481-65985588e295?auto=format&fit=crop&q=80&w=400",
+    videoUrl: "https://www.youtube.com/watch?v=gcNh17Ckjgg"
   },
   {
     name: "Dumbbell Press",
@@ -313,7 +314,8 @@ const SEED_EXERCISES = [
       "Lower the weights to your chest level.",
       "Press them back up to the starting position."
     ],
-    imageUrl: "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&q=80&w=400"
+    imageUrl: "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&q=80&w=400",
+    videoUrl: "https://www.youtube.com/watch?v=VmBy7_fT068"
   },
   {
     name: "Deadlift",
@@ -332,7 +334,8 @@ const SEED_EXERCISES = [
       "Lift the bar by extending your hips and knees.",
       "Lower the bar back to the floor with control."
     ],
-    imageUrl: "https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?auto=format&fit=crop&q=80&w=400"
+    imageUrl: "https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?auto=format&fit=crop&q=80&w=400",
+    videoUrl: "https://www.youtube.com/watch?v=op9kVnViXIA"
   },
   {
     name: "Push-ups",
@@ -350,7 +353,8 @@ const SEED_EXERCISES = [
       "Push back up to the starting position.",
       "Keep your core engaged and back straight throughout."
     ],
-    imageUrl: "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&q=80&w=400"
+    imageUrl: "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&q=80&w=400",
+    videoUrl: "https://www.youtube.com/watch?v=IODxDxX7oi4"
   },
   {
     name: "Pull-ups",
@@ -368,7 +372,8 @@ const SEED_EXERCISES = [
       "Lower yourself back down with control.",
       "Avoid swinging your legs."
     ],
-    imageUrl: "https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?auto=format&fit=crop&q=80&w=400"
+    imageUrl: "https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?auto=format&fit=crop&q=80&w=400",
+    videoUrl: "https://www.youtube.com/watch?v=eGo4IYlbE5g"
   },
   {
     name: "Plank",

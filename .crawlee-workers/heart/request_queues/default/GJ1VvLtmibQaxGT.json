@@ -1,0 +1,9 @@
+{
+	"id": "GJ1VvLtmibQaxGT",
+	"json": "{\"id\":\"GJ1VvLtmibQaxGT\",\"url\":\"https://recipes.heart.org/en/recipes/simple-persian-salad\",\"loadedUrl\":\"https://recipes.heart.org/en/recipes/simple-persian-salad\",\"uniqueKey\":\"https://recipes.heart.org/en/recipes/simple-persian-salad\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":4,\"state\":4}},\"handledAt\":\"2026-04-21T12:44:16.981Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recipes.heart.org/en/recipes/simple-persian-salad",
+	"url": "https://recipes.heart.org/en/recipes/simple-persian-salad"
+}

@@ -1,0 +1,9 @@
+{
+	"id": "JPOJZzDmd4mw3ct",
+	"json": "{\"id\":\"JPOJZzDmd4mw3ct\",\"url\":\"https://recipes.heart.org/en/recipes/granola-bars\",\"loadedUrl\":\"https://recipes.heart.org/en/recipes/granola-bars\",\"uniqueKey\":\"https://recipes.heart.org/en/recipes/granola-bars\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T12:35:48.097Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recipes.heart.org/en/recipes/granola-bars",
+	"url": "https://recipes.heart.org/en/recipes/granola-bars"
+}

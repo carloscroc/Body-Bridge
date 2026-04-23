@@ -1,0 +1,9 @@
+{
+	"id": "U5ePgA5f8glL3rN",
+	"json": "{\"id\":\"U5ePgA5f8glL3rN\",\"url\":\"https://diabetesfoodhub.org/recipes/sweet-potato-salad\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/sweet-potato-salad\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/sweet-potato-salad\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":16,\"state\":4}},\"handledAt\":\"2026-04-21T22:45:00.751Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/sweet-potato-salad",
+	"url": "https://diabetesfoodhub.org/recipes/sweet-potato-salad"
+}

@@ -1,0 +1,9 @@
+{
+	"id": "h0q1y8BWeVQ4u4r",
+	"json": "{\"id\":\"h0q1y8BWeVQ4u4r\",\"url\":\"https://www.eatingwell.com/recipes/18168/appetizer/chicken/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/18168/appetizer/chicken/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/18168/appetizer/chicken\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T12:46:59.996Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/18168/appetizer/chicken",
+	"url": "https://www.eatingwell.com/recipes/18168/appetizer/chicken/"
+}

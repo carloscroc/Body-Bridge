@@ -1,0 +1,9 @@
+{
+	"id": "OpEnanfkGiUf1Kp",
+	"json": "{\"id\":\"OpEnanfkGiUf1Kp\",\"url\":\"https://diabetesfoodhub.org/recipes/whole-wheat-hot-pockets\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/whole-wheat-hot-pockets\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/whole-wheat-hot-pockets\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":5,\"state\":4}},\"handledAt\":\"2026-04-21T19:08:25.013Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/whole-wheat-hot-pockets",
+	"url": "https://diabetesfoodhub.org/recipes/whole-wheat-hot-pockets"
+}

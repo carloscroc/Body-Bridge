@@ -1,0 +1,9 @@
+{
+	"id": "5Cc9CaClcj6pXk6",
+	"json": "{\"id\":\"5Cc9CaClcj6pXk6\",\"url\":\"https://www.eatingwell.com/recipe/275641/broccoli-cheese-rice-casserole/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/275641/broccoli-cheese-rice-casserole/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/275641/broccoli-cheese-rice-casserole\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T13:56:36.116Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/275641/broccoli-cheese-rice-casserole",
+	"url": "https://www.eatingwell.com/recipe/275641/broccoli-cheese-rice-casserole/"
+}

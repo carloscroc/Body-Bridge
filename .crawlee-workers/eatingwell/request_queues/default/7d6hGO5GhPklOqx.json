@@ -1,0 +1,9 @@
+{
+	"id": "7d6hGO5GhPklOqx",
+	"json": "{\"id\":\"7d6hGO5GhPklOqx\",\"url\":\"https://www.eatingwell.com/recipe/265885/no-cook-black-bean-salad/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/265885/no-cook-black-bean-salad/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/265885/no-cook-black-bean-salad\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:28:27.352Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/265885/no-cook-black-bean-salad",
+	"url": "https://www.eatingwell.com/recipe/265885/no-cook-black-bean-salad/"
+}

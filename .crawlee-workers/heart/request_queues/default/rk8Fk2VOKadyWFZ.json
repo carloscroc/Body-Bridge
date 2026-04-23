@@ -1,0 +1,9 @@
+{
+	"id": "rk8Fk2VOKadyWFZ",
+	"json": "{\"id\":\"rk8Fk2VOKadyWFZ\",\"url\":\"https://recipes.heart.org/en/recipes/philly-cheesesteak-foil-packet-dinner\",\"loadedUrl\":\"https://recipes.heart.org/en/recipes/philly-cheesesteak-foil-packet-dinner\",\"uniqueKey\":\"https://recipes.heart.org/en/recipes/philly-cheesesteak-foil-packet-dinner\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":7,\"state\":4}},\"handledAt\":\"2026-04-21T13:25:25.335Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recipes.heart.org/en/recipes/philly-cheesesteak-foil-packet-dinner",
+	"url": "https://recipes.heart.org/en/recipes/philly-cheesesteak-foil-packet-dinner"
+}

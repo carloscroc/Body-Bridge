@@ -1,0 +1,9 @@
+{
+	"id": "cubq5ITfjWI5Xym",
+	"json": "{\"id\":\"cubq5ITfjWI5Xym\",\"url\":\"https://www.eatingwell.com/recipes/19307/ingredients/mushrooms/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/19307/ingredients/mushrooms/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/19307/ingredients/mushrooms\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:35:13.105Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/19307/ingredients/mushrooms",
+	"url": "https://www.eatingwell.com/recipes/19307/ingredients/mushrooms/"
+}

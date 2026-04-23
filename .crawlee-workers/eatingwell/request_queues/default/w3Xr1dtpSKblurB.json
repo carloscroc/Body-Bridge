@@ -1,0 +1,9 @@
+{
+	"id": "w3Xr1dtpSKblurB",
+	"json": "{\"id\":\"w3Xr1dtpSKblurB\",\"url\":\"https://www.eatingwell.com/recipe/248172/hot-cider-with-apple-brandy-spices/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/248172/hot-cider-with-apple-brandy-spices/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/248172/hot-cider-with-apple-brandy-spices\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T14:13:31.218Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/248172/hot-cider-with-apple-brandy-spices",
+	"url": "https://www.eatingwell.com/recipe/248172/hot-cider-with-apple-brandy-spices/"
+}

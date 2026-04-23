@@ -1,0 +1,9 @@
+{
+	"id": "4kP0lGeklsZuicw",
+	"json": "{\"id\":\"4kP0lGeklsZuicw\",\"url\":\"https://www.kidney.org/nutrition/recipes/peanut-butter-oatmeal\",\"loadedUrl\":\"https://www.kidney.org/nutrition/recipes/peanut-butter-oatmeal\",\"uniqueKey\":\"https://www.kidney.org/nutrition/recipes/peanut-butter-oatmeal\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":9,\"state\":4}},\"handledAt\":\"2026-04-21T18:30:16.254Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.kidney.org/nutrition/recipes/peanut-butter-oatmeal",
+	"url": "https://www.kidney.org/nutrition/recipes/peanut-butter-oatmeal"
+}

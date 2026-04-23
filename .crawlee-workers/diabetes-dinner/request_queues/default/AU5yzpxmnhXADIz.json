@@ -1,0 +1,9 @@
+{
+	"id": "AU5yzpxmnhXADIz",
+	"json": "{\"id\":\"AU5yzpxmnhXADIz\",\"url\":\"https://diabetesfoodhub.org/recipes/brussels-sprouts-oranges\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/brussels-sprouts-oranges\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/brussels-sprouts-oranges\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":13,\"state\":4}},\"handledAt\":\"2026-04-21T22:15:48.108Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/brussels-sprouts-oranges",
+	"url": "https://diabetesfoodhub.org/recipes/brussels-sprouts-oranges"
+}

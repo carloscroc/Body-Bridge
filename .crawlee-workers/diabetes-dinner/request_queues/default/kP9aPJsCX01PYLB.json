@@ -1,0 +1,9 @@
+{
+	"id": "kP9aPJsCX01PYLB",
+	"json": "{\"id\":\"kP9aPJsCX01PYLB\",\"url\":\"https://diabetesfoodhub.org/recipes/spiced-turkey-breast-apple-chutney\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/spiced-turkey-breast-apple-chutney\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/spiced-turkey-breast-apple-chutney\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":11,\"state\":4}},\"handledAt\":\"2026-04-21T21:46:12.234Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/spiced-turkey-breast-apple-chutney",
+	"url": "https://diabetesfoodhub.org/recipes/spiced-turkey-breast-apple-chutney"
+}

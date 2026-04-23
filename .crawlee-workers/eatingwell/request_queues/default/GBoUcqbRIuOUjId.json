@@ -1,0 +1,9 @@
+{
+	"id": "GBoUcqbRIuOUjId",
+	"json": "{\"id\":\"GBoUcqbRIuOUjId\",\"url\":\"https://www.eatingwell.com/recipe/249993/pea-soup/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/249993/pea-soup/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/249993/pea-soup\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T13:41:01.846Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/249993/pea-soup",
+	"url": "https://www.eatingwell.com/recipe/249993/pea-soup/"
+}

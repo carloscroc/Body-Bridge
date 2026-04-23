@@ -1,0 +1,9 @@
+{
+	"id": "dlzqKhoaHdDdWQ1",
+	"json": "{\"id\":\"dlzqKhoaHdDdWQ1\",\"url\":\"https://www.aicr.org/cancer-prevention/recipes/date-walnut-and-dark-chocolate-cookies/\",\"loadedUrl\":\"https://www.aicr.org/cancer-prevention/recipes/date-walnut-and-dark-chocolate-cookies/\",\"uniqueKey\":\"https://www.aicr.org/cancer-prevention/recipes/date-walnut-and-dark-chocolate-cookies\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":1,\"errorMessages\":[\"Error: Request blocked - received 403 status code.\\n    at PlaywrightCrawler._throwOnBlockedRequest (C:\\\\Users\\\\thebe\\\\Downloads\\\\Forge\\\\node_modules\\\\@crawlee\\\\basic\\\\internals\\\\basic-crawler.js:913:19)\\n    at PlaywrightCrawler._responseHandler (C:\\\\Users\\\\thebe\\\\Downloads\\\\Forge\\\\node_modules\\\\@crawlee\\\\browser\\\\internals\\\\browser-crawler.js:383:22)\\n    at PlaywrightCrawler._runRequestHandler (C:\\\\Users\\\\thebe\\\\Downloads\\\\Forge\\\\node_modules\\\\@crawlee\\\\browser\\\\internals\\\\browser-crawler.js:262:24)\\n    at async PlaywrightCrawler._runRequestHandler (C:\\\\Users\\\\thebe\\\\Downloads\\\\Forge\\\\node_modules\\\\@crawlee\\\\playwright\\\\internals\\\\playwright-crawler.js:114:9)\\n    at async wrap (C:\\\\Users\\\\thebe\\\\Downloads\\\\Forge\\\\node_modules\\\\@apify\\\\timeout\\\\cjs\\\\index.cjs:54:21)\"],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:35:49.081Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 1,
+	"uniqueKey": "https://www.aicr.org/cancer-prevention/recipes/date-walnut-and-dark-chocolate-cookies",
+	"url": "https://www.aicr.org/cancer-prevention/recipes/date-walnut-and-dark-chocolate-cookies/"
+}

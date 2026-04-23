@@ -1,0 +1,9 @@
+{
+	"id": "Um58hLfazR4rmkk",
+	"json": "{\"id\":\"Um58hLfazR4rmkk\",\"url\":\"https://recipes.heart.org/en/recipes/beef-stew-with-fresh-mango\",\"loadedUrl\":\"https://recipes.heart.org/en/recipes/beef-stew-with-fresh-mango\",\"uniqueKey\":\"https://recipes.heart.org/en/recipes/beef-stew-with-fresh-mango\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":5,\"state\":4}},\"handledAt\":\"2026-04-21T12:50:14.368Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recipes.heart.org/en/recipes/beef-stew-with-fresh-mango",
+	"url": "https://recipes.heart.org/en/recipes/beef-stew-with-fresh-mango"
+}

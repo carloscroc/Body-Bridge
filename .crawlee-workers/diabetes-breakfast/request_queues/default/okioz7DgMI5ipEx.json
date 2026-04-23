@@ -1,0 +1,9 @@
+{
+	"id": "okioz7DgMI5ipEx",
+	"json": "{\"id\":\"okioz7DgMI5ipEx\",\"url\":\"https://diabetesfoodhub.org/recipes/grilled-steak-souvlaki\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/grilled-steak-souvlaki\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/grilled-steak-souvlaki\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":9,\"state\":4}},\"handledAt\":\"2026-04-21T20:52:49.872Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/grilled-steak-souvlaki",
+	"url": "https://diabetesfoodhub.org/recipes/grilled-steak-souvlaki"
+}

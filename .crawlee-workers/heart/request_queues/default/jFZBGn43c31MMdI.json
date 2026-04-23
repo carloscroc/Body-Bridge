@@ -1,0 +1,9 @@
+{
+	"id": "jFZBGn43c31MMdI",
+	"json": "{\"id\":\"jFZBGn43c31MMdI\",\"url\":\"https://recipes.heart.org/en/recipes/chicken-and-green-bean-salad\",\"loadedUrl\":\"https://recipes.heart.org/en/recipes/chicken-and-green-bean-salad\",\"uniqueKey\":\"https://recipes.heart.org/en/recipes/chicken-and-green-bean-salad\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":5,\"state\":4}},\"handledAt\":\"2026-04-21T12:54:55.548Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recipes.heart.org/en/recipes/chicken-and-green-bean-salad",
+	"url": "https://recipes.heart.org/en/recipes/chicken-and-green-bean-salad"
+}

@@ -1,0 +1,9 @@
+{
+	"id": "vpn8tq9keHWtX0S",
+	"json": "{\"id\":\"vpn8tq9keHWtX0S\",\"url\":\"https://www.eatingwell.com/recipes/18940/ingredients/meat-poultry/chicken/main-dish/curry/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/18940/ingredients/meat-poultry/chicken/main-dish/curry\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3}}}",
+	"method": "GET",
+	"orderNo": 1776778785334,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/18940/ingredients/meat-poultry/chicken/main-dish/curry",
+	"url": "https://www.eatingwell.com/recipes/18940/ingredients/meat-poultry/chicken/main-dish/curry/"
+}

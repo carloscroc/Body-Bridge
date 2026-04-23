@@ -1,0 +1,9 @@
+{
+	"id": "NYQi3cZUtSSxkZO",
+	"json": "{\"id\":\"NYQi3cZUtSSxkZO\",\"url\":\"https://www.kidney.org/nutrition/recipes/roasted-butternut-squash-apples?page=8\",\"loadedUrl\":\"https://www.kidney.org/nutrition/recipes/roasted-butternut-squash-apples?page=8\",\"uniqueKey\":\"https://www.kidney.org/nutrition/recipes/roasted-butternut-squash-apples?page=8\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":14,\"state\":4}},\"handledAt\":\"2026-04-21T20:23:59.463Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.kidney.org/nutrition/recipes/roasted-butternut-squash-apples?page=8",
+	"url": "https://www.kidney.org/nutrition/recipes/roasted-butternut-squash-apples?page=8"
+}

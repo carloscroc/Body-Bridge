@@ -1,0 +1,9 @@
+{
+	"id": "6TCpbBff1cH4HFq",
+	"json": "{\"id\":\"6TCpbBff1cH4HFq\",\"url\":\"https://www.eatingwell.com/recipe/250492/skillet-gnocchi-with-shrimp-asparagus/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/250492/skillet-gnocchi-with-shrimp-asparagus/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/250492/skillet-gnocchi-with-shrimp-asparagus\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T13:56:44.083Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/250492/skillet-gnocchi-with-shrimp-asparagus",
+	"url": "https://www.eatingwell.com/recipe/250492/skillet-gnocchi-with-shrimp-asparagus/"
+}

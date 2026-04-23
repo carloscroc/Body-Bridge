@@ -1,0 +1,9 @@
+{
+	"id": "4SD3ylX1XH6ZaBz",
+	"json": "{\"id\":\"4SD3ylX1XH6ZaBz\",\"url\":\"https://diabetesfoodhub.org/recipes/french?page=4\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/french?page=4\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/french?page=4\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":7,\"state\":4}},\"handledAt\":\"2026-04-21T20:02:14.218Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/french?page=4",
+	"url": "https://diabetesfoodhub.org/recipes/french?page=4"
+}

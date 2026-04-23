@@ -1,0 +1,9 @@
+{
+	"id": "aq0aPdd8QVAgqRB",
+	"json": "{\"id\":\"aq0aPdd8QVAgqRB\",\"url\":\"https://www.eatingwell.com/recipes/18340/health-condition/diabetic/gestational/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/18340/health-condition/diabetic/gestational/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/18340/health-condition/diabetic/gestational\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:04:43.293Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/18340/health-condition/diabetic/gestational",
+	"url": "https://www.eatingwell.com/recipes/18340/health-condition/diabetic/gestational/"
+}

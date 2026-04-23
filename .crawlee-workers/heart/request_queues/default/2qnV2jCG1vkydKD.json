@@ -1,0 +1,9 @@
+{
+	"id": "2qnV2jCG1vkydKD",
+	"json": "{\"id\":\"2qnV2jCG1vkydKD\",\"url\":\"https://recipes.heart.org/en/recipes/roasted-beet-and-citrus-salad\",\"loadedUrl\":\"https://recipes.heart.org/en/recipes/roasted-beet-and-citrus-salad\",\"uniqueKey\":\"https://recipes.heart.org/en/recipes/roasted-beet-and-citrus-salad\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":13,\"state\":4}},\"handledAt\":\"2026-04-21T13:58:39.070Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recipes.heart.org/en/recipes/roasted-beet-and-citrus-salad",
+	"url": "https://recipes.heart.org/en/recipes/roasted-beet-and-citrus-salad"
+}

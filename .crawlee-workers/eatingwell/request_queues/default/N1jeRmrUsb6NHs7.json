@@ -1,0 +1,9 @@
+{
+	"id": "N1jeRmrUsb6NHs7",
+	"json": "{\"id\":\"N1jeRmrUsb6NHs7\",\"url\":\"https://www.eatingwell.com/recipe/266632/chocolate-peanut-butter-energy-bars/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/266632/chocolate-peanut-butter-energy-bars/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/266632/chocolate-peanut-butter-energy-bars\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:38:38.819Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/266632/chocolate-peanut-butter-energy-bars",
+	"url": "https://www.eatingwell.com/recipe/266632/chocolate-peanut-butter-energy-bars/"
+}

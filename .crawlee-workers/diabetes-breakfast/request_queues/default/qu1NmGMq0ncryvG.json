@@ -1,0 +1,9 @@
+{
+	"id": "qu1NmGMq0ncryvG",
+	"json": "{\"id\":\"qu1NmGMq0ncryvG\",\"url\":\"https://diabetesfoodhub.org/recipes/egg-souffle\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/egg-souffle\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/egg-souffle\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":7,\"state\":4}},\"handledAt\":\"2026-04-21T20:01:10.505Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/egg-souffle",
+	"url": "https://diabetesfoodhub.org/recipes/egg-souffle"
+}

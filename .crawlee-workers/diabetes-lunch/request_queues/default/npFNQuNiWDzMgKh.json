@@ -1,0 +1,9 @@
+{
+	"id": "npFNQuNiWDzMgKh",
+	"json": "{\"id\":\"npFNQuNiWDzMgKh\",\"url\":\"https://diabetesfoodhub.org/recipes/frozen-yogurt-fruit-pops\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/frozen-yogurt-fruit-pops\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/frozen-yogurt-fruit-pops\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":9,\"state\":4}},\"handledAt\":\"2026-04-21T21:00:58.388Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/frozen-yogurt-fruit-pops",
+	"url": "https://diabetesfoodhub.org/recipes/frozen-yogurt-fruit-pops"
+}

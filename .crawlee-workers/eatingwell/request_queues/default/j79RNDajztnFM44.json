@@ -1,0 +1,9 @@
+{
+	"id": "j79RNDajztnFM44",
+	"json": "{\"id\":\"j79RNDajztnFM44\",\"url\":\"https://www.eatingwell.com/recipes/18416/low-calorie/appetizers/snacks/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/18416/low-calorie/appetizers/snacks\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3}}}",
+	"method": "GET",
+	"orderNo": 1776777492513,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/18416/low-calorie/appetizers/snacks",
+	"url": "https://www.eatingwell.com/recipes/18416/low-calorie/appetizers/snacks/"
+}

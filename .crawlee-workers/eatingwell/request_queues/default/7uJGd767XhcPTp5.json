@@ -1,0 +1,9 @@
+{
+	"id": "7uJGd767XhcPTp5",
+	"json": "{\"id\":\"7uJGd767XhcPTp5\",\"url\":\"https://www.eatingwell.com/recipes/19497/desserts/cake/carrot/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/19497/desserts/cake/carrot\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3}}}",
+	"method": "GET",
+	"orderNo": 1776776330028,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/19497/desserts/cake/carrot",
+	"url": "https://www.eatingwell.com/recipes/19497/desserts/cake/carrot/"
+}

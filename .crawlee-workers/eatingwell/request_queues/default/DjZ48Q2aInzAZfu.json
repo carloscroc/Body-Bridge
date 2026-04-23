@@ -1,0 +1,9 @@
+{
+	"id": "DjZ48Q2aInzAZfu",
+	"json": "{\"id\":\"DjZ48Q2aInzAZfu\",\"url\":\"https://www.eatingwell.com/recipes/18426/low-calorie/bread/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/18426/low-calorie/bread/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/18426/low-calorie/bread\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:19:01.334Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/18426/low-calorie/bread",
+	"url": "https://www.eatingwell.com/recipes/18426/low-calorie/bread/"
+}

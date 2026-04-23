@@ -1,0 +1,9 @@
+{
+	"id": "uIy7AhgLy0u3lGK",
+	"json": "{\"id\":\"uIy7AhgLy0u3lGK\",\"url\":\"https://www.eatingwell.com/recipe/269830/chicken-chili-verde/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/269830/chicken-chili-verde/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/269830/chicken-chili-verde\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T14:11:26.723Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/269830/chicken-chili-verde",
+	"url": "https://www.eatingwell.com/recipe/269830/chicken-chili-verde/"
+}

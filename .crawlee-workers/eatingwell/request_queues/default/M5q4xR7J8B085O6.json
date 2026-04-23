@@ -1,0 +1,9 @@
+{
+	"id": "M5q4xR7J8B085O6",
+	"json": "{\"id\":\"M5q4xR7J8B085O6\",\"url\":\"https://www.eatingwell.com/recipes/18202/soup/chowder/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/18202/soup/chowder/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/18202/soup/chowder\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T12:56:23.252Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/18202/soup/chowder",
+	"url": "https://www.eatingwell.com/recipes/18202/soup/chowder/"
+}

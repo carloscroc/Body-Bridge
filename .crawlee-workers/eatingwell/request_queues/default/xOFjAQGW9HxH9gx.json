@@ -1,0 +1,9 @@
+{
+	"id": "xOFjAQGW9HxH9gx",
+	"json": "{\"id\":\"xOFjAQGW9HxH9gx\",\"url\":\"https://www.eatingwell.com/recipe/254642/classic-sesame-noodles-with-chicken/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/254642/classic-sesame-noodles-with-chicken/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/254642/classic-sesame-noodles-with-chicken\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T14:06:18.211Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/254642/classic-sesame-noodles-with-chicken",
+	"url": "https://www.eatingwell.com/recipe/254642/classic-sesame-noodles-with-chicken/"
+}

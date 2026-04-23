@@ -1,0 +1,9 @@
+{
+	"id": "f59B8LRd56lcqLq",
+	"json": "{\"id\":\"f59B8LRd56lcqLq\",\"url\":\"https://www.kidney.org/nutrition/recipes/moroccan-couscous\",\"loadedUrl\":\"https://www.kidney.org/nutrition/recipes/moroccan-couscous\",\"uniqueKey\":\"https://www.kidney.org/nutrition/recipes/moroccan-couscous\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T17:19:43.952Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.kidney.org/nutrition/recipes/moroccan-couscous",
+	"url": "https://www.kidney.org/nutrition/recipes/moroccan-couscous"
+}

@@ -1,0 +1,9 @@
+{
+	"id": "5ChBxH532sksgmV",
+	"json": "{\"id\":\"5ChBxH532sksgmV\",\"url\":\"https://www.eatingwell.com/recipes/18424/low-calorie/sauce/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/18424/low-calorie/sauce/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/18424/low-calorie/sauce\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:18:50.283Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/18424/low-calorie/sauce",
+	"url": "https://www.eatingwell.com/recipes/18424/low-calorie/sauce/"
+}

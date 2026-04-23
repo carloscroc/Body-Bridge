@@ -1,0 +1,9 @@
+{
+	"id": "xqtbmrlc1hgHa8z",
+	"json": "{\"id\":\"xqtbmrlc1hgHa8z\",\"url\":\"https://www.kidney.org/nutrition/recipes/pasta-salad\",\"loadedUrl\":\"https://www.kidney.org/nutrition/recipes/pasta-salad\",\"uniqueKey\":\"https://www.kidney.org/nutrition/recipes/pasta-salad\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":17,\"state\":4}},\"handledAt\":\"2026-04-21T21:59:12.621Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.kidney.org/nutrition/recipes/pasta-salad",
+	"url": "https://www.kidney.org/nutrition/recipes/pasta-salad"
+}

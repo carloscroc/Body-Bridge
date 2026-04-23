@@ -1,0 +1,9 @@
+{
+	"id": "91HyPQ88FHsPIxH",
+	"json": "{\"id\":\"91HyPQ88FHsPIxH\",\"url\":\"https://www.eatingwell.com/recipes/19374/cooking-methods-styles/stir-fry/pork/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/19374/cooking-methods-styles/stir-fry/pork/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/19374/cooking-methods-styles/stir-fry/pork\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T14:26:19.846Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/19374/cooking-methods-styles/stir-fry/pork",
+	"url": "https://www.eatingwell.com/recipes/19374/cooking-methods-styles/stir-fry/pork/"
+}

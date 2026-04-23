@@ -1,0 +1,9 @@
+{
+	"id": "0DHU2yGaffWdhac",
+	"json": "{\"id\":\"0DHU2yGaffWdhac\",\"url\":\"https://www.eatingwell.com/recipe/7939539/cheesy-spinach-zucchini-lasagna/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/7939539/cheesy-spinach-zucchini-lasagna\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3}}}",
+	"method": "GET",
+	"orderNo": 1776778026405,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/7939539/cheesy-spinach-zucchini-lasagna",
+	"url": "https://www.eatingwell.com/recipe/7939539/cheesy-spinach-zucchini-lasagna/"
+}

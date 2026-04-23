@@ -1,0 +1,9 @@
+{
+	"id": "f4cT73xU4jOkbBf",
+	"json": "{\"id\":\"f4cT73xU4jOkbBf\",\"url\":\"https://recipes.heart.org/en/recipes/vegetable-gumbo\",\"loadedUrl\":\"https://recipes.heart.org/en/recipes/vegetable-gumbo\",\"uniqueKey\":\"https://recipes.heart.org/en/recipes/vegetable-gumbo\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":6,\"state\":4}},\"handledAt\":\"2026-04-21T13:09:42.438Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recipes.heart.org/en/recipes/vegetable-gumbo",
+	"url": "https://recipes.heart.org/en/recipes/vegetable-gumbo"
+}

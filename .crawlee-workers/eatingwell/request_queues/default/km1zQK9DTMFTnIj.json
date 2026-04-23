@@ -1,0 +1,9 @@
+{
+	"id": "km1zQK9DTMFTnIj",
+	"json": "{\"id\":\"km1zQK9DTMFTnIj\",\"url\":\"https://www.eatingwell.com/recipes/18350/health-condition/diabetic/side-dishes/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/18350/health-condition/diabetic/side-dishes/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/18350/health-condition/diabetic/side-dishes\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:05:32.294Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/18350/health-condition/diabetic/side-dishes",
+	"url": "https://www.eatingwell.com/recipes/18350/health-condition/diabetic/side-dishes/"
+}

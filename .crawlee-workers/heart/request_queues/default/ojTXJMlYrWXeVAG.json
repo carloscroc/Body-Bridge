@@ -1,0 +1,9 @@
+{
+	"id": "ojTXJMlYrWXeVAG",
+	"json": "{\"id\":\"ojTXJMlYrWXeVAG\",\"url\":\"https://recipes.heart.org/en/recipes/chunky-artichoke-y-salad\",\"loadedUrl\":\"https://recipes.heart.org/en/recipes/chunky-artichoke-y-salad\",\"uniqueKey\":\"https://recipes.heart.org/en/recipes/chunky-artichoke-y-salad\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":12,\"state\":4}},\"handledAt\":\"2026-04-21T13:55:07.636Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recipes.heart.org/en/recipes/chunky-artichoke-y-salad",
+	"url": "https://recipes.heart.org/en/recipes/chunky-artichoke-y-salad"
+}

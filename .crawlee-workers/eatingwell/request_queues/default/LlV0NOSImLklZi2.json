@@ -1,0 +1,9 @@
+{
+	"id": "LlV0NOSImLklZi2",
+	"json": "{\"id\":\"LlV0NOSImLklZi2\",\"url\":\"https://www.eatingwell.com/recipes/17959/holidays-occasions/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/17959/holidays-occasions/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/17959/holidays-occasions\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":1,\"state\":4}},\"handledAt\":\"2026-04-21T12:35:14.395Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/17959/holidays-occasions",
+	"url": "https://www.eatingwell.com/recipes/17959/holidays-occasions/"
+}

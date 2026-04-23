@@ -1,0 +1,9 @@
+{
+	"id": "C6oE1XzJkJ0aiSU",
+	"json": "{\"id\":\"C6oE1XzJkJ0aiSU\",\"url\":\"https://www.eatingwell.com/recipes/17979/cuisines-regions/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/17979/cuisines-regions/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/17979/cuisines-regions\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":1,\"state\":4}},\"handledAt\":\"2026-04-21T12:35:59.748Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/17979/cuisines-regions",
+	"url": "https://www.eatingwell.com/recipes/17979/cuisines-regions/"
+}

@@ -1,0 +1,9 @@
+{
+	"id": "icRcA6MqyeMhcUu",
+	"json": "{\"id\":\"icRcA6MqyeMhcUu\",\"url\":\"https://www.eatingwell.com/recipe/249318/fruit-yogurt-smoothie/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/249318/fruit-yogurt-smoothie/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/249318/fruit-yogurt-smoothie\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:29:38.163Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/249318/fruit-yogurt-smoothie",
+	"url": "https://www.eatingwell.com/recipe/249318/fruit-yogurt-smoothie/"
+}

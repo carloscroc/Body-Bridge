@@ -1,0 +1,9 @@
+{
+	"id": "ZxNs6UXyohtbXGe",
+	"json": "{\"id\":\"ZxNs6UXyohtbXGe\",\"url\":\"https://www.eatingwell.com/recipes/17961/healthy-kids/breakfast/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/17961/healthy-kids/breakfast/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/17961/healthy-kids/breakfast\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:35:32.721Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/17961/healthy-kids/breakfast",
+	"url": "https://www.eatingwell.com/recipes/17961/healthy-kids/breakfast/"
+}

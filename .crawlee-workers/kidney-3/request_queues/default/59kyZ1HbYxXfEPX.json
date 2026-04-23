@@ -1,0 +1,9 @@
+{
+	"id": "59kyZ1HbYxXfEPX",
+	"json": "{\"id\":\"59kyZ1HbYxXfEPX\",\"url\":\"https://www.kidney.org/nutrition/recipes/ginger-roasted-chicken-asian-slaw?page=10\",\"loadedUrl\":\"https://www.kidney.org/nutrition/recipes/ginger-roasted-chicken-asian-slaw?page=10\",\"uniqueKey\":\"https://www.kidney.org/nutrition/recipes/ginger-roasted-chicken-asian-slaw?page=10\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":17,\"state\":4}},\"handledAt\":\"2026-04-21T21:51:22.422Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.kidney.org/nutrition/recipes/ginger-roasted-chicken-asian-slaw?page=10",
+	"url": "https://www.kidney.org/nutrition/recipes/ginger-roasted-chicken-asian-slaw?page=10"
+}

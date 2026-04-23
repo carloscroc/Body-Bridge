@@ -1,0 +1,9 @@
+{
+	"id": "SR0foB0X1j4m1cb",
+	"json": "{\"id\":\"SR0foB0X1j4m1cb\",\"url\":\"https://www.kidney.org/nutrition/recipes/southern-style-collard-greens-smoky-mushrooms?page=9\",\"loadedUrl\":\"https://www.kidney.org/nutrition/recipes/southern-style-collard-greens-smoky-mushrooms?page=9\",\"uniqueKey\":\"https://www.kidney.org/nutrition/recipes/southern-style-collard-greens-smoky-mushrooms?page=9\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":10,\"state\":4}},\"handledAt\":\"2026-04-21T19:03:21.268Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.kidney.org/nutrition/recipes/southern-style-collard-greens-smoky-mushrooms?page=9",
+	"url": "https://www.kidney.org/nutrition/recipes/southern-style-collard-greens-smoky-mushrooms?page=9"
+}

@@ -1,0 +1,9 @@
+{
+	"id": "UFEJRWP1UQtqLOO",
+	"json": "{\"id\":\"UFEJRWP1UQtqLOO\",\"url\":\"https://www.kidney.org/nutrition/recipes/ten-minute-veggie-soup?page=6\",\"loadedUrl\":\"https://www.kidney.org/nutrition/recipes/ten-minute-veggie-soup?page=6\",\"uniqueKey\":\"https://www.kidney.org/nutrition/recipes/ten-minute-veggie-soup?page=6\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":9,\"state\":4}},\"handledAt\":\"2026-04-21T18:41:23.310Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.kidney.org/nutrition/recipes/ten-minute-veggie-soup?page=6",
+	"url": "https://www.kidney.org/nutrition/recipes/ten-minute-veggie-soup?page=6"
+}

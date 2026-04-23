@@ -1,0 +1,9 @@
+{
+	"id": "NgkNc4dJ2t4rMPU",
+	"json": "{\"id\":\"NgkNc4dJ2t4rMPU\",\"url\":\"https://www.eatingwell.com/recipes/18277/desserts/cake/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/18277/desserts/cake/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/18277/desserts/cake\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T12:59:00.167Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/18277/desserts/cake",
+	"url": "https://www.eatingwell.com/recipes/18277/desserts/cake/"
+}

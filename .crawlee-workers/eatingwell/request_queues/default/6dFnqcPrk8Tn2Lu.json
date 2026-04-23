@@ -1,0 +1,9 @@
+{
+	"id": "6dFnqcPrk8Tn2Lu",
+	"json": "{\"id\":\"6dFnqcPrk8Tn2Lu\",\"url\":\"https://www.eatingwell.com/recipe/251838/miso-vegetable-soup/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/251838/miso-vegetable-soup/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/251838/miso-vegetable-soup\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T14:10:10.158Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/251838/miso-vegetable-soup",
+	"url": "https://www.eatingwell.com/recipe/251838/miso-vegetable-soup/"
+}

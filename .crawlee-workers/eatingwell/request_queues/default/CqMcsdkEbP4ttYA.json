@@ -1,0 +1,9 @@
+{
+	"id": "CqMcsdkEbP4ttYA",
+	"json": "{\"id\":\"CqMcsdkEbP4ttYA\",\"url\":\"https://www.eatingwell.com/recipe/250239/tomato-soup/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/250239/tomato-soup/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/250239/tomato-soup\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T13:43:15.555Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/250239/tomato-soup",
+	"url": "https://www.eatingwell.com/recipe/250239/tomato-soup/"
+}

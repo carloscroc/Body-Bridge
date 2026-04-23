@@ -1,0 +1,9 @@
+{
+	"id": "vYAQM8qyNjRWhvH",
+	"json": "{\"id\":\"vYAQM8qyNjRWhvH\",\"url\":\"https://recipes.heart.org/en/recipes/creamy-ginger-quick-salad-dressing\",\"loadedUrl\":\"https://recipes.heart.org/en/recipes/creamy-ginger-quick-salad-dressing\",\"uniqueKey\":\"https://recipes.heart.org/en/recipes/creamy-ginger-quick-salad-dressing\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":5,\"state\":4}},\"handledAt\":\"2026-04-21T13:00:22.879Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recipes.heart.org/en/recipes/creamy-ginger-quick-salad-dressing",
+	"url": "https://recipes.heart.org/en/recipes/creamy-ginger-quick-salad-dressing"
+}

@@ -1,0 +1,9 @@
+{
+	"id": "x0oXHNQB2H7Cy04",
+	"json": "{\"id\":\"x0oXHNQB2H7Cy04\",\"url\":\"https://www.eatingwell.com/recipe/260933/roasted-cranberry-squash-cauliflower-salad/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/260933/roasted-cranberry-squash-cauliflower-salad/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/260933/roasted-cranberry-squash-cauliflower-salad\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T13:49:09.868Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/260933/roasted-cranberry-squash-cauliflower-salad",
+	"url": "https://www.eatingwell.com/recipe/260933/roasted-cranberry-squash-cauliflower-salad/"
+}

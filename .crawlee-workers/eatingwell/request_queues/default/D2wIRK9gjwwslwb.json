@@ -1,0 +1,9 @@
+{
+	"id": "D2wIRK9gjwwslwb",
+	"json": "{\"id\":\"D2wIRK9gjwwslwb\",\"url\":\"https://www.eatingwell.com/recipes/18042/soup/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/18042/soup/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/18042/soup\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":1,\"state\":4}},\"handledAt\":\"2026-04-21T12:34:14.842Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/18042/soup",
+	"url": "https://www.eatingwell.com/recipes/18042/soup/"
+}

@@ -1,0 +1,9 @@
+{
+	"id": "rh7RNBqDgjOt5Fi",
+	"json": "{\"id\":\"rh7RNBqDgjOt5Fi\",\"url\":\"https://www.eatingwell.com/recipes/18005/lifestyle-diets/vegetarian/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/18005/lifestyle-diets/vegetarian/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/18005/lifestyle-diets/vegetarian\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:33:05.742Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/18005/lifestyle-diets/vegetarian",
+	"url": "https://www.eatingwell.com/recipes/18005/lifestyle-diets/vegetarian/"
+}

@@ -1,0 +1,9 @@
+{
+	"id": "EWtuOwA3pRKdAmD",
+	"json": "{\"id\":\"EWtuOwA3pRKdAmD\",\"url\":\"https://www.eatingwell.com/recipes/22762/nutrient-focused-diets/high-protein/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/22762/nutrient-focused-diets/high-protein/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/22762/nutrient-focused-diets/high-protein\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:15:21.761Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/22762/nutrient-focused-diets/high-protein",
+	"url": "https://www.eatingwell.com/recipes/22762/nutrient-focused-diets/high-protein/"
+}

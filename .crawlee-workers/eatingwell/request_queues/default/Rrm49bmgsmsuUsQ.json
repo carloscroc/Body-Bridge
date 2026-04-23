@@ -1,0 +1,9 @@
+{
+	"id": "Rrm49bmgsmsuUsQ",
+	"json": "{\"id\":\"Rrm49bmgsmsuUsQ\",\"url\":\"https://www.eatingwell.com/recipes/18100/ingredients/pita-bread/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/18100/ingredients/pita-bread/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/18100/ingredients/pita-bread\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:33:48.700Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/18100/ingredients/pita-bread",
+	"url": "https://www.eatingwell.com/recipes/18100/ingredients/pita-bread/"
+}

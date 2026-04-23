@@ -1,0 +1,9 @@
+{
+	"id": "ddGZqVrNvu6OZFb",
+	"json": "{\"id\":\"ddGZqVrNvu6OZFb\",\"url\":\"https://www.eatingwell.com/recipe/267223/walnut-rosemary-crusted-salmon/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/267223/walnut-rosemary-crusted-salmon/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/267223/walnut-rosemary-crusted-salmon\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T13:50:31.369Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/267223/walnut-rosemary-crusted-salmon",
+	"url": "https://www.eatingwell.com/recipe/267223/walnut-rosemary-crusted-salmon/"
+}

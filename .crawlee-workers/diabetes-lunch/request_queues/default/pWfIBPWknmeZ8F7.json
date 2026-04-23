@@ -1,0 +1,9 @@
+{
+	"id": "pWfIBPWknmeZ8F7",
+	"json": "{\"id\":\"pWfIBPWknmeZ8F7\",\"url\":\"https://diabetesfoodhub.org/recipes/blueberry-lemon-yogurt-parfait\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/blueberry-lemon-yogurt-parfait\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/blueberry-lemon-yogurt-parfait\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":11,\"state\":4}},\"handledAt\":\"2026-04-21T21:38:33.500Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/blueberry-lemon-yogurt-parfait",
+	"url": "https://diabetesfoodhub.org/recipes/blueberry-lemon-yogurt-parfait"
+}

@@ -1,0 +1,9 @@
+{
+	"id": "DBYMqfjVCPuov5u",
+	"json": "{\"id\":\"DBYMqfjVCPuov5u\",\"url\":\"https://www.eatingwell.com/recipes/18061/drinks/juice/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/18061/drinks/juice/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/18061/drinks/juice\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:03:31.386Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/18061/drinks/juice",
+	"url": "https://www.eatingwell.com/recipes/18061/drinks/juice/"
+}

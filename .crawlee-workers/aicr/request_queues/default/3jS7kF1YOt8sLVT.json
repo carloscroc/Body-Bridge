@@ -1,0 +1,9 @@
+{
+	"id": "3jS7kF1YOt8sLVT",
+	"json": "{\"id\":\"3jS7kF1YOt8sLVT\",\"url\":\"https://www.aicr.org/cancer-prevention/recipes/ginger-and-turmeric-hot-cider/\",\"loadedUrl\":\"https://www.aicr.org/cancer-prevention/recipes/ginger-and-turmeric-hot-cider/\",\"uniqueKey\":\"https://www.aicr.org/cancer-prevention/recipes/ginger-and-turmeric-hot-cider\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":1,\"state\":4}},\"handledAt\":\"2026-04-21T13:04:53.962Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.aicr.org/cancer-prevention/recipes/ginger-and-turmeric-hot-cider",
+	"url": "https://www.aicr.org/cancer-prevention/recipes/ginger-and-turmeric-hot-cider/"
+}

@@ -1,0 +1,9 @@
+{
+	"id": "IEveChuhEp124Sp",
+	"json": "{\"id\":\"IEveChuhEp124Sp\",\"url\":\"https://www.eatingwell.com/recipe/268280/easy-vegetarian-taco-salad/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/268280/easy-vegetarian-taco-salad/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/268280/easy-vegetarian-taco-salad\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T13:46:01.002Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/268280/easy-vegetarian-taco-salad",
+	"url": "https://www.eatingwell.com/recipe/268280/easy-vegetarian-taco-salad/"
+}

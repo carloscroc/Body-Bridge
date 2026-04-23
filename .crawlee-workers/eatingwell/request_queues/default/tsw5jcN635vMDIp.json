@@ -1,0 +1,9 @@
+{
+	"id": "tsw5jcN635vMDIp",
+	"json": "{\"id\":\"tsw5jcN635vMDIp\",\"url\":\"https://www.eatingwell.com/recipe/263890/salmon-salad-stuffed-avocado/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/263890/salmon-salad-stuffed-avocado/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/263890/salmon-salad-stuffed-avocado\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T14:07:31.585Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/263890/salmon-salad-stuffed-avocado",
+	"url": "https://www.eatingwell.com/recipe/263890/salmon-salad-stuffed-avocado/"
+}

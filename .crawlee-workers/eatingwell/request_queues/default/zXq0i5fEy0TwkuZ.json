@@ -1,0 +1,9 @@
+{
+	"id": "zXq0i5fEy0TwkuZ",
+	"json": "{\"id\":\"zXq0i5fEy0TwkuZ\",\"url\":\"https://www.eatingwell.com/recipes/18299/desserts/sauces-toppings/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/18299/desserts/sauces-toppings/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/18299/desserts/sauces-toppings\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:00:47.385Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/18299/desserts/sauces-toppings",
+	"url": "https://www.eatingwell.com/recipes/18299/desserts/sauces-toppings/"
+}

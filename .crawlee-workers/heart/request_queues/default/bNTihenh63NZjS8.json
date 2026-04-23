@@ -1,0 +1,9 @@
+{
+	"id": "bNTihenh63NZjS8",
+	"json": "{\"id\":\"bNTihenh63NZjS8\",\"url\":\"https://recipes.heart.org/en/recipes/tuscan-style-grilled-chicken-kebabs\",\"loadedUrl\":\"https://recipes.heart.org/en/recipes/tuscan-style-grilled-chicken-kebabs\",\"uniqueKey\":\"https://recipes.heart.org/en/recipes/tuscan-style-grilled-chicken-kebabs\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":5,\"state\":4}},\"handledAt\":\"2026-04-21T12:48:23.935Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recipes.heart.org/en/recipes/tuscan-style-grilled-chicken-kebabs",
+	"url": "https://recipes.heart.org/en/recipes/tuscan-style-grilled-chicken-kebabs"
+}

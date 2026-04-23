@@ -1,0 +1,9 @@
+{
+	"id": "qG4kNaEq4xNjuIB",
+	"json": "{\"id\":\"qG4kNaEq4xNjuIB\",\"url\":\"https://www.eatingwell.com/recipe/250625/veggistrone/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/250625/veggistrone/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/250625/veggistrone\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T14:24:39.772Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/250625/veggistrone",
+	"url": "https://www.eatingwell.com/recipe/250625/veggistrone/"
+}

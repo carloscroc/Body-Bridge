@@ -1,0 +1,9 @@
+{
+	"id": "gIAw8nnhVKGiMke",
+	"json": "{\"id\":\"gIAw8nnhVKGiMke\",\"url\":\"https://www.eatingwell.com/recipes/18584/drinks/chocolate/hot/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/18584/drinks/chocolate/hot\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3}}}",
+	"method": "GET",
+	"orderNo": 1776776597499,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/18584/drinks/chocolate/hot",
+	"url": "https://www.eatingwell.com/recipes/18584/drinks/chocolate/hot/"
+}

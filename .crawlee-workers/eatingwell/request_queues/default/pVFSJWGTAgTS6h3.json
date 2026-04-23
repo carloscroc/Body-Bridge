@@ -1,0 +1,9 @@
+{
+	"id": "pVFSJWGTAgTS6h3",
+	"json": "{\"id\":\"pVFSJWGTAgTS6h3\",\"url\":\"https://www.eatingwell.com/recipe/254623/cauliflower-chicken-fried-rice/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/254623/cauliflower-chicken-fried-rice/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/254623/cauliflower-chicken-fried-rice\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T14:26:57.054Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/254623/cauliflower-chicken-fried-rice",
+	"url": "https://www.eatingwell.com/recipe/254623/cauliflower-chicken-fried-rice/"
+}

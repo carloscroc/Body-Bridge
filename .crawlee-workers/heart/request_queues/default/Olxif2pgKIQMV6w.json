@@ -1,0 +1,9 @@
+{
+	"id": "Olxif2pgKIQMV6w",
+	"json": "{\"id\":\"Olxif2pgKIQMV6w\",\"url\":\"https://recipes.heart.org/en/recipes/blueberry-mango-smoothie\",\"loadedUrl\":\"https://recipes.heart.org/en/recipes/blueberry-mango-smoothie\",\"uniqueKey\":\"https://recipes.heart.org/en/recipes/blueberry-mango-smoothie\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":1,\"state\":4}},\"handledAt\":\"2026-04-21T12:33:20.979Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recipes.heart.org/en/recipes/blueberry-mango-smoothie",
+	"url": "https://recipes.heart.org/en/recipes/blueberry-mango-smoothie"
+}

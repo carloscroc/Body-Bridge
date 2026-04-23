@@ -1,0 +1,9 @@
+{
+	"id": "v738eXcpUpsNqHb",
+	"json": "{\"id\":\"v738eXcpUpsNqHb\",\"url\":\"https://www.eatingwell.com/recipe/249892/fresh-fruit-chutney/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/249892/fresh-fruit-chutney/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/249892/fresh-fruit-chutney\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T14:24:54.807Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/249892/fresh-fruit-chutney",
+	"url": "https://www.eatingwell.com/recipe/249892/fresh-fruit-chutney/"
+}

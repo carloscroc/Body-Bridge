@@ -1,0 +1,9 @@
+{
+	"id": "NsAvPb0KW2ayMQb",
+	"json": "{\"id\":\"NsAvPb0KW2ayMQb\",\"url\":\"https://www.aicr.org/cancer-prevention/recipes/category/breads/\",\"loadedUrl\":\"https://www.aicr.org/cancer-prevention/recipes/category/breads/\",\"uniqueKey\":\"https://www.aicr.org/cancer-prevention/recipes/category/breads\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:25:23.099Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.aicr.org/cancer-prevention/recipes/category/breads",
+	"url": "https://www.aicr.org/cancer-prevention/recipes/category/breads/"
+}

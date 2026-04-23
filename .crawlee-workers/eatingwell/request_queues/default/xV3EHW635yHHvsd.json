@@ -1,0 +1,9 @@
+{
+	"id": "xV3EHW635yHHvsd",
+	"json": "{\"id\":\"xV3EHW635yHHvsd\",\"url\":\"https://www.eatingwell.com/recipe/247594/cucumber-yogurt-salad/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/247594/cucumber-yogurt-salad/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/247594/cucumber-yogurt-salad\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:30:51.295Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/247594/cucumber-yogurt-salad",
+	"url": "https://www.eatingwell.com/recipe/247594/cucumber-yogurt-salad/"
+}

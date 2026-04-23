@@ -1,0 +1,9 @@
+{
+	"id": "Ojbl98VqdvLgAut",
+	"json": "{\"id\":\"Ojbl98VqdvLgAut\",\"url\":\"https://recipes.heart.org/en/recipes/sweet--spicy-mustard-dip-with-veggie-dippers\",\"loadedUrl\":\"https://recipes.heart.org/en/recipes/sweet--spicy-mustard-dip-with-veggie-dippers\",\"uniqueKey\":\"https://recipes.heart.org/en/recipes/sweet--spicy-mustard-dip-with-veggie-dippers\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":4,\"state\":4}},\"handledAt\":\"2026-04-21T12:43:41.524Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recipes.heart.org/en/recipes/sweet--spicy-mustard-dip-with-veggie-dippers",
+	"url": "https://recipes.heart.org/en/recipes/sweet--spicy-mustard-dip-with-veggie-dippers"
+}

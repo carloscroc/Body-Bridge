@@ -1,0 +1,9 @@
+{
+	"id": "bbr2rqMlznGPzun",
+	"json": "{\"id\":\"bbr2rqMlznGPzun\",\"url\":\"https://www.eatingwell.com/recipes/18020/holidays-occasions/more-holidays/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/18020/holidays-occasions/more-holidays/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/18020/holidays-occasions/more-holidays\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:16:24.559Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/18020/holidays-occasions/more-holidays",
+	"url": "https://www.eatingwell.com/recipes/18020/holidays-occasions/more-holidays/"
+}

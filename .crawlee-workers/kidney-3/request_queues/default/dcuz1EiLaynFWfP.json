@@ -1,0 +1,9 @@
+{
+	"id": "dcuz1EiLaynFWfP",
+	"json": "{\"id\":\"dcuz1EiLaynFWfP\",\"url\":\"https://www.kidney.org/nutrition/recipes/fiesta-salad?page=2\",\"loadedUrl\":\"https://www.kidney.org/nutrition/recipes/fiesta-salad?page=2\",\"uniqueKey\":\"https://www.kidney.org/nutrition/recipes/fiesta-salad?page=2\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":18,\"state\":4}},\"handledAt\":\"2026-04-21T22:07:37.786Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.kidney.org/nutrition/recipes/fiesta-salad?page=2",
+	"url": "https://www.kidney.org/nutrition/recipes/fiesta-salad?page=2"
+}

@@ -1,0 +1,9 @@
+{
+	"id": "mVmGntLNScDqdVf",
+	"json": "{\"id\":\"mVmGntLNScDqdVf\",\"url\":\"https://recipes.heart.org/en/recipes/bluey-smoothie\",\"loadedUrl\":\"https://recipes.heart.org/en/recipes/bluey-smoothie\",\"uniqueKey\":\"https://recipes.heart.org/en/recipes/bluey-smoothie\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":1,\"state\":4}},\"handledAt\":\"2026-04-21T12:33:53.420Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recipes.heart.org/en/recipes/bluey-smoothie",
+	"url": "https://recipes.heart.org/en/recipes/bluey-smoothie"
+}

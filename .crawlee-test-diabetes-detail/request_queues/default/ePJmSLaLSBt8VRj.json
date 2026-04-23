@@ -1,0 +1,9 @@
+{
+	"id": "ePJmSLaLSBt8VRj",
+	"json": "{\"id\":\"ePJmSLaLSBt8VRj\",\"url\":\"https://diabetesfoodhub.org/recipes/breakfast\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/breakfast-and-brunch\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/breakfast\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":1,\"state\":4}},\"handledAt\":\"2026-04-21T17:12:48.759Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/breakfast",
+	"url": "https://diabetesfoodhub.org/recipes/breakfast"
+}

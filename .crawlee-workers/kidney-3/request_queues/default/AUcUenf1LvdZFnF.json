@@ -1,0 +1,9 @@
+{
+	"id": "AUcUenf1LvdZFnF",
+	"json": "{\"id\":\"AUcUenf1LvdZFnF\",\"url\":\"https://www.kidney.org/nutrition/recipes/mexican-style-stuffed-peppers?page=3\",\"loadedUrl\":\"https://www.kidney.org/nutrition/recipes/mexican-style-stuffed-peppers?page=3\",\"uniqueKey\":\"https://www.kidney.org/nutrition/recipes/mexican-style-stuffed-peppers?page=3\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":5,\"state\":4}},\"handledAt\":\"2026-04-21T17:48:37.823Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.kidney.org/nutrition/recipes/mexican-style-stuffed-peppers?page=3",
+	"url": "https://www.kidney.org/nutrition/recipes/mexican-style-stuffed-peppers?page=3"
+}

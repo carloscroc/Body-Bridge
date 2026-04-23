@@ -1,0 +1,9 @@
+{
+	"id": "W14XF91nOyYqfR4",
+	"json": "{\"id\":\"W14XF91nOyYqfR4\",\"url\":\"https://www.kidney.org/nutrition/recipes/strawberry-grand-marnier?page=1\",\"loadedUrl\":\"https://www.kidney.org/nutrition/recipes/strawberry-grand-marnier?page=1\",\"uniqueKey\":\"https://www.kidney.org/nutrition/recipes/strawberry-grand-marnier?page=1\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":12,\"state\":4}},\"handledAt\":\"2026-04-21T19:27:00.443Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.kidney.org/nutrition/recipes/strawberry-grand-marnier?page=1",
+	"url": "https://www.kidney.org/nutrition/recipes/strawberry-grand-marnier?page=1"
+}

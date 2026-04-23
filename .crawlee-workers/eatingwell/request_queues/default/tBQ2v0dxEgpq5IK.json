@@ -1,0 +1,9 @@
+{
+	"id": "tBQ2v0dxEgpq5IK",
+	"json": "{\"id\":\"tBQ2v0dxEgpq5IK\",\"url\":\"https://www.eatingwell.com/recipe/8030929/feast-of-the-seven-fishes-stew/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/8030929/feast-of-the-seven-fishes-stew/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/8030929/feast-of-the-seven-fishes-stew\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T13:55:50.810Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/8030929/feast-of-the-seven-fishes-stew",
+	"url": "https://www.eatingwell.com/recipe/8030929/feast-of-the-seven-fishes-stew/"
+}

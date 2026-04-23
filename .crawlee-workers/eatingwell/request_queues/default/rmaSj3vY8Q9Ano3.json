@@ -1,0 +1,9 @@
+{
+	"id": "rmaSj3vY8Q9Ano3",
+	"json": "{\"id\":\"rmaSj3vY8Q9Ano3\",\"url\":\"https://www.eatingwell.com/recipe/263538/bread-with-peanut-butter/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/263538/bread-with-peanut-butter/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/263538/bread-with-peanut-butter\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:37:50.350Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/263538/bread-with-peanut-butter",
+	"url": "https://www.eatingwell.com/recipe/263538/bread-with-peanut-butter/"
+}

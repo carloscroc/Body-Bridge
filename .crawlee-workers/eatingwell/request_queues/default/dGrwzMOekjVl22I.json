@@ -1,0 +1,9 @@
+{
+	"id": "dGrwzMOekjVl22I",
+	"json": "{\"id\":\"dGrwzMOekjVl22I\",\"url\":\"https://www.eatingwell.com/recipes/18051/dietary-restrictions/nut-free/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/18051/dietary-restrictions/nut-free/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/18051/dietary-restrictions/nut-free\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:14:00.739Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/18051/dietary-restrictions/nut-free",
+	"url": "https://www.eatingwell.com/recipes/18051/dietary-restrictions/nut-free/"
+}

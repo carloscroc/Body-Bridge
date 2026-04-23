@@ -1,0 +1,9 @@
+{
+	"id": "lIqkgxLSrvPZfVV",
+	"json": "{\"id\":\"lIqkgxLSrvPZfVV\",\"url\":\"https://recipes.heart.org/en/recipes/chicken-piccata\",\"loadedUrl\":\"https://recipes.heart.org/en/recipes/chicken-piccata\",\"uniqueKey\":\"https://recipes.heart.org/en/recipes/chicken-piccata\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":6,\"state\":4}},\"handledAt\":\"2026-04-21T13:10:54.011Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recipes.heart.org/en/recipes/chicken-piccata",
+	"url": "https://recipes.heart.org/en/recipes/chicken-piccata"
+}

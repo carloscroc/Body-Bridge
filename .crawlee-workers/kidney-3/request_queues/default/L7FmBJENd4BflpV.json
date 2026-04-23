@@ -1,0 +1,9 @@
+{
+	"id": "L7FmBJENd4BflpV",
+	"json": "{\"id\":\"L7FmBJENd4BflpV\",\"url\":\"https://www.kidney.org/nutrition/recipes/balsamic-herb-tofu-rainbow-roast-vegetables?page=10\",\"loadedUrl\":\"https://www.kidney.org/nutrition/recipes/balsamic-herb-tofu-rainbow-roast-vegetables?page=10\",\"uniqueKey\":\"https://www.kidney.org/nutrition/recipes/balsamic-herb-tofu-rainbow-roast-vegetables?page=10\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":15,\"state\":4}},\"handledAt\":\"2026-04-21T20:53:46.730Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.kidney.org/nutrition/recipes/balsamic-herb-tofu-rainbow-roast-vegetables?page=10",
+	"url": "https://www.kidney.org/nutrition/recipes/balsamic-herb-tofu-rainbow-roast-vegetables?page=10"
+}

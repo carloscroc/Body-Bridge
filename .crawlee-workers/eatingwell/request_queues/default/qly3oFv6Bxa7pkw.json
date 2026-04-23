@@ -1,0 +1,9 @@
+{
+	"id": "qly3oFv6Bxa7pkw",
+	"json": "{\"id\":\"qly3oFv6Bxa7pkw\",\"url\":\"https://www.eatingwell.com/recipe/7953831/lemon-garlic-grilled-cod/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/7953831/lemon-garlic-grilled-cod/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/7953831/lemon-garlic-grilled-cod\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T14:20:43.976Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/7953831/lemon-garlic-grilled-cod",
+	"url": "https://www.eatingwell.com/recipe/7953831/lemon-garlic-grilled-cod/"
+}

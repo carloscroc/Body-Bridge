@@ -1,0 +1,9 @@
+{
+	"id": "2ttEjEZjBqWTQPJ",
+	"json": "{\"id\":\"2ttEjEZjBqWTQPJ\",\"url\":\"https://www.eatingwell.com/recipes/18425/low-calorie/side-dishes/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/18425/low-calorie/side-dishes/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/18425/low-calorie/side-dishes\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:18:55.346Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/18425/low-calorie/side-dishes",
+	"url": "https://www.eatingwell.com/recipes/18425/low-calorie/side-dishes/"
+}

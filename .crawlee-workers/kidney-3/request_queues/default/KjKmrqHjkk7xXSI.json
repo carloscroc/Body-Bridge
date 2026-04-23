@@ -1,0 +1,9 @@
+{
+	"id": "KjKmrqHjkk7xXSI",
+	"json": "{\"id\":\"KjKmrqHjkk7xXSI\",\"url\":\"https://www.kidney.org/nutrition/recipes/vegetable-spanish-paella?page=1\",\"loadedUrl\":\"https://www.kidney.org/nutrition/recipes/vegetable-spanish-paella?page=1\",\"uniqueKey\":\"https://www.kidney.org/nutrition/recipes/vegetable-spanish-paella?page=1\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":19,\"state\":4}},\"handledAt\":\"2026-04-21T22:43:04.296Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.kidney.org/nutrition/recipes/vegetable-spanish-paella?page=1",
+	"url": "https://www.kidney.org/nutrition/recipes/vegetable-spanish-paella?page=1"
+}

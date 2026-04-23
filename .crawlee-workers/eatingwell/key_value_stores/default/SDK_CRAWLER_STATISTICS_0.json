@@ -1,0 +1,40 @@
+{
+  "requestsFinished": 1127,
+  "requestsFailed": 0,
+  "requestsRetries": 1,
+  "requestsFailedPerMinute": 0,
+  "requestsFinishedPerMinute": 10,
+  "requestMinDurationMillis": 2834,
+  "requestMaxDurationMillis": 44219,
+  "requestTotalFailedDurationMillis": 0,
+  "requestTotalFinishedDurationMillis": 6447230,
+  "crawlerStartedAt": "2026-04-21T12:32:17.551Z",
+  "crawlerFinishedAt": null,
+  "statsPersistedAt": "2026-04-21T14:26:33.299Z",
+  "crawlerRuntimeMillis": 6856809,
+  "crawlerLastStartTimestamp": 1776774736490,
+  "requestRetryHistogram": [
+    1126,
+    1
+  ],
+  "statsId": 0,
+  "requestAvgFailedDurationMillis": null,
+  "requestAvgFinishedDurationMillis": 5721,
+  "requestTotalDurationMillis": 6447230,
+  "requestsTotal": 1127,
+  "requestsWithStatusCode": {
+    "200": 1127
+  },
+  "errors": {},
+  "retryErrors": {
+    "C:\\Users\\thebe\\Downloads\\Forge\\node_modules\\@crawlee\\playwright\\internals\\utils\\playwright-utils.js:165:17": {
+      "missing error code": {
+        "Error": {
+          "page.goto: net::ERR_CONNECTION_CLOSED at https://www.eatingwell.com/recipes/19697/cooking-methods-styles/quick-easy/dessert/fruit/": {
+            "count": 1
+          }
+        }
+      }
+    }
+  }
+}

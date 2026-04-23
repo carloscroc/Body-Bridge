@@ -1,0 +1,9 @@
+{
+	"id": "Gd21UsNW0I713Vg",
+	"json": "{\"id\":\"Gd21UsNW0I713Vg\",\"url\":\"https://www.eatingwell.com/recipe/271091/strawberry-pineapple-smoothie/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/271091/strawberry-pineapple-smoothie/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/271091/strawberry-pineapple-smoothie\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:39:22.868Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/271091/strawberry-pineapple-smoothie",
+	"url": "https://www.eatingwell.com/recipe/271091/strawberry-pineapple-smoothie/"
+}

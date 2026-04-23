@@ -1,0 +1,9 @@
+{
+	"id": "8nWnGGCywpwILW7",
+	"json": "{\"id\":\"8nWnGGCywpwILW7\",\"url\":\"https://www.eatingwell.com/recipe/262920/homemade-kimchi/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/262920/homemade-kimchi\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3}}}",
+	"method": "GET",
+	"orderNo": 1776775412114,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/262920/homemade-kimchi",
+	"url": "https://www.eatingwell.com/recipe/262920/homemade-kimchi/"
+}

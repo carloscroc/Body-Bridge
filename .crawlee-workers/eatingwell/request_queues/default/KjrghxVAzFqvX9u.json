@@ -1,0 +1,9 @@
+{
+	"id": "KjrghxVAzFqvX9u",
+	"json": "{\"id\":\"KjrghxVAzFqvX9u\",\"url\":\"https://www.eatingwell.com/recipes/18044/desserts/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/18044/desserts/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/18044/desserts\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":1,\"state\":4}},\"handledAt\":\"2026-04-21T12:34:23.335Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/18044/desserts",
+	"url": "https://www.eatingwell.com/recipes/18044/desserts/"
+}

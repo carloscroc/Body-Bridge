@@ -1,0 +1,9 @@
+{
+	"id": "rTCRUJ7izl0lGzm",
+	"json": "{\"id\":\"rTCRUJ7izl0lGzm\",\"url\":\"https://recipes.heart.org/en/recipes/peach-and-tomato-salad\",\"loadedUrl\":\"https://recipes.heart.org/en/recipes/peach-and-tomato-salad\",\"uniqueKey\":\"https://recipes.heart.org/en/recipes/peach-and-tomato-salad\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":16,\"state\":4}},\"handledAt\":\"2026-04-21T14:08:26.482Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recipes.heart.org/en/recipes/peach-and-tomato-salad",
+	"url": "https://recipes.heart.org/en/recipes/peach-and-tomato-salad"
+}

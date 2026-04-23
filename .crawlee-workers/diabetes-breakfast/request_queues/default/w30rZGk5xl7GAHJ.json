@@ -1,0 +1,9 @@
+{
+	"id": "w30rZGk5xl7GAHJ",
+	"json": "{\"id\":\"w30rZGk5xl7GAHJ\",\"url\":\"https://diabetesfoodhub.org/recipes/vegetarian?page=4\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/vegetarian?page=4\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/vegetarian?page=4\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":6,\"state\":4}},\"handledAt\":\"2026-04-21T19:37:59.845Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/vegetarian?page=4",
+	"url": "https://diabetesfoodhub.org/recipes/vegetarian?page=4"
+}

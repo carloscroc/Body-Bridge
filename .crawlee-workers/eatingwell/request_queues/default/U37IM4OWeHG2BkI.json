@@ -1,0 +1,9 @@
+{
+	"id": "U37IM4OWeHG2BkI",
+	"json": "{\"id\":\"U37IM4OWeHG2BkI\",\"url\":\"https://www.eatingwell.com/recipes/22846/desserts/cookies/gingerbread/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/22846/desserts/cookies/gingerbread\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3}}}",
+	"method": "GET",
+	"orderNo": 1776776373689,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/22846/desserts/cookies/gingerbread",
+	"url": "https://www.eatingwell.com/recipes/22846/desserts/cookies/gingerbread/"
+}

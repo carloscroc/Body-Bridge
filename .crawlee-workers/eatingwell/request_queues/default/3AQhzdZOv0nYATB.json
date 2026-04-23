@@ -1,0 +1,9 @@
+{
+	"id": "3AQhzdZOv0nYATB",
+	"json": "{\"id\":\"3AQhzdZOv0nYATB\",\"url\":\"https://www.eatingwell.com/recipes/19330/cooking-methods-styles/quick-easy/snacks/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/19330/cooking-methods-styles/quick-easy/snacks/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/19330/cooking-methods-styles/quick-easy/snacks\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T12:41:16.429Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/19330/cooking-methods-styles/quick-easy/snacks",
+	"url": "https://www.eatingwell.com/recipes/19330/cooking-methods-styles/quick-easy/snacks/"
+}

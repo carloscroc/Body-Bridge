@@ -1,0 +1,9 @@
+{
+	"id": "PWtHpMT3VLkne3m",
+	"json": "{\"id\":\"PWtHpMT3VLkne3m\",\"url\":\"https://www.eatingwell.com/recipe/259576/pizza-lettuce-wraps/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/259576/pizza-lettuce-wraps\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3}}}",
+	"method": "GET",
+	"orderNo": 1776775710583,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/259576/pizza-lettuce-wraps",
+	"url": "https://www.eatingwell.com/recipe/259576/pizza-lettuce-wraps/"
+}

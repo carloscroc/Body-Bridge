@@ -1,0 +1,9 @@
+{
+	"id": "EJ9ocMN2j1ISlAl",
+	"json": "{\"id\":\"EJ9ocMN2j1ISlAl\",\"url\":\"https://recipes.heart.org/en/recipes/universal-marinade-and-grilled-or-roasted-meat-and-vegetables\",\"loadedUrl\":\"https://recipes.heart.org/en/recipes/universal-marinade-and-grilled-or-roasted-meat-and-vegetables\",\"uniqueKey\":\"https://recipes.heart.org/en/recipes/universal-marinade-and-grilled-or-roasted-meat-and-vegetables\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":5,\"state\":4}},\"handledAt\":\"2026-04-21T12:52:16.353Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recipes.heart.org/en/recipes/universal-marinade-and-grilled-or-roasted-meat-and-vegetables",
+	"url": "https://recipes.heart.org/en/recipes/universal-marinade-and-grilled-or-roasted-meat-and-vegetables"
+}

@@ -1,0 +1,9 @@
+{
+	"id": "t8xrNf0c2DbTGQz",
+	"json": "{\"id\":\"t8xrNf0c2DbTGQz\",\"url\":\"https://recipes.heart.org/en/recipes/moroccan-chicken-with-brown-rice-and-lemon-sauteed-spinach\",\"loadedUrl\":\"https://recipes.heart.org/en/recipes/moroccan-chicken-with-brown-rice-and-lemon-sauteed-spinach\",\"uniqueKey\":\"https://recipes.heart.org/en/recipes/moroccan-chicken-with-brown-rice-and-lemon-sauteed-spinach\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":5,\"state\":4}},\"handledAt\":\"2026-04-21T13:00:50.762Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recipes.heart.org/en/recipes/moroccan-chicken-with-brown-rice-and-lemon-sauteed-spinach",
+	"url": "https://recipes.heart.org/en/recipes/moroccan-chicken-with-brown-rice-and-lemon-sauteed-spinach"
+}

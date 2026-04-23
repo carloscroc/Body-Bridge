@@ -1,0 +1,9 @@
+{
+	"id": "srv90Oh4ywXCEtr",
+	"json": "{\"id\":\"srv90Oh4ywXCEtr\",\"url\":\"https://www.eatingwell.com/recipe/281182/balsamic-chicken-pasta-bake-with-zucchini-noodles/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/281182/balsamic-chicken-pasta-bake-with-zucchini-noodles\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3}}}",
+	"method": "GET",
+	"orderNo": 1776775397016,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/281182/balsamic-chicken-pasta-bake-with-zucchini-noodles",
+	"url": "https://www.eatingwell.com/recipe/281182/balsamic-chicken-pasta-bake-with-zucchini-noodles/"
+}

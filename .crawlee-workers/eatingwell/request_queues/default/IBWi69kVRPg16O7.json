@@ -1,0 +1,9 @@
+{
+	"id": "IBWi69kVRPg16O7",
+	"json": "{\"id\":\"IBWi69kVRPg16O7\",\"url\":\"https://www.eatingwell.com/recipe/258225/basic-quinoa/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/258225/basic-quinoa/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/258225/basic-quinoa\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:38:59.461Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/258225/basic-quinoa",
+	"url": "https://www.eatingwell.com/recipe/258225/basic-quinoa/"
+}

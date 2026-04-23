@@ -1,0 +1,9 @@
+{
+	"id": "AJ8wqpNmOvkFKbS",
+	"json": "{\"id\":\"AJ8wqpNmOvkFKbS\",\"url\":\"https://www.kidney.org/nutrition/recipes/crispy-tofu-veggie-sandwich\",\"loadedUrl\":\"https://www.kidney.org/nutrition/recipes/crispy-tofu-veggie-sandwich\",\"uniqueKey\":\"https://www.kidney.org/nutrition/recipes/crispy-tofu-veggie-sandwich\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":18,\"state\":4}},\"handledAt\":\"2026-04-21T22:35:42.551Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.kidney.org/nutrition/recipes/crispy-tofu-veggie-sandwich",
+	"url": "https://www.kidney.org/nutrition/recipes/crispy-tofu-veggie-sandwich"
+}

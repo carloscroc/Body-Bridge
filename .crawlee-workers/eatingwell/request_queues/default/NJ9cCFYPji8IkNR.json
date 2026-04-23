@@ -1,0 +1,9 @@
+{
+	"id": "NJ9cCFYPji8IkNR",
+	"json": "{\"id\":\"NJ9cCFYPji8IkNR\",\"url\":\"https://www.eatingwell.com/recipes/18553/lifestyle-diets/vegetarian/dinner/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/18553/lifestyle-diets/vegetarian/dinner/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/18553/lifestyle-diets/vegetarian/dinner\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T13:58:28.417Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/18553/lifestyle-diets/vegetarian/dinner",
+	"url": "https://www.eatingwell.com/recipes/18553/lifestyle-diets/vegetarian/dinner/"
+}

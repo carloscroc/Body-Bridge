@@ -1,0 +1,9 @@
+{
+	"id": "jqyfwa72IBNe0lb",
+	"json": "{\"id\":\"jqyfwa72IBNe0lb\",\"url\":\"https://diabetesfoodhub.org/recipes/sandwiches?page=4\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/sandwiches?page=4\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/sandwiches?page=4\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":7,\"state\":4}},\"handledAt\":\"2026-04-21T19:49:05.081Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/sandwiches?page=4",
+	"url": "https://diabetesfoodhub.org/recipes/sandwiches?page=4"
+}

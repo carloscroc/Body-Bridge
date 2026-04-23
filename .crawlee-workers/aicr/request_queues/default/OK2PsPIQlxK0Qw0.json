@@ -1,0 +1,9 @@
+{
+	"id": "OK2PsPIQlxK0Qw0",
+	"json": "{\"id\":\"OK2PsPIQlxK0Qw0\",\"url\":\"https://www.aicr.org/cancer-prevention/recipes/category/beverages/?page=2\",\"loadedUrl\":\"https://www.aicr.org/cancer-prevention/recipes/category/beverages/?page=2\",\"uniqueKey\":\"https://www.aicr.org/cancer-prevention/recipes/category/beverages?page=2\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:31:43.150Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.aicr.org/cancer-prevention/recipes/category/beverages?page=2",
+	"url": "https://www.aicr.org/cancer-prevention/recipes/category/beverages/?page=2"
+}

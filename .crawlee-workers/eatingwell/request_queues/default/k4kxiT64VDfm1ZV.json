@@ -1,0 +1,9 @@
+{
+	"id": "k4kxiT64VDfm1ZV",
+	"json": "{\"id\":\"k4kxiT64VDfm1ZV\",\"url\":\"https://www.eatingwell.com/recipe/268042/zuppa-toscana/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/268042/zuppa-toscana\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3}}}",
+	"method": "GET",
+	"orderNo": 1776776196509,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/268042/zuppa-toscana",
+	"url": "https://www.eatingwell.com/recipe/268042/zuppa-toscana/"
+}

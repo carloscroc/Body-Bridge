@@ -1,0 +1,9 @@
+{
+	"id": "qal3VrkmizyVvK5",
+	"json": "{\"id\":\"qal3VrkmizyVvK5\",\"url\":\"https://www.eatingwell.com/recipe/8019192/copycat-paneras-broccoli-cheddar-soup/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/8019192/copycat-paneras-broccoli-cheddar-soup/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/8019192/copycat-paneras-broccoli-cheddar-soup\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T13:59:55.797Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/8019192/copycat-paneras-broccoli-cheddar-soup",
+	"url": "https://www.eatingwell.com/recipe/8019192/copycat-paneras-broccoli-cheddar-soup/"
+}

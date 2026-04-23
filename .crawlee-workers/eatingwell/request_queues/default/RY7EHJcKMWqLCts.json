@@ -1,0 +1,9 @@
+{
+	"id": "RY7EHJcKMWqLCts",
+	"json": "{\"id\":\"RY7EHJcKMWqLCts\",\"url\":\"https://www.eatingwell.com/recipe/266710/spicy-jerk-shrimp/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/266710/spicy-jerk-shrimp/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/266710/spicy-jerk-shrimp\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T13:56:28.097Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/266710/spicy-jerk-shrimp",
+	"url": "https://www.eatingwell.com/recipe/266710/spicy-jerk-shrimp/"
+}

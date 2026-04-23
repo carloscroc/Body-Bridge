@@ -1,0 +1,9 @@
+{
+	"id": "TdAKmXVKmgjBPtz",
+	"json": "{\"id\":\"TdAKmXVKmgjBPtz\",\"url\":\"https://www.eatingwell.com/recipes/22826/cuisines-regions/latin-american/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/22826/cuisines-regions/latin-american/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/22826/cuisines-regions/latin-american\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:29:26.745Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/22826/cuisines-regions/latin-american",
+	"url": "https://www.eatingwell.com/recipes/22826/cuisines-regions/latin-american/"
+}

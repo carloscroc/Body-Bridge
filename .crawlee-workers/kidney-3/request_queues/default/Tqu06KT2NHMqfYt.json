@@ -1,0 +1,9 @@
+{
+	"id": "Tqu06KT2NHMqfYt",
+	"json": "{\"id\":\"Tqu06KT2NHMqfYt\",\"url\":\"https://www.kidney.org/nutrition/recipes/vegetable-fried-rice\",\"loadedUrl\":\"https://www.kidney.org/nutrition/recipes/vegetable-fried-rice\",\"uniqueKey\":\"https://www.kidney.org/nutrition/recipes/vegetable-fried-rice\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":10,\"state\":4}},\"handledAt\":\"2026-04-21T18:47:16.772Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.kidney.org/nutrition/recipes/vegetable-fried-rice",
+	"url": "https://www.kidney.org/nutrition/recipes/vegetable-fried-rice"
+}

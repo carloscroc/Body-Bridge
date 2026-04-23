@@ -1,0 +1,9 @@
+{
+	"id": "XmM7NzMGcgBpeuD",
+	"json": "{\"id\":\"XmM7NzMGcgBpeuD\",\"url\":\"https://recipes.heart.org/en/recipes/pan-fried-pork-chop-with-mashed-sweet-potatoes\",\"loadedUrl\":\"https://recipes.heart.org/en/recipes/pan-fried-pork-chop-with-mashed-sweet-potatoes\",\"uniqueKey\":\"https://recipes.heart.org/en/recipes/pan-fried-pork-chop-with-mashed-sweet-potatoes\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":6,\"state\":4}},\"handledAt\":\"2026-04-21T13:06:58.991Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recipes.heart.org/en/recipes/pan-fried-pork-chop-with-mashed-sweet-potatoes",
+	"url": "https://recipes.heart.org/en/recipes/pan-fried-pork-chop-with-mashed-sweet-potatoes"
+}

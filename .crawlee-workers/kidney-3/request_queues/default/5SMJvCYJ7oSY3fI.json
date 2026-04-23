@@ -1,0 +1,9 @@
+{
+	"id": "5SMJvCYJ7oSY3fI",
+	"json": "{\"id\":\"5SMJvCYJ7oSY3fI\",\"url\":\"https://www.kidney.org/nutrition/recipes/bbq-pineapple-chicken?page=0\",\"loadedUrl\":\"https://www.kidney.org/nutrition/recipes/bbq-pineapple-chicken?page=0\",\"uniqueKey\":\"https://www.kidney.org/nutrition/recipes/bbq-pineapple-chicken?page=0\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":15,\"state\":4}},\"handledAt\":\"2026-04-21T20:38:43.144Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.kidney.org/nutrition/recipes/bbq-pineapple-chicken?page=0",
+	"url": "https://www.kidney.org/nutrition/recipes/bbq-pineapple-chicken?page=0"
+}

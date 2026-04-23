@@ -1,0 +1,9 @@
+{
+	"id": "U5OxTYILn3KViOR",
+	"json": "{\"id\":\"U5OxTYILn3KViOR\",\"url\":\"https://www.eatingwell.com/recipes/18414/low-calorie/breakfast-brunch/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/18414/low-calorie/breakfast-brunch/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/18414/low-calorie/breakfast-brunch\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:17:51.455Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/18414/low-calorie/breakfast-brunch",
+	"url": "https://www.eatingwell.com/recipes/18414/low-calorie/breakfast-brunch/"
+}

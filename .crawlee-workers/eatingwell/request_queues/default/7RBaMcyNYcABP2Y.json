@@ -1,0 +1,9 @@
+{
+	"id": "7RBaMcyNYcABP2Y",
+	"json": "{\"id\":\"7RBaMcyNYcABP2Y\",\"url\":\"https://www.eatingwell.com/recipe/259618/slow-cooked-ranch-chicken-and-vegetables/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/259618/slow-cooked-ranch-chicken-and-vegetables/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/259618/slow-cooked-ranch-chicken-and-vegetables\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:40:39.371Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/259618/slow-cooked-ranch-chicken-and-vegetables",
+	"url": "https://www.eatingwell.com/recipe/259618/slow-cooked-ranch-chicken-and-vegetables/"
+}

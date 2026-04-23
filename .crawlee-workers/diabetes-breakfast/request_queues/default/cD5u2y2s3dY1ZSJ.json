@@ -1,0 +1,9 @@
+{
+	"id": "cD5u2y2s3dY1ZSJ",
+	"json": "{\"id\":\"cD5u2y2s3dY1ZSJ\",\"url\":\"https://diabetesfoodhub.org/recipes/fiber-focused?page=5\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/fiber-focused?page=5\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/fiber-focused?page=5\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":7,\"state\":4}},\"handledAt\":\"2026-04-21T20:12:30.137Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/fiber-focused?page=5",
+	"url": "https://diabetesfoodhub.org/recipes/fiber-focused?page=5"
+}

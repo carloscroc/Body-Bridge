@@ -1,0 +1,9 @@
+{
+	"id": "GXi616SOiNXh24C",
+	"json": "{\"id\":\"GXi616SOiNXh24C\",\"url\":\"https://www.eatingwell.com/recipes/18147/salad/potato/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/18147/salad/potato/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/18147/salad/potato\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T12:54:30.199Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/18147/salad/potato",
+	"url": "https://www.eatingwell.com/recipes/18147/salad/potato/"
+}

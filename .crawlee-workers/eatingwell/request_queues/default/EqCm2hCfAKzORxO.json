@@ -1,0 +1,9 @@
+{
+	"id": "EqCm2hCfAKzORxO",
+	"json": "{\"id\":\"EqCm2hCfAKzORxO\",\"url\":\"https://www.eatingwell.com/recipe/249895/black-bean-soup/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/249895/black-bean-soup/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/249895/black-bean-soup\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T14:09:34.968Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/249895/black-bean-soup",
+	"url": "https://www.eatingwell.com/recipe/249895/black-bean-soup/"
+}

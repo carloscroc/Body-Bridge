@@ -1,0 +1,9 @@
+{
+	"id": "UgFXpX5tLsItxk9",
+	"json": "{\"id\":\"UgFXpX5tLsItxk9\",\"url\":\"https://recipes.heart.org/en/recipes/mediterranean-salad\",\"loadedUrl\":\"https://recipes.heart.org/en/recipes/mediterranean-salad\",\"uniqueKey\":\"https://recipes.heart.org/en/recipes/mediterranean-salad\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":5,\"state\":4}},\"handledAt\":\"2026-04-21T12:56:51.392Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recipes.heart.org/en/recipes/mediterranean-salad",
+	"url": "https://recipes.heart.org/en/recipes/mediterranean-salad"
+}

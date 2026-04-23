@@ -1,0 +1,9 @@
+{
+	"id": "ZFIW3KrragAqdop",
+	"json": "{\"id\":\"ZFIW3KrragAqdop\",\"url\":\"https://recipes.heart.org/en/recipes/grilled-tequila-lime-chicken-with-grilled-asparagus\",\"loadedUrl\":\"https://recipes.heart.org/en/recipes/grilled-tequila-lime-chicken-with-grilled-asparagus\",\"uniqueKey\":\"https://recipes.heart.org/en/recipes/grilled-tequila-lime-chicken-with-grilled-asparagus\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":12,\"state\":4}},\"handledAt\":\"2026-04-21T13:55:19.878Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recipes.heart.org/en/recipes/grilled-tequila-lime-chicken-with-grilled-asparagus",
+	"url": "https://recipes.heart.org/en/recipes/grilled-tequila-lime-chicken-with-grilled-asparagus"
+}

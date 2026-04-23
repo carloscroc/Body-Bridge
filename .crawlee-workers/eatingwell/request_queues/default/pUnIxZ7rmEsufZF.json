@@ -1,0 +1,9 @@
+{
+	"id": "pUnIxZ7rmEsufZF",
+	"json": "{\"id\":\"pUnIxZ7rmEsufZF\",\"url\":\"https://www.eatingwell.com/recipes/18129/salad/cobb/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/18129/salad/cobb/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/18129/salad/cobb\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T12:52:55.398Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/18129/salad/cobb",
+	"url": "https://www.eatingwell.com/recipes/18129/salad/cobb/"
+}

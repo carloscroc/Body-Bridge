@@ -1,0 +1,9 @@
+{
+	"id": "TOohkjeZVvRmITA",
+	"json": "{\"id\":\"TOohkjeZVvRmITA\",\"url\":\"https://www.eatingwell.com/recipes/18446/mealtimes/dinner/low-carb/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/18446/mealtimes/dinner/low-carb/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/18446/mealtimes/dinner/low-carb\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T12:37:35.897Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/18446/mealtimes/dinner/low-carb",
+	"url": "https://www.eatingwell.com/recipes/18446/mealtimes/dinner/low-carb/"
+}

@@ -1,0 +1,9 @@
+{
+	"id": "ng2ODG5z9dehh1K",
+	"json": "{\"id\":\"ng2ODG5z9dehh1K\",\"url\":\"https://www.eatingwell.com/recipe/300852/pan-seared-strip-steak/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/300852/pan-seared-strip-steak/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/300852/pan-seared-strip-steak\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T13:55:46.327Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/300852/pan-seared-strip-steak",
+	"url": "https://www.eatingwell.com/recipe/300852/pan-seared-strip-steak/"
+}

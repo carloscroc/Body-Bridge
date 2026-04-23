@@ -1,0 +1,9 @@
+{
+	"id": "XHCEiLSWMxihp7q",
+	"json": "{\"id\":\"XHCEiLSWMxihp7q\",\"url\":\"https://www.eatingwell.com/recipes/18012/low-calorie/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/18012/low-calorie/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/18012/low-calorie\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":1,\"state\":4}},\"handledAt\":\"2026-04-21T12:35:20.407Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/18012/low-calorie",
+	"url": "https://www.eatingwell.com/recipes/18012/low-calorie/"
+}

@@ -1,0 +1,9 @@
+{
+	"id": "k6z1o1K7INtAeOT",
+	"json": "{\"id\":\"k6z1o1K7INtAeOT\",\"url\":\"https://www.eatingwell.com/recipe/7873471/creamy-broccoli-pasta/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/7873471/creamy-broccoli-pasta\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3}}}",
+	"method": "GET",
+	"orderNo": 1776777928173,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/7873471/creamy-broccoli-pasta",
+	"url": "https://www.eatingwell.com/recipe/7873471/creamy-broccoli-pasta/"
+}

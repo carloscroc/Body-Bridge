@@ -1,0 +1,9 @@
+{
+	"id": "9xLmvGRQULHiaKh",
+	"json": "{\"id\":\"9xLmvGRQULHiaKh\",\"url\":\"https://www.eatingwell.com/recipe/281052/chicken-cutlets-with-artichokes-lemon-dill-sauce/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/281052/chicken-cutlets-with-artichokes-lemon-dill-sauce/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/281052/chicken-cutlets-with-artichokes-lemon-dill-sauce\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T13:58:19.563Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/281052/chicken-cutlets-with-artichokes-lemon-dill-sauce",
+	"url": "https://www.eatingwell.com/recipe/281052/chicken-cutlets-with-artichokes-lemon-dill-sauce/"
+}

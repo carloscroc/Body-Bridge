@@ -1,0 +1,9 @@
+{
+	"id": "nXYcojCbItbBNBJ",
+	"json": "{\"id\":\"nXYcojCbItbBNBJ\",\"url\":\"https://www.eatingwell.com/recipes/18045/weight-loss-diet/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/18045/weight-loss-diet/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/18045/weight-loss-diet\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":1,\"state\":4}},\"handledAt\":\"2026-04-21T12:35:39.215Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/18045/weight-loss-diet",
+	"url": "https://www.eatingwell.com/recipes/18045/weight-loss-diet/"
+}

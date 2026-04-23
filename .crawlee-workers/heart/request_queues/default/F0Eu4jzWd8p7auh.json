@@ -1,0 +1,9 @@
+{
+	"id": "F0Eu4jzWd8p7auh",
+	"json": "{\"id\":\"F0Eu4jzWd8p7auh\",\"url\":\"https://recipes.heart.org/en/recipes/mexican-chicken-soup\",\"loadedUrl\":\"https://recipes.heart.org/en/recipes/mexican-chicken-soup\",\"uniqueKey\":\"https://recipes.heart.org/en/recipes/mexican-chicken-soup\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":6,\"state\":4}},\"handledAt\":\"2026-04-21T13:13:42.657Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recipes.heart.org/en/recipes/mexican-chicken-soup",
+	"url": "https://recipes.heart.org/en/recipes/mexican-chicken-soup"
+}

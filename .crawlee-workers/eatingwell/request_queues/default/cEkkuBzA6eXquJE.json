@@ -1,0 +1,9 @@
+{
+	"id": "cEkkuBzA6eXquJE",
+	"json": "{\"id\":\"cEkkuBzA6eXquJE\",\"url\":\"https://www.eatingwell.com/recipe/260717/stuffed-sweet-potato-with-hummus-dressing/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/260717/stuffed-sweet-potato-with-hummus-dressing/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/260717/stuffed-sweet-potato-with-hummus-dressing\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T13:42:12.698Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/260717/stuffed-sweet-potato-with-hummus-dressing",
+	"url": "https://www.eatingwell.com/recipe/260717/stuffed-sweet-potato-with-hummus-dressing/"
+}

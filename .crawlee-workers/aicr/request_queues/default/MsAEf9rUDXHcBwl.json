@@ -1,0 +1,9 @@
+{
+	"id": "MsAEf9rUDXHcBwl",
+	"json": "{\"id\":\"MsAEf9rUDXHcBwl\",\"url\":\"https://www.aicr.org/cancer-prevention/recipes/pumpkin-mac-and-cheese/\",\"loadedUrl\":\"https://www.aicr.org/cancer-prevention/recipes/pumpkin-mac-and-cheese/\",\"uniqueKey\":\"https://www.aicr.org/cancer-prevention/recipes/pumpkin-mac-and-cheese\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":1,\"state\":4}},\"handledAt\":\"2026-04-21T13:21:46.895Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.aicr.org/cancer-prevention/recipes/pumpkin-mac-and-cheese",
+	"url": "https://www.aicr.org/cancer-prevention/recipes/pumpkin-mac-and-cheese/"
+}

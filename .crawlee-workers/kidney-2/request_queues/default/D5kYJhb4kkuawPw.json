@@ -1,0 +1,9 @@
+{
+	"id": "D5kYJhb4kkuawPw",
+	"json": "{\"id\":\"D5kYJhb4kkuawPw\",\"url\":\"https://www.kidney.org/nutrition/recipes?f%5B0%5D=appropriate_for%3A52806&f%5B1%5D=appropriate_for%3A52811\",\"loadedUrl\":\"https://www.kidney.org/nutrition/recipes?f%5B0%5D=appropriate_for%3A52806&f%5B1%5D=appropriate_for%3A52811\",\"uniqueKey\":\"https://www.kidney.org/nutrition/recipes?f%5B0%5D=appropriate_for%3A52806&f%5B1%5D=appropriate_for%3A52811\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T16:35:50.804Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.kidney.org/nutrition/recipes?f%5B0%5D=appropriate_for%3A52806&f%5B1%5D=appropriate_for%3A52811",
+	"url": "https://www.kidney.org/nutrition/recipes?f%5B0%5D=appropriate_for%3A52806&f%5B1%5D=appropriate_for%3A52811"
+}

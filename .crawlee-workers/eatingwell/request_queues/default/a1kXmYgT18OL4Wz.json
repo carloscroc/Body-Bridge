@@ -1,0 +1,9 @@
+{
+	"id": "a1kXmYgT18OL4Wz",
+	"json": "{\"id\":\"a1kXmYgT18OL4Wz\",\"url\":\"https://www.eatingwell.com/recipe/275919/panko-parmesan-crusted-baked-scallops/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/275919/panko-parmesan-crusted-baked-scallops/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/275919/panko-parmesan-crusted-baked-scallops\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T13:50:22.939Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/275919/panko-parmesan-crusted-baked-scallops",
+	"url": "https://www.eatingwell.com/recipe/275919/panko-parmesan-crusted-baked-scallops/"
+}

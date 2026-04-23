@@ -1,0 +1,9 @@
+{
+	"id": "LmDIA0O9fWEX0tG",
+	"json": "{\"id\":\"LmDIA0O9fWEX0tG\",\"url\":\"https://recipes.heart.org/en/recipes/black-bean-chilaquiles\",\"loadedUrl\":\"https://recipes.heart.org/en/recipes/black-bean-chilaquiles\",\"uniqueKey\":\"https://recipes.heart.org/en/recipes/black-bean-chilaquiles\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":7,\"state\":4}},\"handledAt\":\"2026-04-21T13:27:50.799Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recipes.heart.org/en/recipes/black-bean-chilaquiles",
+	"url": "https://recipes.heart.org/en/recipes/black-bean-chilaquiles"
+}

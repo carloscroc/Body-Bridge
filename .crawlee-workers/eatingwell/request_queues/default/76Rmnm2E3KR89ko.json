@@ -1,0 +1,9 @@
+{
+	"id": "76Rmnm2E3KR89ko",
+	"json": "{\"id\":\"76Rmnm2E3KR89ko\",\"url\":\"https://www.eatingwell.com/recipe/8047778/pistachio-crusted-halibut/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/8047778/pistachio-crusted-halibut/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/8047778/pistachio-crusted-halibut\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T13:54:50.438Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/8047778/pistachio-crusted-halibut",
+	"url": "https://www.eatingwell.com/recipe/8047778/pistachio-crusted-halibut/"
+}

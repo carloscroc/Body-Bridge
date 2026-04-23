@@ -1,0 +1,9 @@
+{
+	"id": "pyieZhnD8MC11BH",
+	"json": "{\"id\":\"pyieZhnD8MC11BH\",\"url\":\"https://www.eatingwell.com/recipes/22777/ingredients/meat-poultry/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/22777/ingredients/meat-poultry/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/22777/ingredients/meat-poultry\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:35:27.536Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/22777/ingredients/meat-poultry",
+	"url": "https://www.eatingwell.com/recipes/22777/ingredients/meat-poultry/"
+}

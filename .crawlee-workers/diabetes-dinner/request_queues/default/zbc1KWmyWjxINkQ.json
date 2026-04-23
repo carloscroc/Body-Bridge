@@ -1,0 +1,9 @@
+{
+	"id": "zbc1KWmyWjxINkQ",
+	"json": "{\"id\":\"zbc1KWmyWjxINkQ\",\"url\":\"https://diabetesfoodhub.org/recipes/fall-granola-pumpkin-seeds\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/fall-granola-pumpkin-seeds\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/fall-granola-pumpkin-seeds\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":10,\"state\":4}},\"handledAt\":\"2026-04-21T21:21:44.915Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/fall-granola-pumpkin-seeds",
+	"url": "https://diabetesfoodhub.org/recipes/fall-granola-pumpkin-seeds"
+}

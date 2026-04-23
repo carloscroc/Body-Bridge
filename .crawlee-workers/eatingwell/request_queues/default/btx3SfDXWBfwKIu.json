@@ -1,0 +1,9 @@
+{
+	"id": "btx3SfDXWBfwKIu",
+	"json": "{\"id\":\"btx3SfDXWBfwKIu\",\"url\":\"https://www.eatingwell.com/recipe/255163/berry-flax-smoothie/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/255163/berry-flax-smoothie\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3}}}",
+	"method": "GET",
+	"orderNo": 1776775494590,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/255163/berry-flax-smoothie",
+	"url": "https://www.eatingwell.com/recipe/255163/berry-flax-smoothie/"
+}

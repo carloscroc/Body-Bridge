@@ -1,0 +1,9 @@
+{
+	"id": "P7BRSlXkBEUstcY",
+	"json": "{\"id\":\"P7BRSlXkBEUstcY\",\"url\":\"https://recipes.heart.org/en/recipes/creamy-cucumber-dill-dip\",\"loadedUrl\":\"https://recipes.heart.org/en/recipes/creamy-cucumber-dill-dip\",\"uniqueKey\":\"https://recipes.heart.org/en/recipes/creamy-cucumber-dill-dip\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":8,\"state\":4}},\"handledAt\":\"2026-04-21T13:41:16.004Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recipes.heart.org/en/recipes/creamy-cucumber-dill-dip",
+	"url": "https://recipes.heart.org/en/recipes/creamy-cucumber-dill-dip"
+}

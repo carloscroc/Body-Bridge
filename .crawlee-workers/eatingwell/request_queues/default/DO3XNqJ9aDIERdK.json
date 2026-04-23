@@ -1,0 +1,9 @@
+{
+	"id": "DO3XNqJ9aDIERdK",
+	"json": "{\"id\":\"DO3XNqJ9aDIERdK\",\"url\":\"https://www.eatingwell.com/recipe/261071/yogurt-with-blueberries/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/261071/yogurt-with-blueberries/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/261071/yogurt-with-blueberries\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T14:02:54.621Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/261071/yogurt-with-blueberries",
+	"url": "https://www.eatingwell.com/recipe/261071/yogurt-with-blueberries/"
+}

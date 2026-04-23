@@ -1,0 +1,9 @@
+{
+	"id": "B66Tp1eURgQJejZ",
+	"json": "{\"id\":\"B66Tp1eURgQJejZ\",\"url\":\"https://diabetesfoodhub.org/recipes/salads?page=11\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/salads?page=11\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/salads?page=11\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":14,\"state\":4}},\"handledAt\":\"2026-04-21T22:19:23.007Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/salads?page=11",
+	"url": "https://diabetesfoodhub.org/recipes/salads?page=11"
+}

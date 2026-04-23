@@ -1,0 +1,9 @@
+{
+	"id": "UIZNvNmorV8Ziw5",
+	"json": "{\"id\":\"UIZNvNmorV8Ziw5\",\"url\":\"https://diabetesfoodhub.org/recipes/grilled-shrimp-tacos\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/grilled-shrimp-tacos\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/grilled-shrimp-tacos\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":13,\"state\":4}},\"handledAt\":\"2026-04-21T22:12:56.760Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/grilled-shrimp-tacos",
+	"url": "https://diabetesfoodhub.org/recipes/grilled-shrimp-tacos"
+}

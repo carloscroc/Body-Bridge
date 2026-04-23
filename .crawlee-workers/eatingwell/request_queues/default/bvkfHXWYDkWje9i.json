@@ -1,0 +1,9 @@
+{
+	"id": "bvkfHXWYDkWje9i",
+	"json": "{\"id\":\"bvkfHXWYDkWje9i\",\"url\":\"https://www.eatingwell.com/recipe/262155/oven-fried-pickles/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/262155/oven-fried-pickles/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/262155/oven-fried-pickles\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T14:12:59.494Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/262155/oven-fried-pickles",
+	"url": "https://www.eatingwell.com/recipe/262155/oven-fried-pickles/"
+}

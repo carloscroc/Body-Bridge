@@ -1,0 +1,9 @@
+{
+	"id": "pno30U2MJjgNvqU",
+	"json": "{\"id\":\"pno30U2MJjgNvqU\",\"url\":\"https://www.eatingwell.com/recipes/18219/soup/vegetable/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/18219/soup/vegetable/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/18219/soup/vegetable\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T12:57:08.353Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/18219/soup/vegetable",
+	"url": "https://www.eatingwell.com/recipes/18219/soup/vegetable/"
+}

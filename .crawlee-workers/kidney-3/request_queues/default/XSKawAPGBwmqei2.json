@@ -1,0 +1,9 @@
+{
+	"id": "XSKawAPGBwmqei2",
+	"json": "{\"id\":\"XSKawAPGBwmqei2\",\"url\":\"https://www.kidney.org/nutrition/recipes/rice-cereal-treats\",\"loadedUrl\":\"https://www.kidney.org/nutrition/recipes/rice-cereal-treats\",\"uniqueKey\":\"https://www.kidney.org/nutrition/recipes/rice-cereal-treats\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":15,\"state\":4}},\"handledAt\":\"2026-04-21T20:35:26.075Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.kidney.org/nutrition/recipes/rice-cereal-treats",
+	"url": "https://www.kidney.org/nutrition/recipes/rice-cereal-treats"
+}

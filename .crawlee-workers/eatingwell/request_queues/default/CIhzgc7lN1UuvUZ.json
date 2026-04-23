@@ -1,0 +1,9 @@
+{
+	"id": "CIhzgc7lN1UuvUZ",
+	"json": "{\"id\":\"CIhzgc7lN1UuvUZ\",\"url\":\"https://www.eatingwell.com/recipes/20106/low-calorie/main-dish/pizza/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/20106/low-calorie/main-dish/pizza\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3}}}",
+	"method": "GET",
+	"orderNo": 1776777519555,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/20106/low-calorie/main-dish/pizza",
+	"url": "https://www.eatingwell.com/recipes/20106/low-calorie/main-dish/pizza/"
+}

@@ -1,0 +1,9 @@
+{
+	"id": "vLGrYBEfLiYD38l",
+	"json": "{\"id\":\"vLGrYBEfLiYD38l\",\"url\":\"https://www.eatingwell.com/recipes/18142/salad/green/kale/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/18142/salad/green/kale\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3}}}",
+	"method": "GET",
+	"orderNo": 1776776027537,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/18142/salad/green/kale",
+	"url": "https://www.eatingwell.com/recipes/18142/salad/green/kale/"
+}

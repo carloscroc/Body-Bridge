@@ -1,0 +1,9 @@
+{
+	"id": "DbtjyCaOnXzfIla",
+	"json": "{\"id\":\"DbtjyCaOnXzfIla\",\"url\":\"https://www.eatingwell.com/recipe/248913/chocolate-nut-butter-bites/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/248913/chocolate-nut-butter-bites/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/248913/chocolate-nut-butter-bites\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T14:04:18.371Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/248913/chocolate-nut-butter-bites",
+	"url": "https://www.eatingwell.com/recipe/248913/chocolate-nut-butter-bites/"
+}

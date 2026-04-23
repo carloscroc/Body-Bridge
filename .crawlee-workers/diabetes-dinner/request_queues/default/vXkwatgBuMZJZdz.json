@@ -1,0 +1,9 @@
+{
+	"id": "vXkwatgBuMZJZdz",
+	"json": "{\"id\":\"vXkwatgBuMZJZdz\",\"url\":\"https://diabetesfoodhub.org/recipes/bbq-popcorn\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/bbq-popcorn\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/bbq-popcorn\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":5,\"state\":4}},\"handledAt\":\"2026-04-21T19:17:03.694Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/bbq-popcorn",
+	"url": "https://diabetesfoodhub.org/recipes/bbq-popcorn"
+}

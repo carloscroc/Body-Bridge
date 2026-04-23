@@ -1,0 +1,9 @@
+{
+	"id": "Avz1yyxOK3kzZFi",
+	"json": "{\"id\":\"Avz1yyxOK3kzZFi\",\"url\":\"https://www.eatingwell.com/recipe/259040/chicken-gyros/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/259040/chicken-gyros\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3}}}",
+	"method": "GET",
+	"orderNo": 1776777529171,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/259040/chicken-gyros",
+	"url": "https://www.eatingwell.com/recipe/259040/chicken-gyros/"
+}

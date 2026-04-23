@@ -1,0 +1,9 @@
+{
+	"id": "o9Io6Fyq2YednNH",
+	"json": "{\"id\":\"o9Io6Fyq2YednNH\",\"url\":\"https://www.eatingwell.com/recipes/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"state\":4}},\"handledAt\":\"2026-04-21T12:32:57.211Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes",
+	"url": "https://www.eatingwell.com/recipes/"
+}

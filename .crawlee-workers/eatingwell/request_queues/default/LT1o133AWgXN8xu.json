@@ -1,0 +1,9 @@
+{
+	"id": "LT1o133AWgXN8xu",
+	"json": "{\"id\":\"LT1o133AWgXN8xu\",\"url\":\"https://www.eatingwell.com/recipes/18001/ingredients/tofu/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/18001/ingredients/tofu/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/18001/ingredients/tofu\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:33:42.311Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/18001/ingredients/tofu",
+	"url": "https://www.eatingwell.com/recipes/18001/ingredients/tofu/"
+}

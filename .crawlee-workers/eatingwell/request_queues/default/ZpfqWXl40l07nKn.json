@@ -1,0 +1,9 @@
+{
+	"id": "ZpfqWXl40l07nKn",
+	"json": "{\"id\":\"ZpfqWXl40l07nKn\",\"url\":\"https://www.eatingwell.com/recipe/261206/sauteed-butternut-squash/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/261206/sauteed-butternut-squash/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/261206/sauteed-butternut-squash\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T13:41:21.995Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/261206/sauteed-butternut-squash",
+	"url": "https://www.eatingwell.com/recipe/261206/sauteed-butternut-squash/"
+}

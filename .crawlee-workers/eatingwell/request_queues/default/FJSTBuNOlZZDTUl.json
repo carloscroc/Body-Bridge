@@ -1,0 +1,9 @@
+{
+	"id": "FJSTBuNOlZZDTUl",
+	"json": "{\"id\":\"FJSTBuNOlZZDTUl\",\"url\":\"https://www.eatingwell.com/recipes/19388/side-dishes/rice/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/19388/side-dishes/rice/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/19388/side-dishes/rice\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T12:51:58.463Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/19388/side-dishes/rice",
+	"url": "https://www.eatingwell.com/recipes/19388/side-dishes/rice/"
+}

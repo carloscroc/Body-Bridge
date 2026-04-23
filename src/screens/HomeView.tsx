@@ -18,6 +18,7 @@ interface HomeViewProps {
   onOpenCalendar: () => void;
   onNavigateToNutritionPlan: () => void;
   onNavigateToSettings: () => void;
+  onNavigateToLibrary: () => void;
 }
 
 const HomeView: React.FC<HomeViewProps> = ({
@@ -26,6 +27,7 @@ const HomeView: React.FC<HomeViewProps> = ({
   onOpenCalendar,
   onNavigateToNutritionPlan,
   onNavigateToSettings,
+  onNavigateToLibrary,
 }) => {
   const { user } = useAuth();
   const [mounted, setMounted] = useState(false);
@@ -142,6 +144,15 @@ const HomeView: React.FC<HomeViewProps> = ({
           />
         )}
         <div className="flex items-center gap-2 ml-4">
+          <button 
+            type="button"
+            onClick={onNavigateToLibrary}
+            className="px-3 h-7 rounded-full bg-white/5 border border-white/10 flex items-center gap-1.5 press-scale group"
+          >
+            <LayoutGrid size={12} className="text-white/40 group-hover:text-white transition-colors" />
+            <span className="text-[9px] font-black uppercase tracking-widest text-white/40 group-hover:text-white transition-colors">Library</span>
+          </button>
+          <div className="w-px h-3 bg-white/10 mx-1" />
           <Flame size={16} className="text-orange-400" />
           <span className="text-[11px] font-black uppercase tracking-widest text-white/60">
             {dailyPlanData.filter(item => item.completed).length}/{dailyPlanData.length} completed {selectedDate === today ? 'today' : 'on ' + selectedDate}

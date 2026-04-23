@@ -1,0 +1,9 @@
+{
+	"id": "UhKppzbldivy2ya",
+	"json": "{\"id\":\"UhKppzbldivy2ya\",\"url\":\"https://www.eatingwell.com/recipe/248780/easy-salmon-cakes/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/248780/easy-salmon-cakes/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/248780/easy-salmon-cakes\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:31:26.749Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/248780/easy-salmon-cakes",
+	"url": "https://www.eatingwell.com/recipe/248780/easy-salmon-cakes/"
+}

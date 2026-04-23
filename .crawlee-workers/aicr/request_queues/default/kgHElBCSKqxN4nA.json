@@ -1,0 +1,9 @@
+{
+	"id": "kgHElBCSKqxN4nA",
+	"json": "{\"id\":\"kgHElBCSKqxN4nA\",\"url\":\"https://www.aicr.org/cancer-prevention/recipes/\",\"loadedUrl\":\"https://www.aicr.org/cancer-prevention/recipes/\",\"uniqueKey\":\"https://www.aicr.org/cancer-prevention/recipes\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"state\":4}},\"handledAt\":\"2026-04-21T12:33:02.664Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.aicr.org/cancer-prevention/recipes",
+	"url": "https://www.aicr.org/cancer-prevention/recipes/"
+}

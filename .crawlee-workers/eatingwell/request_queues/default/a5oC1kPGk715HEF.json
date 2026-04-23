@@ -1,0 +1,9 @@
+{
+	"id": "a5oC1kPGk715HEF",
+	"json": "{\"id\":\"a5oC1kPGk715HEF\",\"url\":\"https://www.eatingwell.com/recipe/273093/pepperoni-pizza-rolls/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/273093/pepperoni-pizza-rolls\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3}}}",
+	"method": "GET",
+	"orderNo": 1776775710093,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/273093/pepperoni-pizza-rolls",
+	"url": "https://www.eatingwell.com/recipe/273093/pepperoni-pizza-rolls/"
+}

@@ -1,0 +1,9 @@
+{
+	"id": "Sb5DXNbWp4Jn1W2",
+	"json": "{\"id\":\"Sb5DXNbWp4Jn1W2\",\"url\":\"https://www.eatingwell.com/recipe/250259/bacon-mashed-potatoes/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/250259/bacon-mashed-potatoes\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3}}}",
+	"method": "GET",
+	"orderNo": 1776777363637,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/250259/bacon-mashed-potatoes",
+	"url": "https://www.eatingwell.com/recipe/250259/bacon-mashed-potatoes/"
+}

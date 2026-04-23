@@ -1,0 +1,9 @@
+{
+	"id": "sRbZd1wolwjLDfh",
+	"json": "{\"id\":\"sRbZd1wolwjLDfh\",\"url\":\"https://www.forksoverknives.com/recipes/vegan-soups-stews/vegan-pasta-fagioli/\",\"loadedUrl\":\"https://www.forksoverknives.com/recipes/vegan-soups-stews/vegan-pasta-fagioli/\",\"uniqueKey\":\"https://www.forksoverknives.com/recipes/vegan-soups-stews/vegan-pasta-fagioli\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T12:49:17.662Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.forksoverknives.com/recipes/vegan-soups-stews/vegan-pasta-fagioli",
+	"url": "https://www.forksoverknives.com/recipes/vegan-soups-stews/vegan-pasta-fagioli/"
+}

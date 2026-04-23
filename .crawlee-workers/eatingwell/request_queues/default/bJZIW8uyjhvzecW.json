@@ -1,0 +1,9 @@
+{
+	"id": "bJZIW8uyjhvzecW",
+	"json": "{\"id\":\"bJZIW8uyjhvzecW\",\"url\":\"https://www.eatingwell.com/recipes/19579/desserts/cookies/sugar/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/19579/desserts/cookies/sugar\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3}}}",
+	"method": "GET",
+	"orderNo": 1776776373658,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/19579/desserts/cookies/sugar",
+	"url": "https://www.eatingwell.com/recipes/19579/desserts/cookies/sugar/"
+}

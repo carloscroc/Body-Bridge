@@ -1,0 +1,9 @@
+{
+	"id": "e643Jgx9OMz7McU",
+	"json": "{\"id\":\"e643Jgx9OMz7McU\",\"url\":\"https://www.eatingwell.com/recipes/18278/desserts/candy/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/18278/desserts/candy/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/18278/desserts/candy\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T12:59:08.955Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/18278/desserts/candy",
+	"url": "https://www.eatingwell.com/recipes/18278/desserts/candy/"
+}

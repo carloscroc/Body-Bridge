@@ -1,0 +1,9 @@
+{
+	"id": "9BPeZq5c3IzvNkQ",
+	"json": "{\"id\":\"9BPeZq5c3IzvNkQ\",\"url\":\"https://www.eatingwell.com/recipe/248768/banana-bran-muffins/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/248768/banana-bran-muffins/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/248768/banana-bran-muffins\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:20:31.328Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/248768/banana-bran-muffins",
+	"url": "https://www.eatingwell.com/recipe/248768/banana-bran-muffins/"
+}

@@ -1,0 +1,9 @@
+{
+	"id": "bj0u8ulJ2FYzAvK",
+	"json": "{\"id\":\"bj0u8ulJ2FYzAvK\",\"url\":\"https://www.kidney.org/nutrition/recipes/linguine-chickpeas-broccoli-and-ricotta?page=11\",\"loadedUrl\":\"https://www.kidney.org/nutrition/recipes/linguine-chickpeas-broccoli-and-ricotta?page=11\",\"uniqueKey\":\"https://www.kidney.org/nutrition/recipes/linguine-chickpeas-broccoli-and-ricotta?page=11\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":15,\"state\":4}},\"handledAt\":\"2026-04-21T20:55:56.063Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.kidney.org/nutrition/recipes/linguine-chickpeas-broccoli-and-ricotta?page=11",
+	"url": "https://www.kidney.org/nutrition/recipes/linguine-chickpeas-broccoli-and-ricotta?page=11"
+}

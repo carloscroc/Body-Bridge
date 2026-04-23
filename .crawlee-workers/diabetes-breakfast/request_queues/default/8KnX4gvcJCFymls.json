@@ -1,0 +1,9 @@
+{
+	"id": "8KnX4gvcJCFymls",
+	"json": "{\"id\":\"8KnX4gvcJCFymls\",\"url\":\"https://diabetesfoodhub.org/recipes/pork-and-avocado-salad\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/pork-and-avocado-salad\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/pork-and-avocado-salad\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":7,\"state\":4}},\"handledAt\":\"2026-04-21T19:50:23.178Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/pork-and-avocado-salad",
+	"url": "https://diabetesfoodhub.org/recipes/pork-and-avocado-salad"
+}

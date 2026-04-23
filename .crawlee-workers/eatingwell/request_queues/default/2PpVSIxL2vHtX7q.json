@@ -1,0 +1,9 @@
+{
+	"id": "2PpVSIxL2vHtX7q",
+	"json": "{\"id\":\"2PpVSIxL2vHtX7q\",\"url\":\"https://www.eatingwell.com/recipe/252610/szechuan-tofu-green-bean-stir-fry/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/252610/szechuan-tofu-green-bean-stir-fry/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/252610/szechuan-tofu-green-bean-stir-fry\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T13:56:52.958Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/252610/szechuan-tofu-green-bean-stir-fry",
+	"url": "https://www.eatingwell.com/recipe/252610/szechuan-tofu-green-bean-stir-fry/"
+}

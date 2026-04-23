@@ -1,0 +1,9 @@
+{
+	"id": "hLb43XyYYNZ9fmx",
+	"json": "{\"id\":\"hLb43XyYYNZ9fmx\",\"url\":\"https://diabetesfoodhub.org/recipes/egg-and-veggie-casserole\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/egg-and-veggie-casserole\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":1,\"errorMessages\":[\"Error: browserController.newPage() failed: ENjfC8B1rO16VpjoFSONp\\nCause:browserContext.newPage: Target page, context or browser has been closed.\\n    at BrowserPool._createPageForBrowser (C:\\\\Users\\\\thebe\\\\Downloads\\\\Forge\\\\node_modules\\\\@crawlee\\\\browser-pool\\\\browser-pool.js:405:19)\\n    at async C:\\\\Users\\\\thebe\\\\Downloads\\\\Forge\\\\node_modules\\\\@crawlee\\\\browser-pool\\\\browser-pool.js:295:20\"],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":16,\"state\":5}}}",
+	"method": "GET",
+	"orderNo": 1776811573935,
+	"retryCount": 1,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/egg-and-veggie-casserole",
+	"url": "https://diabetesfoodhub.org/recipes/egg-and-veggie-casserole"
+}

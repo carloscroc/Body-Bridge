@@ -1,0 +1,9 @@
+{
+	"id": "NLGeTJU6oKH8O2R",
+	"json": "{\"id\":\"NLGeTJU6oKH8O2R\",\"url\":\"https://recipes.heart.org/en/recipes/zucchini-noodle-greek-salad\",\"loadedUrl\":\"https://recipes.heart.org/en/recipes/zucchini-noodle-greek-salad\",\"uniqueKey\":\"https://recipes.heart.org/en/recipes/zucchini-noodle-greek-salad\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":4,\"state\":4}},\"handledAt\":\"2026-04-21T12:43:32.244Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recipes.heart.org/en/recipes/zucchini-noodle-greek-salad",
+	"url": "https://recipes.heart.org/en/recipes/zucchini-noodle-greek-salad"
+}

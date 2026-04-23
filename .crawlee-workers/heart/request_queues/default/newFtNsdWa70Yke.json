@@ -1,0 +1,9 @@
+{
+	"id": "newFtNsdWa70Yke",
+	"json": "{\"id\":\"newFtNsdWa70Yke\",\"url\":\"https://recipes.heart.org/en/recipes/pork-and-green-onion-tacos---delicious-decisions\",\"loadedUrl\":\"https://recipes.heart.org/en/recipes/pork-and-green-onion-tacos---delicious-decisions\",\"uniqueKey\":\"https://recipes.heart.org/en/recipes/pork-and-green-onion-tacos---delicious-decisions\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":7,\"state\":4}},\"handledAt\":\"2026-04-21T13:22:49.778Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recipes.heart.org/en/recipes/pork-and-green-onion-tacos---delicious-decisions",
+	"url": "https://recipes.heart.org/en/recipes/pork-and-green-onion-tacos---delicious-decisions"
+}

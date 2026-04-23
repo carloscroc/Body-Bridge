@@ -1,0 +1,9 @@
+{
+	"id": "H7FpPhOAiD7DE6x",
+	"json": "{\"id\":\"H7FpPhOAiD7DE6x\",\"url\":\"https://www.eatingwell.com/recipes/22825/nutrient-focused-diets/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/22825/nutrient-focused-diets/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/22825/nutrient-focused-diets\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":1,\"state\":4}},\"handledAt\":\"2026-04-21T12:35:08.560Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/22825/nutrient-focused-diets",
+	"url": "https://www.eatingwell.com/recipes/22825/nutrient-focused-diets/"
+}

@@ -1,0 +1,9 @@
+{
+	"id": "XBOkubp51bW41T8",
+	"json": "{\"id\":\"XBOkubp51bW41T8\",\"url\":\"https://www.eatingwell.com/recipe/274096/cauliflower-rice-bowls-with-grilled-chicken/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/274096/cauliflower-rice-bowls-with-grilled-chicken/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/274096/cauliflower-rice-bowls-with-grilled-chicken\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T14:00:50.936Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/274096/cauliflower-rice-bowls-with-grilled-chicken",
+	"url": "https://www.eatingwell.com/recipe/274096/cauliflower-rice-bowls-with-grilled-chicken/"
+}

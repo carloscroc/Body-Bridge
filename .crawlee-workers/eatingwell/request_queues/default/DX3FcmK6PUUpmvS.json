@@ -1,0 +1,9 @@
+{
+	"id": "DX3FcmK6PUUpmvS",
+	"json": "{\"id\":\"DX3FcmK6PUUpmvS\",\"url\":\"https://www.eatingwell.com/recipe/252543/hearty-minestrone/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/252543/hearty-minestrone/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/252543/hearty-minestrone\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T13:59:32.329Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/252543/hearty-minestrone",
+	"url": "https://www.eatingwell.com/recipe/252543/hearty-minestrone/"
+}

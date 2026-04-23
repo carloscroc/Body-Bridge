@@ -1,0 +1,9 @@
+{
+	"id": "V6ezdi8koXQjt8o",
+	"json": "{\"id\":\"V6ezdi8koXQjt8o\",\"url\":\"https://www.eatingwell.com/recipes/18206/soup/fish-seafood-soups/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/18206/soup/fish-seafood-soups/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/18206/soup/fish-seafood-soups\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T12:56:50.788Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/18206/soup/fish-seafood-soups",
+	"url": "https://www.eatingwell.com/recipes/18206/soup/fish-seafood-soups/"
+}

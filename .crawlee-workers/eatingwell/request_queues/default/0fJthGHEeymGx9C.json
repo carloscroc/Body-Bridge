@@ -1,0 +1,9 @@
+{
+	"id": "0fJthGHEeymGx9C",
+	"json": "{\"id\":\"0fJthGHEeymGx9C\",\"url\":\"https://www.eatingwell.com/recipes/18131/salad/vegetable/corn/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/18131/salad/vegetable/corn\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3}}}",
+	"method": "GET",
+	"orderNo": 1776776095691,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/18131/salad/vegetable/corn",
+	"url": "https://www.eatingwell.com/recipes/18131/salad/vegetable/corn/"
+}

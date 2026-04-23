@@ -1,0 +1,9 @@
+{
+	"id": "blz6XsOkOFEJyh9",
+	"json": "{\"id\":\"blz6XsOkOFEJyh9\",\"url\":\"https://www.eatingwell.com/recipes/17932/ingredients/meat-poultry/chicken/main-dish/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/17932/ingredients/meat-poultry/chicken/main-dish/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/17932/ingredients/meat-poultry/chicken/main-dish\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:39:45.493Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/17932/ingredients/meat-poultry/chicken/main-dish",
+	"url": "https://www.eatingwell.com/recipes/17932/ingredients/meat-poultry/chicken/main-dish/"
+}

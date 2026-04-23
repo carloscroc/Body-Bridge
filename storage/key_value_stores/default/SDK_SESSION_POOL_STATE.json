@@ -1,0 +1,179 @@
+{
+  "usableSessionsCount": 4,
+  "retiredSessionsCount": 0,
+  "sessions": [
+    {
+      "id": "session_Hrq9XrzbPS",
+      "cookieJar": {
+        "version": "tough-cookie@6.0.0",
+        "storeType": "MemoryCookieStore",
+        "rejectPublicSuffixes": true,
+        "enableLooseMode": false,
+        "allowSpecialUseDomain": true,
+        "prefixSecurity": "silent",
+        "cookies": []
+      },
+      "userData": {},
+      "maxErrorScore": 3,
+      "errorScoreDecrement": 0.5,
+      "expiresAt": "2026-04-23T14:26:49.211Z",
+      "createdAt": "2026-04-23T13:36:49.211Z",
+      "usageCount": 0,
+      "maxUsageCount": 50,
+      "errorScore": 0
+    },
+    {
+      "id": "session_CIWPH7jw3y",
+      "cookieJar": {
+        "version": "tough-cookie@6.0.0",
+        "storeType": "MemoryCookieStore",
+        "rejectPublicSuffixes": true,
+        "enableLooseMode": false,
+        "allowSpecialUseDomain": true,
+        "prefixSecurity": "silent",
+        "cookies": [
+          {
+            "key": "impact_uuid",
+            "value": "e8a153b2-f615-4b8e-9b4b-c0879bdf2bd7",
+            "expires": "2027-04-23T13:36:53.000Z",
+            "domain": "www.forksoverknives.com",
+            "path": "/",
+            "hostOnly": true,
+            "creation": "2026-04-23T13:36:56.715Z",
+            "lastAccessed": "2026-04-23T13:37:00.400Z"
+          },
+          {
+            "key": "_gcl_au",
+            "value": "1.1.534799235.1776951413",
+            "expires": "2026-07-22T13:36:53.000Z",
+            "domain": "forksoverknives.com",
+            "path": "/",
+            "hostOnly": false,
+            "creation": "2026-04-23T13:36:56.716Z",
+            "lastAccessed": "2026-04-23T13:37:00.401Z"
+          },
+          {
+            "key": "__kla_id",
+            "value": "eyJjaWQiOiJNekEyWm1ZNE5EWXRZV0l5TkMwME1qVTBMVGcxTUdRdFpEY3pNalEyTTJOaE1URXcifQ==",
+            "expires": "2027-05-28T13:36:53.922Z",
+            "domain": "www.forksoverknives.com",
+            "path": "/",
+            "hostOnly": true,
+            "creation": "2026-04-23T13:36:56.726Z",
+            "lastAccessed": "2026-04-23T13:37:00.401Z"
+          },
+          {
+            "key": "_ga",
+            "value": "GA1.2.477987759.1776951414",
+            "expires": "2027-05-28T13:36:53.972Z",
+            "domain": "forksoverknives.com",
+            "path": "/",
+            "hostOnly": false,
+            "creation": "2026-04-23T13:36:56.726Z",
+            "lastAccessed": "2026-04-23T13:37:00.401Z"
+          },
+          {
+            "key": "_gid",
+            "value": "GA1.2.1850522521.1776951414",
+            "expires": "2026-04-24T13:36:53.000Z",
+            "domain": "forksoverknives.com",
+            "path": "/",
+            "hostOnly": false,
+            "creation": "2026-04-23T13:36:56.730Z",
+            "lastAccessed": "2026-04-23T13:37:00.401Z"
+          },
+          {
+            "key": "_dc_gtm_UA-12974007-2",
+            "value": "1",
+            "expires": "2026-04-23T13:37:53.000Z",
+            "domain": "forksoverknives.com",
+            "path": "/",
+            "hostOnly": false,
+            "creation": "2026-04-23T13:36:56.730Z",
+            "lastAccessed": "2026-04-23T13:37:00.401Z"
+          },
+          {
+            "key": "_hjSessionUser_1972947",
+            "value": "eyJpZCI6IjVlMDBjOTcwLTRmNjItNWY2ZC1iZmMyLTJlZWZlOTVjYTY1NyIsImNyZWF0ZWQiOjE3NzY5NTE0MTQwODMsImV4aXN0aW5nIjpmYWxzZX0=",
+            "expires": "2027-04-23T13:36:54.000Z",
+            "domain": "forksoverknives.com",
+            "path": "/",
+            "secure": true,
+            "hostOnly": false,
+            "creation": "2026-04-23T13:36:56.730Z",
+            "lastAccessed": "2026-04-23T13:37:00.401Z"
+          },
+          {
+            "key": "_hjSession_1972947",
+            "value": "eyJpZCI6IjZiZTY2Yjc4LWY0MzgtNDc0ZS1hNDFhLTA4ZDNlZTg2Y2EwNyIsImMiOjE3NzY5NTE0MTQwODUsInMiOjAsInIiOjAsInNiIjowLCJzciI6MCwic2UiOjAsImZzIjoxLCJzcCI6MH0=",
+            "expires": "2026-04-23T14:06:54.000Z",
+            "domain": "forksoverknives.com",
+            "path": "/",
+            "secure": true,
+            "hostOnly": false,
+            "creation": "2026-04-23T13:36:56.731Z",
+            "lastAccessed": "2026-04-23T13:37:00.401Z"
+          },
+          {
+            "key": "_ga_DZKDMJXGWC",
+            "value": "GS2.1.s1776951413$o1$g0$t1776951415$j58$l0$h0",
+            "expires": "2027-05-28T13:36:55.169Z",
+            "domain": "forksoverknives.com",
+            "path": "/",
+            "hostOnly": false,
+            "creation": "2026-04-23T13:36:56.731Z",
+            "lastAccessed": "2026-04-23T13:37:00.401Z"
+          }
+        ]
+      },
+      "userData": {},
+      "maxErrorScore": 3,
+      "errorScoreDecrement": 0.5,
+      "expiresAt": "2026-04-23T14:26:49.220Z",
+      "createdAt": "2026-04-23T13:36:49.220Z",
+      "usageCount": 3,
+      "maxUsageCount": 50,
+      "errorScore": 0
+    },
+    {
+      "id": "session_VTDfErCT3j",
+      "cookieJar": {
+        "version": "tough-cookie@6.0.0",
+        "storeType": "MemoryCookieStore",
+        "rejectPublicSuffixes": true,
+        "enableLooseMode": false,
+        "allowSpecialUseDomain": true,
+        "prefixSecurity": "silent",
+        "cookies": []
+      },
+      "userData": {},
+      "maxErrorScore": 3,
+      "errorScoreDecrement": 0.5,
+      "expiresAt": "2026-04-23T14:26:55.271Z",
+      "createdAt": "2026-04-23T13:36:55.271Z",
+      "usageCount": 0,
+      "maxUsageCount": 50,
+      "errorScore": 0
+    },
+    {
+      "id": "session_uCRBp5gasf",
+      "cookieJar": {
+        "version": "tough-cookie@6.0.0",
+        "storeType": "MemoryCookieStore",
+        "rejectPublicSuffixes": true,
+        "enableLooseMode": false,
+        "allowSpecialUseDomain": true,
+        "prefixSecurity": "silent",
+        "cookies": []
+      },
+      "userData": {},
+      "maxErrorScore": 3,
+      "errorScoreDecrement": 0.5,
+      "expiresAt": "2026-04-23T14:26:59.501Z",
+      "createdAt": "2026-04-23T13:36:59.501Z",
+      "usageCount": 0,
+      "maxUsageCount": 50,
+      "errorScore": 0
+    }
+  ]
+}

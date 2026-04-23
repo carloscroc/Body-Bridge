@@ -1,0 +1,53 @@
+{
+  "requestsFinished": 236,
+  "requestsFailed": 16,
+  "requestsRetries": 119,
+  "requestsFailedPerMinute": 0,
+  "requestsFinishedPerMinute": 3,
+  "requestMinDurationMillis": 6637,
+  "requestMaxDurationMillis": 44338,
+  "requestTotalFailedDurationMillis": 21493,
+  "requestTotalFinishedDurationMillis": 3632605,
+  "crawlerStartedAt": "2026-04-21T12:32:16.478Z",
+  "crawlerFinishedAt": "2026-04-21T13:42:42.399Z",
+  "statsPersistedAt": "2026-04-21T13:42:42.399Z",
+  "crawlerRuntimeMillis": 4227046,
+  "crawlerLastStartTimestamp": 1776774735353,
+  "requestRetryHistogram": [
+    133,
+    59,
+    24,
+    36
+  ],
+  "statsId": 0,
+  "requestAvgFailedDurationMillis": 1343,
+  "requestAvgFinishedDurationMillis": 15392,
+  "requestTotalDurationMillis": 3654098,
+  "requestsTotal": 252,
+  "requestsWithStatusCode": {
+    "200": 236,
+    "403": 231
+  },
+  "errors": {
+    "C:\\Users\\thebe\\Downloads\\Forge\\node_modules\\@crawlee\\basic\\internals\\basic-crawler.js:913:19": {
+      "missing error code": {
+        "Error": {
+          "Request blocked - received 403 status code.": {
+            "count": 16
+          }
+        }
+      }
+    }
+  },
+  "retryErrors": {
+    "C:\\Users\\thebe\\Downloads\\Forge\\node_modules\\@crawlee\\basic\\internals\\basic-crawler.js:913:19": {
+      "missing error code": {
+        "Error": {
+          "Request blocked - received 403 status code.": {
+            "count": 215
+          }
+        }
+      }
+    }
+  }
+}

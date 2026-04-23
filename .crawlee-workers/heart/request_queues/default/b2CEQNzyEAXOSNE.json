@@ -1,0 +1,9 @@
+{
+	"id": "b2CEQNzyEAXOSNE",
+	"json": "{\"id\":\"b2CEQNzyEAXOSNE\",\"url\":\"https://recipes.heart.org/en/recipes/tuna-stir-fry\",\"loadedUrl\":\"https://recipes.heart.org/en/recipes/tuna-stir-fry\",\"uniqueKey\":\"https://recipes.heart.org/en/recipes/tuna-stir-fry\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":7,\"state\":4}},\"handledAt\":\"2026-04-21T13:24:46.819Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recipes.heart.org/en/recipes/tuna-stir-fry",
+	"url": "https://recipes.heart.org/en/recipes/tuna-stir-fry"
+}

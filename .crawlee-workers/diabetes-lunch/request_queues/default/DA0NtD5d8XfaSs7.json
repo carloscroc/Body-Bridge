@@ -1,0 +1,9 @@
+{
+	"id": "DA0NtD5d8XfaSs7",
+	"json": "{\"id\":\"DA0NtD5d8XfaSs7\",\"url\":\"https://diabetesfoodhub.org/recipes/watermelon-gazpacho\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/watermelon-gazpacho\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/watermelon-gazpacho\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T18:08:05.030Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/watermelon-gazpacho",
+	"url": "https://diabetesfoodhub.org/recipes/watermelon-gazpacho"
+}

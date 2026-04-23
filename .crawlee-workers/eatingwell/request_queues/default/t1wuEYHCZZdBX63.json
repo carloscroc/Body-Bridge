@@ -1,0 +1,9 @@
+{
+	"id": "t1wuEYHCZZdBX63",
+	"json": "{\"id\":\"t1wuEYHCZZdBX63\",\"url\":\"https://www.eatingwell.com/recipes/17903/drinks/smoothies/fruit/apple/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/17903/drinks/smoothies/fruit/apple\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3}}}",
+	"method": "GET",
+	"orderNo": 1776776498219,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/17903/drinks/smoothies/fruit/apple",
+	"url": "https://www.eatingwell.com/recipes/17903/drinks/smoothies/fruit/apple/"
+}

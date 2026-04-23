@@ -1,0 +1,9 @@
+{
+	"id": "PIlVLDl3TyQU2z1",
+	"json": "{\"id\":\"PIlVLDl3TyQU2z1\",\"url\":\"https://diabetesfoodhub.org/recipes/whole-wheat-fresh-gingerbread\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/whole-wheat-fresh-gingerbread\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/whole-wheat-fresh-gingerbread\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T17:37:42.799Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/whole-wheat-fresh-gingerbread",
+	"url": "https://diabetesfoodhub.org/recipes/whole-wheat-fresh-gingerbread"
+}

@@ -1,0 +1,9 @@
+{
+	"id": "cUTFMVG86dKsscL",
+	"json": "{\"id\":\"cUTFMVG86dKsscL\",\"url\":\"https://recipes.heart.org/en/recipes/guacamole-deviled-eggs\",\"loadedUrl\":\"https://recipes.heart.org/en/recipes/guacamole-deviled-eggs\",\"uniqueKey\":\"https://recipes.heart.org/en/recipes/guacamole-deviled-eggs\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":4,\"state\":4}},\"handledAt\":\"2026-04-21T12:42:25.548Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recipes.heart.org/en/recipes/guacamole-deviled-eggs",
+	"url": "https://recipes.heart.org/en/recipes/guacamole-deviled-eggs"
+}

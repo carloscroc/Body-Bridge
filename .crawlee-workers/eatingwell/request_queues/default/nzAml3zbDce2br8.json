@@ -1,0 +1,9 @@
+{
+	"id": "nzAml3zbDce2br8",
+	"json": "{\"id\":\"nzAml3zbDce2br8\",\"url\":\"https://www.eatingwell.com/recipes/18430/low-calorie/drinks/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/18430/low-calorie/drinks/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/18430/low-calorie/drinks\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:19:18.621Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/18430/low-calorie/drinks",
+	"url": "https://www.eatingwell.com/recipes/18430/low-calorie/drinks/"
+}

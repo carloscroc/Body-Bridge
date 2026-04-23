@@ -1,0 +1,9 @@
+{
+	"id": "gdswOAu4vXsgYRw",
+	"json": "{\"id\":\"gdswOAu4vXsgYRw\",\"url\":\"https://www.eatingwell.com/recipe/248737/beet-salad/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/248737/beet-salad/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/248737/beet-salad\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:29:47.636Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/248737/beet-salad",
+	"url": "https://www.eatingwell.com/recipe/248737/beet-salad/"
+}

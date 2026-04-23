@@ -1,0 +1,9 @@
+{
+	"id": "iHDUMSwQgT79kbZ",
+	"json": "{\"id\":\"iHDUMSwQgT79kbZ\",\"url\":\"https://diabetesfoodhub.org/recipes/breakfast-pizza\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/breakfast-pizza\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/breakfast-pizza\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":1,\"state\":4}},\"handledAt\":\"2026-04-21T17:28:47.605Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/breakfast-pizza",
+	"url": "https://diabetesfoodhub.org/recipes/breakfast-pizza"
+}

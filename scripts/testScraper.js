@@ -439,4 +439,4 @@ class RecipeScraper {
 
 // Run the test
 const testScraper = new RecipeScraper();
-testScraper.run().catch(console.error);
+testScraper.run().catch((e) => { console.error(e); process.exit(1); });

@@ -1,0 +1,9 @@
+{
+	"id": "JcKjDA5ZfQXJ9cV",
+	"json": "{\"id\":\"JcKjDA5ZfQXJ9cV\",\"url\":\"https://www.aicr.org/cancer-prevention/recipes/mashed-avocado-with-feta-and-pepitas/\",\"loadedUrl\":\"https://www.aicr.org/cancer-prevention/recipes/mashed-avocado-with-feta-and-pepitas/\",\"uniqueKey\":\"https://www.aicr.org/cancer-prevention/recipes/mashed-avocado-with-feta-and-pepitas\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":1,\"state\":4}},\"handledAt\":\"2026-04-21T12:37:15.096Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.aicr.org/cancer-prevention/recipes/mashed-avocado-with-feta-and-pepitas",
+	"url": "https://www.aicr.org/cancer-prevention/recipes/mashed-avocado-with-feta-and-pepitas/"
+}

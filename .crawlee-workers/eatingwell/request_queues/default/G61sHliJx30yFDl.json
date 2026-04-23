@@ -1,0 +1,9 @@
+{
+	"id": "G61sHliJx30yFDl",
+	"json": "{\"id\":\"G61sHliJx30yFDl\",\"url\":\"https://www.eatingwell.com/recipe/258450/green-goddess-salad-with-chickpeas/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/258450/green-goddess-salad-with-chickpeas/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/258450/green-goddess-salad-with-chickpeas\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T13:42:00.384Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/258450/green-goddess-salad-with-chickpeas",
+	"url": "https://www.eatingwell.com/recipe/258450/green-goddess-salad-with-chickpeas/"
+}

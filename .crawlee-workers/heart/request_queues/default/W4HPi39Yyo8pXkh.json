@@ -1,0 +1,9 @@
+{
+	"id": "W4HPi39Yyo8pXkh",
+	"json": "{\"id\":\"W4HPi39Yyo8pXkh\",\"url\":\"https://recipes.heart.org/en/recipes/green-tea-berry-banana-smoothie\",\"loadedUrl\":\"https://recipes.heart.org/en/recipes/green-tea-berry-banana-smoothie\",\"uniqueKey\":\"https://recipes.heart.org/en/recipes/green-tea-berry-banana-smoothie\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":8,\"state\":4}},\"handledAt\":\"2026-04-21T13:34:10.467Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recipes.heart.org/en/recipes/green-tea-berry-banana-smoothie",
+	"url": "https://recipes.heart.org/en/recipes/green-tea-berry-banana-smoothie"
+}

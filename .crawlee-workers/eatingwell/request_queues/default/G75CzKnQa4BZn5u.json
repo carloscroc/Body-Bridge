@@ -1,0 +1,9 @@
+{
+	"id": "G75CzKnQa4BZn5u",
+	"json": "{\"id\":\"G75CzKnQa4BZn5u\",\"url\":\"https://www.eatingwell.com/recipes/18418/low-calorie/salad/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/18418/low-calorie/salad/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/18418/low-calorie/salad\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:18:21.520Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/18418/low-calorie/salad",
+	"url": "https://www.eatingwell.com/recipes/18418/low-calorie/salad/"
+}

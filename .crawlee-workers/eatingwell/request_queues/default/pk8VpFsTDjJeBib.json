@@ -1,0 +1,9 @@
+{
+	"id": "pk8VpFsTDjJeBib",
+	"json": "{\"id\":\"pk8VpFsTDjJeBib\",\"url\":\"https://www.eatingwell.com/recipe/250009/brothy-ginger-soy-noodles-with-turkey-bok-choy/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/250009/brothy-ginger-soy-noodles-with-turkey-bok-choy/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/250009/brothy-ginger-soy-noodles-with-turkey-bok-choy\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T14:10:49.301Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/250009/brothy-ginger-soy-noodles-with-turkey-bok-choy",
+	"url": "https://www.eatingwell.com/recipe/250009/brothy-ginger-soy-noodles-with-turkey-bok-choy/"
+}

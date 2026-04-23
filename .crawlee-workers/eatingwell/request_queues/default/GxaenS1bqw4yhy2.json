@@ -1,0 +1,9 @@
+{
+	"id": "GxaenS1bqw4yhy2",
+	"json": "{\"id\":\"GxaenS1bqw4yhy2\",\"url\":\"https://www.eatingwell.com/recipe/252666/green-juice/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/252666/green-juice/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/252666/green-juice\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T14:14:58.561Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/252666/green-juice",
+	"url": "https://www.eatingwell.com/recipe/252666/green-juice/"
+}

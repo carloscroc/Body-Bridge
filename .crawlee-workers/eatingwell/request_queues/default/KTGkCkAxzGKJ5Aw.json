@@ -1,0 +1,9 @@
+{
+	"id": "KTGkCkAxzGKJ5Aw",
+	"json": "{\"id\":\"KTGkCkAxzGKJ5Aw\",\"url\":\"https://www.eatingwell.com/recipe/258256/fresh-fruit-salad/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/258256/fresh-fruit-salad/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/258256/fresh-fruit-salad\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:38:53.851Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/258256/fresh-fruit-salad",
+	"url": "https://www.eatingwell.com/recipe/258256/fresh-fruit-salad/"
+}

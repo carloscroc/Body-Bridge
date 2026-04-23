@@ -1,0 +1,9 @@
+{
+	"id": "toMpwACK0GJZHrp",
+	"json": "{\"id\":\"toMpwACK0GJZHrp\",\"url\":\"https://www.eatingwell.com/recipe/8028935/vegetarian-no-chicken-and-dumplings/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/8028935/vegetarian-no-chicken-and-dumplings/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/8028935/vegetarian-no-chicken-and-dumplings\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T14:23:46.860Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/8028935/vegetarian-no-chicken-and-dumplings",
+	"url": "https://www.eatingwell.com/recipe/8028935/vegetarian-no-chicken-and-dumplings/"
+}

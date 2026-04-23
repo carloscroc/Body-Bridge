@@ -1,0 +1,9 @@
+{
+	"id": "oc0DIAAd3XaX29y",
+	"json": "{\"id\":\"oc0DIAAd3XaX29y\",\"url\":\"https://www.eatingwell.com/recipes/18244/ingredients/fruit/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/18244/ingredients/fruit/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/18244/ingredients/fruit\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:34:18.554Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/18244/ingredients/fruit",
+	"url": "https://www.eatingwell.com/recipes/18244/ingredients/fruit/"
+}

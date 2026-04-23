@@ -1,0 +1,9 @@
+{
+	"id": "GUseR8SLMqQmMln",
+	"json": "{\"id\":\"GUseR8SLMqQmMln\",\"url\":\"https://www.eatingwell.com/recipe/250720/grilled-chicken-caesar-salad-wrap/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/250720/grilled-chicken-caesar-salad-wrap/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/250720/grilled-chicken-caesar-salad-wrap\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T14:20:51.865Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/250720/grilled-chicken-caesar-salad-wrap",
+	"url": "https://www.eatingwell.com/recipe/250720/grilled-chicken-caesar-salad-wrap/"
+}

@@ -1,0 +1,9 @@
+{
+	"id": "lwAti3jG4xDTubz",
+	"json": "{\"id\":\"lwAti3jG4xDTubz\",\"url\":\"https://recipes.heart.org/en/recipes/el-hoppin-john\",\"loadedUrl\":\"https://recipes.heart.org/en/recipes/el-hoppin-john\",\"uniqueKey\":\"https://recipes.heart.org/en/recipes/el-hoppin-john\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":8,\"state\":4}},\"handledAt\":\"2026-04-21T13:35:32.523Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recipes.heart.org/en/recipes/el-hoppin-john",
+	"url": "https://recipes.heart.org/en/recipes/el-hoppin-john"
+}

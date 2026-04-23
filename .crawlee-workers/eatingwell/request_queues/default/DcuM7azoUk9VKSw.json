@@ -1,0 +1,9 @@
+{
+	"id": "DcuM7azoUk9VKSw",
+	"json": "{\"id\":\"DcuM7azoUk9VKSw\",\"url\":\"https://www.eatingwell.com/recipes/18246/ingredients/herbs-spices/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/18246/ingredients/herbs-spices/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/18246/ingredients/herbs-spices\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:34:33.779Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/18246/ingredients/herbs-spices",
+	"url": "https://www.eatingwell.com/recipes/18246/ingredients/herbs-spices/"
+}

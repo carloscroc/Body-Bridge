@@ -1,0 +1,9 @@
+{
+	"id": "GIpTxYMRTEibPux",
+	"json": "{\"id\":\"GIpTxYMRTEibPux\",\"url\":\"https://recipes.heart.org/en/recipes/strawberry-lemonade-italian-ice\",\"loadedUrl\":\"https://recipes.heart.org/en/recipes/strawberry-lemonade-italian-ice\",\"uniqueKey\":\"https://recipes.heart.org/en/recipes/strawberry-lemonade-italian-ice\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":11,\"state\":4}},\"handledAt\":\"2026-04-21T13:50:43.943Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recipes.heart.org/en/recipes/strawberry-lemonade-italian-ice",
+	"url": "https://recipes.heart.org/en/recipes/strawberry-lemonade-italian-ice"
+}

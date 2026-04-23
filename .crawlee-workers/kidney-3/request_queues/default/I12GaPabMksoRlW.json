@@ -1,0 +1,9 @@
+{
+	"id": "I12GaPabMksoRlW",
+	"json": "{\"id\":\"I12GaPabMksoRlW\",\"url\":\"https://www.kidney.org/nutrition/recipes/cauliflower-no-mash-potatoes\",\"loadedUrl\":\"https://www.kidney.org/nutrition/recipes/cauliflower-no-mash-potatoes\",\"uniqueKey\":\"https://www.kidney.org/nutrition/recipes/cauliflower-no-mash-potatoes\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":10,\"state\":4}},\"handledAt\":\"2026-04-21T18:46:56.110Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.kidney.org/nutrition/recipes/cauliflower-no-mash-potatoes",
+	"url": "https://www.kidney.org/nutrition/recipes/cauliflower-no-mash-potatoes"
+}

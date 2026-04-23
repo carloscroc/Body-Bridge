@@ -1,0 +1,9 @@
+{
+	"id": "k6uD3s00M3prXUY",
+	"json": "{\"id\":\"k6uD3s00M3prXUY\",\"url\":\"https://www.eatingwell.com/recipe/255165/seeded-whole-grain-quick-bread/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/255165/seeded-whole-grain-quick-bread/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/255165/seeded-whole-grain-quick-bread\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:21:46.961Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/255165/seeded-whole-grain-quick-bread",
+	"url": "https://www.eatingwell.com/recipe/255165/seeded-whole-grain-quick-bread/"
+}

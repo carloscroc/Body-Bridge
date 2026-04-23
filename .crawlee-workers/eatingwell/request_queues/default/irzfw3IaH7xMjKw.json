@@ -1,0 +1,9 @@
+{
+	"id": "irzfw3IaH7xMjKw",
+	"json": "{\"id\":\"irzfw3IaH7xMjKw\",\"url\":\"https://www.eatingwell.com/recipes/18342/health-condition/diabetic/drinks/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/18342/health-condition/diabetic/drinks/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/18342/health-condition/diabetic/drinks\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:04:51.956Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/18342/health-condition/diabetic/drinks",
+	"url": "https://www.eatingwell.com/recipes/18342/health-condition/diabetic/drinks/"
+}

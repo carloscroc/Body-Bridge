@@ -1,0 +1,9 @@
+{
+	"id": "AnEXEdCujqwyOBj",
+	"json": "{\"id\":\"AnEXEdCujqwyOBj\",\"url\":\"https://diabetesfoodhub.org/recipes/cooked-black-beans\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/cooked-black-beans\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/cooked-black-beans\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":9,\"state\":4}},\"handledAt\":\"2026-04-21T21:11:11.444Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/cooked-black-beans",
+	"url": "https://diabetesfoodhub.org/recipes/cooked-black-beans"
+}

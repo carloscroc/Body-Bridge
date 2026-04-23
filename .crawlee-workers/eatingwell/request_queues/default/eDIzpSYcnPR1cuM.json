@@ -1,0 +1,9 @@
+{
+	"id": "eDIzpSYcnPR1cuM",
+	"json": "{\"id\":\"eDIzpSYcnPR1cuM\",\"url\":\"https://www.eatingwell.com/recipes/19292/ingredients/vegetables/broccoli/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/19292/ingredients/vegetables/broccoli\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3}}}",
+	"method": "GET",
+	"orderNo": 1776778506849,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/19292/ingredients/vegetables/broccoli",
+	"url": "https://www.eatingwell.com/recipes/19292/ingredients/vegetables/broccoli/"
+}

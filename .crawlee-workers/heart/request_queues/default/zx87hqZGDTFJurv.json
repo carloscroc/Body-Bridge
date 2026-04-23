@@ -1,0 +1,9 @@
+{
+	"id": "zx87hqZGDTFJurv",
+	"json": "{\"id\":\"zx87hqZGDTFJurv\",\"url\":\"https://recipes.heart.org/en/recipes/pico-de-gallo-grilled-chicken-salad\",\"loadedUrl\":\"https://recipes.heart.org/en/recipes/pico-de-gallo-grilled-chicken-salad\",\"uniqueKey\":\"https://recipes.heart.org/en/recipes/pico-de-gallo-grilled-chicken-salad\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":6,\"state\":4}},\"handledAt\":\"2026-04-21T13:13:02.689Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recipes.heart.org/en/recipes/pico-de-gallo-grilled-chicken-salad",
+	"url": "https://recipes.heart.org/en/recipes/pico-de-gallo-grilled-chicken-salad"
+}

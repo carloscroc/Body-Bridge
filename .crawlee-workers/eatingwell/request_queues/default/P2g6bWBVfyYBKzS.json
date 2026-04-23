@@ -1,0 +1,9 @@
+{
+	"id": "P2g6bWBVfyYBKzS",
+	"json": "{\"id\":\"P2g6bWBVfyYBKzS\",\"url\":\"https://www.eatingwell.com/recipe/268408/no-sugar-added-sweet-potato-casserole/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/268408/no-sugar-added-sweet-potato-casserole/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/268408/no-sugar-added-sweet-potato-casserole\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T13:53:06.257Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/268408/no-sugar-added-sweet-potato-casserole",
+	"url": "https://www.eatingwell.com/recipe/268408/no-sugar-added-sweet-potato-casserole/"
+}

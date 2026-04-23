@@ -1,0 +1,211 @@
+{
+  "usableSessionsCount": 2,
+  "retiredSessionsCount": 0,
+  "sessions": [
+    {
+      "id": "session_D9icy8MfyO",
+      "cookieJar": {
+        "version": "tough-cookie@6.0.0",
+        "storeType": "MemoryCookieStore",
+        "rejectPublicSuffixes": true,
+        "enableLooseMode": false,
+        "allowSpecialUseDomain": true,
+        "prefixSecurity": "silent",
+        "cookies": []
+      },
+      "userData": {},
+      "maxErrorScore": 3,
+      "errorScoreDecrement": 0.5,
+      "expiresAt": "2026-04-21T13:22:32.091Z",
+      "createdAt": "2026-04-21T12:32:32.091Z",
+      "usageCount": 0,
+      "maxUsageCount": 50,
+      "errorScore": 0
+    },
+    {
+      "id": "session_D4jPcKqHkT",
+      "cookieJar": {
+        "version": "tough-cookie@6.0.0",
+        "storeType": "MemoryCookieStore",
+        "rejectPublicSuffixes": true,
+        "enableLooseMode": false,
+        "allowSpecialUseDomain": true,
+        "prefixSecurity": "silent",
+        "cookies": [
+          {
+            "key": "fundraiseup_cid",
+            "value": "17767747557183473105",
+            "expires": "2027-05-26T12:32:35.000Z",
+            "domain": "diabetesfoodhub.org",
+            "path": "/",
+            "hostOnly": false,
+            "creation": "2026-04-21T12:32:52.444Z",
+            "lastAccessed": "2026-04-21T12:32:52.444Z"
+          },
+          {
+            "key": "fundraiseup_stat",
+            "value": "1",
+            "expires": "2026-04-21T13:22:52.434Z",
+            "domain": "diabetesfoodhub.org",
+            "path": "/",
+            "secure": true,
+            "hostOnly": false,
+            "creation": "2026-04-21T12:32:52.446Z",
+            "lastAccessed": "2026-04-21T12:32:52.446Z"
+          },
+          {
+            "key": "fundraiseup_func",
+            "value": "{%22t%22:%22.diabetesfoodhub.org%22%2C%22s%22:%221776774755873%22%2C%22sp%22:1}",
+            "expires": "2026-04-21T13:22:52.434Z",
+            "domain": "diabetesfoodhub.org",
+            "path": "/",
+            "secure": true,
+            "hostOnly": false,
+            "creation": "2026-04-21T12:32:52.447Z",
+            "lastAccessed": "2026-04-21T12:32:52.447Z"
+          },
+          {
+            "key": "ab.storage.deviceId.4db15830-8469-48de-8f55-8a6da23081d1",
+            "value": "%7B%22g%22%3A%227fe567fc-fc02-d34a-f5cb-3d0c77b746fc%22%2C%22c%22%3A1776774757670%2C%22l%22%3A1776774757670%7D",
+            "expires": "2027-05-26T12:32:37.000Z",
+            "domain": "diabetesfoodhub.org",
+            "path": "/",
+            "hostOnly": false,
+            "creation": "2026-04-21T12:32:52.450Z",
+            "lastAccessed": "2026-04-21T12:32:52.450Z"
+          },
+          {
+            "key": "ab.storage.sessionId.4db15830-8469-48de-8f55-8a6da23081d1",
+            "value": "%7B%22g%22%3A%223e90ce6e-3906-b908-61bf-f42ddf60e36c%22%2C%22e%22%3A1776776557700%2C%22c%22%3A1776774757665%2C%22l%22%3A1776774757700%7D",
+            "expires": "2027-05-26T12:32:37.000Z",
+            "domain": "diabetesfoodhub.org",
+            "path": "/",
+            "hostOnly": false,
+            "creation": "2026-04-21T12:32:52.450Z",
+            "lastAccessed": "2026-04-21T12:32:52.450Z"
+          },
+          {
+            "key": "_clck",
+            "value": "ane841%5E2%5Eg5e%5E0%5E2302",
+            "expires": "2027-04-21T12:32:37.000Z",
+            "domain": "diabetesfoodhub.org",
+            "path": "/",
+            "hostOnly": false,
+            "creation": "2026-04-21T12:32:52.451Z",
+            "lastAccessed": "2026-04-21T12:32:52.451Z"
+          },
+          {
+            "key": "dmd-tag",
+            "value": "2e482650-3d7e-11f1-a2e5-1944f7b1666f",
+            "expires": "2027-05-26T12:32:38.078Z",
+            "domain": "diabetesfoodhub.org",
+            "path": "/",
+            "secure": true,
+            "hostOnly": false,
+            "creation": "2026-04-21T12:32:52.453Z",
+            "lastAccessed": "2026-04-21T12:32:52.453Z"
+          },
+          {
+            "key": "dmd-sid4",
+            "value": "{%22id%22:%222e6e9a10-3d7e-11f1-a551-498337617cc8%22%2C%22timestamp%22:1776774757000%2C%22lastUpdate%22:1776774757000}",
+            "expires": "2026-04-21T13:22:52.435Z",
+            "domain": "diabetesfoodhub.org",
+            "path": "/",
+            "secure": true,
+            "hostOnly": false,
+            "creation": "2026-04-21T12:32:52.453Z",
+            "lastAccessed": "2026-04-21T12:32:52.453Z"
+          },
+          {
+            "key": "_gcl_au",
+            "value": "1.1.1778498377.1776774758",
+            "expires": "2026-07-20T12:32:38.000Z",
+            "domain": "diabetesfoodhub.org",
+            "path": "/",
+            "hostOnly": false,
+            "creation": "2026-04-21T12:32:52.453Z",
+            "lastAccessed": "2026-04-21T12:32:52.453Z"
+          },
+          {
+            "key": "_fbp",
+            "value": "fb.1.1776774758374.85790418271614471",
+            "expires": "2026-07-20T12:32:38.000Z",
+            "domain": "diabetesfoodhub.org",
+            "path": "/",
+            "hostOnly": false,
+            "creation": "2026-04-21T12:32:52.453Z",
+            "lastAccessed": "2026-04-21T12:32:52.453Z"
+          },
+          {
+            "key": "_clsk",
+            "value": "1ylt3vk%5E1776774758756%5E1%5E1%5Ea.clarity.ms%2Fcollect",
+            "expires": "2026-04-22T12:32:38.000Z",
+            "domain": "diabetesfoodhub.org",
+            "path": "/",
+            "hostOnly": false,
+            "creation": "2026-04-21T12:32:52.454Z",
+            "lastAccessed": "2026-04-21T12:32:52.454Z"
+          },
+          {
+            "key": "OptanonConsent",
+            "value": "isGpcEnabled=0&datestamp=Tue+Apr+21+2026+08%3A32%3A38+GMT-0400+(Eastern+Daylight+Time)&version=202501.1.0&browserGpcFlag=0&isIABGlobal=false&hosts=&consentId=92a686fc-6bee-4a74-9ab7-440c0a80ff83&interactionCount=0&isAnonUser=1&landingPath=https%3A%2F%2Fdiabetesfoodhub.org%2Frecipes.html&groups=C0001%3A1%2CC0003%3A1%2COSSTA_BG%3A1%2CC0004%3A1%2CC0002%3A1",
+            "expires": "2027-04-21T12:32:38.000Z",
+            "domain": "diabetesfoodhub.org",
+            "path": "/",
+            "hostOnly": false,
+            "creation": "2026-04-21T12:32:52.454Z",
+            "lastAccessed": "2026-04-21T12:32:52.454Z"
+          },
+          {
+            "key": "__adroll_fpc",
+            "value": "f11560cf8a24eb5762c677c610ed5d80-1776774759208",
+            "expires": "2027-04-21T18:32:39.000Z",
+            "domain": "diabetesfoodhub.org",
+            "path": "/",
+            "hostOnly": false,
+            "creation": "2026-04-21T12:32:52.455Z",
+            "lastAccessed": "2026-04-21T12:32:52.455Z"
+          },
+          {
+            "key": "__ar_v4",
+            "value": "%7C2GXDNWF5RNB7VMLMNJQMYC%3A20260421%3A1%7CWBTKAUU6BBFNBNXJJNMTDY%3A20260421%3A1",
+            "expires": "2027-04-21T12:32:39.000Z",
+            "domain": "diabetesfoodhub.org",
+            "path": "/",
+            "hostOnly": false,
+            "creation": "2026-04-21T12:32:52.455Z",
+            "lastAccessed": "2026-04-21T12:32:52.455Z"
+          },
+          {
+            "key": "_ga",
+            "value": "GA1.1.1253942250.1776774759",
+            "expires": "2027-05-26T12:32:39.263Z",
+            "domain": "diabetesfoodhub.org",
+            "path": "/",
+            "hostOnly": false,
+            "creation": "2026-04-21T12:32:52.455Z",
+            "lastAccessed": "2026-04-21T12:32:52.455Z"
+          },
+          {
+            "key": "_ga_HZ3FZM3C88",
+            "value": "GS2.1.s1776774758$o1$g0$t1776774758$j60$l0$h0",
+            "expires": "2027-05-26T12:32:39.307Z",
+            "domain": "diabetesfoodhub.org",
+            "path": "/",
+            "hostOnly": false,
+            "creation": "2026-04-21T12:32:52.455Z",
+            "lastAccessed": "2026-04-21T12:32:52.455Z"
+          }
+        ]
+      },
+      "userData": {},
+      "maxErrorScore": 3,
+      "errorScoreDecrement": 0.5,
+      "expiresAt": "2026-04-21T13:22:32.106Z",
+      "createdAt": "2026-04-21T12:32:32.106Z",
+      "usageCount": 1,
+      "maxUsageCount": 50,
+      "errorScore": 0
+    }
+  ]
+}

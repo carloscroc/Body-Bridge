@@ -1,0 +1,9 @@
+{
+	"id": "OwzGyKgi610leFj",
+	"json": "{\"id\":\"OwzGyKgi610leFj\",\"url\":\"https://diabetesfoodhub.org/recipes/ckd-non-dialysis?page=14\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/ckd-non-dialysis?page=14\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/ckd-non-dialysis?page=14\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":1,\"errorMessages\":[\"page.$$eval: Target page, context or browser has been closed\\n    at extractUrlsFromPage (C:\\\\Users\\\\thebe\\\\Downloads\\\\Forge\\\\node_modules\\\\@crawlee\\\\browser\\\\internals\\\\browser-crawler.js:496:30)\\n    at browserCrawlerEnqueueLinks (C:\\\\Users\\\\thebe\\\\Downloads\\\\Forge\\\\node_modules\\\\@crawlee\\\\browser\\\\internals\\\\browser-crawler.js:472:24)\\n    at crawlingContext.enqueueLinks (C:\\\\Users\\\\thebe\\\\Downloads\\\\Forge\\\\node_modules\\\\@crawlee\\\\browser\\\\internals\\\\browser-crawler.js:313:20)\\n    at async PlaywrightCrawler.requestHandler (C:\\\\Users\\\\thebe\\\\Downloads\\\\Forge\\\\scripts\\\\recipeScraper.js:243:9)\\n    at async wrap (C:\\\\Users\\\\thebe\\\\Downloads\\\\Forge\\\\node_modules\\\\@apify\\\\timeout\\\\cjs\\\\index.cjs:54:21)\"],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":17,\"state\":5}}}",
+	"method": "GET",
+	"orderNo": 1776811574887,
+	"retryCount": 1,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/ckd-non-dialysis?page=14",
+	"url": "https://diabetesfoodhub.org/recipes/ckd-non-dialysis?page=14"
+}

@@ -1,0 +1,9 @@
+{
+	"id": "2WfhLOh5bklbMlE",
+	"json": "{\"id\":\"2WfhLOh5bklbMlE\",\"url\":\"https://diabetesfoodhub.org/recipes/grilled-sesame-asparagus\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/grilled-sesame-asparagus\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/grilled-sesame-asparagus\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T18:08:53.945Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/grilled-sesame-asparagus",
+	"url": "https://diabetesfoodhub.org/recipes/grilled-sesame-asparagus"
+}

@@ -1,0 +1,9 @@
+{
+	"id": "lo3zTcZome3deq5",
+	"json": "{\"id\":\"lo3zTcZome3deq5\",\"url\":\"https://www.kidney.org/nutrition/recipes/apple-bread-loaf?page=3\",\"loadedUrl\":\"https://www.kidney.org/nutrition/recipes/apple-bread-loaf?page=3\",\"uniqueKey\":\"https://www.kidney.org/nutrition/recipes/apple-bread-loaf?page=3\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":9,\"state\":4}},\"handledAt\":\"2026-04-21T18:35:51.239Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.kidney.org/nutrition/recipes/apple-bread-loaf?page=3",
+	"url": "https://www.kidney.org/nutrition/recipes/apple-bread-loaf?page=3"
+}

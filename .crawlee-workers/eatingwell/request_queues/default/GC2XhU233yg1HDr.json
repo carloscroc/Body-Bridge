@@ -1,0 +1,9 @@
+{
+	"id": "GC2XhU233yg1HDr",
+	"json": "{\"id\":\"GC2XhU233yg1HDr\",\"url\":\"https://www.eatingwell.com/recipe/250131/bagel-gone-bananas/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/250131/bagel-gone-bananas/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/250131/bagel-gone-bananas\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T14:16:01.052Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/250131/bagel-gone-bananas",
+	"url": "https://www.eatingwell.com/recipe/250131/bagel-gone-bananas/"
+}

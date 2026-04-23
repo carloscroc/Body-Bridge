@@ -1,0 +1,9 @@
+{
+	"id": "9ogu0MJJmOqQOTG",
+	"json": "{\"id\":\"9ogu0MJJmOqQOTG\",\"url\":\"https://www.eatingwell.com/recipes/22797/main-dishes/curry/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/22797/main-dishes/curry/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/22797/main-dishes/curry\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:11:58.375Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/22797/main-dishes/curry",
+	"url": "https://www.eatingwell.com/recipes/22797/main-dishes/curry/"
+}

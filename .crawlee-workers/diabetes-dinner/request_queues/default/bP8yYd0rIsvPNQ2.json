@@ -1,0 +1,9 @@
+{
+	"id": "bP8yYd0rIsvPNQ2",
+	"json": "{\"id\":\"bP8yYd0rIsvPNQ2\",\"url\":\"https://diabetesfoodhub.org/recipes/strawberry-lemon-cheesecake\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/strawberry-lemon-cheesecake\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/strawberry-lemon-cheesecake\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":6,\"state\":4}},\"handledAt\":\"2026-04-21T19:29:15.255Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/strawberry-lemon-cheesecake",
+	"url": "https://diabetesfoodhub.org/recipes/strawberry-lemon-cheesecake"
+}

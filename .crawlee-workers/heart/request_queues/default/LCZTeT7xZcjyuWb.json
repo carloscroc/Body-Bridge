@@ -1,0 +1,9 @@
+{
+	"id": "LCZTeT7xZcjyuWb",
+	"json": "{\"id\":\"LCZTeT7xZcjyuWb\",\"url\":\"https://recipes.heart.org/en/recipes/pork-and-butternut-squash-chili\",\"loadedUrl\":\"https://recipes.heart.org/en/recipes/pork-and-butternut-squash-chili\",\"uniqueKey\":\"https://recipes.heart.org/en/recipes/pork-and-butternut-squash-chili\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":15,\"state\":4}},\"handledAt\":\"2026-04-21T14:05:16.002Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recipes.heart.org/en/recipes/pork-and-butternut-squash-chili",
+	"url": "https://recipes.heart.org/en/recipes/pork-and-butternut-squash-chili"
+}

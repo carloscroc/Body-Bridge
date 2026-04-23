@@ -1,0 +1,9 @@
+{
+	"id": "ePBaBvxRzIJJv7H",
+	"json": "{\"id\":\"ePBaBvxRzIJJv7H\",\"url\":\"https://www.eatingwell.com/recipes/22790/main-dishes/meat/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/22790/main-dishes/meat/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/22790/main-dishes/meat\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:11:47.766Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/22790/main-dishes/meat",
+	"url": "https://www.eatingwell.com/recipes/22790/main-dishes/meat/"
+}

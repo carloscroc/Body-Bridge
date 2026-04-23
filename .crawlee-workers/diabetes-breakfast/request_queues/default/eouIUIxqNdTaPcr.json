@@ -1,0 +1,9 @@
+{
+	"id": "eouIUIxqNdTaPcr",
+	"json": "{\"id\":\"eouIUIxqNdTaPcr\",\"url\":\"https://diabetesfoodhub.org/recipes/apple-walnut-french-toast\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/apple-walnut-french-toast\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":1,\"errorMessages\":[\"page.goto: Target page, context or browser has been closed\\nCall log:\\n\\u001b[2m  - navigating to \\\"https://diabetesfoodhub.org/recipes/apple-walnut-french-toast\\\", waiting until \\\"load\\\"\\u001b[22m\\n\\n    at gotoExtended (C:\\\\Users\\\\thebe\\\\Downloads\\\\Forge\\\\node_modules\\\\@crawlee\\\\playwright\\\\internals\\\\utils\\\\playwright-utils.js:165:17)\\n    at PlaywrightCrawler._navigationHandler (C:\\\\Users\\\\thebe\\\\Downloads\\\\Forge\\\\node_modules\\\\@crawlee\\\\playwright\\\\internals\\\\playwright-crawler.js:117:52)\\n    at PlaywrightCrawler._handleNavigation (C:\\\\Users\\\\thebe\\\\Downloads\\\\Forge\\\\node_modules\\\\@crawlee\\\\browser\\\\internals\\\\browser-crawler.js:334:52)\\n    at async PlaywrightCrawler._runRequestHandler (C:\\\\Users\\\\thebe\\\\Downloads\\\\Forge\\\\node_modules\\\\@crawlee\\\\browser\\\\internals\\\\browser-crawler.js:260:13)\\n    at async PlaywrightCrawler._runRequestHandler (C:\\\\Users\\\\thebe\\\\Downloads\\\\Forge\\\\node_modules\\\\@crawlee\\\\playwright\\\\internals\\\\playwright-crawler.js:114:9)\\n    at async wrap (C:\\\\Users\\\\thebe\\\\Downloads\\\\Forge\\\\node_modules\\\\@apify\\\\timeout\\\\cjs\\\\index.cjs:54:21)\"],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":16,\"state\":5}}}",
+	"method": "GET",
+	"orderNo": 1776811573862,
+	"retryCount": 1,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/apple-walnut-french-toast",
+	"url": "https://diabetesfoodhub.org/recipes/apple-walnut-french-toast"
+}

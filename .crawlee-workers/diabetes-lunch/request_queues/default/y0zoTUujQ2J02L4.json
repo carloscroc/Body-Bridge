@@ -1,0 +1,9 @@
+{
+	"id": "y0zoTUujQ2J02L4",
+	"json": "{\"id\":\"y0zoTUujQ2J02L4\",\"url\":\"https://diabetesfoodhub.org/recipes/mediterranean?page=11\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/mediterranean?page=11\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/mediterranean?page=11\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":13,\"state\":4}},\"handledAt\":\"2026-04-21T22:11:44.660Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/mediterranean?page=11",
+	"url": "https://diabetesfoodhub.org/recipes/mediterranean?page=11"
+}

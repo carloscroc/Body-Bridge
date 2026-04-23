@@ -1,0 +1,9 @@
+{
+	"id": "4RNglgZW99tk5HV",
+	"json": "{\"id\":\"4RNglgZW99tk5HV\",\"url\":\"https://www.eatingwell.com/recipe/251314/roast-salmon-with-chimichurri-sauce/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/251314/roast-salmon-with-chimichurri-sauce/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/251314/roast-salmon-with-chimichurri-sauce\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T13:53:13.679Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/251314/roast-salmon-with-chimichurri-sauce",
+	"url": "https://www.eatingwell.com/recipe/251314/roast-salmon-with-chimichurri-sauce/"
+}

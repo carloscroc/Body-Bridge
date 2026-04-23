@@ -1,0 +1,9 @@
+{
+	"id": "G7vIikuKOHO0DVB",
+	"json": "{\"id\":\"G7vIikuKOHO0DVB\",\"url\":\"https://www.eatingwell.com/recipe/250396/good-green-tea-smoothie/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/250396/good-green-tea-smoothie/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/250396/good-green-tea-smoothie\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T14:15:50.951Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/250396/good-green-tea-smoothie",
+	"url": "https://www.eatingwell.com/recipe/250396/good-green-tea-smoothie/"
+}

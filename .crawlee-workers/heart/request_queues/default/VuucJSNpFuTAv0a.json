@@ -1,0 +1,9 @@
+{
+	"id": "VuucJSNpFuTAv0a",
+	"json": "{\"id\":\"VuucJSNpFuTAv0a\",\"url\":\"https://recipes.heart.org/en/recipes/hoppin-john\",\"loadedUrl\":\"https://recipes.heart.org/en/recipes/hoppin-john\",\"uniqueKey\":\"https://recipes.heart.org/en/recipes/hoppin-john\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":8,\"state\":4}},\"handledAt\":\"2026-04-21T13:37:55.806Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recipes.heart.org/en/recipes/hoppin-john",
+	"url": "https://recipes.heart.org/en/recipes/hoppin-john"
+}

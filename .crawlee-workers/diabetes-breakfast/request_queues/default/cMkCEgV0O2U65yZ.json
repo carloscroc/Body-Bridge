@@ -1,0 +1,9 @@
+{
+	"id": "cMkCEgV0O2U65yZ",
+	"json": "{\"id\":\"cMkCEgV0O2U65yZ\",\"url\":\"https://diabetesfoodhub.org/recipes/air-fryer-buttermilk-fried-chicken?page=1\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/air-fryer-buttermilk-fried-chicken?page=1\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/air-fryer-buttermilk-fried-chicken?page=1\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":11,\"state\":4}},\"handledAt\":\"2026-04-21T21:42:13.466Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/air-fryer-buttermilk-fried-chicken?page=1",
+	"url": "https://diabetesfoodhub.org/recipes/air-fryer-buttermilk-fried-chicken?page=1"
+}

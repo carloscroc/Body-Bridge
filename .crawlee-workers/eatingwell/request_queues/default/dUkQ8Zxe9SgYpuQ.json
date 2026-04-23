@@ -1,0 +1,9 @@
+{
+	"id": "dUkQ8Zxe9SgYpuQ",
+	"json": "{\"id\":\"dUkQ8Zxe9SgYpuQ\",\"url\":\"https://www.eatingwell.com/recipe/7939112/chicken-tomato-tortilla-soup/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/7939112/chicken-tomato-tortilla-soup/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/7939112/chicken-tomato-tortilla-soup\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T14:11:12.623Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/7939112/chicken-tomato-tortilla-soup",
+	"url": "https://www.eatingwell.com/recipe/7939112/chicken-tomato-tortilla-soup/"
+}

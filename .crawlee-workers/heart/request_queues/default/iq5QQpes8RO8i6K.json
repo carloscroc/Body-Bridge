@@ -1,0 +1,9 @@
+{
+	"id": "iq5QQpes8RO8i6K",
+	"json": "{\"id\":\"iq5QQpes8RO8i6K\",\"url\":\"https://recipes.heart.org/en/recipes/cauliflower-rice\",\"loadedUrl\":\"https://recipes.heart.org/en/recipes/cauliflower-rice\",\"uniqueKey\":\"https://recipes.heart.org/en/recipes/cauliflower-rice\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":8,\"state\":4}},\"handledAt\":\"2026-04-21T13:40:45.998Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recipes.heart.org/en/recipes/cauliflower-rice",
+	"url": "https://recipes.heart.org/en/recipes/cauliflower-rice"
+}

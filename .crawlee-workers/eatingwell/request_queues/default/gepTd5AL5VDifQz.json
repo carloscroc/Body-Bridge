@@ -1,0 +1,9 @@
+{
+	"id": "gepTd5AL5VDifQz",
+	"json": "{\"id\":\"gepTd5AL5VDifQz\",\"url\":\"https://www.eatingwell.com/recipe/249705/lebanese-fattoush-salad-with-grilled-chicken/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/249705/lebanese-fattoush-salad-with-grilled-chicken/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/249705/lebanese-fattoush-salad-with-grilled-chicken\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T14:22:22.916Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/249705/lebanese-fattoush-salad-with-grilled-chicken",
+	"url": "https://www.eatingwell.com/recipe/249705/lebanese-fattoush-salad-with-grilled-chicken/"
+}

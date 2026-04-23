@@ -1,0 +1,9 @@
+{
+	"id": "kHlkSmg1BBFMDbl",
+	"json": "{\"id\":\"kHlkSmg1BBFMDbl\",\"url\":\"https://www.eatingwell.com/recipe/249560/cranberry-pancakes/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/249560/cranberry-pancakes/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/249560/cranberry-pancakes\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T14:15:32.733Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/249560/cranberry-pancakes",
+	"url": "https://www.eatingwell.com/recipe/249560/cranberry-pancakes/"
+}

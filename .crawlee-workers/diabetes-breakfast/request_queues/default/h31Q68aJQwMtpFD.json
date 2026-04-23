@@ -1,0 +1,9 @@
+{
+	"id": "h31Q68aJQwMtpFD",
+	"json": "{\"id\":\"h31Q68aJQwMtpFD\",\"url\":\"https://diabetesfoodhub.org/recipes/italian?page=13\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/italian?page=13\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/italian?page=13\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":15,\"state\":4}},\"handledAt\":\"2026-04-21T22:35:43.951Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/italian?page=13",
+	"url": "https://diabetesfoodhub.org/recipes/italian?page=13"
+}

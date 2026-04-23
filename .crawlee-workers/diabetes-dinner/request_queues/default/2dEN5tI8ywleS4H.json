@@ -1,0 +1,9 @@
+{
+	"id": "2dEN5tI8ywleS4H",
+	"json": "{\"id\":\"2dEN5tI8ywleS4H\",\"url\":\"https://diabetesfoodhub.org/recipes/avocado-egg-pizza\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/avocado-egg-pizza\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/avocado-egg-pizza\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T17:29:59.507Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/avocado-egg-pizza",
+	"url": "https://diabetesfoodhub.org/recipes/avocado-egg-pizza"
+}

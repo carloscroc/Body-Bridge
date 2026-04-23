@@ -1,0 +1,9 @@
+{
+	"id": "ic8bwJcFlQgulkk",
+	"json": "{\"id\":\"ic8bwJcFlQgulkk\",\"url\":\"https://www.eatingwell.com/recipe/258644/tuna-salad-sandwich-with-sweet-relish/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/258644/tuna-salad-sandwich-with-sweet-relish/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/258644/tuna-salad-sandwich-with-sweet-relish\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:36:40.342Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/258644/tuna-salad-sandwich-with-sweet-relish",
+	"url": "https://www.eatingwell.com/recipe/258644/tuna-salad-sandwich-with-sweet-relish/"
+}

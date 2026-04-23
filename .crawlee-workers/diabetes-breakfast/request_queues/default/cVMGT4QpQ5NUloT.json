@@ -1,0 +1,9 @@
+{
+	"id": "cVMGT4QpQ5NUloT",
+	"json": "{\"id\":\"cVMGT4QpQ5NUloT\",\"url\":\"https://diabetesfoodhub.org/recipes/chicken-brussel-sprouts-mushroom-bake?page=1\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/chicken-brussel-sprouts-mushroom-bake?page=1\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/chicken-brussel-sprouts-mushroom-bake?page=1\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":6,\"state\":4}},\"handledAt\":\"2026-04-21T19:36:10.493Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/chicken-brussel-sprouts-mushroom-bake?page=1",
+	"url": "https://diabetesfoodhub.org/recipes/chicken-brussel-sprouts-mushroom-bake?page=1"
+}

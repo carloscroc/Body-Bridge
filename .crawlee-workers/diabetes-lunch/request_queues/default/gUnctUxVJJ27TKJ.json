@@ -1,0 +1,9 @@
+{
+	"id": "gUnctUxVJJ27TKJ",
+	"json": "{\"id\":\"gUnctUxVJJ27TKJ\",\"url\":\"https://diabetesfoodhub.org/recipes/mexicansouthwestern?page=10\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/mexicansouthwestern?page=10\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/mexicansouthwestern?page=10\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":13,\"state\":4}},\"handledAt\":\"2026-04-21T22:10:20.136Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/mexicansouthwestern?page=10",
+	"url": "https://diabetesfoodhub.org/recipes/mexicansouthwestern?page=10"
+}

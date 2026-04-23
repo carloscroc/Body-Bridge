@@ -1,0 +1,9 @@
+{
+	"id": "5LqdEbdRXuGo0PY",
+	"json": "{\"id\":\"5LqdEbdRXuGo0PY\",\"url\":\"https://www.eatingwell.com/recipe/263354/basil-vinaigrette/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/263354/basil-vinaigrette\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3}}}",
+	"method": "GET",
+	"orderNo": 1776777896390,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/263354/basil-vinaigrette",
+	"url": "https://www.eatingwell.com/recipe/263354/basil-vinaigrette/"
+}

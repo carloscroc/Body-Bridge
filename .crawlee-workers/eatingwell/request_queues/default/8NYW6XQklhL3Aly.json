@@ -1,0 +1,9 @@
+{
+	"id": "8NYW6XQklhL3Aly",
+	"json": "{\"id\":\"8NYW6XQklhL3Aly\",\"url\":\"https://www.eatingwell.com/recipe/265171/marinated-shrimp-scampi/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/265171/marinated-shrimp-scampi/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/265171/marinated-shrimp-scampi\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T14:23:08.393Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/265171/marinated-shrimp-scampi",
+	"url": "https://www.eatingwell.com/recipe/265171/marinated-shrimp-scampi/"
+}

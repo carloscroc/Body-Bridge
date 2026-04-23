@@ -1,0 +1,9 @@
+{
+	"id": "jIHYYuQpi8q3mkZ",
+	"json": "{\"id\":\"jIHYYuQpi8q3mkZ\",\"url\":\"https://www.eatingwell.com/recipe/263004/garlic-cashew-chicken-casserole/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/263004/garlic-cashew-chicken-casserole/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/263004/garlic-cashew-chicken-casserole\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:40:50.615Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/263004/garlic-cashew-chicken-casserole",
+	"url": "https://www.eatingwell.com/recipe/263004/garlic-cashew-chicken-casserole/"
+}

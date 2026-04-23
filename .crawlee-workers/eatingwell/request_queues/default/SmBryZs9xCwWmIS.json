@@ -1,0 +1,9 @@
+{
+	"id": "SmBryZs9xCwWmIS",
+	"json": "{\"id\":\"SmBryZs9xCwWmIS\",\"url\":\"https://www.eatingwell.com/recipes/18250/ingredients/pasta-noodle/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/18250/ingredients/pasta-noodle/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/18250/ingredients/pasta-noodle\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:34:51.078Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/18250/ingredients/pasta-noodle",
+	"url": "https://www.eatingwell.com/recipes/18250/ingredients/pasta-noodle/"
+}

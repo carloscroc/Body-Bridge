@@ -1,0 +1,9 @@
+{
+	"id": "ACUDINvxUcAfaDt",
+	"json": "{\"id\":\"ACUDINvxUcAfaDt\",\"url\":\"https://www.eatingwell.com/recipe/8050155/spinach-feta-frittata/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/8050155/spinach-feta-frittata\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3}}}",
+	"method": "GET",
+	"orderNo": 1776775456490,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/8050155/spinach-feta-frittata",
+	"url": "https://www.eatingwell.com/recipe/8050155/spinach-feta-frittata/"
+}

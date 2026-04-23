@@ -1,0 +1,9 @@
+{
+	"id": "qzE0w16O5jPFFRG",
+	"json": "{\"id\":\"qzE0w16O5jPFFRG\",\"url\":\"https://www.kidney.org/nutrition/recipes/summer-vegetable?page=5\",\"loadedUrl\":\"https://www.kidney.org/nutrition/recipes/summer-vegetable?page=5\",\"uniqueKey\":\"https://www.kidney.org/nutrition/recipes/summer-vegetable?page=5\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":14,\"state\":4}},\"handledAt\":\"2026-04-21T20:18:15.507Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.kidney.org/nutrition/recipes/summer-vegetable?page=5",
+	"url": "https://www.kidney.org/nutrition/recipes/summer-vegetable?page=5"
+}

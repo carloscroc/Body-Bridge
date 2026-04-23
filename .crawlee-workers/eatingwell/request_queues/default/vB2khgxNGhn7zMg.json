@@ -1,0 +1,9 @@
+{
+	"id": "vB2khgxNGhn7zMg",
+	"json": "{\"id\":\"vB2khgxNGhn7zMg\",\"url\":\"https://www.eatingwell.com/recipes/18316/seasonal/spring/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/18316/seasonal/spring/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/18316/seasonal/spring\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:32:42.699Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/18316/seasonal/spring",
+	"url": "https://www.eatingwell.com/recipes/18316/seasonal/spring/"
+}

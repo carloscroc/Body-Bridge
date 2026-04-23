@@ -1,0 +1,9 @@
+{
+	"id": "QDZrpyJfl6iHXbm",
+	"json": "{\"id\":\"QDZrpyJfl6iHXbm\",\"url\":\"https://recipes.heart.org/en/recipes/fruity-oatmeal-yogurt-parfaits\",\"loadedUrl\":\"https://recipes.heart.org/en/recipes/fruity-oatmeal-yogurt-parfaits\",\"uniqueKey\":\"https://recipes.heart.org/en/recipes/fruity-oatmeal-yogurt-parfaits\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":4,\"state\":4}},\"handledAt\":\"2026-04-21T12:39:07.829Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recipes.heart.org/en/recipes/fruity-oatmeal-yogurt-parfaits",
+	"url": "https://recipes.heart.org/en/recipes/fruity-oatmeal-yogurt-parfaits"
+}

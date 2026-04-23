@@ -1,0 +1,9 @@
+{
+	"id": "rA0sMM3SBIWTRJ9",
+	"json": "{\"id\":\"rA0sMM3SBIWTRJ9\",\"url\":\"https://www.eatingwell.com/recipe/266932/udon-noodle-bowl/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/266932/udon-noodle-bowl/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/266932/udon-noodle-bowl\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T14:23:27.218Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/266932/udon-noodle-bowl",
+	"url": "https://www.eatingwell.com/recipe/266932/udon-noodle-bowl/"
+}

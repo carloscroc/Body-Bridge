@@ -1,0 +1,9 @@
+{
+	"id": "naBhKZzgUEQq7Go",
+	"json": "{\"id\":\"naBhKZzgUEQq7Go\",\"url\":\"https://www.eatingwell.com/recipes/18301/desserts/fruit/strawberry/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/18301/desserts/fruit/strawberry\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3}}}",
+	"method": "GET",
+	"orderNo": 1776776382831,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/18301/desserts/fruit/strawberry",
+	"url": "https://www.eatingwell.com/recipes/18301/desserts/fruit/strawberry/"
+}

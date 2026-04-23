@@ -1,0 +1,9 @@
+{
+	"id": "OVH7HTaGu5mTRBF",
+	"json": "{\"id\":\"OVH7HTaGu5mTRBF\",\"url\":\"https://www.eatingwell.com/recipe/249078/crispy-potato-latkes/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/249078/crispy-potato-latkes\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3}}}",
+	"method": "GET",
+	"orderNo": 1776777434001,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/249078/crispy-potato-latkes",
+	"url": "https://www.eatingwell.com/recipe/249078/crispy-potato-latkes/"
+}

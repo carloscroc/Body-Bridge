@@ -1,0 +1,9 @@
+{
+	"id": "PVL6wlx4r2bten4",
+	"json": "{\"id\":\"PVL6wlx4r2bten4\",\"url\":\"https://www.eatingwell.com/recipes/18047/lifestyle-diets/healthy-immunity/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/18047/lifestyle-diets/healthy-immunity/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/18047/lifestyle-diets/healthy-immunity\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:33:27.665Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/18047/lifestyle-diets/healthy-immunity",
+	"url": "https://www.eatingwell.com/recipes/18047/lifestyle-diets/healthy-immunity/"
+}

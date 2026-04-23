@@ -1,0 +1,9 @@
+{
+	"id": "avcfJmYr1Tfm6MA",
+	"json": "{\"id\":\"avcfJmYr1Tfm6MA\",\"url\":\"https://www.eatingwell.com/recipe/249924/eggplant-pomodoro-pasta/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/249924/eggplant-pomodoro-pasta\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3}}}",
+	"method": "GET",
+	"orderNo": 1776777771026,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/249924/eggplant-pomodoro-pasta",
+	"url": "https://www.eatingwell.com/recipe/249924/eggplant-pomodoro-pasta/"
+}

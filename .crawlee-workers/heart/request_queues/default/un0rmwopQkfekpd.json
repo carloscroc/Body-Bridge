@@ -1,0 +1,9 @@
+{
+	"id": "un0rmwopQkfekpd",
+	"json": "{\"id\":\"un0rmwopQkfekpd\",\"url\":\"https://recipes.heart.org/en/recipes/green-tea-mojito-mocktail\",\"loadedUrl\":\"https://recipes.heart.org/en/recipes/green-tea-mojito-mocktail\",\"uniqueKey\":\"https://recipes.heart.org/en/recipes/green-tea-mojito-mocktail\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":9,\"state\":4}},\"handledAt\":\"2026-04-21T13:41:25.268Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recipes.heart.org/en/recipes/green-tea-mojito-mocktail",
+	"url": "https://recipes.heart.org/en/recipes/green-tea-mojito-mocktail"
+}

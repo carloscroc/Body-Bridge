@@ -1,0 +1,9 @@
+{
+	"id": "iBIXqrhMBW6T6Yv",
+	"json": "{\"id\":\"iBIXqrhMBW6T6Yv\",\"url\":\"https://www.eatingwell.com/recipe/252746/classic-lasagna/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/252746/classic-lasagna\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3}}}",
+	"method": "GET",
+	"orderNo": 1776778231598,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/252746/classic-lasagna",
+	"url": "https://www.eatingwell.com/recipe/252746/classic-lasagna/"
+}

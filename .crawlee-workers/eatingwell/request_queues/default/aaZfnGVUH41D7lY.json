@@ -1,0 +1,9 @@
+{
+	"id": "aaZfnGVUH41D7lY",
+	"json": "{\"id\":\"aaZfnGVUH41D7lY\",\"url\":\"https://www.eatingwell.com/recipes/17973/mealtimes/snacks/nuts-seeds/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/17973/mealtimes/snacks/nuts-seeds/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/17973/mealtimes/snacks/nuts-seeds\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:03:58.472Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/17973/mealtimes/snacks/nuts-seeds",
+	"url": "https://www.eatingwell.com/recipes/17973/mealtimes/snacks/nuts-seeds/"
+}

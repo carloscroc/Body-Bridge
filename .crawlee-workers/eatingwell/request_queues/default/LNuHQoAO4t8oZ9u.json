@@ -1,0 +1,9 @@
+{
+	"id": "LNuHQoAO4t8oZ9u",
+	"json": "{\"id\":\"LNuHQoAO4t8oZ9u\",\"url\":\"https://www.eatingwell.com/recipe/260756/red-wine-hot-chocolate/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/260756/red-wine-hot-chocolate\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3}}}",
+	"method": "GET",
+	"orderNo": 1776776598035,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/260756/red-wine-hot-chocolate",
+	"url": "https://www.eatingwell.com/recipe/260756/red-wine-hot-chocolate/"
+}

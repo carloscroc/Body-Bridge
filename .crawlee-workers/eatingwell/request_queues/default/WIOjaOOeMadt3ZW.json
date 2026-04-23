@@ -1,0 +1,9 @@
+{
+	"id": "WIOjaOOeMadt3ZW",
+	"json": "{\"id\":\"WIOjaOOeMadt3ZW\",\"url\":\"https://www.eatingwell.com/recipes/18411/low-calorie/make-ahead/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/18411/low-calorie/make-ahead/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/18411/low-calorie/make-ahead\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:17:25.409Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/18411/low-calorie/make-ahead",
+	"url": "https://www.eatingwell.com/recipes/18411/low-calorie/make-ahead/"
+}

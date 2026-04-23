@@ -1,0 +1,9 @@
+{
+	"id": "zkJ97K41iZj2eil",
+	"json": "{\"id\":\"zkJ97K41iZj2eil\",\"url\":\"https://www.eatingwell.com/recipes/20082/low-calorie/salad/chicken/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/20082/low-calorie/salad/chicken\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3}}}",
+	"method": "GET",
+	"orderNo": 1776777501040,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/20082/low-calorie/salad/chicken",
+	"url": "https://www.eatingwell.com/recipes/20082/low-calorie/salad/chicken/"
+}

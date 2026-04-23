@@ -1,0 +1,9 @@
+{
+	"id": "WlaMZWLPdDPucIl",
+	"json": "{\"id\":\"WlaMZWLPdDPucIl\",\"url\":\"https://recipes.heart.org/en/recipes/bistec-a-la-tampiquena\",\"loadedUrl\":\"https://recipes.heart.org/en/recipes/bistec-a-la-tampiquena\",\"uniqueKey\":\"https://recipes.heart.org/en/recipes/bistec-a-la-tampiquena\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":9,\"state\":4}},\"handledAt\":\"2026-04-21T13:42:09.814Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recipes.heart.org/en/recipes/bistec-a-la-tampiquena",
+	"url": "https://recipes.heart.org/en/recipes/bistec-a-la-tampiquena"
+}

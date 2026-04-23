@@ -298,6 +298,7 @@ export default function App() {
           onOpenCalendar={() => openCalendar()}
           onNavigateToNutritionPlan={() => openCalendar()}
           onNavigateToSettings={() => handleTabChange(Tab.SETTINGS)}
+          onNavigateToLibrary={() => handleTabChange(Tab.EXERCISES)}
         />
       );
       case Tab.EXERCISES: return <ExercisesView onSelect={setSelectedExercise} />;
@@ -380,6 +381,8 @@ export default function App() {
           onSelectMeal={setSelectedMeal} 
           onOpenCalendar={() => openCalendar()}
           onNavigateToNutritionPlan={() => openCalendar()}
+          onNavigateToSettings={() => handleTabChange(Tab.SETTINGS)}
+          onNavigateToLibrary={() => handleTabChange(Tab.EXERCISES)}
         />
       );
     }

@@ -1,0 +1,9 @@
+{
+	"id": "tvpV97k47cwXzL2",
+	"json": "{\"id\":\"tvpV97k47cwXzL2\",\"url\":\"https://www.eatingwell.com/recipes/20094/mealtimes/dinner/low-calorie/quick-easy/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/20094/mealtimes/dinner/low-calorie/quick-easy/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/20094/mealtimes/dinner/low-calorie/quick-easy\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T13:49:31.567Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/20094/mealtimes/dinner/low-calorie/quick-easy",
+	"url": "https://www.eatingwell.com/recipes/20094/mealtimes/dinner/low-calorie/quick-easy/"
+}

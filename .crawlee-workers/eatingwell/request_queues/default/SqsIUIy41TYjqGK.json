@@ -1,0 +1,9 @@
+{
+	"id": "SqsIUIy41TYjqGK",
+	"json": "{\"id\":\"SqsIUIy41TYjqGK\",\"url\":\"https://www.eatingwell.com/recipe/270218/air-fryer-kale-chips/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/270218/air-fryer-kale-chips/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/270218/air-fryer-kale-chips\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T14:14:37.264Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/270218/air-fryer-kale-chips",
+	"url": "https://www.eatingwell.com/recipe/270218/air-fryer-kale-chips/"
+}

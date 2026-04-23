@@ -1,0 +1,9 @@
+{
+	"id": "DX8ACKX5vnwWz3O",
+	"json": "{\"id\":\"DX8ACKX5vnwWz3O\",\"url\":\"https://www.forksoverknives.com/recipes/vegan-soups-stews/page/11/?ro=top_rated\",\"loadedUrl\":\"https://www.forksoverknives.com/recipes/vegan-soups-stews/page/11/?ro=top_rated\",\"uniqueKey\":\"https://www.forksoverknives.com/recipes/vegan-soups-stews/page/11?ro=top_rated\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":5,\"state\":4}},\"handledAt\":\"2026-04-21T13:10:19.375Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.forksoverknives.com/recipes/vegan-soups-stews/page/11?ro=top_rated",
+	"url": "https://www.forksoverknives.com/recipes/vegan-soups-stews/page/11/?ro=top_rated"
+}

@@ -1,0 +1,9 @@
+{
+	"id": "DNADq62tgofWJf4",
+	"json": "{\"id\":\"DNADq62tgofWJf4\",\"url\":\"https://www.eatingwell.com/recipes/19710/cuisines-regions/indian/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/19710/cuisines-regions/indian/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/19710/cuisines-regions/indian\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:29:21.870Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/19710/cuisines-regions/indian",
+	"url": "https://www.eatingwell.com/recipes/19710/cuisines-regions/indian/"
+}

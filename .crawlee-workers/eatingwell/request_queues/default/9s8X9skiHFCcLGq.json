@@ -1,0 +1,9 @@
+{
+	"id": "9s8X9skiHFCcLGq",
+	"json": "{\"id\":\"9s8X9skiHFCcLGq\",\"url\":\"https://www.eatingwell.com/recipe/7896397/grilled-shrimp-tostadas/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/7896397/grilled-shrimp-tostadas/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/7896397/grilled-shrimp-tostadas\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T14:22:26.949Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/7896397/grilled-shrimp-tostadas",
+	"url": "https://www.eatingwell.com/recipe/7896397/grilled-shrimp-tostadas/"
+}

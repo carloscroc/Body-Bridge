@@ -1,0 +1,9 @@
+{
+	"id": "C8hfdMl8XcXgTCQ",
+	"json": "{\"id\":\"C8hfdMl8XcXgTCQ\",\"url\":\"https://www.eatingwell.com/recipes/18422/cooking-methods-styles/bbq-grilling/bbq-grilling/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/18422/cooking-methods-styles/bbq-grilling/bbq-grilling/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/18422/cooking-methods-styles/bbq-grilling/bbq-grilling\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T14:20:05.952Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/18422/cooking-methods-styles/bbq-grilling/bbq-grilling",
+	"url": "https://www.eatingwell.com/recipes/18422/cooking-methods-styles/bbq-grilling/bbq-grilling/"
+}

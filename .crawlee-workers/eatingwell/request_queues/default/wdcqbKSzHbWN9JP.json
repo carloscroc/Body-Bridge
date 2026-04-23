@@ -1,0 +1,9 @@
+{
+	"id": "wdcqbKSzHbWN9JP",
+	"json": "{\"id\":\"wdcqbKSzHbWN9JP\",\"url\":\"https://www.eatingwell.com/recipe/266460/low-carb-beef-stew/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/266460/low-carb-beef-stew/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/266460/low-carb-beef-stew\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T13:53:17.376Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/266460/low-carb-beef-stew",
+	"url": "https://www.eatingwell.com/recipe/266460/low-carb-beef-stew/"
+}

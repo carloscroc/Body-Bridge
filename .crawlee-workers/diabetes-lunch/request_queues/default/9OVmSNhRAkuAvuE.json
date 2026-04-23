@@ -1,0 +1,9 @@
+{
+	"id": "9OVmSNhRAkuAvuE",
+	"json": "{\"id\":\"9OVmSNhRAkuAvuE\",\"url\":\"https://diabetesfoodhub.org/recipes/foodie?page=14\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/foodie?page=14\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/foodie?page=14\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":16,\"state\":4}},\"handledAt\":\"2026-04-21T22:45:13.091Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/foodie?page=14",
+	"url": "https://diabetesfoodhub.org/recipes/foodie?page=14"
+}

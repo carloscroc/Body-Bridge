@@ -1,0 +1,9 @@
+{
+	"id": "1dqDJlSfsWNMSDk",
+	"json": "{\"id\":\"1dqDJlSfsWNMSDk\",\"url\":\"https://diabetesfoodhub.org/recipes/ckd-non-dialysis?page=7\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/ckd-non-dialysis?page=7\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/ckd-non-dialysis?page=7\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":10,\"state\":4}},\"handledAt\":\"2026-04-21T21:15:30.870Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/ckd-non-dialysis?page=7",
+	"url": "https://diabetesfoodhub.org/recipes/ckd-non-dialysis?page=7"
+}

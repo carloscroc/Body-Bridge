@@ -1,0 +1,9 @@
+{
+	"id": "9OSqWQQ1R7nJ8hG",
+	"json": "{\"id\":\"9OSqWQQ1R7nJ8hG\",\"url\":\"https://www.kidney.org/nutrition/recipes/spring-onion-frittata?page=4\",\"loadedUrl\":\"https://www.kidney.org/nutrition/recipes/spring-onion-frittata?page=4\",\"uniqueKey\":\"https://www.kidney.org/nutrition/recipes/spring-onion-frittata?page=4\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":10,\"state\":4}},\"handledAt\":\"2026-04-21T18:56:20.549Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.kidney.org/nutrition/recipes/spring-onion-frittata?page=4",
+	"url": "https://www.kidney.org/nutrition/recipes/spring-onion-frittata?page=4"
+}

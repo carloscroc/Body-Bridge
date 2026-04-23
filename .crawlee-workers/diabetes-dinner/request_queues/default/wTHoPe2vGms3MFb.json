@@ -1,0 +1,9 @@
+{
+	"id": "wTHoPe2vGms3MFb",
+	"json": "{\"id\":\"wTHoPe2vGms3MFb\",\"url\":\"https://diabetesfoodhub.org/recipes/master-chicken-stir-fry\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/master-chicken-stir-fry\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/master-chicken-stir-fry\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":14,\"state\":4}},\"handledAt\":\"2026-04-21T22:21:45.989Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/master-chicken-stir-fry",
+	"url": "https://diabetesfoodhub.org/recipes/master-chicken-stir-fry"
+}

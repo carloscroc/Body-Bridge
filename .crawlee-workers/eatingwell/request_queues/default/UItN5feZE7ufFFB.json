@@ -1,0 +1,9 @@
+{
+	"id": "UItN5feZE7ufFFB",
+	"json": "{\"id\":\"UItN5feZE7ufFFB\",\"url\":\"https://www.eatingwell.com/recipe/249005/watermelon-gazpacho/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/249005/watermelon-gazpacho/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/249005/watermelon-gazpacho\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T14:10:58.973Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/249005/watermelon-gazpacho",
+	"url": "https://www.eatingwell.com/recipe/249005/watermelon-gazpacho/"
+}

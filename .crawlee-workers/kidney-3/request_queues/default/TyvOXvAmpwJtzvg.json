@@ -1,0 +1,9 @@
+{
+	"id": "TyvOXvAmpwJtzvg",
+	"json": "{\"id\":\"TyvOXvAmpwJtzvg\",\"url\":\"https://www.kidney.org/nutrition/recipes/chef-duane-s-vegan-cheese\",\"loadedUrl\":\"https://www.kidney.org/nutrition/recipes/chef-duane-s-vegan-cheese\",\"uniqueKey\":\"https://www.kidney.org/nutrition/recipes/chef-duane-s-vegan-cheese\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":18,\"state\":4}},\"handledAt\":\"2026-04-21T22:10:38.013Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.kidney.org/nutrition/recipes/chef-duane-s-vegan-cheese",
+	"url": "https://www.kidney.org/nutrition/recipes/chef-duane-s-vegan-cheese"
+}

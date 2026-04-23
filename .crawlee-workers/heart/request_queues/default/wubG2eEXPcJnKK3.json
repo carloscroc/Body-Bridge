@@ -1,0 +1,9 @@
+{
+	"id": "wubG2eEXPcJnKK3",
+	"json": "{\"id\":\"wubG2eEXPcJnKK3\",\"url\":\"https://recipes.heart.org/en/recipes/huevos-rancheros\",\"loadedUrl\":\"https://recipes.heart.org/en/recipes/huevos-rancheros\",\"uniqueKey\":\"https://recipes.heart.org/en/recipes/huevos-rancheros\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":8,\"state\":4}},\"handledAt\":\"2026-04-21T13:34:53.998Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recipes.heart.org/en/recipes/huevos-rancheros",
+	"url": "https://recipes.heart.org/en/recipes/huevos-rancheros"
+}

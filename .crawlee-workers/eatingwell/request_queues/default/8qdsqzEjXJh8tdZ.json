@@ -1,0 +1,9 @@
+{
+	"id": "8qdsqzEjXJh8tdZ",
+	"json": "{\"id\":\"8qdsqzEjXJh8tdZ\",\"url\":\"https://www.eatingwell.com/recipe/263832/banana-energy-bites/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/263832/banana-energy-bites/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/263832/banana-energy-bites\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T14:08:23.350Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/263832/banana-energy-bites",
+	"url": "https://www.eatingwell.com/recipe/263832/banana-energy-bites/"
+}

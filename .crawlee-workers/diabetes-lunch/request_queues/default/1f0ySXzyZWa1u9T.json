@@ -1,0 +1,9 @@
+{
+	"id": "1f0ySXzyZWa1u9T",
+	"json": "{\"id\":\"1f0ySXzyZWa1u9T\",\"url\":\"https://diabetesfoodhub.org/recipes/ckd-dialysis?page=7\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/ckd-dialysis?page=7\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/ckd-dialysis?page=7\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":10,\"state\":4}},\"handledAt\":\"2026-04-21T21:15:39.473Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/ckd-dialysis?page=7",
+	"url": "https://diabetesfoodhub.org/recipes/ckd-dialysis?page=7"
+}

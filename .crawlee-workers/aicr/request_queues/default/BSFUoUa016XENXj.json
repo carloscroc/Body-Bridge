@@ -1,0 +1,9 @@
+{
+	"id": "BSFUoUa016XENXj",
+	"json": "{\"id\":\"BSFUoUa016XENXj\",\"url\":\"https://www.aicr.org/cancer-prevention/recipes/category/desserts/?page=2\",\"loadedUrl\":\"https://www.aicr.org/cancer-prevention/recipes/category/desserts/?page=2\",\"uniqueKey\":\"https://www.aicr.org/cancer-prevention/recipes/category/desserts?page=2\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T13:38:13.682Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.aicr.org/cancer-prevention/recipes/category/desserts?page=2",
+	"url": "https://www.aicr.org/cancer-prevention/recipes/category/desserts/?page=2"
+}

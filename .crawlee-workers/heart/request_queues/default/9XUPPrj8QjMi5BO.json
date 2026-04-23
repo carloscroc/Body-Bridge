@@ -1,0 +1,9 @@
+{
+	"id": "9XUPPrj8QjMi5BO",
+	"json": "{\"id\":\"9XUPPrj8QjMi5BO\",\"url\":\"https://recipes.heart.org/en/recipes/raisin-french-toast-bake\",\"loadedUrl\":\"https://recipes.heart.org/en/recipes/raisin-french-toast-bake\",\"uniqueKey\":\"https://recipes.heart.org/en/recipes/raisin-french-toast-bake\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":9,\"state\":4}},\"handledAt\":\"2026-04-21T13:41:40.946Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recipes.heart.org/en/recipes/raisin-french-toast-bake",
+	"url": "https://recipes.heart.org/en/recipes/raisin-french-toast-bake"
+}

@@ -1,0 +1,9 @@
+{
+	"id": "YSL4ygcNIqR0nZH",
+	"json": "{\"id\":\"YSL4ygcNIqR0nZH\",\"url\":\"https://www.eatingwell.com/recipe/7923524/creamy-harissa-chicken-cutlets/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/7923524/creamy-harissa-chicken-cutlets/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/7923524/creamy-harissa-chicken-cutlets\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T13:57:24.627Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/7923524/creamy-harissa-chicken-cutlets",
+	"url": "https://www.eatingwell.com/recipe/7923524/creamy-harissa-chicken-cutlets/"
+}

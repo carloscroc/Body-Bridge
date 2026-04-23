@@ -1,0 +1,9 @@
+{
+	"id": "DAgkKiECpji0gDw",
+	"json": "{\"id\":\"DAgkKiECpji0gDw\",\"url\":\"https://www.eatingwell.com/recipes/19651/desserts/frozen/ice-cream/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/19651/desserts/frozen/ice-cream\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3}}}",
+	"method": "GET",
+	"orderNo": 1776776473465,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/19651/desserts/frozen/ice-cream",
+	"url": "https://www.eatingwell.com/recipes/19651/desserts/frozen/ice-cream/"
+}

@@ -1,0 +1,9 @@
+{
+	"id": "N1u4egVAP0V0aD8",
+	"json": "{\"id\":\"N1u4egVAP0V0aD8\",\"url\":\"https://diabetesfoodhub.org/recipes/apple-mustard-pork-chops\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/apple-mustard-pork-chops\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/apple-mustard-pork-chops\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":5,\"state\":4}},\"handledAt\":\"2026-04-21T19:08:00.847Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/apple-mustard-pork-chops",
+	"url": "https://diabetesfoodhub.org/recipes/apple-mustard-pork-chops"
+}

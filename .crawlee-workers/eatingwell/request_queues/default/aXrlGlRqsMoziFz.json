@@ -1,0 +1,9 @@
+{
+	"id": "aXrlGlRqsMoziFz",
+	"json": "{\"id\":\"aXrlGlRqsMoziFz\",\"url\":\"https://www.eatingwell.com/recipes/18054/health-condition/healthy-pregnancy/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/18054/health-condition/healthy-pregnancy/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/18054/health-condition/healthy-pregnancy\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:09:07.001Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/18054/health-condition/healthy-pregnancy",
+	"url": "https://www.eatingwell.com/recipes/18054/health-condition/healthy-pregnancy/"
+}

@@ -1,0 +1,9 @@
+{
+	"id": "LS47gXsJ0hl4Yob",
+	"json": "{\"id\":\"LS47gXsJ0hl4Yob\",\"url\":\"https://www.eatingwell.com/recipe/251482/pasta-chickpea-soup-pasta-e-ceci/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/251482/pasta-chickpea-soup-pasta-e-ceci/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/251482/pasta-chickpea-soup-pasta-e-ceci\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T14:10:40.335Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/251482/pasta-chickpea-soup-pasta-e-ceci",
+	"url": "https://www.eatingwell.com/recipe/251482/pasta-chickpea-soup-pasta-e-ceci/"
+}

@@ -1,0 +1,9 @@
+{
+	"id": "PtbuKB0U5FRZk1q",
+	"json": "{\"id\":\"PtbuKB0U5FRZk1q\",\"url\":\"https://www.eatingwell.com/recipe/278402/mexican-quinoa-salad/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/278402/mexican-quinoa-salad/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/278402/mexican-quinoa-salad\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T14:21:42.997Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/278402/mexican-quinoa-salad",
+	"url": "https://www.eatingwell.com/recipe/278402/mexican-quinoa-salad/"
+}

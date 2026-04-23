@@ -1,0 +1,9 @@
+{
+	"id": "mARxlj6TLgssSqZ",
+	"json": "{\"id\":\"mARxlj6TLgssSqZ\",\"url\":\"https://www.eatingwell.com/recipes/18695/mealtimes/snacks/whole-grain/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/18695/mealtimes/snacks/whole-grain/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/18695/mealtimes/snacks/whole-grain\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:04:28.572Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/18695/mealtimes/snacks/whole-grain",
+	"url": "https://www.eatingwell.com/recipes/18695/mealtimes/snacks/whole-grain/"
+}

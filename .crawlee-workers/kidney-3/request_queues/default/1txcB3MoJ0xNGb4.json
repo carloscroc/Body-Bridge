@@ -1,0 +1,9 @@
+{
+	"id": "1txcB3MoJ0xNGb4",
+	"json": "{\"id\":\"1txcB3MoJ0xNGb4\",\"url\":\"https://www.kidney.org/nutrition/recipes/pumpkin-pepper-hummus?page=0\",\"loadedUrl\":\"https://www.kidney.org/nutrition/recipes/pumpkin-pepper-hummus?page=0\",\"uniqueKey\":\"https://www.kidney.org/nutrition/recipes/pumpkin-pepper-hummus?page=0\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":14,\"state\":4}},\"handledAt\":\"2026-04-21T20:11:19.830Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.kidney.org/nutrition/recipes/pumpkin-pepper-hummus?page=0",
+	"url": "https://www.kidney.org/nutrition/recipes/pumpkin-pepper-hummus?page=0"
+}

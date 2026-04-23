@@ -1,0 +1,9 @@
+{
+	"id": "Y8vdsoHsoKbVAt3",
+	"json": "{\"id\":\"Y8vdsoHsoKbVAt3\",\"url\":\"https://recipes.heart.org/en/recipes/mini-meatloaves-with-low-fat-creamed-spinach\",\"loadedUrl\":\"https://recipes.heart.org/en/recipes/mini-meatloaves-with-low-fat-creamed-spinach\",\"uniqueKey\":\"https://recipes.heart.org/en/recipes/mini-meatloaves-with-low-fat-creamed-spinach\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":6,\"state\":4}},\"handledAt\":\"2026-04-21T13:13:56.368Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recipes.heart.org/en/recipes/mini-meatloaves-with-low-fat-creamed-spinach",
+	"url": "https://recipes.heart.org/en/recipes/mini-meatloaves-with-low-fat-creamed-spinach"
+}

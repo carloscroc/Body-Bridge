@@ -1,0 +1,9 @@
+{
+	"id": "FGObkhsW6hciTEr",
+	"json": "{\"id\":\"FGObkhsW6hciTEr\",\"url\":\"https://recipes.heart.org/en/recipes/pancakes-with-blueberry-vanilla-sauce\",\"loadedUrl\":\"https://recipes.heart.org/en/recipes/pancakes-with-blueberry-vanilla-sauce\",\"uniqueKey\":\"https://recipes.heart.org/en/recipes/pancakes-with-blueberry-vanilla-sauce\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":8,\"state\":4}},\"handledAt\":\"2026-04-21T13:34:36.567Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recipes.heart.org/en/recipes/pancakes-with-blueberry-vanilla-sauce",
+	"url": "https://recipes.heart.org/en/recipes/pancakes-with-blueberry-vanilla-sauce"
+}

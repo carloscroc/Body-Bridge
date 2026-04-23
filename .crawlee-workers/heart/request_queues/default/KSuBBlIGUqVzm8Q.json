@@ -1,0 +1,9 @@
+{
+	"id": "KSuBBlIGUqVzm8Q",
+	"json": "{\"id\":\"KSuBBlIGUqVzm8Q\",\"url\":\"https://recipes.heart.org/en/recipes/sweet-and-sour-pork\",\"loadedUrl\":\"https://recipes.heart.org/en/recipes/sweet-and-sour-pork\",\"uniqueKey\":\"https://recipes.heart.org/en/recipes/sweet-and-sour-pork\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":15,\"state\":4}},\"handledAt\":\"2026-04-21T14:05:23.044Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recipes.heart.org/en/recipes/sweet-and-sour-pork",
+	"url": "https://recipes.heart.org/en/recipes/sweet-and-sour-pork"
+}

@@ -1,0 +1,9 @@
+{
+	"id": "BHjR4aSYIJz0Yoi",
+	"json": "{\"id\":\"BHjR4aSYIJz0Yoi\",\"url\":\"https://www.eatingwell.com/recipes/17899/health-condition/diabetic/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/17899/health-condition/diabetic/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/17899/health-condition/diabetic\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":1,\"state\":4}},\"handledAt\":\"2026-04-21T12:34:45.268Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/17899/health-condition/diabetic",
+	"url": "https://www.eatingwell.com/recipes/17899/health-condition/diabetic/"
+}

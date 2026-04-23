@@ -1,0 +1,9 @@
+{
+	"id": "YCB8HkT23uCwjFc",
+	"json": "{\"id\":\"YCB8HkT23uCwjFc\",\"url\":\"https://diabetesfoodhub.org/recipes/papaya-lassi\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/papaya-lassi\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/papaya-lassi\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":5,\"state\":4}},\"handledAt\":\"2026-04-21T19:13:28.410Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/papaya-lassi",
+	"url": "https://diabetesfoodhub.org/recipes/papaya-lassi"
+}

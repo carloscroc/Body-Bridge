@@ -1,0 +1,9 @@
+{
+	"id": "TICvAqJ5WSMhNcS",
+	"json": "{\"id\":\"TICvAqJ5WSMhNcS\",\"url\":\"https://www.kidney.org/nutrition/recipes/mexican-rice-bell-peppers?page=9\",\"loadedUrl\":\"https://www.kidney.org/nutrition/recipes/mexican-rice-bell-peppers?page=9\",\"uniqueKey\":\"https://www.kidney.org/nutrition/recipes/mexican-rice-bell-peppers?page=9\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":10,\"state\":4}},\"handledAt\":\"2026-04-21T19:02:51.025Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.kidney.org/nutrition/recipes/mexican-rice-bell-peppers?page=9",
+	"url": "https://www.kidney.org/nutrition/recipes/mexican-rice-bell-peppers?page=9"
+}

@@ -1,0 +1,9 @@
+{
+	"id": "d8WmcAmKDX34Oxy",
+	"json": "{\"id\":\"d8WmcAmKDX34Oxy\",\"url\":\"https://recipes.heart.org/en/recipes/crunchy-chicken-with-oven-roasted-broccoli\",\"loadedUrl\":\"https://recipes.heart.org/en/recipes/crunchy-chicken-with-oven-roasted-broccoli\",\"uniqueKey\":\"https://recipes.heart.org/en/recipes/crunchy-chicken-with-oven-roasted-broccoli\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":5,\"state\":4}},\"handledAt\":\"2026-04-21T12:49:29.112Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recipes.heart.org/en/recipes/crunchy-chicken-with-oven-roasted-broccoli",
+	"url": "https://recipes.heart.org/en/recipes/crunchy-chicken-with-oven-roasted-broccoli"
+}

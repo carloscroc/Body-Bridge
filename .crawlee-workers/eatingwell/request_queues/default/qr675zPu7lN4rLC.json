@@ -1,0 +1,9 @@
+{
+	"id": "qr675zPu7lN4rLC",
+	"json": "{\"id\":\"qr675zPu7lN4rLC\",\"url\":\"https://www.eatingwell.com/recipe/249183/crumble-topping/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/249183/crumble-topping/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/249183/crumble-topping\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T14:02:08.235Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/249183/crumble-topping",
+	"url": "https://www.eatingwell.com/recipe/249183/crumble-topping/"
+}

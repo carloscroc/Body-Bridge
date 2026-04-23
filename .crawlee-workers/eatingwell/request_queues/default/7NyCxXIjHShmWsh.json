@@ -1,0 +1,9 @@
+{
+	"id": "7NyCxXIjHShmWsh",
+	"json": "{\"id\":\"7NyCxXIjHShmWsh\",\"url\":\"https://www.eatingwell.com/recipes/20070/low-calorie/lunch/sandwiches/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/20070/low-calorie/lunch/sandwiches\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3}}}",
+	"method": "GET",
+	"orderNo": 1776777480179,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/20070/low-calorie/lunch/sandwiches",
+	"url": "https://www.eatingwell.com/recipes/20070/low-calorie/lunch/sandwiches/"
+}

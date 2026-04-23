@@ -1,0 +1,9 @@
+{
+	"id": "KDVpEkDxpdvFqV6",
+	"json": "{\"id\":\"KDVpEkDxpdvFqV6\",\"url\":\"https://www.eatingwell.com/recipe/7962475/beef-suya-tacos/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/7962475/beef-suya-tacos\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3}}}",
+	"method": "GET",
+	"orderNo": 1776778145864,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/7962475/beef-suya-tacos",
+	"url": "https://www.eatingwell.com/recipe/7962475/beef-suya-tacos/"
+}

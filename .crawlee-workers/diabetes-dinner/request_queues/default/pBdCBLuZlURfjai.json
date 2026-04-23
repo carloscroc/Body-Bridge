@@ -1,0 +1,9 @@
+{
+	"id": "pBdCBLuZlURfjai",
+	"json": "{\"id\":\"pBdCBLuZlURfjai\",\"url\":\"https://diabetesfoodhub.org/recipes/spinach-and-orange-salad\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/spinach-and-orange-salad\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/spinach-and-orange-salad\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":5,\"state\":4}},\"handledAt\":\"2026-04-21T19:00:51.004Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/spinach-and-orange-salad",
+	"url": "https://diabetesfoodhub.org/recipes/spinach-and-orange-salad"
+}

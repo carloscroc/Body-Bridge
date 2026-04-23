@@ -1,0 +1,9 @@
+{
+	"id": "lGJ7uBHJO6l8c6W",
+	"json": "{\"id\":\"lGJ7uBHJO6l8c6W\",\"url\":\"https://recipes.heart.org/en/recipes/chicken-zoodle-lo-mein\",\"loadedUrl\":\"https://recipes.heart.org/en/recipes/chicken-zoodle-lo-mein\",\"uniqueKey\":\"https://recipes.heart.org/en/recipes/chicken-zoodle-lo-mein\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":12,\"state\":4}},\"handledAt\":\"2026-04-21T13:55:27.831Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recipes.heart.org/en/recipes/chicken-zoodle-lo-mein",
+	"url": "https://recipes.heart.org/en/recipes/chicken-zoodle-lo-mein"
+}

@@ -1,0 +1,9 @@
+{
+	"id": "ISzmmABPJgJIMe3",
+	"json": "{\"id\":\"ISzmmABPJgJIMe3\",\"url\":\"https://recipes.heart.org/en/recipes/avocado-and-shrimp-salad\",\"loadedUrl\":\"https://recipes.heart.org/en/recipes/avocado-and-shrimp-salad\",\"uniqueKey\":\"https://recipes.heart.org/en/recipes/avocado-and-shrimp-salad\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":6,\"state\":4}},\"handledAt\":\"2026-04-21T13:18:37.149Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recipes.heart.org/en/recipes/avocado-and-shrimp-salad",
+	"url": "https://recipes.heart.org/en/recipes/avocado-and-shrimp-salad"
+}

@@ -1,0 +1,9 @@
+{
+	"id": "G0usamLEUD82HMY",
+	"json": "{\"id\":\"G0usamLEUD82HMY\",\"url\":\"https://www.eatingwell.com/recipes/19094/cooking-methods-styles/quick-easy/dinner/tofu/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/19094/cooking-methods-styles/quick-easy/dinner/tofu/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/19094/cooking-methods-styles/quick-easy/dinner/tofu\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T14:06:40.866Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/19094/cooking-methods-styles/quick-easy/dinner/tofu",
+	"url": "https://www.eatingwell.com/recipes/19094/cooking-methods-styles/quick-easy/dinner/tofu/"
+}

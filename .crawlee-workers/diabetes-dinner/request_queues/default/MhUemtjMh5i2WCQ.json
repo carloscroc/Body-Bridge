@@ -1,0 +1,9 @@
+{
+	"id": "MhUemtjMh5i2WCQ",
+	"json": "{\"id\":\"MhUemtjMh5i2WCQ\",\"url\":\"https://diabetesfoodhub.org/recipes/grilled-cheesy-eggplant\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/grilled-cheesy-eggplant\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/grilled-cheesy-eggplant\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":10,\"state\":4}},\"handledAt\":\"2026-04-21T21:27:31.152Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/grilled-cheesy-eggplant",
+	"url": "https://diabetesfoodhub.org/recipes/grilled-cheesy-eggplant"
+}

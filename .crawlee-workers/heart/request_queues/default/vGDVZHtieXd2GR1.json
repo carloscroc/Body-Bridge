@@ -1,0 +1,9 @@
+{
+	"id": "vGDVZHtieXd2GR1",
+	"json": "{\"id\":\"vGDVZHtieXd2GR1\",\"url\":\"https://recipes.heart.org/en/recipes/lemongrass-shrimp-with-spring-pea-salad\",\"loadedUrl\":\"https://recipes.heart.org/en/recipes/lemongrass-shrimp-with-spring-pea-salad\",\"uniqueKey\":\"https://recipes.heart.org/en/recipes/lemongrass-shrimp-with-spring-pea-salad\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":8,\"state\":4}},\"handledAt\":\"2026-04-21T13:37:17.310Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recipes.heart.org/en/recipes/lemongrass-shrimp-with-spring-pea-salad",
+	"url": "https://recipes.heart.org/en/recipes/lemongrass-shrimp-with-spring-pea-salad"
+}

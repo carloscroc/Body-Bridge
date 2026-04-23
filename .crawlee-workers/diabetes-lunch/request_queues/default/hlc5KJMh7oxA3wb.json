@@ -1,0 +1,9 @@
+{
+	"id": "hlc5KJMh7oxA3wb",
+	"json": "{\"id\":\"hlc5KJMh7oxA3wb\",\"url\":\"https://diabetesfoodhub.org/recipes/grilling\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/grilling\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/grilling\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T17:47:14.497Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/grilling",
+	"url": "https://diabetesfoodhub.org/recipes/grilling"
+}

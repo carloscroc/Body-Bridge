@@ -1,0 +1,9 @@
+{
+	"id": "0PHtjQkBKJJ6zJy",
+	"json": "{\"id\":\"0PHtjQkBKJJ6zJy\",\"url\":\"https://recipes.heart.org/en/recipes/better-breakfast-pizza-with-avocado-and-eggs\",\"loadedUrl\":\"https://recipes.heart.org/en/recipes/better-breakfast-pizza-with-avocado-and-eggs\",\"uniqueKey\":\"https://recipes.heart.org/en/recipes/better-breakfast-pizza-with-avocado-and-eggs\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":8,\"state\":4}},\"handledAt\":\"2026-04-21T13:37:32.800Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recipes.heart.org/en/recipes/better-breakfast-pizza-with-avocado-and-eggs",
+	"url": "https://recipes.heart.org/en/recipes/better-breakfast-pizza-with-avocado-and-eggs"
+}

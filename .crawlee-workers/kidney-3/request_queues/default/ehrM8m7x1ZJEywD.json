@@ -1,0 +1,9 @@
+{
+	"id": "ehrM8m7x1ZJEywD",
+	"json": "{\"id\":\"ehrM8m7x1ZJEywD\",\"url\":\"https://www.kidney.org/nutrition/recipes/glazed-carrots\",\"loadedUrl\":\"https://www.kidney.org/nutrition/recipes/glazed-carrots\",\"uniqueKey\":\"https://www.kidney.org/nutrition/recipes/glazed-carrots\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":11,\"state\":4}},\"handledAt\":\"2026-04-21T19:04:57.333Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.kidney.org/nutrition/recipes/glazed-carrots",
+	"url": "https://www.kidney.org/nutrition/recipes/glazed-carrots"
+}

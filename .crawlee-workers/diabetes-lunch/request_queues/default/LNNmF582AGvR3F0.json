@@ -1,0 +1,9 @@
+{
+	"id": "LNNmF582AGvR3F0",
+	"json": "{\"id\":\"LNNmF582AGvR3F0\",\"url\":\"https://diabetesfoodhub.org/recipes/spaghetti-squash-parmigiano\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/spaghetti-squash-parmigiano\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/spaghetti-squash-parmigiano\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":5,\"state\":4}},\"handledAt\":\"2026-04-21T19:00:29.852Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/spaghetti-squash-parmigiano",
+	"url": "https://diabetesfoodhub.org/recipes/spaghetti-squash-parmigiano"
+}

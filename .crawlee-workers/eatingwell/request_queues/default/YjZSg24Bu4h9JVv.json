@@ -1,0 +1,9 @@
+{
+	"id": "YjZSg24Bu4h9JVv",
+	"json": "{\"id\":\"YjZSg24Bu4h9JVv\",\"url\":\"https://www.eatingwell.com/recipe/274166/baked-banana-nut-oatmeal-cups/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/274166/baked-banana-nut-oatmeal-cups/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/274166/baked-banana-nut-oatmeal-cups\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:20:10.848Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/274166/baked-banana-nut-oatmeal-cups",
+	"url": "https://www.eatingwell.com/recipe/274166/baked-banana-nut-oatmeal-cups/"
+}

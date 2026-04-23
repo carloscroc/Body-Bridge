@@ -1,0 +1,9 @@
+{
+	"id": "o2PmnFnw3EndLoa",
+	"json": "{\"id\":\"o2PmnFnw3EndLoa\",\"url\":\"https://www.eatingwell.com/recipes/22573/appetizer/chips-crisps/vegetable/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/22573/appetizer/chips-crisps/vegetable\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3}}}",
+	"method": "GET",
+	"orderNo": 1776775657163,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/22573/appetizer/chips-crisps/vegetable",
+	"url": "https://www.eatingwell.com/recipes/22573/appetizer/chips-crisps/vegetable/"
+}

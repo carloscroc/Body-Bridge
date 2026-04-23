@@ -1,0 +1,9 @@
+{
+	"id": "dWl9jnpwvwjq7Lh",
+	"json": "{\"id\":\"dWl9jnpwvwjq7Lh\",\"url\":\"https://www.eatingwell.com/recipes/18150/salad/grain/rice/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/18150/salad/grain/rice\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3}}}",
+	"method": "GET",
+	"orderNo": 1776776127276,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/18150/salad/grain/rice",
+	"url": "https://www.eatingwell.com/recipes/18150/salad/grain/rice/"
+}

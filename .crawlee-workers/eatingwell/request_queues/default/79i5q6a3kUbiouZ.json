@@ -1,0 +1,9 @@
+{
+	"id": "79i5q6a3kUbiouZ",
+	"json": "{\"id\":\"79i5q6a3kUbiouZ\",\"url\":\"https://www.eatingwell.com/recipe/249105/orange-avocado-salad/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/249105/orange-avocado-salad/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/249105/orange-avocado-salad\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:28:53.130Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/249105/orange-avocado-salad",
+	"url": "https://www.eatingwell.com/recipe/249105/orange-avocado-salad/"
+}

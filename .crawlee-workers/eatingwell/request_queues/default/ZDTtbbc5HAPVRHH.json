@@ -1,0 +1,9 @@
+{
+	"id": "ZDTtbbc5HAPVRHH",
+	"json": "{\"id\":\"ZDTtbbc5HAPVRHH\",\"url\":\"https://www.eatingwell.com/recipe/249347/lemon-garlic-marinated-shrimp/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/249347/lemon-garlic-marinated-shrimp/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/249347/lemon-garlic-marinated-shrimp\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T14:07:39.365Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/249347/lemon-garlic-marinated-shrimp",
+	"url": "https://www.eatingwell.com/recipe/249347/lemon-garlic-marinated-shrimp/"
+}

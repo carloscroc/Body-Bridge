@@ -1,0 +1,9 @@
+{
+	"id": "Ho1jCouQXTigpdj",
+	"json": "{\"id\":\"Ho1jCouQXTigpdj\",\"url\":\"https://www.eatingwell.com/recipes/22831/soup/turkey/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/22831/soup/turkey/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/22831/soup/turkey\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T12:57:24.522Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/22831/soup/turkey",
+	"url": "https://www.eatingwell.com/recipes/22831/soup/turkey/"
+}

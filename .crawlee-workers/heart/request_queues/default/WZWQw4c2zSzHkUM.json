@@ -1,0 +1,9 @@
+{
+	"id": "WZWQw4c2zSzHkUM",
+	"json": "{\"id\":\"WZWQw4c2zSzHkUM\",\"url\":\"https://recipes.heart.org/en/recipes/tropical-green-smoothie\",\"loadedUrl\":\"https://recipes.heart.org/en/recipes/tropical-green-smoothie\",\"uniqueKey\":\"https://recipes.heart.org/en/recipes/tropical-green-smoothie\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T12:34:25.246Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recipes.heart.org/en/recipes/tropical-green-smoothie",
+	"url": "https://recipes.heart.org/en/recipes/tropical-green-smoothie"
+}

@@ -1,0 +1,9 @@
+{
+	"id": "1ZNtXVHE3WEbyPo",
+	"json": "{\"id\":\"1ZNtXVHE3WEbyPo\",\"url\":\"https://www.eatingwell.com/recipes/18435/low-calorie/low-carb/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/18435/low-calorie/low-carb/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/18435/low-calorie/low-carb\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:19:32.875Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/18435/low-calorie/low-carb",
+	"url": "https://www.eatingwell.com/recipes/18435/low-calorie/low-carb/"
+}

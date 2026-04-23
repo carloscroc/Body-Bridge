@@ -1,0 +1,9 @@
+{
+	"id": "uMrZbsSHdqPIDWG",
+	"json": "{\"id\":\"uMrZbsSHdqPIDWG\",\"url\":\"https://www.kidney.org/nutrition/recipes/apple-almond-galette\",\"loadedUrl\":\"https://www.kidney.org/nutrition/recipes/apple-almond-galette\",\"uniqueKey\":\"https://www.kidney.org/nutrition/recipes/apple-almond-galette\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":16,\"state\":4}},\"handledAt\":\"2026-04-21T21:01:36.244Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.kidney.org/nutrition/recipes/apple-almond-galette",
+	"url": "https://www.kidney.org/nutrition/recipes/apple-almond-galette"
+}

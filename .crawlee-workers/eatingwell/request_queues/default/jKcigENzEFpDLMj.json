@@ -1,0 +1,9 @@
+{
+	"id": "jKcigENzEFpDLMj",
+	"json": "{\"id\":\"jKcigENzEFpDLMj\",\"url\":\"https://www.eatingwell.com/recipes/19775/cuisines-regions/latin-american/mexican/tacos/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/19775/cuisines-regions/latin-american/mexican/tacos\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":4}}}",
+	"method": "GET",
+	"orderNo": 1776779115071,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/19775/cuisines-regions/latin-american/mexican/tacos",
+	"url": "https://www.eatingwell.com/recipes/19775/cuisines-regions/latin-american/mexican/tacos/"
+}

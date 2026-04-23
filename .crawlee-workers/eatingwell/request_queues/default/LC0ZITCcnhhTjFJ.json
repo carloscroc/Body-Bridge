@@ -1,0 +1,9 @@
+{
+	"id": "LC0ZITCcnhhTjFJ",
+	"json": "{\"id\":\"LC0ZITCcnhhTjFJ\",\"url\":\"https://www.eatingwell.com/recipes/17900/dietary-restrictions/gluten-free/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/17900/dietary-restrictions/gluten-free/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/17900/dietary-restrictions/gluten-free\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:13:31.489Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/17900/dietary-restrictions/gluten-free",
+	"url": "https://www.eatingwell.com/recipes/17900/dietary-restrictions/gluten-free/"
+}

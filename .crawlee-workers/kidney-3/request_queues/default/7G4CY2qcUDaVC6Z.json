@@ -1,0 +1,9 @@
+{
+	"id": "7G4CY2qcUDaVC6Z",
+	"json": "{\"id\":\"7G4CY2qcUDaVC6Z\",\"url\":\"https://www.kidney.org/nutrition/recipes/healthy-chicken-nuggets\",\"loadedUrl\":\"https://www.kidney.org/nutrition/recipes/healthy-chicken-nuggets\",\"uniqueKey\":\"https://www.kidney.org/nutrition/recipes/healthy-chicken-nuggets\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":8,\"state\":4}},\"handledAt\":\"2026-04-21T18:16:01.871Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.kidney.org/nutrition/recipes/healthy-chicken-nuggets",
+	"url": "https://www.kidney.org/nutrition/recipes/healthy-chicken-nuggets"
+}

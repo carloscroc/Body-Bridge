@@ -1,0 +1,9 @@
+{
+	"id": "cBhUsUUHy4TwkW5",
+	"json": "{\"id\":\"cBhUsUUHy4TwkW5\",\"url\":\"https://www.kidney.org/nutrition/recipes?f%5B0%5D=appropriate_for%3A52799&f%5B1%5D=diet%3A52813&f%5B2%5D=language%3Aen\",\"loadedUrl\":\"https://www.kidney.org/nutrition/recipes?f%5B0%5D=appropriate_for%3A52799&f%5B1%5D=diet%3A52813&f%5B2%5D=language%3Aen\",\"uniqueKey\":\"https://www.kidney.org/nutrition/recipes?f%5B0%5D=appropriate_for%3A52799&f%5B1%5D=diet%3A52813&f%5B2%5D=language%3Aen\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T20:52:45.774Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.kidney.org/nutrition/recipes?f%5B0%5D=appropriate_for%3A52799&f%5B1%5D=diet%3A52813&f%5B2%5D=language%3Aen",
+	"url": "https://www.kidney.org/nutrition/recipes?f%5B0%5D=appropriate_for%3A52799&f%5B1%5D=diet%3A52813&f%5B2%5D=language%3Aen"
+}

@@ -1,0 +1,9 @@
+{
+	"id": "s4LbWmmi7F5X9BG",
+	"json": "{\"id\":\"s4LbWmmi7F5X9BG\",\"url\":\"https://www.eatingwell.com/recipes/23011/health-condition/diabetic/international/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/23011/health-condition/diabetic/international/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/23011/health-condition/diabetic/international\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:08:18.687Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/23011/health-condition/diabetic/international",
+	"url": "https://www.eatingwell.com/recipes/23011/health-condition/diabetic/international/"
+}

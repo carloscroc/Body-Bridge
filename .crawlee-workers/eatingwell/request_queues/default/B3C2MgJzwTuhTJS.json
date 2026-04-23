@@ -1,0 +1,9 @@
+{
+	"id": "B3C2MgJzwTuhTJS",
+	"json": "{\"id\":\"B3C2MgJzwTuhTJS\",\"url\":\"https://www.eatingwell.com/recipe/254609/chipotle-chicken-quinoa-burrito-bowl/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/254609/chipotle-chicken-quinoa-burrito-bowl/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/254609/chipotle-chicken-quinoa-burrito-bowl\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T13:41:50.259Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/254609/chipotle-chicken-quinoa-burrito-bowl",
+	"url": "https://www.eatingwell.com/recipe/254609/chipotle-chicken-quinoa-burrito-bowl/"
+}

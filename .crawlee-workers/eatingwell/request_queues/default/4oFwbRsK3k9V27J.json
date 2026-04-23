@@ -1,0 +1,9 @@
+{
+	"id": "4oFwbRsK3k9V27J",
+	"json": "{\"id\":\"4oFwbRsK3k9V27J\",\"url\":\"https://www.eatingwell.com/recipes/18611/drinks/smoothies/protein/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/18611/drinks/smoothies/protein/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/18611/drinks/smoothies/protein\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:02:11.081Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/18611/drinks/smoothies/protein",
+	"url": "https://www.eatingwell.com/recipes/18611/drinks/smoothies/protein/"
+}

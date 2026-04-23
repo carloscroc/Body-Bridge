@@ -1,0 +1,9 @@
+{
+	"id": "wWeSFC9X7DkWvp3",
+	"json": "{\"id\":\"wWeSFC9X7DkWvp3\",\"url\":\"https://www.eatingwell.com/recipe/270185/steamed-cabbage-carrots/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/270185/steamed-cabbage-carrots/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/270185/steamed-cabbage-carrots\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T14:12:37.290Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/270185/steamed-cabbage-carrots",
+	"url": "https://www.eatingwell.com/recipe/270185/steamed-cabbage-carrots/"
+}

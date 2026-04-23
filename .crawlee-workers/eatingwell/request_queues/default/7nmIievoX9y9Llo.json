@@ -1,0 +1,9 @@
+{
+	"id": "7nmIievoX9y9Llo",
+	"json": "{\"id\":\"7nmIievoX9y9Llo\",\"url\":\"https://www.eatingwell.com/recipe/252620/homemade-plain-yogurt/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/252620/homemade-plain-yogurt/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/252620/homemade-plain-yogurt\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:38:48.104Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/252620/homemade-plain-yogurt",
+	"url": "https://www.eatingwell.com/recipe/252620/homemade-plain-yogurt/"
+}

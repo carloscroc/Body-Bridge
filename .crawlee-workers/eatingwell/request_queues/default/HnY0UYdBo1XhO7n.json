@@ -1,0 +1,9 @@
+{
+	"id": "HnY0UYdBo1XhO7n",
+	"json": "{\"id\":\"HnY0UYdBo1XhO7n\",\"url\":\"https://www.eatingwell.com/recipes/18052/health-condition/bone-health/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/18052/health-condition/bone-health/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/18052/health-condition/bone-health\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:08:54.307Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/18052/health-condition/bone-health",
+	"url": "https://www.eatingwell.com/recipes/18052/health-condition/bone-health/"
+}

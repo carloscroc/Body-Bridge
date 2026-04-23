@@ -1,0 +1,9 @@
+{
+	"id": "wGOHCbRhAqHRy0b",
+	"json": "{\"id\":\"wGOHCbRhAqHRy0b\",\"url\":\"https://www.eatingwell.com/recipes/18308/cuisines-regions/usa/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/18308/cuisines-regions/usa/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/18308/cuisines-regions/usa\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:29:10.482Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/18308/cuisines-regions/usa",
+	"url": "https://www.eatingwell.com/recipes/18308/cuisines-regions/usa/"
+}

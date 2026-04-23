@@ -1,0 +1,9 @@
+{
+	"id": "WSUGF34qK8v7MBO",
+	"json": "{\"id\":\"WSUGF34qK8v7MBO\",\"url\":\"https://www.eatingwell.com/recipe/249197/vinegary-coleslaw/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/249197/vinegary-coleslaw/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/249197/vinegary-coleslaw\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T14:15:41.584Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/249197/vinegary-coleslaw",
+	"url": "https://www.eatingwell.com/recipe/249197/vinegary-coleslaw/"
+}

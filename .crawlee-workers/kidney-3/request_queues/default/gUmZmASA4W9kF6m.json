@@ -1,0 +1,9 @@
+{
+	"id": "gUmZmASA4W9kF6m",
+	"json": "{\"id\":\"gUmZmASA4W9kF6m\",\"url\":\"https://www.kidney.org/nutrition/recipes/chicken-pad-thai?page=11\",\"loadedUrl\":\"https://www.kidney.org/nutrition/recipes/chicken-pad-thai?page=11\",\"uniqueKey\":\"https://www.kidney.org/nutrition/recipes/chicken-pad-thai?page=11\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":16,\"state\":4}},\"handledAt\":\"2026-04-21T21:23:11.188Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.kidney.org/nutrition/recipes/chicken-pad-thai?page=11",
+	"url": "https://www.kidney.org/nutrition/recipes/chicken-pad-thai?page=11"
+}

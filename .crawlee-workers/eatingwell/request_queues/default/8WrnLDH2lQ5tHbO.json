@@ -1,0 +1,9 @@
+{
+	"id": "8WrnLDH2lQ5tHbO",
+	"json": "{\"id\":\"8WrnLDH2lQ5tHbO\",\"url\":\"https://www.eatingwell.com/recipes/18249/ingredients/oils/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/18249/ingredients/oils/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/18249/ingredients/oils\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:34:45.917Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/18249/ingredients/oils",
+	"url": "https://www.eatingwell.com/recipes/18249/ingredients/oils/"
+}

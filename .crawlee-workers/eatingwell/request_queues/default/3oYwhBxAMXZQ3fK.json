@@ -1,0 +1,9 @@
+{
+	"id": "3oYwhBxAMXZQ3fK",
+	"json": "{\"id\":\"3oYwhBxAMXZQ3fK\",\"url\":\"https://www.eatingwell.com/recipe/251078/avocado-pesto/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/251078/avocado-pesto/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/251078/avocado-pesto\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:27:11.365Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/251078/avocado-pesto",
+	"url": "https://www.eatingwell.com/recipe/251078/avocado-pesto/"
+}

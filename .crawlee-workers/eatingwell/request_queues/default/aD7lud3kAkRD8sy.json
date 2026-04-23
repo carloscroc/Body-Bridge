@@ -1,0 +1,9 @@
+{
+	"id": "aD7lud3kAkRD8sy",
+	"json": "{\"id\":\"aD7lud3kAkRD8sy\",\"url\":\"https://www.eatingwell.com/recipe/252160/borscht/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/252160/borscht/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/252160/borscht\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T14:09:38.954Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/252160/borscht",
+	"url": "https://www.eatingwell.com/recipe/252160/borscht/"
+}

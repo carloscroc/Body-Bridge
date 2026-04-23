@@ -1,0 +1,9 @@
+{
+	"id": "BEw1enRiKP1ekKU",
+	"json": "{\"id\":\"BEw1enRiKP1ekKU\",\"url\":\"https://recipes.heart.org/en/recipes/summer-limeade\",\"loadedUrl\":\"https://recipes.heart.org/en/recipes/summer-limeade\",\"uniqueKey\":\"https://recipes.heart.org/en/recipes/summer-limeade\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":10,\"state\":4}},\"handledAt\":\"2026-04-21T13:46:20.771Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recipes.heart.org/en/recipes/summer-limeade",
+	"url": "https://recipes.heart.org/en/recipes/summer-limeade"
+}

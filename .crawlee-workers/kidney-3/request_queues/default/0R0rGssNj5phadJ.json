@@ -1,0 +1,9 @@
+{
+	"id": "0R0rGssNj5phadJ",
+	"json": "{\"id\":\"0R0rGssNj5phadJ\",\"url\":\"https://www.kidney.org/nutrition/recipes/bolognese-rice-noodles\",\"loadedUrl\":\"https://www.kidney.org/nutrition/recipes/bolognese-rice-noodles\",\"uniqueKey\":\"https://www.kidney.org/nutrition/recipes/bolognese-rice-noodles\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":4,\"state\":4}},\"handledAt\":\"2026-04-21T17:37:03.685Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.kidney.org/nutrition/recipes/bolognese-rice-noodles",
+	"url": "https://www.kidney.org/nutrition/recipes/bolognese-rice-noodles"
+}

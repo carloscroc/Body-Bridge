@@ -1,0 +1,9 @@
+{
+	"id": "0AdVzWeJRU1ofAM",
+	"json": "{\"id\":\"0AdVzWeJRU1ofAM\",\"url\":\"https://www.eatingwell.com/recipe/252677/lemon-thyme-whipped-ricotta/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/252677/lemon-thyme-whipped-ricotta/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/252677/lemon-thyme-whipped-ricotta\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T14:13:20.182Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/252677/lemon-thyme-whipped-ricotta",
+	"url": "https://www.eatingwell.com/recipe/252677/lemon-thyme-whipped-ricotta/"
+}

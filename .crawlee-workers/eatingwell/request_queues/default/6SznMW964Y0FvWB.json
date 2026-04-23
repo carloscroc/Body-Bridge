@@ -1,0 +1,9 @@
+{
+	"id": "6SznMW964Y0FvWB",
+	"json": "{\"id\":\"6SznMW964Y0FvWB\",\"url\":\"https://www.eatingwell.com/recipe/276095/spinach-artichoke-dip-pasta/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/276095/spinach-artichoke-dip-pasta/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/276095/spinach-artichoke-dip-pasta\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T14:05:04.235Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/276095/spinach-artichoke-dip-pasta",
+	"url": "https://www.eatingwell.com/recipe/276095/spinach-artichoke-dip-pasta/"
+}

@@ -1,0 +1,9 @@
+{
+	"id": "VPvYtxJvxy9AfLd",
+	"json": "{\"id\":\"VPvYtxJvxy9AfLd\",\"url\":\"https://www.eatingwell.com/recipe/267594/slow-cooked-beef-with-carrots-cabbage/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/267594/slow-cooked-beef-with-carrots-cabbage/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/267594/slow-cooked-beef-with-carrots-cabbage\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T13:43:20.670Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/267594/slow-cooked-beef-with-carrots-cabbage",
+	"url": "https://www.eatingwell.com/recipe/267594/slow-cooked-beef-with-carrots-cabbage/"
+}

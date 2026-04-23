@@ -1,0 +1,9 @@
+{
+	"id": "vyv4lYJw39qx25e",
+	"json": "{\"id\":\"vyv4lYJw39qx25e\",\"url\":\"https://www.eatingwell.com/recipe/252384/steak-burritos/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/252384/steak-burritos/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/252384/steak-burritos\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:32:28.478Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/252384/steak-burritos",
+	"url": "https://www.eatingwell.com/recipe/252384/steak-burritos/"
+}

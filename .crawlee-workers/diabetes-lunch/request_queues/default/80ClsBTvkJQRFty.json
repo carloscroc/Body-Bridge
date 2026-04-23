@@ -1,0 +1,9 @@
+{
+	"id": "80ClsBTvkJQRFty",
+	"json": "{\"id\":\"80ClsBTvkJQRFty\",\"url\":\"https://diabetesfoodhub.org/recipes/comfort-food?page=9\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/comfort-food?page=9\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/comfort-food?page=9\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":12,\"state\":4}},\"handledAt\":\"2026-04-21T21:52:21.952Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/comfort-food?page=9",
+	"url": "https://diabetesfoodhub.org/recipes/comfort-food?page=9"
+}

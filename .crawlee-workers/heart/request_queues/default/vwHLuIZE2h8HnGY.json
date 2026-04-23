@@ -1,0 +1,9 @@
+{
+	"id": "vwHLuIZE2h8HnGY",
+	"json": "{\"id\":\"vwHLuIZE2h8HnGY\",\"url\":\"https://recipes.heart.org/en/recipes/pork-chop-with-pizzazz-and-cauliflower-mash\",\"loadedUrl\":\"https://recipes.heart.org/en/recipes/pork-chop-with-pizzazz-and-cauliflower-mash\",\"uniqueKey\":\"https://recipes.heart.org/en/recipes/pork-chop-with-pizzazz-and-cauliflower-mash\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":8,\"state\":4}},\"handledAt\":\"2026-04-21T13:39:01.082Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recipes.heart.org/en/recipes/pork-chop-with-pizzazz-and-cauliflower-mash",
+	"url": "https://recipes.heart.org/en/recipes/pork-chop-with-pizzazz-and-cauliflower-mash"
+}

@@ -1,0 +1,9 @@
+{
+	"id": "TG0Z0frF6Dkc1Wt",
+	"json": "{\"id\":\"TG0Z0frF6Dkc1Wt\",\"url\":\"https://www.eatingwell.com/recipe/253039/mushroom-pate/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/253039/mushroom-pate/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/253039/mushroom-pate\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T14:07:35.161Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/253039/mushroom-pate",
+	"url": "https://www.eatingwell.com/recipe/253039/mushroom-pate/"
+}

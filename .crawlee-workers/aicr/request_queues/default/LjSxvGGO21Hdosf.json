@@ -1,0 +1,9 @@
+{
+	"id": "LjSxvGGO21Hdosf",
+	"json": "{\"id\":\"LjSxvGGO21Hdosf\",\"url\":\"https://www.aicr.org/cancer-prevention/recipes/category/entrees/?page=7\",\"loadedUrl\":\"https://www.aicr.org/cancer-prevention/recipes/category/entrees/?page=7\",\"uniqueKey\":\"https://www.aicr.org/cancer-prevention/recipes/category/entrees?page=7\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T13:36:57.368Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.aicr.org/cancer-prevention/recipes/category/entrees?page=7",
+	"url": "https://www.aicr.org/cancer-prevention/recipes/category/entrees/?page=7"
+}

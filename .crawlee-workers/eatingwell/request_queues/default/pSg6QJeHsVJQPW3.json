@@ -1,0 +1,9 @@
+{
+	"id": "pSg6QJeHsVJQPW3",
+	"json": "{\"id\":\"pSg6QJeHsVJQPW3\",\"url\":\"https://www.eatingwell.com/recipe/277432/cream-of-broccoli-soup/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/277432/cream-of-broccoli-soup/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/277432/cream-of-broccoli-soup\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T14:08:14.452Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/277432/cream-of-broccoli-soup",
+	"url": "https://www.eatingwell.com/recipe/277432/cream-of-broccoli-soup/"
+}

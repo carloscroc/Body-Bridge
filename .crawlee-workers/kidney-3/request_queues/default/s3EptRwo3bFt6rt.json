@@ -1,0 +1,9 @@
+{
+	"id": "s3EptRwo3bFt6rt",
+	"json": "{\"id\":\"s3EptRwo3bFt6rt\",\"url\":\"https://www.kidney.org/nutrition/recipes/carrot-cake?page=0\",\"loadedUrl\":\"https://www.kidney.org/nutrition/recipes/carrot-cake?page=0\",\"uniqueKey\":\"https://www.kidney.org/nutrition/recipes/carrot-cake?page=0\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":14,\"state\":4}},\"handledAt\":\"2026-04-21T20:13:47.395Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.kidney.org/nutrition/recipes/carrot-cake?page=0",
+	"url": "https://www.kidney.org/nutrition/recipes/carrot-cake?page=0"
+}

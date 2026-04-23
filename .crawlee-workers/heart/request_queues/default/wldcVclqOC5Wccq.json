@@ -1,0 +1,9 @@
+{
+	"id": "wldcVclqOC5Wccq",
+	"json": "{\"id\":\"wldcVclqOC5Wccq\",\"url\":\"https://recipes.heart.org/en/recipes/avocado-green-tea-ice-pops\",\"loadedUrl\":\"https://recipes.heart.org/en/recipes/avocado-green-tea-ice-pops\",\"uniqueKey\":\"https://recipes.heart.org/en/recipes/avocado-green-tea-ice-pops\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T12:35:39.924Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recipes.heart.org/en/recipes/avocado-green-tea-ice-pops",
+	"url": "https://recipes.heart.org/en/recipes/avocado-green-tea-ice-pops"
+}

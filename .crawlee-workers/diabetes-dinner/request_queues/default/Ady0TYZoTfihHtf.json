@@ -1,0 +1,9 @@
+{
+	"id": "Ady0TYZoTfihHtf",
+	"json": "{\"id\":\"Ady0TYZoTfihHtf\",\"url\":\"https://diabetesfoodhub.org/recipes/appetizers?page=12\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/appetizers?page=12\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/appetizers?page=12\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":15,\"state\":4}},\"handledAt\":\"2026-04-21T22:29:15.758Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/appetizers?page=12",
+	"url": "https://diabetesfoodhub.org/recipes/appetizers?page=12"
+}

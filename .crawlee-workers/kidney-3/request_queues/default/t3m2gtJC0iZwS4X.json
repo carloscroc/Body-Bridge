@@ -1,0 +1,9 @@
+{
+	"id": "t3m2gtJC0iZwS4X",
+	"json": "{\"id\":\"t3m2gtJC0iZwS4X\",\"url\":\"https://www.kidney.org/nutrition/recipes/bbq-apple-chips?page=1\",\"loadedUrl\":\"https://www.kidney.org/nutrition/recipes/bbq-apple-chips?page=1\",\"uniqueKey\":\"https://www.kidney.org/nutrition/recipes/bbq-apple-chips?page=1\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":18,\"state\":4}},\"handledAt\":\"2026-04-21T22:36:57.257Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.kidney.org/nutrition/recipes/bbq-apple-chips?page=1",
+	"url": "https://www.kidney.org/nutrition/recipes/bbq-apple-chips?page=1"
+}

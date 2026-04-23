@@ -1,0 +1,9 @@
+{
+	"id": "dYwRmDjMtUG8Sfg",
+	"json": "{\"id\":\"dYwRmDjMtUG8Sfg\",\"url\":\"https://www.kidney.org/nutrition/recipes/caribbean-arroz-con-pollo?page=2\",\"loadedUrl\":\"https://www.kidney.org/nutrition/recipes/caribbean-arroz-con-pollo?page=2\",\"uniqueKey\":\"https://www.kidney.org/nutrition/recipes/caribbean-arroz-con-pollo?page=2\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":15,\"state\":4}},\"handledAt\":\"2026-04-21T20:40:27.411Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.kidney.org/nutrition/recipes/caribbean-arroz-con-pollo?page=2",
+	"url": "https://www.kidney.org/nutrition/recipes/caribbean-arroz-con-pollo?page=2"
+}

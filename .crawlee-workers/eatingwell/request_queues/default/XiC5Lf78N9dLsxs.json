@@ -1,0 +1,9 @@
+{
+	"id": "XiC5Lf78N9dLsxs",
+	"json": "{\"id\":\"XiC5Lf78N9dLsxs\",\"url\":\"https://www.eatingwell.com/recipes/18355/health-condition/diabetic/desserts/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/18355/health-condition/diabetic/desserts/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/18355/health-condition/diabetic/desserts\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:05:59.625Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/18355/health-condition/diabetic/desserts",
+	"url": "https://www.eatingwell.com/recipes/18355/health-condition/diabetic/desserts/"
+}

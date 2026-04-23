@@ -1,0 +1,9 @@
+{
+	"id": "xQBCu8MKEMzn5iS",
+	"json": "{\"id\":\"xQBCu8MKEMzn5iS\",\"url\":\"https://www.kidney.org/nutrition/recipes/grilled-sesame-chicken\",\"loadedUrl\":\"https://www.kidney.org/nutrition/recipes/grilled-sesame-chicken\",\"uniqueKey\":\"https://www.kidney.org/nutrition/recipes/grilled-sesame-chicken\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T17:30:32.384Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.kidney.org/nutrition/recipes/grilled-sesame-chicken",
+	"url": "https://www.kidney.org/nutrition/recipes/grilled-sesame-chicken"
+}

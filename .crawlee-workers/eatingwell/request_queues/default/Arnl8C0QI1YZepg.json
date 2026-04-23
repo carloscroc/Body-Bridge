@@ -1,0 +1,9 @@
+{
+	"id": "Arnl8C0QI1YZepg",
+	"json": "{\"id\":\"Arnl8C0QI1YZepg\",\"url\":\"https://www.eatingwell.com/recipes/18022/lifestyle-diets/paleo/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/18022/lifestyle-diets/paleo/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/18022/lifestyle-diets/paleo\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:33:17.437Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/18022/lifestyle-diets/paleo",
+	"url": "https://www.eatingwell.com/recipes/18022/lifestyle-diets/paleo/"
+}

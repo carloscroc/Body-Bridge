@@ -1,0 +1,9 @@
+{
+	"id": "JnNQBB7D024fjjU",
+	"json": "{\"id\":\"JnNQBB7D024fjjU\",\"url\":\"https://www.kidney.org/nutrition/recipes/pear-almond-parfait?page=3\",\"loadedUrl\":\"https://www.kidney.org/nutrition/recipes/pear-almond-parfait?page=3\",\"uniqueKey\":\"https://www.kidney.org/nutrition/recipes/pear-almond-parfait?page=3\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":10,\"state\":4}},\"handledAt\":\"2026-04-21T18:53:31.632Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.kidney.org/nutrition/recipes/pear-almond-parfait?page=3",
+	"url": "https://www.kidney.org/nutrition/recipes/pear-almond-parfait?page=3"
+}

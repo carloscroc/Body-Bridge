@@ -1,0 +1,9 @@
+{
+	"id": "24qUzvor2g4zNLe",
+	"json": "{\"id\":\"24qUzvor2g4zNLe\",\"url\":\"https://www.kidney.org/nutrition/recipes/chicken-fajitas?page=4\",\"loadedUrl\":\"https://www.kidney.org/nutrition/recipes/chicken-fajitas?page=4\",\"uniqueKey\":\"https://www.kidney.org/nutrition/recipes/chicken-fajitas?page=4\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":12,\"state\":4}},\"handledAt\":\"2026-04-21T19:33:15.803Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.kidney.org/nutrition/recipes/chicken-fajitas?page=4",
+	"url": "https://www.kidney.org/nutrition/recipes/chicken-fajitas?page=4"
+}

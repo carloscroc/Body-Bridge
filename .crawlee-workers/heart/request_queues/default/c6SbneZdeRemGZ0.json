@@ -1,0 +1,9 @@
+{
+	"id": "c6SbneZdeRemGZ0",
+	"json": "{\"id\":\"c6SbneZdeRemGZ0\",\"url\":\"https://recipes.heart.org/en/recipes/burger-soup\",\"loadedUrl\":\"https://recipes.heart.org/en/recipes/burger-soup\",\"uniqueKey\":\"https://recipes.heart.org/en/recipes/burger-soup\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":4,\"state\":4}},\"handledAt\":\"2026-04-21T12:41:46.656Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recipes.heart.org/en/recipes/burger-soup",
+	"url": "https://recipes.heart.org/en/recipes/burger-soup"
+}

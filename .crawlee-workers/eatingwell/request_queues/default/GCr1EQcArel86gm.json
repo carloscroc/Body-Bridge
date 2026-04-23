@@ -1,0 +1,9 @@
+{
+	"id": "GCr1EQcArel86gm",
+	"json": "{\"id\":\"GCr1EQcArel86gm\",\"url\":\"https://www.eatingwell.com/recipe/7904010/baked-cinnamon-apple-slices/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/7904010/baked-cinnamon-apple-slices\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3}}}",
+	"method": "GET",
+	"orderNo": 1776776382970,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/7904010/baked-cinnamon-apple-slices",
+	"url": "https://www.eatingwell.com/recipe/7904010/baked-cinnamon-apple-slices/"
+}

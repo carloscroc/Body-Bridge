@@ -1,0 +1,9 @@
+{
+	"id": "EkMgLeTRysYL594",
+	"json": "{\"id\":\"EkMgLeTRysYL594\",\"url\":\"https://www.eatingwell.com/recipe/250071/grilled-fish-tacos/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/250071/grilled-fish-tacos/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/250071/grilled-fish-tacos\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T14:20:40.225Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/250071/grilled-fish-tacos",
+	"url": "https://www.eatingwell.com/recipe/250071/grilled-fish-tacos/"
+}

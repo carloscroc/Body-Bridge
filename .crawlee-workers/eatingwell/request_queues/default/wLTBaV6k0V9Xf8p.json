@@ -1,0 +1,9 @@
+{
+	"id": "wLTBaV6k0V9Xf8p",
+	"json": "{\"id\":\"wLTBaV6k0V9Xf8p\",\"url\":\"https://www.eatingwell.com/recipes/22863/cooking-methods-styles/quick-easy/dinner/seasonal/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/22863/cooking-methods-styles/quick-easy/dinner/seasonal/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/22863/cooking-methods-styles/quick-easy/dinner/seasonal\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T14:07:21.863Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/22863/cooking-methods-styles/quick-easy/dinner/seasonal",
+	"url": "https://www.eatingwell.com/recipes/22863/cooking-methods-styles/quick-easy/dinner/seasonal/"
+}

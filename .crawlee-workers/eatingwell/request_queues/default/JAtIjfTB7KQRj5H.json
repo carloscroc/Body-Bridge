@@ -1,0 +1,9 @@
+{
+	"id": "JAtIjfTB7KQRj5H",
+	"json": "{\"id\":\"JAtIjfTB7KQRj5H\",\"url\":\"https://www.eatingwell.com/recipes/18141/salad/ham/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/18141/salad/ham/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/18141/salad/ham\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T12:54:05.783Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/18141/salad/ham",
+	"url": "https://www.eatingwell.com/recipes/18141/salad/ham/"
+}

@@ -1,0 +1,9 @@
+{
+	"id": "i528XtRe8Z7a4Dh",
+	"json": "{\"id\":\"i528XtRe8Z7a4Dh\",\"url\":\"https://www.eatingwell.com/recipe/266498/chicken-pasta-primavera/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/266498/chicken-pasta-primavera/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/266498/chicken-pasta-primavera\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T13:44:48.573Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/266498/chicken-pasta-primavera",
+	"url": "https://www.eatingwell.com/recipe/266498/chicken-pasta-primavera/"
+}

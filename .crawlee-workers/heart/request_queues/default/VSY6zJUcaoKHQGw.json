@@ -1,0 +1,9 @@
+{
+	"id": "VSY6zJUcaoKHQGw",
+	"json": "{\"id\":\"VSY6zJUcaoKHQGw\",\"url\":\"https://recipes.heart.org/en/recipes/italian-sausage-stew\",\"loadedUrl\":\"https://recipes.heart.org/en/recipes/italian-sausage-stew\",\"uniqueKey\":\"https://recipes.heart.org/en/recipes/italian-sausage-stew\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":15,\"state\":4}},\"handledAt\":\"2026-04-21T14:05:38.684Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recipes.heart.org/en/recipes/italian-sausage-stew",
+	"url": "https://recipes.heart.org/en/recipes/italian-sausage-stew"
+}

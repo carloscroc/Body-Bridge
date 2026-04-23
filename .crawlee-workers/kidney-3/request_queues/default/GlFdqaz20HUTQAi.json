@@ -1,0 +1,9 @@
+{
+	"id": "GlFdqaz20HUTQAi",
+	"json": "{\"id\":\"GlFdqaz20HUTQAi\",\"url\":\"https://www.kidney.org/nutrition/recipes/roasted-vegetable-orzo?page=0\",\"loadedUrl\":\"https://www.kidney.org/nutrition/recipes/roasted-vegetable-orzo?page=0\",\"uniqueKey\":\"https://www.kidney.org/nutrition/recipes/roasted-vegetable-orzo?page=0\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":12,\"state\":4}},\"handledAt\":\"2026-04-21T19:30:29.278Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.kidney.org/nutrition/recipes/roasted-vegetable-orzo?page=0",
+	"url": "https://www.kidney.org/nutrition/recipes/roasted-vegetable-orzo?page=0"
+}

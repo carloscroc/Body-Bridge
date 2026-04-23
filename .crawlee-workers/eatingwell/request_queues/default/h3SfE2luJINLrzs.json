@@ -1,0 +1,9 @@
+{
+	"id": "h3SfE2luJINLrzs",
+	"json": "{\"id\":\"h3SfE2luJINLrzs\",\"url\":\"https://www.eatingwell.com/recipe/249249/crunchy-bok-choy-slaw/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/249249/crunchy-bok-choy-slaw/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/249249/crunchy-bok-choy-slaw\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T14:12:05.327Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/249249/crunchy-bok-choy-slaw",
+	"url": "https://www.eatingwell.com/recipe/249249/crunchy-bok-choy-slaw/"
+}

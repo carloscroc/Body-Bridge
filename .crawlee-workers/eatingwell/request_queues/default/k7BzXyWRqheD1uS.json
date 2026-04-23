@@ -1,0 +1,9 @@
+{
+	"id": "k7BzXyWRqheD1uS",
+	"json": "{\"id\":\"k7BzXyWRqheD1uS\",\"url\":\"https://www.eatingwell.com/recipe/252456/salmon-chowder/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/252456/salmon-chowder/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/252456/salmon-chowder\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T13:59:10.950Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/252456/salmon-chowder",
+	"url": "https://www.eatingwell.com/recipe/252456/salmon-chowder/"
+}

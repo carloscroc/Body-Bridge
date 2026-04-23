@@ -1,0 +1,9 @@
+{
+	"id": "g27f3RaE2IPCILA",
+	"json": "{\"id\":\"g27f3RaE2IPCILA\",\"url\":\"https://recipes.heart.org/en/recipes/chicken-shawarma\",\"loadedUrl\":\"https://recipes.heart.org/en/recipes/chicken-shawarma\",\"uniqueKey\":\"https://recipes.heart.org/en/recipes/chicken-shawarma\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":11,\"state\":4}},\"handledAt\":\"2026-04-21T13:51:08.020Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recipes.heart.org/en/recipes/chicken-shawarma",
+	"url": "https://recipes.heart.org/en/recipes/chicken-shawarma"
+}

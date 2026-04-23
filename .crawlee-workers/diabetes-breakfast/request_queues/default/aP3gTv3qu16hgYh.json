@@ -1,0 +1,9 @@
+{
+	"id": "aP3gTv3qu16hgYh",
+	"json": "{\"id\":\"aP3gTv3qu16hgYh\",\"url\":\"https://diabetesfoodhub.org/recipes/savory-mediterranean-oats\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/savory-mediterranean-oats\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/savory-mediterranean-oats\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":10,\"state\":4}},\"handledAt\":\"2026-04-21T21:32:37.576Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/savory-mediterranean-oats",
+	"url": "https://diabetesfoodhub.org/recipes/savory-mediterranean-oats"
+}

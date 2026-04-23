@@ -1,0 +1,9 @@
+{
+	"id": "TB0ByUmZMCTldgO",
+	"json": "{\"id\":\"TB0ByUmZMCTldgO\",\"url\":\"https://www.eatingwell.com/recipes/21674/ingredients/vegetables/greens/spinach/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/21674/ingredients/vegetables/greens/spinach\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":4}}}",
+	"method": "GET",
+	"orderNo": 1776779357271,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/21674/ingredients/vegetables/greens/spinach",
+	"url": "https://www.eatingwell.com/recipes/21674/ingredients/vegetables/greens/spinach/"
+}

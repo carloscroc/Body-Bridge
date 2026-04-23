@@ -1,0 +1,9 @@
+{
+	"id": "R9RJ3vCqeMamAaz",
+	"json": "{\"id\":\"R9RJ3vCqeMamAaz\",\"url\":\"https://www.eatingwell.com/recipe/259819/white-bean-veggie-salad/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/259819/white-bean-veggie-salad/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/259819/white-bean-veggie-salad\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T14:06:07.971Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/259819/white-bean-veggie-salad",
+	"url": "https://www.eatingwell.com/recipe/259819/white-bean-veggie-salad/"
+}

@@ -1,0 +1,9 @@
+{
+	"id": "uFungdCqTcEC85z",
+	"json": "{\"id\":\"uFungdCqTcEC85z\",\"url\":\"https://www.eatingwell.com/recipe/261345/steamed-fresh-green-beans/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/261345/steamed-fresh-green-beans/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/261345/steamed-fresh-green-beans\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T13:41:11.912Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/261345/steamed-fresh-green-beans",
+	"url": "https://www.eatingwell.com/recipe/261345/steamed-fresh-green-beans/"
+}

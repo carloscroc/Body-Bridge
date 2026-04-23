@@ -1,0 +1,9 @@
+{
+	"id": "dU4BU9RsYKy61By",
+	"json": "{\"id\":\"dU4BU9RsYKy61By\",\"url\":\"https://diabetesfoodhub.org/recipes/apple-and-peanut-butter\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/apple-and-peanut-butter\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/apple-and-peanut-butter\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":7,\"state\":4}},\"handledAt\":\"2026-04-21T20:05:32.766Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/apple-and-peanut-butter",
+	"url": "https://diabetesfoodhub.org/recipes/apple-and-peanut-butter"
+}

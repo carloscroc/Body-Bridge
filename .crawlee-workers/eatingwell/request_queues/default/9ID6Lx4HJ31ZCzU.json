@@ -1,0 +1,9 @@
+{
+	"id": "9ID6Lx4HJ31ZCzU",
+	"json": "{\"id\":\"9ID6Lx4HJ31ZCzU\",\"url\":\"https://www.eatingwell.com/recipe/252045/smoked-salmon-salad-nicoise/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/252045/smoked-salmon-salad-nicoise/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/252045/smoked-salmon-salad-nicoise\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T14:14:48.239Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/252045/smoked-salmon-salad-nicoise",
+	"url": "https://www.eatingwell.com/recipe/252045/smoked-salmon-salad-nicoise/"
+}

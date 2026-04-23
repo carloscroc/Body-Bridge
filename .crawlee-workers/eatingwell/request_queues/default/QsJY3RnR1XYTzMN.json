@@ -1,0 +1,9 @@
+{
+	"id": "QsJY3RnR1XYTzMN",
+	"json": "{\"id\":\"QsJY3RnR1XYTzMN\",\"url\":\"https://www.eatingwell.com/recipe/264673/protein-bistro-lunch-box/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/264673/protein-bistro-lunch-box/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/264673/protein-bistro-lunch-box\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T14:08:45.296Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/264673/protein-bistro-lunch-box",
+	"url": "https://www.eatingwell.com/recipe/264673/protein-bistro-lunch-box/"
+}

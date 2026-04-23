@@ -1,0 +1,9 @@
+{
+	"id": "KhaTHn8f8kGUW9I",
+	"json": "{\"id\":\"KhaTHn8f8kGUW9I\",\"url\":\"https://www.eatingwell.com/recipe/252167/massaged-kale-salad/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/252167/massaged-kale-salad/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/252167/massaged-kale-salad\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T14:11:30.834Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/252167/massaged-kale-salad",
+	"url": "https://www.eatingwell.com/recipe/252167/massaged-kale-salad/"
+}

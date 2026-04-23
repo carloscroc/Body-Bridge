@@ -1,0 +1,9 @@
+{
+	"id": "BnILzobZBLUncfa",
+	"json": "{\"id\":\"BnILzobZBLUncfa\",\"url\":\"https://www.eatingwell.com/recipe/262954/one-pot-spinach-chicken-sausage-feta-pasta/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/262954/one-pot-spinach-chicken-sausage-feta-pasta/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/262954/one-pot-spinach-chicken-sausage-feta-pasta\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T13:41:30.827Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/262954/one-pot-spinach-chicken-sausage-feta-pasta",
+	"url": "https://www.eatingwell.com/recipe/262954/one-pot-spinach-chicken-sausage-feta-pasta/"
+}

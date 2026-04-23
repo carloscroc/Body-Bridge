@@ -1,0 +1,9 @@
+{
+	"id": "Sf64zwAYcnwGqdI",
+	"json": "{\"id\":\"Sf64zwAYcnwGqdI\",\"url\":\"https://diabetesfoodhub.org/recipes/beverages\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/beverages\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/beverages\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":4,\"state\":4}},\"handledAt\":\"2026-04-21T18:43:00.491Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/beverages",
+	"url": "https://diabetesfoodhub.org/recipes/beverages"
+}

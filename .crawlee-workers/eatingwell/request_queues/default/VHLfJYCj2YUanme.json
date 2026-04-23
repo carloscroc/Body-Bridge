@@ -1,0 +1,9 @@
+{
+	"id": "VHLfJYCj2YUanme",
+	"json": "{\"id\":\"VHLfJYCj2YUanme\",\"url\":\"https://www.eatingwell.com/recipes/18118/bread/quick-bread/zucchini/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/18118/bread/quick-bread/zucchini\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3}}}",
+	"method": "GET",
+	"orderNo": 1776777590956,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/18118/bread/quick-bread/zucchini",
+	"url": "https://www.eatingwell.com/recipes/18118/bread/quick-bread/zucchini/"
+}

@@ -1,0 +1,9 @@
+{
+	"id": "ilGEVrPFQG0J2Pf",
+	"json": "{\"id\":\"ilGEVrPFQG0J2Pf\",\"url\":\"https://www.eatingwell.com/recipe/249090/sausage-gumbo/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/249090/sausage-gumbo/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/249090/sausage-gumbo\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T14:23:58.239Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/249090/sausage-gumbo",
+	"url": "https://www.eatingwell.com/recipe/249090/sausage-gumbo/"
+}

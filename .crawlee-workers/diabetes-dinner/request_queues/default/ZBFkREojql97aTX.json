@@ -1,0 +1,9 @@
+{
+	"id": "ZBFkREojql97aTX",
+	"json": "{\"id\":\"ZBFkREojql97aTX\",\"url\":\"https://diabetesfoodhub.org/recipes/one-pot?page=8\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/one-pot?page=8\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/one-pot?page=8\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":11,\"state\":4}},\"handledAt\":\"2026-04-21T21:33:20.528Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/one-pot?page=8",
+	"url": "https://diabetesfoodhub.org/recipes/one-pot?page=8"
+}

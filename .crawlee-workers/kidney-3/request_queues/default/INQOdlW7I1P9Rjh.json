@@ -1,0 +1,9 @@
+{
+	"id": "INQOdlW7I1P9Rjh",
+	"json": "{\"id\":\"INQOdlW7I1P9Rjh\",\"url\":\"https://www.kidney.org/nutrition/recipes/chicken-salad?page=9\",\"loadedUrl\":\"https://www.kidney.org/nutrition/recipes/chicken-salad?page=9\",\"uniqueKey\":\"https://www.kidney.org/nutrition/recipes/chicken-salad?page=9\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":12,\"state\":4}},\"handledAt\":\"2026-04-21T19:40:50.883Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.kidney.org/nutrition/recipes/chicken-salad?page=9",
+	"url": "https://www.kidney.org/nutrition/recipes/chicken-salad?page=9"
+}

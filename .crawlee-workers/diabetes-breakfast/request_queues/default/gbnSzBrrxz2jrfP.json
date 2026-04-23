@@ -1,0 +1,9 @@
+{
+	"id": "gbnSzBrrxz2jrfP",
+	"json": "{\"id\":\"gbnSzBrrxz2jrfP\",\"url\":\"https://diabetesfoodhub.org/recipes/tasty-cooked-greens\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/tasty-cooked-greens\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/tasty-cooked-greens\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":16,\"state\":4}},\"handledAt\":\"2026-04-21T22:45:30.544Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/tasty-cooked-greens",
+	"url": "https://diabetesfoodhub.org/recipes/tasty-cooked-greens"
+}

@@ -1,0 +1,9 @@
+{
+	"id": "iWenhRgJFd2IcDY",
+	"json": "{\"id\":\"iWenhRgJFd2IcDY\",\"url\":\"https://diabetesfoodhub.org/recipes/red-quinoa-and-farro\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/red-quinoa-and-farro\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/red-quinoa-and-farro\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":7,\"state\":4}},\"handledAt\":\"2026-04-21T20:22:48.351Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/red-quinoa-and-farro",
+	"url": "https://diabetesfoodhub.org/recipes/red-quinoa-and-farro"
+}

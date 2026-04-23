@@ -1,0 +1,9 @@
+{
+	"id": "ee9Pdp5AOWdbc1c",
+	"json": "{\"id\":\"ee9Pdp5AOWdbc1c\",\"url\":\"https://diabetesfoodhub.org/recipes/www.mrfood.com\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/www.mrfood.com\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/www.mrfood.com\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":13,\"state\":4}},\"handledAt\":\"2026-04-21T22:02:52.586Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/www.mrfood.com",
+	"url": "https://diabetesfoodhub.org/recipes/www.mrfood.com"
+}

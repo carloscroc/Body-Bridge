@@ -1,0 +1,9 @@
+{
+	"id": "JNVnz0jVX56ekt4",
+	"json": "{\"id\":\"JNVnz0jVX56ekt4\",\"url\":\"https://www.eatingwell.com/recipe/8005825/arroz-rojo-mexicano-mexican-red-rice/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/8005825/arroz-rojo-mexicano-mexican-red-rice/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/8005825/arroz-rojo-mexicano-mexican-red-rice\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:39:26.674Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/8005825/arroz-rojo-mexicano-mexican-red-rice",
+	"url": "https://www.eatingwell.com/recipe/8005825/arroz-rojo-mexicano-mexican-red-rice/"
+}

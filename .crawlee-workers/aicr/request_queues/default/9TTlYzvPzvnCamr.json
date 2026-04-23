@@ -1,0 +1,9 @@
+{
+	"id": "9TTlYzvPzvnCamr",
+	"json": "{\"id\":\"9TTlYzvPzvnCamr\",\"url\":\"https://www.aicr.org/cancer-prevention/recipes/banana-almond-coconut-tea/\",\"loadedUrl\":\"https://www.aicr.org/cancer-prevention/recipes/banana-almond-coconut-tea/\",\"uniqueKey\":\"https://www.aicr.org/cancer-prevention/recipes/banana-almond-coconut-tea\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:31:18.706Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.aicr.org/cancer-prevention/recipes/banana-almond-coconut-tea",
+	"url": "https://www.aicr.org/cancer-prevention/recipes/banana-almond-coconut-tea/"
+}

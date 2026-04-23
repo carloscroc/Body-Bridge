@@ -1,0 +1,9 @@
+{
+	"id": "mGU7n53bnYaBX8E",
+	"json": "{\"id\":\"mGU7n53bnYaBX8E\",\"url\":\"https://www.kidney.org/nutrition/recipes/spicy-chicken-salad\",\"loadedUrl\":\"https://www.kidney.org/nutrition/recipes/spicy-chicken-salad\",\"uniqueKey\":\"https://www.kidney.org/nutrition/recipes/spicy-chicken-salad\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":15,\"state\":4}},\"handledAt\":\"2026-04-21T20:34:45.830Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.kidney.org/nutrition/recipes/spicy-chicken-salad",
+	"url": "https://www.kidney.org/nutrition/recipes/spicy-chicken-salad"
+}

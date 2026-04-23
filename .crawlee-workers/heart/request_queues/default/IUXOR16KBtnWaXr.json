@@ -1,0 +1,9 @@
+{
+	"id": "IUXOR16KBtnWaXr",
+	"json": "{\"id\":\"IUXOR16KBtnWaXr\",\"url\":\"https://recipes.heart.org/en/recipes/spicy-peanut-quick-salad-dressing\",\"loadedUrl\":\"https://recipes.heart.org/en/recipes/spicy-peanut-quick-salad-dressing\",\"uniqueKey\":\"https://recipes.heart.org/en/recipes/spicy-peanut-quick-salad-dressing\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":5,\"state\":4}},\"handledAt\":\"2026-04-21T12:59:26.958Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recipes.heart.org/en/recipes/spicy-peanut-quick-salad-dressing",
+	"url": "https://recipes.heart.org/en/recipes/spicy-peanut-quick-salad-dressing"
+}

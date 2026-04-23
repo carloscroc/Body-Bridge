@@ -1,0 +1,9 @@
+{
+	"id": "Jh07zIdZPSYVcUD",
+	"json": "{\"id\":\"Jh07zIdZPSYVcUD\",\"url\":\"https://diabetesfoodhub.org/recipes/seafood?page=11\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/seafood?page=11\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/seafood?page=11\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":14,\"state\":4}},\"handledAt\":\"2026-04-21T22:21:13.898Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/seafood?page=11",
+	"url": "https://diabetesfoodhub.org/recipes/seafood?page=11"
+}

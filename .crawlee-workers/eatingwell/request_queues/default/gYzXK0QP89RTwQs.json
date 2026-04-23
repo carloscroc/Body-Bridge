@@ -1,0 +1,9 @@
+{
+	"id": "gYzXK0QP89RTwQs",
+	"json": "{\"id\":\"gYzXK0QP89RTwQs\",\"url\":\"https://www.eatingwell.com/recipes/22853/mealtimes/dinner/special-diets/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/22853/mealtimes/dinner/special-diets/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/22853/mealtimes/dinner/special-diets\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T12:38:24.916Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/22853/mealtimes/dinner/special-diets",
+	"url": "https://www.eatingwell.com/recipes/22853/mealtimes/dinner/special-diets/"
+}

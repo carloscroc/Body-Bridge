@@ -1,0 +1,9 @@
+{
+	"id": "2tT9nexaNXpCkMU",
+	"json": "{\"id\":\"2tT9nexaNXpCkMU\",\"url\":\"https://diabetesfoodhub.org/recipes/almonds-no-added-salt\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/almonds-no-added-salt\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/almonds-no-added-salt\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":8,\"state\":4}},\"handledAt\":\"2026-04-21T20:35:47.304Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/almonds-no-added-salt",
+	"url": "https://diabetesfoodhub.org/recipes/almonds-no-added-salt"
+}

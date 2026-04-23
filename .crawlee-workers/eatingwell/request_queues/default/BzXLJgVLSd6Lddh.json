@@ -1,0 +1,9 @@
+{
+	"id": "BzXLJgVLSd6Lddh",
+	"json": "{\"id\":\"BzXLJgVLSd6Lddh\",\"url\":\"https://www.eatingwell.com/recipe/263209/chicken-noodle-casserole/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/263209/chicken-noodle-casserole/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/263209/chicken-noodle-casserole\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T14:24:51.003Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/263209/chicken-noodle-casserole",
+	"url": "https://www.eatingwell.com/recipe/263209/chicken-noodle-casserole/"
+}

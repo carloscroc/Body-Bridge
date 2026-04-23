@@ -1,0 +1,9 @@
+{
+	"id": "dvP9JOYPDBt0UWt",
+	"json": "{\"id\":\"dvP9JOYPDBt0UWt\",\"url\":\"https://www.eatingwell.com/recipes/18156/salad/seafood/tuna/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/18156/salad/seafood/tuna\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3}}}",
+	"method": "GET",
+	"orderNo": 1776776082702,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/18156/salad/seafood/tuna",
+	"url": "https://www.eatingwell.com/recipes/18156/salad/seafood/tuna/"
+}

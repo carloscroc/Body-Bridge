@@ -1,0 +1,9 @@
+{
+	"id": "PxlXF9NoeckyNw1",
+	"json": "{\"id\":\"PxlXF9NoeckyNw1\",\"url\":\"https://www.aicr.org/cancer-prevention/recipes/gummyberry-grape-grilled-cheese/\",\"loadedUrl\":\"https://www.aicr.org/cancer-prevention/recipes/gummyberry-grape-grilled-cheese/\",\"uniqueKey\":\"https://www.aicr.org/cancer-prevention/recipes/gummyberry-grape-grilled-cheese\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":1,\"state\":4}},\"handledAt\":\"2026-04-21T12:44:28.462Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.aicr.org/cancer-prevention/recipes/gummyberry-grape-grilled-cheese",
+	"url": "https://www.aicr.org/cancer-prevention/recipes/gummyberry-grape-grilled-cheese/"
+}

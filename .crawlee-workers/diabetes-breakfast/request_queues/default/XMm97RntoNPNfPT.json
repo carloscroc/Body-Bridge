@@ -1,0 +1,9 @@
+{
+	"id": "XMm97RntoNPNfPT",
+	"json": "{\"id\":\"XMm97RntoNPNfPT\",\"url\":\"https://diabetesfoodhub.org/recipes/sesame-soy-salad-dressing\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/sesame-soy-salad-dressing\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/sesame-soy-salad-dressing\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":5,\"state\":4}},\"handledAt\":\"2026-04-21T19:00:30.825Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/sesame-soy-salad-dressing",
+	"url": "https://diabetesfoodhub.org/recipes/sesame-soy-salad-dressing"
+}

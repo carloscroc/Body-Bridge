@@ -1,0 +1,9 @@
+{
+	"id": "kqNiBLuiN8YNxDh",
+	"json": "{\"id\":\"kqNiBLuiN8YNxDh\",\"url\":\"https://diabetesfoodhub.org/recipes/arugula-prosciutto-pizza-zucchini-crust\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/arugula-prosciutto-pizza-zucchini-crust\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/arugula-prosciutto-pizza-zucchini-crust\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":7,\"state\":4}},\"handledAt\":\"2026-04-21T20:20:52.426Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/arugula-prosciutto-pizza-zucchini-crust",
+	"url": "https://diabetesfoodhub.org/recipes/arugula-prosciutto-pizza-zucchini-crust"
+}

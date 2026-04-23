@@ -1,0 +1,9 @@
+{
+	"id": "mCwNZCfqEjgH7kw",
+	"json": "{\"id\":\"mCwNZCfqEjgH7kw\",\"url\":\"https://recipes.heart.org/en/recipes/tuscan-bean-soup\",\"loadedUrl\":\"https://recipes.heart.org/en/recipes/tuscan-bean-soup\",\"uniqueKey\":\"https://recipes.heart.org/en/recipes/tuscan-bean-soup\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":8,\"state\":4}},\"handledAt\":\"2026-04-21T13:40:38.538Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recipes.heart.org/en/recipes/tuscan-bean-soup",
+	"url": "https://recipes.heart.org/en/recipes/tuscan-bean-soup"
+}

@@ -1,0 +1,9 @@
+{
+	"id": "kV0XZvPRgB2tP9j",
+	"json": "{\"id\":\"kV0XZvPRgB2tP9j\",\"url\":\"https://www.eatingwell.com/recipe/249512/cheesy-broccoli-potato-mash/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/249512/cheesy-broccoli-potato-mash/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/249512/cheesy-broccoli-potato-mash\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T14:17:41.925Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/249512/cheesy-broccoli-potato-mash",
+	"url": "https://www.eatingwell.com/recipe/249512/cheesy-broccoli-potato-mash/"
+}

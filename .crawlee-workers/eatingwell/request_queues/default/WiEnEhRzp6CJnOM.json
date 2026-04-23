@@ -1,0 +1,9 @@
+{
+	"id": "WiEnEhRzp6CJnOM",
+	"json": "{\"id\":\"WiEnEhRzp6CJnOM\",\"url\":\"https://www.eatingwell.com/recipes/23085/cooking-methods-styles/meal-prep/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/23085/cooking-methods-styles/meal-prep/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/23085/cooking-methods-styles/meal-prep\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T12:43:38.272Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/23085/cooking-methods-styles/meal-prep",
+	"url": "https://www.eatingwell.com/recipes/23085/cooking-methods-styles/meal-prep/"
+}

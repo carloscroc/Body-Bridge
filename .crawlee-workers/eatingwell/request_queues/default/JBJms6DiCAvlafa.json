@@ -1,0 +1,9 @@
+{
+	"id": "JBJms6DiCAvlafa",
+	"json": "{\"id\":\"JBJms6DiCAvlafa\",\"url\":\"https://www.eatingwell.com/recipe/248992/tarragon-pesto/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/248992/tarragon-pesto\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3}}}",
+	"method": "GET",
+	"orderNo": 1776778010668,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/248992/tarragon-pesto",
+	"url": "https://www.eatingwell.com/recipe/248992/tarragon-pesto/"
+}

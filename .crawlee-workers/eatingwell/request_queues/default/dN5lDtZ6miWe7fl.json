@@ -1,0 +1,9 @@
+{
+	"id": "dN5lDtZ6miWe7fl",
+	"json": "{\"id\":\"dN5lDtZ6miWe7fl\",\"url\":\"https://www.eatingwell.com/recipe/249263/real-cornbread/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/249263/real-cornbread/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/249263/real-cornbread\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T14:13:59.651Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/249263/real-cornbread",
+	"url": "https://www.eatingwell.com/recipe/249263/real-cornbread/"
+}

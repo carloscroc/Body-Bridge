@@ -1,0 +1,9 @@
+{
+	"id": "1xWz6mouLXSoNd3",
+	"json": "{\"id\":\"1xWz6mouLXSoNd3\",\"url\":\"https://www.kidney.org/nutrition/recipes/chili-wheat-treats?page=11\",\"loadedUrl\":\"https://www.kidney.org/nutrition/recipes/chili-wheat-treats?page=11\",\"uniqueKey\":\"https://www.kidney.org/nutrition/recipes/chili-wheat-treats?page=11\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":12,\"state\":4}},\"handledAt\":\"2026-04-21T19:42:23.800Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.kidney.org/nutrition/recipes/chili-wheat-treats?page=11",
+	"url": "https://www.kidney.org/nutrition/recipes/chili-wheat-treats?page=11"
+}

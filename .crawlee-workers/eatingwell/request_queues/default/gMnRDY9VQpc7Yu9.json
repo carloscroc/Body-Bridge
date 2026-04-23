@@ -1,0 +1,9 @@
+{
+	"id": "gMnRDY9VQpc7Yu9",
+	"json": "{\"id\":\"gMnRDY9VQpc7Yu9\",\"url\":\"https://www.eatingwell.com/recipe/250851/dill-mustard-sauce/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/250851/dill-mustard-sauce/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/250851/dill-mustard-sauce\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:27:21.047Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/250851/dill-mustard-sauce",
+	"url": "https://www.eatingwell.com/recipe/250851/dill-mustard-sauce/"
+}

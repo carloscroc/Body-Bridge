@@ -1,0 +1,9 @@
+{
+	"id": "FzVqnRytmHRrA5N",
+	"json": "{\"id\":\"FzVqnRytmHRrA5N\",\"url\":\"https://www.eatingwell.com/recipes/23001/health-condition/diabetic/appetizers/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/23001/health-condition/diabetic/appetizers/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/23001/health-condition/diabetic/appetizers\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:07:36.313Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/23001/health-condition/diabetic/appetizers",
+	"url": "https://www.eatingwell.com/recipes/23001/health-condition/diabetic/appetizers/"
+}

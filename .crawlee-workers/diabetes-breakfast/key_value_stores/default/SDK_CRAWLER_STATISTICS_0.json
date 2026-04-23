@@ -1,0 +1,59 @@
+{
+  "requestsFinished": 1801,
+  "requestsFailed": 0,
+  "requestsRetries": 1,
+  "requestsFailedPerMinute": 0,
+  "requestsFinishedPerMinute": 6,
+  "requestMinDurationMillis": 5278,
+  "requestMaxDurationMillis": 55057,
+  "requestTotalFailedDurationMillis": 0,
+  "requestTotalFinishedDurationMillis": 18993867,
+  "crawlerStartedAt": "2026-04-21T17:23:01.264Z",
+  "crawlerFinishedAt": "2026-04-21T22:46:14.384Z",
+  "statsPersistedAt": "2026-04-21T22:46:14.384Z",
+  "crawlerRuntimeMillis": 19393951,
+  "crawlerLastStartTimestamp": 1776792180433,
+  "requestRetryHistogram": [
+    1800,
+    1
+  ],
+  "statsId": 0,
+  "requestAvgFailedDurationMillis": null,
+  "requestAvgFinishedDurationMillis": 10546,
+  "requestTotalDurationMillis": 18993867,
+  "requestsTotal": 1801,
+  "requestsWithStatusCode": {
+    "200": 1800,
+    "404": 1
+  },
+  "errors": {},
+  "retryErrors": {
+    "C:\\Users\\thebe\\Downloads\\Forge\\node_modules\\@crawlee\\core\\crawlers\\crawler_utils.js:13:11": {
+      "missing error code": {
+        "Error": {
+          "Navigation timed out after 45 seconds.": {
+            "count": 1
+          }
+        }
+      }
+    },
+    "C:\\Users\\thebe\\Downloads\\Forge\\node_modules\\@crawlee\\playwright\\internals\\utils\\playwright-utils.js:165:17": {
+      "missing error code": {
+        "Error": {
+          "page.goto: Target page, context or browser has been closed": {
+            "count": 1
+          }
+        }
+      }
+    },
+    "C:\\Users\\thebe\\Downloads\\Forge\\node_modules\\@crawlee\\browser-pool\\browser-pool.js:405:19": {
+      "missing error code": {
+        "Error": {
+          "browserController.newPage() failed: ENjfC8B1rO16VpjoFSONp": {
+            "count": 1
+          }
+        }
+      }
+    }
+  }
+}

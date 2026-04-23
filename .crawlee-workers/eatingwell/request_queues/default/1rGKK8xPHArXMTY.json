@@ -1,0 +1,9 @@
+{
+	"id": "1rGKK8xPHArXMTY",
+	"json": "{\"id\":\"1rGKK8xPHArXMTY\",\"url\":\"https://www.eatingwell.com/recipes/20123/low-calorie/side-dishes/pasta/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/20123/low-calorie/side-dishes/pasta\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3}}}",
+	"method": "GET",
+	"orderNo": 1776777535104,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/20123/low-calorie/side-dishes/pasta",
+	"url": "https://www.eatingwell.com/recipes/20123/low-calorie/side-dishes/pasta/"
+}

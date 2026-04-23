@@ -1,0 +1,9 @@
+{
+	"id": "o0gmbvBdr5Q09rd",
+	"json": "{\"id\":\"o0gmbvBdr5Q09rd\",\"url\":\"https://www.eatingwell.com/recipe/256518/four-bean-pumpkin-chili/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/256518/four-bean-pumpkin-chili/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/256518/four-bean-pumpkin-chili\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T13:59:06.611Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/256518/four-bean-pumpkin-chili",
+	"url": "https://www.eatingwell.com/recipe/256518/four-bean-pumpkin-chili/"
+}

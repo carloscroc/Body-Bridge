@@ -1,0 +1,9 @@
+{
+	"id": "Zp52ou1wgCSBglh",
+	"json": "{\"id\":\"Zp52ou1wgCSBglh\",\"url\":\"https://www.eatingwell.com/recipes/18229/main-dishes/sandwiches/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/18229/main-dishes/sandwiches/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/18229/main-dishes/sandwiches\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:10:53.479Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/18229/main-dishes/sandwiches",
+	"url": "https://www.eatingwell.com/recipes/18229/main-dishes/sandwiches/"
+}

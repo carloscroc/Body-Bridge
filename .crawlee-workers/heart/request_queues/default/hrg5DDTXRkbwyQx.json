@@ -1,0 +1,9 @@
+{
+	"id": "hrg5DDTXRkbwyQx",
+	"json": "{\"id\":\"hrg5DDTXRkbwyQx\",\"url\":\"https://recipes.heart.org/en/recipes/sandwiches-de-cerdo-adobado-o-tacos-con-salsa-de-mango\",\"loadedUrl\":\"https://recipes.heart.org/en/recipes/sandwiches-de-cerdo-adobado-o-tacos-con-salsa-de-mango\",\"uniqueKey\":\"https://recipes.heart.org/en/recipes/sandwiches-de-cerdo-adobado-o-tacos-con-salsa-de-mango\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":6,\"state\":4}},\"handledAt\":\"2026-04-21T13:04:32.993Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recipes.heart.org/en/recipes/sandwiches-de-cerdo-adobado-o-tacos-con-salsa-de-mango",
+	"url": "https://recipes.heart.org/en/recipes/sandwiches-de-cerdo-adobado-o-tacos-con-salsa-de-mango"
+}

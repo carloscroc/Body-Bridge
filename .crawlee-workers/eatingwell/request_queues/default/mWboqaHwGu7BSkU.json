@@ -1,0 +1,9 @@
+{
+	"id": "mWboqaHwGu7BSkU",
+	"json": "{\"id\":\"mWboqaHwGu7BSkU\",\"url\":\"https://www.eatingwell.com/recipe/269640/quick-cooking-oats/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/269640/quick-cooking-oats/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/269640/quick-cooking-oats\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:29:30.630Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/269640/quick-cooking-oats",
+	"url": "https://www.eatingwell.com/recipe/269640/quick-cooking-oats/"
+}

@@ -1,0 +1,9 @@
+{
+	"id": "5tUdZUtV4zteFLC",
+	"json": "{\"id\":\"5tUdZUtV4zteFLC\",\"url\":\"https://diabetesfoodhub.org/recipes/garlicky-ginger-eggplant\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/garlicky-ginger-eggplant\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/garlicky-ginger-eggplant\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T18:13:09.953Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/garlicky-ginger-eggplant",
+	"url": "https://diabetesfoodhub.org/recipes/garlicky-ginger-eggplant"
+}

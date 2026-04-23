@@ -1,0 +1,9 @@
+{
+	"id": "Zb1cUajjYnnmqrs",
+	"json": "{\"id\":\"Zb1cUajjYnnmqrs\",\"url\":\"https://www.eatingwell.com/recipes/18338/health-condition/diabetic/quick-easy/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/18338/health-condition/diabetic/quick-easy/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/18338/health-condition/diabetic/quick-easy\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:04:35.047Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/18338/health-condition/diabetic/quick-easy",
+	"url": "https://www.eatingwell.com/recipes/18338/health-condition/diabetic/quick-easy/"
+}

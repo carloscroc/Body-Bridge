@@ -1,0 +1,9 @@
+{
+	"id": "vmzrCCOyDZUQxd4",
+	"json": "{\"id\":\"vmzrCCOyDZUQxd4\",\"url\":\"https://www.eatingwell.com/recipe/218187/char-siu-bao-steamed-pork-buns/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/218187/char-siu-bao-steamed-pork-buns\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":4}}}",
+	"method": "GET",
+	"orderNo": 1776781600733,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/218187/char-siu-bao-steamed-pork-buns",
+	"url": "https://www.eatingwell.com/recipe/218187/char-siu-bao-steamed-pork-buns/"
+}

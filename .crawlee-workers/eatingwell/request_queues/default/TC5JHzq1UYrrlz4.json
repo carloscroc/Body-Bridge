@@ -1,0 +1,9 @@
+{
+	"id": "TC5JHzq1UYrrlz4",
+	"json": "{\"id\":\"TC5JHzq1UYrrlz4\",\"url\":\"https://www.eatingwell.com/recipes/19193/ingredients/fruit/banana/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/19193/ingredients/fruit/banana\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3}}}",
+	"method": "GET",
+	"orderNo": 1776778458155,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/19193/ingredients/fruit/banana",
+	"url": "https://www.eatingwell.com/recipes/19193/ingredients/fruit/banana/"
+}

@@ -1,0 +1,9 @@
+{
+	"id": "NKcbdZZgBV9OqZC",
+	"json": "{\"id\":\"NKcbdZZgBV9OqZC\",\"url\":\"https://diabetesfoodhub.org/recipes/twice-baked-butternut-squash\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/twice-baked-butternut-squash\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/twice-baked-butternut-squash\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":16,\"state\":4}},\"handledAt\":\"2026-04-21T22:45:03.351Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/twice-baked-butternut-squash",
+	"url": "https://diabetesfoodhub.org/recipes/twice-baked-butternut-squash"
+}

@@ -1,0 +1,9 @@
+{
+	"id": "uAgpzeZAF2X5PfP",
+	"json": "{\"id\":\"uAgpzeZAF2X5PfP\",\"url\":\"https://www.eatingwell.com/recipe/272723/jalapeno-popper-burgers/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/272723/jalapeno-popper-burgers/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/272723/jalapeno-popper-burgers\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T14:22:08.710Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/272723/jalapeno-popper-burgers",
+	"url": "https://www.eatingwell.com/recipe/272723/jalapeno-popper-burgers/"
+}

@@ -1,0 +1,9 @@
+{
+	"id": "lv7I0KO72UdehLr",
+	"json": "{\"id\":\"lv7I0KO72UdehLr\",\"url\":\"https://diabetesfoodhub.org/recipes/red-pepper-quinoa\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/red-pepper-quinoa\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/red-pepper-quinoa\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":10,\"state\":4}},\"handledAt\":\"2026-04-21T21:28:32.001Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/red-pepper-quinoa",
+	"url": "https://diabetesfoodhub.org/recipes/red-pepper-quinoa"
+}

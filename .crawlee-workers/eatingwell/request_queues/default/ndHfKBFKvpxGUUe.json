@@ -1,0 +1,9 @@
+{
+	"id": "ndHfKBFKvpxGUUe",
+	"json": "{\"id\":\"ndHfKBFKvpxGUUe\",\"url\":\"https://www.eatingwell.com/recipe/8018501/copycat-olive-gardens-chicken-gnocchi-soup/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/8018501/copycat-olive-gardens-chicken-gnocchi-soup/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/8018501/copycat-olive-gardens-chicken-gnocchi-soup\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T12:58:01.596Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/8018501/copycat-olive-gardens-chicken-gnocchi-soup",
+	"url": "https://www.eatingwell.com/recipe/8018501/copycat-olive-gardens-chicken-gnocchi-soup/"
+}

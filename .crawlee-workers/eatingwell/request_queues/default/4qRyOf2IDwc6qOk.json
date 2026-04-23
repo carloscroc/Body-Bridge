@@ -1,0 +1,9 @@
+{
+	"id": "4qRyOf2IDwc6qOk",
+	"json": "{\"id\":\"4qRyOf2IDwc6qOk\",\"url\":\"https://www.eatingwell.com/recipes/20770/cooking-methods-styles/quick-easy/dinner/no-cook-dinner/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/20770/cooking-methods-styles/quick-easy/dinner/no-cook-dinner/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/20770/cooking-methods-styles/quick-easy/dinner/no-cook-dinner\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T14:07:14.489Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/20770/cooking-methods-styles/quick-easy/dinner/no-cook-dinner",
+	"url": "https://www.eatingwell.com/recipes/20770/cooking-methods-styles/quick-easy/dinner/no-cook-dinner/"
+}

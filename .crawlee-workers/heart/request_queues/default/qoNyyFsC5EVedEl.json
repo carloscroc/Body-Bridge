@@ -1,0 +1,9 @@
+{
+	"id": "qoNyyFsC5EVedEl",
+	"json": "{\"id\":\"qoNyyFsC5EVedEl\",\"url\":\"https://recipes.heart.org/en/recipes\",\"loadedUrl\":\"https://recipes.heart.org/\",\"uniqueKey\":\"https://recipes.heart.org/en/recipes\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"state\":4}},\"handledAt\":\"2026-04-21T12:32:56.243Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recipes.heart.org/en/recipes",
+	"url": "https://recipes.heart.org/en/recipes"
+}

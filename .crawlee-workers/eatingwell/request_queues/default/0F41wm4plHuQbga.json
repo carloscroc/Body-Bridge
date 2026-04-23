@@ -1,0 +1,9 @@
+{
+	"id": "0F41wm4plHuQbga",
+	"json": "{\"id\":\"0F41wm4plHuQbga\",\"url\":\"https://www.eatingwell.com/recipes/19406/side-dishes/mushrooms/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/19406/side-dishes/mushrooms/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/19406/side-dishes/mushrooms\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T12:52:16.432Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/19406/side-dishes/mushrooms",
+	"url": "https://www.eatingwell.com/recipes/19406/side-dishes/mushrooms/"
+}

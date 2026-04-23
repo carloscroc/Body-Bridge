@@ -1,0 +1,9 @@
+{
+	"id": "T3ao4DrwrdDNWaN",
+	"json": "{\"id\":\"T3ao4DrwrdDNWaN\",\"url\":\"https://www.eatingwell.com/recipe/273725/sesame-garlic-beef-broccoli-with-whole-wheat-noodles/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/273725/sesame-garlic-beef-broccoli-with-whole-wheat-noodles/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/273725/sesame-garlic-beef-broccoli-with-whole-wheat-noodles\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T14:27:25.154Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/273725/sesame-garlic-beef-broccoli-with-whole-wheat-noodles",
+	"url": "https://www.eatingwell.com/recipe/273725/sesame-garlic-beef-broccoli-with-whole-wheat-noodles/"
+}

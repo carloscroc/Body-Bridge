@@ -1,0 +1,9 @@
+{
+	"id": "W56ISTqHq29w6te",
+	"json": "{\"id\":\"W56ISTqHq29w6te\",\"url\":\"https://www.kidney.org/nutrition/recipes/chicken-empanadas?page=3\",\"loadedUrl\":\"https://www.kidney.org/nutrition/recipes/chicken-empanadas?page=3\",\"uniqueKey\":\"https://www.kidney.org/nutrition/recipes/chicken-empanadas?page=3\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":19,\"state\":4}},\"handledAt\":\"2026-04-21T22:39:22.694Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.kidney.org/nutrition/recipes/chicken-empanadas?page=3",
+	"url": "https://www.kidney.org/nutrition/recipes/chicken-empanadas?page=3"
+}

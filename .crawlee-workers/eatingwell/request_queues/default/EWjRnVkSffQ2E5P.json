@@ -1,0 +1,9 @@
+{
+	"id": "EWjRnVkSffQ2E5P",
+	"json": "{\"id\":\"EWjRnVkSffQ2E5P\",\"url\":\"https://www.eatingwell.com/recipe/257722/roasted-vegetable-black-bean-tacos/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/257722/roasted-vegetable-black-bean-tacos/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/257722/roasted-vegetable-black-bean-tacos\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T13:43:29.333Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/257722/roasted-vegetable-black-bean-tacos",
+	"url": "https://www.eatingwell.com/recipe/257722/roasted-vegetable-black-bean-tacos/"
+}

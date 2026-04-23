@@ -1,0 +1,9 @@
+{
+	"id": "8O8bwoTYH1Jf899",
+	"json": "{\"id\":\"8O8bwoTYH1Jf899\",\"url\":\"https://www.eatingwell.com/recipe/265882/berry-banana-cauliflower-smoothie/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/265882/berry-banana-cauliflower-smoothie/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/265882/berry-banana-cauliflower-smoothie\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T14:15:12.093Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/265882/berry-banana-cauliflower-smoothie",
+	"url": "https://www.eatingwell.com/recipe/265882/berry-banana-cauliflower-smoothie/"
+}

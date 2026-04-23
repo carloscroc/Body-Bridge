@@ -1,0 +1,9 @@
+{
+	"id": "t328eDfbjpfpuUB",
+	"json": "{\"id\":\"t328eDfbjpfpuUB\",\"url\":\"https://www.kidney.org/nutrition/recipes/mushroom-croquettes\",\"loadedUrl\":\"https://www.kidney.org/nutrition/recipes/mushroom-croquettes\",\"uniqueKey\":\"https://www.kidney.org/nutrition/recipes/mushroom-croquettes\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":17,\"state\":4}},\"handledAt\":\"2026-04-21T21:59:32.206Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.kidney.org/nutrition/recipes/mushroom-croquettes",
+	"url": "https://www.kidney.org/nutrition/recipes/mushroom-croquettes"
+}

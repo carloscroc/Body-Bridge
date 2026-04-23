@@ -1,0 +1,9 @@
+{
+	"id": "djdkRiiG6Ntn7qh",
+	"json": "{\"id\":\"djdkRiiG6Ntn7qh\",\"url\":\"https://www.eatingwell.com/recipes/18169/appetizer/chips-crisps/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/18169/appetizer/chips-crisps/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/18169/appetizer/chips-crisps\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T12:47:40.845Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/18169/appetizer/chips-crisps",
+	"url": "https://www.eatingwell.com/recipes/18169/appetizer/chips-crisps/"
+}

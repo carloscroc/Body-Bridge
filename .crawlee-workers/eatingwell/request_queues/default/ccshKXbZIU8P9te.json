@@ -1,0 +1,9 @@
+{
+	"id": "ccshKXbZIU8P9te",
+	"json": "{\"id\":\"ccshKXbZIU8P9te\",\"url\":\"https://www.eatingwell.com/recipes/18353/health-condition/diabetic/vegan/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/18353/health-condition/diabetic/vegan/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/18353/health-condition/diabetic/vegan\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:05:51.935Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/18353/health-condition/diabetic/vegan",
+	"url": "https://www.eatingwell.com/recipes/18353/health-condition/diabetic/vegan/"
+}

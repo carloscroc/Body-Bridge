@@ -1,0 +1,9 @@
+{
+	"id": "ftda6dBss1TdTvw",
+	"json": "{\"id\":\"ftda6dBss1TdTvw\",\"url\":\"https://www.eatingwell.com/recipe/257758/roasted-root-veggies-greens-over-spiced-lentils/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/257758/roasted-root-veggies-greens-over-spiced-lentils/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/257758/roasted-root-veggies-greens-over-spiced-lentils\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T13:42:21.326Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/257758/roasted-root-veggies-greens-over-spiced-lentils",
+	"url": "https://www.eatingwell.com/recipe/257758/roasted-root-veggies-greens-over-spiced-lentils/"
+}

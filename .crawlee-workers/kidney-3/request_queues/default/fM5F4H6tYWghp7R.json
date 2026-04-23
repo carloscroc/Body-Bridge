@@ -1,0 +1,9 @@
+{
+	"id": "fM5F4H6tYWghp7R",
+	"json": "{\"id\":\"fM5F4H6tYWghp7R\",\"url\":\"https://www.kidney.org/nutrition/recipes/chipotle-shrimp-tacos?page=7\",\"loadedUrl\":\"https://www.kidney.org/nutrition/recipes/chipotle-shrimp-tacos?page=7\",\"uniqueKey\":\"https://www.kidney.org/nutrition/recipes/chipotle-shrimp-tacos?page=7\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":11,\"state\":4}},\"handledAt\":\"2026-04-21T19:17:14.554Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.kidney.org/nutrition/recipes/chipotle-shrimp-tacos?page=7",
+	"url": "https://www.kidney.org/nutrition/recipes/chipotle-shrimp-tacos?page=7"
+}

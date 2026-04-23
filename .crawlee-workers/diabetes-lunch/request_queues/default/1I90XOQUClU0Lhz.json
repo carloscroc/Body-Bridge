@@ -1,0 +1,9 @@
+{
+	"id": "1I90XOQUClU0Lhz",
+	"json": "{\"id\":\"1I90XOQUClU0Lhz\",\"url\":\"https://diabetesfoodhub.org/recipes/collard-greens-yellow-squash\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/collard-greens-yellow-squash\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/collard-greens-yellow-squash\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":6,\"state\":4}},\"handledAt\":\"2026-04-21T19:42:27.812Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/collard-greens-yellow-squash",
+	"url": "https://diabetesfoodhub.org/recipes/collard-greens-yellow-squash"
+}

@@ -1,0 +1,9 @@
+{
+	"id": "MSRULHRrWUpdVQ1",
+	"json": "{\"id\":\"MSRULHRrWUpdVQ1\",\"url\":\"https://recipes.heart.org/en/recipes/moms-roasted-turkey-with-butternut-squash-and-asparagus\",\"loadedUrl\":\"https://recipes.heart.org/en/recipes/moms-roasted-turkey-with-butternut-squash-and-asparagus\",\"uniqueKey\":\"https://recipes.heart.org/en/recipes/moms-roasted-turkey-with-butternut-squash-and-asparagus\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":5,\"state\":4}},\"handledAt\":\"2026-04-21T12:55:09.735Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recipes.heart.org/en/recipes/moms-roasted-turkey-with-butternut-squash-and-asparagus",
+	"url": "https://recipes.heart.org/en/recipes/moms-roasted-turkey-with-butternut-squash-and-asparagus"
+}

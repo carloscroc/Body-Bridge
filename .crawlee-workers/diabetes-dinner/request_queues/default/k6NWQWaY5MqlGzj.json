@@ -1,0 +1,9 @@
+{
+	"id": "k6NWQWaY5MqlGzj",
+	"json": "{\"id\":\"k6NWQWaY5MqlGzj\",\"url\":\"https://diabetesfoodhub.org/recipes/lentils-and-greens-apples\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/lentils-and-greens-apples\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/lentils-and-greens-apples\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":4,\"state\":4}},\"handledAt\":\"2026-04-21T18:24:03.665Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/lentils-and-greens-apples",
+	"url": "https://diabetesfoodhub.org/recipes/lentils-and-greens-apples"
+}

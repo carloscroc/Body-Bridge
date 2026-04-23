@@ -1,0 +1,9 @@
+{
+	"id": "dZwozNYIFm5JFTI",
+	"json": "{\"id\":\"dZwozNYIFm5JFTI\",\"url\":\"https://recipes.heart.org/en/recipes/muffins-con-streusel-de-frambuesa\",\"loadedUrl\":\"https://recipes.heart.org/en/recipes/muffins-con-streusel-de-frambuesa\",\"uniqueKey\":\"https://recipes.heart.org/en/recipes/muffins-con-streusel-de-frambuesa\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":7,\"state\":4}},\"handledAt\":\"2026-04-21T13:21:46.201Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recipes.heart.org/en/recipes/muffins-con-streusel-de-frambuesa",
+	"url": "https://recipes.heart.org/en/recipes/muffins-con-streusel-de-frambuesa"
+}

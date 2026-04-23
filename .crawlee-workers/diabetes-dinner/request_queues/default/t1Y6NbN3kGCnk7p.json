@@ -1,0 +1,9 @@
+{
+	"id": "t1Y6NbN3kGCnk7p",
+	"json": "{\"id\":\"t1Y6NbN3kGCnk7p\",\"url\":\"https://diabetesfoodhub.org/recipes/creamy-pumpkin-pasta\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/creamy-pumpkin-pasta\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/creamy-pumpkin-pasta\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":4,\"state\":4}},\"handledAt\":\"2026-04-21T18:19:08.506Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/creamy-pumpkin-pasta",
+	"url": "https://diabetesfoodhub.org/recipes/creamy-pumpkin-pasta"
+}

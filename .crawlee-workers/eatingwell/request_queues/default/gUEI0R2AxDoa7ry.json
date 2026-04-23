@@ -1,0 +1,9 @@
+{
+	"id": "gUEI0R2AxDoa7ry",
+	"json": "{\"id\":\"gUEI0R2AxDoa7ry\",\"url\":\"https://www.eatingwell.com/recipe/270404/crispy-air-fryer-french-fries/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/270404/crispy-air-fryer-french-fries/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/270404/crispy-air-fryer-french-fries\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T13:55:13.529Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/270404/crispy-air-fryer-french-fries",
+	"url": "https://www.eatingwell.com/recipe/270404/crispy-air-fryer-french-fries/"
+}

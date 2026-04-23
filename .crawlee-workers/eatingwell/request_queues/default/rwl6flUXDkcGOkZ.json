@@ -1,0 +1,9 @@
+{
+	"id": "rwl6flUXDkcGOkZ",
+	"json": "{\"id\":\"rwl6flUXDkcGOkZ\",\"url\":\"https://www.eatingwell.com/recipe/262791/filipino-chicken-adobo/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/262791/filipino-chicken-adobo/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/262791/filipino-chicken-adobo\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T13:51:28.607Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/262791/filipino-chicken-adobo",
+	"url": "https://www.eatingwell.com/recipe/262791/filipino-chicken-adobo/"
+}

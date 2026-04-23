@@ -1,0 +1,9 @@
+{
+	"id": "7gdDLyAFe5v6yUt",
+	"json": "{\"id\":\"7gdDLyAFe5v6yUt\",\"url\":\"https://www.eatingwell.com/recipe/270990/grilled-oysters-with-garlic-herb-butter/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/270990/grilled-oysters-with-garlic-herb-butter/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/270990/grilled-oysters-with-garlic-herb-butter\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T14:13:02.787Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/270990/grilled-oysters-with-garlic-herb-butter",
+	"url": "https://www.eatingwell.com/recipe/270990/grilled-oysters-with-garlic-herb-butter/"
+}

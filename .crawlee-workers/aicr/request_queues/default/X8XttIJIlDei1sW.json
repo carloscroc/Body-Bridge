@@ -1,0 +1,9 @@
+{
+	"id": "X8XttIJIlDei1sW",
+	"json": "{\"id\":\"X8XttIJIlDei1sW\",\"url\":\"https://www.aicr.org/cancer-prevention/recipes/sweet-potato-hummus/\",\"loadedUrl\":\"https://www.aicr.org/cancer-prevention/recipes/sweet-potato-hummus/\",\"uniqueKey\":\"https://www.aicr.org/cancer-prevention/recipes/sweet-potato-hummus\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:30:34.086Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.aicr.org/cancer-prevention/recipes/sweet-potato-hummus",
+	"url": "https://www.aicr.org/cancer-prevention/recipes/sweet-potato-hummus/"
+}

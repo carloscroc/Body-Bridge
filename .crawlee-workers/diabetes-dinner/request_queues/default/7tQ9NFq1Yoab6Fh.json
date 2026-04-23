@@ -1,0 +1,9 @@
+{
+	"id": "7tQ9NFq1Yoab6Fh",
+	"json": "{\"id\":\"7tQ9NFq1Yoab6Fh\",\"url\":\"https://diabetesfoodhub.org/recipes/pumpkin-banana-muffins\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/pumpkin-banana-muffins\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/pumpkin-banana-muffins\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T17:29:27.005Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/pumpkin-banana-muffins",
+	"url": "https://diabetesfoodhub.org/recipes/pumpkin-banana-muffins"
+}

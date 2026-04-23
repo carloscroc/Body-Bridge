@@ -1,0 +1,9 @@
+{
+	"id": "0WoiJuZVZdAGNe4",
+	"json": "{\"id\":\"0WoiJuZVZdAGNe4\",\"url\":\"https://www.kidney.org/nutrition/recipes/cauliflower-au-gratin?page=5\",\"loadedUrl\":\"https://www.kidney.org/nutrition/recipes/cauliflower-au-gratin?page=5\",\"uniqueKey\":\"https://www.kidney.org/nutrition/recipes/cauliflower-au-gratin?page=5\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":17,\"state\":4}},\"handledAt\":\"2026-04-21T21:42:28.904Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.kidney.org/nutrition/recipes/cauliflower-au-gratin?page=5",
+	"url": "https://www.kidney.org/nutrition/recipes/cauliflower-au-gratin?page=5"
+}

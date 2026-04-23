@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useEffect, useCallback, useRef } from 'react';
-import { Search, Filter, Dumbbell } from 'lucide-react';
+import { Search, Filter, Dumbbell, Play } from 'lucide-react';
 import { useQuery, useMutation } from 'convex/react';
 import { api } from '@convex/_generated/api';
 import type { Exercise } from '../types';
@@ -232,6 +232,13 @@ const ExercisesView: React.FC<ExercisesViewProps> = ({ onSelect }) => {
                   </div>
                 )}
                 <div className="absolute inset-0 scrim-overlay opacity-60 group-hover:opacity-90 transition-opacity" />
+                
+                {ex.videoUrl && (
+                  <div className="absolute top-4 right-4 w-6 h-6 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center border border-white/20">
+                    <Play size={10} className="text-white fill-white ml-0.5" />
+                  </div>
+                )}
+
                 <div className="absolute bottom-5 left-5 right-5">
                   <h3 className="text-xs font-bold leading-tight text-white">{ex.name}</h3>
                   <p className="text-[8px] font-black uppercase tracking-widest text-white/30 mt-1.5">{ex.muscleGroup}</p>

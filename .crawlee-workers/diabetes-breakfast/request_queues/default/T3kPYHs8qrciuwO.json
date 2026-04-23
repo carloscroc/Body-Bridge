@@ -1,0 +1,9 @@
+{
+	"id": "T3kPYHs8qrciuwO",
+	"json": "{\"id\":\"T3kPYHs8qrciuwO\",\"url\":\"https://diabetesfoodhub.org/recipes/sirloin-hoagies\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/sirloin-hoagies\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/sirloin-hoagies\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":7,\"state\":4}},\"handledAt\":\"2026-04-21T19:47:13.065Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/sirloin-hoagies",
+	"url": "https://diabetesfoodhub.org/recipes/sirloin-hoagies"
+}

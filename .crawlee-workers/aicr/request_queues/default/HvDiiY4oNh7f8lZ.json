@@ -1,0 +1,9 @@
+{
+	"id": "HvDiiY4oNh7f8lZ",
+	"json": "{\"id\":\"HvDiiY4oNh7f8lZ\",\"url\":\"https://www.aicr.org/cancer-prevention/recipes/avocado-macaroni-and-cheese/\",\"loadedUrl\":\"https://www.aicr.org/cancer-prevention/recipes/avocado-macaroni-and-cheese/\",\"uniqueKey\":\"https://www.aicr.org/cancer-prevention/recipes/avocado-macaroni-and-cheese\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":1,\"errorMessages\":[\"Error: Request blocked - received 403 status code.\\n    at PlaywrightCrawler._throwOnBlockedRequest (C:\\\\Users\\\\thebe\\\\Downloads\\\\Forge\\\\node_modules\\\\@crawlee\\\\basic\\\\internals\\\\basic-crawler.js:913:19)\\n    at PlaywrightCrawler._responseHandler (C:\\\\Users\\\\thebe\\\\Downloads\\\\Forge\\\\node_modules\\\\@crawlee\\\\browser\\\\internals\\\\browser-crawler.js:383:22)\\n    at PlaywrightCrawler._runRequestHandler (C:\\\\Users\\\\thebe\\\\Downloads\\\\Forge\\\\node_modules\\\\@crawlee\\\\browser\\\\internals\\\\browser-crawler.js:262:24)\\n    at async PlaywrightCrawler._runRequestHandler (C:\\\\Users\\\\thebe\\\\Downloads\\\\Forge\\\\node_modules\\\\@crawlee\\\\playwright\\\\internals\\\\playwright-crawler.js:114:9)\\n    at async wrap (C:\\\\Users\\\\thebe\\\\Downloads\\\\Forge\\\\node_modules\\\\@apify\\\\timeout\\\\cjs\\\\index.cjs:54:21)\"],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:27:26.874Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 1,
+	"uniqueKey": "https://www.aicr.org/cancer-prevention/recipes/avocado-macaroni-and-cheese",
+	"url": "https://www.aicr.org/cancer-prevention/recipes/avocado-macaroni-and-cheese/"
+}

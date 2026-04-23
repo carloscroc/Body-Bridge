@@ -1,0 +1,9 @@
+{
+	"id": "5hI3elw0sYYhtnD",
+	"json": "{\"id\":\"5hI3elw0sYYhtnD\",\"url\":\"https://diabetesfoodhub.org/recipes/chicken-and-bean-cassoulet\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/chicken-and-bean-cassoulet\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/chicken-and-bean-cassoulet\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":8,\"state\":4}},\"handledAt\":\"2026-04-21T20:36:21.106Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/chicken-and-bean-cassoulet",
+	"url": "https://diabetesfoodhub.org/recipes/chicken-and-bean-cassoulet"
+}

@@ -1,0 +1,9 @@
+{
+	"id": "8Pt8NfKU5fphWf0",
+	"json": "{\"id\":\"8Pt8NfKU5fphWf0\",\"url\":\"https://www.eatingwell.com/recipes/18352/health-condition/diabetic/vegetarian/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/18352/health-condition/diabetic/vegetarian/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/18352/health-condition/diabetic/vegetarian\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:05:40.532Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/18352/health-condition/diabetic/vegetarian",
+	"url": "https://www.eatingwell.com/recipes/18352/health-condition/diabetic/vegetarian/"
+}

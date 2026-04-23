@@ -1,0 +1,9 @@
+{
+	"id": "6KXT4enUdX5Ctw0",
+	"json": "{\"id\":\"6KXT4enUdX5Ctw0\",\"url\":\"https://www.eatingwell.com/recipe/270288/bbq-chicken-tacos-with-red-cabbage-slaw/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/270288/bbq-chicken-tacos-with-red-cabbage-slaw\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3}}}",
+	"method": "GET",
+	"orderNo": 1776778166661,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/270288/bbq-chicken-tacos-with-red-cabbage-slaw",
+	"url": "https://www.eatingwell.com/recipe/270288/bbq-chicken-tacos-with-red-cabbage-slaw/"
+}

@@ -1,0 +1,9 @@
+{
+	"id": "6Xt1wMPjIUCY40x",
+	"json": "{\"id\":\"6Xt1wMPjIUCY40x\",\"url\":\"https://www.eatingwell.com/recipes/18009/nutrient-focused-diets/high-fiber/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/18009/nutrient-focused-diets/high-fiber/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/18009/nutrient-focused-diets/high-fiber\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:14:16.359Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/18009/nutrient-focused-diets/high-fiber",
+	"url": "https://www.eatingwell.com/recipes/18009/nutrient-focused-diets/high-fiber/"
+}

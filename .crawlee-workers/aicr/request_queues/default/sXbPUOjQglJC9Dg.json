@@ -1,0 +1,9 @@
+{
+	"id": "sXbPUOjQglJC9Dg",
+	"json": "{\"id\":\"sXbPUOjQglJC9Dg\",\"url\":\"https://www.aicr.org/cancer-prevention/recipes/fresh-and-light-veggie-pad-thai/\",\"loadedUrl\":\"https://www.aicr.org/cancer-prevention/recipes/fresh-and-light-veggie-pad-thai/\",\"uniqueKey\":\"https://www.aicr.org/cancer-prevention/recipes/fresh-and-light-veggie-pad-thai\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":1,\"state\":4}},\"handledAt\":\"2026-04-21T13:04:08.292Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.aicr.org/cancer-prevention/recipes/fresh-and-light-veggie-pad-thai",
+	"url": "https://www.aicr.org/cancer-prevention/recipes/fresh-and-light-veggie-pad-thai/"
+}

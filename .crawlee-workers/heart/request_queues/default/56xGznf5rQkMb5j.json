@@ -1,0 +1,9 @@
+{
+	"id": "56xGznf5rQkMb5j",
+	"json": "{\"id\":\"56xGznf5rQkMb5j\",\"url\":\"https://recipes.heart.org/en/recipes/massaged-kale-salad\",\"loadedUrl\":\"https://recipes.heart.org/en/recipes/massaged-kale-salad\",\"uniqueKey\":\"https://recipes.heart.org/en/recipes/massaged-kale-salad\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T12:38:23.836Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recipes.heart.org/en/recipes/massaged-kale-salad",
+	"url": "https://recipes.heart.org/en/recipes/massaged-kale-salad"
+}

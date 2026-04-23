@@ -1,0 +1,9 @@
+{
+	"id": "wLz4lWwFlNPoI1C",
+	"json": "{\"id\":\"wLz4lWwFlNPoI1C\",\"url\":\"https://www.aicr.org/cancer-prevention/recipes/warm-kale-salad/\",\"loadedUrl\":\"https://www.aicr.org/cancer-prevention/recipes/warm-kale-salad/\",\"uniqueKey\":\"https://www.aicr.org/cancer-prevention/recipes/warm-kale-salad\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":1,\"state\":4}},\"handledAt\":\"2026-04-21T13:15:33.134Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.aicr.org/cancer-prevention/recipes/warm-kale-salad",
+	"url": "https://www.aicr.org/cancer-prevention/recipes/warm-kale-salad/"
+}

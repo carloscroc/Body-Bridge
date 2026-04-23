@@ -1,0 +1,9 @@
+{
+	"id": "njWhRMn4rLUMY40",
+	"json": "{\"id\":\"njWhRMn4rLUMY40\",\"url\":\"https://www.eatingwell.com/recipe/247984/shrimp-crab-cakes/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/247984/shrimp-crab-cakes/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/247984/shrimp-crab-cakes\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T14:07:51.307Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/247984/shrimp-crab-cakes",
+	"url": "https://www.eatingwell.com/recipe/247984/shrimp-crab-cakes/"
+}

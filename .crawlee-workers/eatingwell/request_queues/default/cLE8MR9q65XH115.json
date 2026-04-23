@@ -1,0 +1,9 @@
+{
+	"id": "cLE8MR9q65XH115",
+	"json": "{\"id\":\"cLE8MR9q65XH115\",\"url\":\"https://www.eatingwell.com/recipe/251765/sauteed-spinach-with-toasted-sesame-oil/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/251765/sauteed-spinach-with-toasted-sesame-oil/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/251765/sauteed-spinach-with-toasted-sesame-oil\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T14:15:45.590Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/251765/sauteed-spinach-with-toasted-sesame-oil",
+	"url": "https://www.eatingwell.com/recipe/251765/sauteed-spinach-with-toasted-sesame-oil/"
+}

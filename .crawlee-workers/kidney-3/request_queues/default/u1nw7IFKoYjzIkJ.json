@@ -1,0 +1,9 @@
+{
+	"id": "u1nw7IFKoYjzIkJ",
+	"json": "{\"id\":\"u1nw7IFKoYjzIkJ\",\"url\":\"https://www.kidney.org/nutrition/recipes/autumn-spiced-vanilla-creme-apples-and-pecans?page=1\",\"loadedUrl\":\"https://www.kidney.org/nutrition/recipes/autumn-spiced-vanilla-creme-apples-and-pecans?page=1\",\"uniqueKey\":\"https://www.kidney.org/nutrition/recipes/autumn-spiced-vanilla-creme-apples-and-pecans?page=1\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":6,\"state\":4}},\"handledAt\":\"2026-04-21T17:53:36.621Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.kidney.org/nutrition/recipes/autumn-spiced-vanilla-creme-apples-and-pecans?page=1",
+	"url": "https://www.kidney.org/nutrition/recipes/autumn-spiced-vanilla-creme-apples-and-pecans?page=1"
+}

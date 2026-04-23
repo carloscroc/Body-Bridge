@@ -1,0 +1,9 @@
+{
+	"id": "nsDDgimH5vE5ksO",
+	"json": "{\"id\":\"nsDDgimH5vE5ksO\",\"url\":\"https://recipes.heart.org/en/recipes/panqueques-con-salsa-de-vainilla-y-arandanos\",\"loadedUrl\":\"https://recipes.heart.org/en/recipes/panqueques-con-salsa-de-vainilla-y-arandanos\",\"uniqueKey\":\"https://recipes.heart.org/en/recipes/panqueques-con-salsa-de-vainilla-y-arandanos\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":7,\"state\":4}},\"handledAt\":\"2026-04-21T13:21:22.750Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recipes.heart.org/en/recipes/panqueques-con-salsa-de-vainilla-y-arandanos",
+	"url": "https://recipes.heart.org/en/recipes/panqueques-con-salsa-de-vainilla-y-arandanos"
+}

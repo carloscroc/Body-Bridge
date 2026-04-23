@@ -1,0 +1,9 @@
+{
+	"id": "03ztQ4LWWLhGgOr",
+	"json": "{\"id\":\"03ztQ4LWWLhGgOr\",\"url\":\"https://recipes.heart.org/en/recipes/creamy-chicken-broccoli-casserole-with-whole-wheat-pasta\",\"loadedUrl\":\"https://recipes.heart.org/en/recipes/creamy-chicken-broccoli-casserole-with-whole-wheat-pasta\",\"uniqueKey\":\"https://recipes.heart.org/en/recipes/creamy-chicken-broccoli-casserole-with-whole-wheat-pasta\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":5,\"state\":4}},\"handledAt\":\"2026-04-21T12:54:43.301Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recipes.heart.org/en/recipes/creamy-chicken-broccoli-casserole-with-whole-wheat-pasta",
+	"url": "https://recipes.heart.org/en/recipes/creamy-chicken-broccoli-casserole-with-whole-wheat-pasta"
+}

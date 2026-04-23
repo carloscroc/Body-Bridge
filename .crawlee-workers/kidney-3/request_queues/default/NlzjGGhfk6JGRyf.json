@@ -1,0 +1,9 @@
+{
+	"id": "NlzjGGhfk6JGRyf",
+	"json": "{\"id\":\"NlzjGGhfk6JGRyf\",\"url\":\"https://www.kidney.org/nutrition/recipes/green-bean-bundles\",\"loadedUrl\":\"https://www.kidney.org/nutrition/recipes/green-bean-bundles\",\"uniqueKey\":\"https://www.kidney.org/nutrition/recipes/green-bean-bundles\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":17,\"state\":4}},\"handledAt\":\"2026-04-21T22:02:33.029Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.kidney.org/nutrition/recipes/green-bean-bundles",
+	"url": "https://www.kidney.org/nutrition/recipes/green-bean-bundles"
+}

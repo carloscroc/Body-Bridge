@@ -1,0 +1,9 @@
+{
+	"id": "uRo2HrFhJailhw8",
+	"json": "{\"id\":\"uRo2HrFhJailhw8\",\"url\":\"https://www.kidney.org/nutrition/recipes/lime-garlic-grilled-chicken-tacos\",\"loadedUrl\":\"https://www.kidney.org/nutrition/recipes/lime-garlic-grilled-chicken-tacos\",\"uniqueKey\":\"https://www.kidney.org/nutrition/recipes/lime-garlic-grilled-chicken-tacos\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":1,\"state\":4}},\"handledAt\":\"2026-04-21T17:25:41.925Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.kidney.org/nutrition/recipes/lime-garlic-grilled-chicken-tacos",
+	"url": "https://www.kidney.org/nutrition/recipes/lime-garlic-grilled-chicken-tacos"
+}

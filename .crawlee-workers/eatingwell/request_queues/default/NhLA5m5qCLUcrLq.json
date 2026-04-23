@@ -1,0 +1,9 @@
+{
+	"id": "NhLA5m5qCLUcrLq",
+	"json": "{\"id\":\"NhLA5m5qCLUcrLq\",\"url\":\"https://www.eatingwell.com/recipes/17956/sauces-condiments/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/17956/sauces-condiments/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/17956/sauces-condiments\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":1,\"state\":4}},\"handledAt\":\"2026-04-21T12:35:45.526Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/17956/sauces-condiments",
+	"url": "https://www.eatingwell.com/recipes/17956/sauces-condiments/"
+}

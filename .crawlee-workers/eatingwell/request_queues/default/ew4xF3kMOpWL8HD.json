@@ -1,0 +1,9 @@
+{
+	"id": "ew4xF3kMOpWL8HD",
+	"json": "{\"id\":\"ew4xF3kMOpWL8HD\",\"url\":\"https://www.eatingwell.com/recipe/262826/chicken-cornmeal-dumplings/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/262826/chicken-cornmeal-dumplings/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/262826/chicken-cornmeal-dumplings\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T13:43:40.022Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/262826/chicken-cornmeal-dumplings",
+	"url": "https://www.eatingwell.com/recipe/262826/chicken-cornmeal-dumplings/"
+}

@@ -1,0 +1,9 @@
+{
+	"id": "7Icf51yrJ4tKdye",
+	"json": "{\"id\":\"7Icf51yrJ4tKdye\",\"url\":\"https://www.eatingwell.com/recipes/17976/main-dishes/pizza/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/17976/main-dishes/pizza/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/17976/main-dishes/pizza\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:10:12.218Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/17976/main-dishes/pizza",
+	"url": "https://www.eatingwell.com/recipes/17976/main-dishes/pizza/"
+}

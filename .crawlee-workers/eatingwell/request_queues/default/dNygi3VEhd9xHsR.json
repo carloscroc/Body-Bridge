@@ -1,0 +1,9 @@
+{
+	"id": "dNygi3VEhd9xHsR",
+	"json": "{\"id\":\"dNygi3VEhd9xHsR\",\"url\":\"https://www.eatingwell.com/recipe/268783/two-ingredient-banana-pancakes/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/268783/two-ingredient-banana-pancakes/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/268783/two-ingredient-banana-pancakes\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T14:05:10.964Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/268783/two-ingredient-banana-pancakes",
+	"url": "https://www.eatingwell.com/recipe/268783/two-ingredient-banana-pancakes/"
+}

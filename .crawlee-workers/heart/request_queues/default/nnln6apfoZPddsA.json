@@ -1,0 +1,9 @@
+{
+	"id": "nnln6apfoZPddsA",
+	"json": "{\"id\":\"nnln6apfoZPddsA\",\"url\":\"https://recipes.heart.org/en/recipes/chilled-avocado-gazpacho\",\"loadedUrl\":\"https://recipes.heart.org/en/recipes/chilled-avocado-gazpacho\",\"uniqueKey\":\"https://recipes.heart.org/en/recipes/chilled-avocado-gazpacho\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":9,\"state\":4}},\"handledAt\":\"2026-04-21T13:46:05.190Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recipes.heart.org/en/recipes/chilled-avocado-gazpacho",
+	"url": "https://recipes.heart.org/en/recipes/chilled-avocado-gazpacho"
+}

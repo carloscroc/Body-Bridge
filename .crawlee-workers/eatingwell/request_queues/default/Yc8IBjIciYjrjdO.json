@@ -1,0 +1,9 @@
+{
+	"id": "Yc8IBjIciYjrjdO",
+	"json": "{\"id\":\"Yc8IBjIciYjrjdO\",\"url\":\"https://www.eatingwell.com/recipe/251408/pretzels-with-dark-chocolate-peanut-butter/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/251408/pretzels-with-dark-chocolate-peanut-butter/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/251408/pretzels-with-dark-chocolate-peanut-butter\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T14:04:33.154Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/251408/pretzels-with-dark-chocolate-peanut-butter",
+	"url": "https://www.eatingwell.com/recipe/251408/pretzels-with-dark-chocolate-peanut-butter/"
+}

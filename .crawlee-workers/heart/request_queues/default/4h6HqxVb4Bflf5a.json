@@ -1,0 +1,9 @@
+{
+	"id": "4h6HqxVb4Bflf5a",
+	"json": "{\"id\":\"4h6HqxVb4Bflf5a\",\"url\":\"https://recipes.heart.org/en/recipes/simple-chicken-or-shrimp-stir-fry\",\"loadedUrl\":\"https://recipes.heart.org/en/recipes/simple-chicken-or-shrimp-stir-fry\",\"uniqueKey\":\"https://recipes.heart.org/en/recipes/simple-chicken-or-shrimp-stir-fry\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":7,\"state\":4}},\"handledAt\":\"2026-04-21T13:24:28.525Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recipes.heart.org/en/recipes/simple-chicken-or-shrimp-stir-fry",
+	"url": "https://recipes.heart.org/en/recipes/simple-chicken-or-shrimp-stir-fry"
+}

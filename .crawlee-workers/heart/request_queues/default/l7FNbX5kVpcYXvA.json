@@ -1,0 +1,9 @@
+{
+	"id": "l7FNbX5kVpcYXvA",
+	"json": "{\"id\":\"l7FNbX5kVpcYXvA\",\"url\":\"https://recipes.heart.org/en/recipes/crockpot-pulled-orange-chicken-tacos-with-pickled-vegetables\",\"loadedUrl\":\"https://recipes.heart.org/en/recipes/crockpot-pulled-orange-chicken-tacos-with-pickled-vegetables\",\"uniqueKey\":\"https://recipes.heart.org/en/recipes/crockpot-pulled-orange-chicken-tacos-with-pickled-vegetables\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":5,\"state\":4}},\"handledAt\":\"2026-04-21T12:48:41.285Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recipes.heart.org/en/recipes/crockpot-pulled-orange-chicken-tacos-with-pickled-vegetables",
+	"url": "https://recipes.heart.org/en/recipes/crockpot-pulled-orange-chicken-tacos-with-pickled-vegetables"
+}

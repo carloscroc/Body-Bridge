@@ -1,0 +1,9 @@
+{
+	"id": "1ycmPYbnIkWr7Zf",
+	"json": "{\"id\":\"1ycmPYbnIkWr7Zf\",\"url\":\"https://diabetesfoodhub.org/recipes/sauteed-thyme-mushrooms\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/sauteed-thyme-mushrooms\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/sauteed-thyme-mushrooms\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":4,\"state\":4}},\"handledAt\":\"2026-04-21T18:43:10.162Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/sauteed-thyme-mushrooms",
+	"url": "https://diabetesfoodhub.org/recipes/sauteed-thyme-mushrooms"
+}

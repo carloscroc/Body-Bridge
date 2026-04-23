@@ -1,0 +1,9 @@
+{
+	"id": "Xjz5IuMCmCKIDxc",
+	"json": "{\"id\":\"Xjz5IuMCmCKIDxc\",\"url\":\"https://diabetesfoodhub.org/recipes/quick-easy?page=1\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/quick-easy?page=1\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/quick-easy?page=1\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T17:44:56.418Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/quick-easy?page=1",
+	"url": "https://diabetesfoodhub.org/recipes/quick-easy?page=1"
+}

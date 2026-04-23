@@ -1,0 +1,9 @@
+{
+	"id": "IqFW8gp33ccm4kF",
+	"json": "{\"id\":\"IqFW8gp33ccm4kF\",\"url\":\"https://diabetesfoodhub.org/recipes/power-snack-mix?page=1\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/power-snack-mix?page=1\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/power-snack-mix?page=1\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":15,\"state\":4}},\"handledAt\":\"2026-04-21T22:31:12.266Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/power-snack-mix?page=1",
+	"url": "https://diabetesfoodhub.org/recipes/power-snack-mix?page=1"
+}

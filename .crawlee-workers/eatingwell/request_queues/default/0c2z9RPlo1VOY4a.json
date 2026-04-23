@@ -1,0 +1,9 @@
+{
+	"id": "0c2z9RPlo1VOY4a",
+	"json": "{\"id\":\"0c2z9RPlo1VOY4a\",\"url\":\"https://www.eatingwell.com/recipe/260726/black-bean-quinoa-buddha-bowl/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/260726/black-bean-quinoa-buddha-bowl/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/260726/black-bean-quinoa-buddha-bowl\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:32:32.827Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/260726/black-bean-quinoa-buddha-bowl",
+	"url": "https://www.eatingwell.com/recipe/260726/black-bean-quinoa-buddha-bowl/"
+}

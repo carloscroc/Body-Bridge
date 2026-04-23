@@ -1,0 +1,9 @@
+{
+	"id": "1cAEAE1ZgH1mvGb",
+	"json": "{\"id\":\"1cAEAE1ZgH1mvGb\",\"url\":\"https://diabetesfoodhub.org/recipes/sweet-pepper-onion-and-tomato-salad\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/sweet-pepper-onion-and-tomato-salad\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/sweet-pepper-onion-and-tomato-salad\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":12,\"state\":4}},\"handledAt\":\"2026-04-21T21:51:37.033Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/sweet-pepper-onion-and-tomato-salad",
+	"url": "https://diabetesfoodhub.org/recipes/sweet-pepper-onion-and-tomato-salad"
+}

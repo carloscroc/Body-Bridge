@@ -1,0 +1,9 @@
+{
+	"id": "L8mYr2gC1Jc2qHK",
+	"json": "{\"id\":\"L8mYr2gC1Jc2qHK\",\"url\":\"https://www.kidney.org/nutrition/recipes/maple-balsamic-chicken?page=1\",\"loadedUrl\":\"https://www.kidney.org/nutrition/recipes/maple-balsamic-chicken?page=1\",\"uniqueKey\":\"https://www.kidney.org/nutrition/recipes/maple-balsamic-chicken?page=1\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":13,\"state\":4}},\"handledAt\":\"2026-04-21T19:46:26.903Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.kidney.org/nutrition/recipes/maple-balsamic-chicken?page=1",
+	"url": "https://www.kidney.org/nutrition/recipes/maple-balsamic-chicken?page=1"
+}

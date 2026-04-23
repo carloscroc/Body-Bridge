@@ -1,0 +1,9 @@
+{
+	"id": "VrkxK9RraLIcCKR",
+	"json": "{\"id\":\"VrkxK9RraLIcCKR\",\"url\":\"https://www.eatingwell.com/recipe/269838/spinach-egg-scramble-with-raspberries/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/269838/spinach-egg-scramble-with-raspberries/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/269838/spinach-egg-scramble-with-raspberries\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T13:46:32.523Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/269838/spinach-egg-scramble-with-raspberries",
+	"url": "https://www.eatingwell.com/recipe/269838/spinach-egg-scramble-with-raspberries/"
+}

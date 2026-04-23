@@ -1,0 +1,9 @@
+{
+	"id": "vbQjo2m4d7pJQJv",
+	"json": "{\"id\":\"vbQjo2m4d7pJQJv\",\"url\":\"https://www.eatingwell.com/recipes/18570/weight-loss-diet/lunch/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/18570/weight-loss-diet/lunch/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/18570/weight-loss-diet/lunch\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:24:00.155Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/18570/weight-loss-diet/lunch",
+	"url": "https://www.eatingwell.com/recipes/18570/weight-loss-diet/lunch/"
+}

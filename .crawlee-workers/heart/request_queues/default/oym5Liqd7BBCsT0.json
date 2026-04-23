@@ -1,0 +1,9 @@
+{
+	"id": "oym5Liqd7BBCsT0",
+	"json": "{\"id\":\"oym5Liqd7BBCsT0\",\"url\":\"https://recipes.heart.org/en/recipes/three-sisters-soup\",\"loadedUrl\":\"https://recipes.heart.org/en/recipes/three-sisters-soup\",\"uniqueKey\":\"https://recipes.heart.org/en/recipes/three-sisters-soup\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":7,\"state\":4}},\"handledAt\":\"2026-04-21T13:30:10.239Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recipes.heart.org/en/recipes/three-sisters-soup",
+	"url": "https://recipes.heart.org/en/recipes/three-sisters-soup"
+}

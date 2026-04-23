@@ -1,0 +1,9 @@
+{
+	"id": "Zx6csWktR5k3GMq",
+	"json": "{\"id\":\"Zx6csWktR5k3GMq\",\"url\":\"https://www.aicr.org/cancer-prevention/recipes/fresh-tomato-sauce/\",\"loadedUrl\":\"https://www.aicr.org/cancer-prevention/recipes/fresh-tomato-sauce/\",\"uniqueKey\":\"https://www.aicr.org/cancer-prevention/recipes/fresh-tomato-sauce\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":1,\"state\":4}},\"handledAt\":\"2026-04-21T12:49:40.076Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.aicr.org/cancer-prevention/recipes/fresh-tomato-sauce",
+	"url": "https://www.aicr.org/cancer-prevention/recipes/fresh-tomato-sauce/"
+}

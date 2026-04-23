@@ -1,0 +1,9 @@
+{
+	"id": "qUoY5kPG4gIJycg",
+	"json": "{\"id\":\"qUoY5kPG4gIJycg\",\"url\":\"https://www.eatingwell.com/recipe/265890/whole-wheat-sourdough-starter/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/265890/whole-wheat-sourdough-starter/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/265890/whole-wheat-sourdough-starter\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:20:52.460Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/265890/whole-wheat-sourdough-starter",
+	"url": "https://www.eatingwell.com/recipe/265890/whole-wheat-sourdough-starter/"
+}

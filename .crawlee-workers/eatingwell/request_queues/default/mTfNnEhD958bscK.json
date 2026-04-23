@@ -1,0 +1,9 @@
+{
+	"id": "mTfNnEhD958bscK",
+	"json": "{\"id\":\"mTfNnEhD958bscK\",\"url\":\"https://www.eatingwell.com/recipe/274560/pumpkin-chocolate-chip-muffins/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/274560/pumpkin-chocolate-chip-muffins\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3}}}",
+	"method": "GET",
+	"orderNo": 1776777541203,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/274560/pumpkin-chocolate-chip-muffins",
+	"url": "https://www.eatingwell.com/recipe/274560/pumpkin-chocolate-chip-muffins/"
+}

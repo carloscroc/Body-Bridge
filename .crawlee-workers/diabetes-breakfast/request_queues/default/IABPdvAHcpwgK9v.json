@@ -1,0 +1,9 @@
+{
+	"id": "IABPdvAHcpwgK9v",
+	"json": "{\"id\":\"IABPdvAHcpwgK9v\",\"url\":\"https://diabetesfoodhub.org/recipes/pasta-primavera-chickpea-pasta\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/pasta-primavera-chickpea-pasta\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/pasta-primavera-chickpea-pasta\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T17:35:31.681Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/pasta-primavera-chickpea-pasta",
+	"url": "https://diabetesfoodhub.org/recipes/pasta-primavera-chickpea-pasta"
+}

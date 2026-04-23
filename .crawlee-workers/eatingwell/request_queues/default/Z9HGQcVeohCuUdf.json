@@ -1,0 +1,9 @@
+{
+	"id": "Z9HGQcVeohCuUdf",
+	"json": "{\"id\":\"Z9HGQcVeohCuUdf\",\"url\":\"https://www.eatingwell.com/recipes/19256/ingredients/pasta-noodle/pasta-by-shape/macaroni/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/19256/ingredients/pasta-noodle/pasta-by-shape/macaroni\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3}}}",
+	"method": "GET",
+	"orderNo": 1776778562968,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/19256/ingredients/pasta-noodle/pasta-by-shape/macaroni",
+	"url": "https://www.eatingwell.com/recipes/19256/ingredients/pasta-noodle/pasta-by-shape/macaroni/"
+}

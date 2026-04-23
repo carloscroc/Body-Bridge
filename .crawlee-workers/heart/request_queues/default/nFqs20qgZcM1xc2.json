@@ -1,0 +1,9 @@
+{
+	"id": "nFqs20qgZcM1xc2",
+	"json": "{\"id\":\"nFqs20qgZcM1xc2\",\"url\":\"https://recipes.heart.org/en/recipes/creamy-tomato-fettuccini\",\"loadedUrl\":\"https://recipes.heart.org/en/recipes/creamy-tomato-fettuccini\",\"uniqueKey\":\"https://recipes.heart.org/en/recipes/creamy-tomato-fettuccini\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":7,\"state\":4}},\"handledAt\":\"2026-04-21T13:29:02.832Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recipes.heart.org/en/recipes/creamy-tomato-fettuccini",
+	"url": "https://recipes.heart.org/en/recipes/creamy-tomato-fettuccini"
+}

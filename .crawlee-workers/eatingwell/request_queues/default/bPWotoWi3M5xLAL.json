@@ -1,0 +1,9 @@
+{
+	"id": "bPWotoWi3M5xLAL",
+	"json": "{\"id\":\"bPWotoWi3M5xLAL\",\"url\":\"https://www.eatingwell.com/recipe/250549/roast-chicken-sweet-potatoes/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/250549/roast-chicken-sweet-potatoes/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/250549/roast-chicken-sweet-potatoes\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:31:51.586Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/250549/roast-chicken-sweet-potatoes",
+	"url": "https://www.eatingwell.com/recipe/250549/roast-chicken-sweet-potatoes/"
+}

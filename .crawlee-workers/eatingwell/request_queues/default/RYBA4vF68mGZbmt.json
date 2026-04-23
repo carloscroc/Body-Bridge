@@ -1,0 +1,9 @@
+{
+	"id": "RYBA4vF68mGZbmt",
+	"json": "{\"id\":\"RYBA4vF68mGZbmt\",\"url\":\"https://www.eatingwell.com/recipe/252591/lemon-dill-chicken/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/252591/lemon-dill-chicken/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/252591/lemon-dill-chicken\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:31:02.555Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/252591/lemon-dill-chicken",
+	"url": "https://www.eatingwell.com/recipe/252591/lemon-dill-chicken/"
+}

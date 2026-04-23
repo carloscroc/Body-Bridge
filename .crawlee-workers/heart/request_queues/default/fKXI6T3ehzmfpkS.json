@@ -1,0 +1,9 @@
+{
+	"id": "fKXI6T3ehzmfpkS",
+	"json": "{\"id\":\"fKXI6T3ehzmfpkS\",\"url\":\"https://recipes.heart.org/en/recipes/~/~/~/~/~/~/~/~/~/~/~/~/~/~/~/link.aspx?_id=33800A592154452DA2BDEDFAECD1E583&_z=z\",\"loadedUrl\":\"https://recipes.heart.org/en/recipes/~/~/~/~/~/~/~/~/~/~/~/~/~/~/~/link.aspx?_id=33800A592154452DA2BDEDFAECD1E583&_z=z\",\"uniqueKey\":\"https://recipes.heart.org/en/recipes/~/~/~/~/~/~/~/~/~/~/~/~/~/~/~/link.aspx?_id=33800A592154452DA2BDEDFAECD1E583&_z=z\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":21,\"state\":4}},\"handledAt\":\"2026-04-21T14:24:01.143Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recipes.heart.org/en/recipes/~/~/~/~/~/~/~/~/~/~/~/~/~/~/~/link.aspx?_id=33800A592154452DA2BDEDFAECD1E583&_z=z",
+	"url": "https://recipes.heart.org/en/recipes/~/~/~/~/~/~/~/~/~/~/~/~/~/~/~/link.aspx?_id=33800A592154452DA2BDEDFAECD1E583&_z=z"
+}

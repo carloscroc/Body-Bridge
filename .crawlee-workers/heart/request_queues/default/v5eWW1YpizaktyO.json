@@ -1,0 +1,9 @@
+{
+	"id": "v5eWW1YpizaktyO",
+	"json": "{\"id\":\"v5eWW1YpizaktyO\",\"url\":\"https://recipes.heart.org/en/recipes/chilaquiles-de-frijoles-negros\",\"loadedUrl\":\"https://recipes.heart.org/en/recipes/chilaquiles-de-frijoles-negros\",\"uniqueKey\":\"https://recipes.heart.org/en/recipes/chilaquiles-de-frijoles-negros\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":8,\"state\":4}},\"handledAt\":\"2026-04-21T13:35:41.083Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recipes.heart.org/en/recipes/chilaquiles-de-frijoles-negros",
+	"url": "https://recipes.heart.org/en/recipes/chilaquiles-de-frijoles-negros"
+}

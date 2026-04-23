@@ -1,0 +1,9 @@
+{
+	"id": "9XHjLFKVIBhB3Id",
+	"json": "{\"id\":\"9XHjLFKVIBhB3Id\",\"url\":\"https://www.aicr.org/cancer-prevention/recipes/grilled-panzanella/\",\"loadedUrl\":\"https://www.aicr.org/cancer-prevention/recipes/grilled-panzanella/\",\"uniqueKey\":\"https://www.aicr.org/cancer-prevention/recipes/grilled-panzanella\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":1,\"state\":4}},\"handledAt\":\"2026-04-21T13:13:18.559Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.aicr.org/cancer-prevention/recipes/grilled-panzanella",
+	"url": "https://www.aicr.org/cancer-prevention/recipes/grilled-panzanella/"
+}

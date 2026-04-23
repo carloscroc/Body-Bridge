@@ -1,0 +1,9 @@
+{
+	"id": "w91KZrTEXvw8W9E",
+	"json": "{\"id\":\"w91KZrTEXvw8W9E\",\"url\":\"https://www.eatingwell.com/recipe/263356/oven-roasted-chicken-thighs/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/263356/oven-roasted-chicken-thighs/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/263356/oven-roasted-chicken-thighs\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T13:45:47.553Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/263356/oven-roasted-chicken-thighs",
+	"url": "https://www.eatingwell.com/recipe/263356/oven-roasted-chicken-thighs/"
+}

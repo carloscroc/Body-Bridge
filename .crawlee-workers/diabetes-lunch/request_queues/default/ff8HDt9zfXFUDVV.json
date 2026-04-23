@@ -1,0 +1,9 @@
+{
+	"id": "ff8HDt9zfXFUDVV",
+	"json": "{\"id\":\"ff8HDt9zfXFUDVV\",\"url\":\"https://diabetesfoodhub.org/recipes/pizza-dough\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/pizza-dough\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/pizza-dough\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":8,\"state\":4}},\"handledAt\":\"2026-04-21T20:31:48.348Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/pizza-dough",
+	"url": "https://diabetesfoodhub.org/recipes/pizza-dough"
+}

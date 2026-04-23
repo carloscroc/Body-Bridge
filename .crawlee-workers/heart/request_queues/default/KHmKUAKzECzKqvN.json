@@ -1,0 +1,9 @@
+{
+	"id": "KHmKUAKzECzKqvN",
+	"json": "{\"id\":\"KHmKUAKzECzKqvN\",\"url\":\"https://recipes.heart.org/en/recipes/grilled-chicken-with-strawberry-and-pineapple-salsa\",\"loadedUrl\":\"https://recipes.heart.org/en/recipes/grilled-chicken-with-strawberry-and-pineapple-salsa\",\"uniqueKey\":\"https://recipes.heart.org/en/recipes/grilled-chicken-with-strawberry-and-pineapple-salsa\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":7,\"state\":4}},\"handledAt\":\"2026-04-21T13:31:08.562Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recipes.heart.org/en/recipes/grilled-chicken-with-strawberry-and-pineapple-salsa",
+	"url": "https://recipes.heart.org/en/recipes/grilled-chicken-with-strawberry-and-pineapple-salsa"
+}

@@ -1,0 +1,40 @@
+{
+  "requestsFinished": 1658,
+  "requestsFailed": 0,
+  "requestsRetries": 1,
+  "requestsFailedPerMinute": 0,
+  "requestsFinishedPerMinute": 5,
+  "requestMinDurationMillis": 5619,
+  "requestMaxDurationMillis": 44068,
+  "requestTotalFailedDurationMillis": 0,
+  "requestTotalFinishedDurationMillis": 18489295,
+  "crawlerStartedAt": "2026-04-21T17:23:01.433Z",
+  "crawlerFinishedAt": null,
+  "statsPersistedAt": "2026-04-21T22:45:41.395Z",
+  "crawlerRuntimeMillis": 19360851,
+  "crawlerLastStartTimestamp": 1776792180544,
+  "requestRetryHistogram": [
+    1657,
+    1
+  ],
+  "statsId": 0,
+  "requestAvgFailedDurationMillis": null,
+  "requestAvgFinishedDurationMillis": 11152,
+  "requestTotalDurationMillis": 18489295,
+  "requestsTotal": 1658,
+  "requestsWithStatusCode": {
+    "200": 1659
+  },
+  "errors": {},
+  "retryErrors": {
+    "C:\\Users\\thebe\\Downloads\\Forge\\node_modules\\@crawlee\\playwright\\internals\\utils\\playwright-utils.js:165:17": {
+      "missing error code": {
+        "Error": {
+          "page.goto: net::ERR_NETWORK_CHANGED at https://www.kidney.org/nutrition/recipes/cauliflower-no-mash-potatoes?page=5": {
+            "count": 1
+          }
+        }
+      }
+    }
+  }
+}

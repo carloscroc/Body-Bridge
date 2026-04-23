@@ -1,0 +1,9 @@
+{
+	"id": "16SyIGeVsBAXhVf",
+	"json": "{\"id\":\"16SyIGeVsBAXhVf\",\"url\":\"https://www.eatingwell.com/recipe/252833/shakshuka-with-roasted-tomatoes/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/252833/shakshuka-with-roasted-tomatoes/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/252833/shakshuka-with-roasted-tomatoes\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T13:48:29.313Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/252833/shakshuka-with-roasted-tomatoes",
+	"url": "https://www.eatingwell.com/recipe/252833/shakshuka-with-roasted-tomatoes/"
+}

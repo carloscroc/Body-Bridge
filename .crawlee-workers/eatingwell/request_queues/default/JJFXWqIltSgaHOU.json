@@ -1,0 +1,9 @@
+{
+	"id": "JJFXWqIltSgaHOU",
+	"json": "{\"id\":\"JJFXWqIltSgaHOU\",\"url\":\"https://www.eatingwell.com/recipe/258641/cream-cheese-veggie-roll-up/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/258641/cream-cheese-veggie-roll-up/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/258641/cream-cheese-veggie-roll-up\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T14:17:07.366Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/258641/cream-cheese-veggie-roll-up",
+	"url": "https://www.eatingwell.com/recipe/258641/cream-cheese-veggie-roll-up/"
+}

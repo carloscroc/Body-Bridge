@@ -1,0 +1,9 @@
+{
+	"id": "DE279L0aNTaEF01",
+	"json": "{\"id\":\"DE279L0aNTaEF01\",\"url\":\"https://www.eatingwell.com/recipes/18576/weight-loss-diet/desserts/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/18576/weight-loss-diet/desserts/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/18576/weight-loss-diet/desserts\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:24:24.859Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/18576/weight-loss-diet/desserts",
+	"url": "https://www.eatingwell.com/recipes/18576/weight-loss-diet/desserts/"
+}

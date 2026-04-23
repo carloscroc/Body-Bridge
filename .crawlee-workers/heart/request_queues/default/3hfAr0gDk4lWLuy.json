@@ -1,0 +1,9 @@
+{
+	"id": "3hfAr0gDk4lWLuy",
+	"json": "{\"id\":\"3hfAr0gDk4lWLuy\",\"url\":\"https://recipes.heart.org/en/recipes/whole-wheat-cranberry-muffins\",\"loadedUrl\":\"https://recipes.heart.org/en/recipes/whole-wheat-cranberry-muffins\",\"uniqueKey\":\"https://recipes.heart.org/en/recipes/whole-wheat-cranberry-muffins\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":8,\"state\":4}},\"handledAt\":\"2026-04-21T13:35:11.353Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recipes.heart.org/en/recipes/whole-wheat-cranberry-muffins",
+	"url": "https://recipes.heart.org/en/recipes/whole-wheat-cranberry-muffins"
+}

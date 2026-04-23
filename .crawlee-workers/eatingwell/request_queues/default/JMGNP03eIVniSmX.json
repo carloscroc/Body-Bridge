@@ -1,0 +1,9 @@
+{
+	"id": "JMGNP03eIVniSmX",
+	"json": "{\"id\":\"JMGNP03eIVniSmX\",\"url\":\"https://www.eatingwell.com/recipe/281364/lemon-frozen-yogurt-ripieno/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/281364/lemon-frozen-yogurt-ripieno\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3}}}",
+	"method": "GET",
+	"orderNo": 1776776473967,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/281364/lemon-frozen-yogurt-ripieno",
+	"url": "https://www.eatingwell.com/recipe/281364/lemon-frozen-yogurt-ripieno/"
+}

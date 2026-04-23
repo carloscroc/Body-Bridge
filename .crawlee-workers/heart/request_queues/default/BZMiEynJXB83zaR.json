@@ -1,0 +1,9 @@
+{
+	"id": "BZMiEynJXB83zaR",
+	"json": "{\"id\":\"BZMiEynJXB83zaR\",\"url\":\"https://recipes.heart.org/en/recipes/raspberry-basil-iced-tea\",\"loadedUrl\":\"https://recipes.heart.org/en/recipes/raspberry-basil-iced-tea\",\"uniqueKey\":\"https://recipes.heart.org/en/recipes/raspberry-basil-iced-tea\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":5,\"state\":4}},\"handledAt\":\"2026-04-21T12:59:17.592Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recipes.heart.org/en/recipes/raspberry-basil-iced-tea",
+	"url": "https://recipes.heart.org/en/recipes/raspberry-basil-iced-tea"
+}

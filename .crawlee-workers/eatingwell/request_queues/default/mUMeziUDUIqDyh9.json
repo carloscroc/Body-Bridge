@@ -1,0 +1,9 @@
+{
+	"id": "mUMeziUDUIqDyh9",
+	"json": "{\"id\":\"mUMeziUDUIqDyh9\",\"url\":\"https://www.eatingwell.com/recipe/249458/tilapia-corn-chowder/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/249458/tilapia-corn-chowder/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/249458/tilapia-corn-chowder\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T14:25:41.718Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/249458/tilapia-corn-chowder",
+	"url": "https://www.eatingwell.com/recipe/249458/tilapia-corn-chowder/"
+}

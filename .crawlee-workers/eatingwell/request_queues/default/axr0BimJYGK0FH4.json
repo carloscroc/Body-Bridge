@@ -1,0 +1,9 @@
+{
+	"id": "axr0BimJYGK0FH4",
+	"json": "{\"id\":\"axr0BimJYGK0FH4\",\"url\":\"https://www.eatingwell.com/recipes/18615/drinks/smoothies/yogurt/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/18615/drinks/smoothies/yogurt/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/18615/drinks/smoothies/yogurt\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:02:43.937Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/18615/drinks/smoothies/yogurt",
+	"url": "https://www.eatingwell.com/recipes/18615/drinks/smoothies/yogurt/"
+}

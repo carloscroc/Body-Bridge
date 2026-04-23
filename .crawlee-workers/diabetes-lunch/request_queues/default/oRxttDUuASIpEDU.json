@@ -1,0 +1,9 @@
+{
+	"id": "oRxttDUuASIpEDU",
+	"json": "{\"id\":\"oRxttDUuASIpEDU\",\"url\":\"https://diabetesfoodhub.org/recipes/broiled-cod\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/broiled-cod\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/broiled-cod\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":16,\"state\":4}},\"handledAt\":\"2026-04-21T22:40:32.503Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/broiled-cod",
+	"url": "https://diabetesfoodhub.org/recipes/broiled-cod"
+}

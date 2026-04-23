@@ -1,0 +1,9 @@
+{
+	"id": "3wvKEYsrmGB35R2",
+	"json": "{\"id\":\"3wvKEYsrmGB35R2\",\"url\":\"https://www.eatingwell.com/recipes/22791/ingredients/meat-poultry/sausage/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/22791/ingredients/meat-poultry/sausage\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3}}}",
+	"method": "GET",
+	"orderNo": 1776778527527,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/22791/ingredients/meat-poultry/sausage",
+	"url": "https://www.eatingwell.com/recipes/22791/ingredients/meat-poultry/sausage/"
+}

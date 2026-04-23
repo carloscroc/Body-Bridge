@@ -1,0 +1,9 @@
+{
+	"id": "engDbgpd9o7LrbC",
+	"json": "{\"id\":\"engDbgpd9o7LrbC\",\"url\":\"https://www.eatingwell.com/recipes/20093/weight-loss-diet/weight-loss-soups/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/20093/weight-loss-diet/weight-loss-soups/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/20093/weight-loss-diet/weight-loss-soups\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:24:31.705Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/20093/weight-loss-diet/weight-loss-soups",
+	"url": "https://www.eatingwell.com/recipes/20093/weight-loss-diet/weight-loss-soups/"
+}

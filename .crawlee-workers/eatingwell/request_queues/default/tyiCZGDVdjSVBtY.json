@@ -1,0 +1,9 @@
+{
+	"id": "tyiCZGDVdjSVBtY",
+	"json": "{\"id\":\"tyiCZGDVdjSVBtY\",\"url\":\"https://www.eatingwell.com/recipe/7986423/magic-mint-lemonade/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/7986423/magic-mint-lemonade\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3}}}",
+	"method": "GET",
+	"orderNo": 1776776691750,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/7986423/magic-mint-lemonade",
+	"url": "https://www.eatingwell.com/recipe/7986423/magic-mint-lemonade/"
+}

@@ -1,0 +1,9 @@
+{
+	"id": "RK7VlkuYFeUYSDh",
+	"json": "{\"id\":\"RK7VlkuYFeUYSDh\",\"url\":\"https://www.eatingwell.com/recipes/20535/cooking-methods-styles/quick-easy/dinner/20-minute/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/20535/cooking-methods-styles/quick-easy/dinner/20-minute/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/20535/cooking-methods-styles/quick-easy/dinner/20-minute\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T14:06:56.040Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/20535/cooking-methods-styles/quick-easy/dinner/20-minute",
+	"url": "https://www.eatingwell.com/recipes/20535/cooking-methods-styles/quick-easy/dinner/20-minute/"
+}

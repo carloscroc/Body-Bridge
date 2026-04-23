@@ -1,0 +1,9 @@
+{
+	"id": "NvXUbAX3A7ULQhl",
+	"json": "{\"id\":\"NvXUbAX3A7ULQhl\",\"url\":\"https://www.eatingwell.com/recipes/18182/appetizer/seafood/salmon/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/18182/appetizer/seafood/salmon\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3}}}",
+	"method": "GET",
+	"orderNo": 1776775743323,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/18182/appetizer/seafood/salmon",
+	"url": "https://www.eatingwell.com/recipes/18182/appetizer/seafood/salmon/"
+}

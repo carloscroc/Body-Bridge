@@ -1,0 +1,9 @@
+{
+	"id": "eDHiYHgDRSHns1J",
+	"json": "{\"id\":\"eDHiYHgDRSHns1J\",\"url\":\"https://www.eatingwell.com/recipes/20537/cooking-methods-styles/quick-easy/dinner/casserole/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/20537/cooking-methods-styles/quick-easy/dinner/casserole/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/20537/cooking-methods-styles/quick-easy/dinner/casserole\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T14:06:59.904Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/20537/cooking-methods-styles/quick-easy/dinner/casserole",
+	"url": "https://www.eatingwell.com/recipes/20537/cooking-methods-styles/quick-easy/dinner/casserole/"
+}

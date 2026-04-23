@@ -1,0 +1,9 @@
+{
+	"id": "iaslac19fdj5Ijj",
+	"json": "{\"id\":\"iaslac19fdj5Ijj\",\"url\":\"https://www.eatingwell.com/recipe/250329/kale-chips/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/250329/kale-chips/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/250329/kale-chips\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T14:17:11.741Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/250329/kale-chips",
+	"url": "https://www.eatingwell.com/recipe/250329/kale-chips/"
+}

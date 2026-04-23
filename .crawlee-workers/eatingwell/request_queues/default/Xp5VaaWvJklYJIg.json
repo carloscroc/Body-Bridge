@@ -1,0 +1,9 @@
+{
+	"id": "Xp5VaaWvJklYJIg",
+	"json": "{\"id\":\"Xp5VaaWvJklYJIg\",\"url\":\"https://www.eatingwell.com/recipe/262250/maple-roasted-carrots/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/262250/maple-roasted-carrots/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/262250/maple-roasted-carrots\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:36:46.129Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/262250/maple-roasted-carrots",
+	"url": "https://www.eatingwell.com/recipe/262250/maple-roasted-carrots/"
+}

@@ -1,0 +1,9 @@
+{
+	"id": "1I90XOQUClU0Lhz",
+	"json": "{\"id\":\"1I90XOQUClU0Lhz\",\"url\":\"https://diabetesfoodhub.org/recipes/collard-greens-yellow-squash\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/collard-greens-yellow-squash\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/collard-greens-yellow-squash\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":1,\"errorMessages\":[\"Error: Navigation timed out after 45 seconds.\\n    at handleRequestTimeout (C:\\\\Users\\\\thebe\\\\Downloads\\\\Forge\\\\node_modules\\\\@crawlee\\\\core\\\\crawlers\\\\crawler_utils.js:13:11)\\n    at PlaywrightCrawler._handleNavigationTimeout (C:\\\\Users\\\\thebe\\\\Downloads\\\\Forge\\\\node_modules\\\\@crawlee\\\\browser\\\\internals\\\\browser-crawler.js:360:46)\\n    at PlaywrightCrawler._handleNavigation (C:\\\\Users\\\\thebe\\\\Downloads\\\\Forge\\\\node_modules\\\\@crawlee\\\\browser\\\\internals\\\\browser-crawler.js:337:24)\\n    at async PlaywrightCrawler._runRequestHandler (C:\\\\Users\\\\thebe\\\\Downloads\\\\Forge\\\\node_modules\\\\@crawlee\\\\browser\\\\internals\\\\browser-crawler.js:260:13)\\n    at async PlaywrightCrawler._runRequestHandler (C:\\\\Users\\\\thebe\\\\Downloads\\\\Forge\\\\node_modules\\\\@crawlee\\\\playwright\\\\internals\\\\playwright-crawler.js:114:9)\\n    at async wrap (C:\\\\Users\\\\thebe\\\\Downloads\\\\Forge\\\\node_modules\\\\@apify\\\\timeout\\\\cjs\\\\index.cjs:54:21)\"],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":6,\"state\":4}},\"handledAt\":\"2026-04-21T19:49:22.230Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 1,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/collard-greens-yellow-squash",
+	"url": "https://diabetesfoodhub.org/recipes/collard-greens-yellow-squash"
+}

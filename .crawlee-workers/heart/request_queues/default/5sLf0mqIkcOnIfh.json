@@ -1,0 +1,9 @@
+{
+	"id": "5sLf0mqIkcOnIfh",
+	"json": "{\"id\":\"5sLf0mqIkcOnIfh\",\"url\":\"https://recipes.heart.org/en/recipes/festive-turkey-rice-salad\",\"loadedUrl\":\"https://recipes.heart.org/en/recipes/festive-turkey-rice-salad\",\"uniqueKey\":\"https://recipes.heart.org/en/recipes/festive-turkey-rice-salad\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":6,\"state\":4}},\"handledAt\":\"2026-04-21T13:13:19.981Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recipes.heart.org/en/recipes/festive-turkey-rice-salad",
+	"url": "https://recipes.heart.org/en/recipes/festive-turkey-rice-salad"
+}

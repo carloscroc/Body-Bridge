@@ -1,0 +1,9 @@
+{
+	"id": "BN0bAZtP1QuKYE4",
+	"json": "{\"id\":\"BN0bAZtP1QuKYE4\",\"url\":\"https://www.eatingwell.com/recipe/269213/shrimp-scampi/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/269213/shrimp-scampi/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/269213/shrimp-scampi\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T14:06:13.333Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/269213/shrimp-scampi",
+	"url": "https://www.eatingwell.com/recipe/269213/shrimp-scampi/"
+}

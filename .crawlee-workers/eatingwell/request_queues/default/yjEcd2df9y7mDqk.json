@@ -1,0 +1,9 @@
+{
+	"id": "yjEcd2df9y7mDqk",
+	"json": "{\"id\":\"yjEcd2df9y7mDqk\",\"url\":\"https://www.eatingwell.com/recipe/266309/warm-honey-green-tea/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/266309/warm-honey-green-tea\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3}}}",
+	"method": "GET",
+	"orderNo": 1776776623192,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/266309/warm-honey-green-tea",
+	"url": "https://www.eatingwell.com/recipe/266309/warm-honey-green-tea/"
+}

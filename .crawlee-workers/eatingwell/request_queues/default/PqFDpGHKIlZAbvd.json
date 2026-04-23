@@ -1,0 +1,9 @@
+{
+	"id": "PqFDpGHKIlZAbvd",
+	"json": "{\"id\":\"PqFDpGHKIlZAbvd\",\"url\":\"https://www.eatingwell.com/recipes/18266/cooking-methods-styles/stir-fry/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/18266/cooking-methods-styles/stir-fry/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/18266/cooking-methods-styles/stir-fry\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T12:42:46.512Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/18266/cooking-methods-styles/stir-fry",
+	"url": "https://www.eatingwell.com/recipes/18266/cooking-methods-styles/stir-fry/"
+}

@@ -1,0 +1,9 @@
+{
+	"id": "xHMWZ1uY6mpptLq",
+	"json": "{\"id\":\"xHMWZ1uY6mpptLq\",\"url\":\"https://www.eatingwell.com/recipe/268633/instant-pot-vegetable-soup/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/268633/instant-pot-vegetable-soup/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/268633/instant-pot-vegetable-soup\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T14:09:49.132Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/268633/instant-pot-vegetable-soup",
+	"url": "https://www.eatingwell.com/recipe/268633/instant-pot-vegetable-soup/"
+}

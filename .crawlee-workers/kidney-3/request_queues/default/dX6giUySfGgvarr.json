@@ -1,0 +1,9 @@
+{
+	"id": "dX6giUySfGgvarr",
+	"json": "{\"id\":\"dX6giUySfGgvarr\",\"url\":\"https://www.kidney.org/nutrition/recipes/shredded-mexican-chicken-crock-pot?page=3\",\"loadedUrl\":\"https://www.kidney.org/nutrition/recipes/shredded-mexican-chicken-crock-pot?page=3\",\"uniqueKey\":\"https://www.kidney.org/nutrition/recipes/shredded-mexican-chicken-crock-pot?page=3\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":15,\"state\":4}},\"handledAt\":\"2026-04-21T20:41:34.695Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.kidney.org/nutrition/recipes/shredded-mexican-chicken-crock-pot?page=3",
+	"url": "https://www.kidney.org/nutrition/recipes/shredded-mexican-chicken-crock-pot?page=3"
+}

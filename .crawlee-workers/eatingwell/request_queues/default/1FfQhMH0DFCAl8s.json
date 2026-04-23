@@ -1,0 +1,9 @@
+{
+	"id": "1FfQhMH0DFCAl8s",
+	"json": "{\"id\":\"1FfQhMH0DFCAl8s\",\"url\":\"https://www.eatingwell.com/recipe/273288/polenta-bowls-with-roasted-vegetables-fried-eggs/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/273288/polenta-bowls-with-roasted-vegetables-fried-eggs/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/273288/polenta-bowls-with-roasted-vegetables-fried-eggs\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T13:48:21.469Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/273288/polenta-bowls-with-roasted-vegetables-fried-eggs",
+	"url": "https://www.eatingwell.com/recipe/273288/polenta-bowls-with-roasted-vegetables-fried-eggs/"
+}

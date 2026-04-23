@@ -1,0 +1,9 @@
+{
+	"id": "6StzsMa507s4Rpw",
+	"json": "{\"id\":\"6StzsMa507s4Rpw\",\"url\":\"https://www.eatingwell.com/recipe/251959/beef-bean-chile-verde/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/251959/beef-bean-chile-verde/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/251959/beef-bean-chile-verde\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T14:10:14.348Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/251959/beef-bean-chile-verde",
+	"url": "https://www.eatingwell.com/recipe/251959/beef-bean-chile-verde/"
+}

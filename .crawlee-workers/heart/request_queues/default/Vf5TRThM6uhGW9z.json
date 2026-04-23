@@ -1,0 +1,9 @@
+{
+	"id": "Vf5TRThM6uhGW9z",
+	"json": "{\"id\":\"Vf5TRThM6uhGW9z\",\"url\":\"https://recipes.heart.org/en/recipes/rustic-italian-tomato-soup\",\"loadedUrl\":\"https://recipes.heart.org/en/recipes/rustic-italian-tomato-soup\",\"uniqueKey\":\"https://recipes.heart.org/en/recipes/rustic-italian-tomato-soup\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":8,\"state\":4}},\"handledAt\":\"2026-04-21T13:40:32.019Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recipes.heart.org/en/recipes/rustic-italian-tomato-soup",
+	"url": "https://recipes.heart.org/en/recipes/rustic-italian-tomato-soup"
+}

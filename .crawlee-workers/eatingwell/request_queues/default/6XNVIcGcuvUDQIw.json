@@ -1,0 +1,9 @@
+{
+	"id": "6XNVIcGcuvUDQIw",
+	"json": "{\"id\":\"6XNVIcGcuvUDQIw\",\"url\":\"https://www.eatingwell.com/recipe/264117/collard-greens/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/264117/collard-greens\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":4}}}",
+	"method": "GET",
+	"orderNo": 1776779550547,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/264117/collard-greens",
+	"url": "https://www.eatingwell.com/recipe/264117/collard-greens/"
+}

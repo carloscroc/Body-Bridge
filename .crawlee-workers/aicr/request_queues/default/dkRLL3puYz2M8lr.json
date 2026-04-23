@@ -1,0 +1,9 @@
+{
+	"id": "dkRLL3puYz2M8lr",
+	"json": "{\"id\":\"dkRLL3puYz2M8lr\",\"url\":\"https://www.aicr.org/cancer-prevention/recipes/category/vegetarian-entrees/?page=5\",\"loadedUrl\":\"https://www.aicr.org/cancer-prevention/recipes/category/vegetarian-entrees/?page=5\",\"uniqueKey\":\"https://www.aicr.org/cancer-prevention/recipes/category/vegetarian-entrees?page=5\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T13:37:24.510Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.aicr.org/cancer-prevention/recipes/category/vegetarian-entrees?page=5",
+	"url": "https://www.aicr.org/cancer-prevention/recipes/category/vegetarian-entrees/?page=5"
+}

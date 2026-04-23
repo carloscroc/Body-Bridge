@@ -1,0 +1,9 @@
+{
+	"id": "8ywe67wQdD12E3l",
+	"json": "{\"id\":\"8ywe67wQdD12E3l\",\"url\":\"https://www.eatingwell.com/recipe/252777/eatingwells-eggplant-parmesan/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/252777/eatingwells-eggplant-parmesan/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/252777/eatingwells-eggplant-parmesan\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:30:31.606Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/252777/eatingwells-eggplant-parmesan",
+	"url": "https://www.eatingwell.com/recipe/252777/eatingwells-eggplant-parmesan/"
+}

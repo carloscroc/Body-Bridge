@@ -1,0 +1,9 @@
+{
+	"id": "WOLWUIcHbdciG6a",
+	"json": "{\"id\":\"WOLWUIcHbdciG6a\",\"url\":\"https://diabetesfoodhub.org/recipes/kale-and-quinoa-salad\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/kale-and-quinoa-salad\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/kale-and-quinoa-salad\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":16,\"state\":4}},\"handledAt\":\"2026-04-21T22:37:38.200Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/kale-and-quinoa-salad",
+	"url": "https://diabetesfoodhub.org/recipes/kale-and-quinoa-salad"
+}

@@ -1,0 +1,9 @@
+{
+	"id": "TXlv30xfy7fTnic",
+	"json": "{\"id\":\"TXlv30xfy7fTnic\",\"url\":\"https://recipes.heart.org/en/recipes/spring-vegetable-rolls-with-shrimp\",\"loadedUrl\":\"https://recipes.heart.org/en/recipes/spring-vegetable-rolls-with-shrimp\",\"uniqueKey\":\"https://recipes.heart.org/en/recipes/spring-vegetable-rolls-with-shrimp\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":8,\"state\":4}},\"handledAt\":\"2026-04-21T13:38:54.338Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recipes.heart.org/en/recipes/spring-vegetable-rolls-with-shrimp",
+	"url": "https://recipes.heart.org/en/recipes/spring-vegetable-rolls-with-shrimp"
+}

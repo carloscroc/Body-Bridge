@@ -1,0 +1,9 @@
+{
+	"id": "Crja2k3TBwYxLbO",
+	"json": "{\"id\":\"Crja2k3TBwYxLbO\",\"url\":\"https://recipes.heart.org/en/recipes/pollo-salteado-al-estilo-de-szechuan\",\"loadedUrl\":\"https://recipes.heart.org/en/recipes/pollo-salteado-al-estilo-de-szechuan\",\"uniqueKey\":\"https://recipes.heart.org/en/recipes/pollo-salteado-al-estilo-de-szechuan\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":6,\"state\":4}},\"handledAt\":\"2026-04-21T13:04:42.340Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recipes.heart.org/en/recipes/pollo-salteado-al-estilo-de-szechuan",
+	"url": "https://recipes.heart.org/en/recipes/pollo-salteado-al-estilo-de-szechuan"
+}

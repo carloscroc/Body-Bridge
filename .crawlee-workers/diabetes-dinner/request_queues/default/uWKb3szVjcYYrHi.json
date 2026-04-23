@@ -1,0 +1,9 @@
+{
+	"id": "uWKb3szVjcYYrHi",
+	"json": "{\"id\":\"uWKb3szVjcYYrHi\",\"url\":\"https://diabetesfoodhub.org/recipes/roasted-pineapple-salsa\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/roasted-pineapple-salsa\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/roasted-pineapple-salsa\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":7,\"state\":4}},\"handledAt\":\"2026-04-21T20:10:45.731Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/roasted-pineapple-salsa",
+	"url": "https://diabetesfoodhub.org/recipes/roasted-pineapple-salsa"
+}

@@ -1,0 +1,9 @@
+{
+	"id": "XGzsf4vpiOPrxnB",
+	"json": "{\"id\":\"XGzsf4vpiOPrxnB\",\"url\":\"https://www.kidney.org/nutrition/recipes/bibimbap-oatmeal\",\"loadedUrl\":\"https://www.kidney.org/nutrition/recipes/bibimbap-oatmeal\",\"uniqueKey\":\"https://www.kidney.org/nutrition/recipes/bibimbap-oatmeal\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":12,\"state\":4}},\"handledAt\":\"2026-04-21T19:24:05.092Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.kidney.org/nutrition/recipes/bibimbap-oatmeal",
+	"url": "https://www.kidney.org/nutrition/recipes/bibimbap-oatmeal"
+}

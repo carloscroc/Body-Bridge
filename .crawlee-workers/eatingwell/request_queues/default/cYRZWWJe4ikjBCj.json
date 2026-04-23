@@ -1,0 +1,9 @@
+{
+	"id": "cYRZWWJe4ikjBCj",
+	"json": "{\"id\":\"cYRZWWJe4ikjBCj\",\"url\":\"https://www.eatingwell.com/recipe/8031390/spinach-walnut-pesto/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/8031390/spinach-walnut-pesto/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/8031390/spinach-walnut-pesto\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:26:50.673Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/8031390/spinach-walnut-pesto",
+	"url": "https://www.eatingwell.com/recipe/8031390/spinach-walnut-pesto/"
+}

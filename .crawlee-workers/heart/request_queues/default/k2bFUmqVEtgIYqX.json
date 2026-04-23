@@ -1,0 +1,9 @@
+{
+	"id": "k2bFUmqVEtgIYqX",
+	"json": "{\"id\":\"k2bFUmqVEtgIYqX\",\"url\":\"https://recipes.heart.org/en/recipes/tazon-mediterraneo\",\"loadedUrl\":\"https://recipes.heart.org/en/recipes/tazon-mediterraneo\",\"uniqueKey\":\"https://recipes.heart.org/en/recipes/tazon-mediterraneo\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":7,\"state\":4}},\"handledAt\":\"2026-04-21T13:21:58.547Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recipes.heart.org/en/recipes/tazon-mediterraneo",
+	"url": "https://recipes.heart.org/en/recipes/tazon-mediterraneo"
+}

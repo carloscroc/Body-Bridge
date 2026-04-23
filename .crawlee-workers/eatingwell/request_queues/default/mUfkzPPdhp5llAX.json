@@ -1,0 +1,9 @@
+{
+	"id": "mUfkzPPdhp5llAX",
+	"json": "{\"id\":\"mUfkzPPdhp5llAX\",\"url\":\"https://www.eatingwell.com/recipes/23004/health-condition/diabetic/salads/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/23004/health-condition/diabetic/salads/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/23004/health-condition/diabetic/salads\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:07:55.935Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/23004/health-condition/diabetic/salads",
+	"url": "https://www.eatingwell.com/recipes/23004/health-condition/diabetic/salads/"
+}

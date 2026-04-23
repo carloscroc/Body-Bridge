@@ -1,0 +1,9 @@
+{
+	"id": "w9QG93WSIWxTCwl",
+	"json": "{\"id\":\"w9QG93WSIWxTCwl\",\"url\":\"https://www.eatingwell.com/recipes/18901/main-dishes/burgers/hamburgers/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/18901/main-dishes/burgers/hamburgers\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3}}}",
+	"method": "GET",
+	"orderNo": 1776776983928,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/18901/main-dishes/burgers/hamburgers",
+	"url": "https://www.eatingwell.com/recipes/18901/main-dishes/burgers/hamburgers/"
+}

@@ -1,0 +1,9 @@
+{
+	"id": "wWsl5RntV9tVJ7v",
+	"json": "{\"id\":\"wWsl5RntV9tVJ7v\",\"url\":\"https://www.eatingwell.com/recipe/250340/bulgur-lentils/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/250340/bulgur-lentils\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3}}}",
+	"method": "GET",
+	"orderNo": 1776778141740,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/250340/bulgur-lentils",
+	"url": "https://www.eatingwell.com/recipe/250340/bulgur-lentils/"
+}

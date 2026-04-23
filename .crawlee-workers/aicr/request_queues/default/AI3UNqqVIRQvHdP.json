@@ -1,0 +1,9 @@
+{
+	"id": "AI3UNqqVIRQvHdP",
+	"json": "{\"id\":\"AI3UNqqVIRQvHdP\",\"url\":\"https://www.aicr.org/cancer-prevention/recipes/category/snacks/\",\"loadedUrl\":\"https://www.aicr.org/cancer-prevention/recipes/category/snacks/\",\"uniqueKey\":\"https://www.aicr.org/cancer-prevention/recipes/category/snacks\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":4,\"state\":4}},\"handledAt\":\"2026-04-21T13:41:18.641Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.aicr.org/cancer-prevention/recipes/category/snacks",
+	"url": "https://www.aicr.org/cancer-prevention/recipes/category/snacks/"
+}

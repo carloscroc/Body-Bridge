@@ -1,0 +1,9 @@
+{
+	"id": "gsHnwDliahzuLoE",
+	"json": "{\"id\":\"gsHnwDliahzuLoE\",\"url\":\"https://www.eatingwell.com/recipe/251004/mozzarella-basil-zucchini-frittata/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/251004/mozzarella-basil-zucchini-frittata/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/251004/mozzarella-basil-zucchini-frittata\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T13:41:39.711Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/251004/mozzarella-basil-zucchini-frittata",
+	"url": "https://www.eatingwell.com/recipe/251004/mozzarella-basil-zucchini-frittata/"
+}

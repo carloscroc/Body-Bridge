@@ -1,0 +1,9 @@
+{
+	"id": "hB9ZPwlYGYdx67x",
+	"json": "{\"id\":\"hB9ZPwlYGYdx67x\",\"url\":\"https://recipes.heart.org/en/recipes/tandoori-chicken-with-brown-rice\",\"loadedUrl\":\"https://recipes.heart.org/en/recipes/tandoori-chicken-with-brown-rice\",\"uniqueKey\":\"https://recipes.heart.org/en/recipes/tandoori-chicken-with-brown-rice\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":6,\"state\":4}},\"handledAt\":\"2026-04-21T13:07:45.929Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recipes.heart.org/en/recipes/tandoori-chicken-with-brown-rice",
+	"url": "https://recipes.heart.org/en/recipes/tandoori-chicken-with-brown-rice"
+}

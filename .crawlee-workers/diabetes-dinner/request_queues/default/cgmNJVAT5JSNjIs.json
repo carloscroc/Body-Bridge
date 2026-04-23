@@ -1,0 +1,9 @@
+{
+	"id": "cgmNJVAT5JSNjIs",
+	"json": "{\"id\":\"cgmNJVAT5JSNjIs\",\"url\":\"https://diabetesfoodhub.org/recipes/mixed-greens-cranberries-bacon-and-walnuts\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/mixed-greens-cranberries-bacon-and-walnuts\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/mixed-greens-cranberries-bacon-and-walnuts\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":15,\"state\":4}},\"handledAt\":\"2026-04-21T22:27:55.360Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/mixed-greens-cranberries-bacon-and-walnuts",
+	"url": "https://diabetesfoodhub.org/recipes/mixed-greens-cranberries-bacon-and-walnuts"
+}

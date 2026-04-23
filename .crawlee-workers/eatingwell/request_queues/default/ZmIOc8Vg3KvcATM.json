@@ -1,0 +1,9 @@
+{
+	"id": "ZmIOc8Vg3KvcATM",
+	"json": "{\"id\":\"ZmIOc8Vg3KvcATM\",\"url\":\"https://www.eatingwell.com/recipe/270118/marinated-grilled-vegetable-kebabs/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/270118/marinated-grilled-vegetable-kebabs/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/270118/marinated-grilled-vegetable-kebabs\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:28:05.681Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/270118/marinated-grilled-vegetable-kebabs",
+	"url": "https://www.eatingwell.com/recipe/270118/marinated-grilled-vegetable-kebabs/"
+}

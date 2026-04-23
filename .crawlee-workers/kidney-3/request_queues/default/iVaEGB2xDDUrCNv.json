@@ -1,0 +1,9 @@
+{
+	"id": "iVaEGB2xDDUrCNv",
+	"json": "{\"id\":\"iVaEGB2xDDUrCNv\",\"url\":\"https://www.kidney.org/nutrition/recipes/turkey-patty?page=12\",\"loadedUrl\":\"https://www.kidney.org/nutrition/recipes/turkey-patty?page=12\",\"uniqueKey\":\"https://www.kidney.org/nutrition/recipes/turkey-patty?page=12\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":14,\"state\":4}},\"handledAt\":\"2026-04-21T20:30:06.589Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.kidney.org/nutrition/recipes/turkey-patty?page=12",
+	"url": "https://www.kidney.org/nutrition/recipes/turkey-patty?page=12"
+}

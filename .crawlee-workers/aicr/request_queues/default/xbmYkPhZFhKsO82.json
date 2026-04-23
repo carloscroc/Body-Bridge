@@ -1,0 +1,9 @@
+{
+	"id": "xbmYkPhZFhKsO82",
+	"json": "{\"id\":\"xbmYkPhZFhKsO82\",\"url\":\"https://www.aicr.org/cancer-prevention/recipes/category/vegetarian/\",\"loadedUrl\":\"https://www.aicr.org/cancer-prevention/recipes/category/vegetarian/\",\"uniqueKey\":\"https://www.aicr.org/cancer-prevention/recipes/category/vegetarian\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":1,\"state\":4}},\"handledAt\":\"2026-04-21T13:19:27.656Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.aicr.org/cancer-prevention/recipes/category/vegetarian",
+	"url": "https://www.aicr.org/cancer-prevention/recipes/category/vegetarian/"
+}

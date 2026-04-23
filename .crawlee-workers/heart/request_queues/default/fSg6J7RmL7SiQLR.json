@@ -1,0 +1,9 @@
+{
+	"id": "fSg6J7RmL7SiQLR",
+	"json": "{\"id\":\"fSg6J7RmL7SiQLR\",\"url\":\"https://recipes.heart.org/en/recipes/banana-bread\",\"loadedUrl\":\"https://recipes.heart.org/en/recipes/banana-bread\",\"uniqueKey\":\"https://recipes.heart.org/en/recipes/banana-bread\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":10,\"state\":4}},\"handledAt\":\"2026-04-21T13:47:16.188Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recipes.heart.org/en/recipes/banana-bread",
+	"url": "https://recipes.heart.org/en/recipes/banana-bread"
+}

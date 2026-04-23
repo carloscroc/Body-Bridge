@@ -1,0 +1,9 @@
+{
+	"id": "3geaHbNVIgi1TiN",
+	"json": "{\"id\":\"3geaHbNVIgi1TiN\",\"url\":\"https://www.kidney.org/nutrition/recipes/minestrone-soup?page=0\",\"loadedUrl\":\"https://www.kidney.org/nutrition/recipes/minestrone-soup?page=0\",\"uniqueKey\":\"https://www.kidney.org/nutrition/recipes/minestrone-soup?page=0\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":18,\"state\":4}},\"handledAt\":\"2026-04-21T22:08:11.224Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.kidney.org/nutrition/recipes/minestrone-soup?page=0",
+	"url": "https://www.kidney.org/nutrition/recipes/minestrone-soup?page=0"
+}

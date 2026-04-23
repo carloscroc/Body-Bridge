@@ -1,0 +1,9 @@
+{
+	"id": "GmZUlGfo78OuKo1",
+	"json": "{\"id\":\"GmZUlGfo78OuKo1\",\"url\":\"https://www.kidney.org/nutrition/recipes/apple-cranberry-walnut-salad\",\"loadedUrl\":\"https://www.kidney.org/nutrition/recipes/apple-cranberry-walnut-salad\",\"uniqueKey\":\"https://www.kidney.org/nutrition/recipes/apple-cranberry-walnut-salad\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":17,\"state\":4}},\"handledAt\":\"2026-04-21T21:59:49.190Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.kidney.org/nutrition/recipes/apple-cranberry-walnut-salad",
+	"url": "https://www.kidney.org/nutrition/recipes/apple-cranberry-walnut-salad"
+}

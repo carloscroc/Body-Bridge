@@ -1,0 +1,9 @@
+{
+	"id": "DFhD0TMeplcF8ur",
+	"json": "{\"id\":\"DFhD0TMeplcF8ur\",\"url\":\"https://www.eatingwell.com/recipes/22806/bread/quick-bread/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/22806/bread/quick-bread/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/22806/bread/quick-bread\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:19:51.825Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/22806/bread/quick-bread",
+	"url": "https://www.eatingwell.com/recipes/22806/bread/quick-bread/"
+}

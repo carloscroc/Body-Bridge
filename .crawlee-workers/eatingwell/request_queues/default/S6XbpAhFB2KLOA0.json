@@ -1,0 +1,9 @@
+{
+	"id": "S6XbpAhFB2KLOA0",
+	"json": "{\"id\":\"S6XbpAhFB2KLOA0\",\"url\":\"https://www.eatingwell.com/recipes/22585/salad/vegetable/avocado/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/22585/salad/vegetable/avocado\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3}}}",
+	"method": "GET",
+	"orderNo": 1776776097602,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/22585/salad/vegetable/avocado",
+	"url": "https://www.eatingwell.com/recipes/22585/salad/vegetable/avocado/"
+}

@@ -1,0 +1,9 @@
+{
+	"id": "WzbSyv8ltcJnalT",
+	"json": "{\"id\":\"WzbSyv8ltcJnalT\",\"url\":\"https://www.eatingwell.com/recipes/18015/health-condition/low-cholesterol/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/18015/health-condition/low-cholesterol/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/18015/health-condition/low-cholesterol\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:08:46.875Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/18015/health-condition/low-cholesterol",
+	"url": "https://www.eatingwell.com/recipes/18015/health-condition/low-cholesterol/"
+}

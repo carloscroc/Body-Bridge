@@ -1,0 +1,9 @@
+{
+	"id": "kL36pibVVFyAYcR",
+	"json": "{\"id\":\"kL36pibVVFyAYcR\",\"url\":\"https://www.eatingwell.com/recipes/18704/mealtimes/dinner/weeknight/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/18704/mealtimes/dinner/weeknight/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/18704/mealtimes/dinner/weeknight\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T12:37:57.406Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/18704/mealtimes/dinner/weeknight",
+	"url": "https://www.eatingwell.com/recipes/18704/mealtimes/dinner/weeknight/"
+}

@@ -1,0 +1,9 @@
+{
+	"id": "1GSZYXKYQNEcX36",
+	"json": "{\"id\":\"1GSZYXKYQNEcX36\",\"url\":\"https://recipes.heart.org/en/recipes/chicken-curry-skillet-with-stir-fry-veggies-and-noodles\",\"loadedUrl\":\"https://recipes.heart.org/en/recipes/chicken-curry-skillet-with-stir-fry-veggies-and-noodles\",\"uniqueKey\":\"https://recipes.heart.org/en/recipes/chicken-curry-skillet-with-stir-fry-veggies-and-noodles\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":6,\"state\":4}},\"handledAt\":\"2026-04-21T13:19:51.489Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recipes.heart.org/en/recipes/chicken-curry-skillet-with-stir-fry-veggies-and-noodles",
+	"url": "https://recipes.heart.org/en/recipes/chicken-curry-skillet-with-stir-fry-veggies-and-noodles"
+}

@@ -1,0 +1,9 @@
+{
+	"id": "gAJjkG4vcWJaLWi",
+	"json": "{\"id\":\"gAJjkG4vcWJaLWi\",\"url\":\"https://www.eatingwell.com/recipes/20987/cuisines-regions/indian/curry/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/20987/cuisines-regions/indian/curry\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3}}}",
+	"method": "GET",
+	"orderNo": 1776778161624,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/20987/cuisines-regions/indian/curry",
+	"url": "https://www.eatingwell.com/recipes/20987/cuisines-regions/indian/curry/"
+}

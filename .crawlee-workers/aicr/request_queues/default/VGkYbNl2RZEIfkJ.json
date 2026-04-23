@@ -1,0 +1,9 @@
+{
+	"id": "VGkYbNl2RZEIfkJ",
+	"json": "{\"id\":\"VGkYbNl2RZEIfkJ\",\"url\":\"https://www.aicr.org/cancer-prevention/recipes/category/breakfast/?page=2\",\"loadedUrl\":\"https://www.aicr.org/cancer-prevention/recipes/category/breakfast/?page=2\",\"uniqueKey\":\"https://www.aicr.org/cancer-prevention/recipes/category/breakfast?page=2\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":4,\"state\":4}},\"handledAt\":\"2026-04-21T13:41:10.508Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.aicr.org/cancer-prevention/recipes/category/breakfast?page=2",
+	"url": "https://www.aicr.org/cancer-prevention/recipes/category/breakfast/?page=2"
+}

@@ -1,0 +1,9 @@
+{
+	"id": "esGqMwk7wHUjsjb",
+	"json": "{\"id\":\"esGqMwk7wHUjsjb\",\"url\":\"https://www.eatingwell.com/recipes/22601/health-condition/diabetic/for-two/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/22601/health-condition/diabetic/for-two/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/22601/health-condition/diabetic/for-two\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:07:01.516Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/22601/health-condition/diabetic/for-two",
+	"url": "https://www.eatingwell.com/recipes/22601/health-condition/diabetic/for-two/"
+}

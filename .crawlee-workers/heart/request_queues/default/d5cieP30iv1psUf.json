@@ -1,0 +1,9 @@
+{
+	"id": "d5cieP30iv1psUf",
+	"json": "{\"id\":\"d5cieP30iv1psUf\",\"url\":\"https://recipes.heart.org/en/recipes/almond-snack-mix\",\"loadedUrl\":\"https://recipes.heart.org/en/recipes/almond-snack-mix\",\"uniqueKey\":\"https://recipes.heart.org/en/recipes/almond-snack-mix\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":8,\"state\":4}},\"handledAt\":\"2026-04-21T13:36:10.010Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recipes.heart.org/en/recipes/almond-snack-mix",
+	"url": "https://recipes.heart.org/en/recipes/almond-snack-mix"
+}

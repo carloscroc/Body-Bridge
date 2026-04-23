@@ -1,0 +1,9 @@
+{
+	"id": "HilvAX8LJcRbry9",
+	"json": "{\"id\":\"HilvAX8LJcRbry9\",\"url\":\"https://www.eatingwell.com/recipes/18417/low-calorie/appetizers/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/18417/low-calorie/appetizers/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/18417/low-calorie/appetizers\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:18:13.103Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/18417/low-calorie/appetizers",
+	"url": "https://www.eatingwell.com/recipes/18417/low-calorie/appetizers/"
+}

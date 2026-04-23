@@ -1,0 +1,9 @@
+{
+	"id": "60v6jPr8Pa6QCbC",
+	"json": "{\"id\":\"60v6jPr8Pa6QCbC\",\"url\":\"https://www.eatingwell.com/recipes/22897/healthy-kids/smoothies/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/22897/healthy-kids/smoothies/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/22897/healthy-kids/smoothies\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:35:52.277Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/22897/healthy-kids/smoothies",
+	"url": "https://www.eatingwell.com/recipes/22897/healthy-kids/smoothies/"
+}

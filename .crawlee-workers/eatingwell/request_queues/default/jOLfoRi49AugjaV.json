@@ -1,0 +1,9 @@
+{
+	"id": "jOLfoRi49AugjaV",
+	"json": "{\"id\":\"jOLfoRi49AugjaV\",\"url\":\"https://www.eatingwell.com/recipes/19502/desserts/cake/coffee/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/19502/desserts/cake/coffee\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3}}}",
+	"method": "GET",
+	"orderNo": 1776776330245,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/19502/desserts/cake/coffee",
+	"url": "https://www.eatingwell.com/recipes/19502/desserts/cake/coffee/"
+}

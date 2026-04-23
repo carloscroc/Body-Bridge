@@ -1,0 +1,9 @@
+{
+	"id": "aaX3cN1P3KJNyc3",
+	"json": "{\"id\":\"aaX3cN1P3KJNyc3\",\"url\":\"https://www.eatingwell.com/recipes/22881/health-condition/diabetic/soups/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/22881/health-condition/diabetic/soups/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/22881/health-condition/diabetic/soups\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:07:24.750Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/22881/health-condition/diabetic/soups",
+	"url": "https://www.eatingwell.com/recipes/22881/health-condition/diabetic/soups/"
+}

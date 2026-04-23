@@ -1,0 +1,9 @@
+{
+	"id": "cberHj7E8xDKN5J",
+	"json": "{\"id\":\"cberHj7E8xDKN5J\",\"url\":\"https://www.eatingwell.com/recipe/250202/broccoli-with-creamy-parmesan-sauce/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/250202/broccoli-with-creamy-parmesan-sauce/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/250202/broccoli-with-creamy-parmesan-sauce\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:37:46.664Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/250202/broccoli-with-creamy-parmesan-sauce",
+	"url": "https://www.eatingwell.com/recipe/250202/broccoli-with-creamy-parmesan-sauce/"
+}

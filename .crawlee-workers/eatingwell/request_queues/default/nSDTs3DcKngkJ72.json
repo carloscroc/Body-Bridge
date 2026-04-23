@@ -1,0 +1,9 @@
+{
+	"id": "nSDTs3DcKngkJ72",
+	"json": "{\"id\":\"nSDTs3DcKngkJ72\",\"url\":\"https://www.eatingwell.com/recipe/261424/pineapple-nice-cream/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/261424/pineapple-nice-cream/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/261424/pineapple-nice-cream\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T14:01:59.502Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/261424/pineapple-nice-cream",
+	"url": "https://www.eatingwell.com/recipe/261424/pineapple-nice-cream/"
+}

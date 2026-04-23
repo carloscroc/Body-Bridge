@@ -1,0 +1,9 @@
+{
+	"id": "mpWzRhiSQQLQK68",
+	"json": "{\"id\":\"mpWzRhiSQQLQK68\",\"url\":\"https://www.eatingwell.com/recipe/274017/homemade-spaghetti-sauce-with-fresh-tomatoes/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/274017/homemade-spaghetti-sauce-with-fresh-tomatoes/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/274017/homemade-spaghetti-sauce-with-fresh-tomatoes\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:27:06.430Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/274017/homemade-spaghetti-sauce-with-fresh-tomatoes",
+	"url": "https://www.eatingwell.com/recipe/274017/homemade-spaghetti-sauce-with-fresh-tomatoes/"
+}

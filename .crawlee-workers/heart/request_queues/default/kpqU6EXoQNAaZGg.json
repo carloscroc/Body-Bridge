@@ -1,0 +1,9 @@
+{
+	"id": "kpqU6EXoQNAaZGg",
+	"json": "{\"id\":\"kpqU6EXoQNAaZGg\",\"url\":\"https://recipes.heart.org/en/recipes/hot-and-sour-soup\",\"loadedUrl\":\"https://recipes.heart.org/en/recipes/hot-and-sour-soup\",\"uniqueKey\":\"https://recipes.heart.org/en/recipes/hot-and-sour-soup\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":8,\"state\":4}},\"handledAt\":\"2026-04-21T13:40:24.949Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recipes.heart.org/en/recipes/hot-and-sour-soup",
+	"url": "https://recipes.heart.org/en/recipes/hot-and-sour-soup"
+}

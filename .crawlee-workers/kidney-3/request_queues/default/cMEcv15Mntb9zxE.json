@@ -1,0 +1,9 @@
+{
+	"id": "cMEcv15Mntb9zxE",
+	"json": "{\"id\":\"cMEcv15Mntb9zxE\",\"url\":\"https://www.kidney.org/nutrition/recipes/zucchini-bread?page=9\",\"loadedUrl\":\"https://www.kidney.org/nutrition/recipes/zucchini-bread?page=9\",\"uniqueKey\":\"https://www.kidney.org/nutrition/recipes/zucchini-bread?page=9\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":11,\"state\":4}},\"handledAt\":\"2026-04-21T19:19:58.908Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.kidney.org/nutrition/recipes/zucchini-bread?page=9",
+	"url": "https://www.kidney.org/nutrition/recipes/zucchini-bread?page=9"
+}

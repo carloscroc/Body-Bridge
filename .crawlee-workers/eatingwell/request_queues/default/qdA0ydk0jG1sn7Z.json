@@ -1,0 +1,9 @@
+{
+	"id": "qdA0ydk0jG1sn7Z",
+	"json": "{\"id\":\"qdA0ydk0jG1sn7Z\",\"url\":\"https://www.eatingwell.com/recipe/252878/cumin-chicken-chickpea-stew/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/252878/cumin-chicken-chickpea-stew/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/252878/cumin-chicken-chickpea-stew\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T13:42:35.973Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/252878/cumin-chicken-chickpea-stew",
+	"url": "https://www.eatingwell.com/recipe/252878/cumin-chicken-chickpea-stew/"
+}

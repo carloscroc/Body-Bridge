@@ -1,0 +1,9 @@
+{
+	"id": "Tz8k4DuTQH6TzSW",
+	"json": "{\"id\":\"Tz8k4DuTQH6TzSW\",\"url\":\"https://www.eatingwell.com/recipe/256287/spicy-ramen-cup-of-noodles/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/256287/spicy-ramen-cup-of-noodles/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/256287/spicy-ramen-cup-of-noodles\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T14:09:31.153Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/256287/spicy-ramen-cup-of-noodles",
+	"url": "https://www.eatingwell.com/recipe/256287/spicy-ramen-cup-of-noodles/"
+}

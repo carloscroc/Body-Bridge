@@ -1,0 +1,9 @@
+{
+	"id": "PwS5IcfLIWiKOrZ",
+	"json": "{\"id\":\"PwS5IcfLIWiKOrZ\",\"url\":\"https://www.eatingwell.com/recipes/20136/low-calorie/desserts/candy-sweets/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/20136/low-calorie/desserts/candy-sweets\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3}}}",
+	"method": "GET",
+	"orderNo": 1776777553241,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/20136/low-calorie/desserts/candy-sweets",
+	"url": "https://www.eatingwell.com/recipes/20136/low-calorie/desserts/candy-sweets/"
+}

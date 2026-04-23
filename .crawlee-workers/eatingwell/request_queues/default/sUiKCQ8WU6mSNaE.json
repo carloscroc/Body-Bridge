@@ -1,0 +1,9 @@
+{
+	"id": "sUiKCQ8WU6mSNaE",
+	"json": "{\"id\":\"sUiKCQ8WU6mSNaE\",\"url\":\"https://www.eatingwell.com/recipes/18773/sauces-condiments/salad-dressing/vinaigrette-dressing/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/18773/sauces-condiments/salad-dressing/vinaigrette-dressing\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3}}}",
+	"method": "GET",
+	"orderNo": 1776777894687,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/18773/sauces-condiments/salad-dressing/vinaigrette-dressing",
+	"url": "https://www.eatingwell.com/recipes/18773/sauces-condiments/salad-dressing/vinaigrette-dressing/"
+}

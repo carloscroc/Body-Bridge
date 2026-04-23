@@ -1,0 +1,9 @@
+{
+	"id": "au3Wqf0AyVT3AzC",
+	"json": "{\"id\":\"au3Wqf0AyVT3AzC\",\"url\":\"https://diabetesfoodhub.org/recipes/low-sodium?page=14\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/low-sodium?page=14\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/low-sodium?page=14\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":16,\"state\":4}},\"handledAt\":\"2026-04-21T22:44:06.865Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/low-sodium?page=14",
+	"url": "https://diabetesfoodhub.org/recipes/low-sodium?page=14"
+}

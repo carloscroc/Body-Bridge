@@ -1,0 +1,9 @@
+{
+	"id": "Hsf8M00KYSqGlRf",
+	"json": "{\"id\":\"Hsf8M00KYSqGlRf\",\"url\":\"https://diabetesfoodhub.org/recipes/budget-friendly?page=12\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/budget-friendly?page=12\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/budget-friendly?page=12\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":13,\"state\":4}},\"handledAt\":\"2026-04-21T22:10:42.956Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/budget-friendly?page=12",
+	"url": "https://diabetesfoodhub.org/recipes/budget-friendly?page=12"
+}

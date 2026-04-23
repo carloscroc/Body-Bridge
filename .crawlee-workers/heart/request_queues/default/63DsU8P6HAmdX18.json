@@ -1,0 +1,9 @@
+{
+	"id": "63DsU8P6HAmdX18",
+	"json": "{\"id\":\"63DsU8P6HAmdX18\",\"url\":\"https://recipes.heart.org/en/recipes/tropical-fruit-smoothie-bowl\",\"loadedUrl\":\"https://recipes.heart.org/en/recipes/tropical-fruit-smoothie-bowl\",\"uniqueKey\":\"https://recipes.heart.org/en/recipes/tropical-fruit-smoothie-bowl\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T12:34:54.501Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recipes.heart.org/en/recipes/tropical-fruit-smoothie-bowl",
+	"url": "https://recipes.heart.org/en/recipes/tropical-fruit-smoothie-bowl"
+}

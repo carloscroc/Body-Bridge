@@ -1,0 +1,9 @@
+{
+	"id": "8xRnCtw8UR5UDZQ",
+	"json": "{\"id\":\"8xRnCtw8UR5UDZQ\",\"url\":\"https://www.eatingwell.com/recipe/269496/one-pot-garlicky-shrimp-spinach/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/269496/one-pot-garlicky-shrimp-spinach/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/269496/one-pot-garlicky-shrimp-spinach\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T13:50:27.048Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/269496/one-pot-garlicky-shrimp-spinach",
+	"url": "https://www.eatingwell.com/recipe/269496/one-pot-garlicky-shrimp-spinach/"
+}

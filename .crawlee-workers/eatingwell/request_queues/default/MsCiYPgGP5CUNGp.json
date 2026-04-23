@@ -1,0 +1,9 @@
+{
+	"id": "MsCiYPgGP5CUNGp",
+	"json": "{\"id\":\"MsCiYPgGP5CUNGp\",\"url\":\"https://www.eatingwell.com/recipe/7945281/chocolate-brownie-vegan-mug-cake/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/7945281/chocolate-brownie-vegan-mug-cake/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/7945281/chocolate-brownie-vegan-mug-cake\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T14:03:44.687Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/7945281/chocolate-brownie-vegan-mug-cake",
+	"url": "https://www.eatingwell.com/recipe/7945281/chocolate-brownie-vegan-mug-cake/"
+}

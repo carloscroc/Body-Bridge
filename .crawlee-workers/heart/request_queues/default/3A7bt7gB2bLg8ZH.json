@@ -1,0 +1,9 @@
+{
+	"id": "3A7bt7gB2bLg8ZH",
+	"json": "{\"id\":\"3A7bt7gB2bLg8ZH\",\"url\":\"https://recipes.heart.org/en/recipes/balsamic-glazed-fish\",\"loadedUrl\":\"https://recipes.heart.org/en/recipes/balsamic-glazed-fish\",\"uniqueKey\":\"https://recipes.heart.org/en/recipes/balsamic-glazed-fish\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":6,\"state\":4}},\"handledAt\":\"2026-04-21T13:05:34.293Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recipes.heart.org/en/recipes/balsamic-glazed-fish",
+	"url": "https://recipes.heart.org/en/recipes/balsamic-glazed-fish"
+}

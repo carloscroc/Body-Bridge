@@ -1,0 +1,9 @@
+{
+	"id": "tM9LMyT45oJ1prP",
+	"json": "{\"id\":\"tM9LMyT45oJ1prP\",\"url\":\"https://www.eatingwell.com/recipe/252837/nut-berry-parfait/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/252837/nut-berry-parfait/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/252837/nut-berry-parfait\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T14:03:33.469Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/252837/nut-berry-parfait",
+	"url": "https://www.eatingwell.com/recipe/252837/nut-berry-parfait/"
+}

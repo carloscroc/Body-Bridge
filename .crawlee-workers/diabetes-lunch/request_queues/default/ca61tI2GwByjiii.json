@@ -1,0 +1,9 @@
+{
+	"id": "ca61tI2GwByjiii",
+	"json": "{\"id\":\"ca61tI2GwByjiii\",\"url\":\"https://diabetesfoodhub.org/recipes/herb-potato-salad\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/herb-potato-salad\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/herb-potato-salad\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":15,\"state\":4}},\"handledAt\":\"2026-04-21T22:35:20.365Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/herb-potato-salad",
+	"url": "https://diabetesfoodhub.org/recipes/herb-potato-salad"
+}

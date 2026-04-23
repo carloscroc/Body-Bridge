@@ -1,0 +1,9 @@
+{
+	"id": "KYh95xsNKhkeyM2",
+	"json": "{\"id\":\"KYh95xsNKhkeyM2\",\"url\":\"https://diabetesfoodhub.org/recipes/heart-healthy\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/heart-healthy\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/heart-healthy\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T17:47:51.595Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/heart-healthy",
+	"url": "https://diabetesfoodhub.org/recipes/heart-healthy"
+}

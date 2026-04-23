@@ -1,0 +1,9 @@
+{
+	"id": "x6li9tcya3JE7cL",
+	"json": "{\"id\":\"x6li9tcya3JE7cL\",\"url\":\"https://www.eatingwell.com/recipe/268936/roasted-sweet-potatoes/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/268936/roasted-sweet-potatoes/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/268936/roasted-sweet-potatoes\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:36:14.705Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/268936/roasted-sweet-potatoes",
+	"url": "https://www.eatingwell.com/recipe/268936/roasted-sweet-potatoes/"
+}

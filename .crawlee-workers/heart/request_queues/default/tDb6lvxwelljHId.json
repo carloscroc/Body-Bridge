@@ -1,0 +1,9 @@
+{
+	"id": "tDb6lvxwelljHId",
+	"json": "{\"id\":\"tDb6lvxwelljHId\",\"url\":\"https://recipes.heart.org/en/recipes/chicken-salad-with-orange-vinaigrette\",\"loadedUrl\":\"https://recipes.heart.org/en/recipes/chicken-salad-with-orange-vinaigrette\",\"uniqueKey\":\"https://recipes.heart.org/en/recipes/chicken-salad-with-orange-vinaigrette\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":6,\"state\":4}},\"handledAt\":\"2026-04-21T13:04:22.867Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recipes.heart.org/en/recipes/chicken-salad-with-orange-vinaigrette",
+	"url": "https://recipes.heart.org/en/recipes/chicken-salad-with-orange-vinaigrette"
+}

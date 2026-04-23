@@ -1,0 +1,9 @@
+{
+	"id": "SzeSl90U1N08pts",
+	"json": "{\"id\":\"SzeSl90U1N08pts\",\"url\":\"https://www.eatingwell.com/recipes/18287/desserts/fruit/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/18287/desserts/fruit/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/18287/desserts/fruit\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T12:59:48.033Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/18287/desserts/fruit",
+	"url": "https://www.eatingwell.com/recipes/18287/desserts/fruit/"
+}

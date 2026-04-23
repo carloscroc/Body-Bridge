@@ -1,0 +1,9 @@
+{
+	"id": "zZBJQndOfZ9z0K9",
+	"json": "{\"id\":\"zZBJQndOfZ9z0K9\",\"url\":\"https://www.eatingwell.com/recipe/250085/garden-tomato-sauce/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/250085/garden-tomato-sauce/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/250085/garden-tomato-sauce\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:27:54.050Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/250085/garden-tomato-sauce",
+	"url": "https://www.eatingwell.com/recipe/250085/garden-tomato-sauce/"
+}

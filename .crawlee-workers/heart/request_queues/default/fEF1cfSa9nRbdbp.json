@@ -1,0 +1,9 @@
+{
+	"id": "fEF1cfSa9nRbdbp",
+	"json": "{\"id\":\"fEF1cfSa9nRbdbp\",\"url\":\"https://recipes.heart.org/en/recipes/curry-spiced-tofu-with-asian-vegetables\",\"loadedUrl\":\"https://recipes.heart.org/en/recipes/curry-spiced-tofu-with-asian-vegetables\",\"uniqueKey\":\"https://recipes.heart.org/en/recipes/curry-spiced-tofu-with-asian-vegetables\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":7,\"state\":4}},\"handledAt\":\"2026-04-21T13:32:17.420Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recipes.heart.org/en/recipes/curry-spiced-tofu-with-asian-vegetables",
+	"url": "https://recipes.heart.org/en/recipes/curry-spiced-tofu-with-asian-vegetables"
+}

@@ -1,0 +1,9 @@
+{
+	"id": "2aLGCPimPQbynef",
+	"json": "{\"id\":\"2aLGCPimPQbynef\",\"url\":\"https://www.eatingwell.com/recipes/18267/cooking-methods-styles/no-cook/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/18267/cooking-methods-styles/no-cook/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/18267/cooking-methods-styles/no-cook\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T12:42:52.895Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/18267/cooking-methods-styles/no-cook",
+	"url": "https://www.eatingwell.com/recipes/18267/cooking-methods-styles/no-cook/"
+}

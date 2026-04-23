@@ -1,0 +1,9 @@
+{
+	"id": "k2UlbXelddKv2gG",
+	"json": "{\"id\":\"k2UlbXelddKv2gG\",\"url\":\"https://www.eatingwell.com/recipe/249724/peanut-energy-bars/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/249724/peanut-energy-bars\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3}}}",
+	"method": "GET",
+	"orderNo": 1776776374078,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/249724/peanut-energy-bars",
+	"url": "https://www.eatingwell.com/recipe/249724/peanut-energy-bars/"
+}

@@ -1,0 +1,9 @@
+{
+	"id": "TaBgcvCHnUtUU7q",
+	"json": "{\"id\":\"TaBgcvCHnUtUU7q\",\"url\":\"https://www.eatingwell.com/recipe/250303/composed-salad-with-pickled-beets-smoked-tofu/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/250303/composed-salad-with-pickled-beets-smoked-tofu/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/250303/composed-salad-with-pickled-beets-smoked-tofu\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T14:18:49.001Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/250303/composed-salad-with-pickled-beets-smoked-tofu",
+	"url": "https://www.eatingwell.com/recipe/250303/composed-salad-with-pickled-beets-smoked-tofu/"
+}

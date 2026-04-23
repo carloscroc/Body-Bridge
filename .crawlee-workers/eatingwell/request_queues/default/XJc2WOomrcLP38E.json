@@ -1,0 +1,9 @@
+{
+	"id": "XJc2WOomrcLP38E",
+	"json": "{\"id\":\"XJc2WOomrcLP38E\",\"url\":\"https://www.eatingwell.com/recipe/250980/korean-pork-kimchi-fried-rice/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/250980/korean-pork-kimchi-fried-rice/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/250980/korean-pork-kimchi-fried-rice\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T13:47:58.603Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/250980/korean-pork-kimchi-fried-rice",
+	"url": "https://www.eatingwell.com/recipe/250980/korean-pork-kimchi-fried-rice/"
+}

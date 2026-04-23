@@ -1,0 +1,9 @@
+{
+	"id": "Z6A2XReXJCEqrRJ",
+	"json": "{\"id\":\"Z6A2XReXJCEqrRJ\",\"url\":\"https://www.eatingwell.com/recipes/18420/mealtimes/dinner/low-calorie/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/18420/mealtimes/dinner/low-calorie/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/18420/mealtimes/dinner/low-calorie\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T12:37:28.782Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/18420/mealtimes/dinner/low-calorie",
+	"url": "https://www.eatingwell.com/recipes/18420/mealtimes/dinner/low-calorie/"
+}

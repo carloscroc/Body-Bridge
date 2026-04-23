@@ -1,0 +1,9 @@
+{
+	"id": "lwt5HfGSI4qVASv",
+	"json": "{\"id\":\"lwt5HfGSI4qVASv\",\"url\":\"https://www.eatingwell.com/recipe/257315/greek-salad-with-edamame/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/257315/greek-salad-with-edamame\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3}}}",
+	"method": "GET",
+	"orderNo": 1776775950349,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/257315/greek-salad-with-edamame",
+	"url": "https://www.eatingwell.com/recipe/257315/greek-salad-with-edamame/"
+}

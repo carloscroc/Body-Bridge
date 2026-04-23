@@ -1,0 +1,9 @@
+{
+	"id": "pF5PcS1S7d0El1y",
+	"json": "{\"id\":\"pF5PcS1S7d0El1y\",\"url\":\"https://www.eatingwell.com/recipe/252621/vegetarian-stuffed-cabbage/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/252621/vegetarian-stuffed-cabbage/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/252621/vegetarian-stuffed-cabbage\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T13:52:13.234Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/252621/vegetarian-stuffed-cabbage",
+	"url": "https://www.eatingwell.com/recipe/252621/vegetarian-stuffed-cabbage/"
+}

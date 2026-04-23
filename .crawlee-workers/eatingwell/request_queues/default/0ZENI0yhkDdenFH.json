@@ -1,0 +1,9 @@
+{
+	"id": "0ZENI0yhkDdenFH",
+	"json": "{\"id\":\"0ZENI0yhkDdenFH\",\"url\":\"https://www.eatingwell.com/recipe/7873274/banana-protein-muffins/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/7873274/banana-protein-muffins/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/7873274/banana-protein-muffins\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:21:18.478Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/7873274/banana-protein-muffins",
+	"url": "https://www.eatingwell.com/recipe/7873274/banana-protein-muffins/"
+}

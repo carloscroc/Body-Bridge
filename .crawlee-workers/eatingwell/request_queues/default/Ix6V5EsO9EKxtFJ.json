@@ -1,0 +1,9 @@
+{
+	"id": "Ix6V5EsO9EKxtFJ",
+	"json": "{\"id\":\"Ix6V5EsO9EKxtFJ\",\"url\":\"https://www.eatingwell.com/recipe/252584/apple-cider-chicken/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/252584/apple-cider-chicken/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/252584/apple-cider-chicken\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T14:17:38.439Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/252584/apple-cider-chicken",
+	"url": "https://www.eatingwell.com/recipe/252584/apple-cider-chicken/"
+}

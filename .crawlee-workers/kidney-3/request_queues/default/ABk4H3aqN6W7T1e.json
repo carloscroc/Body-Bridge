@@ -1,0 +1,9 @@
+{
+	"id": "ABk4H3aqN6W7T1e",
+	"json": "{\"id\":\"ABk4H3aqN6W7T1e\",\"url\":\"https://www.kidney.org/nutrition/recipes/mexican-antojitos\",\"loadedUrl\":\"https://www.kidney.org/nutrition/recipes/mexican-antojitos\",\"uniqueKey\":\"https://www.kidney.org/nutrition/recipes/mexican-antojitos\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":17,\"state\":4}},\"handledAt\":\"2026-04-21T22:01:46.325Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.kidney.org/nutrition/recipes/mexican-antojitos",
+	"url": "https://www.kidney.org/nutrition/recipes/mexican-antojitos"
+}

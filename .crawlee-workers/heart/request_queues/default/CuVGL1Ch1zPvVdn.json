@@ -1,0 +1,9 @@
+{
+	"id": "CuVGL1Ch1zPvVdn",
+	"json": "{\"id\":\"CuVGL1Ch1zPvVdn\",\"url\":\"https://recipes.heart.org/en/recipes/banana-bread-smoothie\",\"loadedUrl\":\"https://recipes.heart.org/en/recipes/banana-bread-smoothie\",\"uniqueKey\":\"https://recipes.heart.org/en/recipes/banana-bread-smoothie\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":1,\"state\":4}},\"handledAt\":\"2026-04-21T12:33:38.456Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recipes.heart.org/en/recipes/banana-bread-smoothie",
+	"url": "https://recipes.heart.org/en/recipes/banana-bread-smoothie"
+}

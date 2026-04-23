@@ -1,0 +1,9 @@
+{
+	"id": "12Atic3UqzBuNJJ",
+	"json": "{\"id\":\"12Atic3UqzBuNJJ\",\"url\":\"https://diabetesfoodhub.org/recipes/lunch\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/lunch\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/lunch\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":1,\"state\":4}},\"handledAt\":\"2026-04-21T17:24:07.559Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/lunch",
+	"url": "https://diabetesfoodhub.org/recipes/lunch"
+}

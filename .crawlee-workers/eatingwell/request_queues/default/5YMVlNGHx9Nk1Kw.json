@@ -1,0 +1,9 @@
+{
+	"id": "5YMVlNGHx9Nk1Kw",
+	"json": "{\"id\":\"5YMVlNGHx9Nk1Kw\",\"url\":\"https://www.eatingwell.com/recipe/269222/everything-bagel-microwave-popcorn/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/269222/everything-bagel-microwave-popcorn\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3}}}",
+	"method": "GET",
+	"orderNo": 1776776645202,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/269222/everything-bagel-microwave-popcorn",
+	"url": "https://www.eatingwell.com/recipe/269222/everything-bagel-microwave-popcorn/"
+}

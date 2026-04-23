@@ -1,0 +1,9 @@
+{
+	"id": "9Y62qrb8MeBQQbN",
+	"json": "{\"id\":\"9Y62qrb8MeBQQbN\",\"url\":\"https://www.eatingwell.com/recipe/257878/sheet-pan-chicken-fajitas/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/257878/sheet-pan-chicken-fajitas/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/257878/sheet-pan-chicken-fajitas\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:31:11.484Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/257878/sheet-pan-chicken-fajitas",
+	"url": "https://www.eatingwell.com/recipe/257878/sheet-pan-chicken-fajitas/"
+}

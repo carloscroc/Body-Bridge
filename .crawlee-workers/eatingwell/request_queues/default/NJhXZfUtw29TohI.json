@@ -1,0 +1,9 @@
+{
+	"id": "NJhXZfUtw29TohI",
+	"json": "{\"id\":\"NJhXZfUtw29TohI\",\"url\":\"https://www.eatingwell.com/recipes/21664/ingredients/vegetables/greens/arugula/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/21664/ingredients/vegetables/greens/arugula\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":4}}}",
+	"method": "GET",
+	"orderNo": 1776779808778,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/21664/ingredients/vegetables/greens/arugula",
+	"url": "https://www.eatingwell.com/recipes/21664/ingredients/vegetables/greens/arugula/"
+}

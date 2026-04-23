@@ -1,0 +1,9 @@
+{
+	"id": "V4oxT8eU230SHXS",
+	"json": "{\"id\":\"V4oxT8eU230SHXS\",\"url\":\"https://www.eatingwell.com/recipe/259575/pineapple-pork-fried-rice/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/259575/pineapple-pork-fried-rice/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/259575/pineapple-pork-fried-rice\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T13:47:28.990Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/259575/pineapple-pork-fried-rice",
+	"url": "https://www.eatingwell.com/recipe/259575/pineapple-pork-fried-rice/"
+}

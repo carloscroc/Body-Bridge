@@ -1,0 +1,9 @@
+{
+	"id": "U1bxYZdAYHQHGzk",
+	"json": "{\"id\":\"U1bxYZdAYHQHGzk\",\"url\":\"https://www.eatingwell.com/recipe/270730/southwestern-sweet-potato-stew/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/270730/southwestern-sweet-potato-stew/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/270730/southwestern-sweet-potato-stew\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T13:58:54.167Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/270730/southwestern-sweet-potato-stew",
+	"url": "https://www.eatingwell.com/recipe/270730/southwestern-sweet-potato-stew/"
+}

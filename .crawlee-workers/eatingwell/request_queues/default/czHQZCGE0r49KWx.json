@@ -1,0 +1,9 @@
+{
+	"id": "czHQZCGE0r49KWx",
+	"json": "{\"id\":\"czHQZCGE0r49KWx\",\"url\":\"https://www.eatingwell.com/recipes/17929/drinks/smoothies/chia-seed/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/17929/drinks/smoothies/chia-seed/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/17929/drinks/smoothies/chia-seed\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:01:24.550Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/17929/drinks/smoothies/chia-seed",
+	"url": "https://www.eatingwell.com/recipes/17929/drinks/smoothies/chia-seed/"
+}

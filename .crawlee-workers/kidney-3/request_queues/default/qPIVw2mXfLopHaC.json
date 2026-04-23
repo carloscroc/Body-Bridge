@@ -1,0 +1,9 @@
+{
+	"id": "qPIVw2mXfLopHaC",
+	"json": "{\"id\":\"qPIVw2mXfLopHaC\",\"url\":\"https://www.kidney.org/nutrition/recipes/watermelon-spritzer?page=1\",\"loadedUrl\":\"https://www.kidney.org/nutrition/recipes/watermelon-spritzer?page=1\",\"uniqueKey\":\"https://www.kidney.org/nutrition/recipes/watermelon-spritzer?page=1\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":11,\"state\":4}},\"handledAt\":\"2026-04-21T19:05:37.800Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.kidney.org/nutrition/recipes/watermelon-spritzer?page=1",
+	"url": "https://www.kidney.org/nutrition/recipes/watermelon-spritzer?page=1"
+}

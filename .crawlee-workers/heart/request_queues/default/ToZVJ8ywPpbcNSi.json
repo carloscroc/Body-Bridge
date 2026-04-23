@@ -1,0 +1,9 @@
+{
+	"id": "ToZVJ8ywPpbcNSi",
+	"json": "{\"id\":\"ToZVJ8ywPpbcNSi\",\"url\":\"https://recipes.heart.org/en/recipes/oven-fried-chicken-with-roasted-potato-wedges\",\"loadedUrl\":\"https://recipes.heart.org/en/recipes/oven-fried-chicken-with-roasted-potato-wedges\",\"uniqueKey\":\"https://recipes.heart.org/en/recipes/oven-fried-chicken-with-roasted-potato-wedges\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":5,\"state\":4}},\"handledAt\":\"2026-04-21T12:48:56.562Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recipes.heart.org/en/recipes/oven-fried-chicken-with-roasted-potato-wedges",
+	"url": "https://recipes.heart.org/en/recipes/oven-fried-chicken-with-roasted-potato-wedges"
+}

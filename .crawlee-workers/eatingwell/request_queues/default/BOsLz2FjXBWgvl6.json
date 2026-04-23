@@ -1,0 +1,9 @@
+{
+	"id": "BOsLz2FjXBWgvl6",
+	"json": "{\"id\":\"BOsLz2FjXBWgvl6\",\"url\":\"https://www.eatingwell.com/recipe/8049867/chicken-fajita-casserole/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/8049867/chicken-fajita-casserole/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/8049867/chicken-fajita-casserole\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":1,\"state\":4}},\"handledAt\":\"2026-04-21T12:36:58.577Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/8049867/chicken-fajita-casserole",
+	"url": "https://www.eatingwell.com/recipe/8049867/chicken-fajita-casserole/"
+}

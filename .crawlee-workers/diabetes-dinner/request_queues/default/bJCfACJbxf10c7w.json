@@ -1,0 +1,9 @@
+{
+	"id": "bJCfACJbxf10c7w",
+	"json": "{\"id\":\"bJCfACJbxf10c7w\",\"url\":\"https://diabetesfoodhub.org/recipes/egg-cheese-crumpets\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/egg-cheese-crumpets\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/egg-cheese-crumpets\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":6,\"state\":4}},\"handledAt\":\"2026-04-21T19:32:05.333Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/egg-cheese-crumpets",
+	"url": "https://diabetesfoodhub.org/recipes/egg-cheese-crumpets"
+}

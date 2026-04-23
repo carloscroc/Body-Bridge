@@ -1,0 +1,9 @@
+{
+	"id": "3klrzuwxr8hfOQn",
+	"json": "{\"id\":\"3klrzuwxr8hfOQn\",\"url\":\"https://www.eatingwell.com/recipe/249405/zesty-wheat-berry-black-bean-chili/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/249405/zesty-wheat-berry-black-bean-chili/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/249405/zesty-wheat-berry-black-bean-chili\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T13:58:45.188Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/249405/zesty-wheat-berry-black-bean-chili",
+	"url": "https://www.eatingwell.com/recipe/249405/zesty-wheat-berry-black-bean-chili/"
+}

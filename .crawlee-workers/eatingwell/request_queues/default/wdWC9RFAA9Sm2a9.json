@@ -1,0 +1,9 @@
+{
+	"id": "wdWC9RFAA9Sm2a9",
+	"json": "{\"id\":\"wdWC9RFAA9Sm2a9\",\"url\":\"https://www.eatingwell.com/recipes/18241/ingredients/meat-poultry/chicken/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/18241/ingredients/meat-poultry/chicken/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/18241/ingredients/meat-poultry/chicken\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:39:40.714Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/18241/ingredients/meat-poultry/chicken",
+	"url": "https://www.eatingwell.com/recipes/18241/ingredients/meat-poultry/chicken/"
+}

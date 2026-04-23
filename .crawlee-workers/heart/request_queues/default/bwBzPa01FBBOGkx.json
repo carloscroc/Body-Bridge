@@ -1,0 +1,9 @@
+{
+	"id": "bwBzPa01FBBOGkx",
+	"json": "{\"id\":\"bwBzPa01FBBOGkx\",\"url\":\"https://recipes.heart.org/en/recipes/poached-eggs-with-pesto-bulgur\",\"loadedUrl\":\"https://recipes.heart.org/en/recipes/poached-eggs-with-pesto-bulgur\",\"uniqueKey\":\"https://recipes.heart.org/en/recipes/poached-eggs-with-pesto-bulgur\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":9,\"state\":4}},\"handledAt\":\"2026-04-21T13:41:55.247Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recipes.heart.org/en/recipes/poached-eggs-with-pesto-bulgur",
+	"url": "https://recipes.heart.org/en/recipes/poached-eggs-with-pesto-bulgur"
+}

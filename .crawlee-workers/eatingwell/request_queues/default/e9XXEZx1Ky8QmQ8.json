@@ -1,0 +1,9 @@
+{
+	"id": "e9XXEZx1Ky8QmQ8",
+	"json": "{\"id\":\"e9XXEZx1Ky8QmQ8\",\"url\":\"https://www.eatingwell.com/recipe/276471/fall-chopped-salad-with-spinach-butternut-squash-apples-cheddar/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/276471/fall-chopped-salad-with-spinach-butternut-squash-apples-cheddar/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/276471/fall-chopped-salad-with-spinach-butternut-squash-apples-cheddar\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T13:56:57.272Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/276471/fall-chopped-salad-with-spinach-butternut-squash-apples-cheddar",
+	"url": "https://www.eatingwell.com/recipe/276471/fall-chopped-salad-with-spinach-butternut-squash-apples-cheddar/"
+}

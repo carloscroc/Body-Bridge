@@ -1,0 +1,9 @@
+{
+	"id": "nQYyy0hZmpsopRX",
+	"json": "{\"id\":\"nQYyy0hZmpsopRX\",\"url\":\"https://www.eatingwell.com/recipe/276345/greek-burgers-with-herb-feta-sauce/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/276345/greek-burgers-with-herb-feta-sauce/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/276345/greek-burgers-with-herb-feta-sauce\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T14:21:24.605Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/276345/greek-burgers-with-herb-feta-sauce",
+	"url": "https://www.eatingwell.com/recipe/276345/greek-burgers-with-herb-feta-sauce/"
+}

@@ -1,0 +1,9 @@
+{
+	"id": "GmEpOIB32Z9pcgS",
+	"json": "{\"id\":\"GmEpOIB32Z9pcgS\",\"url\":\"https://www.eatingwell.com/recipe/265172/meat-fondue/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/265172/meat-fondue\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3}}}",
+	"method": "GET",
+	"orderNo": 1776775614154,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/265172/meat-fondue",
+	"url": "https://www.eatingwell.com/recipe/265172/meat-fondue/"
+}

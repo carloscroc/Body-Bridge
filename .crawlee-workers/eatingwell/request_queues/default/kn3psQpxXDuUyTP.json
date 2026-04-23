@@ -1,0 +1,9 @@
+{
+	"id": "kn3psQpxXDuUyTP",
+	"json": "{\"id\":\"kn3psQpxXDuUyTP\",\"url\":\"https://www.eatingwell.com/recipe/252379/classic-hamburger/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/252379/classic-hamburger\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3}}}",
+	"method": "GET",
+	"orderNo": 1776775534489,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/252379/classic-hamburger",
+	"url": "https://www.eatingwell.com/recipe/252379/classic-hamburger/"
+}

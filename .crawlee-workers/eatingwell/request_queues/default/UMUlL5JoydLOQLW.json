@@ -1,0 +1,9 @@
+{
+	"id": "UMUlL5JoydLOQLW",
+	"json": "{\"id\":\"UMUlL5JoydLOQLW\",\"url\":\"https://www.eatingwell.com/recipe/269888/hearty-tomato-soup-with-beans-greens/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/269888/hearty-tomato-soup-with-beans-greens/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/269888/hearty-tomato-soup-with-beans-greens\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T14:10:34.539Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/269888/hearty-tomato-soup-with-beans-greens",
+	"url": "https://www.eatingwell.com/recipe/269888/hearty-tomato-soup-with-beans-greens/"
+}

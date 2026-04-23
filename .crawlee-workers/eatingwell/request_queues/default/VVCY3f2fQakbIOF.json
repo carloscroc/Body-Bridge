@@ -1,0 +1,9 @@
+{
+	"id": "VVCY3f2fQakbIOF",
+	"json": "{\"id\":\"VVCY3f2fQakbIOF\",\"url\":\"https://www.eatingwell.com/recipe/270517/cobb-salad-with-herb-rubbed-chicken/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/270517/cobb-salad-with-herb-rubbed-chicken/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/270517/cobb-salad-with-herb-rubbed-chicken\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T13:47:05.966Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/270517/cobb-salad-with-herb-rubbed-chicken",
+	"url": "https://www.eatingwell.com/recipe/270517/cobb-salad-with-herb-rubbed-chicken/"
+}

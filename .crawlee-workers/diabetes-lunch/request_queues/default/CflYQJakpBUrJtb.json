@@ -1,0 +1,9 @@
+{
+	"id": "CflYQJakpBUrJtb",
+	"json": "{\"id\":\"CflYQJakpBUrJtb\",\"url\":\"https://diabetesfoodhub.org/recipes/black-bean-hummus\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/black-bean-hummus\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/black-bean-hummus\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":12,\"state\":4}},\"handledAt\":\"2026-04-21T22:01:23.620Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/black-bean-hummus",
+	"url": "https://diabetesfoodhub.org/recipes/black-bean-hummus"
+}

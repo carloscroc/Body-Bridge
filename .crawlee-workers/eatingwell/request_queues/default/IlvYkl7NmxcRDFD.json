@@ -1,0 +1,9 @@
+{
+	"id": "IlvYkl7NmxcRDFD",
+	"json": "{\"id\":\"IlvYkl7NmxcRDFD\",\"url\":\"https://www.eatingwell.com/recipe/250406/carne-asada-tacos/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/250406/carne-asada-tacos\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3}}}",
+	"method": "GET",
+	"orderNo": 1776778166683,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/250406/carne-asada-tacos",
+	"url": "https://www.eatingwell.com/recipe/250406/carne-asada-tacos/"
+}

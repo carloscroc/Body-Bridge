@@ -1,0 +1,9 @@
+{
+	"id": "5u1KdgzG8EoG2Ki",
+	"json": "{\"id\":\"5u1KdgzG8EoG2Ki\",\"url\":\"https://www.eatingwell.com/recipe/267457/honey-mustard-salmon-with-mango-quinoa/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/267457/honey-mustard-salmon-with-mango-quinoa/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/267457/honey-mustard-salmon-with-mango-quinoa\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T13:45:26.092Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/267457/honey-mustard-salmon-with-mango-quinoa",
+	"url": "https://www.eatingwell.com/recipe/267457/honey-mustard-salmon-with-mango-quinoa/"
+}

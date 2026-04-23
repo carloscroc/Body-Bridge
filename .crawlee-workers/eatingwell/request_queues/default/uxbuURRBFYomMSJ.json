@@ -1,0 +1,9 @@
+{
+	"id": "uxbuURRBFYomMSJ",
+	"json": "{\"id\":\"uxbuURRBFYomMSJ\",\"url\":\"https://www.eatingwell.com/recipe/7901031/shrimp-avocado-salad/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/7901031/shrimp-avocado-salad\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3}}}",
+	"method": "GET",
+	"orderNo": 1776776085249,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/7901031/shrimp-avocado-salad",
+	"url": "https://www.eatingwell.com/recipe/7901031/shrimp-avocado-salad/"
+}

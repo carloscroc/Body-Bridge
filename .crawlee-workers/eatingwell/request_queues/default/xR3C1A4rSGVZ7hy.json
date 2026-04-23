@@ -1,0 +1,9 @@
+{
+	"id": "xR3C1A4rSGVZ7hy",
+	"json": "{\"id\":\"xR3C1A4rSGVZ7hy\",\"url\":\"https://www.eatingwell.com/recipes/18161/appetizer/antipasto/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/18161/appetizer/antipasto/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/18161/appetizer/antipasto\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T12:45:49.225Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/18161/appetizer/antipasto",
+	"url": "https://www.eatingwell.com/recipes/18161/appetizer/antipasto/"
+}

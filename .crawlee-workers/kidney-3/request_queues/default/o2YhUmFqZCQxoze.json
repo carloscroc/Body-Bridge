@@ -1,0 +1,9 @@
+{
+	"id": "o2YhUmFqZCQxoze",
+	"json": "{\"id\":\"o2YhUmFqZCQxoze\",\"url\":\"https://www.kidney.org/nutrition/recipes/chicken-noodle-soup\",\"loadedUrl\":\"https://www.kidney.org/nutrition/recipes/chicken-noodle-soup\",\"uniqueKey\":\"https://www.kidney.org/nutrition/recipes/chicken-noodle-soup\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T17:31:15.194Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.kidney.org/nutrition/recipes/chicken-noodle-soup",
+	"url": "https://www.kidney.org/nutrition/recipes/chicken-noodle-soup"
+}

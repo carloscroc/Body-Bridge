@@ -1,0 +1,9 @@
+{
+	"id": "VqNNEhuwzWvwF6h",
+	"json": "{\"id\":\"VqNNEhuwzWvwF6h\",\"url\":\"https://www.kidney.org/nutrition/recipes/mediterranean-quinoa-salad\",\"loadedUrl\":\"https://www.kidney.org/nutrition/recipes/mediterranean-quinoa-salad\",\"uniqueKey\":\"https://www.kidney.org/nutrition/recipes/mediterranean-quinoa-salad\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T17:28:02.497Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.kidney.org/nutrition/recipes/mediterranean-quinoa-salad",
+	"url": "https://www.kidney.org/nutrition/recipes/mediterranean-quinoa-salad"
+}

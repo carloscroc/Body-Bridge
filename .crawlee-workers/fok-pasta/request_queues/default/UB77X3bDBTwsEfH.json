@@ -1,0 +1,9 @@
+{
+	"id": "UB77X3bDBTwsEfH",
+	"json": "{\"id\":\"UB77X3bDBTwsEfH\",\"url\":\"https://www.forksoverknives.com/recipes/vegan-pasta-noodles/mediterranean-vegetable-spaghetti/\",\"loadedUrl\":\"https://www.forksoverknives.com/recipes/vegan-pasta-noodles/mediterranean-vegetable-spaghetti/\",\"uniqueKey\":\"https://www.forksoverknives.com/recipes/vegan-pasta-noodles/mediterranean-vegetable-spaghetti\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T12:37:36.273Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.forksoverknives.com/recipes/vegan-pasta-noodles/mediterranean-vegetable-spaghetti",
+	"url": "https://www.forksoverknives.com/recipes/vegan-pasta-noodles/mediterranean-vegetable-spaghetti/"
+}

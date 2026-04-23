@@ -1,0 +1,9 @@
+{
+	"id": "gL5vxP2v8029D6x",
+	"json": "{\"id\":\"gL5vxP2v8029D6x\",\"url\":\"https://www.eatingwell.com/recipes/18223/salad/main-dish-salads/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/18223/salad/main-dish-salads/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/18223/salad/main-dish-salads\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T12:55:09.764Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/18223/salad/main-dish-salads",
+	"url": "https://www.eatingwell.com/recipes/18223/salad/main-dish-salads/"
+}

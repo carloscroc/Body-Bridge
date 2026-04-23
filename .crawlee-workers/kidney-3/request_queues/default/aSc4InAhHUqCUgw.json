@@ -1,0 +1,9 @@
+{
+	"id": "aSc4InAhHUqCUgw",
+	"json": "{\"id\":\"aSc4InAhHUqCUgw\",\"url\":\"https://www.kidney.org/nutrition/recipes/chicken-and-cabbage-mexican-skillet?page=0\",\"loadedUrl\":\"https://www.kidney.org/nutrition/recipes/chicken-and-cabbage-mexican-skillet?page=0\",\"uniqueKey\":\"https://www.kidney.org/nutrition/recipes/chicken-and-cabbage-mexican-skillet?page=0\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T17:34:27.423Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.kidney.org/nutrition/recipes/chicken-and-cabbage-mexican-skillet?page=0",
+	"url": "https://www.kidney.org/nutrition/recipes/chicken-and-cabbage-mexican-skillet?page=0"
+}

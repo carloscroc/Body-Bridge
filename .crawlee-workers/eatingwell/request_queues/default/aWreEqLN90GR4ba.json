@@ -1,0 +1,9 @@
+{
+	"id": "aWreEqLN90GR4ba",
+	"json": "{\"id\":\"aWreEqLN90GR4ba\",\"url\":\"https://www.eatingwell.com/recipes/18191/soup/bean/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/18191/soup/bean/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/18191/soup/bean\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T12:55:54.123Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/18191/soup/bean",
+	"url": "https://www.eatingwell.com/recipes/18191/soup/bean/"
+}

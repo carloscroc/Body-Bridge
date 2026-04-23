@@ -1,0 +1,9 @@
+{
+	"id": "YWJEEYHawtOI2dF",
+	"json": "{\"id\":\"YWJEEYHawtOI2dF\",\"url\":\"https://www.eatingwell.com/recipe/205707/thyme-garlic-pot-roast-potatoes-carrots/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/205707/thyme-garlic-pot-roast-potatoes-carrots/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/205707/thyme-garlic-pot-roast-potatoes-carrots\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T14:23:30.849Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/205707/thyme-garlic-pot-roast-potatoes-carrots",
+	"url": "https://www.eatingwell.com/recipe/205707/thyme-garlic-pot-roast-potatoes-carrots/"
+}

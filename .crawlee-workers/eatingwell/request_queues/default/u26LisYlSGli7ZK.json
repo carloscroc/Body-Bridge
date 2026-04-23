@@ -1,0 +1,9 @@
+{
+	"id": "u26LisYlSGli7ZK",
+	"json": "{\"id\":\"u26LisYlSGli7ZK\",\"url\":\"https://www.eatingwell.com/recipe/261612/greek-yogurt-with-strawberries/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/261612/greek-yogurt-with-strawberries/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/261612/greek-yogurt-with-strawberries\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T14:08:18.855Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/261612/greek-yogurt-with-strawberries",
+	"url": "https://www.eatingwell.com/recipe/261612/greek-yogurt-with-strawberries/"
+}

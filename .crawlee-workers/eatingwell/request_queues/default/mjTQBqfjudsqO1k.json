@@ -1,0 +1,9 @@
+{
+	"id": "mjTQBqfjudsqO1k",
+	"json": "{\"id\":\"mjTQBqfjudsqO1k\",\"url\":\"https://www.eatingwell.com/recipes/19474/sauces-condiments/sauce/sweet-sour/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/19474/sauces-condiments/sauce/sweet-sour\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3}}}",
+	"method": "GET",
+	"orderNo": 1776777927778,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/19474/sauces-condiments/sauce/sweet-sour",
+	"url": "https://www.eatingwell.com/recipes/19474/sauces-condiments/sauce/sweet-sour/"
+}

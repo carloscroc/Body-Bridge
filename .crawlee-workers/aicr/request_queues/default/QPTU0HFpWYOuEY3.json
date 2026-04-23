@@ -1,0 +1,9 @@
+{
+	"id": "QPTU0HFpWYOuEY3",
+	"json": "{\"id\":\"QPTU0HFpWYOuEY3\",\"url\":\"https://www.aicr.org/cancer-prevention/recipes/strawberry-aguas-frescas/\",\"loadedUrl\":\"https://www.aicr.org/cancer-prevention/recipes/strawberry-aguas-frescas/\",\"uniqueKey\":\"https://www.aicr.org/cancer-prevention/recipes/strawberry-aguas-frescas\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":1,\"state\":4}},\"handledAt\":\"2026-04-21T13:05:11.643Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.aicr.org/cancer-prevention/recipes/strawberry-aguas-frescas",
+	"url": "https://www.aicr.org/cancer-prevention/recipes/strawberry-aguas-frescas/"
+}

@@ -1,0 +1,9 @@
+{
+	"id": "QNYXLabt5d5S0WM",
+	"json": "{\"id\":\"QNYXLabt5d5S0WM\",\"url\":\"https://www.eatingwell.com/recipes/22483/ingredients/coffee/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/22483/ingredients/coffee/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/22483/ingredients/coffee\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:35:22.117Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/22483/ingredients/coffee",
+	"url": "https://www.eatingwell.com/recipes/22483/ingredients/coffee/"
+}

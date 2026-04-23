@@ -1,0 +1,9 @@
+{
+	"id": "2LUNPwrYPzL2Wdi",
+	"json": "{\"id\":\"2LUNPwrYPzL2Wdi\",\"url\":\"https://recipes.heart.org/en/recipes/mediterranean-couscous-salad-with-chickpeas\",\"loadedUrl\":\"https://recipes.heart.org/en/recipes/mediterranean-couscous-salad-with-chickpeas\",\"uniqueKey\":\"https://recipes.heart.org/en/recipes/mediterranean-couscous-salad-with-chickpeas\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":6,\"state\":4}},\"handledAt\":\"2026-04-21T13:15:38.389Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recipes.heart.org/en/recipes/mediterranean-couscous-salad-with-chickpeas",
+	"url": "https://recipes.heart.org/en/recipes/mediterranean-couscous-salad-with-chickpeas"
+}

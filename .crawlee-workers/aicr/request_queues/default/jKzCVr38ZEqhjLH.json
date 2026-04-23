@@ -1,0 +1,9 @@
+{
+	"id": "jKzCVr38ZEqhjLH",
+	"json": "{\"id\":\"jKzCVr38ZEqhjLH\",\"url\":\"https://www.aicr.org/cancer-prevention/recipes/category/whole-grains-pasta-rice/\",\"loadedUrl\":\"https://www.aicr.org/cancer-prevention/recipes/category/whole-grains-pasta-rice/\",\"uniqueKey\":\"https://www.aicr.org/cancer-prevention/recipes/category/whole-grains-pasta-rice\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":1,\"state\":4}},\"handledAt\":\"2026-04-21T13:21:57.998Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.aicr.org/cancer-prevention/recipes/category/whole-grains-pasta-rice",
+	"url": "https://www.aicr.org/cancer-prevention/recipes/category/whole-grains-pasta-rice/"
+}

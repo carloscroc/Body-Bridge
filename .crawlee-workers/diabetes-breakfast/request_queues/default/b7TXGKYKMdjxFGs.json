@@ -1,0 +1,9 @@
+{
+	"id": "b7TXGKYKMdjxFGs",
+	"json": "{\"id\":\"b7TXGKYKMdjxFGs\",\"url\":\"https://diabetesfoodhub.org/recipes/orange-and-walnut-salad\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/orange-and-walnut-salad\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/orange-and-walnut-salad\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":15,\"state\":4}},\"handledAt\":\"2026-04-21T22:27:45.940Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/orange-and-walnut-salad",
+	"url": "https://diabetesfoodhub.org/recipes/orange-and-walnut-salad"
+}

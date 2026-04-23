@@ -1,0 +1,9 @@
+{
+	"id": "qPR2pT98QCcqlIr",
+	"json": "{\"id\":\"qPR2pT98QCcqlIr\",\"url\":\"https://recipes.heart.org/en/recipes/triple-berry-protein-smoothie\",\"loadedUrl\":\"https://recipes.heart.org/en/recipes/triple-berry-protein-smoothie\",\"uniqueKey\":\"https://recipes.heart.org/en/recipes/triple-berry-protein-smoothie\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":1,\"state\":4}},\"handledAt\":\"2026-04-21T12:33:30.025Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recipes.heart.org/en/recipes/triple-berry-protein-smoothie",
+	"url": "https://recipes.heart.org/en/recipes/triple-berry-protein-smoothie"
+}

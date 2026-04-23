@@ -1,0 +1,9 @@
+{
+	"id": "mauW5Ycyvr1d33H",
+	"json": "{\"id\":\"mauW5Ycyvr1d33H\",\"url\":\"https://www.eatingwell.com/recipes/18232/main-dishes/stew/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/18232/main-dishes/stew/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/18232/main-dishes/stew\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:11:19.859Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/18232/main-dishes/stew",
+	"url": "https://www.eatingwell.com/recipes/18232/main-dishes/stew/"
+}

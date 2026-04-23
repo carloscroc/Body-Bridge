@@ -1,0 +1,9 @@
+{
+	"id": "EG5hHJEM70GRj86",
+	"json": "{\"id\":\"EG5hHJEM70GRj86\",\"url\":\"https://www.forksoverknives.com/recipes/vegan-breakfast/blueberry-muffins/\",\"loadedUrl\":\"https://www.forksoverknives.com/recipes/vegan-breakfast/blueberry-muffins/\",\"uniqueKey\":\"https://www.forksoverknives.com/recipes/vegan-breakfast/blueberry-muffins\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T12:46:54.990Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.forksoverknives.com/recipes/vegan-breakfast/blueberry-muffins",
+	"url": "https://www.forksoverknives.com/recipes/vegan-breakfast/blueberry-muffins/"
+}

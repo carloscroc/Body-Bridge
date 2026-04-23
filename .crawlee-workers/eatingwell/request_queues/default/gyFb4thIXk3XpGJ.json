@@ -1,0 +1,9 @@
+{
+	"id": "gyFb4thIXk3XpGJ",
+	"json": "{\"id\":\"gyFb4thIXk3XpGJ\",\"url\":\"https://www.eatingwell.com/recipe/252168/massaged-mustard-greens-salad/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/252168/massaged-mustard-greens-salad/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/252168/massaged-mustard-greens-salad\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T14:13:10.310Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/252168/massaged-mustard-greens-salad",
+	"url": "https://www.eatingwell.com/recipe/252168/massaged-mustard-greens-salad/"
+}

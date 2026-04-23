@@ -1,0 +1,9 @@
+{
+	"id": "pepDWkA6h1JYzLU",
+	"json": "{\"id\":\"pepDWkA6h1JYzLU\",\"url\":\"https://www.eatingwell.com/recipes/18171/appetizer/deviled-eggs/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/18171/appetizer/deviled-eggs/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/18171/appetizer/deviled-eggs\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T12:47:50.811Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/18171/appetizer/deviled-eggs",
+	"url": "https://www.eatingwell.com/recipes/18171/appetizer/deviled-eggs/"
+}

@@ -1,0 +1,9 @@
+{
+	"id": "uuKPelaZcRGKXV5",
+	"json": "{\"id\":\"uuKPelaZcRGKXV5\",\"url\":\"https://recipes.heart.org/en/recipes/oat-avocado-berry-breakfast-bars\",\"loadedUrl\":\"https://recipes.heart.org/en/recipes/oat-avocado-berry-breakfast-bars\",\"uniqueKey\":\"https://recipes.heart.org/en/recipes/oat-avocado-berry-breakfast-bars\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":4,\"state\":4}},\"handledAt\":\"2026-04-21T12:39:39.681Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recipes.heart.org/en/recipes/oat-avocado-berry-breakfast-bars",
+	"url": "https://recipes.heart.org/en/recipes/oat-avocado-berry-breakfast-bars"
+}

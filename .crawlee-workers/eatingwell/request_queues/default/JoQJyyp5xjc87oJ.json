@@ -1,0 +1,9 @@
+{
+	"id": "JoQJyyp5xjc87oJ",
+	"json": "{\"id\":\"JoQJyyp5xjc87oJ\",\"url\":\"https://www.eatingwell.com/recipe/261796/vegetarian-spaghetti-squash-lasagna/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/261796/vegetarian-spaghetti-squash-lasagna/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/261796/vegetarian-spaghetti-squash-lasagna\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T13:42:08.097Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/261796/vegetarian-spaghetti-squash-lasagna",
+	"url": "https://www.eatingwell.com/recipe/261796/vegetarian-spaghetti-squash-lasagna/"
+}

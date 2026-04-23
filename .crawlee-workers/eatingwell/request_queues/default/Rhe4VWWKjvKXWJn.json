@@ -1,0 +1,9 @@
+{
+	"id": "Rhe4VWWKjvKXWJn",
+	"json": "{\"id\":\"Rhe4VWWKjvKXWJn\",\"url\":\"https://www.eatingwell.com/recipes/22855/mealtimes/dinner/seasonal/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/22855/mealtimes/dinner/seasonal/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/22855/mealtimes/dinner/seasonal\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T12:38:46.263Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/22855/mealtimes/dinner/seasonal",
+	"url": "https://www.eatingwell.com/recipes/22855/mealtimes/dinner/seasonal/"
+}

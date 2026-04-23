@@ -1,0 +1,9 @@
+{
+	"id": "34PHAPQyHwhnZCf",
+	"json": "{\"id\":\"34PHAPQyHwhnZCf\",\"url\":\"https://www.kidney.org/nutrition/recipes/couscous-salad-tangy-dressing?page=0\",\"loadedUrl\":\"https://www.kidney.org/nutrition/recipes/couscous-salad-tangy-dressing?page=0\",\"uniqueKey\":\"https://www.kidney.org/nutrition/recipes/couscous-salad-tangy-dressing?page=0\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":15,\"state\":4}},\"handledAt\":\"2026-04-21T20:38:19.271Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.kidney.org/nutrition/recipes/couscous-salad-tangy-dressing?page=0",
+	"url": "https://www.kidney.org/nutrition/recipes/couscous-salad-tangy-dressing?page=0"
+}

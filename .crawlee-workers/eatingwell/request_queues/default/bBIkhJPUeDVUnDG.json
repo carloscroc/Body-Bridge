@@ -1,0 +1,9 @@
+{
+	"id": "bBIkhJPUeDVUnDG",
+	"json": "{\"id\":\"bBIkhJPUeDVUnDG\",\"url\":\"https://www.eatingwell.com/recipe/8042337/kung-pao-tofu/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/8042337/kung-pao-tofu/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/8042337/kung-pao-tofu\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T14:26:44.247Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/8042337/kung-pao-tofu",
+	"url": "https://www.eatingwell.com/recipe/8042337/kung-pao-tofu/"
+}

@@ -1,0 +1,9 @@
+{
+	"id": "4G3maPzbY0xOtlx",
+	"json": "{\"id\":\"4G3maPzbY0xOtlx\",\"url\":\"https://www.aicr.org/cancer-prevention/recipes/shrimp-salad/\",\"loadedUrl\":\"https://www.aicr.org/cancer-prevention/recipes/shrimp-salad/\",\"uniqueKey\":\"https://www.aicr.org/cancer-prevention/recipes/shrimp-salad\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":1,\"state\":4}},\"handledAt\":\"2026-04-21T13:10:09.176Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.aicr.org/cancer-prevention/recipes/shrimp-salad",
+	"url": "https://www.aicr.org/cancer-prevention/recipes/shrimp-salad/"
+}

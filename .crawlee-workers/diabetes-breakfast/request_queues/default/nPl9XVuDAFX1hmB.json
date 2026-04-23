@@ -1,0 +1,9 @@
+{
+	"id": "nPl9XVuDAFX1hmB",
+	"json": "{\"id\":\"nPl9XVuDAFX1hmB\",\"url\":\"https://diabetesfoodhub.org/recipes/grilled-vegetable-pizza\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/grilled-vegetable-pizza\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/grilled-vegetable-pizza\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T17:40:55.038Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/grilled-vegetable-pizza",
+	"url": "https://diabetesfoodhub.org/recipes/grilled-vegetable-pizza"
+}

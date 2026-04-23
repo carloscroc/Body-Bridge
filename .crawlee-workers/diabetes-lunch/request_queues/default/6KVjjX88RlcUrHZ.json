@@ -1,0 +1,9 @@
+{
+	"id": "6KVjjX88RlcUrHZ",
+	"json": "{\"id\":\"6KVjjX88RlcUrHZ\",\"url\":\"https://diabetesfoodhub.org/recipes/fresh-tomato-sauce\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/fresh-tomato-sauce\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/fresh-tomato-sauce\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":7,\"state\":4}},\"handledAt\":\"2026-04-21T20:15:29.738Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/fresh-tomato-sauce",
+	"url": "https://diabetesfoodhub.org/recipes/fresh-tomato-sauce"
+}

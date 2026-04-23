@@ -1,0 +1,9 @@
+{
+	"id": "rSigyvgzpcob7JZ",
+	"json": "{\"id\":\"rSigyvgzpcob7JZ\",\"url\":\"https://recipes.heart.org/en/recipes/super-simple-citrus-drizzle-quick-salad-dressing\",\"loadedUrl\":\"https://recipes.heart.org/en/recipes/super-simple-citrus-drizzle-quick-salad-dressing\",\"uniqueKey\":\"https://recipes.heart.org/en/recipes/super-simple-citrus-drizzle-quick-salad-dressing\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":6,\"state\":4}},\"handledAt\":\"2026-04-21T13:11:28.212Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recipes.heart.org/en/recipes/super-simple-citrus-drizzle-quick-salad-dressing",
+	"url": "https://recipes.heart.org/en/recipes/super-simple-citrus-drizzle-quick-salad-dressing"
+}

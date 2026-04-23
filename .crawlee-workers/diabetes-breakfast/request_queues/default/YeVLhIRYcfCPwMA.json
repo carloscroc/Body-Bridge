@@ -1,0 +1,9 @@
+{
+	"id": "YeVLhIRYcfCPwMA",
+	"json": "{\"id\":\"YeVLhIRYcfCPwMA\",\"url\":\"https://diabetesfoodhub.org/recipes/chicken-satay\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/chicken-satay\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/chicken-satay\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":9,\"state\":4}},\"handledAt\":\"2026-04-21T20:56:40.997Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/chicken-satay",
+	"url": "https://diabetesfoodhub.org/recipes/chicken-satay"
+}

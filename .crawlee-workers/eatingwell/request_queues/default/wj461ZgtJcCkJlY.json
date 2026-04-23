@@ -1,0 +1,9 @@
+{
+	"id": "wj461ZgtJcCkJlY",
+	"json": "{\"id\":\"wj461ZgtJcCkJlY\",\"url\":\"https://www.eatingwell.com/recipe/250234/creamy-curry-dressing/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/250234/creamy-curry-dressing\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3}}}",
+	"method": "GET",
+	"orderNo": 1776776812299,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/250234/creamy-curry-dressing",
+	"url": "https://www.eatingwell.com/recipe/250234/creamy-curry-dressing/"
+}

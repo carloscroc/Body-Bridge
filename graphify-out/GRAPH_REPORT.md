@@ -25,10 +25,10 @@
 
 ## Largest communities
 
-- Community 1: 469 nodes; sample: auth_getmaybeidentity, createworkout_getlist, types, createworkout_updateinsection, captureexerciseimages_sleep, quick_screenshot, premiumtimeline_geteventheight, calendarutils_generatecalendarevents
-- Community 2: 10 nodes; sample: fitnessexercises_tostringarray, fitnessexercises_mapfitnessexercise, fitnessexercises_tooptionalstring, fitnessexercises_normalizedifficulty, fitnessexercises_searchapexexercises, fitnessexercises_titlecaseword, fitnessexercises_mapfitnessexercisesfromjson, fitnessexercises
-- Community 3: 7 nodes; sample: pkce_generatecodechallengefromverifier, pkce_sha256, pkce_dec2hex, pkce_generaterandomstring, pkce_base64urlencode, pkce_generatecodeverifier, pkce
-- Community 4: 3 nodes; sample: close_spec_project_issues_graphql, close_spec_project_issues, close_spec_project_issues_closeissue
+- Community 1: 469 nodes; sample: workoutbuilderworkspace_nextmonth, workoutsview_closeactions, libraryactionmenu_updateposition, sanitize_sanitizeurl, todayview, adminauthreset, convexadminclient_updateexerciseimageurl, convexadminclient_js
+- Community 2: 10 nodes; sample: fitnessexercises_slugify, fitnessexercises_tostringarray, fitnessexercises_titlecaseword, fitnessexercises_includesinsensitive, fitnessexercises_mapfitnessexercise, fitnessexercises_normalizedifficulty, fitnessexercises, fitnessexercises_tooptionalstring
+- Community 3: 7 nodes; sample: pkce_generatecodeverifier, pkce_base64urlencode, pkce_generaterandomstring, pkce_sha256, pkce_generatecodechallengefromverifier, pkce, pkce_dec2hex
+- Community 4: 3 nodes; sample: close_spec_project_issues_closeissue, close_spec_project_issues, close_spec_project_issues_graphql
 - Community 5: 2 nodes; sample: winston, logger
 - Community 6: 2 nodes; sample: programimageupload_uploadcoverimage, programimageupload
 - Community 7: 1 nodes; sample: postcss_config

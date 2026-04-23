@@ -1,0 +1,9 @@
+{
+	"id": "tKgrL0AHuInJPGE",
+	"json": "{\"id\":\"tKgrL0AHuInJPGE\",\"url\":\"https://www.eatingwell.com/recipe/248825/lemony-lentil-salad-with-salmon/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/248825/lemony-lentil-salad-with-salmon/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/248825/lemony-lentil-salad-with-salmon\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T14:13:45.356Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/248825/lemony-lentil-salad-with-salmon",
+	"url": "https://www.eatingwell.com/recipe/248825/lemony-lentil-salad-with-salmon/"
+}

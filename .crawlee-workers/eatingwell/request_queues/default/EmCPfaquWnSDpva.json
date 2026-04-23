@@ -1,0 +1,9 @@
+{
+	"id": "EmCPfaquWnSDpva",
+	"json": "{\"id\":\"EmCPfaquWnSDpva\",\"url\":\"https://www.eatingwell.com/recipes/23006/health-condition/diabetic/low-cholesterol/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/23006/health-condition/diabetic/low-cholesterol/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/23006/health-condition/diabetic/low-cholesterol\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:08:04.032Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/23006/health-condition/diabetic/low-cholesterol",
+	"url": "https://www.eatingwell.com/recipes/23006/health-condition/diabetic/low-cholesterol/"
+}

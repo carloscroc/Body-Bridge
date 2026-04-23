@@ -1,0 +1,9 @@
+{
+	"id": "bCyzuoOdRjva1zS",
+	"json": "{\"id\":\"bCyzuoOdRjva1zS\",\"url\":\"https://www.eatingwell.com/recipes/18671/cooking-methods-styles/quick-easy/lunch/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/18671/cooking-methods-styles/quick-easy/lunch/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/18671/cooking-methods-styles/quick-easy/lunch\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T12:40:42.124Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/18671/cooking-methods-styles/quick-easy/lunch",
+	"url": "https://www.eatingwell.com/recipes/18671/cooking-methods-styles/quick-easy/lunch/"
+}

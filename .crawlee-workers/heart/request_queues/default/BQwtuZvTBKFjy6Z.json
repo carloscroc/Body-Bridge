@@ -1,0 +1,9 @@
+{
+	"id": "BQwtuZvTBKFjy6Z",
+	"json": "{\"id\":\"BQwtuZvTBKFjy6Z\",\"url\":\"https://recipes.heart.org/en/recipes/pumpkin-spice-smoothie\",\"loadedUrl\":\"https://recipes.heart.org/en/recipes/pumpkin-spice-smoothie\",\"uniqueKey\":\"https://recipes.heart.org/en/recipes/pumpkin-spice-smoothie\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T12:36:29.392Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recipes.heart.org/en/recipes/pumpkin-spice-smoothie",
+	"url": "https://recipes.heart.org/en/recipes/pumpkin-spice-smoothie"
+}

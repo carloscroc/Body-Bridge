@@ -1,0 +1,9 @@
+{
+	"id": "LKRitTmFBNSnx2y",
+	"json": "{\"id\":\"LKRitTmFBNSnx2y\",\"url\":\"https://www.kidney.org/nutrition/recipes?f%5B0%5D=diet%3A52807&f%5B1%5D=language%3Aen&f%5B2%5D=meal_type%3A52767\",\"loadedUrl\":\"https://www.kidney.org/nutrition/recipes?f%5B0%5D=diet%3A52807&f%5B1%5D=language%3Aen&f%5B2%5D=meal_type%3A52767\",\"uniqueKey\":\"https://www.kidney.org/nutrition/recipes?f%5B0%5D=diet%3A52807&f%5B1%5D=language%3Aen&f%5B2%5D=meal_type%3A52767\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T22:00:46.508Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.kidney.org/nutrition/recipes?f%5B0%5D=diet%3A52807&f%5B1%5D=language%3Aen&f%5B2%5D=meal_type%3A52767",
+	"url": "https://www.kidney.org/nutrition/recipes?f%5B0%5D=diet%3A52807&f%5B1%5D=language%3Aen&f%5B2%5D=meal_type%3A52767"
+}

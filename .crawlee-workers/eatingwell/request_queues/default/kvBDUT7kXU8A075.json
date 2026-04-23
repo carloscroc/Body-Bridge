@@ -1,0 +1,9 @@
+{
+	"id": "kvBDUT7kXU8A075",
+	"json": "{\"id\":\"kvBDUT7kXU8A075\",\"url\":\"https://www.eatingwell.com/recipe/8010806/sheet-pan-huevos-rancheros/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/8010806/sheet-pan-huevos-rancheros/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/8010806/sheet-pan-huevos-rancheros\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T13:49:27.802Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/8010806/sheet-pan-huevos-rancheros",
+	"url": "https://www.eatingwell.com/recipe/8010806/sheet-pan-huevos-rancheros/"
+}

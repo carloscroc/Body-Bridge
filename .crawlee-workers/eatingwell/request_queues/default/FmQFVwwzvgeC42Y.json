@@ -1,0 +1,9 @@
+{
+	"id": "FmQFVwwzvgeC42Y",
+	"json": "{\"id\":\"FmQFVwwzvgeC42Y\",\"url\":\"https://www.eatingwell.com/recipe/258991/garlic-butter-campfire-corn/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/258991/garlic-butter-campfire-corn/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/258991/garlic-butter-campfire-corn\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T14:20:47.973Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/258991/garlic-butter-campfire-corn",
+	"url": "https://www.eatingwell.com/recipe/258991/garlic-butter-campfire-corn/"
+}

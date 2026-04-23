@@ -1,0 +1,9 @@
+{
+	"id": "fw0csWfCw5CHBec",
+	"json": "{\"id\":\"fw0csWfCw5CHBec\",\"url\":\"https://www.eatingwell.com/recipe/249254/baked-parmesan-tomatoes/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/249254/baked-parmesan-tomatoes/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/249254/baked-parmesan-tomatoes\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:38:13.063Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/249254/baked-parmesan-tomatoes",
+	"url": "https://www.eatingwell.com/recipe/249254/baked-parmesan-tomatoes/"
+}

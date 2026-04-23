@@ -1,0 +1,9 @@
+{
+	"id": "6jgO5JcjTfFnJjC",
+	"json": "{\"id\":\"6jgO5JcjTfFnJjC\",\"url\":\"https://www.eatingwell.com/recipe/252194/grilled-dark-chocolate-sandwich/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/252194/grilled-dark-chocolate-sandwich/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/252194/grilled-dark-chocolate-sandwich\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T14:03:10.509Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/252194/grilled-dark-chocolate-sandwich",
+	"url": "https://www.eatingwell.com/recipe/252194/grilled-dark-chocolate-sandwich/"
+}

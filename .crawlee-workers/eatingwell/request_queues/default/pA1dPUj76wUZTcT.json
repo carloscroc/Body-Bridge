@@ -1,0 +1,9 @@
+{
+	"id": "pA1dPUj76wUZTcT",
+	"json": "{\"id\":\"pA1dPUj76wUZTcT\",\"url\":\"https://www.eatingwell.com/recipe/263772/spicy-coconut-chicken-mushroom-soup/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/263772/spicy-coconut-chicken-mushroom-soup/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/263772/spicy-coconut-chicken-mushroom-soup\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T14:23:34.796Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/263772/spicy-coconut-chicken-mushroom-soup",
+	"url": "https://www.eatingwell.com/recipe/263772/spicy-coconut-chicken-mushroom-soup/"
+}

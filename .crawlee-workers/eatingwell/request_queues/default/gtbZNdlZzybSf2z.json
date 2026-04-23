@@ -1,0 +1,9 @@
+{
+	"id": "gtbZNdlZzybSf2z",
+	"json": "{\"id\":\"gtbZNdlZzybSf2z\",\"url\":\"https://www.eatingwell.com/recipes/18073/bread/quick-bread/banana/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/18073/bread/quick-bread/banana\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3}}}",
+	"method": "GET",
+	"orderNo": 1776777589765,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/18073/bread/quick-bread/banana",
+	"url": "https://www.eatingwell.com/recipes/18073/bread/quick-bread/banana/"
+}

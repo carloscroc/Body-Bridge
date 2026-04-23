@@ -1,0 +1,9 @@
+{
+	"id": "8uiDwPZtPcXpwRu",
+	"json": "{\"id\":\"8uiDwPZtPcXpwRu\",\"url\":\"https://recipes.heart.org/en/recipes/raspberry-streusel-muffins\",\"loadedUrl\":\"https://recipes.heart.org/en/recipes/raspberry-streusel-muffins\",\"uniqueKey\":\"https://recipes.heart.org/en/recipes/raspberry-streusel-muffins\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":8,\"state\":4}},\"handledAt\":\"2026-04-21T13:35:24.408Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recipes.heart.org/en/recipes/raspberry-streusel-muffins",
+	"url": "https://recipes.heart.org/en/recipes/raspberry-streusel-muffins"
+}

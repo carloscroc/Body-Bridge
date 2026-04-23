@@ -1,0 +1,9 @@
+{
+	"id": "NGxnQ05EIzpupnS",
+	"json": "{\"id\":\"NGxnQ05EIzpupnS\",\"url\":\"https://www.eatingwell.com/recipes/19336/cooking-methods-styles/quick-easy/for-a-crowd/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/19336/cooking-methods-styles/quick-easy/for-a-crowd/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/19336/cooking-methods-styles/quick-easy/for-a-crowd\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T12:41:45.835Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/19336/cooking-methods-styles/quick-easy/for-a-crowd",
+	"url": "https://www.eatingwell.com/recipes/19336/cooking-methods-styles/quick-easy/for-a-crowd/"
+}

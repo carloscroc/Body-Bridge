@@ -1,0 +1,9 @@
+{
+	"id": "P8JV1OXPQnO7Jeh",
+	"json": "{\"id\":\"P8JV1OXPQnO7Jeh\",\"url\":\"https://www.eatingwell.com/recipes/18618/drinks/smoothies/5-minute/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/18618/drinks/smoothies/5-minute/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/18618/drinks/smoothies/5-minute\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:02:51.320Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/18618/drinks/smoothies/5-minute",
+	"url": "https://www.eatingwell.com/recipes/18618/drinks/smoothies/5-minute/"
+}

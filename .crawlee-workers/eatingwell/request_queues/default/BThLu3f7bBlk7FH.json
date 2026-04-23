@@ -1,0 +1,9 @@
+{
+	"id": "BThLu3f7bBlk7FH",
+	"json": "{\"id\":\"BThLu3f7bBlk7FH\",\"url\":\"https://www.eatingwell.com/recipes/20445/cooking-methods-styles/quick-easy/breakfast/10-minute/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/20445/cooking-methods-styles/quick-easy/breakfast/10-minute/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/20445/cooking-methods-styles/quick-easy/breakfast/10-minute\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T14:06:26.415Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/20445/cooking-methods-styles/quick-easy/breakfast/10-minute",
+	"url": "https://www.eatingwell.com/recipes/20445/cooking-methods-styles/quick-easy/breakfast/10-minute/"
+}

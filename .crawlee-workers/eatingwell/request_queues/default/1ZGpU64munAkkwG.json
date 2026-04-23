@@ -1,0 +1,9 @@
+{
+	"id": "1ZGpU64munAkkwG",
+	"json": "{\"id\":\"1ZGpU64munAkkwG\",\"url\":\"https://www.eatingwell.com/recipes/18123/salad/vegetable/broccoli/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/18123/salad/vegetable/broccoli\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3}}}",
+	"method": "GET",
+	"orderNo": 1776776094664,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/18123/salad/vegetable/broccoli",
+	"url": "https://www.eatingwell.com/recipes/18123/salad/vegetable/broccoli/"
+}

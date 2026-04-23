@@ -1,0 +1,9 @@
+{
+	"id": "2dVryKcvsmkY5PQ",
+	"json": "{\"id\":\"2dVryKcvsmkY5PQ\",\"url\":\"https://diabetesfoodhub.org/recipes/braised-cabbage-apples\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/braised-cabbage-apples\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/braised-cabbage-apples\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":11,\"state\":4}},\"handledAt\":\"2026-04-21T21:36:08.437Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/braised-cabbage-apples",
+	"url": "https://diabetesfoodhub.org/recipes/braised-cabbage-apples"
+}

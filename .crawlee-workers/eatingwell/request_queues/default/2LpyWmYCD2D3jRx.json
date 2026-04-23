@@ -1,0 +1,9 @@
+{
+	"id": "2LpyWmYCD2D3jRx",
+	"json": "{\"id\":\"2LpyWmYCD2D3jRx\",\"url\":\"https://www.eatingwell.com/recipe/260007/easy-butternut-squash-soup/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/260007/easy-butternut-squash-soup/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/260007/easy-butternut-squash-soup\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T14:10:44.243Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/260007/easy-butternut-squash-soup",
+	"url": "https://www.eatingwell.com/recipe/260007/easy-butternut-squash-soup/"
+}

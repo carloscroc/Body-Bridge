@@ -1,0 +1,9 @@
+{
+	"id": "r3P6V4P7eugCTD2",
+	"json": "{\"id\":\"r3P6V4P7eugCTD2\",\"url\":\"https://www.eatingwell.com/recipes/18948/ingredients/meat-poultry/sausage/chicken/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/18948/ingredients/meat-poultry/sausage/chicken\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3}}}",
+	"method": "GET",
+	"orderNo": 1776778527491,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/18948/ingredients/meat-poultry/sausage/chicken",
+	"url": "https://www.eatingwell.com/recipes/18948/ingredients/meat-poultry/sausage/chicken/"
+}

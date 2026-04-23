@@ -1,0 +1,9 @@
+{
+	"id": "HKUPTcZrKCdpVgT",
+	"json": "{\"id\":\"HKUPTcZrKCdpVgT\",\"url\":\"https://www.eatingwell.com/recipes/19345/cooking-methods-styles/bbq-grilling/kebab/\",\"loadedUrl\":\"https://www.eatingwell.com/recipes/19345/cooking-methods-styles/bbq-grilling/kebab/\",\"uniqueKey\":\"https://www.eatingwell.com/recipes/19345/cooking-methods-styles/bbq-grilling/kebab\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T14:20:12.293Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipes/19345/cooking-methods-styles/bbq-grilling/kebab",
+	"url": "https://www.eatingwell.com/recipes/19345/cooking-methods-styles/bbq-grilling/kebab/"
+}

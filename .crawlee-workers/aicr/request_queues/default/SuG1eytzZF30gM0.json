@@ -1,0 +1,9 @@
+{
+	"id": "SuG1eytzZF30gM0",
+	"json": "{\"id\":\"SuG1eytzZF30gM0\",\"url\":\"https://www.aicr.org/cancer-prevention/recipes/seared-romaine-and-chicken-caesar-salad/\",\"loadedUrl\":\"https://www.aicr.org/cancer-prevention/recipes/seared-romaine-and-chicken-caesar-salad/\",\"uniqueKey\":\"https://www.aicr.org/cancer-prevention/recipes/seared-romaine-and-chicken-caesar-salad\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":1,\"state\":4}},\"handledAt\":\"2026-04-21T12:43:55.512Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.aicr.org/cancer-prevention/recipes/seared-romaine-and-chicken-caesar-salad",
+	"url": "https://www.aicr.org/cancer-prevention/recipes/seared-romaine-and-chicken-caesar-salad/"
+}

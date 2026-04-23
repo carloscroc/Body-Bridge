@@ -1,0 +1,9 @@
+{
+	"id": "6wNDmNa7h5h7ApK",
+	"json": "{\"id\":\"6wNDmNa7h5h7ApK\",\"url\":\"https://www.eatingwell.com/recipe/280385/greek-stuffed-eggplant/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/280385/greek-stuffed-eggplant/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/280385/greek-stuffed-eggplant\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:32:24.244Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/280385/greek-stuffed-eggplant",
+	"url": "https://www.eatingwell.com/recipe/280385/greek-stuffed-eggplant/"
+}

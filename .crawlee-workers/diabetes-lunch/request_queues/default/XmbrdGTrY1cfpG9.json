@@ -1,0 +1,9 @@
+{
+	"id": "XmbrdGTrY1cfpG9",
+	"json": "{\"id\":\"XmbrdGTrY1cfpG9\",\"url\":\"https://diabetesfoodhub.org/recipes/quinoa-1-cup-cooked\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/quinoa-1-cup-cooked\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/quinoa-1-cup-cooked\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":10,\"state\":4}},\"handledAt\":\"2026-04-21T21:18:52.636Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/quinoa-1-cup-cooked",
+	"url": "https://diabetesfoodhub.org/recipes/quinoa-1-cup-cooked"
+}

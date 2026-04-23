@@ -1,0 +1,9 @@
+{
+	"id": "k6fxTYguWXtDvjG",
+	"json": "{\"id\":\"k6fxTYguWXtDvjG\",\"url\":\"https://diabetesfoodhub.org/recipes/veggie-souffle-egg-muffins\",\"loadedUrl\":\"https://diabetesfoodhub.org/recipes/veggie-souffle-egg-muffins\",\"uniqueKey\":\"https://diabetesfoodhub.org/recipes/veggie-souffle-egg-muffins\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":5,\"state\":4}},\"handledAt\":\"2026-04-21T18:58:33.386Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://diabetesfoodhub.org/recipes/veggie-souffle-egg-muffins",
+	"url": "https://diabetesfoodhub.org/recipes/veggie-souffle-egg-muffins"
+}

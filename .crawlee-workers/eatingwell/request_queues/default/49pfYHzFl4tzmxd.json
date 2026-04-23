@@ -1,0 +1,9 @@
+{
+	"id": "49pfYHzFl4tzmxd",
+	"json": "{\"id\":\"49pfYHzFl4tzmxd\",\"url\":\"https://www.eatingwell.com/recipe/7952313/basic-mashed-black-beans/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/7952313/basic-mashed-black-beans/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/7952313/basic-mashed-black-beans\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":2,\"state\":4}},\"handledAt\":\"2026-04-21T13:39:31.108Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/7952313/basic-mashed-black-beans",
+	"url": "https://www.eatingwell.com/recipe/7952313/basic-mashed-black-beans/"
+}

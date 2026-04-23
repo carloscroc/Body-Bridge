@@ -1,0 +1,9 @@
+{
+	"id": "thB5vmadkA2z3Yg",
+	"json": "{\"id\":\"thB5vmadkA2z3Yg\",\"url\":\"https://www.kidney.org/nutrition/recipes/mushroom-bolognese\",\"loadedUrl\":\"https://www.kidney.org/nutrition/recipes/mushroom-bolognese\",\"uniqueKey\":\"https://www.kidney.org/nutrition/recipes/mushroom-bolognese\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":15,\"state\":4}},\"handledAt\":\"2026-04-21T20:34:28.291Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.kidney.org/nutrition/recipes/mushroom-bolognese",
+	"url": "https://www.kidney.org/nutrition/recipes/mushroom-bolognese"
+}

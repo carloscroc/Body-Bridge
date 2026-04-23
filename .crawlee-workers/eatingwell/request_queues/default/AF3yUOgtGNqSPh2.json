@@ -1,0 +1,9 @@
+{
+	"id": "AF3yUOgtGNqSPh2",
+	"json": "{\"id\":\"AF3yUOgtGNqSPh2\",\"url\":\"https://www.eatingwell.com/recipe/263085/spaghetti-lovers-soup/\",\"loadedUrl\":\"https://www.eatingwell.com/recipe/263085/spaghetti-lovers-soup/\",\"uniqueKey\":\"https://www.eatingwell.com/recipe/263085/spaghetti-lovers-soup\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":3,\"state\":4}},\"handledAt\":\"2026-04-21T14:19:59.136Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.eatingwell.com/recipe/263085/spaghetti-lovers-soup",
+	"url": "https://www.eatingwell.com/recipe/263085/spaghetti-lovers-soup/"
+}

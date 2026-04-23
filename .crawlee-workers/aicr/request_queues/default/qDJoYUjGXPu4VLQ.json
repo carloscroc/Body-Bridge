@@ -1,0 +1,9 @@
+{
+	"id": "qDJoYUjGXPu4VLQ",
+	"json": "{\"id\":\"qDJoYUjGXPu4VLQ\",\"url\":\"https://www.aicr.org/cancer-prevention/recipes/pineapple-pico-de-gallo/\",\"loadedUrl\":\"https://www.aicr.org/cancer-prevention/recipes/pineapple-pico-de-gallo/\",\"uniqueKey\":\"https://www.aicr.org/cancer-prevention/recipes/pineapple-pico-de-gallo\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"crawlDepth\":1,\"state\":4}},\"handledAt\":\"2026-04-21T12:41:07.407Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.aicr.org/cancer-prevention/recipes/pineapple-pico-de-gallo",
+	"url": "https://www.aicr.org/cancer-prevention/recipes/pineapple-pico-de-gallo/"
+}
