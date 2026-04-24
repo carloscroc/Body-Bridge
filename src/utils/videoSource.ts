@@ -28,7 +28,8 @@ export function extractIframeSrc(raw: string): string | null {
 
 function toYouTubeEmbedUrl(id: string): string {
   // Use youtube-nocookie for better privacy.
-  return `https://www.youtube-nocookie.com/embed/${id}`;
+  // rel=0 limits related videos to same channel.
+  return `https://www.youtube-nocookie.com/embed/${id}?rel=0&modestbranding=1&enablejsapi=1`;
 }
 
 function toVimeoEmbedUrl(id: string): string {

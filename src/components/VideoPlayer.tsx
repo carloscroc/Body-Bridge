@@ -27,7 +27,7 @@ const VideoPlayer = forwardRef<HTMLVideoElement, Props>(function VideoPlayer(pro
         src={url}
         title="Video"
         style={{ width: '100%', height: '100%', border: 0, ...style }}
-        allow="autoplay; fullscreen"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
         allowFullScreen
         onLoad={() => {
            console.log('[VIDEO DEBUG] iframe onLoad');

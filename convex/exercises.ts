@@ -279,6 +279,25 @@ export const advancedSearch = query({
 
 const SEED_EXERCISES = [
   {
+    name: "90/90 Hamstring",
+    category: "Flexibility",
+    muscleGroup: "Legs",
+    primaryMuscles: ["Hamstrings", "Glutes"],
+    secondaryMuscles: ["Core"],
+    equipment: ["None"],
+    difficulty: "Beginner",
+    sets: "3",
+    reps: "30s",
+    instructions: [
+      "Sit on the floor with one leg in front, bent at 90 degrees.",
+      "The other leg is out to the side, also bent at 90 degrees.",
+      "Hinge forward at the hips over your front leg.",
+      "Hold the stretch and feel it in your hamstrings and glutes."
+    ],
+    imageUrl: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=400",
+    videoUrl: "https://www.youtube.com/watch?v=n0vH_N6_X_M"
+  },
+  {
     name: "Barbell Squat",
     category: "Strength",
     muscleGroup: "Legs",
