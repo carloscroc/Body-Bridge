@@ -1,0 +1,1282 @@
+[
+  {
+    "id": "90-90-hamstring",
+    "name": "90/90 Hamstring Stretch",
+    "videoUrl": "https://www.youtube.com/watch?v=n0vH_N6_X_M",
+    "imageUrl": "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800",
+    "overview": "The 90/90 hamstring stretch is a flexibility exercise that targets the hamstrings and glutes. It involves lying on your back with one leg in front, bent at 90 degrees, and hinging forward at the hips. This stretch is essential for improving hip mobility, reducing lower back stiffness, and preventing muscle imbalances between legs.",
+    "benefits": [
+      "Increases hamstring flexibility significantly",
+      "Improves hip mobility and range of motion",
+      "Reduces lower back stiffness and discomfort",
+      "Prevents muscle imbalances between legs",
+      "Enhances athletic performance and running economy",
+      "Reduces risk of hamstring injuries",
+      "Complements leg training exercises effectively"
+    ],
+    "trainingParameters": {
+      "tempo": "3-1-3 (3 seconds hold, 1 second release, 3 seconds return)",
+      "rest": "60-90 seconds between legs",
+      "weight": "Use bodyweight only, can apply gentle resistance if needed",
+      "duration": "3 sets of 30s holds per leg",
+      "notes": "Maintain a flat back, keep the front leg straight, and avoid bouncing movements. Focus on feeling a gentle stretch in your hamstrings, not pain."
+    }
+  },
+  {
+    "id": "barbell-squat",
+    "name": "Barbell Squat",
+    "videoUrl": "https://www.youtube.com/watch?v=gcNh17Ckjgg",
+    "imageUrl": "https://images.unsplash.com/photo-1571019640819-6588568e0?w=800",
+    "overview": "The barbell squat is a compound exercise that primarily targets the quadriceps, glutes, and core muscles. It's considered one of the most fundamental movements for building lower body strength and muscle mass. The exercise requires proper form to protect your lower back and maximize muscle activation throughout the movement.",
+    "benefits": [
+      "Builds significant lower body strength",
+      "Increases quadriceps and glute development",
+      "Improves core stability and balance",
+      "Enhances functional movement patterns",
+      "Boosts overall athletic performance",
+      "Supports bone density improvement",
+      "Activates multiple muscle groups simultaneously"
+    ],
+    "trainingParameters": {
+      "tempo": "3-1-3 (3 seconds eccentric, 1 second pause, 3 seconds concentric)",
+      "rest": "2-3 minutes between sets",
+      "weight": "Start with bodyweight, progress to 50-80% of 1RM for hypertrophy",
+      "duration": "4-6 sets of 8-12 reps for muscle growth",
+      "notes": "Maintain proper knee alignment, keep chest up, and avoid letting knees cave inward. Use a rack for safety with heavier weights. Drive through your heels and keep your weight mid-foot."
+    }
+  },
+  {
+    "id": "dumbbell-press",
+    "name": "Dumbbell Press",
+    "videoUrl": "https://www.youtube.com/watch?v=VmBy7_fT068",
+    "imageUrl": "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=800",
+    "overview": "The dumbbell press is a fundamental chest exercise that targets the pectorals, triceps, and anterior deltoids. It's performed lying on a flat bench with dumbbells in each hand, pressing them upward from chest level to full extension. This movement provides excellent chest development while allowing for a greater range of motion compared to barbell bench press.",
+    "benefits": [
+      "Develops chest, shoulders, and triceps strength",
+      "Increases upper body pushing power",
+      "Enhances shoulder stability and mobility",
+      "Improves overall upper body muscle mass",
+      "Supports bone density in upper body",
+      "Boosts functional pushing strength",
+      "Allows for independent arm movement and coordination"
+    ],
+    "trainingParameters": {
+      "tempo": "2-0-2 (2 seconds down, no pause, 2 seconds up)",
+      "rest": "2-3 minutes between sets",
+      "weight": "Start with 40-60% of 1RM, progress to 75-85% for strength",
+      "duration": "3-5 sets of 8-12 reps for hypertrophy",
+      "notes": "Keep feet flat on floor, maintain a natural arch in lower back, and control the dumbbells throughout the movement. Use a spotter for heavy attempts and focus on the mind-muscle connection."
+    }
+  },
+  {
+    "id": "deadlift",
+    "name": "Deadlift",
+    "videoUrl": "https://www.youtube.com/watch?v=op9kVnViXIA",
+    "imageUrl": "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800",
+    "overview": "The deadlift is a fundamental compound exercise that builds total body strength, with emphasis on the posterior chain including hamstrings, glutes, and lower back. It's performed by lifting a loaded barbell from the ground to hip level. Proper form is critical to prevent injury and maximize power output throughout the entire posterior chain.",
+    "benefits": [
+      "Builds tremendous total body strength",
+      "Strengthens the entire posterior chain",
+      "Improves hip hinge mechanics",
+      "Enhances grip strength significantly",
+      "Supports functional daily movement patterns",
+      "Increases bone density throughout the body",
+      "Boosts overall athletic power",
+      "Engages core for stability during heavy lifting"
+    ],
+    "trainingParameters": {
+      "tempo": "2-1-1 (2 seconds pull, 1 second hold at top, 1 second controlled descent)",
+      "rest": "3-5 minutes between sets",
+      "weight": "Start with light weight to master form, progress to 70-90% of 1RM",
+      "duration": "3-5 sets of 3-6 reps for strength focus",
+      "notes": "Maintain a neutral spine throughout, keep the bar close to your body, and drive through your heels. Don't round your back and avoid jerky movements. Focus on powerful hip extension and keep your chest up."
+    }
+  },
+  {
+    "id": "push-ups",
+    "name": "Push-ups",
+    "videoUrl": "https://www.youtube.com/watch?v=IODxDxX7oi4",
+    "imageUrl": "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=800",
+    "overview": "Push-ups are a classic bodyweight exercise that targets the chest, shoulders, triceps, and core muscles. They involve lowering your body until your chest nearly touches the floor, then pushing back up to the starting position. Push-ups are excellent for building relative upper body strength and developing pressing power.",
+    "benefits": [
+      "Builds impressive upper body strength",
+      "Develops pectorals, triceps, and anterior deltoids",
+      "Increases relative bodyweight strength",
+      "Improves shoulder stability",
+      "Enhances overall pushing power",
+      "Requires no equipment beyond a floor",
+      "Excellent for building functional upper body strength",
+      "Strengthens core for stability during movement"
+    ],
+    "trainingParameters": {
+      "tempo": "2-0-2 (2 seconds down, no pause, 2 seconds up)",
+      "rest": "60-90 seconds between sets",
+      "weight": "Use bodyweight initially, add weighted vest for progression",
+      "duration": "3-5 sets to failure or 6-12 reps",
+      "notes": "Keep core engaged, back straight, and lower until your chest nearly touches the floor. Avoid sagging hips and maintain full range of motion. Use assisted variations if needed to build initial strength and perfect form."
+    }
+  },
+  {
+    "id": "pull-ups",
+    "name": "Pull-ups",
+    "videoUrl": "https://www.youtube.com/watch?v=eGo4IYlbE5g",
+    "imageUrl": "https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?w=800",
+    "overview": "Pull-ups are a bodyweight exercise that targets the lats, biceps, and upper back muscles. They involve pulling your body up to a bar using primarily upper body strength. Pull-ups are excellent for building relative strength, developing a V-taper physique, and strengthening the entire upper back.",
+    "benefits": [
+      "Builds impressive upper back strength",
+      "Develops latissimus dorsi and biceps",
+      "Increases relative bodyweight strength",
+      "Improves shoulder stability",
+      "Enhances overall pulling power",
+      "Requires minimal equipment beyond a bar",
+      "Excellent for building a V-taper physique",
+      "Strengthens core for stability during pulling movements"
+    ],
+    "trainingParameters": {
+      "tempo": "2-1-2 (2 seconds pull up, 1 second hold, 2 seconds lower)",
+      "rest": "2-3 minutes between sets",
+      "weight": "Use bodyweight initially, add weighted vest for advanced progression",
+      "duration": "3-5 sets to failure or 6-10 reps",
+      "notes": "Keep core tight throughout, avoid swinging or kipping, and achieve full range of motion. Use assisted variations (band, machine, or partner assist) if needed to build initial strength before attempting full bodyweight pull-ups."
+    }
+  },
+  {
+    "id": "plank",
+    "name": "Plank",
+    "videoUrl": "https://www.youtube.com/watch?v=ASdvN_XEl_cM",
+    "imageUrl": "https://images.unsplash.com/photo-1517836357463-d25dfe034871?w=800",
+    "overview": "The plank is an isometric core exercise that strengthens the abdominal muscles, lower back, and stabilizers. It involves holding a push-up position while maintaining tension in the core muscles. Planks are excellent for developing core stability, improving posture, and reducing lower back pain.",
+    "benefits": [
+      "Strengthens entire core musculature",
+      "Improves posture and spinal alignment",
+      "Reduces risk of lower back pain",
+      "Enhances overall stability and balance",
+      "Increases abdominal definition",
+      "Requires no equipment",
+      "Can be varied with multiple positions for progression"
+    ],
+    "trainingParameters": {
+      "tempo": "Hold position steadily, breathe naturally",
+      "rest": "60-90 seconds between sets",
+      "weight": "Use bodyweight only, can add weighted vest for advanced trainees",
+      "duration": "3-5 sets of 30-90 second holds",
+      "notes": "Maintain a straight line from head to heels, engage glutes, and don't let hips sag or rise. Focus on deep breathing and progressively increase hold time by 5-10 seconds per week as strength improves."
+    }
+  },
+  {
+    "id": "barbell-bench-press",
+    "name": "Barbell Bench Press",
+    "videoUrl": "https://www.youtube.com/watch?v=2yjwXTZQDDI",
+    "imageUrl": "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800",
+    "overview": "The barbell bench press is a compound exercise for building upper body strength, primarily targeting the chest, shoulders, and triceps. It's performed lying on a bench while pressing a barbell upward from chest level to full arm extension. The movement requires proper shoulder stabilization and controlled execution for optimal chest and tricep development.",
+    "benefits": [
+      "Develops chest, shoulders, and triceps strength",
+      "Increases upper body pushing power",
+      "Enhances shoulder stability and mobility",
+      "Improves overall upper body muscle mass",
+      "Supports bone density in upper body",
+      "Boosts functional pushing strength",
+      "Can be varied for different training goals (strength, hypertrophy, power)"
+    ],
+    "trainingParameters": {
+      "tempo": "2-0-2 (2 seconds down, no pause, 2 seconds up)",
+      "rest": "2-3 minutes between sets",
+      "weight": "Start with 40-60% of 1RM, progress to 75-85% for strength",
+      "duration": "3-5 sets of 5-8 reps for strength, 8-12 reps for hypertrophy",
+      "notes": "Keep feet flat on floor, maintain a natural arch in lower back, and control the barbell throughout the entire movement. Use a spotter for heavy attempts and focus on a controlled eccentric phase for maximum muscle tension."
+    }
+  },
+  {
+    "id": "incline-dumbbell-press",
+    "name": "Incline Dumbbell Press",
+    "videoUrl": "https://www.youtube.com/watch?v=G8l_8chR5BE",
+    "imageUrl": "https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=800",
+    "overview": "The incline dumbbell press targets the upper chest and anterior deltoids. It's performed on a bench set at a 30-45 degree angle, pressing dumbbells from chest level to full extension. This movement emphasizes the upper chest fibers and provides excellent chest development while allowing for a greater range of motion compared to flat bench press.",
+    "benefits": [
+      "Develops upper chest and anterior deltoids",
+      "Increases chest muscle thickness and fullness",
+      "Enhances shoulder definition",
+      "Allows for greater range of motion than flat bench",
+      "Improves upper body pushing strength at different angles",
+      "Can help with muscle imbalances by working upper chest specifically",
+      "Excellent for chest aesthetics and definition"
+    ],
+    "trainingParameters": {
+      "tempo": "2-0-2 (2 seconds down, no pause, 2 seconds up)",
+      "rest": "2-3 minutes between sets",
+      "weight": "Start with moderate weight, progress to 60-80% of 1RM",
+      "duration": "3-4 sets of 8-12 reps",
+      "notes": "Set bench to 30-45 degree angle, keep your shoulder blades retracted against the bench, and focus on squeezing your upper chest at the top of the movement. Control the descent and avoid bouncing the weights."
+    }
+  },
+  {
+    "id": "cable-crossover",
+    "name": "Cable Crossover",
+    "videoUrl": "https://www.youtube.com/watch?v=QOVaHwm-Q6U",
+    "imageUrl": "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800",
+    "overview": "The cable crossover is an isolation exercise that targets the chest muscles, particularly the inner chest. It's performed by bringing cables from a high position together in front of your body in a hugging motion. This movement provides excellent chest definition and helps develop the pectorals fully.",
+    "benefits": [
+      "Isolates and develops the chest muscles",
+      "Targets inner chest for better definition",
+      "Provides constant tension throughout the movement",
+      "Improves chest muscle separation",
+      "Allows for various hand positions to target different angles",
+      "Excellent for chest aesthetics and bodybuilding",
+      "Reduces shoulder stress compared to heavy pressing movements"
+    ],
+    "trainingParameters": {
+      "tempo": "2-1-2 (2 seconds bring together, 1 second squeeze, 2 seconds return)",
+      "rest": "60-90 seconds between sets",
+      "weight": "Start with light weight, focus on form and muscle contraction",
+      "duration": "3-4 sets of 10-15 reps for isolation",
+      "notes": "Step slightly forward into the movement, keep a slight bend in your elbows, and focus on squeezing your chest at the center of the movement. Use a controlled tempo and feel the chest contraction throughout."
+    }
+  },
+  {
+    "id": "dumbbell-fly",
+    "name": "Dumbbell Fly",
+    "videoUrl": "https://www.youtube.com/watch?v=2z8JmcrW-As",
+    "imageUrl": "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=800",
+    "overview": "The dumbbell fly is an isolation exercise that targets the chest muscles, particularly the outer chest. It's performed lying on a bench with dumbbells, opening your arms wide with a slight bend in your elbows. This movement provides excellent chest stretch and contraction for maximum muscle development.",
+    "benefits": [
+      "Isolates chest muscles effectively",
+      "Provides deep chest muscle stretch",
+      "Improves chest muscle definition and separation",
+      "Allows for great range of motion",
+      "Excellent for chest aesthetics and bodybuilding",
+      "Reduces shoulder involvement compared to pressing movements",
+      "Enhances chest muscle mind-muscle connection"
+    ],
+    "trainingParameters": {
+      "tempo": "2-1-2 (2 seconds down, 1 second squeeze, 2 seconds up)",
+      "rest": "60-90 seconds between sets",
+      "weight": "Use light to moderate weight, focus on form over heavy lifting",
+      "duration": "3-4 sets of 10-15 reps for isolation",
+      "notes": "Keep a slight bend in your elbows throughout the movement, focus on feeling the stretch in your chest at the bottom and the contraction at the top. Don't lock your elbows and avoid using momentum."
+    }
+  },
+  {
+    "id": "pec-deck-machine",
+    "name": "Pec Deck Machine",
+    "videoUrl": "https://www.youtube.com/watch?v=eGo4IYlbE5g",
+    "imageUrl": "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=800",
+    "overview": "The pec deck machine is an isolation exercise that targets the chest muscles from a horizontal position. It's performed sitting on a machine with your arms against pads, bringing them together in front of your chest. This movement provides excellent chest contraction and is ideal for beginners learning proper chest training mechanics.",
+    "benefits": [
+      "Isolates and develops the chest muscles",
+      "Provides stable and controlled movement pattern",
+      "Excellent for beginners learning chest training",
+      "Allows for focus on chest contraction",
+      "Reduces risk of injury with fixed path of motion",
+      "Supports consistent tension throughout the movement",
+      "Ideal for high-repetition chest training"
+    ],
+    "trainingParameters": {
+      "tempo": "2-1-2 (2 seconds bring together, 1 second squeeze, 2 seconds return)",
+      "rest": "60-90 seconds between sets",
+      "weight": "Start with light weight to master form, increase gradually",
+      "duration": "3-4 sets of 10-15 reps",
+      "notes": "Keep your back flat against the pad, press with your palms facing each other, and focus on squeezing your chest at the center. Use a controlled tempo and avoid using momentum or jerking movements."
+    }
+  },
+  {
+    "id": "barbell-row",
+    "name": "Barbell Row",
+    "videoUrl": "https://www.youtube.com/watch?v=2z8JmcrW-As",
+    "imageUrl": "https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=800",
+    "overview": "The barbell row is a compound pulling exercise that targets the upper back, lats, and biceps. It's performed by pulling a barbell from the floor toward your lower chest while bent over. Proper form is crucial to protect your lower back and effectively target the upper back muscles for maximum development.",
+    "benefits": [
+      "Builds thick upper back muscles",
+      "Develops latissimus dorsi strength and width",
+      "Strengthens biceps and forearms",
+      "Improves pulling power and strength",
+      "Enhances posture by strengthening back muscles",
+      "Supports grip strength development",
+      "Balances pushing exercises like bench press"
+    ],
+    "trainingParameters": {
+      "tempo": "2-1-3 (2 seconds pull, 1 second squeeze, 3 seconds lower)",
+      "rest": "2-3 minutes between sets",
+      "weight": "Start with moderate weight, progress to 60-80% of 1RM",
+      "duration": "3-4 sets of 8-12 reps",
+      "notes": "Maintain a flat back, keep your chest parallel to the ground, and pull your elbows toward your body at the top. Avoid using momentum and focus on squeezing your shoulder blades together. Control the descent to maximize muscle tension."
+    }
+  },
+  {
+    "id": "lat-pulldown",
+    "name": "Lat Pulldown",
+    "videoUrl": "https://www.youtube.com/watch?v=2z8JmcrW-As",
+    "imageUrl": "https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=800",
+    "overview": "The lat pulldown is an isolation exercise that targets the latissimus dorsi and biceps. It's performed sitting at a cable machine, pulling a bar down toward your upper chest. This movement provides excellent lat development and helps create a V-taper physique while minimizing lower back stress.",
+    "benefits": [
+      "Isolates and develops the latissimus dorsi",
+      "Strengthens biceps and forearms",
+      "Improves upper back definition",
+      "Provides constant tension throughout the movement",
+      "Helps create a V-taper physique",
+      "Reduces lower back stress compared to bent rows",
+      "Excellent for building back width"
+    ],
+    "trainingParameters": {
+      "tempo": "2-1-2 (2 seconds pull down, 1 second squeeze, 2 seconds return)",
+      "rest": "60-90 seconds between sets",
+      "weight": "Start with light weight, focus on form and muscle contraction",
+      "duration": "3-4 sets of 10-15 reps for isolation",
+      "notes": "Keep your chest up and pull the bar down to your upper chest, focusing on driving your elbows down and back. Squeeze your lats at the bottom of the movement and extend your arms fully at the top. Avoid using body English or swinging."
+    }
+  },
+  {
+    "id": "seated-cable-row",
+    "name": "Seated Cable Row",
+    "videoUrl": "https://www.youtube.com/watch?v=2z8JmcrW-As",
+    "imageUrl": "https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=800",
+    "overview": "The seated cable row is a compound pulling exercise that targets the rhomboids, lats, and traps. It's performed sitting at a cable machine with feet on a platform, pulling a handle toward your lower chest. This movement provides excellent upper back development and helps improve posture.",
+    "benefits": [
+      "Develops rhomboids and upper back muscles",
+      "Strengthens lats and traps",
+      "Improves pulling power and strength",
+      "Enhances shoulder blade retraction",
+      "Supports better posture and spinal alignment",
+      "Provides stable and controlled movement pattern",
+      "Excellent for back thickness and development"
+    ],
+    "trainingParameters": {
+      "tempo": "2-1-2 (2 seconds pull, 1 second squeeze, 2 seconds return)",
+      "rest": "60-90 seconds between sets",
+      "weight": "Start with moderate weight, progress to 60-80% of 1RM",
+      "duration": "3-4 sets of 10-15 reps",
+      "notes": "Keep your chest up, pull the handle toward your lower chest with a slight lean back, and squeeze your shoulder blades together at the end of the movement. Maintain a neutral spine and control the weight throughout."
+    }
+  },
+  {
+    "id": "chin-up",
+    "name": "Chin-up",
+    "videoUrl": "https://www.youtube.com/watch?v=eGo4IYlbE5g",
+    "imageUrl": "https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?w=800",
+    "overview": "The chin-up is a compound pulling exercise that targets the lats, biceps, and upper back. It's performed by pulling your body up to a bar with your palms facing you and chin above the bar. This movement provides excellent upper back and bicep development while helping improve overall pulling strength.",
+    "benefits": [
+      "Builds impressive upper back strength",
+      "Develops latissimus dorsi and biceps",
+      "Increases upper body pulling power",
+      "Improves shoulder stability and mobility",
+      "Enhances overall upper back definition",
+      "Targets lower lats for V-taper development",
+      "Strengthens core for stability during pulling movements"
+    ],
+    "trainingParameters": {
+      "tempo": "2-1-2 (2 seconds pull up, 1 second hold, 2 seconds lower)",
+      "rest": "2-3 minutes between sets",
+      "weight": "Use bodyweight initially, add weighted vest for progression",
+      "duration": "3-5 sets to failure or 6-10 reps",
+      "notes": "Keep core tight throughout the movement, avoid swinging or kipping, and focus on controlled execution. Drive with your elbows and squeeze your back at the top. Use assisted variations if needed to build initial strength."
+    }
+  },
+  {
+    "id": "romanian-deadlift",
+    "name": "Romanian Deadlift",
+    "videoUrl": "https://www.youtube.com/watch?v=eGo4IYlbE5g",
+    "imageUrl": "https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?w=800",
+    "overview": "The Romanian deadlift is a compound exercise that targets the hamstrings, glutes, and lower back. It's performed by holding a barbell at hip height with a shoulder-width grip, hinging at the hips, and lowering the bar along your legs. This movement is excellent for posterior chain development and hip mobility.",
+    "benefits": [
+      "Builds tremendous hamstring and glute strength",
+      "Strengthens lower back and core",
+      "Improves hip hinge mechanics and mobility",
+      "Enhances athletic performance and power",
+      "Reduces risk of hamstring injuries",
+      "Supports functional movement patterns",
+      "Excellent for posterior chain development"
+    ],
+    "trainingParameters": {
+      "tempo": "3-1-3 (3 seconds lower, 1 second squeeze, 3 seconds stand)",
+      "rest": "2-3 minutes between sets",
+      "weight": "Start with moderate weight to master form, progress to 60-80% of 1RM",
+      "duration": "3-4 sets of 8-12 reps",
+      "notes": "Maintain a slight bend in your knees throughout the movement, keep the bar close to your body, and focus on pushing your glutes back. Don't round your back and feel a stretch in your hamstrings. Keep your chest up and shoulders back."
+    }
+  },
+  {
+    "id": "overhead-press",
+    "name": "Overhead Press",
+    "videoUrl": "https://www.youtube.com/watch?v=eGo4IYlbE5g",
+    "imageUrl": "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=800",
+    "overview": "The overhead press is a compound exercise that targets the shoulders, triceps, and core. It involves pressing a barbell or dumbbells from shoulder height to fully overhead. This movement requires excellent shoulder stability and controlled execution throughout the range of motion for optimal shoulder and tricep development.",
+    "benefits": [
+      "Builds strong, defined shoulders",
+      "Develops triceps and upper chest strength",
+      "Improves shoulder stability and mobility",
+      "Enhances core engagement and stability",
+      "Increases overhead pushing strength",
+      "Supports functional upper body movement",
+      "Can be performed seated or standing for variety"
+    ],
+    "trainingParameters": {
+      "tempo": "2-0-2 (2 seconds up, no pause, 2 seconds down)",
+      "rest": "2-3 minutes between sets",
+      "weight": "Start with light dumbbells or empty bar, progress to 60-80% of 1RM",
+      "duration": "3-4 sets of 8-12 reps",
+      "notes": "Keep core tight, avoid excessive lower back arch, and lower the weight under control. Don't lock your elbows at the top of the movement and maintain tension in the working muscles throughout the entire range of motion."
+    }
+  },
+  {
+    "id": "lateral-raise",
+    "name": "Lateral Raise",
+    "videoUrl": "https://www.youtube.com/watch?v=eGo4IYlbE5g",
+    "imageUrl": "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=800",
+    "overview": "The lateral raise is an isolation exercise that targets the lateral deltoids. It's performed standing or sitting with dumbbells at your sides, raising your arms out to shoulder height. This movement provides excellent shoulder width and definition, helping create a broader shoulder appearance.",
+    "benefits": [
+      "Isolates and develops the lateral deltoids",
+      "Increases shoulder width and definition",
+      "Improves shoulder aesthetics and appearance",
+      "Enhances shoulder mobility and stability",
+      "Supports balanced shoulder development",
+      "Can be performed with various arm positions"
+    ],
+    "trainingParameters": {
+      "tempo": "2-0-2 (2 seconds up, no pause, 2 seconds down)",
+      "rest": "60-90 seconds between sets",
+      "weight": "Use light to moderate weight, focus on form over heavy lifting",
+      "duration": "3-4 sets of 12-15 reps for isolation",
+      "notes": "Keep a slight bend in your elbows throughout the movement, maintain a neutral spine, and focus on the lateral deltoid contraction. Don't swing the weights and keep the movement controlled. Raise to shoulder height but don't hyperextend your shoulders."
+    }
+  },
+  {
+    "id": "arnold-press",
+    "name": "Arnold Press",
+    "videoUrl": "https://www.youtube.com/watch?v=eGo4IYlbE5g",
+    "imageUrl": "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=800",
+    "overview": "The Arnold press is a variation of the dumbbell press that targets the chest, front deltoids, and triceps. It's performed starting with palms facing you and rotating them to face you as you press the weights up. This movement provides excellent chest and front shoulder development.",
+    "benefits": [
+      "Develops chest and front deltoids simultaneously",
+      "Strengthens triceps throughout the movement",
+      "Increases chest muscle fullness and definition",
+      "Enhances shoulder stability and coordination",
+      "Provides greater range of motion than standard presses",
+      "Excellent for chest aesthetics and anterior shoulder development"
+    ],
+    "trainingParameters": {
+      "tempo": "2-1-2 (2 seconds up with rotation, 1 second squeeze, 2 seconds down)",
+      "rest": "2-3 minutes between sets",
+      "weight": "Start with moderate weight, progress to 60-80% of 1RM",
+      "duration": "3-4 sets of 8-12 reps",
+      "notes": "Start with palms facing you, rotate your wrists to face you as you press up, and rotate back to face you as you lower the weights. Keep a slight bend in your elbows and focus on squeezing your chest at the top. Control the movement throughout."
+    }
+  },
+  {
+    "id": "face-pull",
+    "name": "Face Pull",
+    "videoUrl": "https://www.youtube.com/watch?v=eGo4IYlbE5g",
+    "imageUrl": "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=800",
+    "overview": "The face pull is an isolation exercise that targets the rear deltoids, rhomboids, and upper back. It's performed pulling a cable or rope attachment toward your face, spreading it apart. This movement provides excellent rear shoulder development and helps improve posture.",
+    "benefits": [
+      "Isolates and develops the rear deltoids",
+      "Strengthens rhomboids and upper back",
+      "Improves shoulder posture and alignment",
+      "Enhances upper back definition",
+      "Reduces rounded shoulder appearance",
+      "Provides constant tension for shoulder development"
+    ],
+    "trainingParameters": {
+      "tempo": "2-1-2 (2 seconds pull, 1 second spread, 2 seconds return)",
+      "rest": "60-90 seconds between sets",
+      "weight": "Start with light weight, focus on form and muscle contraction",
+      "duration": "3-4 sets of 12-15 reps for isolation",
+      "notes": "Set the cable at face height with a rope attachment, pull the rope toward your face spreading it apart at the top, and squeeze your rear delts. Keep your core tight and avoid using momentum. Control the return to the starting position."
+    }
+  },
+  {
+    "id": "upright-row",
+    "name": "Upright Row",
+    "videoUrl": "https://www.youtube.com/watch?v=eGo4IYlbE5g",
+    "imageUrl": "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=800",
+    "overview": "The upright row is a compound exercise that targets the lateral deltoids, traps, and biceps. It's performed standing with a narrow overhand grip on a barbell, pulling it up to chest height. This movement provides excellent shoulder and upper back development.",
+    "benefits": [
+      "Develops lateral deltoids and traps",
+      "Strengthens biceps and forearms",
+      "Improves upper back thickness and definition",
+      "Enhances shoulder stability and posture",
+      "Increases overall upper body strength"
+    ],
+    "trainingParameters": {
+      "tempo": "2-0-2 (2 seconds up, no pause, 2 seconds down)",
+      "rest": "2-3 minutes between sets",
+      "weight": "Start with moderate weight, progress to 60-80% of 1RM",
+      "duration": "3-4 sets of 8-12 reps",
+      "notes": "Keep the bar close to your body throughout the movement, pull with your elbows leading the movement, and focus on squeezing your shoulder blades together at the top. Don't swing the weight and keep your torso upright."
+    }
+  },
+  {
+    "id": "barbell-bicep-curl",
+    "name": "Barbell Bicep Curl",
+    "videoUrl": "https://www.youtube.com/watch?v=eGo4IYlbE5g",
+    "imageUrl": "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=800",
+    "overview": "The barbell bicep curl is a compound isolation exercise that targets the biceps. It's performed standing with a shoulder-width underhand grip on a barbell, curling it up toward your chest. This movement is fundamental for building arm strength and bicep size.",
+    "benefits": [
+      "Builds significant bicep strength and size",
+      "Develops forearms and grip strength",
+      "Improves arm aesthetics and definition",
+      "Increases upper body pushing stability"
+    ],
+    "trainingParameters": {
+      "tempo": "2-0-2 (2 seconds curl up, no pause, 2 seconds down)",
+      "rest": "60-90 seconds between sets",
+      "weight": "Start with light weight, progress to 60-80% of 1RM",
+      "duration": "3-4 sets of 8-12 reps",
+      "notes": "Keep your elbows tucked to your sides, avoid swinging your body, and focus on the bicep contraction. Control the weight throughout the movement, especially during the lowering phase. Don't hyperextend your lower back and maintain a neutral spine."
+    }
+  },
+  {
+    "id": "hammer-curl",
+    "name": "Hammer Curl",
+    "videoUrl": "https://www.youtube.com/watch?v=eGo4IYlbE5g",
+    "imageUrl": "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=800",
+    "overview": "The hammer curl is a bicep exercise that targets the biceps brachialis. It's performed with dumbbells, palms facing each other, curling the weights up. This movement helps develop the outer bicep and provides a thicker arm appearance.",
+    "benefits": [
+      "Targets the biceps brachialis for arm thickness",
+      "Increases overall bicep strength and size",
+      "Develops forearms and grip strength",
+      "Provides greater arm definition and aesthetics",
+      "Balances bicep development"
+    ],
+    "trainingParameters": {
+      "tempo": "2-0-2 (2 seconds curl up, no pause, 2 seconds down)",
+      "rest": "60-90 seconds between sets",
+      "weight": "Use light to moderate weight, focus on form over heavy lifting",
+      "duration": "3-4 sets of 10-15 reps",
+      "notes": "Keep your palms facing each other throughout the movement, curl both dumbbells simultaneously, and focus on squeezing your biceps at the top. Control the descent and avoid using momentum. Keep your elbows stationary and focus on the brachialis contraction."
+    }
+  },
+  {
+    "id": "tricep-dip",
+    "name": "Tricep Dip",
+    "videoUrl": "https://www.youtube.com/watch?v=eGo4IYlbE5g",
+    "imageUrl": "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=800",
+    "overview": "The tricep dip is a compound bodyweight exercise that targets the triceps, chest, and shoulders. It's performed by lowering and raising your body between parallel bars or on a dip station. This movement is excellent for building upper body pushing strength and tricep development.",
+    "benefits": [
+      "Builds strong triceps and chest muscles",
+      "Develops shoulder strength and stability",
+      "Increases upper body pushing power",
+      "Enhances functional pressing strength",
+      "Can be performed with bodyweight or added resistance",
+      "Excellent for arm and chest definition",
+      "Engages core for stability"
+    ],
+    "trainingParameters": {
+      "tempo": "2-0-2 (2 seconds down, no pause, 2 seconds up)",
+      "rest": "60-90 seconds between sets",
+      "weight": "Start with bodyweight, add weight belt for advanced progression",
+      "duration": "3-4 sets of 8-15 reps",
+      "notes": "Keep your elbows tucked at 45 degrees to your body, avoid locking your elbows at the top, and lower to 90 degrees in your arms. Don't shrug your shoulders at the bottom and maintain tension in your triceps throughout the movement. Keep your torso upright and focus on controlled execution."
+    }
+  },
+  {
+    "id": "skull-crusher",
+    "name": "Skull Crusher",
+    "videoUrl": "https://www.youtube.com/watch?v=eGo4IYlbE5g",
+    "imageUrl": "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=800",
+    "overview": "The skull crusher is an isolation exercise that targets the triceps. It's performed lying on a bench with a barbell or EZ-bar, lowering the weight toward your forehead by bending your elbows. This movement provides excellent tricep development and helps build arm mass.",
+    "benefits": [
+      "Isolates and develops the triceps",
+      "Increases tricep size and strength",
+      "Improves arm definition and aesthetics",
+      "Targets all three tricep heads effectively",
+      "Reduces elbow stress compared to close-grip exercises"
+    ],
+    "trainingParameters": {
+      "tempo": "3-1-3 (3 seconds lower, 1 second squeeze, 3 seconds up)",
+      "rest": "2-3 minutes between sets",
+      "weight": "Start with moderate weight, progress to 60-80% of 1RM",
+      "duration": "3-4 sets of 8-12 reps",
+      "notes": "Keep your upper arms stationary and your elbows tucked to your sides. Lower the weight toward your forehead with control, squeeze your triceps at the bottom, and extend your arms to return to the starting position. Don't flare your elbows and maintain tension throughout the movement."
+    }
+  },
+  {
+    "id": "tricep-pushdown",
+    "name": "Tricep Pushdown",
+    "videoUrl": "https://www.youtube.com/watch?v=eGo4IYlbE5g",
+    "imageUrl": "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=800",
+    "overview": "The tricep pushdown is an isolation exercise that targets the triceps. It's performed standing at a cable machine with a straight or V-bar attachment, pushing the bar down until your arms are fully extended. This movement provides excellent tricep development and helps define the arms.",
+    "benefits": [
+      "Isolates and develops the triceps",
+      "Provides constant tension throughout the movement",
+      "Improves tricep definition and separation",
+      "Reduces elbow stress compared to overhead extensions",
+      "Excellent for arm aesthetics and bodybuilding",
+      "Allows for various grip positions"
+    ],
+    "trainingParameters": {
+      "tempo": "2-1-2 (2 seconds push down, 1 second squeeze, 2 seconds return)",
+      "rest": "60-90 seconds between sets",
+      "weight": "Start with light weight, focus on form and muscle contraction",
+      "duration": "3-4 sets of 10-15 reps for isolation",
+      "notes": "Keep your elbows tucked to your sides and your upper arms stationary throughout the movement. Push the bar down focusing on driving your elbows toward the ground, squeeze your triceps at the bottom, and fully extend your arms. Avoid using body English or swinging and maintain tension in the triceps."
+    }
+  },
+  {
+    "id": "concentration-curl",
+    "name": "Concentration Curl",
+    "videoUrl": "https://www.youtube.com/watch?v=eGo4IYlbE5g",
+    "imageUrl": "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=800",
+    "overview": "The concentration curl is an isolation bicep exercise that targets the biceps. It's performed sitting on a bench with your elbow braced against your inner thigh, curling a dumbbell up toward your shoulder. This movement helps develop bicep peak and improves arm aesthetics.",
+    "benefits": [
+      "Isolates and develops the biceps",
+      "Increases bicep peak and height",
+      "Improves arm definition and aesthetics",
+      "Reduces cheating and momentum",
+      "Enhances mind-muscle connection in the biceps",
+      "Excellent for bicep focus and concentration"
+    ],
+    "trainingParameters": {
+      "tempo": "2-1-2 (2 seconds curl up, 1 second squeeze, 2 seconds down)",
+      "rest": "60-90 seconds between sets",
+      "weight": "Use light to moderate weight, focus on form over heavy lifting",
+      "duration": "3-4 sets of 10-15 reps",
+      "notes": "Keep your elbow braced firmly against your inner thigh, focus on the bicep contraction, and curl the weight with control. Don't swing your body or use momentum. Squeeze your bicep at the top and lower the weight slowly to maximize muscle tension."
+    }
+  },
+  {
+    "id": "overhead-tricep-extension",
+    "name": "Overhead Tricep Extension",
+    "videoUrl": "https://www.youtube.com/watch?v=eGo4IYlbE5g",
+    "imageUrl": "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=800",
+    "overview": "The overhead tricep extension is an isolation exercise that targets the triceps. It's performed sitting or standing with a dumbbell held overhead, lowering the weight behind your head by bending your elbows. This movement provides excellent tricep development and helps build arm mass.",
+    "benefits": [
+      "Isolates and develops the triceps",
+      "Increases tricep size and strength",
+      "Improves arm definition and aesthetics",
+      "Targets the long head of the triceps effectively",
+      "Reduces shoulder stress compared to pressing movements",
+      "Excellent for tricep focus and development"
+    ],
+    "trainingParameters": {
+      "tempo": "2-1-2 (2 seconds lower, 1 second squeeze, 2 seconds up)",
+      "rest": "60-90 seconds between sets",
+      "weight": "Use light to moderate weight, focus on form over heavy lifting",
+      "duration": "3-4 sets of 10-15 reps",
+      "notes": "Keep your upper arms close to your ears and your elbows stationary. Lower the weight behind your head with control, focusing on the tricep contraction. Don't hyperextend your lower back and keep the movement smooth and controlled."
+    }
+  },
+  {
+    "id": "leg-press",
+    "name": "Leg Press",
+    "videoUrl": "https://www.youtube.com/watch?v=eGo4IYlbE5g",
+    "imageUrl": "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800",
+    "overview": "The leg press is a compound exercise that targets the quadriceps, glutes, and hamstrings. It's performed sitting in a leg press machine with feet shoulder-width apart, pressing the platform back up. This movement provides excellent lower body strength development.",
+    "benefits": [
+      "Builds significant lower body strength",
+      "Develops quadriceps and glutes effectively",
+      "Strengthens hamstrings for complete leg development",
+      "Improves leg press strength and power",
+      "Supports bone density in lower body",
+      "Provides stable and controlled movement pattern"
+    ],
+    "trainingParameters": {
+      "tempo": "2-0-2 (2 seconds down, no pause, 2 seconds up)",
+      "rest": "2-3 minutes between sets",
+      "weight": "Start with moderate weight, progress to 60-80% of 1RM",
+      "duration": "3-4 sets of 8-12 reps",
+      "notes": "Keep your feet flat on the platform and shoulder-width apart. Release the safety bars and lower the platform, pressing back up without locking your knees. Keep your back flat against the pad and focus on the quadriceps contraction. Don't hyperextend your knees at the top."
+    }
+  },
+  {
+    "id": "bulgarian-split-squat",
+    "name": "Bulgarian Split Squat",
+    "videoUrl": "https://www.youtube.com/watch?v=eGo4IYlbE5g",
+    "imageUrl": "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800",
+    "overview": "The Bulgarian split squat is a unilateral lower body exercise that targets the quadriceps and glutes. It's performed by placing one foot behind you on a bench and lowering your back knee toward the ground. This movement helps develop each leg independently and improves balance.",
+    "benefits": [
+      "Builds unilateral leg strength",
+      "Addresses muscle imbalances between legs",
+      "Improves balance and coordination",
+      "Strengthens quadriceps and glutes effectively",
+      "Enhances athletic performance and agility",
+      "Develops hip stability and mobility",
+      "Excellent for functional leg training"
+    ],
+    "trainingParameters": {
+      "tempo": "3-1-2 (3 seconds down, 1 second pause, 2 seconds up)",
+      "rest": "60-90 seconds between legs",
+      "weight": "Start with bodyweight or light dumbbells, progress gradually",
+      "duration": "3-4 sets of 8-12 reps per leg",
+      "notes": "Keep your front foot flat on the bench and your back knee over your ankle. Drive through your front foot to stand back up, keeping your torso upright. Don't let your back knee touch the ground. Focus on controlled movement and engage your glutes throughout."
+    }
+  },
+  {
+    "id": "lunges",
+    "name": "Lunges",
+    "videoUrl": "https://www.youtube.com/watch?v=eGo4IYlbE5g",
+    "imageUrl": "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800",
+    "overview": "Lunges are a unilateral lower body exercise that targets the quadriceps, glutes, and hamstrings. They involve stepping forward into a deep lunge position and returning to standing. This movement improves balance, coordination, and develops each leg independently.",
+    "benefits": [
+      "Builds unilateral lower body strength",
+      "Improves balance and coordination significantly",
+      "Addresses muscle imbalances between legs",
+      "Strengthens quadriceps and glutes effectively",
+      "Enhances functional movement patterns",
+      "Can be performed with various forward angles"
+    ],
+    "trainingParameters": {
+      "tempo": "3-1-2 (3 seconds down, 1 second hold, 2 seconds up)",
+      "rest": "60-90 seconds between legs",
+      "weight": "Start with bodyweight, progress to holding dumbbells or barbell",
+      "duration": "3-4 sets of 10-15 reps per leg",
+      "notes": "Step forward into a controlled lunge, keeping your front knee behind your toes and maintaining an upright posture. Don't let your back knee touch the ground and keep your torso stable. Alternate legs and focus on balanced development."
+    }
+  },
+  {
+    "id": "leg-curl",
+    "name": "Leg Curl",
+    "videoUrl": "https://www.youtube.com/watch?v=eGo4IYlbE5g",
+    "imageUrl": "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800",
+    "overview": "The leg curl is an isolation exercise that targets the hamstrings. It's performed sitting in a leg curl machine with the pad against your lower legs, curling the weight toward your glutes. This movement provides excellent hamstring development and helps build leg definition.",
+    "benefits": [
+      "Isolates and develops the hamstrings",
+      "Increases leg definition and aesthetics",
+      "Strengthens knee stability and joint health",
+      "Reduces risk of hamstring injuries",
+      "Complements quad exercises for balanced leg development",
+      "Provides constant tension for muscle growth"
+    ],
+    "trainingParameters": {
+      "tempo": "2-1-2 (2 seconds curl up, 1 second squeeze, 2 seconds return)",
+      "rest": "60-90 seconds between sets",
+      "weight": "Start with light weight, focus on form and muscle contraction",
+      "duration": "3-4 sets of 10-15 reps",
+      "notes": "Sit comfortably in the machine with the pad against your lower legs. Curl the weight toward your glutes with control, squeezing your hamstrings at the top. Lower the weight with control, avoiding any swinging or bouncing. Don't hyperextend your knees and keep your back flat against the seat."
+    }
+  },
+  {
+    "id": "leg-extension",
+    "name": "Leg Extension",
+    "videoUrl": "https://www.youtube.com/watch?v=eGo4IYlbE5g",
+    "imageUrl": "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800",
+    "overview": "The leg extension is an isolation exercise that targets the quadriceps. It's performed sitting in a machine with the pad against your shins, extending your legs to straighten them. This movement provides excellent quad development and helps build leg strength.",
+    "benefits": [
+      "Isolates and develops the quadriceps",
+      "Increases leg strength and definition",
+      "Strengthens knee stability and joint health",
+      "Improves athletic performance and jumping ability",
+      "Reduces risk of knee injuries with proper form",
+      "Complements hamstring exercises for balanced leg development"
+    ],
+    "trainingParameters": {
+      "tempo": "2-1-2 (2 seconds extend, 1 second squeeze, 2 seconds return)",
+      "rest": "60-90 seconds between sets",
+      "weight": "Start with light weight, focus on form and muscle contraction",
+      "duration": "3-4 sets of 10-15 reps",
+      "notes": "Sit comfortably in the machine with the pad against your shins. Extend your legs with control, squeezing your quads at the top. Lower the weight with control, avoiding any bouncing or jerking. Don't lock your knees at full extension and keep the movement smooth."
+    }
+  },
+  {
+    "id": "calf-raise",
+    "name": "Calf Raise",
+    "videoUrl": "https://www.youtube.com/watch?v=eGo4IYlbE5g",
+    "imageUrl": "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800",
+    "overview": "The calf raise is an isolation exercise that targets the calf muscles. It's performed standing on a raised surface with heels hanging off, pushing up onto your toes. This movement provides excellent calf development and helps build lower leg strength.",
+    "benefits": [
+      "Isolates and develops the calf muscles",
+      "Increases lower leg strength and power",
+      "Improves ankle stability and balance",
+      "Enhances athletic performance and jumping ability",
+      "Reduces risk of calf injuries",
+      "Complements leg training for complete development"
+    ],
+    "trainingParameters": {
+      "tempo": "2-1-1 (2 seconds up, 1 second hold, 1 second lower)",
+      "rest": "60-90 seconds between sets",
+      "weight": "Use bodyweight only, can add weighted vest for progression",
+      "duration": "3-4 sets of 12-15 reps",
+      "notes": "Stand on a raised surface with your heels hanging off the edge. Push up onto your toes as high as possible while keeping your legs straight. Hold for a moment at the top, focusing on the calf contraction. Lower your heels below the surface level with control. Don't bounce and maintain tension throughout."
+    }
+  },
+  {
+    "id": "hip-thrust",
+    "name": "Hip Thrust",
+    "videoUrl": "https://www.youtube.com/watch?v=eGo4IYlbE5g",
+    "imageUrl": "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800",
+    "overview": "The hip thrust is a compound exercise that targets the glutes, hamstrings, and core. It's performed sitting on the ground with your upper back against a bench, rolling a barbell over your hips. This movement provides excellent glute and hamstring development.",
+    "benefits": [
+      "Builds tremendous glute and hamstring strength",
+      "Increases lower body power and explosiveness",
+      "Strengthens core for stability",
+      "Improves hip mobility and function",
+      "Supports athletic performance and sprinting",
+      "Enhances posterior chain development"
+    ],
+    "trainingParameters": {
+      "tempo": "2-1-2 (2 seconds up, 1 second squeeze, 2 seconds down)",
+      "rest": "2-3 minutes between sets",
+      "weight": "Start with moderate weight, progress to 60-80% of 1RM",
+      "duration": "3-4 sets of 8-12 reps",
+      "notes": "Keep your back flat against the bench and your shoulders stabilized. Roll the barbell over your hips with control. Drive your hips up until your body forms a straight line, squeezing your glutes at the top. Lower with control and don't hyperextend your lower back."
+    }
+  },
+  {
+    "id": "front-squat",
+    "name": "Front Squat",
+    "videoUrl": "https://www.youtube.com/watch?v=eGo4IYlbE5g",
+    "imageUrl": "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800",
+    "overview": "The front squat is a compound exercise that targets the quadriceps and glutes with emphasis on the quads. It's performed with the barbell resting on your front shoulders in a front rack position. This movement provides excellent quad development and helps build leg strength.",
+    "benefits": [
+      "Builds significant quadriceps strength and size",
+      "Develops glutes and core stability",
+      "Increases lower body power and explosiveness",
+      "Improves squat mechanics and depth",
+      "Supports athletic performance and jumping ability",
+      "Reduces lower back stress compared to back squats"
+    ],
+    "trainingParameters": {
+      "tempo": "3-1-3 (3 seconds down, 1 second pause, 3 seconds up)",
+      "rest": "3-5 minutes between sets",
+      "weight": "Start with moderate weight, progress to 60-80% of 1RM",
+      "duration": "3-5 sets of 6-10 reps",
+      "notes": "Rest the barbell on your front shoulders in a front rack position with your elbows high and chest up. Keep your torso upright and your weight mid-foot. Squat down until your thighs are parallel to the floor. Drive back up keeping your torso upright and your elbows high."
+    }
+  },
+  {
+    "id": "russian-twist",
+    "name": "Russian Twist",
+    "videoUrl": "https://www.youtube.com/watch?v=ASdvN_XEl_cM",
+    "imageUrl": "https://images.unsplash.com/photo-1517836357463-d25dfe034871?w=800",
+    "overview": "The Russian twist is a core exercise that targets the obliques and abs. It's performed sitting on the floor with knees bent and leaning back slightly, holding a weight in front of your chest. You rotate your torso to one side, then the other, engaging your core throughout.",
+    "benefits": [
+      "Strengthens obliques and abs effectively",
+      "Improves core stability and rotation",
+      "Enhances spinal mobility",
+      "Supports functional movement patterns",
+      "Reduces risk of lower back injuries",
+      "Excellent for athletic performance"
+    ],
+    "trainingParameters": {
+      "tempo": "2-1-2 (2 seconds rotate, 1 second hold, 2 seconds return)",
+      "rest": "60-90 seconds between sets",
+      "weight": "Use light to moderate weight, focus on form and muscle contraction",
+      "duration": "3-4 sets of 15-20 reps",
+      "notes": "Sit on the floor with your knees bent and leaning back slightly. Hold the weight in front of your chest with both hands. Rotate your torso to one side, then the other, keeping your core engaged throughout. Control the movement and avoid using momentum. Keep your feet flat and focus on the oblique contraction."
+    }
+  },
+  {
+    "id": "hanging-leg-raise",
+    "name": "Hanging Leg Raise",
+    "videoUrl": "https://www.youtube.com/watch?v=ASdvN_XEl_cM",
+    "imageUrl": "https://images.unsplash.com/photo-1517836357463-d25dfe034871?w=800",
+    "overview": "The hanging leg raise is a core exercise that targets the abs and hip flexors. It's performed hanging from a pull-up bar with arms extended, raising your legs until they're parallel to the floor. This movement provides excellent core development and improves overall stability.",
+    "benefits": [
+      "Strengthens entire core musculature",
+      "Develops abs and hip flexors",
+      "Improves lower back stability",
+      "Enhances overall balance and coordination",
+      "Increases abdominal definition",
+      "Excellent for functional core strength"
+    ],
+    "trainingParameters": {
+      "tempo": "2-1-2 (2 seconds up, 1 second hold, 2 seconds lower)",
+      "rest": "60-90 seconds between sets",
+      "weight": "Use bodyweight only, can add ankle weights for progression",
+      "duration": "3-4 sets of 8-12 reps",
+      "notes": "Hang from a pull-up bar with your arms extended and your body straight. Raise your legs with control until they're parallel to the floor. Avoid swinging your body and focus on the abdominal contraction. Keep your core tight and don't use momentum. Lower your legs with control."
+    }
+  },
+  {
+    "id": "ab-wheel-rollout",
+    "name": "Ab Wheel Rollout",
+    "videoUrl": "https://www.youtube.com/watch?v=ASdvN_XEl_cM",
+    "imageUrl": "https://images.unsplash.com/photo-1517836357463-d25dfe034871?w=800",
+    "overview": "The ab wheel rollout is an advanced core exercise that targets the abs, obliques, and lower back. It's performed kneeling with an ab wheel, rolling it forward extending your body. This movement provides excellent core development and helps build abdominal strength.",
+    "benefits": [
+      "Strengthens entire core musculature",
+      "Develops abs and obliques",
+      "Improves core stability and endurance",
+      "Increases abdominal definition",
+      "Enhances overall body control",
+      "Excellent for advanced core training"
+    ],
+    "trainingParameters": {
+      "tempo": "2-1-2 (2 seconds roll forward, 1 second hold, 2 seconds return)",
+      "rest": "2-3 minutes between sets",
+      "weight": "Use bodyweight only, progress gradually",
+      "duration": "3-4 sets of 8-12 reps",
+      "notes": "Kneel with the ab wheel in front of you. Roll forward extending your body as far as you can while keeping your core tight. Don't let your hips sag and maintain tension in your abs throughout. Roll back to the starting position with control. Avoid arching your lower back and focus on controlled movement."
+    }
+  },
+  {
+    "id": "mountain-climbers",
+    "name": "Mountain Climbers",
+    "videoUrl": "https://www.youtube.com/watch?v=ASdvN_XEl_cM",
+    "imageUrl": "https://images.unsplash.com/photo-1517836357463-d25dfe034871?w=800",
+    "overview": "Mountain climbers are a core and cardio exercise that targets the abs, hip flexors, and quads. They start in a high plank position, driving one knee toward your chest and alternating legs in a running motion. This movement provides excellent cardiovascular conditioning and core development.",
+    "benefits": [
+      "Strengthens core and abs effectively",
+      "Increases cardiovascular endurance",
+      "Improves hip mobility and flexibility",
+      "Enhances overall conditioning",
+      "Burns significant calories",
+      "Excellent for HIIT and metabolic conditioning"
+    ],
+    "trainingParameters": {
+      "tempo": "Explosive movement, minimize rest between reps",
+      "rest": "60-90 seconds between sets",
+      "weight": "Use bodyweight only",
+      "duration": "3-5 sets of 20-30 reps for time-based challenge",
+      "notes": "Start in a high plank position with your hands shoulder-width apart. Drive one knee rapidly toward your chest, then quickly switch legs in a running motion. Keep your hips level throughout and your core engaged. Focus on explosive power and speed. Modify by stepping back to plank position if needed."
+    }
+  },
+  {
+    "id": "kettlebell-swing",
+    "name": "Kettlebell Swing",
+    "videoUrl": "https://www.youtube.com/watch?v=eGo4IYlbE5g",
+    "imageUrl": "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800",
+    "overview": "The kettlebell swing is a full-body exercise that targets the glutes, hamstrings, and core. It's performed standing with feet wider than shoulders, swinging a kettlebell between your legs. This movement provides excellent power development and improves overall conditioning.",
+    "benefits": [
+      "Builds tremendous glute and hamstring power",
+      "Strengthens entire posterior chain",
+      "Improves hip mobility and explosiveness",
+      "Enhances core stability and strength",
+      "Increases overall athletic performance"
+    ],
+    "trainingParameters": {
+      "tempo": "Explosive swing, control at top and bottom",
+      "rest": "60-90 seconds between sets",
+      "weight": "Start with light weight, progress to heavy swings",
+      "duration": "3-5 sets of 15-20 reps",
+      "notes": "Stand with feet wider than shoulders, kettlebell between your legs. Hinge at your hips and swing the kettlebell between your legs explosively. Control the swing at the top and bottom. Keep your back flat and core engaged. Avoid rounding your back and use your hips to generate power."
+    }
+  },
+  {
+    "id": "box-jump",
+    "name": "Box Jump",
+    "videoUrl": "https://www.youtube.com/watch?v=eGo4IYlbE5g",
+    "imageUrl": "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800",
+    "overview": "The box jump is a plyometric exercise that targets the quads, glutes, and calves. It's performed standing in front of a sturdy box, swinging your arms and jumping onto the box. This movement provides excellent lower body power and explosiveness development.",
+    "benefits": [
+      "Increases lower body explosiveness and power",
+      "Strengthens quads, glutes, and calves",
+      "Improves vertical jump ability",
+      "Enhances athletic performance",
+      "Develops fast-twitch muscle fibers"
+    ],
+    "trainingParameters": {
+      "tempo": "Explosive jump, soft landing, quick reset",
+      "rest": "90-120 seconds between reps",
+      "weight": "Use bodyweight only, can hold light dumbbells",
+      "duration": "3-5 sets of 6-10 reps",
+      "notes": "Stand in front of a sturdy box with feet shoulder-width apart. Swing your arms and jump onto the box with both feet. Land softly with both feet fully on the box, keeping your knees slightly bent to absorb impact. Step down and reset quickly. Focus on explosive power and soft landings. Don't lock your knees on landing."
+    }
+  },
+  {
+    "id": "farmers-walk",
+    "name": "Farmer's Walk",
+    "videoUrl": "https://www.youtube.com/watch?v=eGo4IYlbE5g",
+    "imageUrl": "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800",
+    "overview": "The farmer's walk is a full-body strength exercise that targets the traps, forearms, and core. It's performed picking up heavy dumbbells in each hand and walking with a tall posture and tight core. This movement builds tremendous grip strength and overall body stability.",
+    "benefits": [
+      "Builds tremendous grip and forearm strength",
+      "Strengthens traps and upper back",
+      "Improves overall body stability",
+      "Enhances core strength and posture",
+      "Increases functional strength"
+    ],
+    "trainingParameters": {
+      "tempo": "Controlled walking, maintain upright posture",
+      "rest": "90-120 seconds between walks",
+      "weight": "Start with moderate weight, progress to heavy",
+      "duration": "3-4 walks of 20-40 meters",
+      "notes": "Pick up heavy dumbbells in each hand with a tight grip. Keep your shoulders back and down, maintain a tall posture with your core engaged. Walk with controlled steps and avoid swinging your body. Keep your head neutral and look forward. Focus on grip strength and walk with purposeful steps."
+    }
+  },
+  {
+    "id": "step-up",
+    "name": "Step-up",
+    "videoUrl": "https://www.youtube.com/watch?v=eGo4IYlbE5g",
+    "imageUrl": "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800",
+    "overview": "The step-up is a unilateral lower body exercise that targets the quads and glutes. It's performed holding dumbbells and standing in front of a raised platform, stepping up onto it. This movement improves balance, develops leg strength, and enhances athletic performance.",
+    "benefits": [
+      "Builds unilateral leg strength",
+      "Improves balance and coordination",
+      "Strengthens quadriceps and glutes",
+      "Enhances athletic performance and explosiveness",
+      "Develops functional leg power"
+    ],
+    "trainingParameters": {
+      "tempo": "2-0-2 (2 seconds up, no pause, 2 seconds down)",
+      "rest": "60-90 seconds between sets",
+      "weight": "Start with bodyweight or light dumbbells, progress gradually",
+      "duration": "3-4 sets of 8-12 reps per leg",
+      "notes": "Hold dumbbells and stand in front of a raised platform. Step up onto the platform with one foot, driving through your raised foot to stand up completely. Step down and alternate legs. Keep your torso upright and your core engaged. Focus on controlled movement and balanced development."
+    }
+  },
+  {
+    "id": "dumbbell-shrug",
+    "name": "Dumbbell Shrug",
+    "videoUrl": "https://www.youtube.com/watch?v=eGo4IYlbE5g",
+    "imageUrl": "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=800",
+    "overview": "The dumbbell shrug is an isolation exercise that targets the upper traps. It's performed standing with dumbbells at your sides, shrugging your shoulders up toward your ears. This movement helps build trap thickness and improves shoulder aesthetics.",
+    "benefits": [
+      "Isolates and develops the upper traps",
+      "Increases shoulder and neck stability",
+      "Improves upper body aesthetics",
+      "Reduces shoulder and neck tension",
+      "Strengthens levator scapulae",
+      "Excellent for trap development and thickness"
+    ],
+    "trainingParameters": {
+      "tempo": "2-1-2 (2 seconds shrug up, 1 second hold, 2 seconds lower)",
+      "rest": "60-90 seconds between sets",
+      "weight": "Use light to moderate weight, focus on form and muscle contraction",
+      "duration": "3-4 sets of 12-15 reps",
+      "notes": "Stand holding dumbbells at your sides with a neutral grip. Shrug your shoulders up toward your ears, focusing on the trap contraction. Hold at the top for a moment and lower with control. Avoid rolling your shoulders and keep the movement smooth. Don't use momentum or excessive weight."
+    }
+  },
+  {
+    "id": "good-morning",
+    "name": "Good Morning",
+    "videoUrl": "https://www.youtube.com/watch?v=eGo4IYlbE5g",
+    "imageUrl": "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800",
+    "overview": "The good morning is a compound exercise that targets the hamstrings, glutes, and lower back. It's performed with a barbell on your upper back as for a squat, hinging at the hips and lowering your torso. This movement provides excellent posterior chain development and hip mobility.",
+    "benefits": [
+      "Strengthens entire posterior chain",
+      "Improves hip hinge mechanics",
+      "Increases hamstring and glute strength",
+      "Enhances lower back stability",
+      "Reduces risk of lower back injuries"
+    ],
+    "trainingParameters": {
+      "tempo": "3-1-3 (3 seconds down, 1 second squeeze, 3 seconds up)",
+      "rest": "2-3 minutes between sets",
+      "weight": "Start with light weight to master form, progress to 60-80% of 1RM",
+      "duration": "3-4 sets of 6-10 reps",
+      "notes": "Rest the barbell on your upper back as for a squat, maintaining a slight bend in your knees. Hinge at your hips, pushing your glutes back, and lower your torso until nearly parallel to the floor. Drive your hips forward to stand back up, squeezing your glutes at the top. Keep your chest up and avoid rounding your lower back."
+    }
+  },
+  {
+    "id": "cable-crunch",
+    "name": "Cable Crunch",
+    "videoUrl": "https://www.youtube.com/watch?v=ASdvN_XEl_cM",
+    "imageUrl": "https://images.unsplash.com/photo-1517836357463-d25dfe034871?w=800",
+    "overview": "The cable crunch is an isolation exercise that targets the abs. It's performed kneeling in front of a cable machine with a rope attachment, pulling the rope down and crunching your torso. This movement provides excellent ab development and helps define the midsection.",
+    "benefits": [
+      "Isolates and develops the abs",
+      "Increases abdominal definition",
+      "Provides constant tension throughout the movement",
+      "Improves core strength and stability",
+      "Reduces lower back stress",
+      "Excellent for ab aesthetics and development"
+    ],
+    "trainingParameters": {
+      "tempo": "2-1-2 (2 seconds crunch down, 1 second squeeze, 2 seconds return)",
+      "rest": "60-90 seconds between sets",
+      "weight": "Start with light weight, focus on form and muscle contraction",
+      "duration": "3-4 sets of 10-20 reps",
+      "notes": "Kneel in front of a cable machine with a rope attachment. Hold the rope with both hands at your chest. Pull the rope down and crunch your torso toward your knees, squeezing your abs at the bottom. Return to the starting position with control. Avoid using momentum and focus on the abdominal contraction."
+    }
+  },
+  {
+    "id": "sled-push",
+    "name": "Sled Push",
+    "videoUrl": "https://www.youtube.com/watch?v=eGo4IYlbE5g",
+    "imageUrl": "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800",
+    "overview": "The sled push is a full-body exercise that targets the quads, glutes, calves, core, chest, triceps, and shoulders. It's performed behind a sled with arms extended, driving your legs into the ground to push the sled forward. This movement builds tremendous lower body power and overall conditioning.",
+    "benefits": [
+      "Builds tremendous lower body power",
+      "Strengthens quads, glutes, and calves",
+      "Increases explosive leg strength",
+      "Improves overall conditioning and endurance",
+      "Enhances athletic performance"
+    ],
+    "trainingParameters": {
+      "tempo": "Explosive drive, steady push",
+      "rest": "90-120 seconds between pushes",
+      "weight": "Add plates to sled for resistance",
+      "duration": "3-5 pushes of 20-40 meters",
+      "notes": "Position yourself behind the sled with arms extended against the handles. Keep your core tight, back flat, and drive through your legs powerfully into the ground. Push the sled forward with strong, controlled strides. Keep your head neutral and focus on explosive leg drive. Maintain tension throughout the push."
+    }
+  },
+  {
+    "id": "battle-ropes",
+    "name": "Battle Ropes",
+    "videoUrl": "https://www.youtube.com/watch?v=ASdvN_XEl_cM",
+    "imageUrl": "https://images.unsplash.com/photo-1517836357463-d25dfe034871?w=800",
+    "overview": "Battle ropes are a cardio and conditioning exercise that targets the shoulders, abs, arms, and core. It's performed holding one rope in each hand, alternating raising and lowering them rapidly to create waves. This movement provides excellent cardiovascular conditioning and upper body endurance.",
+    "benefits": [
+      "Increases cardiovascular endurance significantly",
+      "Strengthens shoulders, abs, and arms",
+      "Improves overall conditioning",
+      "Burns significant calories",
+      "Enhances explosive power",
+      "Excellent for HIIT and metabolic conditioning"
+    ],
+    "trainingParameters": {
+      "tempo": "Explosive alternating waves, maintain rhythm",
+      "rest": "90-120 seconds between sets",
+      "weight": "Use bodyweight only",
+      "duration": "4 sets of 20-30 seconds",
+      "notes": "Hold one rope in each hand with a neutral grip, standing with feet shoulder-width apart. Alternate raising and lowering each arm rapidly to create waves in the ropes. Maintain a slight squat position and keep your core engaged throughout. Focus on explosive power and consistent rhythm. Keep your shoulders relaxed and avoid excessive tension."
+    }
+  },
+  {
+    "id": "preacher-curl",
+    "name": "Preacher Curl",
+    "videoUrl": "https://www.youtube.com/watch?v=eGo4IYlbE5g",
+    "imageUrl": "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=800",
+    "overview": "The preacher curl is an isolation bicep exercise that targets the biceps. It's performed sitting on a preacher bench with your upper arms on the pad, curling a barbell or dumbbells up. This movement helps develop bicep peak and improves arm aesthetics.",
+    "benefits": [
+      "Isolates and develops the biceps",
+      "Increases bicep peak and height",
+      "Reduces cheating and momentum",
+      "Improves arm definition and aesthetics",
+      "Enhances mind-muscle connection in the biceps",
+      "Excellent for bicep focus and peak development"
+    ],
+    "trainingParameters": {
+      "tempo": "2-1-2 (2 seconds curl up, 1 second squeeze, 2 seconds down)",
+      "rest": "60-90 seconds between sets",
+      "weight": "Start with moderate weight, progress to 60-80% of 1RM",
+      "duration": "3-4 sets of 8-12 reps",
+      "notes": "Sit comfortably on a preacher bench with your upper arms resting on the pad. Grip the barbell or dumbbells with a shoulder-width underhand grip. Curl the weight toward your shoulders, focusing on the bicep contraction. Squeeze at the top and lower with control. Avoid swinging or using body English. Keep your elbows stationary and focus on form."
+    }
+  },
+  {
+    "id": "hack-squat",
+    "name": "Hack Squat",
+    "videoUrl": "https://www.youtube.com/watch?v=eGo4IYlbE5g",
+    "imageUrl": "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800",
+    "overview": "The hack squat is a compound exercise that targets the quads and glutes with less lower back stress. It's performed on a hack squat machine, lowering your body by bending your knees. This movement provides excellent quad development and helps build leg strength.",
+    "benefits": [
+      "Builds significant quadriceps strength",
+      "Develops glutes effectively",
+      "Increases leg press strength",
+      "Reduces lower back stress",
+      "Provides stable and controlled movement",
+      "Excellent for quad development and size"
+    ],
+    "trainingParameters": {
+      "tempo": "3-1-3 (3 seconds down, 1 second pause, 3 seconds up)",
+      "rest": "2-3 minutes between sets",
+      "weight": "Start with light weight, progress to 60-80% of 1RM",
+      "duration": "3-4 sets of 8-12 reps",
+      "notes": "Position yourself correctly on the hack squat machine with your shoulders under the pads. Lower your body by bending your knees, keeping your back flat against the pad. Push back up to the starting position with control. Don't lock your knees at the top and focus on quad contraction. Maintain controlled movement throughout."
+    }
+  },
+  {
+    "id": "dumbbell-wrist-curl",
+    "name": "Dumbbell Wrist Curl",
+    "videoUrl": "https://www.youtube.com/watch?v=eGo4IYlbE5g",
+    "imageUrl": "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=800",
+    "overview": "The dumbbell wrist curl is an isolation exercise that targets the forearms. It's performed sitting on a bench with your forearms on your thighs, holding dumbbells with an underhand grip, wrists hanging off your knees. This movement helps develop forearm strength and improves grip.",
+    "benefits": [
+      "Isolates and develops the forearms",
+      "Increases wrist strength and mobility",
+      "Improves grip strength significantly",
+      "Enhances forearm definition",
+      "Supports overall upper body strength"
+    ],
+    "trainingParameters": {
+      "tempo": "2-1-2 (2 seconds curl up, 1 second squeeze, 2 seconds down)",
+      "rest": "60-90 seconds between sets",
+      "weight": "Use light weight, focus on form and muscle contraction",
+      "duration": "3-4 sets of 12-15 reps",
+      "notes": "Sit on a bench with your forearms resting on your thighs. Hold dumbbells with an underhand grip, wrists hanging off your knees. Curl the weights up using only your wrists, keeping your forearms stationary. Focus on forearm contraction and control the movement. Avoid using body English or excessive weight."
+    }
+  },
+  {
+    "id": "incline-bench-press",
+    "name": "Incline Bench Press",
+    "videoUrl": "https://www.youtube.com/watch?v=eGo4IYlbE5g",
+    "imageUrl": "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800",
+    "overview": "The incline bench press is a compound exercise that targets the upper chest, anterior deltoids, and triceps. It's performed on a bench set at a 30-45 degree angle, pressing a barbell upward. This movement emphasizes the upper chest and helps create a fuller chest appearance.",
+    "benefits": [
+      "Develops upper chest and anterior deltoids",
+      "Increases chest muscle fullness",
+      "Strengthens triceps and upper chest",
+      "Enhances shoulder definition and width",
+      "Allows for greater range of motion than flat bench"
+    ],
+    "trainingParameters": {
+      "tempo": "2-0-2 (2 seconds down, no pause, 2 seconds up)",
+      "rest": "2-3 minutes between sets",
+      "weight": "Start with moderate weight, progress to 60-80% of 1RM",
+      "duration": "3-4 sets of 6-10 reps",
+      "notes": "Set the bench to a 30-45 degree incline. Grip the bar slightly wider than shoulder width. Unrack the bar and lower it to your upper chest. Press the bar back up to full extension. Keep your feet flat and shoulder blades retracted. Control the descent and focus on squeezing your upper chest."
+    }
+  },
+  {
+    "id": "dumbbell-pullover",
+    "name": "Dumbbell Pullover",
+    "videoUrl": "https://www.youtube.com/watch?v=eGo4IYlbE5g",
+    "imageUrl": "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800",
+    "overview": "The dumbbell pullover is an exercise that targets the chest and lats. It's performed lying across a bench, holding a dumbbell over your chest, and lowering it behind your head. This movement provides excellent chest stretch and helps develop the upper body.",
+    "benefits": [
+      "Develops chest and lats simultaneously",
+      "Improves chest muscle flexibility",
+      "Strengthens serratus and upper chest",
+      "Enhances upper body definition"
+    ],
+    "trainingParameters": {
+      "tempo": "2-1-2 (2 seconds down, 1 second stretch, 2 seconds up)",
+      "rest": "60-90 seconds between sets",
+      "weight": "Use light to moderate weight, focus on form and muscle contraction",
+      "duration": "3-4 sets of 10-15 reps",
+      "notes": "Lie across a bench holding a dumbbell over your chest. Lower the dumbbell behind your head with a slight bend in your elbows. Feel the stretch in your chest and lats. Pull the weight back over your chest with control. Keep your core engaged and avoid using momentum. Focus on controlled movement and muscle stretch."
+    }
+  },
+  {
+    "id": "landmine-press",
+    "name": "Landmine Press",
+    "videoUrl": "https://www.youtube.com/watch?v=eGo4IYlbE5g",
+    "imageUrl": "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=800",
+    "overview": "The landmine press is a unilateral pressing exercise that targets the anterior deltoids and triceps. It's performed holding one end of a barbell anchored to the ground, pressing it up and away from your shoulder. This movement provides excellent shoulder development and helps build upper body strength.",
+    "benefits": [
+      "Develops anterior deltoids and triceps",
+      "Increases shoulder stability and mobility",
+      "Improves unilateral upper body strength",
+      "Strengthens core for stability",
+      "Enhances pressing power"
+    ],
+    "trainingParameters": {
+      "tempo": "2-0-2 (2 seconds up, 1 second press, 2 seconds lower)",
+      "rest": "60-90 seconds between sets",
+      "weight": "Start with moderate weight, progress to 60-80% of 1RM",
+      "duration": "3-4 sets of 8-12 reps",
+      "notes": "Hold the end of the barbell at shoulder height. Press the barbell up and away from your shoulder. Fully extend your arm at the top. Lower with control and repeat. Keep your core tight and avoid excessive leaning or rotating. Focus on controlled movement and shoulder contraction."
+    }
+  },
+  {
+    "id": "single-leg-deadlift",
+    "name": "Single-Leg Deadlift",
+    "videoUrl": "https://www.youtube.com/watch?v=eGo4IYlbE5g",
+    "imageUrl": "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800",
+    "overview": "The single-leg deadlift is a compound exercise that targets the hamstrings, glutes, and core. It's performed standing on one leg, holding a dumbbell in the opposite hand, hinging forward and extending your free leg. This movement provides excellent unilateral leg strength and improves balance.",
+    "benefits": [
+      "Builds unilateral leg strength",
+      "Addresses muscle imbalances",
+      "Strengthens hamstrings and glutes",
+      "Improves balance and coordination",
+      "Enhances hip mobility"
+    ],
+    "trainingParameters": {
+      "tempo": "3-1-3 (3 seconds down, 1 second squeeze, 3 seconds up)",
+      "rest": "2-3 minutes between sets",
+      "weight": "Start with light weight, progress to moderate",
+      "duration": "3-4 sets of 6-10 reps per leg",
+      "notes": "Stand on one leg holding a dumbbell in the opposite hand. Hinge forward, extending your free leg behind you. Lower the dumbbell toward the ground with control. Drive your hips forward to return to standing. Keep your core engaged and avoid rotating your torso. Focus on balanced development and controlled movement."
+    }
+  },
+  {
+    "id": "pallof-press",
+    "name": "Pallof Press",
+    "videoUrl": "https://www.youtube.com/watch?v=ASdvN_XEl_cM",
+    "imageUrl": "https://images.unsplash.com/photo-1517836357463-d25dfe034871?w=800",
+    "overview": "The pallof press is a core exercise that targets the obliques and abs. It's performed standing perpendicular to a cable machine at chest height, holding a handle at your chest with both hands. It involves pressing the handle straight out in front of you and resisting rotation. This movement provides excellent oblique development.",
+    "benefits": [
+      "Isolates and develops the obliques",
+      "Strengthens core muscles",
+      "Improves rotation strength"
+    ]
+  },
+  "trainingParameters": {
+    "tempo": "2-1-2 (2 seconds press, 1 second squeeze, 2 seconds return)",
+      "rest": "60-90 seconds between sets",
+      "weight": "Start with light weight, focus on form",
+      "duration": "3-4 sets of 10-15 reps",
+      "notes": "Stand perpendicular to a cable machine at chest height. Hold the handle at your chest with both hands. Press the handle straight out in front of you, focusing on the oblique contraction. Resist rotation and return to your chest. Keep your core engaged and avoid excessive weight. Focus on controlled movement and oblique isolation."
+    }
+  }
+]

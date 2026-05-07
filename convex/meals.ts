@@ -68,3 +68,13 @@ export const createMeal = mutation({
     });
   },
 });
+
+export const getRecipes = query({
+  args: {},
+  handler: async (ctx) => {
+    return await ctx.db
+      .query("recipes")
+      .order("desc")
+      .collect();
+  },
+});

@@ -118,24 +118,24 @@ const MealsView: React.FC<MealsViewProps> = ({ onSelect, calendarDateStr, onCale
   const [activeCategory, setActiveCategory] = useState('All');
   const [previewMeal, setPreviewMeal] = useState<Meal | null>(null);
   const addToPlanMutation = useMutation(api.userPlans.addToPlan);
-  const mealsQuery = useQuery(api.meals.getUserMeals);
+  const recipesQuery = useQuery(api.meals.getRecipes);
 
   const isScheduling = Boolean(calendarDateStr);
 
   const allMeals = useMemo(() => {
-    return (mealsQuery || []).map((m: any) => ({
-      id: m._id,
-      title: m.title,
-      image: m.image || '/placeholder-meal.jpg',
-      description: m.description || '',
-      calories: m.calories || 0,
-      protein: m.macros?.p || 0,
-      carbs: m.macros?.c || 0,
-      fats: m.macros?.f || 0,
-      prepTime: '15 min',
-      tags: m.type ? [m.type] : [],
+    return (recipesQuery || []).map((r: any) => ({
+      id: r._id,
+      title: r.recipe_title,
+      image: r.image_url || '/placeholder-meal.jpg',
+      description: r.short_description || '',
+      calories: r.nutrition_info?.calories || 0,
+      protein: r.nutrition_info?.protein || 0,
+      carbs: r.nutrition_info?.carbs || 0,
+      fats: r.nutrition_info?.fat || 0,
+      prepTime: r.total_time || '15 min',
+      tags: r.tags || [],
     }));
-  }, [mealsQuery]);
+  }, [recipesQuery]);
 
   const filteredMeals = useMemo(() => {
     return allMeals.filter(meal => {
