@@ -10,6 +10,9 @@ export default defineConfig(({ mode }) => {
         strictPort: true,
         host: '0.0.0.0',
         allowedHosts: ['carlos-caban.tail68c757.ts.net'],
+        watch: {
+          ignored: ['**/.crawlee-workers/**']
+        },
         proxy: {
           '/api': {
             target: 'http://localhost:3001',
