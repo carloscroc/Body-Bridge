@@ -1,0 +1,1 @@
+{"$schema":"https://raw.githubusercontent.com/webpro-nl/knip/main/schema.json","entry":["src/index.tsx","server/server.js"],"project":["src/**/*.{ts,tsx}","server/**/*.js","convex/**/*.ts"],"ignore":["**/*.d.ts","ios/**","android/**","scripts/**","tools/**","tests/**","convex_backup/**","convex.config.*","signup_onboard.js"],"ignoreDependencies":["semgrep"]}

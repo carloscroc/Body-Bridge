@@ -5,9 +5,9 @@
  * Automatically captures build results and metrics
  */
 
-const { MemoryHooks } = require('./memory-hooks');
-const fs = require('fs');
-const path = require('path');
+import { MemoryHooks } from './memory-hooks.js';
+import fs from 'fs';
+import path from 'path';
 
 async function captureBuildMemory() {
   const hooks = new MemoryHooks();
@@ -45,8 +45,8 @@ function getBundleSize() {
 }
 
 // Run if called directly
-if (require.main === module) {
+if (import.meta.url === `file://${process.argv[1]}`) {
   captureBuildMemory();
 }
 
-module.exports = { captureBuildMemory };
+export { captureBuildMemory };

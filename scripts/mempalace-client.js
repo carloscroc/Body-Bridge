@@ -6,9 +6,9 @@
  * Provides JavaScript interface to mempalace ChromaDB for storing and retrieving memories
  */
 
-const fs = require('fs');
-const path = require('path');
-const { execSync } = require('child_process');
+import fs from 'fs';
+import path from 'path';
+import { execSync } from 'child_process';
 
 class MempalaceClient {
   constructor(config = {}) {
@@ -359,10 +359,10 @@ class MempalaceClient {
 }
 
 // Export for use in other scripts
-module.exports = { MempalaceClient };
+export { MempalaceClient };
 
 // CLI interface
-if (require.main === module) {
+if (import.meta.url === `file://${process.argv[1]}`) {
   const args = process.argv.slice(2);
   const command = args[0];
 

@@ -3,7 +3,7 @@ import React from 'react';
 import { Home, Dumbbell, Zap, Utensils, Users } from 'lucide-react';
 import { Tab } from './types';
 
-export const COLORS = {
+const COLORS = {
   bg: '#000000',
   surface: '#1C1C1E',
   surfaceLight: '#2C2C2E',

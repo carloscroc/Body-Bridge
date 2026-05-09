@@ -9,16 +9,16 @@ export enum Tab {
   SETTINGS = 'Settings'
 }
 
-export type Theme = 'dark' | 'light' | 'system';
-export type UnitWeight = 'lb' | 'kg';
-export type UnitHeight = 'cm' | 'ft';
-export type UnitDistance = 'mi' | 'km';
+type Theme = 'dark' | 'light' | 'system';
+type UnitWeight = 'lb' | 'kg';
+type UnitHeight = 'cm' | 'ft';
+type UnitDistance = 'mi' | 'km';
 
 export type ExperienceLevel = 'Beginner' | 'Intermediate' | 'Advanced' | 'Elite';
 export type TrainingGoal = 'Fat Loss' | 'Strength' | 'Hypertrophy' | 'Performance' | 'Mobility';
-export type ProfileVisibility = 'Private' | 'Members' | 'Public';
+type ProfileVisibility = 'Private' | 'Members' | 'Public';
 
-export interface TrainingProfile {
+interface TrainingProfile {
   goal: TrainingGoal;
   experienceLevel: ExperienceLevel;
   trainingDaysPerWeek: number;
@@ -27,19 +27,19 @@ export interface TrainingProfile {
   preferredWorkoutTime: string;
 }
 
-export interface UnitSettings {
+interface UnitSettings {
   weight: UnitWeight;
   height: UnitHeight;
   distance: UnitDistance;
 }
 
-export interface IntegrationSettings {
+interface IntegrationSettings {
   appleHealth: boolean;
   googleFit: boolean;
   calendarSync: boolean;
 }
 
-export interface NotificationPreferences {
+interface NotificationPreferences {
   workoutReminders: boolean;
   workoutReminderTime: string;
   mealPrepAlerts: boolean;
@@ -47,13 +47,13 @@ export interface NotificationPreferences {
   coachMessages: boolean;
 }
 
-export interface PrivacySettings {
+interface PrivacySettings {
   visibility: ProfileVisibility;
   shareStats: boolean;
   showOnlineStatus: boolean;
 }
 
-export interface UserGoals {
+interface UserGoals {
   targetWeight: number;
   dailyCalories: number;
   weeklyWorkouts: number;
@@ -201,7 +201,7 @@ export interface Meal {
   servings?: number;
 }
 
-export type PlanItemType = 'meal' | 'workout';
+type PlanItemType = 'meal' | 'workout';
 
 export interface PlanItem {
   id: string;
@@ -215,7 +215,7 @@ export interface PlanItem {
   completed: boolean;
 }
 
-export interface Post {
+interface Post {
   id: string;
   author: string;
   avatar: string;
@@ -228,7 +228,7 @@ export interface Post {
 
 export type CommunityPostTag = 'PR' | 'Done' | 'Meal' | 'Ask' | 'Wins' | 'Form Check' | 'General Discussion';
 
-export type CommunityPostAttachmentKind = 'image';
+type CommunityPostAttachmentKind = 'image';
 
 export interface CommunityPostAttachment {
   id: string;
@@ -238,7 +238,7 @@ export interface CommunityPostAttachment {
   name?: string;
 }
 
-export interface CommunityPost {
+interface CommunityPost {
   id: string;
   author: string;
   title: string;
@@ -252,7 +252,7 @@ export interface CommunityPost {
   isCustom?: boolean;
 }
 
-export interface CommunityComment {
+interface CommunityComment {
   id: string;
   author: string;
   content: string;
@@ -267,9 +267,9 @@ export interface SearchResult {
   }>;
 }
 
-export type AchievementId = 'starter' | 'consistent' | 'athlete' | 'elite' | 'master' | 'social' | 'scholar';
+type AchievementId = 'starter' | 'consistent' | 'athlete' | 'elite' | 'master' | 'social' | 'scholar';
 
-export interface Achievement {
+interface Achievement {
   id: AchievementId;
   title: string;
   description: string;
@@ -279,7 +279,7 @@ export interface Achievement {
   unlockedAt?: string;
 }
 
-export interface UserLevel {
+interface UserLevel {
   currentLevel: number;
   currentXp: number;
   xpToNextLevel: number;

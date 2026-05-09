@@ -5,7 +5,7 @@ interface LoadingSkeletonProps {
   variant?: "default" | "circle" | "text";
 }
 
-export function LoadingSkeleton({ className, variant = "default" }: LoadingSkeletonProps) {
+function LoadingSkeleton({ className, variant = "default" }: LoadingSkeletonProps) {
   return (
     <div
       className={cn(

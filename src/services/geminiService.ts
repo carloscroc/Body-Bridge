@@ -3,7 +3,7 @@ import { sanitize, sanitizeUrl } from "../utils/sanitize";
 
 const API_BASE_URL = '/api';
 
-export const analyzeImage = async (base64Image: string, mimeType: string): Promise<string> => {
+const analyzeImage = async (base64Image: string, mimeType: string): Promise<string> => {
   try {
     const response = await fetch(`${API_BASE_URL}/analyze-meal`, {
       method: 'POST',
@@ -24,7 +24,7 @@ export const analyzeImage = async (base64Image: string, mimeType: string): Promi
   }
 };
 
-export const searchFitnessInfo = async (query: string): Promise<SearchResult> => {
+const searchFitnessInfo = async (query: string): Promise<SearchResult> => {
   try {
     const response = await fetch(`${API_BASE_URL}/search-fitness`, {
       method: 'POST',

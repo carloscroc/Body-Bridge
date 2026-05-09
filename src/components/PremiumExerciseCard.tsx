@@ -44,7 +44,7 @@ const elasticSpring = {
   mass: 0.8
 };
 
-export const PremiumExerciseCard: React.FC<PremiumExerciseCardProps> = ({
+const PremiumExerciseCard: React.FC<PremiumExerciseCardProps> = ({
   exercise,
   isSelected,
   onSelect,
@@ -553,4 +553,3 @@ export const PremiumExerciseGrid: React.FC<PremiumExerciseGridProps> = ({
   );
 };
 
-export default PremiumExerciseCard;

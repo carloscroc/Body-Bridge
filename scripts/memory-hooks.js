@@ -6,10 +6,10 @@
  * Automated memory capture at key development events
  */
 
-const { MempalaceClient } = require('./mempalace-client');
-const fs = require('fs');
-const path = require('path');
-const { execSync } = require('child_process');
+import { MempalaceClient } from './mempalace-client.js';
+import fs from 'fs';
+import path from 'path';
+import { execSync } from 'child_process';
 
 class MemoryHooks {
   constructor(config = {}) {
@@ -475,10 +475,10 @@ ${featureData.nextSteps.map(s => `  📋 ${s}`).join('\n')}`;
 }
 
 // Export for use in other scripts
-module.exports = { MemoryHooks };
+export { MemoryHooks };
 
 // CLI interface
-if (require.main === module) {
+if (import.meta.url === `file://${process.argv[1]}`) {
   const args = process.argv.slice(2);
   const command = args[0];
   const data = args[1] ? JSON.parse(args[1]) : {};

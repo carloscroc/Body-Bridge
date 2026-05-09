@@ -1,4 +1,4 @@
-export type VideoSourceKind = "file" | "youtube" | "vimeo" | "iframe" | "unknown";
+type VideoSourceKind = "file" | "youtube" | "vimeo" | "iframe" | "unknown";
 
 export type VideoSource =
   | { kind: "file"; url: string }
@@ -18,7 +18,7 @@ function safeTrim(value: unknown): string | null {
   return s.length > 0 ? s : null;
 }
 
-export function extractIframeSrc(raw: string): string | null {
+function extractIframeSrc(raw: string): string | null {
   const s = safeTrim(raw);
   if (!s) return null;
   if (!s.toLowerCase().includes("<iframe")) return null;

@@ -2,7 +2,7 @@ import { PlanItem, Workout, Meal } from '../../types';
 
 export type ViewType = 'list' | 'day' | '3days' | 'week' | 'month';
 
-export type EventType = 'workout' | 'meal';
+type EventType = 'workout' | 'meal';
 
 export interface CalendarEvent {
   id: string;
@@ -78,7 +78,7 @@ function getDefaultTime(type: string, slot?: string): string {
   }
 }
 
-export function formatTime(timeStr: string): string {
+function formatTime(timeStr: string): string {
   const [hours, minutes] = timeStr.split(':');
   const h = parseInt(hours);
   const ampm = h >= 12 ? 'PM' : 'AM';
@@ -86,14 +86,14 @@ export function formatTime(timeStr: string): string {
   return `${h12}:${minutes} ${ampm}`;
 }
 
-export function formatDuration(minutes: number): string {
+function formatDuration(minutes: number): string {
   if (minutes < 60) return `${minutes} min`;
   const h = Math.floor(minutes / 60);
   const m = minutes % 60;
   return m > 0 ? `${h}h ${m}m` : `${h}h`;
 }
 
-export function getEventColor(type: EventType, intensity?: string): string {
+function getEventColor(type: EventType, intensity?: string): string {
   if (type === 'workout') {
     switch (intensity) {
       case 'Hard': return 'border-l-red-500 bg-red-500/5';
@@ -106,7 +106,7 @@ export function getEventColor(type: EventType, intensity?: string): string {
   }
 }
 
-export function getEventGlow(type: EventType, intensity?: string): string {
+function getEventGlow(type: EventType, intensity?: string): string {
   if (type === 'workout') {
     switch (intensity) {
       case 'Hard': return 'shadow-[0_0_20px_rgba(239,68,68,0.1)]';
@@ -131,7 +131,7 @@ export function groupEventsByDate(events: CalendarEvent[]): Map<string, Calendar
   return grouped;
 }
 
-export function groupEventsByTimeBlock(events: CalendarEvent[]): Map<string, CalendarEvent[]> {
+function groupEventsByTimeBlock(events: CalendarEvent[]): Map<string, CalendarEvent[]> {
   const grouped = new Map<string, CalendarEvent[]>();
   
   events.forEach(event => {
@@ -151,7 +151,7 @@ export function groupEventsByTimeBlock(events: CalendarEvent[]): Map<string, Cal
   return grouped;
 }
 
-export const timeBlockLabels: Record<string, { label: string; icon: string; color: string }> = {
+const timeBlockLabels: Record<string, { label: string; icon: string; color: string }> = {
   morning: { 
     label: 'Morning Block', 
     icon: '🌅',
