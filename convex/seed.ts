@@ -180,7 +180,7 @@ export const insertUser = mutation({
 export const insertUserPreferences = mutation({
   args: {
     adminSecret: v.optional(v.string()),
-    userId: v.string(),
+    userId: v.id("users"),
     preferences: v.object({
       theme: v.string(),
       language: v.string(),
@@ -502,7 +502,7 @@ export const insertNotification = mutation({
   args: {
     adminSecret: v.optional(v.string()),
     notification: v.object({
-      userId: v.string(),
+      userId: v.id("profiles"),
       type: v.union(
         v.literal("message"),
         v.literal("comment"),
@@ -709,7 +709,7 @@ export const getWorkouts = query({
 });
 
 export const getNotifications = query({
-  args: { userId: v.string() },
+  args: { userId: v.id("profiles") },
   handler: async (ctx, args) => {
     const notifications = await ctx.db
       .query("notifications")
