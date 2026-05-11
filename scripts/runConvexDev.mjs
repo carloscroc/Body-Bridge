@@ -2,6 +2,7 @@ import { existsSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { spawn } from 'node:child_process';
+import { generateKeyPairSync } from 'node:crypto';
 import dotenv from 'dotenv';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -29,11 +30,30 @@ const {
   ...cleanEnv
 } = process.env;
 
+function generateLocalAuthKeys() {
+  const { publicKey, privateKey } = generateKeyPairSync('rsa', {
+    modulusLength: 2048,
+    publicKeyEncoding: { type: 'spki', format: 'jwk' },
+    privateKeyEncoding: { type: 'pkcs8', format: 'pem' },
+  });
+
+  return {
+    JWT_PRIVATE_KEY: privateKey.trim().replace(/\n/g, ' '),
+    JWKS: JSON.stringify({ keys: [{ use: 'sig', ...publicKey }] }),
+  };
+}
+
 if (!CONVEX_DEPLOYMENT) {
   cleanEnv.CONVEX_SELF_HOSTED_URL = CONVEX_SELF_HOSTED_URL || 'http://localhost:8443';
 }
 cleanEnv.CONVEX_AGENT_MODE = CONVEX_AGENT_MODE || 'anonymous';
 cleanEnv.CONVEX_SITE_URL = CONVEX_SITE_URL || 'http://127.0.0.1:3211';
+
+if (!cleanEnv.JWT_PRIVATE_KEY || !cleanEnv.JWKS) {
+  const localAuthKeys = generateLocalAuthKeys();
+  cleanEnv.JWT_PRIVATE_KEY ??= localAuthKeys.JWT_PRIVATE_KEY;
+  cleanEnv.JWKS ??= localAuthKeys.JWKS;
+}
 
 const command = process.platform === 'win32' ? 'npx.cmd' : 'npx';
 const child = spawn(command, [

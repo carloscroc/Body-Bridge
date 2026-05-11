@@ -7,7 +7,7 @@ import { convexAuth } from "@convex-dev/auth/server";
  * This replaces the previous Supabase Auth integration.
  * Now using native Convex Auth with Password provider.
  */
-export const { auth } = convexAuth({
+export const { auth, signIn, signOut, store, isAuthenticated } = convexAuth({
   providers: [
     Password({
       profile(params) {
