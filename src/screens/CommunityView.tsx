@@ -172,11 +172,13 @@ const AvatarWithBadge = ({
 
 // --- Post Meta Row ---
 const PostMetaRow = ({
+  authorAvatar,
   authorName,
   createdAt,
   category,
   onAuthorClick,
 }: {
+  authorAvatar?: string;
   authorName: string;
   createdAt: string;
   category: string;
@@ -300,6 +302,7 @@ const CommunityPostCard = ({
           {/* Author header row */}
           <div className="flex items-start justify-between gap-2">
             <PostMetaRow
+              authorAvatar={post.authorAvatar}
               authorName={post.authorName}
               createdAt={post.createdAt}
               category={post.category || 'General'}

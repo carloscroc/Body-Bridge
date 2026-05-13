@@ -726,3 +726,197 @@ export const getWorkoutFavorites = query({
     return [];
   },
 });
+
+// ============== COMMUNITY DATA ==============
+
+export const insertSocialPost = mutation({
+  args: {
+    adminSecret: v.optional(v.string()),
+    post: v.object({
+      authorId: v.id("profiles"),
+      authorName: v.string(),
+      authorAvatar: v.optional(v.string()),
+      authorRole: v.union(v.literal("trainer"), v.literal("client")),
+      title: v.optional(v.string()),
+      content: v.string(),
+      category: v.optional(v.string()),
+      mediaUrls: v.optional(v.array(v.string())),
+      isPinned: v.optional(v.boolean()),
+    }),
+  },
+  handler: async (ctx, args) => {
+    if (!isAdminSecret(args.adminSecret)) {
+      throw new Error("Unauthorized: Invalid admin secret");
+    }
+
+    const now = Date.now();
+    const postId = await ctx.db.insert("socialPosts", {
+      ...args.post,
+      isPinned: args.post.isPinned || false,
+      isDeleted: false,
+      likeCount: 0,
+      commentCount: 0,
+      createdAt: now,
+      updatedAt: now,
+    });
+
+    return { success: true, postId };
+  },
+});
+
+export const insertSocialComment = mutation({
+  args: {
+    adminSecret: v.optional(v.string()),
+    comment: v.object({
+      postId: v.id("socialPosts"),
+      authorId: v.id("profiles"),
+      authorName: v.string(),
+      authorAvatar: v.optional(v.string()),
+      authorRole: v.union(v.literal("trainer"), v.literal("client")),
+      content: v.string(),
+      parentCommentId: v.optional(v.id("socialComments")),
+    }),
+  },
+  handler: async (ctx, args) => {
+    if (!isAdminSecret(args.adminSecret)) {
+      throw new Error("Unauthorized: Invalid admin secret");
+    }
+
+    const now = Date.now();
+    const commentId = await ctx.db.insert("socialComments", {
+      ...args.comment,
+      likeCount: 0,
+      createdAt: now,
+      updatedAt: now,
+    });
+
+    // Update post's comment count
+    const post = await ctx.db.get(args.comment.postId);
+    if (post) {
+      await ctx.db.patch(args.comment.postId, {
+        commentCount: (post.commentCount || 0) + 1,
+        lastCommentAt: now,
+        updatedAt: now,
+      });
+    }
+
+    return { success: true, commentId };
+  },
+});
+
+export const insertSocialLike = mutation({
+  args: {
+    adminSecret: v.optional(v.string()),
+    like: v.object({
+      userId: v.id("profiles"),
+      postId: v.optional(v.id("socialPosts")),
+      commentId: v.optional(v.id("socialComments")),
+    }),
+  },
+  handler: async (ctx, args) => {
+    if (!isAdminSecret(args.adminSecret)) {
+      throw new Error("Unauthorized: Invalid admin secret");
+    }
+
+    const now = Date.now();
+
+    // Insert like
+    await ctx.db.insert("socialLikes", {
+      ...args.like,
+      createdAt: now,
+    });
+
+    // Update post/comment like count
+    if (args.like.postId) {
+      const post = await ctx.db.get(args.like.postId);
+      if (post) {
+        await ctx.db.patch(args.like.postId, {
+          likeCount: (post.likeCount || 0) + 1,
+          updatedAt: now,
+        });
+      }
+    } else if (args.like.commentId) {
+      const comment = await ctx.db.get(args.like.commentId);
+      if (comment) {
+        await ctx.db.patch(args.like.commentId, {
+          likeCount: (comment.likeCount || 0) + 1,
+          updatedAt: now,
+        });
+      }
+    }
+
+    return { success: true };
+  },
+});
+
+export const insertSocialFollow = mutation({
+  args: {
+    adminSecret: v.optional(v.string()),
+    follow: v.object({
+      followerId: v.id("profiles"),
+      followingId: v.id("profiles"),
+    }),
+  },
+  handler: async (ctx, args) => {
+    if (!isAdminSecret(args.adminSecret)) {
+      throw new Error("Unauthorized: Invalid admin secret");
+    }
+
+    const now = Date.now();
+    await ctx.db.insert("socialFollows", {
+      ...args.follow,
+      createdAt: now,
+    });
+
+    return { success: true };
+  },
+});
+
+export const insertGroupMember = mutation({
+  args: {
+    adminSecret: v.optional(v.string()),
+    member: v.object({
+      userId: v.id("profiles"),
+      fullName: v.string(),
+      avatarUrl: v.optional(v.string()),
+      role: v.union(v.literal("trainer"), v.literal("client")),
+      joinedAt: v.optional(v.number()),
+      isActive: v.optional(v.boolean()),
+    }),
+  },
+  handler: async (ctx, args) => {
+    if (!isAdminSecret(args.adminSecret)) {
+      throw new Error("Unauthorized: Invalid admin secret");
+    }
+
+    const now = Date.now();
+    await ctx.db.insert("groupMembers", {
+      ...args.member,
+      joinedAt: args.member.joinedAt || now,
+      lastActiveAt: now,
+      isActive: args.member.isActive !== undefined ? args.member.isActive : true,
+    });
+
+    return { success: true };
+  },
+});
+
+export const getCommunityStats = query({
+  args: {},
+  handler: async (ctx) => {
+    const posts = await ctx.db.query("socialPosts").collect();
+    const comments = await ctx.db.query("socialComments").collect();
+    const likes = await ctx.db.query("socialLikes").collect();
+    const follows = await ctx.db.query("socialFollows").collect();
+    const members = await ctx.db.query("groupMembers").collect();
+
+    return {
+      totalPosts: posts.length,
+      totalComments: comments.length,
+      totalLikes: likes.length,
+      totalFollows: follows.length,
+      totalMembers: members.length,
+      activeMembers: members.filter(m => m.isActive).length,
+    };
+  },
+});

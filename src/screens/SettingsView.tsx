@@ -2,6 +2,7 @@ import React, { useState, useEffect, useMemo, useRef } from 'react';
 import { useMutation, useQuery } from 'convex/react';
 import { api } from '@convex/_generated/api';
 import { useAuth } from '../services/AuthContext';
+import PremiumStreakCounter from '../components/PremiumStreakCounter';
 import {
   ArrowLeft, Camera, Bell, Shield,
   CreditCard, Moon, Ruler, LogOut,
@@ -231,6 +232,10 @@ const SettingsView: React.FC<SettingsViewProps> = ({ onBack, onLogout }) => {
   const [isChangingAvatar, setIsChangingAvatar] = useState(false);
   const cameraInputRef = useRef<HTMLInputElement>(null);
   
+  // Streak data
+  const streakData = useQuery(api.userPlans.getStreak);
+  const streakDataValue = streakData || { currentStreak: 0, longestStreak: 0 };
+  
   const [name, setName] = useState('');
   const [bio, setBio] = useState('');
   const [location, setLocation] = useState('');
@@ -450,14 +455,21 @@ const SettingsView: React.FC<SettingsViewProps> = ({ onBack, onLogout }) => {
             </button>
           </div>
 
-          <div className="space-y-3 w-full">
-            <h2 className="text-4xl font-black text-white text-center w-full italic uppercase tracking-tighter">
-              {name || 'ANONYMOUS'}
-            </h2>
-            <p className="text-[11px] font-black text-white/40 uppercase tracking-[0.25em] text-center">
-              {subscription.plan} Member • {location || 'BASE UNDEFINED'}
-            </p>
-          </div>
+           <div className="space-y-3 w-full">
+             <h2 className="text-4xl font-black text-white text-center w-full italic uppercase tracking-tighter">
+               {name || 'ANONYMOUS'}
+             </h2>
+             <div className="flex items-center justify-center mt-4">
+               <PremiumStreakCounter
+                 currentStreak={streakDataValue?.currentStreak || 0}
+                 longestStreak={streakDataValue?.longestStreak || 0}
+                 className="mx-4"
+               />
+             </div>
+             <p className="text-[11px] font-black text-white/40 uppercase tracking-[0.25em] text-center">
+               {subscription.plan} Member • {location || 'BASE UNDEFINED'}
+             </p>
+           </div>
 
           <button
             onClick={() => setActiveSubView('identity')}

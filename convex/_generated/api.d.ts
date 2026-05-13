@@ -36,6 +36,7 @@ import type * as progress from "../progress.js";
 import type * as schema_calendar from "../schema_calendar.js";
 import type * as schema_calendar_events from "../schema_calendar_events.js";
 import type * as seed from "../seed.js";
+import type * as seedCommunity from "../seedCommunity.js";
 import type * as seedNotifications from "../seedNotifications.js";
 import type * as social from "../social.js";
 import type * as stats from "../stats.js";
@@ -79,6 +80,7 @@ declare const fullApi: ApiFromModules<{
   schema_calendar: typeof schema_calendar;
   schema_calendar_events: typeof schema_calendar_events;
   seed: typeof seed;
+  seedCommunity: typeof seedCommunity;
   seedNotifications: typeof seedNotifications;
   social: typeof social;
   stats: typeof stats;
