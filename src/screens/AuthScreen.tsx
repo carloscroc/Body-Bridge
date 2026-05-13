@@ -2,13 +2,14 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
-  Mail, 
-  Lock, 
-  User, 
-  ArrowRight,
-  ChevronLeft,
-  Sparkles
-} from 'lucide-react';
+   Mail, 
+   Lock, 
+   User, 
+   ArrowRight,
+   ChevronLeft,
+   Sparkles
+ } from 'lucide-react';
+import { useUserValidation } from '../hooks/useUserValidation';
 
 export type AuthMode = 'landing' | 'login' | 'signup';
 
@@ -40,10 +41,29 @@ const AuthScreen: React.FC<AuthScreenProps> = ({ onAuth, initialMode = 'landing'
     onModeChange?.(nextMode);
   };
 
+  const { validateCredentials, validateRegistration, errors } = useUserValidation();
+
+  // Run validation whenever email, password, name, or mode changes
+  React.useEffect(() => {
+    if (mode === 'login') {
+      validateCredentials(email, password);
+    } else {
+      validateRegistration(name, email, password);
+    }
+  }, [email, password, name, mode]);
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
     setAuthError(null);
+    
+    // Check if there are any validation errors
+    if (Object.keys(errors).length > 0) {
+      setAuthError('Please fix the errors above');
+      setIsLoading(false);
+      return;
+    }
+    
     try {
       await onAuth({ name, email, password, method: mode as 'login' | 'signup' });
     } catch (err: any) {
