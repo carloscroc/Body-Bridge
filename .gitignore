@@ -32,3 +32,8 @@ nul
 # Git worktrees for isolated workspace
 .worktrees/
 .gstack/
+
+# Test output files
+screenshots/
+playwright-report/
+test-results/
