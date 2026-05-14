@@ -1,4 +1,4 @@
-package com.forge.fitness;
+package com.bodybridge.fitness;
 
 import com.getcapacitor.BridgeActivity;
 

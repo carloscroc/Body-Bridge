@@ -35,7 +35,7 @@ const getTokenFromRequest = (req) => {
   const authHeader = req.headers?.authorization;
   const bearer = authHeader && authHeader.startsWith('Bearer ') ? authHeader.slice('Bearer '.length) : null;
   if (bearer) return bearer;
-  return getCookie(req, 'forge_session');
+  return getCookie(req, 'body-bridge_session');
 };
 
 const verifyDevJwt = (token) => {

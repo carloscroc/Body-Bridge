@@ -1,4 +1,4 @@
-# forge - Memory Profile
+# body-bridge - Memory Profile
 
 **Project Memory Context for All Tools (Hermes, OpenCode, Claude Code)**
 
@@ -6,7 +6,7 @@
 
 ## Project Overview
 
-**Project Name**: forge
+**Project Name**: body-bridge
 **Type**: [Web App / Mobile App / Library / etc.]
 **Status**: Active Development
 **Last Updated**: 2026-04-30

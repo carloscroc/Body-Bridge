@@ -14,7 +14,7 @@ class MempalaceClient {
   constructor(config = {}) {
     this.config = {
       mempalacePath: config.mempalacePath || '/home/carlos/.mempalace',
-      project: config.project || 'forge',
+      project: config.project || 'body-bridge',
       ...config
     };
     

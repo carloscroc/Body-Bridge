@@ -135,12 +135,12 @@ app.post('/api/auth/login', (req, res) => {
     { expiresIn: '1h' }
   );
 
-  res.cookie('forge_session', token, cookieOptions);
+  res.cookie('body-bridge_session', token, cookieOptions);
   res.json({ user: { sub, email, roles: ['user'] } });
 });
 
 app.post('/api/auth/logout', (req, res) => {
-  res.clearCookie('forge_session', { path: '/' });
+  res.clearCookie('body-bridge_session', { path: '/' });
   res.status(204).end();
 });
 

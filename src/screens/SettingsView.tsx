@@ -408,7 +408,7 @@ const SettingsView: React.FC<SettingsViewProps> = ({ onBack, onLogout }) => {
             </button>
             <button
               onClick={() => {
-                try { localStorage.setItem('forge_logged_out', '1'); } catch (e) {}
+                try { localStorage.setItem('body-bridge_logged_out', '1'); } catch (e) {}
                 try { window.location.reload(); } catch (e) {}
               }}
               className="px-4 py-2 rounded-2xl border border-white/10 text-white"
@@ -803,7 +803,7 @@ const SettingsView: React.FC<SettingsViewProps> = ({ onBack, onLogout }) => {
         </div>
 
         <Section title="Plan Management">
-          <ActionItem label="Upgrade to Elite Access" onClick={() => window.open('https://forge.fitness/pricing', '_blank')} icon={Zap} badge="NEW" />
+          <ActionItem label="Upgrade to Elite Access" onClick={() => window.open('https://body-bridge.fitness/pricing', '_blank')} icon={Zap} badge="NEW" />
           <ActionItem label="Change Payment Method" onClick={() => window.open('https://billing.stripe.com/p/session/test_123', '_blank')} icon={Smartphone} sublabel="Opens Stripe Portal" />
           <ActionItem label="Restore Purchases" onClick={() => {
             setToast({ message: 'Purchases restored successfully.', type: 'success' });
@@ -866,9 +866,9 @@ const SettingsView: React.FC<SettingsViewProps> = ({ onBack, onLogout }) => {
         onClose={() => setActiveSubView('main')}
       >
         <Section title="Resources">
-          <ActionItem label="Contact Support" onClick={() => window.open('mailto:support@forge.fitness', '_blank')} icon={MessageSquare} />
-          <ActionItem label="Knowledge Base" onClick={() => window.open('https://docs.forge.fitness', '_blank')} icon={Info} />
-          <ActionItem label="Feature Request" onClick={() => window.open('https://roadmap.forge.fitness', '_blank')} icon={Zap} />
+          <ActionItem label="Contact Support" onClick={() => window.open('mailto:support@body-bridge.fitness', '_blank')} icon={MessageSquare} />
+          <ActionItem label="Knowledge Base" onClick={() => window.open('https://docs.body-bridge.fitness', '_blank')} icon={Info} />
+          <ActionItem label="Feature Request" onClick={() => window.open('https://roadmap.body-bridge.fitness', '_blank')} icon={Zap} />
         </Section>
         <div className="p-10 text-center space-y-4">
           <p className="text-[10px] font-black uppercase tracking-[0.3em] text-white/20">Forge Fitness Operating System</p>
@@ -884,9 +884,9 @@ const SettingsView: React.FC<SettingsViewProps> = ({ onBack, onLogout }) => {
         onClose={() => setActiveSubView('main')}
       >
         <Section title="Documents">
-          <ActionItem label="Privacy Policy" onClick={() => window.open('https://forge.fitness/privacy', '_blank')} icon={Shield} />
-          <ActionItem label="Terms of Service" onClick={() => window.open('https://forge.fitness/terms', '_blank')} icon={Info} />
-          <ActionItem label="Cookie Policy" onClick={() => window.open('https://forge.fitness/cookies', '_blank')} icon={Globe} />
+          <ActionItem label="Privacy Policy" onClick={() => window.open('https://body-bridge.fitness/privacy', '_blank')} icon={Shield} />
+          <ActionItem label="Terms of Service" onClick={() => window.open('https://body-bridge.fitness/terms', '_blank')} icon={Info} />
+          <ActionItem label="Cookie Policy" onClick={() => window.open('https://body-bridge.fitness/cookies', '_blank')} icon={Globe} />
         </Section>
         <div className="p-10 text-center">
           <p className="text-[10px] font-black uppercase tracking-[0.3em] text-white/20">Version 4.2.1-stable</p>

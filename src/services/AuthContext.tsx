@@ -41,19 +41,19 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
 
   const getBootstrappedEmail = useCallback(() => {
     if (typeof window === 'undefined') return null;
-    return window.localStorage.getItem('forge_last_auth_email');
+    return window.localStorage.getItem('body-bridge_last_auth_email');
   }, []);
 
   const setBootstrappedIdentity = useCallback((profile: any | null, email?: string) => {
     if (typeof window === 'undefined') return;
     if (profile?.email || email) {
-      window.localStorage.setItem('forge_last_auth_email', profile?.email ?? email ?? '');
+      window.localStorage.setItem('body-bridge_last_auth_email', profile?.email ?? email ?? '');
     }
   }, []);
 
   const clearBootstrappedIdentity = useCallback(() => {
     if (typeof window === 'undefined') return;
-    window.localStorage.removeItem('forge_last_auth_email');
+    window.localStorage.removeItem('body-bridge_last_auth_email');
   }, []);
 
   const fetchBootstrapProfile = useCallback(async (email?: string | null) => {

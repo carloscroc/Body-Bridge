@@ -84,7 +84,7 @@ class ConvexClient {
 const USERS = [
   {
     id: 'user-admin-001',
-    email: 'admin@forge.test',
+    email: 'admin@body-bridge.test',
     name: 'Admin User',
     avatar_url: 'https://example.com/avatars/admin.jpg',
     role: 'admin',
@@ -93,7 +93,7 @@ const USERS = [
   },
   {
     id: 'user-regular-001',
-    email: 'user@forge.test',
+    email: 'user@body-bridge.test',
     name: 'Regular User',
     avatar_url: 'https://example.com/avatars/user.jpg',
     role: 'user',
@@ -102,7 +102,7 @@ const USERS = [
   },
   {
     id: 'user-regular-002',
-    email: 'jane@forge.test',
+    email: 'jane@body-bridge.test',
     name: 'Jane Doe',
     avatar_url: 'https://example.com/avatars/jane.jpg',
     role: 'user',
@@ -111,7 +111,7 @@ const USERS = [
   },
   {
     id: 'user-guest-001',
-    email: 'guest@forge.test',
+    email: 'guest@body-bridge.test',
     name: 'Guest User',
     avatar_url: null,
     role: 'guest',

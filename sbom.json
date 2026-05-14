@@ -14,9 +14,9 @@
   "components": [
     {
       "type": "library",
-      "name": "forge-personal-trainer",
+      "name": "body-bridge-personal-trainer",
       "version": "0.0.0",
-      "purl": "pkg:npm/forge-personal-trainer@0.0.0",
+      "purl": "pkg:npm/body-bridge-personal-trainer@0.0.0",
       "licenses": [
         {
           "license": {
