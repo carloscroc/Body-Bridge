@@ -11,6 +11,9 @@ node_modules
 dist
 dist-ssr
 *.local
+# Env files with secrets (don't commit these)
+.env.local
+.env.local.bak.orig
 
 # Editor directories and files
 .vscode/*

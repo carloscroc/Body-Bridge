@@ -2,7 +2,9 @@ import jwt from 'jsonwebtoken';
 import logger from '../utils/logger.js';
 import { createRemoteJWKSet, jwtVerify } from 'jose';
 
-const JWT_SECRET = process.env.JWT_SECRET || 'your-256-bit-secret';
+if (process.env.NODE_ENV === 'production' && process.env.DEV_AUTH_BYPASS === 'true') {
+  throw new Error('DEV_AUTH_BYPASS cannot be true when NODE_ENV=production');
+}
 
 const OIDC_ISSUER = process.env.OIDC_ISSUER;
 const OIDC_AUDIENCE = process.env.OIDC_AUDIENCE;
@@ -38,8 +40,16 @@ const getTokenFromRequest = (req) => {
   return getCookie(req, 'body-bridge_session');
 };
 
+const getJwtSecret = () => {
+  const secret = process.env.JWT_SECRET;
+  if (!secret) {
+    throw new Error('JWT_SECRET environment variable must be set');
+  }
+  return secret;
+};
+
 const verifyDevJwt = (token) => {
-  return jwt.verify(token, JWT_SECRET);
+  return jwt.verify(token, getJwtSecret(), { algorithms: ['HS256'] });
 };
 
 const verifyOidcJwt = async (token) => {
@@ -57,8 +67,8 @@ export const authenticateToken = async (req, res, next) => {
   const token = getTokenFromRequest(req);
 
   if (!token) {
-    if (process.env.NODE_ENV === 'development' && process.env.REQUIRE_AUTH !== 'true') {
-        logger.warn('Unauthenticated request allowed in development mode (set REQUIRE_AUTH=true to enforce)');
+    if (process.env.NODE_ENV === 'development' && process.env.DEV_AUTH_BYPASS === 'true') {
+        logger.warn('Unauthenticated request allowed in development mode (set DEV_AUTH_BYPASS=true to disable)');
         return next();
     }
     logger.warn('Unauthorized access attempt: No token provided');

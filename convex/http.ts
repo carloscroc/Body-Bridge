@@ -6,31 +6,63 @@ import { api } from "./_generated/api";
 import { executeAIHttpRequest } from "./llm/aiHttp";
 import { auth } from "./auth";
 
+if (process.env.NODE_ENV === 'production') {
+  const violations: string[] = [];
+  if (process.env.VITE_DEV_AUTH === 'true') {
+    violations.push('VITE_DEV_AUTH');
+  }
+  if (process.env.ALLOW_UNAUTHENTICATED_EXERCISES === '1') {
+    violations.push('ALLOW_UNAUTHENTICATED_EXERCISES');
+  }
+  if (process.env.ALLOW_UNAUTHENTICATED_AI === '1') {
+    violations.push('ALLOW_UNAUTHENTICATED_AI');
+  }
+  if (violations.length > 0) {
+    throw new Error(
+      `Security configuration error in production: ${violations.join(', ')} cannot be enabled when NODE_ENV=production`
+    );
+  }
+}
+
 const http = httpRouter();
 
 auth.addHttpRoutes(http);
 
-const corsHeaders = {
-  "access-control-allow-origin": "*",
+const getAllowedOrigins = (): Set<string> => {
+  const origins = process.env.CORS_ALLOWED_ORIGINS?.split(',').map(s => s.trim()).filter(Boolean) ?? [];
+  if (process.env.NODE_ENV !== 'production') {
+    origins.push('http://localhost:7770', 'http://127.0.0.1:7770');
+  }
+  return new Set(origins);
+};
+
+const isOriginAllowed = (origin: string | null): boolean => {
+  if (!origin) return true; // Same-origin requests (no Origin header)
+  const allowed = getAllowedOrigins();
+  return allowed.has('*') || allowed.has(origin);
+};
+
+const getCorsHeaders = (origin: string | null) => ({
+  "access-control-allow-origin": isOriginAllowed(origin) ? (origin ?? '*') : '',
   "access-control-allow-methods": "GET,POST,OPTIONS",
   "access-control-allow-headers": "content-type,authorization",
-} as const;
+});
 
-function optionsResponse(): Response {
+function optionsResponse(origin: string | null = null): Response {
   return new Response(null, {
     status: 204,
     headers: {
-      ...corsHeaders,
+      ...getCorsHeaders(origin),
       "cache-control": "no-store",
     },
   });
 }
 
-function jsonResponse(body: unknown, init?: { status?: number; extraHeaders?: Record<string, string> }): Response {
+function jsonResponse(body: unknown, init?: { status?: number; extraHeaders?: Record<string, string> }, origin: string | null = null): Response {
   return new Response(JSON.stringify(body), {
     status: init?.status ?? 200,
     headers: {
-      ...corsHeaders,
+      ...getCorsHeaders(origin),
       "content-type": "application/json; charset=utf-8",
       "cache-control": "no-store",
       ...(init?.extraHeaders ?? {}),
@@ -38,11 +70,11 @@ function jsonResponse(body: unknown, init?: { status?: number; extraHeaders?: Re
   });
 }
 
-function unauthorizedResponse(): Response {
+function unauthorizedResponse(origin: string | null = null): Response {
   return new Response("Unauthorized", {
     status: 401,
     headers: {
-      ...corsHeaders,
+      ...getCorsHeaders(origin),
       "cache-control": "no-store",
     },
   });
@@ -65,7 +97,9 @@ http.route({
   path: "/api/exercises",
   method: "GET",
   handler: httpAction(async (ctx, req) => {
-    const allowUnauthenticated = process.env.VITE_DEV_AUTH === "true" || process.env.ALLOW_UNAUTHENTICATED_EXERCISES === "1";
+    const origin = req.headers.get('origin');
+    const allowUnauthenticated = process.env.NODE_ENV !== 'production' &&
+      (process.env.VITE_DEV_AUTH === "true" || process.env.ALLOW_UNAUTHENTICATED_EXERCISES === "1");
 
     let userId: Awaited<ReturnType<typeof getAuthUserId>> = null;
     try {
@@ -75,7 +109,7 @@ http.route({
       userId = null;
     }
 
-    if (!userId && !allowUnauthenticated) return unauthorizedResponse();
+    if (!userId && !allowUnauthenticated) return unauthorizedResponse(origin);
 
     const url = new URL(req.url, "http://localhost");
     const limitRaw = url.searchParams.get("limit");
@@ -106,7 +140,7 @@ http.route({
       cursor: result.status === "CanLoadMore" ? result.cursor : null,
     };
 
-    return jsonResponse(payload);
+    return jsonResponse(payload, {}, origin);
   }),
 });
 
@@ -114,7 +148,9 @@ http.route({
   path: "/api/ai",
   method: "POST",
   handler: httpAction(async (ctx, req) => {
-    const allowUnauthenticated = process.env.VITE_DEV_AUTH === "true" || process.env.ALLOW_UNAUTHENTICATED_AI === "1";
+    const origin = req.headers.get('origin');
+    const allowUnauthenticated = process.env.NODE_ENV !== 'production' &&
+      (process.env.VITE_DEV_AUTH === "true" || process.env.ALLOW_UNAUTHENTICATED_AI === "1");
 
     let userId: Awaited<ReturnType<typeof getAuthUserId>> = null;
     try {
@@ -124,17 +160,17 @@ http.route({
       userId = null;
     }
 
-    if (!userId && !allowUnauthenticated) return unauthorizedResponse();
+    if (!userId && !allowUnauthenticated) return unauthorizedResponse(origin);
 
     let body: unknown;
     try {
       body = await req.json();
     } catch {
-      return jsonResponse({ ok: false, error: { code: "BAD_REQUEST", message: "Invalid JSON body." } }, { status: 400 });
+      return jsonResponse({ ok: false, error: { code: "BAD_REQUEST", message: "Invalid JSON body." } }, { status: 400 }, origin);
     }
 
     if (!body || typeof body !== "object") {
-      return jsonResponse({ ok: false, error: { code: "BAD_REQUEST", message: "Request body must be an object." } }, { status: 400 });
+      return jsonResponse({ ok: false, error: { code: "BAD_REQUEST", message: "Request body must be an object." } }, { status: 400 }, origin);
     }
 
     const result = await executeAIHttpRequest(process.env, body as never);
@@ -146,31 +182,33 @@ http.route({
       else if (result.error.code === "RATE_LIMIT") status = 429;
       else status = 502;
     }
-    return jsonResponse(result, { status });
+    return jsonResponse(result, { status }, origin);
   }),
 });
 
 http.route({
   path: "/api/ai",
   method: "OPTIONS",
-  handler: httpAction(async () => {
-    return optionsResponse();
+  handler: httpAction(async (ctx, req) => {
+    return optionsResponse(req.headers.get('origin'));
   }),
 });
 
 http.route({
   path: "/api/exercises",
   method: "OPTIONS",
-  handler: httpAction(async () => {
-    return optionsResponse();
+  handler: httpAction(async (ctx, req) => {
+    return optionsResponse(req.headers.get('origin'));
   }),
 });
 
 http.route({
   path: "/api/exercises/categories",
   method: "GET",
-  handler: httpAction(async (ctx) => {
-    const allowUnauthenticated = process.env.VITE_DEV_AUTH === "true" || process.env.ALLOW_UNAUTHENTICATED_EXERCISES === "1";
+  handler: httpAction(async (ctx, req) => {
+    const origin = req.headers.get('origin');
+    const allowUnauthenticated = process.env.NODE_ENV !== 'production' &&
+      (process.env.VITE_DEV_AUTH === "true" || process.env.ALLOW_UNAUTHENTICATED_EXERCISES === "1");
 
     let userId: Awaited<ReturnType<typeof getAuthUserId>> = null;
     try {
@@ -180,18 +218,18 @@ http.route({
       userId = null;
     }
 
-    if (!userId && !allowUnauthenticated) return unauthorizedResponse();
+    if (!userId && !allowUnauthenticated) return unauthorizedResponse(origin);
 
     const categories = await ctx.runQuery(api.exercises.getCategories, {});
-    return jsonResponse(categories);
+    return jsonResponse(categories, {}, origin);
   }),
 });
 
 http.route({
   path: "/api/exercises/categories",
   method: "OPTIONS",
-  handler: httpAction(async () => {
-    return optionsResponse();
+  handler: httpAction(async (ctx, req) => {
+    return optionsResponse(req.headers.get('origin'));
   }),
 });
 

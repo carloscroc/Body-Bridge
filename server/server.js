@@ -131,7 +131,7 @@ app.post('/api/auth/login', (req, res) => {
 
   const token = jwt.sign(
     { sub, email, roles: ['user'] },
-    process.env.JWT_SECRET || 'your-256-bit-secret',
+    process.env.JWT_SECRET,
     { expiresIn: '1h' }
   );
 
@@ -229,8 +229,45 @@ app.post('/api/exercise-guide',
     } catch (error) {
       logger.error('AI Guide failed:', error);
       res.status(500).json({ error: 'Failed to generate guide.' });
+}
+  }));
+
+// Endpoint: Unsplash Image Search (proxy — API key stays server-side)
+app.get('/api/unsplash-search',
+  asyncHandler(async (req, res) => {
+    const { query } = req.query;
+    if (!query || typeof query !== 'string') {
+      return res.status(400).json({ error: 'query parameter is required' });
     }
-}));
+
+    const UNSPLASH_API_KEY = process.env.UNSPLASH_ACCESS_KEY;
+    if (!UNSPLASH_API_KEY) {
+      return res.status(503).json({ error: 'Unsplash API key not configured.' });
+    }
+
+    logger.info(`Unsplash search: ${query}`);
+
+    try {
+      const upstream = await fetch(`https://api.unsplash.com/search/photos?query=${encodeURIComponent(query)}&per_page=30`, {
+        headers: {
+          Authorization: `Client-ID ${UNSPLASH_API_KEY}`,
+        },
+      });
+
+      if (!upstream.ok) {
+        const bodyText = await upstream.text().catch(() => '');
+        logger.error(`Unsplash API error ${upstream.status}: ${bodyText}`);
+        return res.status(upstream.status).json({ error: `Unsplash API error: ${upstream.status}` });
+      }
+
+      const data = await upstream.json();
+      res.json(data);
+    } catch (error) {
+      logger.error('Unsplash search failed:', error);
+      res.status(500).json({ error: 'Failed to search images.' });
+    }
+  })
+);
 
 // Global Error Handler
 app.use((err, req, res, next) => {

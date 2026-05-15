@@ -16,7 +16,8 @@ type AuthCtx = {
 export async function requireIdentity(ctx: AuthCtx): Promise<Id<"users">> {
     const userId = await getAuthUserId(ctx);
     if (userId) return userId;
-    const allowUnauthenticated = process.env.VITE_DEV_AUTH === "true" || process.env.ALLOW_UNAUTHENTICATED_EXERCISES === "1" || process.env.ALLOW_UNAUTHENTICATED_AI === "1";
+    const allowUnauthenticated = process.env.NODE_ENV !== 'production' &&
+      (process.env.VITE_DEV_AUTH === "true" || process.env.ALLOW_UNAUTHENTICATED_EXERCISES === "1" || process.env.ALLOW_UNAUTHENTICATED_AI === "1");
     if (allowUnauthenticated) {
         return "dev" as Id<"users">;
     }

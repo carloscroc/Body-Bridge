@@ -18,8 +18,6 @@ interface UnsplashImagePickerProps {
   onSelect: (url: string) => void;
 }
 
-const KEY = typeof window !== 'undefined' ? (import.meta as any).env?.VITE_UNSPLASH_ACCESS_KEY : process.env.VITE_UNSPLASH_ACCESS_KEY;
-
 const UnsplashImagePicker: React.FC<UnsplashImagePickerProps> = ({ isOpen, onClose, onSelect }) => {
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [results, setResults] = useState<UnsplashPhoto[]>([]);
@@ -44,22 +42,13 @@ const UnsplashImagePicker: React.FC<UnsplashImagePickerProps> = ({ isOpen, onClo
   }, [searchQuery, isOpen]);
 
   const fetchResults = useCallback(async (query: string) => {
-    if (!KEY) {
-      setError('Unsplash access key is not configured.');
-      setResults([]);
-      setLoading(false);
-      return;
-    }
     setLoading(true);
     setError(null);
     try {
-      const resp = await fetch(`https://api.unsplash.com/search/photos?query=${encodeURIComponent(query)}&per_page=30`, {
-        headers: {
-          Authorization: `Client-ID ${KEY}`,
-        },
-      });
+      const resp = await fetch(`/api/unsplash-search?query=${encodeURIComponent(query)}`);
       if (!resp.ok) {
-        throw new Error(`Unsplash API error: ${resp.status}`);
+        const err = await resp.json().catch(() => ({}));
+        throw new Error(err.error ?? `HTTP ${resp.status}`);
       }
       const data = await resp.json();
       const items: UnsplashPhoto[] = Array.isArray(data?.results) ? data.results : [];
