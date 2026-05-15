@@ -40,3 +40,4 @@ nul
 screenshots/
 playwright-report/
 test-results/
+.deepsec/
