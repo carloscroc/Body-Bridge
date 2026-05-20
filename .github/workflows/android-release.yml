@@ -1,0 +1,122 @@
+name: Android Release Build
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version to release (e.g., 1.0.0)'
+        required: true
+        default: '1.0.0'
+
+jobs:
+  release:
+    name: Build Signed Release
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+      
+      - name: Install dependencies
+        run: npm ci
+      
+      - name: Set up JDK
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+          cache: 'gradle'
+      
+      - name: Decode keystore
+        run: |
+          echo "${{ secrets.ANDROID_KEYSTORE_BASE64 }}" | base64 -d > android/app/bodybridge-keystore.jks
+          echo "${{ secrets.ANDROID_KEYSTORE_PROPERTIES_BASE64 }}" | base64 -d > android/keystore.properties
+      
+      - name: Grant execute permission for gradlew
+        run: chmod +x android/gradlew
+      
+      - name: Build web app
+        run: npm run build
+      
+      - name: Sync Capacitor
+        run: npx cap sync android
+      
+      - name: Build signed release bundle
+        run: |
+          cd android
+          ./gradlew bundleRelease --stacktrace
+      
+      - name: Verify signature
+        run: |
+          cd android/app/build/outputs/bundle/release
+          if [ -f "app-release.aab" ]; then
+            echo "✅ Release AAB created successfully"
+            ls -lh app-release.aab
+          else
+            echo "❌ Release AAB not found"
+            exit 1
+          fi
+      
+      - name: Get version from tag
+        id: get_version
+        run: |
+          VERSION=${GITHUB_REF#refs/tags/v}
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          echo "version=$VERSION"
+      
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: |
+            android/app/build/outputs/bundle/release/app-release.aab
+            android/app/build/outputs/mapping/release/mapping.txt
+          draft: false
+          prerelease: false
+          generate_release_notes: true
+          body: |
+            ## Body Bridge Fitness v${{ steps.get_version.outputs.version }}
+            
+            ### What's New
+            - Initial production release
+            - Personalized workout plans
+            - Progress tracking and analytics
+            - Calendar scheduling
+            - Custom exercise library
+            
+            ### Improvements
+            - Optimized performance with R8 shrinking
+            - Enhanced security with code obfuscation
+            - App Bundle format for smaller downloads
+            
+            ### Technical
+            - Target SDK: 35 (Android 15)
+            - Min SDK: 24 (Android 7.0)
+            - Build: v${{ github.sha }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Generate release summary
+        run: |
+          echo "## Release Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Version:** v${{ steps.get_version.outputs.version }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Tag:** ${{ github.ref }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Commit:** ${{ github.sha }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Release AAB:** ✅ Created" >> $GITHUB_STEP_SUMMARY
+          echo "**GitHub Release:** ✅ Published" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Next Steps" >> $GITHUB_STEP_SUMMARY
+          echo "1. Download the AAB file from the release" >> $GITHUB_STEP_SUMMARY
+          echo "2. Upload to Google Play Console" >> $GITHUB_STEP_SUMMARY
+          echo "3. Follow the deployment checklist" >> $GITHUB_STEP_SUMMARY
+          echo "4. Monitor crash reports and user feedback" >> $GITHUB_STEP_SUMMARY

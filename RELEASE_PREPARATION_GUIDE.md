@@ -17,7 +17,8 @@
 # Ensure you're in project root
 npx capacitor assets
 ```
-
+i have he images ask me for thme
+the images and icon are inside resources
 #### 1.2 Verify Generated Assets
 Check these directories exist and contain files:
 - `android/app/src/main/res/mipmap-*/ic_launcher.png`
@@ -34,7 +35,7 @@ Check these directories exist and contain files:
 
 ### 🔢 Step 2: Update Version Numbers
 
-#### 2.1 Update package.json
+#### 2.1 Update package.json`
 ```json
 {
   "name": "forge",
@@ -57,13 +58,6 @@ defaultConfig {
 }
 ```
 
-#### 2.3 Verify iOS Version (Optional)
-Edit `ios/App/App/App/Info.plist`:
-```xml
-<key>CFBundleShortVersionString</key>
-<string>0.0.2</string>
-<key>CFBundleVersion</key>
-<string>2</string>
 ```
 
 ---
@@ -94,9 +88,7 @@ Verify `android/app/src/main/AndroidManifest.xml`:
 </manifest>
 ```
 
-#### 3.3 Verify iOS Permissions (If Needed)
-Check `ios/App/App/App/Info.plist` for required usage descriptions (if using camera, location, etc.)
-
+#### 3.3
 ---
 
 ### 🌐 Step 4: Build Production Web Assets

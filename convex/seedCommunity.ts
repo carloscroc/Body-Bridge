@@ -12,7 +12,7 @@ export const seedCommunityData = mutation({
   args: {
     adminSecret: v.optional(v.string()),
   },
-  handler: async (ctx) => {
+  handler: async (ctx, args) => {
     if (!isAdminSecret(args.adminSecret)) {
       throw new Error("Unauthorized: Invalid admin secret");
     }
@@ -292,7 +292,7 @@ export const clearCommunityData = mutation({
   args: {
     adminSecret: v.optional(v.string()),
   },
-  handler: async (ctx) => {
+  handler: async (ctx, args) => {
     if (!isAdminSecret(args.adminSecret)) {
       throw new Error("Unauthorized: Invalid admin secret");
     }

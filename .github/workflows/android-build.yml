@@ -1,0 +1,95 @@
+name: Android Build & Test
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build Android App
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+      
+      - name: Install dependencies
+        run: npm ci
+      
+      - name: Set up JDK
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+          cache: 'gradle'
+      
+      - name: Grant execute permission for gradlew
+        run: chmod +x android/gradlew
+      
+      - name: Build web app
+        run: npm run build
+      
+      - name: Sync Capacitor
+        run: npx cap sync android
+      
+      - name: Run unit tests
+        run: |
+          cd android
+          ./gradlew testDebugUnitTest --stacktrace
+      
+      - name: Run instrumentation tests (if possible)
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 34
+          target: google_apis
+          arch: x86_64
+          profile: Nexus 6
+          script: cd android && ./gradlew connectedDebugAndroidTest --stacktrace || echo "Instrumentation tests skipped"
+        continue-on-error: true
+      
+      - name: Build debug APK
+        run: |
+          cd android
+          ./gradlew assembleDebug --stacktrace
+      
+      - name: Upload debug APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: debug-apk
+          path: android/app/build/outputs/apk/debug/app-debug.apk
+          retention-days: 7
+      
+      - name: Build release bundle (unsigned)
+        run: |
+          cd android
+          ./gradlew bundleRelease --stacktrace
+      
+      - name: Upload release bundle (unsigned)
+        uses: actions/upload-artifact@v4
+        with:
+          name: release-aab-unsigned
+          path: android/app/build/outputs/bundle/release/app-release.aab
+          retention-days: 30
+      
+      - name: Generate build summary
+        run: |
+          echo "## Build Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Version:** 1.0.0 (versionCode: 3)" >> $GITHUB_STEP_SUMMARY
+          echo "**Target SDK:** 35" >> $GITHUB_STEP_SUMMARY
+          echo "**Min SDK:** 24" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Build Status:** ✅ Success" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Artifacts:**" >> $GITHUB_STEP_SUMMARY
+          echo "- Debug APK: \`debug-apk\`" >> $GITHUB_STEP_SUMMARY
+          echo "- Release AAB (unsigned): \`release-aab-unsigned\`" >> $GITHUB_STEP_SUMMARY

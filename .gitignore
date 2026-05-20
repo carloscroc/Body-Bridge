@@ -41,3 +41,17 @@ screenshots/
 playwright-report/
 test-results/
 .deepsec/
+
+# Android signing files - NEVER commit these!
+*.jks
+*.keystore
+android/keystore.properties
+android/app/*.jks
+android/app/*.keystore
+
+# Android build outputs
+android/.gradle/
+android/app/build/
+android/capacitor-cordova-android-plugins/build/
+android/build/
+android/local.properties
