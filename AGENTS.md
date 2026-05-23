@@ -1,58 +1,48 @@
-# context-mode — MANDATORY routing rules
+# Forge agent notes
 
-You have context-mode MCP tools available. These rules are NOT optional — they protect your context window from flooding. A single unrouted command can dump 56 KB into context and waste the entire session.
+## Stack and entrypoints
 
-## BLOCKED commands — do NOT attempt these
+- Single-package app, not a monorepo: React 19 + Vite frontend in `src/`, Express API in `server/`, Convex backend in `convex/`.
+- Frontend entrypoint is `src/index.tsx`; it mounts `App` behind Convex/Auth bootstrap checks and shows a startup error screen instead of crashing when Convex is missing.
+- Express entrypoint is `server/server.js`; Vite proxies `/api` to `http://localhost:3001`.
+- README says the backend runs on port `3000`, but the actual server default is `3001` and the Vite proxy is already wired to `3001`.
 
-### curl / wget — BLOCKED
-Any shell command containing `curl` or `wget` will be intercepted and blocked by the context-mode plugin. Do NOT retry.
-Instead use:
-- `context-mode_ctx_fetch_and_index(url, source)` to fetch and index web pages
-- `context-mode_ctx_execute(language: "javascript", code: "const r = await fetch(...)")` to run HTTP calls in sandbox
+## Commands that matter
 
-### Inline HTTP — BLOCKED
-Any shell command containing `fetch('http`, `requests.get(`, `requests.post(`, `http.get(`, or `http.request(` will be intercepted and blocked. Do NOT retry with shell.
-Instead use:
-- `context-mode_ctx_execute(language, code)` to run HTTP calls in sandbox — only stdout enters context
+- Install with `npm ci` if you want CI parity; the repo is locked by `package-lock.json` and CI uses `npm ci`.
+- `npm run dev` runs `config:generate` first, then starts Convex + Express + Vite together.
+- `npm run dev:app` starts only Express + Vite.
+- `npm run dev:convex` runs `scripts/runConvexDev.mjs`.
+- `npm run build` is `vite build` plus `scripts/postbuild-csp.mjs` and `scripts/postbuild-memory.js`.
+- `npm test` only runs Playwright plus `scripts/posttest-memory.js`; there is no unit-test runner wired into `npm test`.
 
-### Direct web fetching — BLOCKED
-Do NOT use any direct URL fetching tool. Use the sandbox equivalent.
-Instead use:
-- `context-mode_ctx_fetch_and_index(url, source)` then `context-mode_ctx_search(queries)` to query the indexed content
+## Dev server quirks
 
-## REDIRECTED tools — use sandbox equivalents
+- `npm run dev` mutates `package.json`: `scripts/generateAppConfig.cjs` rewrites the package name from `src/config/app.config.ts`.
+- `scripts/runConvexDev.mjs` treats a real `CONVEX_DEPLOYMENT` as cloud mode and keeps the process alive without starting a local Convex server.
+- If `CONVEX_DEPLOYMENT` is unset, `dev:convex` starts `convex dev --local --typecheck disable` and auto-generates local JWT/JWKS values if missing.
+- `convex/auth.config.ts` hard-fails when `CONVEX_SITE_URL` is missing.
+- `.env.local.example` is incomplete versus runtime needs: it documents `JWT_SECRET`, `VITE_CONVEX_URL`, and `CONVEX_DEPLOYMENT`, but local Convex auth also depends on `CONVEX_SITE_URL`.
 
-### Shell (>20 lines output)
-Shell is ONLY for: `git`, `mkdir`, `rm`, `mv`, `cd`, `ls`, `npm install`, `pip install`, and other short-output commands.
-For everything else, use:
-- `context-mode_ctx_batch_execute(commands, queries)` — run multiple commands + search in ONE call
-- `context-mode_ctx_execute(language: "shell", code: "...")` — run in sandbox, only stdout enters context
+## Verification reality
 
-### File reading (for analysis)
-If you are reading a file to **edit** it → reading is correct (edit needs content in context).
-If you are reading to **analyze, explore, or summarize** → use `context-mode_ctx_execute_file(path, language, code)` instead. Only your printed summary enters context.
+- Do not assume `npm run lint` or `npm run type-check` exist. CI references them in `.github/workflows/dependency-security.yml`, but `package.json` does not define either script.
+- `npx tsc -p tsconfig.json --noEmit` is not clean today; TypeScript checks `scripts/**/*.js` because `allowJs` is on, and several script files currently have syntax/type errors.
+- `knip.json` is the only dead-code config in repo. Use `npx knip` directly if you need it.
 
-### grep / search (large results)
-Search results can flood context. Use `context-mode_ctx_execute(language: "shell", code: "grep ...")` to run searches in sandbox. Only your printed summary enters context.
+## Playwright quirks
 
-## Tool selection hierarchy
+- Playwright is configured in `playwright.config.ts` with `baseURL` `http://127.0.0.1:7770`, headed mode, screenshots on, video on, HTML reporter.
+- There is no `webServer` config. Start the app yourself before running tests.
+- Run a focused spec with `npx playwright test tests/<file>.spec.ts`.
+- Full test discovery is currently broken by `tests/imageResolver.spec.ts` importing a missing `utils/imageResolver` module; expect `npx playwright test --list` and full-suite enumeration to fail until that file is fixed.
 
-1. **GATHER**: `context-mode_ctx_batch_execute(commands, queries)` — Primary tool. Runs all commands, auto-indexes output, returns search results. ONE call replaces 30+ individual calls.
-2. **FOLLOW-UP**: `context-mode_ctx_search(queries: ["q1", "q2", ...])` — Query indexed content. Pass ALL questions as array in ONE call.
-3. **PROCESSING**: `context-mode_ctx_execute(language, code)` | `context-mode_ctx_execute_file(path, language, code)` — Sandbox execution. Only stdout enters context.
-4. **WEB**: `context-mode_ctx_fetch_and_index(url, source)` then `context-mode_ctx_search(queries)` — Fetch, chunk, index, query. Raw HTML never enters context.
-5. **INDEX**: `context-mode_ctx_index(content, source)` — Store content in FTS5 knowledge base for later search.
+## Native build flow
 
-## Output constraints
+- Android CI order is `npm ci` -> `npm run build` -> `npx cap sync android` -> `cd android && ./gradlew ...`.
+- Release signing expects `android/keystore.properties` and a keystore injected from GitHub secrets in `.github/workflows/android-release.yml`.
 
-- Keep responses under 500 words.
-- Write artifacts (code, configs, PRDs) to FILES — never return them as inline text. Return only: file path + 1-line description.
-- When indexing content, use descriptive source labels so others can `search(source: "label")` later.
+## Naming and package ID mismatch
 
-## ctx commands
-
-| Command | Action |
-|---------|--------|
-| `ctx stats` | Call the `stats` MCP tool and display the full output verbatim |
-| `ctx doctor` | Call the `doctor` MCP tool, run the returned shell command, display as checklist |
-| `ctx upgrade` | Call the `upgrade` MCP tool, run the returned shell command, display as checklist |
+- Branding/config is split and inconsistent. `src/config/app.config.ts` says `Body Bridge Fitness` / `com.bodybridge.fitness`, but `capacitor.config.json` and `android/app/build.gradle` still use `Forge Fitness` / `com.forge.fitness` for app ID/applicationId.
+- `config:generate` only updates `package.json`; it does not reconcile Capacitor or native Android/iOS identifiers. If you touch app naming or package IDs, update all of those files together.

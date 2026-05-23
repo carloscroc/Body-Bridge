@@ -30,6 +30,19 @@ const {
   ...cleanEnv
 } = process.env;
 
+// Check if we have a cloud deployment configured
+const hasCloudDeployment = CONVEX_DEPLOYMENT && CONVEX_DEPLOYMENT !== 'anonymous:anonymous-Forge';
+
+if (hasCloudDeployment) {
+  console.log(`[dev:convex] Using cloud deployment: ${CONVEX_DEPLOYMENT}`);
+  console.log(`[dev:convex] Cloud URL: ${VITE_CONVEX_URL}`);
+  console.log('[dev:convex] Development server not needed for cloud deployment.');
+  console.log('[dev:convex] Your backend functions are deployed and running on Convex Cloud.');
+  
+  // Keep the process alive to prevent concurrently from killing other processes
+  setInterval(() => {}, 1000 * 60 * 60);
+}
+
 function generateLocalAuthKeys() {
   const { publicKey, privateKey } = generateKeyPairSync('rsa', {
     modulusLength: 2048,
@@ -55,6 +68,7 @@ if (!cleanEnv.JWT_PRIVATE_KEY || !cleanEnv.JWKS) {
   cleanEnv.JWKS ??= localAuthKeys.JWKS;
 }
 
+console.log('[dev:convex] Starting local Convex development server...');
 const command = process.platform === 'win32' ? 'npx.cmd' : 'npx';
 const child = spawn(command, [
   'convex', 'dev',

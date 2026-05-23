@@ -11,6 +11,7 @@
     "dev:all": "concurrently --kill-others --names \"CONVEX,SERVER,CLIENT\" --prefix-colors \"yellow,blue,green\" \"npm run dev:convex\" \"npm run dev:server\" \"npm run dev:client\"",
     "dev:client": "node scripts/runViteDev.mjs",
     "dev:server": "node server/server.js",
+    "deploy:convex": "node scripts/deployConvex.mjs",
     "build": "vite build && node scripts/postbuild-csp.mjs && node scripts/postbuild-memory.js",
     "test": "npm run test:playwright && node scripts/posttest-memory.js",
     "preview": "vite preview",
