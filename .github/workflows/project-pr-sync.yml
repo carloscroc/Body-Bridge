@@ -1,0 +1,136 @@
+name: Sync PR Status to Project
+
+on:
+  pull_request:
+    types: [opened, closed, merged]
+
+jobs:
+  sync-project:
+    name: Update project status
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Get PR details
+        id: pr-details
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const { number, title, state, merged } = context.payload.pull_request;
+            const action = context.payload.action;
+            
+            let status;
+            if (action === 'closed' && merged) {
+              status = 'Done';
+            } else if (action === 'closed' && !merged) {
+              status = 'Cancelled';
+            } else if (action === 'opened') {
+              status = 'In Progress';
+            }
+            
+            core.setOutput('pr-number', number);
+            core.setOutput('pr-title', title);
+            core.setOutput('status', status);
+            core.setOutput('action', action);
+            
+            console.log(`PR #${number}: ${title}`);
+            console.log(`Action: ${action}, Status: ${status}`);
+
+      - name: Update project status
+        if: steps.pr-details.outputs.status != ''
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const query = `
+              query($projectId: ID!, $itemId: ID!) {
+                node(id: $itemId) {
+                  ... on ProjectV2Item {
+                    fieldValues(first: 20) {
+                      nodes {
+                        ... on ProjectV2ItemFieldSingleSelectValue {
+                          field {
+                            ... on ProjectV2SingleSelectField {
+                              name
+                              id
+                            }
+                          }
+                          name
+                          id
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            `;
+            
+            const projectId = 'PVT_kwHOA1QRQc4BYo6p';
+            const itemId = context.payload.pull_request.node_id;
+            const newStatus = '${{ steps.pr-details.outputs.status }}';
+            
+            // First, get the current field values to find the Status field ID
+            const result = await github.graphql(query, {
+              projectId,
+              itemId
+            });
+            
+            console.log('Current field values:', JSON.stringify(result, null, 2));
+            
+            // Find Status field ID
+            const statusField = result.node.fieldValues.nodes.find(
+              f => f.field?.name === 'Status'
+            );
+            
+            if (statusField) {
+              // Now update the status using the updateProjectsV2ItemFieldValue mutation
+              const updateQuery = `
+                mutation($projectId: ID!, $itemId: ID!, $fieldId: ID!, $optionId: String!) {
+                  updateProjectsV2ItemFieldValue(input: {
+                    projectId: $projectId
+                    itemId: $itemId
+                    fieldId: $fieldId
+                    value: { singleSelectOptionId: $optionId }
+                  }) {
+                    projectsV2Item {
+                      id
+                    }
+                  }
+                }
+              `;
+              
+              // Get the option ID for the status
+              const statusOptionsQuery = `
+                query($projectId: ID!) {
+                  node(id: $projectId) {
+                    ... on ProjectV2 {
+                      field(name: "Status") {
+                        ... on ProjectV2SingleSelectField {
+                          options {
+                            id
+                            name
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              `;
+              
+              const optionsResult = await github.graphql(statusOptionsQuery, { projectId });
+              const statusOption = optionsResult.node.field.options.find(o => o.name === newStatus);
+              
+              if (statusOption) {
+                await github.graphql(updateQuery, {
+                  projectId,
+                  itemId,
+                  fieldId: statusField.field.id,
+                  optionId: statusOption.id
+                });
+                console.log(`Updated status to: ${newStatus}`);
+              } else {
+                console.log(`Status option "${newStatus}" not found`);
+              }
+            } else {
+              console.log('Status field not found on item');
+            }
+          env:
+            GH_TOKEN: ${{ github.token }}

@@ -2,6 +2,9 @@ import { query, mutation } from "./_generated/server";
 import { v } from "convex/values";
 import { getAuthUserId } from "@convex-dev/auth/server";
 
+// TODO: Issue #1 - Add firstName and lastName fields to profiles
+// Currently only fullName is collected, but we need separate first/last names
+
 export const listPublicProfiles = query({
   args: {
     limit: v.optional(v.number()),
