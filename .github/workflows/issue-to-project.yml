@@ -1,0 +1,35 @@
+name: Add Issue to Project
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  add-to-project:
+    name: Add issue to project board
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Add issue to project
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const query = `
+              mutation($projectId: ID!, $itemId: ID!) {
+                addProjectV2ItemById(input: {projectId: $projectId, itemId: $itemId}) {
+                  item {
+                    id
+                  }
+                }
+              }
+            `;
+            
+            const projectId = 'PVT_kwHOA1QRQc4BYo6p';
+            const issueId = context.payload.issue.node_id;
+            
+            await github.graphql(query, {
+              projectId,
+              itemId: issueId
+            });
+            
+            console.log('Added issue to project board');

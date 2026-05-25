@@ -55,3 +55,4 @@ android/app/build/
 android/capacitor-cordova-android-plugins/build/
 android/build/
 android/local.properties
+*.apk
