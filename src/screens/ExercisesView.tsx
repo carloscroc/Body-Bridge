@@ -203,12 +203,12 @@ const ExercisesView: React.FC<ExercisesViewProps> = ({ onSelect }) => {
       <PremiumSectionHeader title="Movements" className="mb-4" />
 
       {isLoading && exercises.length === 0 ? (
-        <div className="flex items-center justify-center py-20">
+        <div className="flex flex-col items-center justify-center py-20 text-center">
           <div className="text-white/30 text-sm">Loading exercises...</div>
         </div>
       ) : exercises.length === 0 ? (
-        <div className="flex items-center justify-center py-20">
-          <div className="text-white/30 text-sm">No exercises found</div>
+        <div className="flex flex-col items-center justify-center py-20 text-center">
+          <Dumbbell className="h-12 w-12 mb-4 text-white/20" /><p className="text-white/60 text-sm">No exercises yet. Check back soon!</p>
         </div>
       ) : (
         <>
@@ -271,3 +271,4 @@ const ExercisesView: React.FC<ExercisesViewProps> = ({ onSelect }) => {
 };
 
 export default ExercisesView;
+
