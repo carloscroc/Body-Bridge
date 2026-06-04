@@ -1,0 +1,23 @@
+{
+  "id": "ctx_1780406948699_ef8kjlcu5",
+  "timestamp": "2026-06-02T13:29:08.699Z",
+  "project": "body-bridge",
+  "session_id": "mem_1780406948700_9dm8qod8e",
+  "type": "context",
+  "category": "context",
+  "importance": "high",
+  "summary": "Context snapshot: No specific task",
+  "content": "Context Snapshot:\nTimestamp: undefined\nSession ID: undefined\nWorking Directory: undefined\nEnvironment: undefined\n\nGit Information:\nBranch: N/A\nStatus: N/A\nLatest Commit: N/A\n\nFiles:\nModified: 0\nTotal Files: N/A\n\n\nPackage Information:\nN/A\n\nRecent Activity:\nNo recent activity\n\nAdditional Context:\n",
+  "tags": [
+    "context",
+    "snapshot",
+    "session"
+  ],
+  "related_files": [],
+  "outcomes": [
+    "Context saved with 0 data points"
+  ],
+  "metadata": {
+    "context_type": "snapshot"
+  }
+}

@@ -205,6 +205,34 @@ class MemoryHooks {
   }
 
   /**
+   * Hook for session start
+   * @param {Object} sessionData - Session information
+   */
+  async onSessionStart(sessionData) {
+    const memory = {
+      category: 'context',
+      type: 'session-start',
+      importance: 'low',
+      summary: `Session started: ${(sessionData.id || 'unknown').slice(0, 12)}`,
+      content: [
+        `Session ID: ${sessionData.id || 'unknown'}`,
+        `Directory: ${sessionData.directory || process.cwd()}`,
+        `Project: ${sessionData.project || 'unknown'}`,
+        `Started: ${new Date().toISOString()}`,
+      ].join('\n'),
+      tags: ['session', 'start', 'auto-captured'],
+      outcomes: ['Session initialized'],
+      metadata: {
+        session_id: sessionData.id,
+        project: sessionData.project,
+        directory: sessionData.directory,
+      }
+    };
+
+    await this.client.storeMemory(memory);
+  }
+
+  /**
    * Hook for session end
    * @param {Object} sessionData - Session information
    */
@@ -478,7 +506,8 @@ ${featureData.nextSteps.map(s => `  📋 ${s}`).join('\n')}`;
 export { MemoryHooks };
 
 // CLI interface
-if (import.meta.url === `file://${process.argv[1]}`) {
+import { pathToFileURL } from 'url';
+if (import.meta.url === pathToFileURL(process.argv[1]).href) {
   const args = process.argv.slice(2);
   const command = args[0];
   const data = args[1] ? JSON.parse(args[1]) : {};
@@ -503,11 +532,15 @@ if (import.meta.url === `file://${process.argv[1]}`) {
         case 'vulnerability':
           await hooks.onVulnerabilityFix(data);
           break;
-        case 'session':
-          await hooks.onSessionEnd(data);
-          break;
-        default:
-          console.log('Usage: node memory-hooks.js [commit|build|test|security|vulnerability|session] [json_data]');
+      case 'session-start':
+        await hooks.onSessionStart(data);
+        break;
+      case 'session':
+      case 'session-end':
+        await hooks.onSessionEnd(data);
+        break;
+      default:
+        console.log('Usage: node memory-hooks.js [commit|build|test|security|vulnerability|session-start|session-end] [json_data]');
       }
     } catch (error) {
       console.error('Error:', error.message);

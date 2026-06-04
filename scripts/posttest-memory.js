@@ -5,9 +5,9 @@
  * Automatically captures test results and metrics
  */
 
-const { MemoryHooks } = require('./memory-hooks');
-const fs = require('fs');
-const path = require('path');
+import { MemoryHooks } from './memory-hooks.js';
+import fs from 'fs';
+import path from 'path';
 
 async function captureTestMemory() {
   const hooks = new MemoryHooks();
@@ -68,8 +68,9 @@ function getTestFailures() {
 }
 
 // Run if called directly
-if (require.main === module) {
+import { pathToFileURL } from 'url';
+if (import.meta.url === pathToFileURL(process.argv[1]).href) {
   captureTestMemory();
 }
 
-module.exports = { captureTestMemory };
+export { captureTestMemory };

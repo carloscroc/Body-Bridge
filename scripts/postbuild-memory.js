@@ -45,7 +45,8 @@ function getBundleSize() {
 }
 
 // Run if called directly
-if (import.meta.url === `file://${process.argv[1]}`) {
+import { pathToFileURL } from 'url';
+if (import.meta.url === pathToFileURL(process.argv[1]).href) {
   captureBuildMemory();
 }
 

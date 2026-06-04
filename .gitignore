@@ -56,3 +56,7 @@ android/capacitor-cordova-android-plugins/build/
 android/build/
 android/local.properties
 *.apk
+
+# MemPalace per-project files (issue #185)
+mempalace.yaml
+entities.json

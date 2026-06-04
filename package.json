@@ -25,6 +25,8 @@
     "memory:stats": "node scripts/mempalace-client.js stats",
     "memory:history": "node scripts/context-manager.js history",
     "memory:autosave": "node scripts/context-manager.js autosave",
+"memory:session-start": "node scripts/memory-hooks.js session-start",
+"memory:session-end": "node scripts/memory-hooks.js session-end",
     "security:scan": "semgrep --config p/security-audit src convex && node scripts/security-memory.js"
   },
   "dependencies": {

@@ -6,10 +6,10 @@
  * Manages context save/restore with mempalace integration
  */
 
-const { MempalaceClient } = require('./mempalace-client');
-const fs = require('fs');
-const path = require('path');
-const { execSync } = require('child_process');
+import { MempalaceClient } from './mempalace-client.js';
+import fs from 'fs';
+import path from 'path';
+import { execSync } from 'child_process';
 
 class ContextManager {
   constructor(config = {}) {
@@ -280,7 +280,6 @@ ${Object.entries(context)
   }
 
   parseContextContent(context) {
-    // Parse the formatted content back into structured data
     const parsed = {
       id: context.id,
       timestamp: context.timestamp,
@@ -288,15 +287,16 @@ ${Object.entries(context)
       metadata: context.metadata
     };
 
-    // Extract key information from content
-    const lines = context.content.split('\n');
-    lines.forEach(line => {
-      const match = line.match(/^([^:]+):\s*(.+)$/);
-      if (match) {
-        const [, key, value] = match;
-        parsed[key.toLowerCase().replace(/\s+/g, '_')] = value;
-      }
-    });
+    if (context.content) {
+      const lines = context.content.split('\n');
+      lines.forEach(line => {
+        const match = line.match(/^([^:]+):\s*(.+)$/);
+        if (match) {
+          const [, key, value] = match;
+          parsed[key.toLowerCase().replace(/\s+/g, '_')] = value;
+        }
+      });
+    }
 
     return parsed;
   }
@@ -362,7 +362,11 @@ ${Object.entries(context)
 
   getFileCount() {
     try {
-      return execSync('find . -type f -not -path "./node_modules/*" -not -path "./.git/*" | wc -l', { encoding: 'utf8' }).trim();
+      const isWin = process.platform === 'win32';
+      const cmd = isWin
+        ? 'cmd /c "dir /s /b /a-d . 2>nul | find /c /v """'
+        : 'find . -type f -not -path "./node_modules/*" -not -path "./.git/*" | wc -l';
+      return execSync(cmd, { encoding: 'utf8' }).trim();
     } catch (error) {
       return null;
     }
@@ -395,10 +399,11 @@ ${Object.entries(context)
 }
 
 // Export for use in other scripts
-module.exports = { ContextManager };
+export { ContextManager };
 
 // CLI interface
-if (require.main === module) {
+import { pathToFileURL } from 'url';
+if (import.meta.url === pathToFileURL(process.argv[1]).href) {
   const args = process.argv.slice(2);
   const command = args[0];
   const data = args[1] ? JSON.parse(args[1]) : {};

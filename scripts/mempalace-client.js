@@ -9,11 +9,14 @@
 import fs from 'fs';
 import path from 'path';
 import { execSync } from 'child_process';
+import os from 'os';
+
+const DEFAULT_MEMPALACE_PATH = path.join(os.homedir(), '.mempalace');
 
 class MempalaceClient {
   constructor(config = {}) {
     this.config = {
-      mempalacePath: config.mempalacePath || '/home/carlos/.mempalace',
+      mempalacePath: config.mempalacePath || DEFAULT_MEMPALACE_PATH,
       project: config.project || 'body-bridge',
       ...config
     };
@@ -307,7 +310,9 @@ class MempalaceClient {
       type: memory.type,
       importance: memory.importance,
       summary: memory.summary,
-      tags: memory.tags || []
+      content: memory.content || '',
+      tags: memory.tags || [],
+      metadata: memory.metadata || {}
     });
 
     fs.writeFileSync(indexFile, JSON.stringify(index, null, 2));
@@ -362,7 +367,8 @@ class MempalaceClient {
 export { MempalaceClient };
 
 // CLI interface
-if (import.meta.url === `file://${process.argv[1]}`) {
+import { pathToFileURL } from 'url';
+if (import.meta.url === pathToFileURL(process.argv[1]).href) {
   const args = process.argv.slice(2);
   const command = args[0];
 

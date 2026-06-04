@@ -1,0 +1,74 @@
+{
+  "name": "@servrox/symphony",
+  "version": "0.1.8",
+  "private": false,
+  "description": "Reusable TypeScript implementation of the OpenAI Symphony orchestration service with a bundled operations dashboard.",
+  "keywords": [
+    "codex",
+    "linear",
+    "openai",
+    "orchestration",
+    "symphony"
+  ],
+  "homepage": "https://github.com/servrox/symphony-turbo#readme",
+  "bugs": {
+    "url": "https://github.com/servrox/symphony-turbo/issues"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/servrox/symphony-turbo.git",
+    "directory": "packages/symphony"
+  },
+  "bin": {
+    "symphony": "dist/src/cli.js"
+  },
+  "files": [
+    "dist/src",
+    "dist/dashboard",
+    "docs/screenshots"
+  ],
+  "type": "module",
+  "main": "./dist/src/index.js",
+  "types": "./dist/src/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/src/index.d.ts",
+      "default": "./dist/src/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "audit:package": "node scripts/audit-package.mjs",
+    "build": "tsc -p tsconfig.json",
+    "build:dashboard": "pnpm --filter dashbaord build",
+    "build:package": "pnpm run build && pnpm run build:dashboard && node scripts/assemble-package.mjs",
+    "check-types": "tsc --noEmit -p tsconfig.json",
+    "lint": "oxlint src test",
+    "lint:fix": "oxlint --fix src test",
+    "pack:verify": "pnpm run build:package && pnpm run audit:package && npm --cache /tmp/symphony-npm-cache pack --ignore-scripts",
+    "prepack": "pnpm run build:package && pnpm run audit:package",
+    "test": "pnpm run build && node --test \"dist/test/**/*.test.js\""
+  },
+  "dependencies": {
+    "@t3-oss/env-core": "^0.13.11",
+    "@tanstack/react-query": "^5.100.7",
+    "liquidjs": "^10.25.7",
+    "lucide-react": "1.8.0",
+    "next": "16.2.3",
+    "react": "19.2.5",
+    "react-dom": "19.2.5",
+    "yaml": "^2.8.3",
+    "zod": "^4.4.1"
+  },
+  "devDependencies": {
+    "@types/node": "25.6.0",
+    "typescript": "6.0.2"
+  },
+  "engines": {
+    "node": ">=24.11.1"
+  }
+}

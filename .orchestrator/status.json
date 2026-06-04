@@ -1,0 +1,11 @@
+{
+  "pid": 18644,
+  "startedAt": "2026-06-04T13:36:06.017Z",
+  "lastHeartbeat": "2026-06-04T13:52:36.456Z",
+  "state": "running-opencode",
+  "currentIssue": "BODYBRIDGE-2: Test OpenCode Fix",
+  "pollsCompleted": 1,
+  "issuesProcessed": 0,
+  "errors": 0,
+  "lastError": null
+}

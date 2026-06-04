@@ -5,10 +5,10 @@
  * Automatically captures security scan results
  */
 
-const { MemoryHooks } = require('./memory-hooks');
-const fs = require('fs');
-const path = require('path');
-const { execSync } = require('child_process');
+import { MemoryHooks } from './memory-hooks.js';
+import fs from 'fs';
+import path from 'path';
+import { execSync } from 'child_process';
 
 async function captureSecurityMemory() {
   const hooks = new MemoryHooks();
@@ -94,8 +94,9 @@ function formatSecurityDetails(results) {
 }
 
 // Run if called directly
-if (require.main === module) {
+import { pathToFileURL } from 'url';
+if (import.meta.url === pathToFileURL(process.argv[1]).href) {
   captureSecurityMemory();
 }
 
-module.exports = { captureSecurityMemory };
+export { captureSecurityMemory };
