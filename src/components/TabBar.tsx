@@ -31,11 +31,11 @@ const TabBar: React.FC<TabBarProps> = ({ activeTab, onTabChange }) => {
                   strokeWidth: isActive ? 2.5 : 2 
                 })}
               </div>
-              {isActive && (
-                <span className="ml-2.5 text-[10px] font-black uppercase tracking-widest">
-                  {tab.id}
-                </span>
-              )}
+               {isActive && (
+                 <span className="ml-2.5 text-[10px] font-black uppercase tracking-widest">
+                   {tab.id}
+                 </span>
+               )}
             </button>
           );
         })}
