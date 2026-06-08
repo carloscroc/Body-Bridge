@@ -1,0 +1,9 @@
+{"ts":"2026-06-04T01:00:00Z","type":"run_start","issue_id":"BB-1","data":{"title":"Server misconfiguration"}}
+{"ts":"2026-06-04T01:15:00Z","type":"run_end","issue_id":"BB-1","data":{"exit_code":1,"duration_min":15,"error":"Server startup failed","learning_ids":[]}}
+{"ts":"2026-06-04T02:00:00Z","type":"run_start","issue_id":"BB-2","data":{"title":"Agent used Unix commands on Windows"}}
+{"ts":"2026-06-04T02:30:00Z","type":"run_end","issue_id":"BB-2","data":{"exit_code":1,"duration_min":30,"error":"Unix commands failed on Windows PowerShell","learning_ids":["windows-powershell"]}}
+{"ts":"2026-06-04T03:00:00Z","type":"run_start","issue_id":"BB-3","data":{"title":"Agent used Unix commands again"}}
+{"ts":"2026-06-04T03:25:00Z","type":"run_end","issue_id":"BB-3","data":{"exit_code":1,"duration_min":25,"error":"Repeated Unix command failures on Windows","learning_ids":["windows-powershell"]}}
+{"ts":"2026-06-04T04:00:00Z","type":"run_start","issue_id":"BB-4","data":{"title":"Convex _generated/api missing"}}
+{"ts":"2026-06-04T04:20:00Z","type":"run_end","issue_id":"BB-4","data":{"exit_code":1,"duration_min":20,"error":"TypeScript compilation failed: _generated/api not found","learning_ids":["windows-powershell","convex-local-setup"]}}
+{"ts":"2026-06-05T00:00:00Z","type":"seed_complete","issue_id":"SYSTEM","data":{"learnings_seeded":["windows-powershell","convex-local-setup","agent-idle-detection","body-bridge-architecture"],"source":"retroactive_analysis"}}

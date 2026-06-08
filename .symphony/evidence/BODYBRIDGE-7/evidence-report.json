@@ -1,0 +1,32 @@
+{
+  "ticketId": "BODYBRIDGE-7",
+  "timestamp": "2026-06-08T01:25:00.367Z",
+  "automated_tests": {
+    "status": "skip",
+    "reason": "skipped by user"
+  },
+  "health_check": {
+    "status": "fail",
+    "endpoint": "http://localhost:3001/api/health",
+    "error": "fetch failed"
+  },
+  "code_quality": {
+    "status": "warn",
+    "output": "{\"issues\":[{\"file\":\"src/config/app.config.ts\",\"binaries\":[],\"catalog\":[],\"dependencies\":[],\"devDependencies\":[],\"duplicates\":[],\"enumMembers\":[],\"exports\":[],\"files\":[{\"name\":\"src/config/app.config.ts\"}],\"namespaceMembers\":[],\"optionalPeerDependencies\":[],\"types\":[],\"unlisted\":[],\"unresolved\":[]},{\"file\":\"package.json\",\"binaries\":[{\"name\":\"semgrep\"}],\"catalog\":[],\"dependencies\":[{\"name\":\"form-data\",\"line\":53,\"col\":6,\"pos\":2704},{\"name\":\"minimist\",\"line\":59,\"col\":6,\"pos\":2872}],\"devDependencies\":[{\"name\":\"tailwindcss-animate\",\"line\":79,\"col\":6,\"pos\":3435}],\"duplicates\":[],\"enumMembers\":[],\"exports\":[],\"files\":[],\"namespaceMembers\":[],\"optionalPeerDependencies\":[],\"types\":[],\"unlisted\":[],\"unresolved\":[]},{\"file\":\".github/workflows/dependency-security.yml\",\"binaries\":[{\"name\":\"license-checker\"}],\"catalog\":[],\"dependencies\":[],\"devDependencies\":[],\"duplicates\":[],\"enumMembers\":[],\"exports\":[],\"files\":[],\"namespaceMembers\":[],\"optionalPeerDependencies\":[],\"types\":[],\"unlisted\":[],\"unresolved\":[]},{\"file\":\"convex/auth.ts\",\"binaries\":[],\"catalog\":[],\"dependencies\":[],\"devDependencies\":[],\"duplicates\":[],\"enumMembers\":[],\"exports\":[{\"namespace\":\"auth\",\"name\":\"signIn\",\"line\":10,\"col\":22,\"pos\":294},{\"namespace\":\"auth\",\"name\":\"signOut\",\"line\":10,\"col\":30,\"pos\":302},{\"namespace\":\"auth\",\"name\":\"store\",\"line\":10,\"col\":39,\"pos\":311},{\"namespace\":\"auth\",\"name\":\"isAuthenticated\",\"line\":10,\"col\":46,\"pos\":318}],\"files\":[],\"namespaceMembers\":[],\"optionalPeerDependencies\":[],\"types\":[],\"unlisted\":[],\"unresolved\":[]},{\"file\":\"src/components/ErrorBoundary.tsx\",\"binaries\":[],\"catalog\":[],\"dependencies\":[],\"devDependencies\":[],\"duplicates\":[[{\"name\":\"ErrorBoundary\",\"line\":14,\"col\":14,\"pos\":266},{\"name\":\"default\",\"line\":77,\"col\":16,\"pos\":2188}]],\"enumMembers\":[],\"exports\":[],\"files\":[],\"namespaceMembers\":[],\"optionalPeerDependencies\":[],\"types\":[],\"unlisted\":[],\"unresolved\":[]},{\"file\":\"convex/exercises.ts\",\"binaries\":[],\"catalog\":[],\"dependencies\":[],\"devDependencies\":[],\"duplicates\":[[{\"name\":\"seedExercises\",\"line\":1392,\"col\":14,\"pos\":44939},{\"name\":\"seed\",\"line\":1439,\"col\":14,\"pos\":46300}]],\"enumMembers\":[],\"exports\":[],\"files\":[],\"namespaceMembers\":[],\"optionalPeerDependencies\":[],\"types\":[],\"unlisted\":[],\"unresolved\":[]}]}\n",
+    "exitCode": 1
+  },
+  "security_scan": {
+    "status": "skip",
+    "reason": "skipped by user"
+  },
+  "screenshots": {
+    "status": "skip",
+    "reason": "skipped by user"
+  },
+  "summary": {
+    "pass": 0,
+    "fail": 1,
+    "skip": 4,
+    "total": 5
+  }
+}

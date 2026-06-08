@@ -60,3 +60,20 @@ Optional: `GEMINI_API_KEY`, `UNSPLASH_ACCESS_KEY`, `IMPORT_TRAINER_EMAIL`, `IMPO
 - `capacitor.config.json` still uses `Forge Fitness` / `com.forge.fitness`
 - `config:generate` only updates `package.json` — it does NOT sync Capacitor or native Android/iOS identifiers.
 - If you touch app naming or package IDs, update all three: `app.config.ts`, `capacitor.config.json`, and `android/app/build.gradle`.
+
+## Plane.so Integration
+
+- **API**: `http://10.0.0.112:3300/api/v1/` with key from `.env.symphony`
+- **Workspace**: `body-bridge`, **Project**: `13cecebf-f9ff-41bd-b5bb-b88774ef6440`, **Identifier**: `BODYBRIDGE`
+- **States**: Backlog → Todo → In Progress → Review → Done / Cancelled
+  - Backlog: `e7ae97a1-17c1-49a4-83e7-97719b6501e8`
+  - Todo: `46fd340f-b4cc-4c4e-8911-39b4c3f69af0`
+  - In Progress: `b52edaa1-b2cd-43d4-b1a6-8ffb462c4d87`
+  - Review: `612f847c-e8f5-41c8-b325-4aceedae7445`
+  - Done: `45735805-18ab-486a-afb6-e48914af00f0`
+  - Cancelled: `03d63333-b4d5-4472-8fcb-18b12113e187`
+- **Priority**: Must be string (`"none"|"low"|"medium"|"high"|"urgent"`) — API rejects integers
+- **Create ticket**: `node scripts/create-plane-ticket.cjs --name "Title" --type feature --priority medium`
+- **Start work**: `node scripts/start-symphony-work.cjs --ticket BODYBRIDGE-X`
+- **Collect evidence**: `node scripts/start-symphony-work.cjs --ticket BODYBRIDGE-X --evidence-only`
+- Pagination bug: Plane returns truthy `next_cursor` even on empty pages — always check `results.length`
