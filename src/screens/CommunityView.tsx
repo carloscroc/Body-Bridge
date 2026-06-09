@@ -5,9 +5,7 @@ import {
   Share2,
   Search,
   MoreHorizontal,
-  Lock,
   Circle,
-  Calendar,
   Plus,
   Dumbbell,
   Apple,
@@ -111,30 +109,6 @@ const getCategoryDisplay = (category: string): { label: string; emoji: string } 
 };
 
 // ============== LOCAL COMPONENTS ==============
-
-// --- Community Notice Bar ---
-const CommunityNoticeBar = ({
-  icon: Icon,
-  secondaryIcon: SecondaryIcon,
-  text,
-  onDismiss,
-}: {
-  icon: React.ComponentType<{ size?: number; className?: string }>;
-  secondaryIcon?: React.ComponentType<{ size?: number; className?: string }>;
-  text: string;
-  onDismiss?: () => void;
-}) => (
-  <div className="mx-5 mb-4 bg-[#1c1c1e] rounded-2xl px-4 py-3 flex items-center gap-3 border border-white/[0.05]">
-    <Icon size={16} className="text-amber-400 shrink-0" />
-    {SecondaryIcon && <SecondaryIcon size={12} className="text-zinc-600 shrink-0" />}
-    <span className="flex-1 text-[13px] text-zinc-300 font-medium leading-snug">{text}</span>
-    {onDismiss && (
-      <button type="button" onClick={onDismiss} className="text-zinc-600 hover:text-white transition-colors shrink-0 ml-1">
-        <X size={14} />
-      </button>
-    )}
-  </div>
-);
 
 // --- Avatar with Level Badge ---
 const AvatarWithBadge = ({
@@ -771,8 +745,6 @@ const CommunityTab = ({ onOpenProfile }: { onOpenProfile: (name: string) => void
   const [activeCommentsPostId, setActiveCommentsPostId] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
   const [showSearch, setShowSearch] = useState(false);
-  const [showNotice, setShowNotice] = useState(true);
-
   // Queries
   const postsData = useQuery(
     api.social.getPostsByCategory,
@@ -890,16 +862,6 @@ const CommunityTab = ({ onOpenProfile }: { onOpenProfile: (name: string) => void
           <Plus size={18} className="text-zinc-600 shrink-0" />
         </button>
       </div>
-
-      {/* Notice / Event Alert */}
-      {showNotice && (
-        <CommunityNoticeBar
-          icon={Calendar}
-          secondaryIcon={Lock}
-          text="Q&A w/ Nate is happening in 4 days"
-          onDismiss={() => setShowNotice(false)}
-        />
-      )}
 
       {/* Search bar (toggleable) */}
       {showSearch && (
