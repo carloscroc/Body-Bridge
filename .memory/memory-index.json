@@ -2316,5 +2316,99 @@
         "package.json"
       ]
     }
+  },
+  {
+    "id": "mem_1780962309198_jtkxrmo9n",
+    "timestamp": "2026-06-08T23:45:09.198Z",
+    "category": "context",
+    "type": "session-start",
+    "importance": "low",
+    "summary": "Session started: sess_1780962 [Body-Bridge]",
+    "content": "Session ID: sess_1780962309197\nDirectory: C:\\Users\\thebe\\Downloads\\Body-Bridge\nWorktree: C:\\Users\\thebe\\Downloads\\Body-Bridge\nProject: Body-Bridge\nStarted: 2026-06-08T23:45:09.198Z",
+    "tags": [
+      "session",
+      "start",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1780962309197",
+      "project": "Body-Bridge",
+      "directory": "C:\\Users\\thebe\\Downloads\\Body-Bridge"
+    }
+  },
+  {
+    "id": "mem_1780963299882_f9yqzuy2n",
+    "timestamp": "2026-06-09T00:01:39.882Z",
+    "category": "context",
+    "type": "session",
+    "importance": "medium",
+    "summary": "Session ended: sess_1780962 (17m) [Body-Bridge]",
+    "content": "Session ID: sess_1780962309197\nProject: Body-Bridge\nDuration: 17 minutes\nBranch: main\nFiles modified: 3\nChanged files:\n  - .memory/memory-index.json\n  - element-context/image.png\n  - element-context/sAttached Element Context from Integrate.md\nStarted: 2026-06-08T23:45:09.197Z\nEnded: 2026-06-09T00:01:39.882Z",
+    "tags": [
+      "session",
+      "end",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1780962309197",
+      "project": "Body-Bridge",
+      "duration_minutes": 17,
+      "branch": "main",
+      "files_modified": 3,
+      "files_list": [
+        ".memory/memory-index.json",
+        "element-context/image.png",
+        "element-context/sAttached Element Context from Integrate.md"
+      ]
+    }
+  },
+  {
+    "id": "mem_1780968011752_sfjq7gjer",
+    "timestamp": "2026-06-09T01:20:11.752Z",
+    "category": "context",
+    "type": "session-start",
+    "importance": "low",
+    "summary": "Session started: sess_1780968 [Body-Bridge]",
+    "content": "Session ID: sess_1780968011750\nDirectory: C:\\Users\\thebe\\Downloads\\Body-Bridge\nWorktree: C:\\Users\\thebe\\Downloads\\Body-Bridge\nProject: Body-Bridge\nStarted: 2026-06-09T01:20:11.751Z",
+    "tags": [
+      "session",
+      "start",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1780968011750",
+      "project": "Body-Bridge",
+      "directory": "C:\\Users\\thebe\\Downloads\\Body-Bridge"
+    }
+  },
+  {
+    "id": "mem_1780968164252_0q2nw214x",
+    "timestamp": "2026-06-09T01:22:44.252Z",
+    "category": "context",
+    "type": "session",
+    "importance": "medium",
+    "summary": "Session ended: sess_1780968 (3m) [Body-Bridge]",
+    "content": "Session ID: sess_1780968011750\nProject: Body-Bridge\nDuration: 3 minutes\nBranch: main\nFiles modified: 3\nChanged files:\n  - .memory/memory-index.json\n  - element-context/image.png\n  - element-context/sAttached Element Context from Integrate.md\nStarted: 2026-06-09T01:20:11.750Z\nEnded: 2026-06-09T01:22:44.252Z",
+    "tags": [
+      "session",
+      "end",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1780968011750",
+      "project": "Body-Bridge",
+      "duration_minutes": 3,
+      "branch": "main",
+      "files_modified": 3,
+      "files_list": [
+        ".memory/memory-index.json",
+        "element-context/image.png",
+        "element-context/sAttached Element Context from Integrate.md"
+      ]
+    }
   }
 ]
