@@ -15,6 +15,10 @@ dist-ssr
 .env.local
 .env.local.bak.orig
 
+# Production env files (keep them local for security)
+.env.production
+.env.production.local
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

@@ -1,0 +1,49 @@
+[
+  {
+    "id": "mem_1781110318098_ufe0cntzp",
+    "timestamp": "2026-06-10T16:51:58.098Z",
+    "category": "context",
+    "type": "session-start",
+    "importance": "low",
+    "summary": "Session started: sess_1781110 [android]",
+    "content": "Session ID: sess_1781110318096\nDirectory: C:\\Users\\thebe\\Downloads\\Body-Bridge\\android\nWorktree: C:\\Users\\thebe\\Downloads\\Body-Bridge\nProject: android\nStarted: 2026-06-10T16:51:58.097Z",
+    "tags": [
+      "session",
+      "start",
+      "auto-captured",
+      "android"
+    ],
+    "metadata": {
+      "session_id": "sess_1781110318096",
+      "project": "android",
+      "directory": "C:\\Users\\thebe\\Downloads\\Body-Bridge\\android"
+    }
+  },
+  {
+    "id": "mem_1781110430848_kezedd5c0",
+    "timestamp": "2026-06-10T16:53:50.848Z",
+    "category": "context",
+    "type": "session",
+    "importance": "medium",
+    "summary": "Session ended: sess_1781110 (2m) [android]",
+    "content": "Session ID: sess_1781110318096\nProject: android\nDuration: 2 minutes\nBranch: main\nFiles modified: 3\nChanged files:\n  - .gitignore\n  - .memory/memory-index.json\n  - package-lock.json\nStarted: 2026-06-10T16:51:58.096Z\nEnded: 2026-06-10T16:53:50.848Z",
+    "tags": [
+      "session",
+      "end",
+      "auto-captured",
+      "android"
+    ],
+    "metadata": {
+      "session_id": "sess_1781110318096",
+      "project": "android",
+      "duration_minutes": 2,
+      "branch": "main",
+      "files_modified": 3,
+      "files_list": [
+        ".gitignore",
+        ".memory/memory-index.json",
+        "package-lock.json"
+      ]
+    }
+  }
+]
