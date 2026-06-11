@@ -16,9 +16,11 @@ import {
   Activity,
   Zap,
   Cpu,
-  Globe
+  Globe,
+  Ruler
 } from 'lucide-react';
 import { Member, UserSettings, TrainingGoal, ExperienceLevel } from '../types';
+import CityAutocomplete from '../components/CityAutocomplete';
 
 const MagneticButton = ({ children, onClick, className, disabled }: any) => {
   const ref = useRef<HTMLButtonElement>(null);
@@ -166,7 +168,23 @@ const OnboardingFlow: React.FC<OnboardingFlowProps> = ({ onComplete, initialData
             <h1 className="text-6xl font-black italic uppercase tracking-tighter text-white">Identity</h1>
             <div className="space-y-8">
               <FloatingLabelInput label="Full Name" value={formData.name} onChange={(e: any) => setFormData({ ...formData, name: e.target.value })} placeholder="ALEX STERLING" />
-              <FloatingLabelInput label="Location" value={formData.location} onChange={(e: any) => setFormData({ ...formData, location: e.target.value })} placeholder="LONDON, UK" />
+              <CityAutocomplete
+                value={formData.location}
+                onChange={(v: string) => setFormData({ ...formData, location: v })}
+                onCitySelect={(city: string, isUS: boolean) => {
+                  setFormData((prev: any) => ({
+                    ...prev,
+                    location: city,
+                    settings: {
+                      ...prev.settings,
+                      units: isUS
+                        ? { weight: 'lb', height: 'ft', distance: 'mi' }
+                        : { weight: 'kg', height: 'cm', distance: 'km' },
+                    },
+                  }));
+                }}
+                placeholder="LONDON, UK"
+              />
               <FloatingLabelInput label="Bio" value={formData.bio} onChange={(e: any) => setFormData({ ...formData, bio: e.target.value })} placeholder="MISSION STATEMENT" />
             </div>
           </div>
@@ -201,6 +219,13 @@ const OnboardingFlow: React.FC<OnboardingFlowProps> = ({ onComplete, initialData
               {[3, 4, 5, 6].map(day => (
                 <button type="button" key={day} onClick={() => updateSettings({ trainingDaysPerWeek: day })} className={`h-20 rounded-2xl font-black text-2xl border transition-all ${formData.settings.training.trainingDaysPerWeek === day ? 'bg-white text-black border-white' : 'bg-white/5 text-white/40 border-white/10'}`}>{day}</button>
               ))}
+            </div>
+            <div className="flex items-center gap-3 mt-2">
+              <Ruler size={16} className="text-white/30" />
+              <span className="text-sm font-medium text-white/30">
+                Units: {formData.settings.units.weight.toUpperCase()} / {formData.settings.units.distance.toUpperCase()}
+              </span>
+              <span className="text-xs text-white/20 italic">— set by your location</span>
             </div>
           </div>
         );
