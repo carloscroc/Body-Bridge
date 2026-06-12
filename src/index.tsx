@@ -39,8 +39,8 @@ function StartupIssueScreen({
         <p className="text-[11px] font-black uppercase tracking-[0.3em] text-white/45">Startup Check</p>
         <h1 className="mt-4 text-3xl font-black tracking-[-0.04em]">{title}</h1>
         <p className="mt-4 text-sm leading-6 text-white/70">
-          The UI was blank because the app crashed during startup when Convex was unavailable.
-          Forge now shows this screen instead of failing silently.
+      The UI was blank because the app crashed during startup when Convex was unavailable.
+      Body Bridge now shows this screen instead of failing silently.
         </p>
 
         <div className="mt-6 space-y-3 text-sm text-white/80">
@@ -84,9 +84,9 @@ function LoadingScreen() {
     <div className="min-h-screen bg-black text-white px-6 py-10 flex items-center justify-center">
       <div className="w-full max-w-md rounded-[32px] border border-white/10 bg-white/[0.03] p-6 text-center">
         <div className="mx-auto h-10 w-10 rounded-full border-2 border-white/15 border-t-white animate-spin" />
-        <p className="mt-5 text-sm font-semibold text-white">Connecting Forge...</p>
+        <p className="mt-5 text-sm font-semibold text-white">Connecting...</p>
         <p className="mt-2 text-sm text-white/60">
-          Waiting for the local Convex app data service to respond.
+          Waiting for the Convex app data service to respond.
         </p>
       </div>
     </div>
@@ -138,13 +138,13 @@ function BootstrapRoot() {
 
   if (!convex) {
     return (
-      <StartupIssueScreen
-        title="Forge is running, but app data is offline."
-        issue="`VITE_CONVEX_URL` is missing or still set to the placeholder value in `.env.local`."
-        fix="Set a real Convex deployment URL in `.env.local`, then restart `npm run dev`."
-        extra="Your backend server also needs port `3001` available so proxied API calls can succeed."
-        onRetry={() => setRetryNonce(n => n + 1)}
-      />
+        <StartupIssueScreen
+          title="Body Bridge is running, but app data is offline."
+          issue="`VITE_CONVEX_URL` is missing or still set to the placeholder value in your environment config."
+          fix="Set a real Convex deployment URL in your env file (`.env.local` for dev, `.env.production` for builds), then restart."
+          extra="Your backend server also needs port `3001` available so proxied API calls can succeed."
+          onRetry={() => setRetryNonce(n => n + 1)}
+        />
     );
   }
 
@@ -154,13 +154,13 @@ function BootstrapRoot() {
 
   if (convexStatus === 'offline') {
     return (
-      <StartupIssueScreen
-        title="Forge is running, but Convex is not reachable."
-        issue="The frontend found `VITE_CONVEX_URL`, but the local Convex service did not respond in time."
-        fix="Run `npm run dev` again after Convex finishes starting, or run `npm run dev:client` separately if you only need the UI shell."
-        extra="If Convex asks to upgrade in the terminal, update the `convex` package or run the upgrade interactively before retrying."
-        onRetry={() => setRetryNonce(n => n + 1)}
-      />
+        <StartupIssueScreen
+          title="Body Bridge is running, but Convex is not reachable."
+          issue="The frontend found `VITE_CONVEX_URL`, but the Convex service did not respond in time."
+          fix="Check your internet connection. If running locally, make sure Convex is started. If on a built app, the deployment URL may be incorrect."
+          extra="If Convex asks to upgrade in the terminal, update the `convex` package or run the upgrade interactively before retrying."
+          onRetry={() => setRetryNonce(n => n + 1)}
+        />
     );
   }
 

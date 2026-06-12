@@ -19,7 +19,7 @@ android {
     }
     
     defaultConfig {
-        applicationId "com.forge.fitness"
+        applicationId "com.bodybridge.fitness"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 4

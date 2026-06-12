@@ -447,7 +447,7 @@ export default function App() {
           <div className="max-w-md text-center space-y-3">
             <h1 className="text-lg font-semibold text-white">Connection required</h1>
             <p className="text-sm text-white/60">
-              Forge could not restore the Convex session. Confirm that `npm run dev` started Convex successfully and that your local Convex deployment is active.
+              Body Bridge could not restore the session. Check your internet connection and try again.
             </p>
           </div>
         </div>
@@ -482,7 +482,7 @@ export default function App() {
         </Suspense>
       )}
 
-      {!isAuthLoading && isNetworkAuthenticated && user !== undefined && !isOnboardingComplete && (
+      {!isAuthLoading && isNetworkAuthenticated && user !== undefined && !isOnboardingComplete && authView !== 'authenticated' && (
         <Suspense fallback={<ViewLoader />}>
           <OnboardingFlow 
             initialData={signupData || undefined}

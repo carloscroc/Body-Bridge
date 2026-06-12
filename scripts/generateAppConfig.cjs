@@ -33,11 +33,49 @@ try {
       resolve(__dirname, '../package.json'),
       JSON.stringify(packageJson, null, 2)
     );
-    console.log('✅ Updated package.json name');
+    console.log('Updated package.json name');
   }
 } catch (error) {
-  console.error('⚠️  Could not update package.json:', error.message);
+  console.error('Could not update package.json:', error.message);
 }
 
-console.log('✅ Configuration generation complete!');
-console.log('ℹ️  Run "npm run build" to apply all changes');
+// Update capacitor.config.json if needed
+try {
+  const capacitorPath = resolve(__dirname, '../capacitor.config.json');
+  const capacitorConfig = JSON.parse(readFileSync(capacitorPath, 'utf8'));
+  let updated = false;
+  if (capacitorConfig.appId !== appConfig.packageId) {
+    capacitorConfig.appId = appConfig.packageId;
+    updated = true;
+  }
+  if (capacitorConfig.appName !== appConfig.displayName) {
+    capacitorConfig.appName = appConfig.displayName;
+    updated = true;
+  }
+  if (updated) {
+    writeFileSync(capacitorPath, JSON.stringify(capacitorConfig, null, 2) + '\n');
+    console.log('Updated capacitor.config.json');
+  }
+} catch (error) {
+  console.error('Could not update capacitor.config.json:', error.message);
+}
+
+// Update android/app/build.gradle applicationId if needed
+try {
+  const gradlePath = resolve(__dirname, '../android/app/build.gradle');
+  if (require('fs').existsSync(gradlePath)) {
+    let gradleContent = readFileSync(gradlePath, 'utf8');
+    const updatedGradle = gradleContent.replace(
+      /applicationId\s+"com\.forge\.fitness"/,
+      `applicationId "${appConfig.packageId}"`
+    );
+    if (updatedGradle !== gradleContent) {
+      writeFileSync(gradlePath, updatedGradle);
+      console.log('Updated android/app/build.gradle applicationId');
+    }
+  }
+} catch (error) {
+  console.error('Could not update build.gradle:', error.message);
+}
+
+console.log('Configuration generation complete!');

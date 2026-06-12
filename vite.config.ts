@@ -3,9 +3,13 @@ import { defineConfig, loadEnv } from 'vite';
 import react from '@vitejs/plugin-react';
 
 export default defineConfig(({ mode }) => {
-    return {
+  const envFiles = mode === 'production'
+    ? ['.env.production.local', '.env.production', '.env']
+    : ['.env.local', `.env.${mode}.local`, `.env.${mode}`, '.env'];
+  return {
   base: './',
-      server: {
+      envFile: envFiles,
+    server: {
         port: 7770,
         strictPort: true,
         host: '0.0.0.0',

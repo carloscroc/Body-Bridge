@@ -12,7 +12,7 @@
     "dev:client": "node scripts/runViteDev.mjs",
     "dev:server": "node server/server.js",
     "deploy:convex": "node scripts/deployConvex.mjs",
-    "build": "vite build && node scripts/postbuild-csp.mjs && node scripts/postbuild-memory.js",
+    "build": "vite build --mode production && node scripts/postbuild-csp.mjs && node scripts/postbuild-memory.js",
     "test": "npm run test:playwright && node scripts/posttest-memory.js",
     "preview": "vite preview",
     "capture-exercise-images": "node scripts/captureExerciseImages.js",
@@ -32,7 +32,8 @@
     "create-ticket:dry": "node scripts/create-plane-ticket.cjs --dry-run",
     "start-symphony": "node scripts/start-symphony-work.cjs",
     "collect-evidence": "node scripts/start-symphony-work.cjs --evidence-only",
-    "verify-ticket": "node scripts/start-symphony-work.cjs --evidence-only"
+    "verify-ticket": "node scripts/start-symphony-work.cjs --evidence-only",
+    "hermes:prep": "powershell -ExecutionPolicy Bypass -File ./hermes-update-prep.ps1"
   },
   "dependencies": {
     "@auth/core": "0.37.0",

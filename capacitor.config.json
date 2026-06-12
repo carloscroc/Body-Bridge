@@ -1,6 +1,6 @@
 {
-  "appId": "com.forge.fitness",
-  "appName": "Forge Fitness",
+  "appId": "com.bodybridge.fitness",
+  "appName": "Body Bridge Fitness",
   "webDir": "dist",
   "server": {
     "androidScheme": "https"

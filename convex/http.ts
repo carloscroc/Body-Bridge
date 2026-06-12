@@ -32,6 +32,8 @@ const getAllowedOrigins = (): Set<string> => {
   const origins = process.env.CORS_ALLOWED_ORIGINS?.split(',').map(s => s.trim()).filter(Boolean) ?? [];
   if (process.env.NODE_ENV !== 'production') {
     origins.push('http://localhost:7770', 'http://127.0.0.1:7770');
+  } else {
+    origins.push('https://localhost');
   }
   return new Set(origins);
 };
