@@ -53,6 +53,7 @@ export default function App() {
   const [authView, setAuthView] = useState<AuthView>('landing');
   const [signupData, setSignupData] = useState<{ name?: string; email?: string } | null>(null);
   const [authTimedOut, setAuthTimedOut] = useState(false);
+  const [onboardingResult, setOnboardingResult] = useState<any | null>(null);
 
   // Dev override: force the Settings screen or Exercises screen
   let devForceSettings = false;
@@ -65,7 +66,7 @@ export default function App() {
   const completeOnboarding = completeOnboardingInternal;
   const updateMe = updateMeInternal;
 
-  const user = authUser;
+  const user = onboardingResult ?? authUser;
   const isOnboardingComplete = !!user?.onboardingComplete;
   const isAuthenticated = (isNetworkAuthenticated && isOnboardingComplete);
 
@@ -205,20 +206,19 @@ export default function App() {
     if (isAuthLoading) return;
 
     if (!isNetworkAuthenticated) {
-      // Keep the current login/signup form visible after a failed auth attempt.
       if (authView === 'authenticated' || authView === 'onboarding') {
         setAuthView('landing');
       }
       return;
     }
 
-    if (user === undefined) return;
+    if (user === undefined || user === null) return;
 
     const onboardingComplete = !!user?.onboardingComplete;
     
     if (onboardingComplete) {
       setAuthView('authenticated');
-    } else if (authView !== 'onboarding') {
+    } else if (authView === 'landing' || authView === 'login' || authView === 'signup') {
       setAuthView('onboarding');
     }
   }, [isNetworkAuthenticated, isAuthLoading, user, authView]);
@@ -460,20 +460,18 @@ export default function App() {
               setSignupData({ name: data.name, email: data.email });
               localStorage.removeItem('app_logged_out');
               try {
-                await login({
+                const loggedInUser = await login({
                   email: data.email,
                   password: data.password,
                   name: data.name,
                   flow: data.method === 'login' ? 'signIn' : 'signUp',
                 });
-                // Local Dev Redirect
-                if (data.method === 'login') {
+                if (loggedInUser?.onboardingComplete) {
                   setAuthView('authenticated');
                 } else {
                   setAuthView('onboarding');
                 }
               } catch (err) {
-                // error handled in login component
               }
             }}
             onModeChange={setAuthView}
@@ -487,7 +485,7 @@ export default function App() {
           <OnboardingFlow 
             initialData={signupData || undefined}
             onComplete={async (local) => {
-              await completeOnboarding({
+              const result = await completeOnboarding({
                 fullName: local.name,
                 avatarUrl: local.avatar,
                 goal: local.settings?.training?.goal,
@@ -499,6 +497,9 @@ export default function App() {
                 units: local.settings?.units,
                 migratedFromLocal: true,
               });
+              if (result) {
+                setOnboardingResult(result);
+              }
               setAuthView('authenticated');
             }} 
           />

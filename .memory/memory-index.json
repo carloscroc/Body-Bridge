@@ -3164,5 +3164,926 @@
       "project": "Body-Bridge",
       "directory": "C:\\Users\\thebe\\Downloads\\Body-Bridge"
     }
+  },
+  {
+    "id": "mem_1781304813392_6rx4nhrp5",
+    "timestamp": "2026-06-12T22:53:33.392Z",
+    "category": "context",
+    "type": "session",
+    "importance": "medium",
+    "summary": "Session ended: sess_1781304 (1m) [Body-Bridge]",
+    "content": "Session ID: sess_1781304740328\nProject: Body-Bridge\nDuration: 1 minutes\nBranch: main\nFiles modified: 0\nNo uncommitted changes\nStarted: 2026-06-12T22:52:20.328Z\nEnded: 2026-06-12T22:53:33.390Z",
+    "tags": [
+      "session",
+      "end",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1781304740328",
+      "project": "Body-Bridge",
+      "duration_minutes": 1,
+      "branch": "main",
+      "files_modified": 0,
+      "files_list": []
+    }
+  },
+  {
+    "id": "mem_1781466073970_ww6ic9qzy",
+    "timestamp": "2026-06-14T19:41:13.970Z",
+    "category": "context",
+    "type": "session-start",
+    "importance": "low",
+    "summary": "Session started: sess_1781466 [Body-Bridge]",
+    "content": "Session ID: sess_1781466073968\nDirectory: C:\\Users\\thebe\\Downloads\\Body-Bridge\nWorktree: C:\\Users\\thebe\\Downloads\\Body-Bridge\nProject: Body-Bridge\nStarted: 2026-06-14T19:41:13.969Z",
+    "tags": [
+      "session",
+      "start",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1781466073968",
+      "project": "Body-Bridge",
+      "directory": "C:\\Users\\thebe\\Downloads\\Body-Bridge"
+    }
+  },
+  {
+    "id": "mem_1781466268346_9tcgxjhv6",
+    "timestamp": "2026-06-14T19:44:28.346Z",
+    "category": "context",
+    "type": "session",
+    "importance": "medium",
+    "summary": "Session ended: sess_1781466 (3m) [Body-Bridge]",
+    "content": "Session ID: sess_1781466073968\nProject: Body-Bridge\nDuration: 3 minutes\nBranch: main\nFiles modified: 2\nChanged files:\n  - .memory/memory-index.json\n  - AGENTS.md\nStarted: 2026-06-14T19:41:13.968Z\nEnded: 2026-06-14T19:44:28.346Z",
+    "tags": [
+      "session",
+      "end",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1781466073968",
+      "project": "Body-Bridge",
+      "duration_minutes": 3,
+      "branch": "main",
+      "files_modified": 2,
+      "files_list": [
+        ".memory/memory-index.json",
+        "AGENTS.md"
+      ]
+    }
+  },
+  {
+    "id": "mem_1781479504812_52m4py1vv",
+    "timestamp": "2026-06-14T23:25:04.812Z",
+    "category": "context",
+    "type": "session-start",
+    "importance": "low",
+    "summary": "Session started: sess_1781479 [Body-Bridge]",
+    "content": "Session ID: sess_1781479504811\nDirectory: C:\\Users\\thebe\\Downloads\\Body-Bridge\nWorktree: C:\\Users\\thebe\\Downloads\\Body-Bridge\nProject: Body-Bridge\nStarted: 2026-06-14T23:25:04.812Z",
+    "tags": [
+      "session",
+      "start",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1781479504811",
+      "project": "Body-Bridge",
+      "directory": "C:\\Users\\thebe\\Downloads\\Body-Bridge"
+    }
+  },
+  {
+    "id": "mem_1781479612061_vd37cymsn",
+    "timestamp": "2026-06-14T23:26:52.061Z",
+    "category": "context",
+    "type": "session",
+    "importance": "medium",
+    "summary": "Session ended: sess_1781479 (2m) [Body-Bridge]",
+    "content": "Session ID: sess_1781479504811\nProject: Body-Bridge\nDuration: 2 minutes\nBranch: main\nFiles modified: 2\nChanged files:\n  - .memory/memory-index.json\n  - AGENTS.md\nStarted: 2026-06-14T23:25:04.811Z\nEnded: 2026-06-14T23:26:52.061Z",
+    "tags": [
+      "session",
+      "end",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1781479504811",
+      "project": "Body-Bridge",
+      "duration_minutes": 2,
+      "branch": "main",
+      "files_modified": 2,
+      "files_list": [
+        ".memory/memory-index.json",
+        "AGENTS.md"
+      ]
+    }
+  },
+  {
+    "id": "mem_1781480449538_3h4ixoc5w",
+    "timestamp": "2026-06-14T23:40:49.538Z",
+    "category": "context",
+    "type": "session-start",
+    "importance": "low",
+    "summary": "Session started: sess_1781480 [Body-Bridge]",
+    "content": "Session ID: sess_1781480449535\nDirectory: C:\\Users\\thebe\\Downloads\\Body-Bridge\nWorktree: C:\\Users\\thebe\\Downloads\\Body-Bridge\nProject: Body-Bridge\nStarted: 2026-06-14T23:40:49.537Z",
+    "tags": [
+      "session",
+      "start",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1781480449535",
+      "project": "Body-Bridge",
+      "directory": "C:\\Users\\thebe\\Downloads\\Body-Bridge"
+    }
+  },
+  {
+    "id": "mem_1781480748832_qk1neql6a",
+    "timestamp": "2026-06-14T23:45:48.832Z",
+    "category": "performance",
+    "type": "build",
+    "importance": "medium",
+    "summary": "Build completed successfully in unknowns",
+    "content": "Build Status: SUCCESS\nDuration: unknowns\nWarnings: 0\nErrors: 0\nBundle Size: 0.00 MB\n\nBuild completed successfully",
+    "tags": [
+      "build",
+      "performance",
+      "success"
+    ],
+    "metadata": {
+      "duration": "unknown",
+      "success": true,
+      "warnings": 0,
+      "errors": 0,
+      "bundle_size": "0.00 MB"
+    }
+  },
+  {
+    "id": "mem_1781480972803_r9yoj6gxw",
+    "timestamp": "2026-06-14T23:49:32.804Z",
+    "category": "context",
+    "type": "session",
+    "importance": "medium",
+    "summary": "Session ended: sess_1781480 (9m) [Body-Bridge]",
+    "content": "Session ID: sess_1781480449535\nProject: Body-Bridge\nDuration: 9 minutes\nBranch: main\nFiles modified: 2\nChanged files:\n  - .memory/memory-index.json\n  - AGENTS.md\nStarted: 2026-06-14T23:40:49.535Z\nEnded: 2026-06-14T23:49:32.803Z",
+    "tags": [
+      "session",
+      "end",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1781480449535",
+      "project": "Body-Bridge",
+      "duration_minutes": 9,
+      "branch": "main",
+      "files_modified": 2,
+      "files_list": [
+        ".memory/memory-index.json",
+        "AGENTS.md"
+      ]
+    }
+  },
+  {
+    "id": "mem_1781481922759_1awv1sgck",
+    "timestamp": "2026-06-15T00:05:22.759Z",
+    "category": "context",
+    "type": "session-start",
+    "importance": "low",
+    "summary": "Session started: sess_1781481 [Body-Bridge]",
+    "content": "Session ID: sess_1781481922757\nDirectory: C:\\Users\\thebe\\Downloads\\Body-Bridge\nWorktree: C:\\Users\\thebe\\Downloads\\Body-Bridge\nProject: Body-Bridge\nStarted: 2026-06-15T00:05:22.758Z",
+    "tags": [
+      "session",
+      "start",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1781481922757",
+      "project": "Body-Bridge",
+      "directory": "C:\\Users\\thebe\\Downloads\\Body-Bridge"
+    }
+  },
+  {
+    "id": "mem_1781482212698_c8agfuq40",
+    "timestamp": "2026-06-15T00:10:12.698Z",
+    "category": "performance",
+    "type": "build",
+    "importance": "medium",
+    "summary": "Build completed successfully in unknowns",
+    "content": "Build Status: SUCCESS\nDuration: unknowns\nWarnings: 0\nErrors: 0\nBundle Size: 0.00 MB\n\nBuild completed successfully",
+    "tags": [
+      "build",
+      "performance",
+      "success"
+    ],
+    "metadata": {
+      "duration": "unknown",
+      "success": true,
+      "warnings": 0,
+      "errors": 0,
+      "bundle_size": "0.00 MB"
+    }
+  },
+  {
+    "id": "mem_1781482346830_7abj68top",
+    "timestamp": "2026-06-15T00:12:26.831Z",
+    "category": "context",
+    "type": "session",
+    "importance": "medium",
+    "summary": "Session ended: sess_1781481 (7m) [Body-Bridge]",
+    "content": "Session ID: sess_1781481922757\nProject: Body-Bridge\nDuration: 7 minutes\nBranch: main\nFiles modified: 2\nChanged files:\n  - .memory/memory-index.json\n  - AGENTS.md\nStarted: 2026-06-15T00:05:22.757Z\nEnded: 2026-06-15T00:12:26.829Z",
+    "tags": [
+      "session",
+      "end",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1781481922757",
+      "project": "Body-Bridge",
+      "duration_minutes": 7,
+      "branch": "main",
+      "files_modified": 2,
+      "files_list": [
+        ".memory/memory-index.json",
+        "AGENTS.md"
+      ]
+    }
+  },
+  {
+    "id": "mem_1781482801679_94zh2mocm",
+    "timestamp": "2026-06-15T00:20:01.679Z",
+    "category": "context",
+    "type": "session-start",
+    "importance": "low",
+    "summary": "Session started: sess_1781482 [Body-Bridge]",
+    "content": "Session ID: sess_1781482801678\nDirectory: C:\\Users\\thebe\\Downloads\\Body-Bridge\nWorktree: C:\\Users\\thebe\\Downloads\\Body-Bridge\nProject: Body-Bridge\nStarted: 2026-06-15T00:20:01.679Z",
+    "tags": [
+      "session",
+      "start",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1781482801678",
+      "project": "Body-Bridge",
+      "directory": "C:\\Users\\thebe\\Downloads\\Body-Bridge"
+    }
+  },
+  {
+    "id": "mem_1781483030063_1dm3nnu74",
+    "timestamp": "2026-06-15T00:23:50.063Z",
+    "category": "performance",
+    "type": "build",
+    "importance": "medium",
+    "summary": "Build completed successfully in unknowns",
+    "content": "Build Status: SUCCESS\nDuration: unknowns\nWarnings: 0\nErrors: 0\nBundle Size: 0.00 MB\n\nBuild completed successfully",
+    "tags": [
+      "build",
+      "performance",
+      "success"
+    ],
+    "metadata": {
+      "duration": "unknown",
+      "success": true,
+      "warnings": 0,
+      "errors": 0,
+      "bundle_size": "0.00 MB"
+    }
+  },
+  {
+    "id": "mem_1781483222936_a0a5u32lm",
+    "timestamp": "2026-06-15T00:27:02.936Z",
+    "category": "context",
+    "type": "session",
+    "importance": "medium",
+    "summary": "Session ended: sess_1781482 (7m) [Body-Bridge]",
+    "content": "Session ID: sess_1781482801678\nProject: Body-Bridge\nDuration: 7 minutes\nBranch: main\nFiles modified: 2\nChanged files:\n  - .memory/memory-index.json\n  - AGENTS.md\nStarted: 2026-06-15T00:20:01.678Z\nEnded: 2026-06-15T00:27:02.935Z",
+    "tags": [
+      "session",
+      "end",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1781482801678",
+      "project": "Body-Bridge",
+      "duration_minutes": 7,
+      "branch": "main",
+      "files_modified": 2,
+      "files_list": [
+        ".memory/memory-index.json",
+        "AGENTS.md"
+      ]
+    }
+  },
+  {
+    "id": "mem_1781484411646_4qe5ipw9d",
+    "timestamp": "2026-06-15T00:46:51.646Z",
+    "category": "context",
+    "type": "session-start",
+    "importance": "low",
+    "summary": "Session started: sess_1781484 [Body-Bridge]",
+    "content": "Session ID: sess_1781484411645\nDirectory: C:\\Users\\thebe\\Downloads\\Body-Bridge\nWorktree: C:\\Users\\thebe\\Downloads\\Body-Bridge\nProject: Body-Bridge\nStarted: 2026-06-15T00:46:51.646Z",
+    "tags": [
+      "session",
+      "start",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1781484411645",
+      "project": "Body-Bridge",
+      "directory": "C:\\Users\\thebe\\Downloads\\Body-Bridge"
+    }
+  },
+  {
+    "id": "mem_1781485014230_qrtys4n6s",
+    "timestamp": "2026-06-15T00:56:54.230Z",
+    "category": "context",
+    "type": "session-start",
+    "importance": "low",
+    "summary": "Session started: sess_1781485 [Body-Bridge]",
+    "content": "Session ID: sess_1781485014229\nDirectory: C:\\Users\\thebe\\Downloads\\Body-Bridge\nWorktree: C:\\Users\\thebe\\Downloads\\Body-Bridge\nProject: Body-Bridge\nStarted: 2026-06-15T00:56:54.229Z",
+    "tags": [
+      "session",
+      "start",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1781485014229",
+      "project": "Body-Bridge",
+      "directory": "C:\\Users\\thebe\\Downloads\\Body-Bridge"
+    }
+  },
+  {
+    "id": "mem_1781485623882_oe4akjhbd",
+    "timestamp": "2026-06-15T01:07:03.882Z",
+    "category": "context",
+    "type": "session-start",
+    "importance": "low",
+    "summary": "Session started: sess_1781485 [Body-Bridge]",
+    "content": "Session ID: sess_1781485623880\nDirectory: C:\\Users\\thebe\\Downloads\\Body-Bridge\nWorktree: C:\\Users\\thebe\\Downloads\\Body-Bridge\nProject: Body-Bridge\nStarted: 2026-06-15T01:07:03.882Z",
+    "tags": [
+      "session",
+      "start",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1781485623880",
+      "project": "Body-Bridge",
+      "directory": "C:\\Users\\thebe\\Downloads\\Body-Bridge"
+    }
+  },
+  {
+    "id": "mem_1781485990904_dcme5v7ii",
+    "timestamp": "2026-06-15T01:13:10.904Z",
+    "category": "performance",
+    "type": "build",
+    "importance": "medium",
+    "summary": "Build completed successfully in unknowns",
+    "content": "Build Status: SUCCESS\nDuration: unknowns\nWarnings: 0\nErrors: 0\nBundle Size: 0.00 MB\n\nBuild completed successfully",
+    "tags": [
+      "build",
+      "performance",
+      "success"
+    ],
+    "metadata": {
+      "duration": "unknown",
+      "success": true,
+      "warnings": 0,
+      "errors": 0,
+      "bundle_size": "0.00 MB"
+    }
+  },
+  {
+    "id": "mem_1781486384960_lq76rponp",
+    "timestamp": "2026-06-15T01:19:44.961Z",
+    "category": "context",
+    "type": "session",
+    "importance": "medium",
+    "summary": "Session ended: sess_1781485 (13m) [Body-Bridge]",
+    "content": "Session ID: sess_1781485623880\nProject: Body-Bridge\nDuration: 13 minutes\nBranch: main\nFiles modified: 2\nChanged files:\n  - .memory/memory-index.json\n  - AGENTS.md\nStarted: 2026-06-15T01:07:03.880Z\nEnded: 2026-06-15T01:19:44.960Z",
+    "tags": [
+      "session",
+      "end",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1781485623880",
+      "project": "Body-Bridge",
+      "duration_minutes": 13,
+      "branch": "main",
+      "files_modified": 2,
+      "files_list": [
+        ".memory/memory-index.json",
+        "AGENTS.md"
+      ]
+    }
+  },
+  {
+    "id": "mem_1781487959711_nw4brj0az",
+    "timestamp": "2026-06-15T01:45:59.711Z",
+    "category": "context",
+    "type": "session-start",
+    "importance": "low",
+    "summary": "Session started: sess_1781487 [Body-Bridge]",
+    "content": "Session ID: sess_1781487959709\nDirectory: C:\\Users\\thebe\\Downloads\\Body-Bridge\nWorktree: C:\\Users\\thebe\\Downloads\\Body-Bridge\nProject: Body-Bridge\nStarted: 2026-06-15T01:45:59.710Z",
+    "tags": [
+      "session",
+      "start",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1781487959709",
+      "project": "Body-Bridge",
+      "directory": "C:\\Users\\thebe\\Downloads\\Body-Bridge"
+    }
+  },
+  {
+    "id": "mem_1781489739162_vknt1ofym",
+    "timestamp": "2026-06-15T02:15:39.162Z",
+    "category": "context",
+    "type": "session-start",
+    "importance": "low",
+    "summary": "Session started: sess_1781489 [Body-Bridge]",
+    "content": "Session ID: sess_1781489739161\nDirectory: C:\\Users\\thebe\\Downloads\\Body-Bridge\nWorktree: C:\\Users\\thebe\\Downloads\\Body-Bridge\nProject: Body-Bridge\nStarted: 2026-06-15T02:15:39.162Z",
+    "tags": [
+      "session",
+      "start",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1781489739161",
+      "project": "Body-Bridge",
+      "directory": "C:\\Users\\thebe\\Downloads\\Body-Bridge"
+    }
+  },
+  {
+    "id": "mem_1781490342323_z1jrzieri",
+    "timestamp": "2026-06-15T02:25:42.323Z",
+    "category": "context",
+    "type": "session-start",
+    "importance": "low",
+    "summary": "Session started: sess_1781490 [Body-Bridge]",
+    "content": "Session ID: sess_1781490342322\nDirectory: C:\\Users\\thebe\\Downloads\\Body-Bridge\nWorktree: C:\\Users\\thebe\\Downloads\\Body-Bridge\nProject: Body-Bridge\nStarted: 2026-06-15T02:25:42.323Z",
+    "tags": [
+      "session",
+      "start",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1781490342322",
+      "project": "Body-Bridge",
+      "directory": "C:\\Users\\thebe\\Downloads\\Body-Bridge"
+    }
+  },
+  {
+    "id": "mem_1781529253752_l97ixjcp1",
+    "timestamp": "2026-06-15T13:14:13.752Z",
+    "category": "context",
+    "type": "session-start",
+    "importance": "low",
+    "summary": "Session started: sess_1781529 [Body-Bridge]",
+    "content": "Session ID: sess_1781529253751\nDirectory: C:\\Users\\thebe\\Downloads\\Body-Bridge\nWorktree: C:\\Users\\thebe\\Downloads\\Body-Bridge\nProject: Body-Bridge\nStarted: 2026-06-15T13:14:13.752Z",
+    "tags": [
+      "session",
+      "start",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1781529253751",
+      "project": "Body-Bridge",
+      "directory": "C:\\Users\\thebe\\Downloads\\Body-Bridge"
+    }
+  },
+  {
+    "id": "mem_1781532595422_z9latgov4",
+    "timestamp": "2026-06-15T14:09:55.422Z",
+    "category": "context",
+    "type": "session",
+    "importance": "medium",
+    "summary": "Session ended: sess_1781529 (56m) [Body-Bridge]",
+    "content": "Session ID: sess_1781529253751\nProject: Body-Bridge\nDuration: 56 minutes\nBranch: main\nFiles modified: 2\nChanged files:\n  - .memory/memory-index.json\n  - AGENTS.md\nStarted: 2026-06-15T13:14:13.751Z\nEnded: 2026-06-15T14:09:55.422Z",
+    "tags": [
+      "session",
+      "end",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1781529253751",
+      "project": "Body-Bridge",
+      "duration_minutes": 56,
+      "branch": "main",
+      "files_modified": 2,
+      "files_list": [
+        ".memory/memory-index.json",
+        "AGENTS.md"
+      ]
+    }
+  },
+  {
+    "id": "mem_1781543533967_d594gyfau",
+    "timestamp": "2026-06-15T17:12:13.967Z",
+    "category": "context",
+    "type": "session-start",
+    "importance": "low",
+    "summary": "Session started: sess_1781543 [Body-Bridge]",
+    "content": "Session ID: sess_1781543533964\nDirectory: C:\\Users\\thebe\\Downloads\\Body-Bridge\nWorktree: C:\\Users\\thebe\\Downloads\\Body-Bridge\nProject: Body-Bridge\nStarted: 2026-06-15T17:12:13.966Z",
+    "tags": [
+      "session",
+      "start",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1781543533964",
+      "project": "Body-Bridge",
+      "directory": "C:\\Users\\thebe\\Downloads\\Body-Bridge"
+    }
+  },
+  {
+    "id": "mem_1781543703101_pto2ohbed",
+    "timestamp": "2026-06-15T17:15:03.101Z",
+    "category": "performance",
+    "type": "build",
+    "importance": "medium",
+    "summary": "Build completed successfully in unknowns",
+    "content": "Build Status: SUCCESS\nDuration: unknowns\nWarnings: 0\nErrors: 0\nBundle Size: 0.00 MB\n\nBuild completed successfully",
+    "tags": [
+      "build",
+      "performance",
+      "success"
+    ],
+    "metadata": {
+      "duration": "unknown",
+      "success": true,
+      "warnings": 0,
+      "errors": 0,
+      "bundle_size": "0.00 MB"
+    }
+  },
+  {
+    "id": "mem_1781543842950_sbh4hv01k",
+    "timestamp": "2026-06-15T17:17:22.951Z",
+    "category": "context",
+    "type": "session",
+    "importance": "medium",
+    "summary": "Session ended: sess_1781543 (5m) [Body-Bridge]",
+    "content": "Session ID: sess_1781543533964\nProject: Body-Bridge\nDuration: 5 minutes\nBranch: main\nFiles modified: 2\nChanged files:\n  - .memory/memory-index.json\n  - AGENTS.md\nStarted: 2026-06-15T17:12:13.964Z\nEnded: 2026-06-15T17:17:22.950Z",
+    "tags": [
+      "session",
+      "end",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1781543533964",
+      "project": "Body-Bridge",
+      "duration_minutes": 5,
+      "branch": "main",
+      "files_modified": 2,
+      "files_list": [
+        ".memory/memory-index.json",
+        "AGENTS.md"
+      ]
+    }
+  },
+  {
+    "id": "mem_1781543858419_pzt7a18sc",
+    "timestamp": "2026-06-15T17:17:38.419Z",
+    "category": "context",
+    "type": "session-start",
+    "importance": "low",
+    "summary": "Session started: sess_1781543 [Body-Bridge]",
+    "content": "Session ID: sess_1781543858418\nDirectory: C:\\Users\\thebe\\Downloads\\Body-Bridge\nWorktree: C:\\Users\\thebe\\Downloads\\Body-Bridge\nProject: Body-Bridge\nStarted: 2026-06-15T17:17:38.419Z",
+    "tags": [
+      "session",
+      "start",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1781543858418",
+      "project": "Body-Bridge",
+      "directory": "C:\\Users\\thebe\\Downloads\\Body-Bridge"
+    }
+  },
+  {
+    "id": "mem_1781544001213_zk41nvaoe",
+    "timestamp": "2026-06-15T17:20:01.213Z",
+    "category": "performance",
+    "type": "build",
+    "importance": "medium",
+    "summary": "Build completed successfully in unknowns",
+    "content": "Build Status: SUCCESS\nDuration: unknowns\nWarnings: 0\nErrors: 0\nBundle Size: 0.00 MB\n\nBuild completed successfully",
+    "tags": [
+      "build",
+      "performance",
+      "success"
+    ],
+    "metadata": {
+      "duration": "unknown",
+      "success": true,
+      "warnings": 0,
+      "errors": 0,
+      "bundle_size": "0.00 MB"
+    }
+  },
+  {
+    "id": "mem_1781544025443_2acjed3z0",
+    "timestamp": "2026-06-15T17:20:25.443Z",
+    "category": "context",
+    "type": "session-start",
+    "importance": "low",
+    "summary": "Session started: sess_1781544 [Body-Bridge]",
+    "content": "Session ID: sess_1781544025442\nDirectory: C:\\Users\\thebe\\Downloads\\Body-Bridge\nWorktree: C:\\Users\\thebe\\Downloads\\Body-Bridge\nProject: Body-Bridge\nStarted: 2026-06-15T17:20:25.443Z",
+    "tags": [
+      "session",
+      "start",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1781544025442",
+      "project": "Body-Bridge",
+      "directory": "C:\\Users\\thebe\\Downloads\\Body-Bridge"
+    }
+  },
+  {
+    "id": "mem_1781544039103_badqb9rmo",
+    "timestamp": "2026-06-15T17:20:39.103Z",
+    "category": "context",
+    "type": "session",
+    "importance": "medium",
+    "summary": "Session ended: sess_1781544 (0m) [Body-Bridge]",
+    "content": "Session ID: sess_1781544025442\nProject: Body-Bridge\nDuration: 0 minutes\nBranch: main\nFiles modified: 2\nChanged files:\n  - .memory/memory-index.json\n  - AGENTS.md\nStarted: 2026-06-15T17:20:25.442Z\nEnded: 2026-06-15T17:20:39.103Z",
+    "tags": [
+      "session",
+      "end",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1781544025442",
+      "project": "Body-Bridge",
+      "duration_minutes": 0,
+      "branch": "main",
+      "files_modified": 2,
+      "files_list": [
+        ".memory/memory-index.json",
+        "AGENTS.md"
+      ]
+    }
+  },
+  {
+    "id": "mem_1781544169943_eh2a0oeoj",
+    "timestamp": "2026-06-15T17:22:49.943Z",
+    "category": "performance",
+    "type": "build",
+    "importance": "medium",
+    "summary": "Build completed successfully in unknowns",
+    "content": "Build Status: SUCCESS\nDuration: unknowns\nWarnings: 0\nErrors: 0\nBundle Size: 0.00 MB\n\nBuild completed successfully",
+    "tags": [
+      "build",
+      "performance",
+      "success"
+    ],
+    "metadata": {
+      "duration": "unknown",
+      "success": true,
+      "warnings": 0,
+      "errors": 0,
+      "bundle_size": "0.00 MB"
+    }
+  },
+  {
+    "id": "mem_1781548417631_ixr0ocmo2",
+    "timestamp": "2026-06-15T18:33:37.631Z",
+    "category": "context",
+    "type": "session-start",
+    "importance": "low",
+    "summary": "Session started: sess_1781548 [Body-Bridge]",
+    "content": "Session ID: sess_1781548417630\nDirectory: C:\\Users\\thebe\\Downloads\\Body-Bridge\nWorktree: C:\\Users\\thebe\\Downloads\\Body-Bridge\nProject: Body-Bridge\nStarted: 2026-06-15T18:33:37.630Z",
+    "tags": [
+      "session",
+      "start",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1781548417630",
+      "project": "Body-Bridge",
+      "directory": "C:\\Users\\thebe\\Downloads\\Body-Bridge"
+    }
+  },
+  {
+    "id": "mem_1781548554049_67d4l5coj",
+    "timestamp": "2026-06-15T18:35:54.049Z",
+    "category": "performance",
+    "type": "build",
+    "importance": "medium",
+    "summary": "Build completed successfully in unknowns",
+    "content": "Build Status: SUCCESS\nDuration: unknowns\nWarnings: 0\nErrors: 0\nBundle Size: 0.00 MB\n\nBuild completed successfully",
+    "tags": [
+      "build",
+      "performance",
+      "success"
+    ],
+    "metadata": {
+      "duration": "unknown",
+      "success": true,
+      "warnings": 0,
+      "errors": 0,
+      "bundle_size": "0.00 MB"
+    }
+  },
+  {
+    "id": "mem_1781548618620_3ort5w243",
+    "timestamp": "2026-06-15T18:36:58.620Z",
+    "category": "context",
+    "type": "session",
+    "importance": "medium",
+    "summary": "Session ended: sess_1781548 (3m) [Body-Bridge]",
+    "content": "Session ID: sess_1781548417630\nProject: Body-Bridge\nDuration: 3 minutes\nBranch: main\nFiles modified: 2\nChanged files:\n  - .memory/memory-index.json\n  - AGENTS.md\nStarted: 2026-06-15T18:33:37.630Z\nEnded: 2026-06-15T18:36:58.620Z",
+    "tags": [
+      "session",
+      "end",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1781548417630",
+      "project": "Body-Bridge",
+      "duration_minutes": 3,
+      "branch": "main",
+      "files_modified": 2,
+      "files_list": [
+        ".memory/memory-index.json",
+        "AGENTS.md"
+      ]
+    }
+  },
+  {
+    "id": "mem_1781550734689_swhzqjg8e",
+    "timestamp": "2026-06-15T19:12:14.689Z",
+    "category": "context",
+    "type": "session-start",
+    "importance": "low",
+    "summary": "Session started: sess_1781550 [Body-Bridge]",
+    "content": "Session ID: sess_1781550734688\nDirectory: C:\\Users\\thebe\\Downloads\\Body-Bridge\nWorktree: C:\\Users\\thebe\\Downloads\\Body-Bridge\nProject: Body-Bridge\nStarted: 2026-06-15T19:12:14.689Z",
+    "tags": [
+      "session",
+      "start",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1781550734688",
+      "project": "Body-Bridge",
+      "directory": "C:\\Users\\thebe\\Downloads\\Body-Bridge"
+    }
+  },
+  {
+    "id": "mem_1781550898980_7w4dz25ml",
+    "timestamp": "2026-06-15T19:14:58.980Z",
+    "category": "performance",
+    "type": "build",
+    "importance": "medium",
+    "summary": "Build completed successfully in unknowns",
+    "content": "Build Status: SUCCESS\nDuration: unknowns\nWarnings: 0\nErrors: 0\nBundle Size: 0.00 MB\n\nBuild completed successfully",
+    "tags": [
+      "build",
+      "performance",
+      "success"
+    ],
+    "metadata": {
+      "duration": "unknown",
+      "success": true,
+      "warnings": 0,
+      "errors": 0,
+      "bundle_size": "0.00 MB"
+    }
+  },
+  {
+    "id": "mem_1781551043969_eo16e70hs",
+    "timestamp": "2026-06-15T19:17:23.969Z",
+    "category": "context",
+    "type": "session",
+    "importance": "medium",
+    "summary": "Session ended: sess_1781550 (5m) [Body-Bridge]",
+    "content": "Session ID: sess_1781550734688\nProject: Body-Bridge\nDuration: 5 minutes\nBranch: main\nFiles modified: 2\nChanged files:\n  - .memory/memory-index.json\n  - AGENTS.md\nStarted: 2026-06-15T19:12:14.688Z\nEnded: 2026-06-15T19:17:23.968Z",
+    "tags": [
+      "session",
+      "end",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1781550734688",
+      "project": "Body-Bridge",
+      "duration_minutes": 5,
+      "branch": "main",
+      "files_modified": 2,
+      "files_list": [
+        ".memory/memory-index.json",
+        "AGENTS.md"
+      ]
+    }
+  },
+  {
+    "id": "mem_1781557301359_wryeycep3",
+    "timestamp": "2026-06-15T21:01:41.359Z",
+    "category": "performance",
+    "type": "build",
+    "importance": "medium",
+    "summary": "Build completed successfully in unknowns",
+    "content": "Build Status: SUCCESS\nDuration: unknowns\nWarnings: 0\nErrors: 0\nBundle Size: 0.00 MB\n\nBuild completed successfully",
+    "tags": [
+      "build",
+      "performance",
+      "success"
+    ],
+    "metadata": {
+      "duration": "unknown",
+      "success": true,
+      "warnings": 0,
+      "errors": 0,
+      "bundle_size": "0.00 MB"
+    }
+  },
+  {
+    "id": "mem_1781560874022_wkkoj63x6",
+    "timestamp": "2026-06-15T22:01:14.022Z",
+    "category": "performance",
+    "type": "build",
+    "importance": "medium",
+    "summary": "Build completed successfully in unknowns",
+    "content": "Build Status: SUCCESS\nDuration: unknowns\nWarnings: 0\nErrors: 0\nBundle Size: 0.00 MB\n\nBuild completed successfully",
+    "tags": [
+      "build",
+      "performance",
+      "success"
+    ],
+    "metadata": {
+      "duration": "unknown",
+      "success": true,
+      "warnings": 0,
+      "errors": 0,
+      "bundle_size": "0.00 MB"
+    }
+  },
+  {
+    "id": "mem_1781621525217_g3qfk6ein",
+    "timestamp": "2026-06-16T14:52:05.217Z",
+    "category": "context",
+    "type": "session-start",
+    "importance": "low",
+    "summary": "Session started: sess_1781621 [Body-Bridge]",
+    "content": "Session ID: sess_1781621525216\nDirectory: C:\\Users\\thebe\\Downloads\\Body-Bridge\nWorktree: C:\\Users\\thebe\\Downloads\\Body-Bridge\nProject: Body-Bridge\nStarted: 2026-06-16T14:52:05.216Z",
+    "tags": [
+      "session",
+      "start",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1781621525216",
+      "project": "Body-Bridge",
+      "directory": "C:\\Users\\thebe\\Downloads\\Body-Bridge"
+    }
+  },
+  {
+    "id": "mem_1781622068172_tg1py95o6",
+    "timestamp": "2026-06-16T15:01:08.172Z",
+    "category": "performance",
+    "type": "build",
+    "importance": "medium",
+    "summary": "Build completed successfully in unknowns",
+    "content": "Build Status: SUCCESS\nDuration: unknowns\nWarnings: 0\nErrors: 0\nBundle Size: 0.00 MB\n\nBuild completed successfully",
+    "tags": [
+      "build",
+      "performance",
+      "success"
+    ],
+    "metadata": {
+      "duration": "unknown",
+      "success": true,
+      "warnings": 0,
+      "errors": 0,
+      "bundle_size": "0.00 MB"
+    }
   }
 ]

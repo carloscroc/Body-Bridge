@@ -1,13 +1,13 @@
 import React, { createContext, useContext, useMemo, useState, ReactNode, useCallback, useEffect } from 'react';
 import { useAuthActions } from '@convex-dev/auth/react';
-import { useConvexAuth, useQuery, useConvex } from 'convex/react';
+import { useConvexAuth, useQuery, useConvex, useMutation } from 'convex/react';
 import { api } from '@convex/_generated/api';
 
 interface AuthContextType {
   isAuthenticated: boolean;
   isAuthLoading: boolean;
   user: any | null | undefined;
-  login: (args: { email: string; password: string; name?: string; flow: 'signIn' | 'signUp' }) => Promise<void>;
+  login: (args: { email: string; password: string; name?: string; flow: 'signIn' | 'signUp' }) => Promise<any>;
   logout: () => Promise<void>;
   isLoading: boolean;
   error: string | null;
@@ -19,6 +19,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
   const { isAuthenticated, isLoading: isAuthLoading } = useConvexAuth();
   const { signIn, signOut } = useAuthActions();
   const convex = useConvex();
+  const getOrCreateUser = useMutation(api.functions.auth.getOrCreateUser);
 
   // Dev override
   const isForced = false;
@@ -195,8 +196,8 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
   const login = useCallback(async (args: { email: string; password: string; name?: string; flow: 'signIn' | 'signUp' }) => {
     setIsLoading(true);
     setError(null);
+    let loginUser: any = null;
     try {
-      // 1. Pre-flight check to determine exact error if authentication fails
       const accountExists = await convex.query(api.auth_helpers.checkAccountExists, { 
         email: args.email 
       });
@@ -221,20 +222,28 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
         console.log('[Auth] Attempting signIn:', args.flow, args.email);
         await signIn('password', formData);
         console.log('[Auth] signIn call finished');
+
+        const createdOrFound = await getOrCreateUser({
+          email: args.email,
+          fullName: args.name,
+          authSource: 'client',
+        });
+
         const currentUser = await waitForAuthenticatedUser();
-        if (currentUser) {
-          setSessionUser(currentUser);
-          setBootstrappedIdentity(currentUser, args.email);
+        loginUser = currentUser ?? createdOrFound ?? null;
+
+        if (loginUser) {
+          setSessionUser(loginUser);
+          setBootstrappedIdentity(loginUser, args.email);
         } else {
           const bootstrapProfile = await fetchBootstrapProfile(args.email);
           if (bootstrapProfile) {
+            loginUser = bootstrapProfile;
             setSessionUser(bootstrapProfile);
             setBootstrappedIdentity(bootstrapProfile, args.email);
           }
         }
       } catch (signInErr: any) {
-        // If we reach here, we know the account exists (for signIn) or doesn't exist (for signUp).
-        // Since Convex masks the exact reason with a 500 Server Error, we can now confidently infer it.
         if (args.flow === 'signIn') {
           throw new Error('Incorrect password. Please try again.');
         } else {
@@ -242,15 +251,14 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
         }
       }
     } catch (err: any) {
-      // Log full error object to console for easier debugging of server-side failures
-      // eslint-disable-next-line no-console
       console.error('[Auth] signIn error:', err);
       setError(err?.message || 'Authentication failed');
       throw err;
     } finally {
       setIsLoading(false);
     }
-  }, [convex, signIn, waitForAuthenticatedUser, fetchBootstrapProfile, setBootstrappedIdentity]);
+    return loginUser;
+  }, [convex, signIn, waitForAuthenticatedUser, fetchBootstrapProfile, setBootstrappedIdentity, getOrCreateUser]);
 
   const logout = useCallback(async () => {
     setIsLoading(true);

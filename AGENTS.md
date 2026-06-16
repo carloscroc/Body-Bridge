@@ -77,3 +77,74 @@ Optional: `GEMINI_API_KEY`, `UNSPLASH_ACCESS_KEY`, `IMPORT_TRAINER_EMAIL`, `IMPO
 - **Start work**: `node scripts/start-symphony-work.cjs --ticket BODYBRIDGE-X`
 - **Collect evidence**: `node scripts/start-symphony-work.cjs --ticket BODYBRIDGE-X --evidence-only`
 - Pagination bug: Plane returns truthy `next_cursor` even on empty pages — always check `results.length`
+
+---
+
+## Hermes Runner Contract (added 2026-06 by Hermes)
+
+The Hermes orchestration system (`C:\Users\thebe\agent-system\`) launches OpenCode for coding tasks via the `run-opencode-project.ps1` PowerShell wrapper. **The notes below are the runner's contract with this repo.** They are additive — do NOT delete or rewrite the Forge agent notes above.
+
+### Three reusable OpenCode slash-commands
+
+The runner invokes these custom commands under `.opencode/commands/`:
+
+| Command         | Command file                       | Purpose                                                              |
+| --------------- | ---------------------------------- | -------------------------------------------------------------------- |
+| `fix-bug`       | `.opencode/commands/fix-bug.md`        | Read this AGENTS.md → reproduce → root-cause → smallest safe fix → validate → report |
+| `build-check`   | `.opencode/commands/build-check.md`    | Read this AGENTS.md → run the validation chain → identify first real error → NO edits  |
+| `review-change` | `.opencode/commands/review-change.md`  | Read this AGENTS.md → inspect git diff → pre-review report (does NOT approve). Pre-review only; the `reviewer` Hermes profile makes the final call. |
+
+These three do **not** collide with the project-local commands already shipped here (`collect-evidence.md`, `create-ticket.md`, `start-symphony.md`).
+
+### Validation chain for this repo (canonical order)
+
+```
+npm ci                          # lockfile-respecting install
+npm run build                   # vite build → postbuild-csp.mjs → postbuild-memory.js
+npx cap sync android            # only if web side changed
+cd android && ./gradlew assembleDebug   # only if Android side changed
+```
+
+### First-real-error rule
+
+If `gradlew assembleDebug` (or any other step) fails, read the output top-down. The **first** real error message is the one to act on. Tail/FilteredError streams and downstream cascade errors are symptoms.
+
+### Forbidden without explicit approval
+
+Do **not**, under any command including `fix-bug` and `review-change`, perform any of the following unless the task brief from the CEO explicitly approves it:
+
+- Release signing of the Android app
+- Edits to `android/keystore.properties` or store credentials
+- Deploys to Play Store / App Store / any hosted environment
+- Deletes of files outside the smallest patch that fixes the bug
+- Changes to `applicationId` (`com.bodybridge.fitness`) or `CFBundleIdentifier`
+- Edits to `.env.production`, `.env.prod.jwt`, or any production secret
+- Edits to Plane.so workspace configuration
+
+If a task brief would require any of these, the worker must stop and report `blocked — approval required`.
+
+### Reporting shape
+
+Every worker report in `runs/<RunId>/report.md` must include, in this order:
+
+1. Original goal (verbatim from `runs/<RunId>/task.md`)
+2. Root cause or main reason
+3. Files changed (paths)
+4. Commands run (literal)
+5. Validation result (per command: pass/fail/exit code)
+6. Risks remaining
+7. Manual testing needed
+
+### Task-brief restatement rule (defends against F3 goal drift)
+
+When the Hermes runner passes `$ARGUMENTS` into a command, the runner also appends a copy of `runs/<RunId>/task.md` content. The worker must **re-read** §1 of the run's `task.md` before declaring the work complete.
+
+### Where to find the run artifacts
+
+```
+C:\Users\thebe\agent-system\runs\active\<RunId>\      ← currently running
+C:\Users\thebe\agent-system\runs\completed\<RunId>\   ← finished runs (with review.md + librarian-output/)
+C:\Users\thebe\agent-system\runs\failed\<RunId>\      ← exhausted retries or hard-failed
+```
+
+If a run folder does not exist for the task you are working, the runner has not yet been invoked — ask the CEO to launch it instead of running OpenCode ad-hoc.

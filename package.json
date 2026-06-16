@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "config:generate": "node scripts/generateAppConfig.cjs",
+    "postinstall": "node scripts/patch-capacitor-android.cjs",
     "dev": "npm run config:generate && npm run dev:all",
     "dev:app": "concurrently --kill-others --names \"SERVER,CLIENT\" --prefix-colors \"blue,green\" \"npm run dev:server\" \"npm run dev:client\"",
     "dev:convex": "node scripts/runConvexDev.mjs",

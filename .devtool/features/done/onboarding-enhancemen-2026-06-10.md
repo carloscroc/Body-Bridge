@@ -1,13 +1,13 @@
 ---
 id: "onboarding-enhancemen-2026-06-10"
-status: "backlog"
+status: "done"
 priority: "medium"
 assignee: null
 epic: null
 dueDate: "2026-06-10"
 created: "2026-06-10T16:46:51.299Z"
-modified: "2026-06-10T16:50:17.954Z"
-completedAt: null
+modified: "2026-06-16T15:00:23.362Z"
+completedAt: "2026-06-16T15:00:23.362Z"
 labels: []
 order: "a0"
 ---
