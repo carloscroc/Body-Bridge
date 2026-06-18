@@ -49,7 +49,7 @@ function dayDiffYYYYMMDD(base: string, target: string): number {
 type AuthView = 'landing' | 'signup' | 'login' | 'onboarding' | 'authenticated';
 
 export default function App() {
-  const { isAuthenticated: isNetworkAuthenticated, isAuthLoading, user: authUser, login, logout, isLoading: isAuthTransitioning } = useAuth();
+  const { isAuthenticated: isNetworkAuthenticated, isAuthLoading, user: authUser, login, logout, isLoading: isAuthTransitioning, fieldError } = useAuth();
   const [authView, setAuthView] = useState<AuthView>('landing');
   const [signupData, setSignupData] = useState<{ name?: string; email?: string } | null>(null);
   const [authTimedOut, setAuthTimedOut] = useState(false);

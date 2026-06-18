@@ -7,11 +7,18 @@ import {
    User, 
    ArrowRight,
    ChevronLeft,
-   Sparkles
+   Sparkles,
+   AlertCircle
  } from 'lucide-react';
 import { useUserValidation } from '../hooks/useUserValidation';
+import { useAuth } from '../services/AuthContext';
 
 export type AuthMode = 'landing' | 'login' | 'signup';
+
+export type AuthFieldError = {
+  field: 'email' | 'password' | 'general';
+  message: string;
+};
 
 interface AuthScreenProps {
   onAuth: (data: { name?: string; email: string; password: string; method: 'login' | 'signup' }) => void | Promise<void>;
@@ -26,15 +33,16 @@ const AuthScreen: React.FC<AuthScreenProps> = ({ onAuth, initialMode = 'landing'
   const [name, setName] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [authError, setAuthError] = useState<string | null>(null);
+  const { fieldError, clearFieldError } = useAuth();
 
   useEffect(() => {
     setMode(initialMode);
-    // Clear fields when mode changes
     setEmail('');
     setPassword('');
     setName('');
     setAuthError(null);
-  }, [initialMode]);
+    clearFieldError();
+  }, [initialMode, clearFieldError]);
 
   const updateMode = (nextMode: AuthMode) => {
     setMode(nextMode);
@@ -57,7 +65,6 @@ const AuthScreen: React.FC<AuthScreenProps> = ({ onAuth, initialMode = 'landing'
     setIsLoading(true);
     setAuthError(null);
     
-    // Check if there are any validation errors
     if (Object.keys(errors).length > 0) {
       setAuthError('Please fix the errors above');
       setIsLoading(false);
@@ -67,10 +74,10 @@ const AuthScreen: React.FC<AuthScreenProps> = ({ onAuth, initialMode = 'landing'
     try {
       await onAuth({ name, email, password, method: mode as 'login' | 'signup' });
     } catch (err: any) {
-      console.error('Auth submit error:', err);
-      // Display user-friendly error messages
-      const errorMessage = err?.message || 'Authentication failed. Please try again.';
-      setAuthError(errorMessage);
+      if (!fieldError) {
+        const errorMessage = err?.message || 'Authentication failed. Please try again.';
+        setAuthError(errorMessage);
+      }
     } finally {
       setIsLoading(false);
     }
@@ -239,9 +246,19 @@ const AuthScreen: React.FC<AuthScreenProps> = ({ onAuth, initialMode = 'landing'
                 placeholder="EMAIL ADDRESS"
                 autoComplete="new-email"
                 required
-                className="w-full h-16 bg-white/[0.03] border border-white/10 rounded-2xl pl-16 pr-6 text-white text-xs font-bold uppercase tracking-widest outline-none focus:border-[#FFB800]/50 transition-all placeholder:text-white/10"
+                className={`w-full h-16 bg-white/[0.03] border rounded-2xl pl-16 pr-6 text-white text-xs font-bold uppercase tracking-widest outline-none transition-all placeholder:text-white/10 ${
+                  errors.email || (fieldError?.field === 'email') ? 'border-red-500/50' : 'border-white/10 focus:border-[#FFB800]/50'
+                }`}
               />
             </div>
+            {(errors.email || (fieldError?.field === 'email')) && (
+              <div className="flex items-center gap-1.5 px-2 -mt-2">
+                <AlertCircle size={12} className="text-red-400" />
+                <span className="text-[10px] text-red-400 font-medium">
+                  {errors.email || fieldError?.message}
+                </span>
+              </div>
+            )}
 
             <div className="relative group">
               <div className="absolute left-6 top-1/2 -translate-y-1/2 text-white/20 group-focus-within:text-[#FFB800] transition-colors">
@@ -254,9 +271,19 @@ const AuthScreen: React.FC<AuthScreenProps> = ({ onAuth, initialMode = 'landing'
                 placeholder="SECURE PASSWORD"
                 autoComplete="new-password"
                 required
-                className="w-full h-16 bg-white/[0.03] border border-white/10 rounded-2xl pl-16 pr-6 text-white text-xs font-bold uppercase tracking-widest outline-none focus:border-[#FFB800]/50 transition-all placeholder:text-white/10"
+                className={`w-full h-16 bg-white/[0.03] border rounded-2xl pl-16 pr-6 text-white text-xs font-bold uppercase tracking-widest outline-none transition-all placeholder:text-white/10 ${
+                  errors.password || (fieldError?.field === 'password') ? 'border-red-500/50' : 'border-white/10 focus:border-[#FFB800]/50'
+                }`}
               />
             </div>
+            {(errors.password || (fieldError?.field === 'password')) && (
+              <div className="flex items-center gap-1.5 px-2 -mt-2">
+                <AlertCircle size={12} className="text-red-400" />
+                <span className="text-[10px] text-red-400 font-medium">
+                  {errors.password || fieldError?.message}
+                </span>
+              </div>
+            )}
           </div>
 
           <button

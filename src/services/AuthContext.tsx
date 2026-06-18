@@ -3,6 +3,11 @@ import { useAuthActions } from '@convex-dev/auth/react';
 import { useConvexAuth, useQuery, useConvex, useMutation } from 'convex/react';
 import { api } from '@convex/_generated/api';
 
+export type AuthFieldError = {
+  field: 'email' | 'password' | 'general';
+  message: string;
+};
+
 interface AuthContextType {
   isAuthenticated: boolean;
   isAuthLoading: boolean;
@@ -11,6 +16,8 @@ interface AuthContextType {
   logout: () => Promise<void>;
   isLoading: boolean;
   error: string | null;
+  fieldError: AuthFieldError | null;
+  clearFieldError: () => void;
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
@@ -192,24 +199,39 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
 
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [fieldError, setFieldError] = useState<AuthFieldError | null>(null);
+
+  const mapAuthError = (err: any, flow: 'signIn' | 'signUp'): AuthFieldError => {
+    const message = err?.message || '';
+
+    if (message.includes('already exists')) {
+      return { field: 'email', message: 'An account with this email already exists. Please log in instead.' };
+    }
+    if (message === 'InvalidSecret') {
+      return { field: 'password', message: 'Incorrect password. Please try again.' };
+    }
+    if (message === 'InvalidAccountId') {
+      return { field: 'email', message: 'No account found with this email. Please sign up first.' };
+    }
+    if (message === 'TooManyFailedAttempts') {
+      return { field: 'general', message: 'Too many failed attempts. Please try again later.' };
+    }
+    if (message === 'Invalid password') {
+      return { field: 'password', message: 'Password must be at least 8 characters.' };
+    }
+    if (message.startsWith('Missing `password`')) {
+      return { field: 'password', message: 'Password is required.' };
+    }
+
+    return { field: 'general', message: 'Authentication failed. Please try again.' };
+  };
 
   const login = useCallback(async (args: { email: string; password: string; name?: string; flow: 'signIn' | 'signUp' }) => {
     setIsLoading(true);
     setError(null);
+    setFieldError(null);
     let loginUser: any = null;
     try {
-      const accountExists = await convex.query(api.auth_helpers.checkAccountExists, { 
-        email: args.email 
-      });
-
-      if (args.flow === 'signUp' && accountExists) {
-        throw new Error('An account with this email already exists. Please log in instead.');
-      }
-
-      if (args.flow === 'signIn' && !accountExists) {
-        throw new Error('No account found for this email. Please sign up first.');
-      }
-
       const formData = new FormData();
       formData.set('email', args.email);
       formData.set('password', args.password);
@@ -217,11 +239,9 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
       if (args.flow === 'signUp' && args.name) {
         formData.set('name', args.name);
       }
-      
+
       try {
-        console.log('[Auth] Attempting signIn:', args.flow, args.email);
         await signIn('password', formData);
-        console.log('[Auth] signIn call finished');
 
         const createdOrFound = await getOrCreateUser({
           email: args.email,
@@ -244,25 +264,27 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
           }
         }
       } catch (signInErr: any) {
-        if (args.flow === 'signIn') {
-          throw new Error('Incorrect password. Please try again.');
-        } else {
-          throw new Error('Could not create account. Please ensure your password is at least 8 characters long.');
-        }
+        const mapped = mapAuthError(signInErr, args.flow);
+        setFieldError(mapped);
+        setError(mapped.message);
+        throw signInErr;
       }
     } catch (err: any) {
       console.error('[Auth] signIn error:', err);
-      setError(err?.message || 'Authentication failed');
+      if (!error) {
+        setError(err?.message || 'Authentication failed');
+      }
       throw err;
     } finally {
       setIsLoading(false);
     }
     return loginUser;
-  }, [convex, signIn, waitForAuthenticatedUser, fetchBootstrapProfile, setBootstrappedIdentity, getOrCreateUser]);
+  }, [signIn, waitForAuthenticatedUser, fetchBootstrapProfile, setBootstrappedIdentity, getOrCreateUser]);
 
   const logout = useCallback(async () => {
     setIsLoading(true);
     setError(null);
+    setFieldError(null);
     try {
       await signOut();
       setSessionUser(null);
@@ -277,9 +299,13 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     }
   }, [clearBootstrappedIdentity, convex, signOut]);
 
+  const clearFieldError = useCallback(() => {
+    setFieldError(null);
+  }, []);
+
   const value = useMemo(
-    () => ({ isAuthenticated: isAuthenticatedFinal, isAuthLoading: isAuthLoading && !isForced, user, login, logout, isLoading, error }),
-    [isAuthenticatedFinal, isAuthLoading, user, login, logout, isLoading, error]
+    () => ({ isAuthenticated: isAuthenticatedFinal, isAuthLoading: isAuthLoading && !isForced, user, login, logout, isLoading, error, fieldError, clearFieldError }),
+    [isAuthenticatedFinal, isAuthLoading, user, login, logout, isLoading, error, fieldError, clearFieldError]
   );
 
   return (

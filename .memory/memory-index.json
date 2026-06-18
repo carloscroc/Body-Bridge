@@ -4360,5 +4360,293 @@
         "convex/notifications.ts"
       ]
     }
+  },
+  {
+    "id": "mem_1781734802869_zghctb03n",
+    "timestamp": "2026-06-17T22:20:02.869Z",
+    "category": "context",
+    "type": "session-start",
+    "importance": "low",
+    "summary": "Session started: sess_1781734 [Body-Bridge]",
+    "content": "Session ID: sess_1781734802866\nDirectory: C:\\Users\\thebe\\Downloads\\Body-Bridge\nWorktree: C:\\Users\\thebe\\Downloads\\Body-Bridge\nProject: Body-Bridge\nStarted: 2026-06-17T22:20:02.868Z",
+    "tags": [
+      "session",
+      "start",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1781734802866",
+      "project": "Body-Bridge",
+      "directory": "C:\\Users\\thebe\\Downloads\\Body-Bridge"
+    }
+  },
+  {
+    "id": "mem_1781735234093_jv0fcs0l0",
+    "timestamp": "2026-06-17T22:27:14.093Z",
+    "category": "context",
+    "type": "session",
+    "importance": "medium",
+    "summary": "Session ended: sess_1781734 (7m) [Body-Bridge]",
+    "content": "Session ID: sess_1781734802866\nProject: Body-Bridge\nDuration: 7 minutes\nBranch: symphony/bodybridge-8-apk-login-issue\nFiles modified: 2\nChanged files:\n  - .memory/memory-index.json\n  - index.html\nStarted: 2026-06-17T22:20:02.867Z\nEnded: 2026-06-17T22:27:14.092Z",
+    "tags": [
+      "session",
+      "end",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1781734802866",
+      "project": "Body-Bridge",
+      "duration_minutes": 7,
+      "branch": "symphony/bodybridge-8-apk-login-issue",
+      "files_modified": 2,
+      "files_list": [
+        ".memory/memory-index.json",
+        "index.html"
+      ]
+    }
+  },
+  {
+    "id": "mem_1781738962233_9wetr4tot",
+    "timestamp": "2026-06-17T23:29:22.234Z",
+    "category": "context",
+    "type": "session-start",
+    "importance": "low",
+    "summary": "Session started: sess_1781738 [Body-Bridge]",
+    "content": "Session ID: sess_1781738962233\nDirectory: C:\\Users\\thebe\\Downloads\\Body-Bridge\nWorktree: C:\\Users\\thebe\\Downloads\\Body-Bridge\nProject: Body-Bridge\nStarted: 2026-06-17T23:29:22.233Z",
+    "tags": [
+      "session",
+      "start",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1781738962233",
+      "project": "Body-Bridge",
+      "directory": "C:\\Users\\thebe\\Downloads\\Body-Bridge"
+    }
+  },
+  {
+    "id": "mem_1781739345971_21hy5x8e0",
+    "timestamp": "2026-06-17T23:35:45.971Z",
+    "category": "context",
+    "type": "session",
+    "importance": "medium",
+    "summary": "Session ended: sess_1781738 (6m) [Body-Bridge]",
+    "content": "Session ID: sess_1781738962233\nProject: Body-Bridge\nDuration: 6 minutes\nBranch: symphony/bodybridge-8-apk-login-issue\nFiles modified: 1\nChanged files:\n  - .memory/memory-index.json\nStarted: 2026-06-17T23:29:22.233Z\nEnded: 2026-06-17T23:35:45.971Z",
+    "tags": [
+      "session",
+      "end",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1781738962233",
+      "project": "Body-Bridge",
+      "duration_minutes": 6,
+      "branch": "symphony/bodybridge-8-apk-login-issue",
+      "files_modified": 1,
+      "files_list": [
+        ".memory/memory-index.json"
+      ]
+    }
+  },
+  {
+    "id": "mem_1781742516493_mid0y9nmt",
+    "timestamp": "2026-06-18T00:28:36.493Z",
+    "category": "context",
+    "type": "session-start",
+    "importance": "low",
+    "summary": "Session started: sess_1781742 [Body-Bridge]",
+    "content": "Session ID: sess_1781742516491\nDirectory: C:\\Users\\thebe\\Downloads\\Body-Bridge\nWorktree: C:\\Users\\thebe\\Downloads\\Body-Bridge\nProject: Body-Bridge\nStarted: 2026-06-18T00:28:36.493Z",
+    "tags": [
+      "session",
+      "start",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1781742516491",
+      "project": "Body-Bridge",
+      "directory": "C:\\Users\\thebe\\Downloads\\Body-Bridge"
+    }
+  },
+  {
+    "id": "mem_1781742648570_bpgbefog2",
+    "timestamp": "2026-06-18T00:30:48.570Z",
+    "category": "context",
+    "type": "session-start",
+    "importance": "low",
+    "summary": "Session started: sess_1781742 [Body-Bridge]",
+    "content": "Session ID: sess_1781742648569\nDirectory: C:\\Users\\thebe\\Downloads\\Body-Bridge\nWorktree: C:\\Users\\thebe\\Downloads\\Body-Bridge\nProject: Body-Bridge\nStarted: 2026-06-18T00:30:48.570Z",
+    "tags": [
+      "session",
+      "start",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1781742648569",
+      "project": "Body-Bridge",
+      "directory": "C:\\Users\\thebe\\Downloads\\Body-Bridge"
+    }
+  },
+  {
+    "id": "mem_1781742901823_gw0cwsftm",
+    "timestamp": "2026-06-18T00:35:01.823Z",
+    "category": "context",
+    "type": "session-start",
+    "importance": "low",
+    "summary": "Session started: sess_1781742 [Body-Bridge]",
+    "content": "Session ID: sess_1781742901822\nDirectory: C:\\Users\\thebe\\Downloads\\Body-Bridge\nWorktree: C:\\Users\\thebe\\Downloads\\Body-Bridge\nProject: Body-Bridge\nStarted: 2026-06-18T00:35:01.822Z",
+    "tags": [
+      "session",
+      "start",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1781742901822",
+      "project": "Body-Bridge",
+      "directory": "C:\\Users\\thebe\\Downloads\\Body-Bridge"
+    }
+  },
+  {
+    "id": "mem_1781743013240_szbxdmh6x",
+    "timestamp": "2026-06-18T00:36:53.240Z",
+    "category": "context",
+    "type": "session",
+    "importance": "medium",
+    "summary": "Session ended: sess_1781742 (2m) [Body-Bridge]",
+    "content": "Session ID: sess_1781742901822\nProject: Body-Bridge\nDuration: 2 minutes\nBranch: symphony/bodybridge-8-apk-login-issue\nFiles modified: 1\nChanged files:\n  - .memory/memory-index.json\nStarted: 2026-06-18T00:35:01.822Z\nEnded: 2026-06-18T00:36:53.240Z",
+    "tags": [
+      "session",
+      "end",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1781742901822",
+      "project": "Body-Bridge",
+      "duration_minutes": 2,
+      "branch": "symphony/bodybridge-8-apk-login-issue",
+      "files_modified": 1,
+      "files_list": [
+        ".memory/memory-index.json"
+      ]
+    }
+  },
+  {
+    "id": "mem_1781743019144_aixy0jmsz",
+    "timestamp": "2026-06-18T00:36:59.144Z",
+    "category": "context",
+    "type": "session",
+    "importance": "medium",
+    "summary": "Session ended: sess_1781742 (2m) [Body-Bridge]",
+    "content": "Session ID: sess_1781742901822\nProject: Body-Bridge\nDuration: 2 minutes\nBranch: symphony/bodybridge-8-apk-login-issue\nFiles modified: 1\nChanged files:\n  - .memory/memory-index.json\nStarted: 2026-06-18T00:35:01.822Z\nEnded: 2026-06-18T00:36:59.144Z",
+    "tags": [
+      "session",
+      "end",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1781742901822",
+      "project": "Body-Bridge",
+      "duration_minutes": 2,
+      "branch": "symphony/bodybridge-8-apk-login-issue",
+      "files_modified": 1,
+      "files_list": [
+        ".memory/memory-index.json"
+      ]
+    }
+  },
+  {
+    "id": "mem_1781743136912_cisu9hjfe",
+    "timestamp": "2026-06-18T00:38:56.912Z",
+    "category": "context",
+    "type": "session-start",
+    "importance": "low",
+    "summary": "Session started: sess_1781743 [Body-Bridge]",
+    "content": "Session ID: sess_1781743136911\nDirectory: C:\\Users\\thebe\\Downloads\\Body-Bridge\nWorktree: C:\\Users\\thebe\\Downloads\\Body-Bridge\nProject: Body-Bridge\nStarted: 2026-06-18T00:38:56.912Z",
+    "tags": [
+      "session",
+      "start",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1781743136911",
+      "project": "Body-Bridge",
+      "directory": "C:\\Users\\thebe\\Downloads\\Body-Bridge"
+    }
+  },
+  {
+    "id": "mem_1781743249688_grlkpi6a1",
+    "timestamp": "2026-06-18T00:40:49.688Z",
+    "category": "context",
+    "type": "session",
+    "importance": "medium",
+    "summary": "Session ended: sess_1781743 (2m) [Body-Bridge]",
+    "content": "Session ID: sess_1781743136911\nProject: Body-Bridge\nDuration: 2 minutes\nBranch: symphony/bodybridge-8-apk-login-issue\nFiles modified: 1\nChanged files:\n  - .memory/memory-index.json\nStarted: 2026-06-18T00:38:56.911Z\nEnded: 2026-06-18T00:40:49.688Z",
+    "tags": [
+      "session",
+      "end",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1781743136911",
+      "project": "Body-Bridge",
+      "duration_minutes": 2,
+      "branch": "symphony/bodybridge-8-apk-login-issue",
+      "files_modified": 1,
+      "files_list": [
+        ".memory/memory-index.json"
+      ]
+    }
+  },
+  {
+    "id": "mem_1781748221594_sinycxqxb",
+    "timestamp": "2026-06-18T02:03:41.594Z",
+    "category": "performance",
+    "type": "build",
+    "importance": "medium",
+    "summary": "Build completed successfully in unknowns",
+    "content": "Build Status: SUCCESS\nDuration: unknowns\nWarnings: 0\nErrors: 0\nBundle Size: 0.00 MB\n\nBuild completed successfully",
+    "tags": [
+      "build",
+      "performance",
+      "success"
+    ],
+    "metadata": {
+      "duration": "unknown",
+      "success": true,
+      "warnings": 0,
+      "errors": 0,
+      "bundle_size": "0.00 MB"
+    }
+  },
+  {
+    "id": "mem_1781748314024_mxt0iznfe",
+    "timestamp": "2026-06-18T02:05:14.024Z",
+    "category": "performance",
+    "type": "build",
+    "importance": "medium",
+    "summary": "Build completed successfully in unknowns",
+    "content": "Build Status: SUCCESS\nDuration: unknowns\nWarnings: 0\nErrors: 0\nBundle Size: 0.00 MB\n\nBuild completed successfully",
+    "tags": [
+      "build",
+      "performance",
+      "success"
+    ],
+    "metadata": {
+      "duration": "unknown",
+      "success": true,
+      "warnings": 0,
+      "errors": 0,
+      "bundle_size": "0.00 MB"
+    }
   }
 ]
