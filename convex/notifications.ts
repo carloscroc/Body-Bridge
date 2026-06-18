@@ -1,9 +1,9 @@
 import { v } from "convex/values";
-import { mutation, query } from "./_generated/server";
+import { mutation, query, internalMutation } from "./_generated/server";
 import { requireProfileId, getMaybeProfileId } from "./lib/auth";
 import { paginationOptsValidator } from "convex/server";
 
-export const createNotification = mutation({
+export const createNotification = internalMutation({
   args: {
     userId: v.id("profiles"),
     type: v.union(
