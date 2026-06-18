@@ -141,7 +141,7 @@ const ExercisesView: React.FC<ExercisesViewProps> = ({ onSelect }) => {
   };
 
   return (
-    <div className="px-6 pt-10 pb-32">
+    <div className="px-6 pt-10 pb-32 min-h-[calc(100vh-140px)] flex flex-col">
       <PremiumHeader 
         title="Library"
         subtitle="Exercise Database"
@@ -166,7 +166,7 @@ const ExercisesView: React.FC<ExercisesViewProps> = ({ onSelect }) => {
         </div>
       )}
 
-      <div className="space-y-4 mb-8">
+      <div className="space-y-4 mb-8 shrink-0">
         <div className="relative">
           <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-white/20" size={14} />
           <input
@@ -200,19 +200,20 @@ const ExercisesView: React.FC<ExercisesViewProps> = ({ onSelect }) => {
         </div>
       </div>
 
-      <PremiumSectionHeader title="Movements" className="mb-4" />
+      <PremiumSectionHeader title="Movements" className="mb-4 shrink-0" />
 
       {isLoading && exercises.length === 0 ? (
-        <div className="flex flex-col items-center justify-center py-20 text-center">
+        <div className="flex-1 flex items-center justify-center">
           <div className="text-white/30 text-sm">Loading exercises...</div>
         </div>
       ) : exercises.length === 0 ? (
-        <div className="flex flex-col items-center justify-center py-20 text-center">
-          <Dumbbell className="h-12 w-12 mb-4 text-white/20" /><p className="text-white/60 text-sm">No exercises yet. Check back soon!</p>
+        <div className="flex-1 flex flex-col items-center justify-center">
+          <Dumbbell className="h-12 w-12 mb-4 text-white/20" />
+          <p className="text-white/60 text-sm">No exercises yet. Check back soon!</p>
         </div>
       ) : (
         <>
-          <div className="grid grid-cols-2 gap-3.5 animate-slide-up">
+          <div className="flex-1 grid grid-cols-2 gap-3.5 animate-slide-up">
             {exercises.map(ex => (
               <button
                 key={ex.id}
@@ -244,7 +245,7 @@ const ExercisesView: React.FC<ExercisesViewProps> = ({ onSelect }) => {
                   <p className="text-[8px] font-black uppercase tracking-widest text-white/30 mt-1.5">{ex.muscleGroup}</p>
                 </div>
               </button>
-            ))}
+            )))}
           </div>
 
           <div className="mt-6 flex items-center justify-center">
@@ -271,4 +272,3 @@ const ExercisesView: React.FC<ExercisesViewProps> = ({ onSelect }) => {
 };
 
 export default ExercisesView;
-

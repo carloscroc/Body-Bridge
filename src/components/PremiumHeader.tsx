@@ -1,6 +1,6 @@
 import React from 'react';
 import UnifiedNavMenu from './UnifiedNavMenu';
-import { Settings as SettingsIcon } from 'lucide-react';
+import { Settings as SettingsIcon, Dumbbell } from 'lucide-react';
 
 interface PremiumHeaderProps {
   title: string;
@@ -38,6 +38,29 @@ const PremiumHeader: React.FC<PremiumHeaderProps> = ({
   return (
     <div className={`flex justify-between items-start mb-10 animate-silk-up ${className}`}>
       <div className="flex flex-col text-left">
+        {onNavigateToExercises && (
+          <button
+            type="button"
+            onClick={() => {
+              try {
+                onNavigateToExercises?.();
+
+              } catch (e) {
+                // ignore
+              }
+              // Broadcast app navigation event as fallback for other listeners
+              try { window.dispatchEvent(new CustomEvent('app-navigate', { detail: { path: '/exercises' } })); } catch (e) {}
+            }}
+            className="px-3 h-7 rounded-full bg-white/5 border border-white/10 flex items-center gap-1.5 press-scale group"
+            aria-label="Open library"
+            title="Library"
+          >
+            <Dumbbell size={16} className="text-white/40 group-hover:text-white transition-colors" />
+            <span className="text-[9px] font-black uppercase tracking-widest text-white/40 group-hover:text-white transition-colors">
+              Library
+            </span>
+          </button>
+        )}
         {subtitle && (
           <p className="text-[10px] font-black uppercase tracking-[0.4em] text-white/30 mb-2">
             {subtitle}
