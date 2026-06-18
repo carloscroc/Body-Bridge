@@ -47,9 +47,10 @@ export const createSelfNotification = mutation({
     link: v.optional(v.string()),
   },
   handler: async (ctx, args) => {
-    const userId = await requireProfileId(ctx);
+    const profileId = await getMaybeProfileId(ctx);
+    if (!profileId) return;
     return await ctx.db.insert("notifications", {
-      userId,
+      userId: profileId,
       type: args.type,
       title: args.title,
       message: args.message,

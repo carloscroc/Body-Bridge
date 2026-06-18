@@ -49,7 +49,7 @@ function dayDiffYYYYMMDD(base: string, target: string): number {
 type AuthView = 'landing' | 'signup' | 'login' | 'onboarding' | 'authenticated';
 
 export default function App() {
-  const { isAuthenticated: isNetworkAuthenticated, isAuthLoading, user: authUser, login, logout, isLoading: isAuthTransitioning } = useAuth();
+  const { isAuthenticated: isNetworkAuthenticated, isAuthLoading, user: authUser, login, logout, isLoading: isAuthTransitioning, fieldError } = useAuth();
   const [authView, setAuthView] = useState<AuthView>('landing');
   const [signupData, setSignupData] = useState<{ name?: string; email?: string } | null>(null);
   const [authTimedOut, setAuthTimedOut] = useState(false);
@@ -198,11 +198,6 @@ export default function App() {
   }, [isAuthenticated, todayPlans, allPlans, createSelfNotification, todayStr, user, updateMe]);
 
   useEffect(() => {
-    if (localStorage.getItem('app_logged_out') === '1') {
-      setAuthView('landing');
-      return;
-    }
-
     if (isAuthLoading) return;
 
     if (!isNetworkAuthenticated) {
@@ -371,7 +366,6 @@ export default function App() {
             void logout().catch(() => {
             });
             setAuthView('landing');
-            localStorage.setItem('app_logged_out', '1');
           }}
         />
       );
@@ -458,7 +452,6 @@ export default function App() {
           <AuthScreen
             onAuth={async (data) => {
               setSignupData({ name: data.name, email: data.email });
-              localStorage.removeItem('app_logged_out');
               try {
                 const loggedInUser = await login({
                   email: data.email,

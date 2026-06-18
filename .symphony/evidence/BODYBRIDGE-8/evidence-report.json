@@ -1,0 +1,34 @@
+{
+  "ticketId": "BODYBRIDGE-8",
+  "timestamp": "2026-06-17T00:45:11.372Z",
+  "automated_tests": {
+    "status": "warn",
+    "exitCode": 1,
+    "output": "Error: Cannot find module 'C:\\Users\\thebe\\Downloads\\Body-Bridge\\utils\\imageResolver' imported from C:\\Users\\thebe\\Downloads\\Body-Bridge\\tests\\imageResolver.spec.ts\n\n\u001b[1A\u001b[2K"
+  },
+  "health_check": {
+    "status": "fail",
+    "statusCode": 404,
+    "endpoint": "http://localhost:3001/api/health",
+    "response": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Error</title>\n</head>\n<body>\n<pre>Cannot GET /api/health</pre>\n</body>\n</html>\n"
+  },
+  "code_quality": {
+    "status": "warn",
+    "output": "{\"issues\":[{\"file\":\"src/config/app.config.ts\",\"binaries\":[],\"catalog\":[],\"dependencies\":[],\"devDependencies\":[],\"duplicates\":[],\"enumMembers\":[],\"exports\":[],\"files\":[{\"name\":\"src/config/app.config.ts\"}],\"namespaceMembers\":[],\"optionalPeerDependencies\":[],\"types\":[],\"unlisted\":[],\"unresolved\":[]},{\"file\":\"package.json\",\"binaries\":[{\"name\":\"semgrep\"},{\"name\":\"powershell\"}],\"catalog\":[],\"dependencies\":[{\"name\":\"form-data\",\"line\":55,\"col\":6,\"pos\":2873},{\"name\":\"minimist\",\"line\":61,\"col\":6,\"pos\":3041}],\"devDependencies\":[{\"name\":\"tailwindcss-animate\",\"line\":81,\"col\":6,\"pos\":3604}],\"duplicates\":[],\"enumMembers\":[],\"exports\":[],\"files\":[],\"namespaceMembers\":[],\"optionalPeerDependencies\":[],\"types\":[],\"unlisted\":[],\"unresolved\":[]},{\"file\":\".github/workflows/dependency-security.yml\",\"binaries\":[{\"name\":\"license-checker\"}],\"catalog\":[],\"dependencies\":[],\"devDependencies\":[],\"duplicates\":[],\"enumMembers\":[],\"exports\":[],\"files\":[],\"namespaceMembers\":[],\"optionalPeerDependencies\":[],\"types\":[],\"unlisted\":[],\"unresolved\":[]},{\"file\":\"convex/auth.ts\",\"binaries\":[],\"catalog\":[],\"dependencies\":[],\"devDependencies\":[],\"duplicates\":[],\"enumMembers\":[],\"exports\":[{\"namespace\":\"auth\",\"name\":\"signIn\",\"line\":10,\"col\":22,\"pos\":294},{\"namespace\":\"auth\",\"name\":\"signOut\",\"line\":10,\"col\":30,\"pos\":302},{\"namespace\":\"auth\",\"name\":\"store\",\"line\":10,\"col\":39,\"pos\":311},{\"namespace\":\"auth\",\"name\":\"isAuthenticated\",\"line\":10,\"col\":46,\"pos\":318}],\"files\":[],\"namespaceMembers\":[],\"optionalPeerDependencies\":[],\"types\":[],\"unlisted\":[],\"unresolved\":[]},{\"file\":\"src/data/cities.ts\",\"binaries\":[],\"catalog\":[],\"dependencies\":[],\"devDependencies\":[],\"duplicates\":[],\"enumMembers\":[],\"exports\":[{\"name\":\"findCityByDisplay\",\"line\":809,\"col\":17,\"pos\":34846}],\"files\":[],\"namespaceMembers\":[],\"optionalPeerDependencies\":[],\"types\":[],\"unlisted\":[],\"unresolved\":[]},{\"file\":\"src/components/ErrorBoundary.tsx\",\"binaries\":[],\"catalog\":[],\"dependencies\":[],\"devDependencies\":[],\"duplicates\":[[{\"name\":\"ErrorBoundary\",\"line\":14,\"col\":14,\"pos\":266},{\"name\":\"default\",\"line\":77,\"col\":16,\"pos\":2188}]],\"enumMembers\":[],\"exports\":[],\"files\":[],\"namespaceMembers\":[],\"optionalPeerDependencies\":[],\"types\":[],\"unlisted\":[],\"unresolved\":[]},{\"file\":\"convex/exercises.ts\",\"binaries\":[],\"catalog\":[],\"dependencies\":[],\"devDependencies\":[],\"duplicates\":[[{\"name\":\"seedExercises\",\"line\":1392,\"col\":14,\"pos\":44939},{\"name\":\"seed\",\"line\":1439,\"col\":14,\"pos\":46300}]],\"enumMembers\":[],\"exports\":[],\"files\":[],\"namespaceMembers\":[],\"optionalPeerDependencies\":[],\"types\":[],\"unlisted\":[],\"unresolved\":[]}]}\n",
+    "exitCode": 1
+  },
+  "security_scan": {
+    "status": "skip",
+    "reason": "skipped by user"
+  },
+  "screenshots": {
+    "status": "skip",
+    "error": "Command failed: node \"C:\\Users\\thebe\\Downloads\\Body-Bridge\\scripts\\generate-screenshots.js\" --output \"C:\\Users\\thebe\\Downloads\\Body-Bridge\\screenshots\\evidence\\BODYBRIDGE-8\"\nfile:///C:/Users/thebe/Downloads/Body-Bridge/scripts/generate-screenshots.js:8\r\nconst { chromium } = require('playwright');\r\n                     ^\r\n\r\nReferenceError: require is not defined in ES module scope, you can use import instead\r\nThis file is being treated as an ES module because it has a '.js' file extension and 'C:\\Users\\thebe\\Downloads\\Body-Bridge\\package.json' contains \"type\": \"module\". To treat it as a CommonJS script, rename it to use the '.cjs' file extension.\r\n    at file:///C:/Users/thebe/Downloads/Body-Bridge/scripts/generate-screenshots.js:8:22\r\n    at ModuleJob.run (node:internal/modules/esm/module_job:274:25)\r\n    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26)\r\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)\r\n\r\nNode.js v22.16.0\r\n"
+  },
+  "summary": {
+    "pass": 0,
+    "fail": 1,
+    "skip": 4,
+    "total": 5
+  }
+}

@@ -100,10 +100,11 @@ export const getOrCreateUser = mutation({
       .first();
 
     if (profile) {
-      // Link to new Convex Auth userId
+      const hasExistingOnboardingData = !!(profile.fullName || profile.goal || profile.onboardingComplete);
       await ctx.db.patch(profile._id, {
         userId,
         updatedAt: Date.now(),
+        ...(hasExistingOnboardingData && !profile.onboardingComplete ? { onboardingComplete: true } : {}),
       });
       return await ctx.db.get(profile._id);
     }

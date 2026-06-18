@@ -5,7 +5,7 @@ import react from '@vitejs/plugin-react';
 export default defineConfig(({ mode }) => {
   const envFiles = mode === 'production'
     ? ['.env.production.local', '.env.production', '.env']
-    : ['.env.local', `.env.${mode}.local`, `.env.${mode}`, '.env'];
+    : ['.env.local', `.env.${mode}.local`, `.env.${mode}`, '.env', '.env.app'];
   return {
   base: './',
       envFile: envFiles,
