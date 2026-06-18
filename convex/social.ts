@@ -192,9 +192,16 @@ export const pinPost = mutation({
   },
   returns: v.null(),
   handler: async (ctx, args) => {
+    const profileId = await requireProfileId(ctx);
     const post = await ctx.db.get(args.postId);
     if (!post) {
       throw new Error("Post not found");
+    }
+    // Only the post author or a trainer can pin/unpin
+    const profile = await ctx.db.get(profileId);
+    const isTrainer = profile?.authSource === "trainer";
+    if (post.authorId !== profileId && !isTrainer) {
+      throw new Error("Not authorized to pin this post");
     }
     await ctx.db.patch(args.postId, {
       isPinned: args.isPinned,
