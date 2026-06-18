@@ -472,6 +472,7 @@ export default function App() {
                   setAuthView('onboarding');
                 }
               } catch (err) {
+                throw err;
               }
             }}
             onModeChange={setAuthView}
