@@ -1097,56 +1097,72 @@ export const getEngagementTrend = query({
   handler: async (ctx, args) => {
     const now = Date.now();
     const oneDay = 24 * 60 * 60 * 1000;
-    const trend = [];
+    // Clamp to [1, 90] so a client can't request unbounded date ranges
+    const safeDays = Math.min(Math.max(args.days, 1), 90);
+    const startDate = now - safeDays * oneDay;
 
-    for (let i = args.days - 1; i >= 0; i--) {
+    // Fetch each table once, filtered to the date range (3 queries, not 3 × days)
+    const allPosts = await ctx.db
+      .query("socialPosts")
+      .filter((q) => q.gte(q.field("_creationTime"), startDate))
+      .collect();
+
+    const allLikes = await ctx.db
+      .query("socialLikes")
+      .filter((q) => q.gte(q.field("_creationTime"), startDate))
+      .collect();
+
+    const allComments = await ctx.db
+      .query("socialComments")
+      .filter((q) => q.gte(q.field("_creationTime"), startDate))
+      .collect();
+
+    // Bucket into days and aggregate (O(N) over the in-range data)
+    const dayBuckets = new Map<string, { posts: number; likes: number; comments: number }>();
+
+    // Initialize all days (including days with 0 activity)
+    for (let i = safeDays - 1; i >= 0; i--) {
       const date = new Date(now - i * oneDay);
-      const startOfDay = Math.floor(date.getTime() / oneDay) * oneDay;
-      const endOfDay = startOfDay + oneDay;
+      const key = date.toISOString().split("T")[0];
+      dayBuckets.set(key, { posts: 0, likes: 0, comments: 0 });
+    }
 
-      // Posts
-      const dayPosts = await ctx.db
-        .query("socialPosts")
-        .filter((q) =>
-          q.and(
-            q.gte(q.field("_creationTime"), startOfDay),
-            q.lt(q.field("_creationTime"), endOfDay)
-          )
-        )
-        .collect();
+    // Count posts
+    for (const post of allPosts) {
+      const key = new Date(post._creationTime).toISOString().split("T")[0];
+      const bucket = dayBuckets.get(key);
+      if (bucket) bucket.posts++;
+    }
 
-      // Likes
-      const dayLikes = await ctx.db
-        .query("socialLikes")
-        .filter((q) =>
-          q.and(
-            q.gte(q.field("_creationTime"), startOfDay),
-            q.lt(q.field("_creationTime"), endOfDay)
-          )
-        )
-        .collect();
+    // Count likes
+    for (const like of allLikes) {
+      const key = new Date(like._creationTime).toISOString().split("T")[0];
+      const bucket = dayBuckets.get(key);
+      if (bucket) bucket.likes++;
+    }
 
-      // Comments
-      const dayComments = await ctx.db
-        .query("socialComments")
-        .filter((q) =>
-          q.and(
-            q.gte(q.field("_creationTime"), startOfDay),
-            q.lt(q.field("_creationTime"), endOfDay)
-          )
-        )
-        .collect();
+    // Count comments
+    for (const comment of allComments) {
+      const key = new Date(comment._creationTime).toISOString().split("T")[0];
+      const bucket = dayBuckets.get(key);
+      if (bucket) bucket.comments++;
+    }
 
-      const engagementStr = dayPosts.length > 0
-        ? ((dayLikes.length + dayComments.length) / dayPosts.length * 100).toFixed(1)
-        : "0";
-
+    // Build trend array in chronological order
+    const trend: Array<{ date: string; posts: number; likes: number; comments: number; engagement: number }> = [];
+    for (let i = safeDays - 1; i >= 0; i--) {
+      const date = new Date(now - i * oneDay);
+      const key = date.toISOString().split("T")[0];
+      const bucket = dayBuckets.get(key)!;
+      const engagement = bucket.posts > 0
+        ? parseFloat(((bucket.likes + bucket.comments) / bucket.posts * 100).toFixed(1))
+        : 0;
       trend.push({
-        date: date.toISOString().split('T')[0],
-        posts: dayPosts.length,
-        likes: dayLikes.length,
-        comments: dayComments.length,
-        engagement: parseFloat(engagementStr),
+        date: key,
+        posts: bucket.posts,
+        likes: bucket.likes,
+        comments: bucket.comments,
+        engagement,
       });
     }
 
