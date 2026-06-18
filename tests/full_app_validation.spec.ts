@@ -11,8 +11,8 @@ test('auth flow and tab navigation validation', async ({ page }) => {
   // 1. Navigate to landing page
   await page.goto('http://localhost:7770');
   
-  // Wait for initial load - Check for FORGE text
-  await expect(page.locator('h1')).toContainText('FORGE', { timeout: 15000 });
+  // Wait for initial load - Check for BODY BRIDGE text
+  await expect(page.locator('h1')).toContainText('BODY BRIDGE', { timeout: 15000 });
   
   // 2. Start Training (Signup)
   const startBtn = page.getByRole('button', { name: 'Start Training' });

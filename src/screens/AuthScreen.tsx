@@ -103,7 +103,7 @@ const AuthScreen: React.FC<AuthScreenProps> = ({ onAuth, initialMode = 'landing'
             transition={{ delay: 0.2, duration: 0.6 }}
             className="editorial-title text-7xl md:text-8xl text-white italic uppercase tracking-tighter"
           >
-            FORGE
+            BODY BRIDGE
           </motion.h1>
           
           <motion.p
@@ -112,7 +112,7 @@ const AuthScreen: React.FC<AuthScreenProps> = ({ onAuth, initialMode = 'landing'
             transition={{ delay: 0.3, duration: 0.6 }}
             className="font-fraunces italic text-xl text-white/40"
           >
-            Industrial Grade Fitness
+            Bridge The Gap
           </motion.p>
         </div>
       </div>

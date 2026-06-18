@@ -871,7 +871,7 @@ const SettingsView: React.FC<SettingsViewProps> = ({ onBack, onLogout }) => {
           <ActionItem label="Feature Request" onClick={() => window.open('https://roadmap.body-bridge.fitness', '_blank')} icon={Zap} />
         </Section>
         <div className="p-10 text-center space-y-4">
-          <p className="text-[10px] font-black uppercase tracking-[0.3em] text-white/20">Forge Fitness Operating System</p>
+          <p className="text-[10px] font-black uppercase tracking-[0.3em] text-white/20">Body Bridge Fitness Operating System</p>
           <p className="text-[9px] font-bold text-white/10 uppercase tracking-widest leading-loose max-w-xs mx-auto text-center">
             Design and engineering by Antigravity Core. All rights reserved. Terminal encryption active. 
           </p>

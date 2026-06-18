@@ -453,7 +453,7 @@ const WorkoutDetail: React.FC<WorkoutDetailProps> = ({ workout, onBack, onSelect
         <div className="w-full pointer-events-auto">
           <button onClick={handleStart} className="w-full h-18 sm:h-18 md:h-18 bg-white rounded-full flex flex-col items-center justify-center py-2.5 gap-y-1 shadow-[0_12px_30px_rgba(0,0,0,0.4)] transition-all active:scale-[0.96] text-black">
             <span className="font-black uppercase tracking-[0.14em] text-[16px] sm:text-[17px] leading-none">START CIRCUIT</span>
-            <span className="text-[9px] font-black uppercase tracking-[0.2em] text-black/35 leading-none">FORGE ELITE PLAN</span>
+            <span className="text-[9px] font-black uppercase tracking-[0.2em] text-black/35 leading-none">BODY BRIDGE ELITE PLAN</span>
           </button>
         </div>
       </div>

@@ -12,7 +12,7 @@ test('auth flow and onboarding validation', async ({ page }) => {
   await page.goto('http://localhost:7770', { waitUntil: 'networkidle' });
   
   // Wait for initial load
-  await expect(page.locator('h1')).toContainText('FORGE', { timeout: 15000 });
+  await expect(page.locator('h1')).toContainText('BODY BRIDGE', { timeout: 15000 });
   await page.screenshot({ path: 'auth_step_1_landing.png' });
   
   // 2. Start Training (Signup)
