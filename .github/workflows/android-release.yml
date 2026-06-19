@@ -50,19 +50,29 @@ jobs:
       - name: Sync Capacitor
         run: npx cap sync android
       
-      - name: Build signed release bundle
+      - name: Build signed release bundle & APK
         run: |
           cd android
-          ./gradlew bundleRelease --stacktrace
+          ./gradlew bundleRelease assembleRelease --stacktrace
       
-      - name: Verify signature
+      - name: Verify build outputs
         run: |
-          cd android/app/build/outputs/bundle/release
-          if [ -f "app-release.aab" ]; then
+          cd android/app/build/outputs
+          echo "=== AAB (for Play Store) ==="
+          if [ -f "bundle/release/app-release.aab" ]; then
             echo "✅ Release AAB created successfully"
-            ls -lh app-release.aab
+            ls -lh bundle/release/app-release.aab
           else
             echo "❌ Release AAB not found"
+            exit 1
+          fi
+          echo ""
+          echo "=== APK (for direct download) ==="
+          if [ -f "apk/release/app-release.apk" ]; then
+            echo "✅ Release APK created successfully"
+            ls -lh apk/release/app-release.apk
+          else
+            echo "❌ Release APK not found"
             exit 1
           fi
       
@@ -78,12 +88,16 @@ jobs:
         with:
           files: |
             android/app/build/outputs/bundle/release/app-release.aab
+            android/app/build/outputs/apk/release/app-release.apk
             android/app/build/outputs/mapping/release/mapping.txt
           draft: false
           prerelease: false
           generate_release_notes: true
           body: |
             ## Body Bridge Fitness v${{ steps.get_version.outputs.version }}
+            
+            ### Direct Download
+            📦 Download the **app-release.apk** to install directly on your Android device (no Play Store needed).
             
             ### What's New
             - Initial production release
@@ -95,7 +109,11 @@ jobs:
             ### Improvements
             - Optimized performance with R8 shrinking
             - Enhanced security with code obfuscation
-            - App Bundle format for smaller downloads
+            
+            ### Installation
+            1. Download `app-release.apk` from the assets below
+            2. Enable "Install from unknown sources" in your Android settings
+            3. Open the downloaded APK and tap Install
             
             ### Technical
             - Target SDK: 35 (Android 15)
@@ -113,10 +131,11 @@ jobs:
           echo "**Commit:** ${{ github.sha }}" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "**Release AAB:** ✅ Created" >> $GITHUB_STEP_SUMMARY
+          echo "**Release APK:** ✅ Created" >> $GITHUB_STEP_SUMMARY
           echo "**GitHub Release:** ✅ Published" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "### Next Steps" >> $GITHUB_STEP_SUMMARY
-          echo "1. Download the AAB file from the release" >> $GITHUB_STEP_SUMMARY
-          echo "2. Upload to Google Play Console" >> $GITHUB_STEP_SUMMARY
+          echo "1. Share the APK download link with users" >> $GITHUB_STEP_SUMMARY
+          echo "2. Upload the AAB to Google Play Console" >> $GITHUB_STEP_SUMMARY
           echo "3. Follow the deployment checklist" >> $GITHUB_STEP_SUMMARY
           echo "4. Monitor crash reports and user feedback" >> $GITHUB_STEP_SUMMARY
