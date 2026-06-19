@@ -245,7 +245,7 @@ const ExercisesView: React.FC<ExercisesViewProps> = ({ onSelect }) => {
                   <p className="text-[8px] font-black uppercase tracking-widest text-white/30 mt-1.5">{ex.muscleGroup}</p>
                 </div>
               </button>
-            )))}
+            ))}
           </div>
 
           <div className="mt-6 flex items-center justify-center">
