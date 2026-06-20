@@ -1,7 +1,7 @@
 {
   "name": "body-bridge-fitness",
   "private": true,
-  "version": "0.0.2",
+  "version": "0.0.4",
   "type": "module",
   "scripts": {
     "config:generate": "node scripts/generateAppConfig.cjs",
