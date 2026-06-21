@@ -47,3 +47,12 @@ A fitness and workout application built with React, TypeScript, and Convex.
 - Frontend: `npm run dev:client` (Vite dev server on port 7770)
 - Backend: `npm run dev:server` (Express server on port 3000)
 - Convex: `npm run dev:convex` (Convex development server)
+
+## CI/CD Environment Variables
+
+`VITE_CONVEX_URL` must be configured as a GitHub Actions Repository Variable, not a Secret, because it is a public URL.
+
+Set it in GitHub at `Settings -> Secrets and variables -> Actions -> Variables -> New repository variable`.
+
+- Name: `VITE_CONVEX_URL`
+- Value: `https://groovy-pig-414.convex.cloud`
