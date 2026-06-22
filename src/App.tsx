@@ -4,6 +4,7 @@ import { api } from '@convex/_generated/api';
 import { useAuth } from './services/AuthContext';
 import { Tab, Workout, Meal, Exercise } from './types';
 import { ErrorBoundary } from './components/ErrorBoundary';
+import AuthDiagnostics, { recordAuthOp } from './components/AuthDiagnostics';
 
 const AuthScreen = lazy(() => import('./screens/AuthScreen'));
 const OnboardingFlow = lazy(() => import('./screens/OnboardingFlow'));
@@ -49,7 +50,7 @@ function dayDiffYYYYMMDD(base: string, target: string): number {
 type AuthView = 'landing' | 'signup' | 'login' | 'onboarding' | 'authenticated';
 
 export default function App() {
-  const { isAuthenticated: isNetworkAuthenticated, isAuthLoading, user: authUser, login, logout, isLoading: isAuthTransitioning, fieldError } = useAuth();
+  const { isAuthenticated: isNetworkAuthenticated, isAuthLoading, user: authUser, login, logout, isLoading: isAuthTransitioning, fieldError, waitForConvexAuth } = useAuth();
   const [authView, setAuthView] = useState<AuthView>('landing');
   const [signupData, setSignupData] = useState<{ name?: string; email?: string } | null>(null);
   const [authTimedOut, setAuthTimedOut] = useState(false);
@@ -67,7 +68,10 @@ export default function App() {
   const updateMe = updateMeInternal;
 
   const user = onboardingResult ?? authUser;
-  const isOnboardingComplete = !!user?.onboardingComplete;
+  const hasLocalOnboarding = (() => {
+    try { return localStorage.getItem("body-bridge_onboarding_complete") === "true"; } catch (e) { return false; }
+  })();
+  const isOnboardingComplete = !!user?.onboardingComplete || hasLocalOnboarding;
   const isAuthenticated = (isNetworkAuthenticated && isOnboardingComplete);
 
   const todayStr = useMemo(() => new Date().toISOString().split('T')[0], []);
@@ -479,21 +483,64 @@ export default function App() {
           <OnboardingFlow 
             initialData={signupData || undefined}
             onComplete={async (local) => {
-              const result = await completeOnboarding({
-                fullName: local.name,
-                avatarUrl: local.avatar,
-                goal: local.settings?.training?.goal,
-                experienceLevel: local.settings?.training?.experienceLevel,
-                trainingDaysPerWeek: local.settings?.training?.trainingDaysPerWeek,
-                equipmentAccess: local.settings?.training?.equipmentAccess,
-                bio: local.bio,
-                location: local.location,
-                units: local.settings?.units,
-                migratedFromLocal: true,
-              });
-              if (result) {
-                setOnboardingResult(result);
+              recordAuthOp({ step: 'completeOnboarding', status: 'pending', at: Date.now() });
+
+              // CRITICAL: wait for the REAL Convex auth session (useConvexAuth)
+              // to report authenticated before firing the mutation. The client
+              // isAuthenticated flag can be true earlier (via profile data),
+              // but the mutation context's getAuthUserId stays empty until the
+              // Convex client has fetched and validated the JWT — which lags,
+              // especially over production latency in the WebView. Calling the
+              // mutation before this propagates throws UNAUTHENTICATED.
+              try {
+                await waitForConvexAuth(15000);
+              } catch (waitErr: any) {
+                recordAuthOp({ step: 'waitForConvexAuth', status: 'error', detail: waitErr?.message ?? String(waitErr), at: Date.now() });
+                throw new Error('Your session is taking longer than expected to establish. Please try again.');
               }
+              recordAuthOp({ step: 'waitForConvexAuth', status: 'success', at: Date.now() });
+
+              // The Convex auth session can still lag slightly even after
+              // useConvexAuth reports authenticated, so retry the mutation a
+              // few times with backoff as a safety net.
+              let result: any = null;
+              let lastErr: any = null;
+              for (let attempt = 1; attempt <= 4 && !result; attempt += 1) {
+                try {
+                  result = await completeOnboarding({
+                    fullName: local.name,
+                    avatarUrl: local.avatar,
+                    goal: local.settings?.training?.goal,
+                    experienceLevel: local.settings?.training?.experienceLevel,
+                    trainingDaysPerWeek: local.settings?.training?.trainingDaysPerWeek,
+                    equipmentAccess: local.settings?.training?.equipmentAccess,
+                    bio: local.bio,
+                    location: local.location,
+                    units: local.settings?.units,
+                    migratedFromLocal: true,
+                  });
+                } catch (err: any) {
+                  lastErr = err;
+                  const code = err?.data?.code || err?.message || '';
+                  recordAuthOp({ step: `completeOnboarding#${attempt}`, status: 'error', detail: String(code).slice(0, 120), at: Date.now() });
+                  // Only retry on auth-not-ready codes; bail on anything else.
+                  if (!/UNAUTHENTICATED|not.*auth|session|Server Error/i.test(String(code))) {
+                    throw err;
+                  }
+                  if (attempt < 4) {
+                    await new Promise((r) => setTimeout(r, 500 * attempt));
+                  }
+                }
+              }
+
+              if (!result) {
+                recordAuthOp({ step: 'completeOnboarding', status: 'noop', detail: 'null after retries', at: Date.now() });
+                throw lastErr ?? new Error('Could not save your profile — your session is still warming up. Please try again.');
+              }
+
+              recordAuthOp({ step: 'completeOnboarding', status: 'success', detail: result.email, at: Date.now() });
+              try { localStorage.setItem('body-bridge_onboarding_complete', 'true'); } catch (e) { /* restricted WebView */ }
+              setOnboardingResult(result);
               setAuthView('authenticated');
             }} 
           />
@@ -560,6 +607,8 @@ export default function App() {
           />
         </Suspense>
       )}
+
+      <AuthDiagnostics authSnapshot={() => ({ isAuthenticated: isNetworkAuthenticated, isAuthLoading, user: authUser })} />
     </div>
   );
 }

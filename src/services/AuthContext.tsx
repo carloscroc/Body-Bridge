@@ -2,6 +2,7 @@ import React, { createContext, useContext, useMemo, useState, ReactNode, useCall
 import { useAuthActions } from '@convex-dev/auth/react';
 import { useConvexAuth, useQuery, useConvex, useMutation } from 'convex/react';
 import { api } from '@convex/_generated/api';
+import { recordAuthOp } from '../components/AuthDiagnostics';
 
 export type AuthFieldError = {
   field: 'email' | 'password' | 'general';
@@ -18,6 +19,13 @@ interface AuthContextType {
   error: string | null;
   fieldError: AuthFieldError | null;
   clearFieldError: () => void;
+  /**
+   * Resolves once the underlying Convex auth session (`useConvexAuth`) reports
+   * authenticated. Use before calling auth-gated mutations (e.g. completeOnboarding)
+   * to avoid hitting UNAUTHENTICATED errors during session-propagation lag.
+   * Rejects with a timeout after `timeoutMs`.
+   */
+  waitForConvexAuth: (timeoutMs?: number) => Promise<void>;
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
@@ -27,6 +35,20 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
   const { signIn, signOut } = useAuthActions();
   const convex = useConvex();
   const getOrCreateUser = useMutation(api.functions.auth.getOrCreateUser);
+
+  // Track the latest Convex auth state and userQuery in refs so an async
+  // waiter can poll them. This lets callers (e.g. completeOnboarding) wait
+  // for the REAL Convex auth session to propagate before firing auth-gated
+  // mutations — avoiding the UNAUTHENTICATED errors caused by
+  // session-propagation lag.
+  const convexAuthRef = React.useRef(isAuthenticated);
+  useEffect(() => {
+    convexAuthRef.current = isAuthenticated;
+  }, [isAuthenticated]);
+  const userQueryRef = React.useRef(userQuery);
+  useEffect(() => {
+    userQueryRef.current = userQuery;
+  }, [userQuery]);
 
   // Dev override
   const isForced = false;
@@ -117,6 +139,35 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     return null;
   }, [fetchCurrentUserWithStoredToken]);
 
+  // Wait until the Convex auth session is actually established server-side.
+  // This is needed before firing auth-gated mutations (getOrCreateUser,
+  // completeOnboarding) because the mutation context's getAuthUserId stays
+  // empty until the Convex client has propagated the JWT — which lags,
+  // especially over production latency in the WebView.
+  //
+  // We poll two signals:
+  // 1. useConvexAuth().isAuthenticated (the Convex React client knows about the session)
+  // 2. useQuery(getCurrentUser) returning a non-null profile (the server
+  //    actually recognizes the session and can serve data for it).
+  // When BOTH are true, mutations will work.
+  const waitForConvexAuth = useCallback((timeoutMs = 15000) => {
+    return new Promise<void>((resolve, reject) => {
+      const deadline = Date.now() + timeoutMs;
+      const tick = () => {
+        if (convexAuthRef.current && userQueryRef.current) {
+          resolve();
+          return;
+        }
+        if (Date.now() >= deadline) {
+          reject(new Error('Timed out waiting for Convex auth session. Please try again.'));
+          return;
+        }
+        window.setTimeout(tick, 250);
+      };
+      tick();
+    });
+  }, []);
+
   useEffect(() => {
     if (userQuery) {
       setSessionUser(userQuery);
@@ -151,8 +202,12 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     };
   }, [isAuthenticated, userQuery, hasStoredAuthTokens, waitForAuthenticatedUser, setBootstrappedIdentity]);
 
+  // Bootstrap hint: if we have a real Convex auth session AND a remembered email
+  // but the getCurrentUser query hasn't returned yet, fetch the profile by email
+  // as a *data hint only*. We deliberately require `isAuthenticated` to be true
+  // so this can never fake an authenticated state — it only pre-fills profile data.
   useEffect(() => {
-    if (userQuery || sessionUser || !getBootstrappedEmail()) {
+    if (!isAuthenticated || userQuery || sessionUser || !getBootstrappedEmail()) {
       return;
     }
 
@@ -167,7 +222,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     return () => {
       cancelled = true;
     };
-  }, [userQuery, sessionUser, getBootstrappedEmail, fetchBootstrapProfile]);
+  }, [isAuthenticated, userQuery, sessionUser, getBootstrappedEmail, fetchBootstrapProfile]);
 
   useEffect(() => {
     const convexClient = convex as typeof convex & {
@@ -242,26 +297,88 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
 
       try {
         await signIn('password', formData);
+        recordAuthOp({ step: 'signIn', status: 'success', at: Date.now() });
 
-        const createdOrFound = await getOrCreateUser({
-          email: args.email,
-          fullName: args.name,
-          authSource: 'client',
-        });
+        // CRITICAL: wait for the REAL Convex auth session (useConvexAuth) to
+        // report authenticated before calling getOrCreateUser. The mutation
+        // context's getAuthUserId is empty until the Convex client has fetched
+        // and validated the JWT, which lags behind signIn() returning —
+        // especially over production latency in the WebView.
+        try {
+          await waitForConvexAuth(15000);
+          recordAuthOp({ step: 'waitForConvexAuth(login)', status: 'success', at: Date.now() });
+        } catch (waitErr: any) {
+          recordAuthOp({ step: 'waitForConvexAuth(login)', status: 'error', detail: waitErr?.message ?? String(waitErr), at: Date.now() });
+        }
 
-        const currentUser = await waitForAuthenticatedUser();
-        loginUser = currentUser ?? createdOrFound ?? null;
-
-        if (loginUser) {
-          setSessionUser(loginUser);
-          setBootstrappedIdentity(loginUser, args.email);
+        // Poll getCurrentUser via the stored JWT as an additional signal.
+        recordAuthOp({ step: 'waitForAuthenticatedUser', status: 'pending', at: Date.now() });
+        const polledUser = await waitForAuthenticatedUser();
+        if (polledUser) {
+          recordAuthOp({ step: 'waitForAuthenticatedUser', status: 'success', detail: polledUser.email, at: Date.now() });
         } else {
+          recordAuthOp({ step: 'waitForAuthenticatedUser', status: 'noop', detail: 'returned null after polling', at: Date.now() });
+        }
+
+        // Retry getOrCreateUser a few times: even after the JWT authenticates
+        // against /api/query, the mutation context's getAuthUserId can lag.
+        let createdOrFound: any = null;
+        for (let attempt = 1; attempt <= 3; attempt += 1) {
+          recordAuthOp({ step: `getOrCreateUser#${attempt}`, status: 'pending', at: Date.now() });
+          try {
+            createdOrFound = await getOrCreateUser({
+              email: args.email,
+              fullName: args.name,
+              authSource: 'client',
+            });
+          } catch (mutErr: any) {
+            recordAuthOp({ step: `getOrCreateUser#${attempt}`, status: 'error', detail: mutErr?.message ?? String(mutErr), at: Date.now() });
+            // Server now throws ConvexError (after convex/functions/auth.ts fix).
+            // Only retry on auth-not-ready codes; rethrow real validation errors.
+            const code = mutErr?.data?.code || mutErr?.message || '';
+            if (!/UNAUTHENTICATED|not.*auth|session/i.test(String(code))) {
+              throw mutErr;
+            }
+          }
+          if (createdOrFound) {
+            recordAuthOp({ step: `getOrCreateUser#${attempt}`, status: 'success', detail: createdOrFound.email, at: Date.now() });
+            break;
+          }
+          // Backoff: 300ms, 600ms
+          if (attempt < 3) {
+            await new Promise((r) => window.setTimeout(r, 300 * attempt));
+          }
+        }
+
+        loginUser = polledUser ?? createdOrFound ?? null;
+
+        // Data-only fallback: if the authenticated paths above haven't
+        // resolved yet (auth propagation lag), fetch the profile by email as
+        // PROFILE DATA ONLY. This does NOT grant authentication — signIn has
+        // already established the real Convex auth session (JWT in localStorage
+        // + setAuth effect authenticates the ConvexReactClient). The Phase 2E
+        // guard ensures the bootstrap can never fake isAuthenticated on its own.
+        // We need the profile data so the UI knows whether onboardingComplete
+        // is set (for returning users) or not (for new users → onboarding).
+        if (!loginUser) {
+          recordAuthOp({ step: 'fetchBootstrapProfile', status: 'pending', detail: 'data-only fallback', at: Date.now() });
           const bootstrapProfile = await fetchBootstrapProfile(args.email);
           if (bootstrapProfile) {
             loginUser = bootstrapProfile;
             setSessionUser(bootstrapProfile);
             setBootstrappedIdentity(bootstrapProfile, args.email);
+            recordAuthOp({ step: 'fetchBootstrapProfile', status: 'success', detail: bootstrapProfile.email, at: Date.now() });
           }
+        } else {
+          setSessionUser(loginUser);
+          setBootstrappedIdentity(loginUser, args.email);
+        }
+
+        persistOnboardingLocally(loginUser);
+
+        if (!loginUser) {
+          recordAuthOp({ step: 'login', status: 'error', detail: 'no user after all fallbacks', at: Date.now() });
+          throw new Error('Could not load your profile. Please try again.');
         }
       } catch (signInErr: any) {
         const mapped = mapAuthError(signInErr, args.flow);
@@ -279,7 +396,13 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
       setIsLoading(false);
     }
     return loginUser;
-  }, [signIn, waitForAuthenticatedUser, fetchBootstrapProfile, setBootstrappedIdentity, getOrCreateUser]);
+  }, [signIn, waitForAuthenticatedUser, waitForConvexAuth, fetchBootstrapProfile, setBootstrappedIdentity, getOrCreateUser]);
+
+  const persistOnboardingLocally = (userData: any) => {
+    if (userData?.onboardingComplete) {
+      try { localStorage.setItem('body-bridge_onboarding_complete', 'true'); } catch (e) { /* Safari private mode / restricted WebView */ }
+    }
+  };
 
   const logout = useCallback(async () => {
     setIsLoading(true);
@@ -291,6 +414,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
       clearBootstrappedIdentity();
       const convexClient = convex as typeof convex & { clearAuth?: () => void };
       convexClient.clearAuth?.();
+      try { localStorage.removeItem('body-bridge_onboarding_complete'); } catch (e) { }
     } catch (err: any) {
       setError(err?.message || 'Logout failed');
       throw err;
@@ -304,8 +428,8 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
   }, []);
 
   const value = useMemo(
-    () => ({ isAuthenticated: isAuthenticatedFinal, isAuthLoading: isAuthLoading && !isForced, user, login, logout, isLoading, error, fieldError, clearFieldError }),
-    [isAuthenticatedFinal, isAuthLoading, user, login, logout, isLoading, error, fieldError, clearFieldError]
+    () => ({ isAuthenticated: isAuthenticatedFinal, isAuthLoading: isAuthLoading && !isForced, user, login, logout, isLoading, error, fieldError, clearFieldError, waitForConvexAuth }),
+    [isAuthenticatedFinal, isAuthLoading, user, login, logout, isLoading, error, fieldError, clearFieldError, waitForConvexAuth]
   );
 
   return (

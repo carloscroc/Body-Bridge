@@ -137,6 +137,8 @@ const EXPERIENCE_LEVELS: ExperienceLevel[] = ['Beginner', 'Intermediate', 'Advan
 const OnboardingFlow: React.FC<OnboardingFlowProps> = ({ onComplete, initialData }) => {
   const [currentStep, setCurrentStep] = useState<OnboardingStep>('identity');
   const [direction, setDirection] = useState(0);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
   const stepIndex = STEPS.indexOf(currentStep);
 
   const [formData, setFormData] = useState<any>({
@@ -152,8 +154,21 @@ const OnboardingFlow: React.FC<OnboardingFlowProps> = ({ onComplete, initialData
   const nextStep = () => { if (stepIndex < STEPS.length - 1) { setDirection(1); setCurrentStep(STEPS[stepIndex + 1]); } };
   const prevStep = () => { if (stepIndex > 0) { setDirection(-1); setCurrentStep(STEPS[stepIndex - 1]); } };
 
+  // Await the completion promise. Previously this fired-and-forgot onComplete,
+  // so any failure (auth session not ready → mutation returned null) became a
+  // silent unhandled rejection and the user appeared "stuck" with no feedback.
   const handleComplete = async () => {
-    onComplete(formData as any);
+    if (isSubmitting) return; // guard against double-submit
+    setIsSubmitting(true);
+    setSubmitError(null);
+    try {
+      await onComplete(formData as any);
+      // onComplete advancing the view (via App state) ends the flow on success.
+    } catch (err: any) {
+      const message = err?.message || 'Could not save your profile. Please try again.';
+      setSubmitError(message);
+      setIsSubmitting(false);
+    }
   };
 
   const updateSettings = (updates: any) => {
@@ -235,6 +250,22 @@ const OnboardingFlow: React.FC<OnboardingFlowProps> = ({ onComplete, initialData
             <div className="w-40 h-40 rounded-full bg-white/5 border-2 border-white/20 flex items-center justify-center shadow-2xl"><Check size={80} strokeWidth={3} /></div>
             <h1 className="text-6xl font-black italic uppercase tracking-tighter text-white">Verified</h1>
             <p className="text-white/40 text-xl italic font-serif">"Systems online. Welcome to the elite tier."</p>
+            {submitError && (
+              <div className="w-full space-y-3 mt-2">
+                <div className="rounded-2xl border border-red-500/30 bg-red-500/10 p-4 text-left">
+                  <p className="text-xs font-bold uppercase tracking-widest text-red-400">Could not finish</p>
+                  <p className="mt-1 text-sm text-white/80">{submitError}</p>
+                </div>
+                <button
+                  type="button"
+                  disabled={isSubmitting}
+                  onClick={handleComplete}
+                  className="rounded-full bg-white/10 px-6 py-3 text-xs font-black uppercase tracking-widest text-white border border-white/10 disabled:opacity-40"
+                >
+                  {isSubmitting ? 'Retrying...' : 'Retry'}
+                </button>
+              </div>
+            )}
           </div>
         );
     }
@@ -252,10 +283,19 @@ const OnboardingFlow: React.FC<OnboardingFlowProps> = ({ onComplete, initialData
 
       <div className="fixed bottom-0 left-0 right-0 p-8 md:p-12 flex justify-between items-center bg-gradient-to-t from-black to-transparent pointer-events-none">
         {stepIndex > 0 ? (
-            <button type="button" onClick={prevStep} className="w-14 h-14 rounded-full bg-white/5 flex items-center justify-center text-white border border-white/10 pointer-events-auto"><ChevronLeft /></button>
+          <button type="button" onClick={prevStep} disabled={isSubmitting} className="w-14 h-14 rounded-full bg-white/5 flex items-center justify-center text-white border border-white/10 pointer-events-auto disabled:opacity-40"><ChevronLeft /></button>
         ) : <div />}
-        <MagneticButton onClick={currentStep === 'complete' ? handleComplete : nextStep} className="h-16 px-10 rounded-full bg-white text-black font-black uppercase tracking-widest text-xs flex items-center gap-3 shadow-2xl pointer-events-auto">
-          {currentStep === 'complete' ? 'Initialize' : 'Next Phase'} <ChevronRight size={18} />
+        <MagneticButton onClick={currentStep === 'complete' ? handleComplete : nextStep} disabled={isSubmitting} className="h-16 px-10 rounded-full bg-white text-black font-black uppercase tracking-widest text-xs flex items-center gap-3 shadow-2xl pointer-events-auto disabled:opacity-60">
+          {isSubmitting ? (
+            <>
+              <span className="inline-block w-4 h-4 border-2 border-black/30 border-t-black rounded-full animate-spin" />
+              Saving...
+            </>
+          ) : (
+            <>
+              {currentStep === 'complete' ? 'Initialize' : 'Next Phase'} <ChevronRight size={18} />
+            </>
+          )}
         </MagneticButton>
       </div>
     </div>

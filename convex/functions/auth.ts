@@ -1,5 +1,5 @@
 import { mutation, query } from "../_generated/server";
-import { v } from "convex/values";
+import { v, ConvexError } from "convex/values";
 import { getAuthUserId } from "@convex-dev/auth/server";
 
 const profileValidator = v.object({
@@ -72,7 +72,13 @@ export const getOrCreateUser = mutation({
     // Get the current authenticated user ID from Convex Auth
     const userId = await getAuthUserId(ctx);
     if (!userId) {
-      return null;
+      // Previously returned null silently — the client treated that as
+      // "no complete profile" and looped the user into onboarding forever.
+      // Now throw a typed error so the client retry logic can act on it.
+      throw new ConvexError({
+        code: "UNAUTHENTICATED",
+        message: "Not authenticated. The auth session may still be propagating.",
+      });
     }
 
     // Try to find existing profile by userId
@@ -82,11 +88,14 @@ export const getOrCreateUser = mutation({
       .first();
 
     if (profile) {
-      // Update last login and any changed fields
+      // If the profile was created before onboardingComplete existed, or was
+      // created externally, retroactively mark it complete when they log in.
+      const hasExistingOnboardingData = !!(profile.fullName || profile.goal || profile.onboardingComplete);
       await ctx.db.patch(profile._id, {
         updatedAt: Date.now(),
         fullName: args.fullName ?? profile.fullName,
         avatarUrl: args.avatarUrl ?? profile.avatarUrl,
+        ...(hasExistingOnboardingData && !profile.onboardingComplete ? { onboardingComplete: true, onboardingCompletedAt: Date.now() } : {}),
       });
       return await ctx.db.get(profile._id);
     }
@@ -148,14 +157,29 @@ export const completeOnboarding = mutation({
   returns: v.union(profileValidator, v.null()),
   handler: async (ctx, args) => {
     const userId = await getAuthUserId(ctx);
-    if (!userId) return null;
+    if (!userId) {
+      // Throw instead of returning null: the auth session isn't ready yet on
+      // the server. The client OnboardingFlow now catches this and shows a
+      // Retry button rather than advancing into a never-persisted "complete".
+      throw new ConvexError({
+        code: "UNAUTHENTICATED",
+        message: "Not authenticated. The auth session may still be propagating.",
+      });
+    }
 
     const profile = await ctx.db
       .query("profiles")
       .withIndex("by_userId", (q) => q.eq("userId", userId))
       .first();
 
-    if (!profile) return null;
+    if (!profile) {
+      // Profile missing for an authenticated user — shouldn't normally happen
+      // because getOrCreateUser runs first, but be explicit rather than null.
+      throw new ConvexError({
+        code: "PROFILE_NOT_FOUND",
+        message: "No profile found for the authenticated user.",
+      });
+    }
 
     await ctx.db.patch(profile._id, {
       fullName: args.fullName ?? profile.fullName,
