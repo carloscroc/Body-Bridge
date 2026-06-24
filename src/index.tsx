@@ -95,7 +95,7 @@ function LoadingScreen() {
 
 function BootstrapRoot() {
   const [convexStatus, setConvexStatus] = useState<'checking' | 'ready' | 'offline'>(convex ? 'checking' : 'offline');
-  const [retryNonce, setRetryNonce] = useState(0);
+  const [retryCount, setRetryCount] = useState(0);
 
   useEffect(() => {
     if (!normalizedConvexUrl) {
@@ -110,20 +110,35 @@ function BootstrapRoot() {
     // Increased timeout to 15s to account for slow local backend startup
     const timeoutId = window.setTimeout(() => controller.abort(), 15000);
 
-    void fetch(normalizedConvexUrl, {
+    // Use the Convex health endpoint when available; fall back to a simple
+    // GET on the deployment URL.  We intentionally AVOID `mode: 'no-cors'`
+    // here because Android WebViews can inconsistently resolve opaque
+    // responses, which produces false-negative "offline" results even when
+    // the Convex deployment is healthy.
+    const healthUrl = normalizedConvexUrl.replace(/\/$/, '') + '/api/health';
+    void fetch(healthUrl, {
       method: 'GET',
-      mode: 'no-cors',
       signal: controller.signal,
     })
-      .then(() => {
+      .then((res) => {
+        // Any HTTP response (even 4xx/5xx) proves the server is reachable.
         if (!cancelled) {
           setConvexStatus('ready');
         }
       })
       .catch(() => {
-        if (!cancelled) {
-          setConvexStatus('offline');
-        }
+        // Fallback: try the bare deployment URL (covers older Convex
+        // versions that may not expose /api/health).
+        void fetch(normalizedConvexUrl!, {
+          method: 'GET',
+          signal: AbortSignal.timeout(10_000),
+        })
+          .then(() => {
+            if (!cancelled) setConvexStatus('ready');
+          })
+          .catch(() => {
+            if (!cancelled) setConvexStatus('offline');
+          });
       })
       .finally(() => {
         window.clearTimeout(timeoutId);
@@ -134,7 +149,18 @@ function BootstrapRoot() {
       window.clearTimeout(timeoutId);
       controller.abort();
     };
-  }, [retryNonce]);
+  }, [retryCount]);
+
+  // Auto-retry with exponential backoff (1s → 2s → 4s → 8s, cap at 8s).
+  // This prevents the user from being stuck on the error screen when the
+  // failure was caused by a transient network hiccup on Android.
+  useEffect(() => {
+    if (convexStatus !== 'offline' || !normalizedConvexUrl) return;
+
+    const delay = Math.min(1000 * 2 ** Math.min(retryCount, 3), 8000);
+    const timer = window.setTimeout(() => setRetryCount(n => n + 1), delay);
+    return () => window.clearTimeout(timer);
+  }, [convexStatus, retryCount]);
 
   if (!convex) {
     return (
@@ -143,7 +169,7 @@ function BootstrapRoot() {
           issue="`VITE_CONVEX_URL` is missing or still set to the placeholder value in your environment config."
           fix="Set a real Convex deployment URL in your env file (`.env.local` for dev, `.env.production` for builds), then restart."
           extra="Your backend server also needs port `3001` available so proxied API calls can succeed."
-          onRetry={() => setRetryNonce(n => n + 1)}
+          onRetry={() => setRetryCount(n => n + 1)}
         />
     );
   }
@@ -156,10 +182,10 @@ function BootstrapRoot() {
     return (
         <StartupIssueScreen
           title="Body Bridge is running, but Convex is not reachable."
-          issue="The frontend found `VITE_CONVEX_URL`, but the Convex service did not respond in time."
+          issue="The frontend found `VITE_CONVEX_URL`, but the Convex service did not respond in time. Auto-retry is active — the app will keep trying in the background."
           fix="Check your internet connection. If running locally, make sure Convex is started. If on a built app, the deployment URL may be incorrect."
           extra="If Convex asks to upgrade in the terminal, update the `convex` package or run the upgrade interactively before retrying."
-          onRetry={() => setRetryNonce(n => n + 1)}
+          onRetry={() => setRetryCount(n => n + 1)}
         />
     );
   }

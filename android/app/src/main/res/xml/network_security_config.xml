@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+  <!-- Allow HTTPS traffic to Convex cloud by default -->
+  <base-config cleartextTrafficPermitted="false">
+    <trust-anchors>
+      <certificates src="system" />
+    </trust-anchors>
+  </base-config>
+
+  <!-- Explicitly allow the Convex cloud deployment domain -->
+  <domain-config cleartextTrafficPermitted="false">
+    <domain includeSubdomains="true">convex.cloud</domain>
+    <domain includeSubdomains="true">convex.site</domain>
+    <trust-anchors>
+      <certificates src="system" />
+    </trust-anchors>
+  </domain-config>
+</network-security-config>
