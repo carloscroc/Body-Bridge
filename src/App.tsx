@@ -217,7 +217,7 @@ export default function App() {
     
     if (onboardingComplete) {
       setAuthView('authenticated');
-    } else if (authView === 'landing' || authView === 'login' || authView === 'signup') {
+    } else {
       setAuthView('onboarding');
     }
   }, [isNetworkAuthenticated, isAuthLoading, user, authView]);
@@ -493,7 +493,8 @@ export default function App() {
               // especially over production latency in the WebView. Calling the
               // mutation before this propagates throws UNAUTHENTICATED.
               try {
-                await waitForConvexAuth(15000);
+                // Use a 30s timeout for production WebView latency
+                await waitForConvexAuth(30000);
               } catch (waitErr: any) {
                 recordAuthOp({ step: 'waitForConvexAuth', status: 'error', detail: waitErr?.message ?? String(waitErr), at: Date.now() });
                 throw new Error('Your session is taking longer than expected to establish. Please try again.');

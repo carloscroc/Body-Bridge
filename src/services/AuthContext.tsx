@@ -150,11 +150,23 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
   // 2. useQuery(getCurrentUser) returning a non-null profile (the server
   //    actually recognizes the session and can serve data for it).
   // When BOTH are true, mutations will work.
-  const waitForConvexAuth = useCallback((timeoutMs = 15000) => {
+  // Wait until the Convex auth session is actually established server-side.
+  // This is needed before firing auth-gated mutations (getOrCreateUser,
+  // completeOnboarding) because the mutation context's getAuthUserId stays
+  // empty until the Convex client has propagated the JWT — which lags,
+  // especially over production latency in the WebView.
+  //
+  // We only require isAuthenticated (the Convex React client knows about
+  // the session). The userQuery (getCurrentUser) may lag behind, but mutations
+  // will still work because getAuthUserId is available once isAuthenticated
+  // is true. This reduces timeout failures in high-latency WebView environments.
+  const waitForConvexAuth = useCallback((timeoutMs = 30000) => {
     return new Promise<void>((resolve, reject) => {
       const deadline = Date.now() + timeoutMs;
       const tick = () => {
-        if (convexAuthRef.current && userQueryRef.current) {
+        // Only require isAuthenticated - the userQuery can lag but
+        // mutations will still work once the auth session is established
+        if (convexAuthRef.current) {
           resolve();
           return;
         }
