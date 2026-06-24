@@ -93,7 +93,7 @@ export const getOrCreateUser = mutation({
       const hasExistingOnboardingData = !!(profile.fullName || profile.goal || profile.onboardingComplete);
       await ctx.db.patch(profile._id, {
         updatedAt: Date.now(),
-        fullName: args.fullName ?? profile.fullName,
+        fullName: args.fullName || profile.fullName,
         avatarUrl: args.avatarUrl ?? profile.avatarUrl,
         ...(hasExistingOnboardingData && !profile.onboardingComplete ? { onboardingComplete: true, onboardingCompletedAt: Date.now() } : {}),
       });

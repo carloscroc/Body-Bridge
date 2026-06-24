@@ -45,16 +45,16 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
   useEffect(() => {
     convexAuthRef.current = isAuthenticated;
   }, [isAuthenticated]);
-  const userQueryRef = React.useRef(userQuery);
-  useEffect(() => {
-    userQueryRef.current = userQuery;
-  }, [userQuery]);
-
   // Dev override
   const isForced = false;
 
   const userQuery = useQuery(api.functions.auth.getCurrentUser, isForced ? 'skip' : { authSource: 'client' });
   const [sessionUser, setSessionUser] = useState<any | null>(null);
+
+  const userQueryRef = React.useRef(userQuery);
+  useEffect(() => {
+    userQueryRef.current = userQuery;
+  }, [userQuery]);
 
   const hasStoredAuthTokens = useCallback(() => {
     if (typeof window === 'undefined') return false;
