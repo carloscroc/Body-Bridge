@@ -1,0 +1,88 @@
+- generic [ref=e8]:
+  - generic [ref=e105]:
+    - generic [ref=e106]:
+      - generic [ref=e107]:
+        - paragraph [ref=e108]: Monday, June 22
+        - heading "Hi, Test User!" [level=1] [ref=e109]
+      - generic [ref=e110]:
+        - button "Open settings" [ref=e111]:
+          - img [ref=e112]
+        - button [ref=e116]:
+          - img [ref=e117]
+    - generic [ref=e122]:
+      - button "Sun 21" [ref=e123]:
+        - generic [ref=e124]: Sun
+        - generic [ref=e125]: "21"
+      - button "Mon 22" [ref=e126]:
+        - generic [ref=e127]: Mon
+        - generic [ref=e128]: "22"
+      - button "Tue 23" [ref=e131]:
+        - generic [ref=e132]: Tue
+        - generic [ref=e133]: "23"
+      - button "Wed 24" [ref=e134]:
+        - generic [ref=e135]: Wed
+        - generic [ref=e136]: "24"
+      - button "Thu 25" [ref=e137]:
+        - generic [ref=e138]: Thu
+        - generic [ref=e139]: "25"
+      - button "Fri 26" [ref=e140]:
+        - generic [ref=e141]: Fri
+        - generic [ref=e142]: "26"
+      - button "Sat 27" [ref=e143]:
+        - generic [ref=e144]: Sat
+        - generic [ref=e145]: "27"
+    - generic [ref=e146]:
+      - generic [ref=e147]:
+        - heading "Today's Plan" [level=2] [ref=e149]
+        - generic [ref=e151]:
+          - button "Grid view" [ref=e152]:
+            - img "Grid view" [ref=e153]
+          - button "Timeline view" [ref=e158]:
+            - img "Timeline view" [ref=e159]
+          - button "View calendar" [ref=e162]:
+            - img "View calendar" [ref=e163]
+      - button "Plan your first workout Open the calendar to get started" [ref=e165]:
+        - img [ref=e167]
+        - generic [ref=e169]:
+          - text: Plan your first workout
+          - generic [ref=e170]: Open the calendar to get started
+    - generic [ref=e171]:
+      - generic [ref=e172]:
+        - heading "Fuel & Recovery" [level=2] [ref=e174]
+        - button "Nutrition planning" [ref=e176]:
+          - img "Nutrition planning" [ref=e177]
+      - button "Plan your nutrition Set meals to fuel your day" [ref=e180]:
+        - img [ref=e182]
+        - generic [ref=e185]:
+          - text: Plan your nutrition
+          - generic [ref=e186]: Set meals to fuel your day
+    - generic [ref=e187]:
+      - heading "Daily Inspiration" [level=2] [ref=e190]
+      - generic [ref=e191]:
+        - img "Podcast" [ref=e192]
+        - generic [ref=e194]:
+          - generic [ref=e195]: Podcast of the day
+          - heading "Unlock Endless Motivation With Your \"Why\"" [level=3] [ref=e196]
+        - button "Play podcast" [ref=e197]:
+          - img "Play podcast" [ref=e198]
+    - generic [ref=e200]:
+      - generic [ref=e201]:
+        - heading "Recommended" [level=2] [ref=e203]
+        - button [ref=e205]:
+          - img [ref=e206]
+      - button "Plan your meals Get started" [ref=e209]:
+        - img [ref=e211]
+        - heading "Plan your meals" [level=3] [ref=e214]
+        - paragraph [ref=e215]: Get started
+  - generic [ref=e74]:
+    - button "Home" [ref=e75]:
+      - img [ref=e77]
+      - generic [ref=e80]: Home
+    - button [ref=e81]:
+      - img [ref=e83]
+    - button [ref=e89]:
+      - img [ref=e91]
+    - button [ref=e93]:
+      - img [ref=e95]
+    - button [ref=e98]:
+      - img [ref=e100]

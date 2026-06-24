@@ -1,0 +1,36 @@
+- generic [ref=e8]:
+  - generic [ref=e217]:
+    - generic [ref=e218]:
+      - generic [ref=e219]:
+        - paragraph [ref=e220]: Exercise Database
+        - heading "Library" [level=1] [ref=e221]
+      - button "Open filter and sort menu" [ref=e224]:
+        - img [ref=e225]
+    - generic [ref=e227]:
+      - paragraph [ref=e228]: Backend Connectivity Issue
+      - paragraph [ref=e229]: We're having trouble reaching the movement database. Showing local library instead.
+    - generic [ref=e230]:
+      - generic [ref=e231]:
+        - img [ref=e232]
+        - textbox "Search movements..." [ref=e235]
+      - generic [ref=e236]:
+        - button "All" [ref=e237]
+        - button "Strength" [ref=e238]
+        - button "Yoga" [ref=e239]
+        - button "HIIT" [ref=e240]
+        - button "Cardio" [ref=e241]
+        - button "Power" [ref=e242]
+    - heading "Movements" [level=2] [ref=e245]
+    - generic [ref=e247]: Loading exercises...
+  - generic [ref=e74]:
+    - button [ref=e248]:
+      - img [ref=e77]
+    - button "Exercises" [active] [ref=e249]:
+      - img [ref=e83]
+      - generic [ref=e250]: Exercises
+    - button [ref=e89]:
+      - img [ref=e91]
+    - button [ref=e93]:
+      - img [ref=e95]
+    - button [ref=e98]:
+      - img [ref=e100]

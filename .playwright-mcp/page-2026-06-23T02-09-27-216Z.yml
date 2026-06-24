@@ -1,0 +1,117 @@
+- generic [ref=e673]:
+  - generic [ref=e675]:
+    - button [ref=e676]:
+      - img [ref=e677]
+    - heading "Settings" [level=1] [ref=e679]
+  - generic [ref=e680]:
+    - generic [ref=e681]:
+      - generic [ref=e682]:
+        - img "Profile" [ref=e684]
+        - button [ref=e685]:
+          - img [ref=e686]
+      - generic [ref=e689]:
+        - heading "ANONYMOUS" [level=2] [ref=e690]
+        - generic [ref=e692]:
+          - generic [ref=e693]:
+            - img [ref=e697]
+            - generic [ref=e699]:
+              - generic [ref=e700]: "0"
+              - generic [ref=e701]: days in a row
+          - generic [ref=e703]:
+            - generic [ref=e704]: "Next: Week Warrior"
+            - generic [ref=e705]: 7 days to go
+          - generic [ref=e707]:
+            - img [ref=e709]
+            - img [ref=e712]
+        - paragraph [ref=e718]: Pro Member • BASE UNDEFINED
+      - button "Edit Profile Identity" [ref=e719]:
+        - text: Edit Profile Identity
+        - img [ref=e720]
+    - generic [ref=e722]:
+      - generic [ref=e723]:
+        - heading "Coach Settings" [level=3] [ref=e724]
+        - generic [ref=e726]:
+          - paragraph [ref=e727]: Connect with a trainer to receive professional workout programs.
+          - generic [ref=e728]:
+            - textbox "Trainer's Email" [ref=e729]
+            - button "Join" [disabled] [ref=e730]
+      - generic [ref=e731]:
+        - heading "Hub Controls" [level=3] [ref=e732]
+        - generic [ref=e733]:
+          - button "Training Plan Goals, experience, and limits Strength" [ref=e734]:
+            - generic [ref=e735]:
+              - img [ref=e736]
+              - generic [ref=e742]:
+                - generic [ref=e744]: Training Plan
+                - generic [ref=e745]: Goals, experience, and limits
+            - generic [ref=e746]:
+              - generic [ref=e747]: Strength
+              - img [ref=e748]
+          - button "Membership Hub Manage plan and billing Pro" [ref=e750]:
+            - generic [ref=e751]:
+              - img [ref=e752]
+              - generic [ref=e754]:
+                - generic [ref=e756]: Membership Hub
+                - generic [ref=e757]: Manage plan and billing
+            - generic [ref=e758]:
+              - generic [ref=e759]: Pro
+              - img [ref=e760]
+      - generic [ref=e762]:
+        - heading "Preferences" [level=3] [ref=e763]
+        - generic [ref=e764]:
+          - button "System Settings Theme, units, and appearance" [ref=e765]:
+            - generic [ref=e766]:
+              - img [ref=e767]
+              - generic [ref=e769]:
+                - generic [ref=e771]: System Settings
+                - generic [ref=e772]: Theme, units, and appearance
+            - img [ref=e774]
+          - button "Communications Notifications and reminders" [ref=e776]:
+            - generic [ref=e777]:
+              - img [ref=e778]
+              - generic [ref=e781]:
+                - generic [ref=e783]: Communications
+                - generic [ref=e784]: Notifications and reminders
+            - img [ref=e786]
+          - button "Privacy & Security Visibility and data sharing" [ref=e788]:
+            - generic [ref=e789]:
+              - img [ref=e790]
+              - generic [ref=e792]:
+                - generic [ref=e794]: Privacy & Security
+                - generic [ref=e795]: Visibility and data sharing
+            - img [ref=e797]
+          - button "Integrations Apple Health, Calendar" [ref=e799]:
+            - generic [ref=e800]:
+              - img [ref=e801]
+              - generic [ref=e804]:
+                - generic [ref=e806]: Integrations
+                - generic [ref=e807]: Apple Health, Calendar
+            - img [ref=e809]
+      - generic [ref=e811]:
+        - heading "Support" [level=3] [ref=e812]
+        - generic [ref=e813]:
+          - button "Help & Resources" [ref=e814]:
+            - generic [ref=e815]:
+              - img [ref=e816]
+              - generic [ref=e820]: Help & Resources
+            - img [ref=e822]
+          - button "Legal & Privacy" [ref=e824]:
+            - generic [ref=e825]:
+              - img [ref=e826]
+              - generic [ref=e831]: Legal & Privacy
+            - img [ref=e833]
+          - button "Sign Out" [ref=e835]:
+            - generic [ref=e836]:
+              - img [ref=e837]
+              - generic [ref=e842]: Sign Out
+            - img [ref=e844]
+    - generic [ref=e847]:
+      - img [ref=e848]
+      - generic [ref=e850]:
+        - text: Forge Engine v4.2.1-stable
+        - text: "Terminal ID: B0-7A-5A-D2"
+  - generic:
+    - generic:
+      - button "Save Changes":
+        - img
+        - generic: Save Changes

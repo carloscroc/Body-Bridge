@@ -1,0 +1,12 @@
+- generic [ref=e74]:
+  - button "Home" [ref=e75]:
+    - img [ref=e77]
+    - generic [ref=e80]: Home
+  - button [ref=e81]:
+    - img [ref=e83]
+  - button [ref=e89]:
+    - img [ref=e91]
+  - button [ref=e93]:
+    - img [ref=e95]
+  - button [ref=e98]:
+    - img [ref=e100]

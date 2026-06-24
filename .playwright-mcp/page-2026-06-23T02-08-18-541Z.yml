@@ -1,0 +1,25 @@
+- generic [ref=e636]:
+  - button [ref=e637]:
+    - img [ref=e638]
+  - generic [ref=e640]:
+    - generic [ref=e641]:
+      - heading "LOGIN" [level=2] [ref=e642]
+      - paragraph [ref=e643]: Resume your mission
+    - generic [ref=e644]:
+      - generic [ref=e645]:
+        - generic [ref=e646]:
+          - img [ref=e648]
+          - textbox "EMAIL ADDRESS" [ref=e651]
+        - generic [ref=e652]:
+          - img [ref=e653]
+          - generic [ref=e655]: Email is required
+        - generic [ref=e656]:
+          - img [ref=e658]
+          - textbox "SECURE PASSWORD" [ref=e661]
+        - generic [ref=e662]:
+          - img [ref=e663]
+          - generic [ref=e665]: Password is required
+      - button "Sign In" [ref=e666]:
+        - generic [ref=e667]: Sign In
+        - img [ref=e668]
+    - button "New Recruit? Sign Up" [ref=e671]
