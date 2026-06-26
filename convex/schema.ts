@@ -114,6 +114,11 @@ export default defineSchema({
     createdAt: v.optional(v.number()),
     difficultyOrder: v.optional(v.number()),
     workoutCount: v.optional(v.number()),
+    trainerFirstName: v.optional(v.string()),
+    trainerLastName: v.optional(v.string()),
+    sourceSystem: v.optional(v.union(v.literal("notion"), v.literal("seed"), v.literal("manual"), v.literal("import"))),
+    sourceId: v.optional(v.string()),
+    isActive: v.optional(v.boolean()),
   })
     .index("by_libraryId", ["libraryId"])
     .index("by_category", ["category"])
@@ -124,11 +129,28 @@ export default defineSchema({
     .index("by_difficultyOrder_name", ["difficultyOrder", "name"])
     .index("by_workoutCount", ["workoutCount"])
     .index("by_coach", ["coachId"])
+    .index("by_trainer_and_active", ["trainerFirstName", "trainerLastName", "isActive"])
+    .index("by_source_system", ["sourceSystem"])
     .searchIndex("search_name", {
       searchField: "name",
       filterFields: ["category", "muscleGroup", "difficulty", "coachId"],
     }),
 
+  trainers: defineTable({
+    firstName: v.string(),
+    lastName: v.string(),
+    fullName: v.string(),
+    email: v.optional(v.string()),
+    notionDatabaseId: v.optional(v.string()),
+    notionAccessToken: v.optional(v.string()),
+    profileId: v.optional(v.id("profiles")),
+    createdAt: v.number(),
+    updatedAt: v.number(),
+    isActive: v.boolean(),
+  })
+    .index("by_fullName", ["fullName"])
+    .index("by_active", ["isActive"])
+    .index("by_profile", ["profileId"]),
   workouts: defineTable({
     userId: v.id("profiles"),
     title: v.string(),
