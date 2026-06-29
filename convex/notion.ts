@@ -1,6 +1,8 @@
 import { v } from "convex/values";
-import { mutation, query } from "./_generated/server";
+import { mutation, query, action } from "./_generated/server";
+import { api } from "./_generated/api";
 import { NotionExerciseService, NotionExercise } from "./services/notionService";
+import type { Id } from "./_generated/dataModel";
 
 export const upsertTrainer = mutation({
   args: {
@@ -48,14 +50,14 @@ export const upsertTrainer = mutation({
   },
 });
 
-export const syncNotionExercises = mutation({
+export const syncNotionExercises = action({
   args: {
     trainerId: v.id("trainers"),
     forceResync: v.optional(v.boolean()),
   },
-  handler: async (ctx, args) => {
+  handler: async (ctx, args): Promise<{ synced: number; results: Array<{ name: string; action: string }>; trainer: string }> => {
     // Fetch trainer configuration
-    const trainer = await ctx.db.get(args.trainerId);
+    const trainer = await ctx.runQuery(api.notion.getTrainerById, { trainerId: args.trainerId }) as { _id: Id<"trainers">; firstName: string; lastName: string; fullName: string; notionDatabaseId: string; notionAccessToken: string; profileId?: Id<"profiles"> } | null;
     if (!trainer) {
       throw new Error("Trainer not found");
     }
@@ -75,19 +77,16 @@ export const syncNotionExercises = mutation({
     );
 
     // Fetch exercises from Notion
-    const notionExercises = await notionService.fetchExercises();
+    const notionExercises: NotionExercise[] = await notionService.fetchExercises();
 
     // Sync each exercise
     const results = [];
     for (const notionExercise of notionExercises) {
       // Check if exercise already exists (by sourceSystem and sourceId)
-      const notionExercisesForTrainer = await ctx.db
-        .query("exercises")
-        .withIndex("by_source_system", (q) => q.eq("sourceSystem", "notion"))
-        .collect();
+      const notionExercisesForTrainer = await ctx.runQuery(api.notion.getExercisesBySourceSystem, { sourceSystem: "notion" });
       
       const existingExercises = notionExercisesForTrainer.filter(
-        (ex) => ex.sourceId === notionExercise.name
+        (ex) => ex.sourceId === notionExercise.name && !!ex.sourceId
       );
       if (existingExercises.length > 0 && !args.forceResync) {
         // Skip if already exists and not forcing resync
@@ -141,11 +140,11 @@ export const syncNotionExercises = mutation({
 
       if (existingExercises.length > 0) {
         // Update existing
-        await ctx.db.patch(existingExercises[0]._id, exerciseData);
+        await ctx.runMutation(api.notion.updateExercise, { exerciseId: existingExercises[0]._id, exerciseData });
         results.push({ name: notionExercise.name, action: "updated" });
       } else {
         // Insert new
-        await ctx.db.insert("exercises", exerciseData);
+        await ctx.runMutation(api.notion.insertExercise, { exerciseData });
         results.push({ name: notionExercise.name, action: "inserted" });
       }
     }
@@ -155,6 +154,41 @@ export const syncNotionExercises = mutation({
       results,
       trainer: trainer.fullName,
     };
+  },
+});
+
+// Helper functions for action to call
+export const getTrainerById = query({
+  args: { trainerId: v.id("trainers") },
+  handler: async (ctx, args) => {
+    return await ctx.db.get(args.trainerId);
+  },
+});
+
+export const getExercisesBySourceSystem = query({
+  args: { sourceSystem: v.union(v.literal("notion"), v.literal("seed"), v.literal("manual"), v.literal("import")) },
+  handler: async (ctx, args) => {
+    return await ctx.db
+      .query("exercises")
+      .withIndex("by_source_system", (q) => q.eq("sourceSystem", args.sourceSystem))
+      .collect();
+  },
+});
+
+export const updateExercise = mutation({
+  args: {
+    exerciseId: v.id("exercises"),
+    exerciseData: v.any(),
+  },
+  handler: async (ctx, args) => {
+    await ctx.db.patch(args.exerciseId, args.exerciseData);
+  },
+});
+
+export const insertExercise = mutation({
+  args: { exerciseData: v.any() },
+  handler: async (ctx, args) => {
+    return await ctx.db.insert("exercises", args.exerciseData);
   },
 });
 
