@@ -192,132 +192,59 @@ export const advancedSearch = query({
     const poNonSearch = (args.paginationOpts ?? {}) as any;
     const cursorNon = poNonSearch?.cursor ?? args.cursor ?? null;
     const numItemsNon = poNonSearch?.numItems ?? limit;
-    // Apply coach filter if provided
+    // Apply filter based on available criteria (use first applicable)
     if (coachFilterId) {
+      // Coach filter takes priority
       paginatedResult = await queryBuilder.withIndex("by_coach", (q) => q.eq("coachId", coachFilterId))
         .paginate({ cursor: cursorNon, numItems: numItemsNon });
-      }
-      // Apply category filter if provided
-      if (args.category && args.category !== "All") {
-        paginatedResult = await queryBuilder.withIndex("by_category", (q) => q.eq("category", args.category!))
-          .paginate({ cursor: cursorNon, numItems: numItemsNon });
-      } else if (args.muscle && args.muscle !== "All") {
-        paginatedResult = await queryBuilder.withIndex("by_muscle", (q) => q.eq("muscleGroup", args.muscle!))
-          .paginate({ cursor: cursorNon, numItems: numItemsNon });
-      } else {
-        // No coach/category/muscle filters applied. Support sorting approaches without text query.
-          // Order by difficultyOrder, then by name using dedicated index
-          let diffQueryBuilder = ctx.db.query("exercises");
-          if (!showInactive) {
-            diffQueryBuilder = diffQueryBuilder.filter((q) => q.eq(q.field("isActive"), true));
-          }
-          if (args.trainerName) {
-            // Trainer filter requires different index, collect and sort in-memory
-            const [firstName, ...lastNameParts] = args.trainerName.trim().split(' ');
-            const lastName = lastNameParts.join(' ');
-            const trainerFiltered = await diffQueryBuilder.withIndex("by_trainer_and_active", (q: any) => {
-              let indexQuery = q;
-              if (firstName) indexQuery = indexQuery.eq("trainerFirstName", firstName);
-              if (lastName) indexQuery = indexQuery.eq("trainerLastName", lastName);
-              if (!showInactive) indexQuery = indexQuery.eq("isActive", true);
-              return indexQuery;
-            }).collect();
-            // Sort by difficultyOrder then name in-memory
-            trainerFiltered.sort((a, b) => {
-              if ((a.difficultyOrder ?? 0) !== (b.difficultyOrder ?? 0)) {
-                return (a.difficultyOrder ?? 0) - (b.difficultyOrder ?? 0);
-              }
-              return a.name.localeCompare(b.name);
-            });
-            // Manual pagination
-            const startIdx = cursorNon ? 0 : 0;
-            const endIndex = startIdx + numItemsNon;
-            const paginatedPage = trainerFiltered.slice(startIdx, endIndex);
-            paginatedResult = {
-              page: paginatedPage,
-              isDone: endIndex >= trainerFiltered.length,
-              continueCursor: endIndex >= trainerFiltered.length ? undefined : String(endIndex),
-            };
-          } else {
-            // No trainer filter, use difficulty index for sorting
-            paginatedResult = await diffQueryBuilder.withIndex("by_difficultyOrder_name", (q) => q)
-              .paginate({ cursor: cursorNon, numItems: numItemsNon });
-          }
-        // Use current user's profile to sort by popularity, then include never-used exercises.
-        const profileId = await getMaybeProfileId(ctx);
-        if (profileId) {
-          const usageRows = await ctx.db
-            .query("exerciseUsage")
-            .withIndex("by_user_count", (q) => q.eq("userId", profileId))
-            .order("desc")
-            .collect();
-
-          // Preserve fallback behavior when usage is empty.
-          if (usageRows.length === 0) {
-              let nameQueryBuilder = ctx.db.query("exercises");
-              if (!showInactive) {
-                nameQueryBuilder = nameQueryBuilder.filter((q) => q.eq(q.field("isActive"), true));
-              }
-              paginatedResult = await nameQueryBuilder.withIndex("by_name", (q) => q)
-                .paginate({ cursor: cursorNon, numItems: numItemsNon });
-          } else {
-            const startOffset = (() => {
-              if (!cursorNon || !cursorNon.startsWith("popular:")) return 0;
-              const parsed = Number(cursorNon.slice("popular:".length));
-              if (!Number.isFinite(parsed) || parsed < 0) return 0;
-              return Math.floor(parsed);
-            })();
-
-            const usageByExerciseId = new Map<string, number>();
-            for (const row of usageRows) {
-              const key = String(row.exerciseId);
-              const existing = usageByExerciseId.get(key);
-              if (existing === undefined || row.count > existing) {
-                usageByExerciseId.set(key, row.count);
-              }
-            }
-
-            const sortedExercises = (await queryBuilder.collect())
-              .map((exercise) => ({
-                exercise,
-                usageCount: usageByExerciseId.get(String(exercise._id)) ?? 0,
-              }))
-              .sort((a, b) => {
-                if (a.usageCount !== b.usageCount) return b.usageCount - a.usageCount;
-                const difficultyA = a.exercise.difficultyOrder ?? Number.MAX_SAFE_INTEGER;
-                const difficultyB = b.exercise.difficultyOrder ?? Number.MAX_SAFE_INTEGER;
-                if (difficultyA !== difficultyB) return difficultyA - difficultyB;
-                const nameCompare = a.exercise.name.localeCompare(b.exercise.name);
-                if (nameCompare !== 0) return nameCompare;
-                return String(a.exercise._id).localeCompare(String(b.exercise._id));
-              })
-              .map((item) => item.exercise);
-            const page = sortedExercises.slice(startOffset, startOffset + numItemsNon);
-            const nextOffset = startOffset + page.length;
-            const isDone = nextOffset >= sortedExercises.length;
-
-            paginatedResult = {
-              page,
-              isDone,
-              continueCursor: isDone ? null : `popular:${nextOffset}`,
-            };
+    } else if (args.category && args.category !== "All") {
+      // Then category filter
+      paginatedResult = await queryBuilder.withIndex("by_category", (q) => q.eq("category", args.category!))
+        .paginate({ cursor: cursorNon, numItems: numItemsNon });
+    } else if (args.muscle && args.muscle !== "All") {
+      // Then muscle group filter
+      paginatedResult = await queryBuilder.withIndex("by_muscle", (q) => q.eq("muscleGroup", args.muscle!))
+        .paginate({ cursor: cursorNon, numItems: numItemsNon });
+    } else {
+    // No coach/category/muscle filters applied. Support sorting approaches without text query.
+    // Order by difficultyOrder, then by name using dedicated index
+    let diffQueryBuilder = ctx.db.query("exercises");
+    if (!showInactive) {
+      diffQueryBuilder = diffQueryBuilder.filter((q) => q.eq(q.field("isActive"), true));
+    }
+    if (args.trainerName) {
+      // Trainer filter requires different index, collect and sort in-memory
+      const [firstName, ...lastNameParts] = args.trainerName.trim().split(' ');
+      const lastName = lastNameParts.join(' ');
+      const trainerFiltered = await diffQueryBuilder.withIndex("by_trainer_and_active", (q: any) => {
+        let indexQuery = q;
+        if (firstName) indexQuery = indexQuery.eq("trainerFirstName", firstName);
+        if (lastName) indexQuery = indexQuery.eq("trainerLastName", lastName);
+        if (!showInactive) indexQuery = indexQuery.eq("isActive", true);
+        return indexQuery;
+      }).collect();
+      // Sort by difficultyOrder then name in-memory
+      trainerFiltered.sort((a, b) => {
+        if ((a.difficultyOrder ?? 0) !== (b.difficultyOrder ?? 0)) {
+          return (a.difficultyOrder ?? 0) - (b.difficultyOrder ?? 0);
         }
-          let alphaQueryBuilder = ctx.db.query("exercises");
-          if (!showInactive) {
-            alphaQueryBuilder = alphaQueryBuilder.filter((q) => q.eq(q.field("isActive"), true));
-          }
-          paginatedResult = await alphaQueryBuilder.withIndex("by_name", (q) => q)
-            .paginate({ cursor: cursorNon, numItems: numItemsNon });
-        } else {
-          let defaultQueryBuilder = ctx.db.query("exercises");
-          if (!showInactive) {
-            defaultQueryBuilder = defaultQueryBuilder.filter((q) => q.eq(q.field("isActive"), true));
-          }
-          paginatedResult = await defaultQueryBuilder.order("desc")
-            .paginate({ cursor: cursorNon, numItems: numItemsNon });
-        }
-      }
-
+        return a.name.localeCompare(b.name);
+      });
+      // Manual pagination
+      const startIdx = cursorNon ? 0 : 0;
+      const endIndex = startIdx + numItemsNon;
+      const paginatedPage = trainerFiltered.slice(startIdx, endIndex);
+      paginatedResult = {
+        page: paginatedPage,
+        isDone: endIndex >= trainerFiltered.length,
+        continueCursor: endIndex >= trainerFiltered.length ? undefined : String(endIndex),
+      };
+    } else {
+      // No trainer filter, use difficulty index for sorting
+      paginatedResult = await diffQueryBuilder.withIndex("by_difficultyOrder_name", (q) => q)
+        .paginate({ cursor: cursorNon, numItems: numItemsNon });
+    }
+    }
     // Apply equipment filtering to non-search results if needed
     if (args.equipment && args.equipment.length > 0 && paginatedResult) {
       const equipmentToFilter = args.equipment;
