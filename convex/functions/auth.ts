@@ -52,7 +52,16 @@ export const getCurrentUser = query({
       .withIndex("by_userId", (q) => q.eq("userId", userId))
       .first();
 
-    return profile;
+    if (!profile) return null;
+
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const { avatarUrl, ...rest } = profile;
+    return {
+      ...rest,
+      image: avatarUrl ?? profile.image,
+      sortPreference: profile.sortPreference,
+      subRenewalLastShown: profile.subRenewalLastShown,
+    };
   },
 });
 
