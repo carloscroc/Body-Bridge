@@ -53,7 +53,10 @@ export default defineSchema({
     userId: v.id("users"),
     email: v.string(),
     fullName: v.optional(v.string()),
-    avatarUrl: v.optional(v.string()),
+    firstName: v.optional(v.string()),
+    image: v.optional(v.string()),
+    avatarUrl: v.optional(v.string()), // TODO: Remove after data migration (Phase 1 legacy)
+    lastName: v.optional(v.string()),
     authSource: v.union(v.literal("client"), v.literal("trainer")),
     onboardingComplete: v.optional(v.boolean()),
     onboardingCompletedAt: v.optional(v.number()),

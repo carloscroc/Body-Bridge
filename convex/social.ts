@@ -114,7 +114,7 @@ export const createPost = mutation({
     const profileId = await requireProfileId(ctx);
     const profile = await ctx.db.get(profileId) as Doc<"profiles"> | null;
     const authorName = profile?.fullName ?? "Member";
-    const authorAvatar = profile?.avatarUrl;
+    const authorAvatar = profile?.image;
     const authorRole = (profile?.authSource ?? "client") as "trainer" | "client";
 
     const now = Date.now();
@@ -258,7 +258,7 @@ export const createComment = mutation({
     const profileId = await requireProfileId(ctx);
     const profile = await ctx.db.get(profileId) as Doc<"profiles"> | null;
     const authorName = profile?.fullName ?? "Member";
-    const authorAvatar = profile?.avatarUrl;
+    const authorAvatar = profile?.image;
     const authorRole = (profile?.authSource ?? "client") as "trainer" | "client";
 
     const post = await ctx.db.get(args.postId);
@@ -632,7 +632,7 @@ export const addGroupMember = mutation({
     const profileId = await requireProfileId(ctx);
     const profile = await ctx.db.get(profileId);
     const authorName = profile?.fullName ?? "Member";
-    const authorAvatar = profile?.avatarUrl;
+    const authorAvatar = profile?.image;
     const authorRole = (profile?.authSource ?? "client") as "trainer" | "client";
 
     const now = Date.now();
@@ -810,7 +810,7 @@ export const getFollowers = query({
         return {
           ...follow,
           followerName: follower?.fullName || "Unknown",
-          followerAvatar: follower?.avatarUrl,
+          followerAvatar: follower?.image,
           followerRole: follower?.authSource || "client",
         };
       })
@@ -853,7 +853,7 @@ export const getFollowing = query({
         return {
           ...follow,
           followingName: following?.fullName || "Unknown",
-          followingAvatar: following?.avatarUrl,
+          followingAvatar: following?.image,
           followingRole: following?.authSource || "client",
         };
       })
@@ -925,7 +925,7 @@ export const getTopFollowers = query({
         return {
           userId: profile._id,
           userName: profile.fullName || profile.email,
-          userAvatar: profile.avatarUrl,
+          userAvatar: profile.image,
           userRole: profile.authSource,
           followerCount: item.followerCount,
         };
@@ -1043,7 +1043,7 @@ export const getCommunityAnalytics = query({
         return {
           userId: profile._id,
           userName: profile.fullName || profile.email,
-          userAvatar: profile.avatarUrl,
+          userAvatar: profile.image,
           postCount: item.postCount,
         };
       });

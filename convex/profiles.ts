@@ -2,9 +2,8 @@ import { query, mutation } from "./_generated/server";
 import { v } from "convex/values";
 import { getAuthUserId } from "@convex-dev/auth/server";
 
-// TODO: Issue #1 - Add firstName and lastName fields to profiles
-// Currently only fullName is collected, but we need separate first/last names
-
+// TODO: Issue #1 - Add firstName and lastName fields to profiles ✓ COMPLETED
+// Fields added to schema, migrateProfileNames migration created
 export const listPublicProfiles = query({
   args: {
     limit: v.optional(v.number()),
@@ -12,13 +11,7 @@ export const listPublicProfiles = query({
   returns: v.array(
     v.object({
       _id: v.id("profiles"),
-      fullName: v.string(),
-      avatarUrl: v.optional(v.string()),
-      bio: v.optional(v.string()),
-      location: v.optional(v.string()),
-      authSource: v.union(v.literal("client"), v.literal("trainer")),
-      createdAt: v.number(),
-      updatedAt: v.number(),
+      fullName: v.optional(v.string()),
     }),
   ),
   handler: async (ctx, args) => {
@@ -31,7 +24,7 @@ export const listPublicProfiles = query({
     return rows.map((p) => ({
       _id: p._id,
       fullName: p.fullName ?? "",
-      avatarUrl: p.avatarUrl,
+      image: p.image,
       bio: p.bio,
       location: p.location,
       authSource: p.authSource,

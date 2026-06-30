@@ -147,7 +147,7 @@ export const insertUser = mutation({
     user: v.object({
       email: v.string(),
       name: v.string(),
-      avatarUrl: v.optional(v.string()),
+      image: v.optional(v.string()),
       role: v.string(),
     }),
   },
@@ -159,7 +159,7 @@ export const insertUser = mutation({
     const userId = await ctx.db.insert("users", {
       email: args.user.email,
       name: args.user.name,
-      image: args.user.avatarUrl,
+      image: args.user.image,
       createdAt: Date.now(),
     });
 
@@ -167,7 +167,7 @@ export const insertUser = mutation({
       userId,
       email: args.user.email,
       fullName: args.user.name,
-      avatarUrl: args.user.avatarUrl,
+      image: args.user.image,
       authSource: "client",
       createdAt: Date.now(),
       updatedAt: Date.now(),
@@ -657,7 +657,7 @@ export const getUsers = query({
       id: profile._id,
       email: profile.email,
       name: profile.fullName,
-      avatarUrl: profile.avatarUrl,
+          avatarUrl: profile.image,
       role: profile.authSource === "trainer" ? "trainer" : "user",
     }));
   },

@@ -44,7 +44,7 @@ export const seedCommunityData = mutation({
       {
         authorId: clientProfile._id,
         authorName: clientProfile.fullName || "Community Member",
-        authorAvatar: clientProfile.avatarUrl,
+        authorAvatar: clientProfile.image,
         authorRole: "client" as const,
         title: "Just hit a new PR on bench press! 💪",
         content: "After months of training, I finally hit my goal of 225 lbs on bench press! The programming from the coaches here really paid off. Thanks everyone for the support!",
@@ -55,7 +55,7 @@ export const seedCommunityData = mutation({
       {
         authorId: trainerProfile._id,
         authorName: trainerProfile.fullName || "Coach Sarah",
-        authorAvatar: trainerProfile.avatarUrl,
+        authorAvatar: trainerProfile.image,
         authorRole: "trainer" as const,
         title: "Weekly Training Tip: Rest & Recovery",
         content: "Don't underestimate the power of proper rest! 🛌 I've seen too many athletes overtraining because they think more is always better. Quality > Quantity. Aim for 7-9 hours of sleep and take at least 1-2 rest days per week. Your muscles grow during recovery, not during training!",
@@ -66,7 +66,7 @@ export const seedCommunityData = mutation({
       {
         authorId: clientProfile._id,
         authorName: clientProfile.fullName || "Mike F.",
-        authorAvatar: clientProfile.avatarUrl,
+        authorAvatar: clientProfile.image,
         authorRole: "client" as const,
         title: "Need help with squat form",
         content: "I've been working on my squat form but I feel like my knees might be caving in. Any tips from the coaches here? I'm trying to maintain proper depth without sacrificing form. 🏋️‍♂️",
@@ -77,7 +77,7 @@ export const seedCommunityData = mutation({
       {
         authorId: trainerProfile._id,
         authorName: trainerProfile.fullName || "Coach Mike",
-        authorAvatar: trainerProfile.avatarUrl,
+        authorAvatar: trainerProfile.image,
         authorRole: "trainer" as const,
         title: "Client Transformation Spotlight - John's Journey",
         content: "In just 3 months, John has completely transformed his physique and strength! Down 15 lbs of body fat while maintaining muscle mass. His dedication to the nutrition plan and consistent training schedule is inspiring. Keep it up, John! 🏆",
@@ -88,7 +88,7 @@ export const seedCommunityData = mutation({
       {
         authorId: clientProfile._id,
         authorName: clientProfile.fullName || "Emma L.",
-        authorAvatar: clientProfile.avatarUrl,
+        authorAvatar: clientProfile.image,
         authorRole: "client" as const,
         title: "Question about workout timing",
         content: "What's the best time of day to train for strength gains? I've been training in the mornings but wondering if evenings might be better for hypertrophy. Also, does it matter if I train fasted? ⏰",
@@ -99,7 +99,7 @@ export const seedCommunityData = mutation({
       {
         authorId: trainerProfile._id,
         authorName: trainerProfile.fullName || "Nutrition Coach Lisa",
-        authorAvatar: trainerProfile.avatarUrl,
+        authorAvatar: trainerProfile.image,
         authorRole: "trainer" as const,
         title: "Meal Prep Sunday Tips 🥗",
         content: "Happy Sunday everyone! Here's how I tackle meal prep efficiently: 1) Batch cook proteins (chicken, turkey, eggs) 2) Pre-portion rice and veggies 3) Use quality containers 4) Prep healthy fats (avocado, nuts) 5) Make it enjoyable with spices! Consistency is key to hitting your nutrition goals.",
@@ -110,7 +110,7 @@ export const seedCommunityData = mutation({
       {
         authorId: clientProfile._id,
         authorName: clientProfile.fullName || "Tom R.",
-        authorAvatar: clientProfile.avatarUrl,
+        authorAvatar: clientProfile.image,
         authorRole: "client" as const,
         title: "Finally hit 300 lb deadlift! 🎯",
         content: "After 8 months of progressive overload and proper recovery, I finally pulled 300 lbs! The key was focusing on hip hinge mechanics and not rushing the progression. Thanks to this community for keeping me accountable. Special thanks to Coach Sarah for the programming advice!",
@@ -121,7 +121,7 @@ export const seedCommunityData = mutation({
       {
         authorId: trainerProfile._id,
         authorName: trainerProfile.fullName || "Strength Coach Alex",
-        authorAvatar: trainerProfile.avatarUrl,
+        authorAvatar: trainerProfile.image,
         authorRole: "trainer" as const,
         title: "Progressive Overload Explained",
         content: "One of the most important principles for building strength and muscle is progressive overload - gradually increasing the weight, frequency, or number of repetitions in your strength training routine. 🔥 Key principles: 1) Start lighter than you think 2) Increase by 2.5-10% weekly 3) Don't sacrifice form for weight 4) Track everything!",
@@ -151,7 +151,7 @@ export const seedCommunityData = mutation({
         postId: createdPosts[0],
         authorId: trainerProfile._id,
         authorName: trainerProfile.fullName || "Coach Sarah",
-        authorAvatar: trainerProfile.avatarUrl,
+        authorAvatar: trainerProfile.image,
         authorRole: "trainer" as const,
         content: "Incredible progress! 🙌 All that hard work is paying off. Keep crushing it!",
         parentCommentId: undefined,
@@ -169,7 +169,7 @@ export const seedCommunityData = mutation({
         postId: createdPosts[2],
         authorId: trainerProfile._id,
         authorName: trainerProfile.fullName || "Coach Sarah",
-        authorAvatar: trainerProfile.avatarUrl,
+        authorAvatar: trainerProfile.image,
         authorRole: "trainer" as const,
         content: "Great question! Make sure your knees are tracking over your toes and keep your chest up. Film yourself to check your form! 📹",
         parentCommentId: undefined,
@@ -178,7 +178,7 @@ export const seedCommunityData = mutation({
         postId: createdPosts[4],
         authorId: trainerProfile._id,
         authorName: trainerProfile.fullName || "Coach Mike",
-        authorAvatar: trainerProfile.avatarUrl,
+        authorAvatar: trainerProfile.image,
         authorRole: "trainer" as const,
         content: "Great question! For hypertrophy, the research shows both morning and evening can work well. The key is consistency with your timing. Training fasted vs fed doesn't significantly impact muscle growth for most people. Just pick a time you can stick to! 💪",
         parentCommentId: undefined,
@@ -265,7 +265,7 @@ export const seedCommunityData = mutation({
         await ctx.db.insert("groupMembers", {
           userId: profile._id,
           fullName: profile.fullName || "Member",
-          avatarUrl: profile.avatarUrl,
+          avatarUrl: profile.image,
           role: profile.authSource,
           joinedAt: now,
           lastActiveAt: now,

@@ -1,4 +1,4 @@
-import { query, mutation } from "./_generated/server";
+import { query, mutation, internalMutation } from "./_generated/server";
 import type { MutationCtx } from "./_generated/server";
 import { v } from "convex/values";
 import { paginationOptsValidator } from "convex/server";
@@ -1761,6 +1761,38 @@ export const batchCreate = mutation({
         });
       }
     }
+  },
+});
+
+
+/**
+ * Migration: Add firstName and lastName to profiles
+ * Splits existing fullName into first and last name
+ */
+export const migrateProfileNames = mutation({
+  handler: async (ctx) => {
+    const profiles = await ctx.db.query("profiles").collect();
+    
+    for (const profile of profiles) {
+      if (!profile.fullName && (profile.firstName || profile.lastName)) {
+        // Already has separate names, skip
+        continue;
+      }
+      
+      if (profile.fullName && !profile.firstName) {
+        // Split fullName into firstName and lastName
+        const nameParts = profile.fullName.trim().split(/\s+/);
+        const firstName = nameParts[0] || "";
+        const lastName = nameParts.slice(1).join(" ") || "";
+        
+        await ctx.db.patch(profile._id, {
+          firstName,
+          lastName,
+        });
+      }
+    }
+    
+    return { processed: profiles.length };
   },
 });
 

@@ -8,7 +8,7 @@ const profileValidator = v.object({
   userId: v.id("users"),
   email: v.string(),
   fullName: v.optional(v.string()),
-  avatarUrl: v.optional(v.string()),
+  image: v.optional(v.string()),
   authSource: v.union(v.literal("client"), v.literal("trainer")),
   onboardingComplete: v.optional(v.boolean()),
   onboardingCompletedAt: v.optional(v.number()),
@@ -64,7 +64,7 @@ export const getOrCreateUser = mutation({
   args: {
     email: v.string(),
     fullName: v.optional(v.string()),
-    avatarUrl: v.optional(v.string()),
+    image: v.optional(v.string()),
     authSource: v.union(v.literal("client"), v.literal("trainer")),
   },
   returns: v.union(profileValidator, v.null()),
@@ -94,7 +94,7 @@ export const getOrCreateUser = mutation({
       await ctx.db.patch(profile._id, {
         updatedAt: Date.now(),
         fullName: args.fullName || profile.fullName,
-        avatarUrl: args.avatarUrl ?? profile.avatarUrl,
+        image: args.image ?? profile.image,
         ...(hasExistingOnboardingData && !profile.onboardingComplete ? { onboardingComplete: true, onboardingCompletedAt: Date.now() } : {}),
       });
       return await ctx.db.get(profile._id);
@@ -124,7 +124,7 @@ export const getOrCreateUser = mutation({
       userId,
       email: args.email,
       fullName: args.fullName,
-      avatarUrl: args.avatarUrl,
+      image: args.image,
       authSource: args.authSource,
       createdAt: now,
       updatedAt: now,
@@ -140,7 +140,7 @@ export const getOrCreateUser = mutation({
 export const completeOnboarding = mutation({
   args: {
     fullName: v.optional(v.string()),
-    avatarUrl: v.optional(v.string()),
+    image: v.optional(v.string()),
     migratedFromLocal: v.optional(v.boolean()),
   goal: v.optional(v.string()),
   experienceLevel: v.optional(v.string()),
@@ -183,7 +183,7 @@ export const completeOnboarding = mutation({
 
     await ctx.db.patch(profile._id, {
       fullName: args.fullName ?? profile.fullName,
-      avatarUrl: args.avatarUrl ?? profile.avatarUrl,
+      image: args.image ?? profile.image,
       onboardingComplete: true,
       onboardingCompletedAt: Date.now(),
       migratedFromLocal: args.migratedFromLocal ?? profile.migratedFromLocal,
