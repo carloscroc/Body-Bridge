@@ -1,5 +1,5 @@
 import { mutation, query } from "../_generated/server";
-import { v, ConvexError } from "convex/values";
+import { v } from "convex/values";
 import { getAuthUserId } from "@convex-dev/auth/server";
 
 const profileValidator = v.object({
@@ -8,7 +8,7 @@ const profileValidator = v.object({
   userId: v.id("users"),
   email: v.string(),
   fullName: v.optional(v.string()),
-  image: v.optional(v.string()),
+  avatarUrl: v.optional(v.string()),
   authSource: v.union(v.literal("client"), v.literal("trainer")),
   onboardingComplete: v.optional(v.boolean()),
   onboardingCompletedAt: v.optional(v.number()),
@@ -19,11 +19,7 @@ const profileValidator = v.object({
   equipmentAccess: v.optional(v.array(v.string())),
   bio: v.optional(v.string()),
   location: v.optional(v.string()),
-  units: v.optional(v.object({
-    weight: v.union(v.literal("lb"), v.literal("kg")),
-    height: v.union(v.literal("cm"), v.literal("ft")),
-    distance: v.union(v.literal("mi"), v.literal("km")),
-  })),
+  units: v.optional(v.any()),
   sortPreference: v.optional(v.union(v.literal("popular"), v.literal("difficulty"), v.literal("alphabetical"))),
   planSummaryLastShown: v.optional(v.string()),
   subRenewalLastShown: v.optional(v.string()),
@@ -52,16 +48,7 @@ export const getCurrentUser = query({
       .withIndex("by_userId", (q) => q.eq("userId", userId))
       .first();
 
-    if (!profile) return null;
-
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const { avatarUrl, ...rest } = profile;
-    return {
-      ...rest,
-      image: avatarUrl ?? profile.image,
-      sortPreference: profile.sortPreference,
-      subRenewalLastShown: profile.subRenewalLastShown,
-    };
+    return profile;
   },
 });
 
@@ -73,7 +60,7 @@ export const getOrCreateUser = mutation({
   args: {
     email: v.string(),
     fullName: v.optional(v.string()),
-    image: v.optional(v.string()),
+    avatarUrl: v.optional(v.string()),
     authSource: v.union(v.literal("client"), v.literal("trainer")),
   },
   returns: v.union(profileValidator, v.null()),
@@ -81,13 +68,7 @@ export const getOrCreateUser = mutation({
     // Get the current authenticated user ID from Convex Auth
     const userId = await getAuthUserId(ctx);
     if (!userId) {
-      // Previously returned null silently — the client treated that as
-      // "no complete profile" and looped the user into onboarding forever.
-      // Now throw a typed error so the client retry logic can act on it.
-      throw new ConvexError({
-        code: "UNAUTHENTICATED",
-        message: "Not authenticated. The auth session may still be propagating.",
-      });
+      return null;
     }
 
     // Try to find existing profile by userId
@@ -97,14 +78,11 @@ export const getOrCreateUser = mutation({
       .first();
 
     if (profile) {
-      // If the profile was created before onboardingComplete existed, or was
-      // created externally, retroactively mark it complete when they log in.
-      const hasExistingOnboardingData = !!(profile.fullName || profile.goal || profile.onboardingComplete);
+      // Update last login and any changed fields
       await ctx.db.patch(profile._id, {
         updatedAt: Date.now(),
-        fullName: args.fullName || profile.fullName,
-        image: args.image ?? profile.image,
-        ...(hasExistingOnboardingData && !profile.onboardingComplete ? { onboardingComplete: true, onboardingCompletedAt: Date.now() } : {}),
+        fullName: args.fullName ?? profile.fullName,
+        avatarUrl: args.avatarUrl ?? profile.avatarUrl,
       });
       return await ctx.db.get(profile._id);
     }
@@ -118,11 +96,10 @@ export const getOrCreateUser = mutation({
       .first();
 
     if (profile) {
-      const hasExistingOnboardingData = !!(profile.fullName || profile.goal || profile.onboardingComplete);
+      // Link to new Convex Auth userId
       await ctx.db.patch(profile._id, {
         userId,
         updatedAt: Date.now(),
-        ...(hasExistingOnboardingData && !profile.onboardingComplete ? { onboardingComplete: true } : {}),
       });
       return await ctx.db.get(profile._id);
     }
@@ -133,7 +110,7 @@ export const getOrCreateUser = mutation({
       userId,
       email: args.email,
       fullName: args.fullName,
-      image: args.image,
+      avatarUrl: args.avatarUrl,
       authSource: args.authSource,
       createdAt: now,
       updatedAt: now,
@@ -149,7 +126,7 @@ export const getOrCreateUser = mutation({
 export const completeOnboarding = mutation({
   args: {
     fullName: v.optional(v.string()),
-    image: v.optional(v.string()),
+    avatarUrl: v.optional(v.string()),
     migratedFromLocal: v.optional(v.boolean()),
   goal: v.optional(v.string()),
   experienceLevel: v.optional(v.string()),
@@ -157,42 +134,23 @@ export const completeOnboarding = mutation({
   equipmentAccess: v.optional(v.array(v.string())),
   bio: v.optional(v.string()),
   location: v.optional(v.string()),
-  units: v.optional(v.object({
-    weight: v.union(v.literal("lb"), v.literal("kg")),
-    height: v.union(v.literal("cm"), v.literal("ft")),
-    distance: v.union(v.literal("mi"), v.literal("km")),
-  })),
+  units: v.optional(v.any()),
   },
   returns: v.union(profileValidator, v.null()),
   handler: async (ctx, args) => {
     const userId = await getAuthUserId(ctx);
-    if (!userId) {
-      // Throw instead of returning null: the auth session isn't ready yet on
-      // the server. The client OnboardingFlow now catches this and shows a
-      // Retry button rather than advancing into a never-persisted "complete".
-      throw new ConvexError({
-        code: "UNAUTHENTICATED",
-        message: "Not authenticated. The auth session may still be propagating.",
-      });
-    }
+    if (!userId) return null;
 
     const profile = await ctx.db
       .query("profiles")
       .withIndex("by_userId", (q) => q.eq("userId", userId))
       .first();
 
-    if (!profile) {
-      // Profile missing for an authenticated user — shouldn't normally happen
-      // because getOrCreateUser runs first, but be explicit rather than null.
-      throw new ConvexError({
-        code: "PROFILE_NOT_FOUND",
-        message: "No profile found for the authenticated user.",
-      });
-    }
+    if (!profile) return null;
 
     await ctx.db.patch(profile._id, {
       fullName: args.fullName ?? profile.fullName,
-      image: args.image ?? profile.image,
+      avatarUrl: args.avatarUrl ?? profile.avatarUrl,
       onboardingComplete: true,
       onboardingCompletedAt: Date.now(),
       migratedFromLocal: args.migratedFromLocal ?? profile.migratedFromLocal,
@@ -207,5 +165,34 @@ export const completeOnboarding = mutation({
     });
 
     return await ctx.db.get(profile._id);
+  },
+});
+
+/**
+ * Migration: Mark all profiles as onboarding complete (one-time data fix)
+ */
+export const migration_markAllOnboardingComplete = mutation({
+  args: {},
+  returns: v.object({
+    fixed: v.number(),
+    total: v.number(),
+    processed: v.array(v.string())
+  }),
+  handler: async (ctx, args) => {
+    const profiles = await ctx.db.query("profiles").collect();
+    const now = Date.now();
+    const processed: string[] = [];
+    let fixed = 0;
+    for (const p of profiles) {
+      if (!p.onboardingComplete) {
+        await ctx.db.patch(p._id, {
+          onboardingComplete: true,
+          onboardingCompletedAt: p.createdAt || now,
+        });
+        fixed++;
+        processed.push(p.email);
+      }
+    }
+    return { fixed, total: profiles.length, processed };
   },
 });

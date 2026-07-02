@@ -241,9 +241,20 @@ export const advancedSearch = query({
       };
     } else {
       // No trainer filter, use difficulty index for sorting
-      paginatedResult = await diffQueryBuilder.withIndex("by_difficultyOrder_name", (q) => q)
-        .paginate({ cursor: cursorNon, numItems: numItemsNon });
-    }
+      // Note: Cannot use .withIndex() after .filter(), so we filter in-memory
+      const allResults = await ctx.db.query("exercises")
+        .withIndex("by_difficultyOrder_name", (q) => q)
+        .collect();
+      const activeResults = showInactive ? allResults : allResults.filter((ex: any) => ex.isActive !== false);
+      // Manual pagination
+      const startIdx = cursorNon ? parseInt(cursorNon, 10) : 0;
+      const endIndex = startIdx + numItemsNon;
+      const paginatedPage = activeResults.slice(startIdx, endIndex);
+      paginatedResult = {
+        page: paginatedPage,
+        isDone: endIndex >= activeResults.length,
+        continueCursor: endIndex >= activeResults.length ? undefined : String(endIndex),
+      };
     }
     // Apply equipment filtering to non-search results if needed
     if (args.equipment && args.equipment.length > 0 && paginatedResult) {
