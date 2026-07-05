@@ -1,6 +1,6 @@
 import { v } from "convex/values";
 import { mutation, query } from "./_generated/server";
-import { requireProfileId } from "./lib/auth";
+import { getMaybeProfileId, requireProfileId } from "./lib/auth";
 
 /**
  * Workouts API
@@ -57,11 +57,16 @@ export const create = mutation({
 
 /**
  * Get all workouts for the authenticated user
+ * Returns an empty array if user has no profile
  */
 export const getUserWorkouts = query({
   args: {},
   handler: async (ctx) => {
-    const profileId = await requireProfileId(ctx);
+    const profileId = await getMaybeProfileId(ctx);
+    // If no profile exists (user just signed up), return empty array
+    if (!profileId) {
+      return [];
+    }
     
     return await ctx.db
       .query("workouts")

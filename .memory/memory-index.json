@@ -5904,5 +5904,590 @@
       "project": "Body-Bridge",
       "directory": "C:\\Users\\thebe\\Downloads\\Body-Bridge"
     }
+  },
+  {
+    "id": "mem_1783008136761_98v3uuc47",
+    "timestamp": "2026-07-02T16:02:16.761Z",
+    "category": "context",
+    "type": "session-start",
+    "importance": "low",
+    "summary": "Session started: sess_1783008 [Body-Bridge]",
+    "content": "Session ID: sess_1783008136760\nDirectory: C:\\Users\\thebe\\Downloads\\Body-Bridge\nWorktree: C:\\Users\\thebe\\Downloads\\Body-Bridge\nProject: Body-Bridge\nStarted: 2026-07-02T16:02:16.760Z",
+    "tags": [
+      "session",
+      "start",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1783008136760",
+      "project": "Body-Bridge",
+      "directory": "C:\\Users\\thebe\\Downloads\\Body-Bridge"
+    }
+  },
+  {
+    "id": "mem_1783008852485_pnulape38",
+    "timestamp": "2026-07-02T16:14:12.485Z",
+    "category": "performance",
+    "type": "build",
+    "importance": "medium",
+    "summary": "Build completed successfully in unknowns",
+    "content": "Build Status: SUCCESS\nDuration: unknowns\nWarnings: 0\nErrors: 0\nBundle Size: 0.00 MB\n\nBuild completed successfully",
+    "tags": [
+      "build",
+      "performance",
+      "success"
+    ],
+    "metadata": {
+      "duration": "unknown",
+      "success": true,
+      "warnings": 0,
+      "errors": 0,
+      "bundle_size": "0.00 MB"
+    }
+  },
+  {
+    "id": "mem_1783008923022_jv4sbxtrp",
+    "timestamp": "2026-07-02T16:15:23.022Z",
+    "category": "context",
+    "type": "session",
+    "importance": "medium",
+    "summary": "Session ended: sess_1783008 (13m) [Body-Bridge]",
+    "content": "Session ID: sess_1783008136760\nProject: Body-Bridge\nDuration: 13 minutes\nBranch: main\nFiles modified: 2\nChanged files:\n  - .memory/memory-index.json\n  - src/services/AuthContext.tsx\nStarted: 2026-07-02T16:02:16.760Z\nEnded: 2026-07-02T16:15:23.022Z",
+    "tags": [
+      "session",
+      "end",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1783008136760",
+      "project": "Body-Bridge",
+      "duration_minutes": 13,
+      "branch": "main",
+      "files_modified": 2,
+      "files_list": [
+        ".memory/memory-index.json",
+        "src/services/AuthContext.tsx"
+      ]
+    }
+  },
+  {
+    "id": "mem_1783009930232_yv5d4hivu",
+    "timestamp": "2026-07-02T16:32:10.232Z",
+    "category": "performance",
+    "type": "build",
+    "importance": "medium",
+    "summary": "Build completed successfully in unknowns",
+    "content": "Build Status: SUCCESS\nDuration: unknowns\nWarnings: 0\nErrors: 0\nBundle Size: 0.00 MB\n\nBuild completed successfully",
+    "tags": [
+      "build",
+      "performance",
+      "success"
+    ],
+    "metadata": {
+      "duration": "unknown",
+      "success": true,
+      "warnings": 0,
+      "errors": 0,
+      "bundle_size": "0.00 MB"
+    }
+  },
+  {
+    "id": "mem_1783029568246_qmpfq2e38",
+    "timestamp": "2026-07-02T21:59:28.246Z",
+    "category": "performance",
+    "type": "build",
+    "importance": "medium",
+    "summary": "Build completed successfully in unknowns",
+    "content": "Build Status: SUCCESS\nDuration: unknowns\nWarnings: 0\nErrors: 0\nBundle Size: 0.00 MB\n\nBuild completed successfully",
+    "tags": [
+      "build",
+      "performance",
+      "success"
+    ],
+    "metadata": {
+      "duration": "unknown",
+      "success": true,
+      "warnings": 0,
+      "errors": 0,
+      "bundle_size": "0.00 MB"
+    }
+  },
+  {
+    "id": "mem_1783034158923_2o9ucbvk7",
+    "timestamp": "2026-07-02T23:15:58.923Z",
+    "category": "performance",
+    "type": "build",
+    "importance": "medium",
+    "summary": "Build completed successfully in unknowns",
+    "content": "Build Status: SUCCESS\nDuration: unknowns\nWarnings: 0\nErrors: 0\nBundle Size: 0.00 MB\n\nBuild completed successfully",
+    "tags": [
+      "build",
+      "performance",
+      "success"
+    ],
+    "metadata": {
+      "duration": "unknown",
+      "success": true,
+      "warnings": 0,
+      "errors": 0,
+      "bundle_size": "0.00 MB"
+    }
+  },
+  {
+    "id": "mem_1783034767665_pk1ziuqmd",
+    "timestamp": "2026-07-02T23:26:07.665Z",
+    "category": "performance",
+    "type": "build",
+    "importance": "medium",
+    "summary": "Build completed successfully in unknowns",
+    "content": "Build Status: SUCCESS\nDuration: unknowns\nWarnings: 0\nErrors: 0\nBundle Size: 0.00 MB\n\nBuild completed successfully",
+    "tags": [
+      "build",
+      "performance",
+      "success"
+    ],
+    "metadata": {
+      "duration": "unknown",
+      "success": true,
+      "warnings": 0,
+      "errors": 0,
+      "bundle_size": "0.00 MB"
+    }
+  },
+  {
+    "id": "mem_1783034904053_a309f3xz6",
+    "timestamp": "2026-07-02T23:28:24.053Z",
+    "category": "performance",
+    "type": "build",
+    "importance": "medium",
+    "summary": "Build completed successfully in unknowns",
+    "content": "Build Status: SUCCESS\nDuration: unknowns\nWarnings: 0\nErrors: 0\nBundle Size: 0.00 MB\n\nBuild completed successfully",
+    "tags": [
+      "build",
+      "performance",
+      "success"
+    ],
+    "metadata": {
+      "duration": "unknown",
+      "success": true,
+      "warnings": 0,
+      "errors": 0,
+      "bundle_size": "0.00 MB"
+    }
+  },
+  {
+    "id": "mem_1783034952096_q70bl05bu",
+    "timestamp": "2026-07-02T23:29:12.096Z",
+    "category": "performance",
+    "type": "build",
+    "importance": "medium",
+    "summary": "Build completed successfully in unknowns",
+    "content": "Build Status: SUCCESS\nDuration: unknowns\nWarnings: 0\nErrors: 0\nBundle Size: 0.00 MB\n\nBuild completed successfully",
+    "tags": [
+      "build",
+      "performance",
+      "success"
+    ],
+    "metadata": {
+      "duration": "unknown",
+      "success": true,
+      "warnings": 0,
+      "errors": 0,
+      "bundle_size": "0.00 MB"
+    }
+  },
+  {
+    "id": "mem_1783165224253_rdw7cs1w7",
+    "timestamp": "2026-07-04T11:40:24.253Z",
+    "category": "performance",
+    "type": "build",
+    "importance": "medium",
+    "summary": "Build completed successfully in unknowns",
+    "content": "Build Status: SUCCESS\nDuration: unknowns\nWarnings: 0\nErrors: 0\nBundle Size: 0.00 MB\n\nBuild completed successfully",
+    "tags": [
+      "build",
+      "performance",
+      "success"
+    ],
+    "metadata": {
+      "duration": "unknown",
+      "success": true,
+      "warnings": 0,
+      "errors": 0,
+      "bundle_size": "0.00 MB"
+    }
+  },
+  {
+    "id": "mem_1783165561302_iwq9ob6a5",
+    "timestamp": "2026-07-04T11:46:01.302Z",
+    "category": "performance",
+    "type": "build",
+    "importance": "medium",
+    "summary": "Build completed successfully in unknowns",
+    "content": "Build Status: SUCCESS\nDuration: unknowns\nWarnings: 0\nErrors: 0\nBundle Size: 0.00 MB\n\nBuild completed successfully",
+    "tags": [
+      "build",
+      "performance",
+      "success"
+    ],
+    "metadata": {
+      "duration": "unknown",
+      "success": true,
+      "warnings": 0,
+      "errors": 0,
+      "bundle_size": "0.00 MB"
+    }
+  },
+  {
+    "id": "mem_1783168754286_05exi6g29",
+    "timestamp": "2026-07-04T12:39:14.286Z",
+    "category": "context",
+    "type": "session-start",
+    "importance": "low",
+    "summary": "Session started: sess_1783168 [Body-Bridge]",
+    "content": "Session ID: sess_1783168754284\nDirectory: C:\\Users\\thebe\\Downloads\\Body-Bridge\nWorktree: C:\\Users\\thebe\\Downloads\\Body-Bridge\nProject: Body-Bridge\nStarted: 2026-07-04T12:39:14.286Z",
+    "tags": [
+      "session",
+      "start",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1783168754284",
+      "project": "Body-Bridge",
+      "directory": "C:\\Users\\thebe\\Downloads\\Body-Bridge"
+    }
+  },
+  {
+    "id": "mem_1783168767390_wb1pzgfr1",
+    "timestamp": "2026-07-04T12:39:27.390Z",
+    "category": "context",
+    "type": "session-start",
+    "importance": "low",
+    "summary": "Session started: sess_1783168 [Body-Bridge]",
+    "content": "Session ID: sess_1783168767389\nDirectory: C:\\Users\\thebe\\Downloads\\Body-Bridge\nWorktree: C:\\Users\\thebe\\Downloads\\Body-Bridge\nProject: Body-Bridge\nStarted: 2026-07-04T12:39:27.390Z",
+    "tags": [
+      "session",
+      "start",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1783168767389",
+      "project": "Body-Bridge",
+      "directory": "C:\\Users\\thebe\\Downloads\\Body-Bridge"
+    }
+  },
+  {
+    "id": "mem_1783170393569_icno3yvu8",
+    "timestamp": "2026-07-04T13:06:33.569Z",
+    "category": "context",
+    "type": "session",
+    "importance": "medium",
+    "summary": "Session ended: sess_1783169 (8m) [opencode-telegram-bot]",
+    "content": "Session ID: sess_1783169927576\nProject: opencode-telegram-bot\nDuration: 8 minutes\nBranch: main\nFiles modified: 7\nChanged files:\n  - .memory/memory-index.json\n  - android/app/capacitor.build.gradle\n  - android/capacitor.settings.gradle\n  - convex/workouts.ts\n  - package-lock.json\n  - package.json\n  - src/services/AuthContext.tsx\nStarted: 2026-07-04T12:58:47.576Z\nEnded: 2026-07-04T13:06:33.569Z",
+    "tags": [
+      "session",
+      "end",
+      "auto-captured",
+      "opencode-telegram-bot"
+    ],
+    "metadata": {
+      "session_id": "sess_1783169927576",
+      "project": "opencode-telegram-bot",
+      "duration_minutes": 8,
+      "branch": "main",
+      "files_modified": 7,
+      "files_list": [
+        ".memory/memory-index.json",
+        "android/app/capacitor.build.gradle",
+        "android/capacitor.settings.gradle",
+        "convex/workouts.ts",
+        "package-lock.json",
+        "package.json",
+        "src/services/AuthContext.tsx"
+      ]
+    }
+  },
+  {
+    "id": "mem_1783171492789_66gyv6qjk",
+    "timestamp": "2026-07-04T13:24:52.789Z",
+    "category": "performance",
+    "type": "build",
+    "importance": "medium",
+    "summary": "Build completed successfully in unknowns",
+    "content": "Build Status: SUCCESS\nDuration: unknowns\nWarnings: 0\nErrors: 0\nBundle Size: 0.00 MB\n\nBuild completed successfully",
+    "tags": [
+      "build",
+      "performance",
+      "success"
+    ],
+    "metadata": {
+      "duration": "unknown",
+      "success": true,
+      "warnings": 0,
+      "errors": 0,
+      "bundle_size": "0.00 MB"
+    }
+  },
+  {
+    "id": "mem_1783178330003_8hf5w8afn",
+    "timestamp": "2026-07-04T15:18:50.003Z",
+    "category": "context",
+    "type": "session-start",
+    "importance": "low",
+    "summary": "Session started: sess_1783178 [Body-Bridge]",
+    "content": "Session ID: sess_1783178330001\nDirectory: C:\\Users\\thebe\\Downloads\\Body-Bridge\nWorktree: C:\\Users\\thebe\\Downloads\\Body-Bridge\nProject: Body-Bridge\nStarted: 2026-07-04T15:18:50.003Z",
+    "tags": [
+      "session",
+      "start",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1783178330001",
+      "project": "Body-Bridge",
+      "directory": "C:\\Users\\thebe\\Downloads\\Body-Bridge"
+    }
+  },
+  {
+    "id": "mem_1783178340274_othede5xr",
+    "timestamp": "2026-07-04T15:19:00.274Z",
+    "category": "context",
+    "type": "session-start",
+    "importance": "low",
+    "summary": "Session started: sess_1783178 [Body-Bridge]",
+    "content": "Session ID: sess_1783178340273\nDirectory: C:\\Users\\thebe\\Downloads\\Body-Bridge\nWorktree: C:\\Users\\thebe\\Downloads\\Body-Bridge\nProject: Body-Bridge\nStarted: 2026-07-04T15:19:00.274Z",
+    "tags": [
+      "session",
+      "start",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1783178340273",
+      "project": "Body-Bridge",
+      "directory": "C:\\Users\\thebe\\Downloads\\Body-Bridge"
+    }
+  },
+  {
+    "id": "mem_1783180009201_7w1y9x8xg",
+    "timestamp": "2026-07-04T15:46:49.201Z",
+    "category": "performance",
+    "type": "build",
+    "importance": "medium",
+    "summary": "Build completed successfully in unknowns",
+    "content": "Build Status: SUCCESS\nDuration: unknowns\nWarnings: 0\nErrors: 0\nBundle Size: 0.00 MB\n\nBuild completed successfully",
+    "tags": [
+      "build",
+      "performance",
+      "success"
+    ],
+    "metadata": {
+      "duration": "unknown",
+      "success": true,
+      "warnings": 0,
+      "errors": 0,
+      "bundle_size": "0.00 MB"
+    }
+  },
+  {
+    "id": "mem_1783180038254_5w32r6jmz",
+    "timestamp": "2026-07-04T15:47:18.254Z",
+    "category": "performance",
+    "type": "build",
+    "importance": "medium",
+    "summary": "Build completed successfully in unknowns",
+    "content": "Build Status: SUCCESS\nDuration: unknowns\nWarnings: 0\nErrors: 0\nBundle Size: 0.00 MB\n\nBuild completed successfully",
+    "tags": [
+      "build",
+      "performance",
+      "success"
+    ],
+    "metadata": {
+      "duration": "unknown",
+      "success": true,
+      "warnings": 0,
+      "errors": 0,
+      "bundle_size": "0.00 MB"
+    }
+  },
+  {
+    "id": "mem_1783180076489_qipspvqsk",
+    "timestamp": "2026-07-04T15:47:56.489Z",
+    "category": "context",
+    "type": "session",
+    "importance": "medium",
+    "summary": "Session ended: sess_1783178 (29m) [Body-Bridge]",
+    "content": "Session ID: sess_1783178340273\nProject: Body-Bridge\nDuration: 29 minutes\nBranch: main\nFiles modified: 7\nChanged files:\n  - .memory/memory-index.json\n  - android/app/capacitor.build.gradle\n  - android/capacitor.settings.gradle\n  - convex/workouts.ts\n  - package-lock.json\n  - package.json\n  - src/services/AuthContext.tsx\nStarted: 2026-07-04T15:19:00.273Z\nEnded: 2026-07-04T15:47:56.489Z",
+    "tags": [
+      "session",
+      "end",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1783178340273",
+      "project": "Body-Bridge",
+      "duration_minutes": 29,
+      "branch": "main",
+      "files_modified": 7,
+      "files_list": [
+        ".memory/memory-index.json",
+        "android/app/capacitor.build.gradle",
+        "android/capacitor.settings.gradle",
+        "convex/workouts.ts",
+        "package-lock.json",
+        "package.json",
+        "src/services/AuthContext.tsx"
+      ]
+    }
+  },
+  {
+    "id": "mem_1783180574650_555frm91i",
+    "timestamp": "2026-07-04T15:56:14.650Z",
+    "category": "performance",
+    "type": "build",
+    "importance": "medium",
+    "summary": "Build completed successfully in unknowns",
+    "content": "Build Status: SUCCESS\nDuration: unknowns\nWarnings: 0\nErrors: 0\nBundle Size: 0.00 MB\n\nBuild completed successfully",
+    "tags": [
+      "build",
+      "performance",
+      "success"
+    ],
+    "metadata": {
+      "duration": "unknown",
+      "success": true,
+      "warnings": 0,
+      "errors": 0,
+      "bundle_size": "0.00 MB"
+    }
+  },
+  {
+    "id": "mem_1783181790412_hvjizmjxn",
+    "timestamp": "2026-07-04T16:16:30.412Z",
+    "category": "context",
+    "type": "session-start",
+    "importance": "low",
+    "summary": "Session started: sess_1783181 [Body-Bridge]",
+    "content": "Session ID: sess_1783181790411\nDirectory: C:\\Users\\thebe\\Downloads\\Body-Bridge\nWorktree: C:\\Users\\thebe\\Downloads\\Body-Bridge\nProject: Body-Bridge\nStarted: 2026-07-04T16:16:30.412Z",
+    "tags": [
+      "session",
+      "start",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1783181790411",
+      "project": "Body-Bridge",
+      "directory": "C:\\Users\\thebe\\Downloads\\Body-Bridge"
+    }
+  },
+  {
+    "id": "mem_1783182669434_yfm6szdms",
+    "timestamp": "2026-07-04T16:31:09.434Z",
+    "category": "context",
+    "type": "session",
+    "importance": "medium",
+    "summary": "Session ended: sess_1783181 (15m) [Body-Bridge]",
+    "content": "Session ID: sess_1783181790411\nProject: Body-Bridge\nDuration: 15 minutes\nBranch: main\nFiles modified: 8\nChanged files:\n  - .memory/memory-index.json\n  - android/app/capacitor.build.gradle\n  - android/capacitor.settings.gradle\n  - convex/exercises.ts\n  - convex/workouts.ts\n  - package-lock.json\n  - package.json\n  - src/services/AuthContext.tsx\nStarted: 2026-07-04T16:16:30.411Z\nEnded: 2026-07-04T16:31:09.434Z",
+    "tags": [
+      "session",
+      "end",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1783181790411",
+      "project": "Body-Bridge",
+      "duration_minutes": 15,
+      "branch": "main",
+      "files_modified": 8,
+      "files_list": [
+        ".memory/memory-index.json",
+        "android/app/capacitor.build.gradle",
+        "android/capacitor.settings.gradle",
+        "convex/exercises.ts",
+        "convex/workouts.ts",
+        "package-lock.json",
+        "package.json",
+        "src/services/AuthContext.tsx"
+      ]
+    }
+  },
+  {
+    "id": "mem_1783255594978_0qn9p08id",
+    "timestamp": "2026-07-05T12:46:34.978Z",
+    "category": "context",
+    "type": "session-start",
+    "importance": "low",
+    "summary": "Session started: sess_1783255 [Body-Bridge]",
+    "content": "Session ID: sess_1783255594977\nDirectory: C:\\Users\\thebe\\Downloads\\Body-Bridge\nWorktree: C:\\Users\\thebe\\Downloads\\Body-Bridge\nProject: Body-Bridge\nStarted: 2026-07-05T12:46:34.977Z",
+    "tags": [
+      "session",
+      "start",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1783255594977",
+      "project": "Body-Bridge",
+      "directory": "C:\\Users\\thebe\\Downloads\\Body-Bridge"
+    }
+  },
+  {
+    "id": "mem_1783255647836_acogqepvs",
+    "timestamp": "2026-07-05T12:47:27.836Z",
+    "category": "context",
+    "type": "session",
+    "importance": "medium",
+    "summary": "Session ended: sess_1783255 (1m) [Body-Bridge]",
+    "content": "Session ID: sess_1783255594977\nProject: Body-Bridge\nDuration: 1 minutes\nBranch: main\nFiles modified: 8\nChanged files:\n  - .memory/memory-index.json\n  - android/app/capacitor.build.gradle\n  - android/capacitor.settings.gradle\n  - convex/exercises.ts\n  - convex/workouts.ts\n  - package-lock.json\n  - package.json\n  - src/services/AuthContext.tsx\nStarted: 2026-07-05T12:46:34.977Z\nEnded: 2026-07-05T12:47:27.836Z",
+    "tags": [
+      "session",
+      "end",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1783255594977",
+      "project": "Body-Bridge",
+      "duration_minutes": 1,
+      "branch": "main",
+      "files_modified": 8,
+      "files_list": [
+        ".memory/memory-index.json",
+        "android/app/capacitor.build.gradle",
+        "android/capacitor.settings.gradle",
+        "convex/exercises.ts",
+        "convex/workouts.ts",
+        "package-lock.json",
+        "package.json",
+        "src/services/AuthContext.tsx"
+      ]
+    }
+  },
+  {
+    "id": "mem_1783257597648_8n0ohudh2",
+    "timestamp": "2026-07-05T13:19:57.649Z",
+    "category": "context",
+    "type": "session-start",
+    "importance": "low",
+    "summary": "Session started: sess_1783257 [Body-Bridge]",
+    "content": "Session ID: sess_1783257597646\nDirectory: C:\\Users\\thebe\\Downloads\\Body-Bridge\nWorktree: C:\\Users\\thebe\\Downloads\\Body-Bridge\nProject: Body-Bridge\nStarted: 2026-07-05T13:19:57.648Z",
+    "tags": [
+      "session",
+      "start",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1783257597646",
+      "project": "Body-Bridge",
+      "directory": "C:\\Users\\thebe\\Downloads\\Body-Bridge"
+    }
   }
 ]

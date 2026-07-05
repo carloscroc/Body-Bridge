@@ -4,6 +4,13 @@ import { useConvexAuth, useQuery, useConvex, useMutation } from 'convex/react';
 import { api } from '@convex/_generated/api';
 import { recordAuthOp } from '../components/AuthDiagnostics';
 
+// Lazy load token sync with error handling for Capacitor unavailability
+let tokenSync: any = null;
+try {
+  tokenSync = require('../utils/tokenSync');
+} catch (e) {
+  console.warn('[Auth] Token sync not available:', e);
+}
 export type AuthFieldError = {
   field: 'email' | 'password' | 'general';
   message: string;

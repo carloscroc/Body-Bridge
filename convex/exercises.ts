@@ -1765,3 +1765,59 @@ export const getTrainerExercises = query({
     };
   },
 });
+
+/**
+ * Update an exercise's YouTube video URL
+ * Used by migration scripts to sync Notion video URLs to Convex
+ */
+export const updateVideoUrl = mutation({
+  args: {
+    exerciseId: v.id("exercises"),
+    videoUrl: v.string(),
+    adminSecret: v.optional(v.string()),
+  },
+  handler: async (ctx, args) => {
+    // Admin secret check for migration scripts
+    if (!isAdminSecret(args.adminSecret)) {
+      throw new Error("Unauthorized: admin secret required");
+    }
+
+    const { exerciseId, videoUrl } = args;
+    
+    // Verify exercise exists
+    const exercise = await ctx.db.get(exerciseId);
+    if (!exercise) {
+      throw new Error(`Exercise not found: ${exerciseId}`);
+    }
+    
+    // Update only the videoUrl field
+    await ctx.db.patch(exerciseId, {
+      videoUrl,
+      updatedAt: Date.now(),
+    });
+    
+    return { success: true, exerciseId, videoUrl };
+  },
+});
+
+/**
+ * List exercises with minimal fields for migration matching
+ * Returns ID, name, and current videoUrl for efficient matching
+ */
+export const listForMigration = query({
+  args: {
+    adminSecret: v.string(),
+  },
+  handler: async (ctx, args) => {
+    if (!isAdminSecret(args.adminSecret)) {
+      throw new Error("Unauthorized: admin secret required");
+    }
+
+    const exercises = await ctx.db.query("exercises").collect();
+    return exercises.map(exercise => ({
+      _id: exercise._id,
+      name: exercise.name,
+      videoUrl: exercise.videoUrl,
+    }));
+  },
+});
