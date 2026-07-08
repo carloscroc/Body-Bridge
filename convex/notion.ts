@@ -232,3 +232,85 @@ export const listTrainers = query({
       }));
   },
 });
+
+export const listExercisesByTrainer = query({
+  args: {
+    trainerFirstName: v.optional(v.string()),
+    trainerLastName: v.optional(v.string()),
+  },
+  handler: async (ctx, args) => {
+    // Collect all active exercises, then filter by trainer name(s)
+    const allExercises = await ctx.db
+      .query("exercises")
+      .filter((q) => q.eq("isActive", true))
+      .collect();
+
+    // Manually filter by trainer fields
+    const exercises = allExercises.filter(ex => {
+      if (args.trainerFirstName && ex.trainerFirstName !== args.trainerFirstName) {
+        return false;
+      }
+      if (args.trainerLastName && ex.trainerLastName !== args.trainerLastName) {
+        return false;
+      }
+      return true;
+    });
+
+    // Group by trainer for easier navigation
+    const byTrainer: Record<string, typeof exercises> = {};
+    for (const ex of exercises) {
+      const trainerKey = `${ex.trainerFirstName || "unknown"} ${ex.trainerLastName || ""}`.trim();
+      if (!byTrainer[trainerKey]) {
+        byTrainer[trainerKey] = [];
+      }
+      byTrainer[trainerKey].push(ex);
+    }
+
+    return {
+      exercises,
+      byTrainer,
+      trainers: Object.keys(byTrainer),
+    };
+  },
+});
+
+export const listAllTrainers = query({
+  args: {},
+  handler: async (ctx, args) => {
+    const trainers = await ctx.db.query("trainers").collect();
+    const exercises = await ctx.db.query("exercises").collect();
+    // Group exercises by trainer
+    const trainerExercises: Record<string, { trainer; exerciseCount: number }> = {};
+    for (const ex of exercises) {
+      const trainerKey = `${ex.trainerFirstName || ""} ${ex.trainerLastName || ""}`.trim();
+      if (trainerKey && trainerKey !== "unknown") {
+        if (!trainerExercises[trainerKey]) {
+          // Find the trainer record
+          const trainerRec = trainers.find(
+            t => t.firstName === ex.trainerFirstName && t.lastName === ex.trainerLastName
+          );
+          trainerExercises[trainerKey] = {
+            trainer: trainerRec?.fullName || trainerKey,
+            exerciseCount: 0,
+          };
+        }
+        trainerExercises[trainerKey].exerciseCount++;
+      }
+    }
+
+    return {
+      trainers: trainers.map((trainer) => ({
+        _id: trainer._id,
+        firstName: trainer.firstName,
+        lastName: trainer.lastName,
+        fullName: trainer.fullName,
+        email: trainer.email,
+        isActive: trainer.isActive,
+        hasNotionConfig: !!(
+          trainer.notionDatabaseId && trainer.notionAccessToken
+        ),
+        exerciseCount: trainerExercises[trainer.fullName]?.exerciseCount || 0,
+      })),
+    };
+  },
+});

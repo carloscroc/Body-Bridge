@@ -265,10 +265,58 @@ export const insertExercise = mutation({
       ...args.exercise,
       libraryId: `seed-${args.exercise.name.toLowerCase().replace(/\s+/g, "-")}`,
       difficultyOrder: args.exercise.difficulty === "Beginner" ? 1 : args.exercise.difficulty === "Intermediate" ? 2 : 3,
+      trainerFirstName: "open-source",
+      trainerLastName: "",
+      sourceSystem: "seed",
+      sourceId: args.exercise.name,
+      isActive: true,
+      tags: [...args.exercise.tags, "Trainer: open-source"],
       createdAt: Date.now(),
     });
+  },
+});
 
-    return { success: true, exerciseId };
+export const updateExerciseTrainerFields = mutation({
+  args: {
+    adminSecret: v.optional(v.string()),
+  },
+  handler: async (ctx, args) => {
+    if (!isAdminSecret(args.adminSecret)) {
+      throw new Error("Unauthorized: Invalid admin secret");
+    }
+    
+    // Get all exercises that don't have trainer fields set
+    const exercises = await ctx.db.query("exercises").collect();
+    
+    let updatedCount = 0;
+    for (const exercise of exercises) {
+      // Check if trainer fields are already set
+      if (!exercise.trainerFirstName) {
+        // Determine trainer based on sourceSystem
+        const trainerFirstName = exercise.sourceSystem === "notion" ? "Jasmine" : "open-source";
+        const trainerLastName = exercise.sourceSystem === "notion" ? "Hensley" : "";
+        const sourceSystem = exercise.sourceSystem || "unknown";
+        const trainerTag = `Trainer: ${trainerFirstName} ${trainerLastName}`.trim();
+        
+        // Add trainer tag if not already present
+        const tags = exercise.tags || [];
+        if (!tags.includes(trainerTag)) {
+          tags.push(trainerTag);
+        }
+        
+        // Update exercise with trainer fields
+        await ctx.db.patch(exercise._id, {
+          trainerFirstName,
+          trainerLastName,
+          sourceSystem,
+          tags,
+        });
+        updatedCount++;
+      }
+    }
+    
+    console.log(`Updated ${updatedCount} exercises with trainer fields`);
+    return { updatedCount };
   },
 });
 
