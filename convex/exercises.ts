@@ -216,30 +216,40 @@ export const advancedSearch = query({
       // Trainer filter requires different index, collect and sort in-memory
       const [firstName, ...lastNameParts] = args.trainerName.trim().split(' ');
       const lastName = lastNameParts.join(' ');
-      const trainerQueryBuilder = ctx.db.query("exercises");
-      const trainerFiltered = await trainerQueryBuilder.withIndex("by_trainer_and_active", (q: any) => {
-        let indexQuery = q;
-        if (firstName) indexQuery = indexQuery.eq("trainerFirstName", firstName);
-        if (lastName) indexQuery = indexQuery.eq("trainerLastName", lastName);
-        if (!showInactive) indexQuery = indexQuery.eq("isActive", true);
-        return indexQuery;
-      }).collect();
-      // Sort by difficultyOrder then name in-memory
-      trainerFiltered.sort((a, b) => {
-        if ((a.difficultyOrder ?? 0) !== (b.difficultyOrder ?? 0)) {
-          return (a.difficultyOrder ?? 0) - (b.difficultyOrder ?? 0);
-        }
-        return a.name.localeCompare(b.name);
-      });
-      // Manual pagination
-      const startIdx = cursorNon ? 0 : 0;
-      const endIndex = startIdx + numItemsNon;
-      const paginatedPage = trainerFiltered.slice(startIdx, endIndex);
-      paginatedResult = {
-        page: paginatedPage,
-        isDone: endIndex >= trainerFiltered.length,
-        continueCursor: endIndex >= trainerFiltered.length ? undefined : String(endIndex),
-      };
+      try {
+        const trainerQueryBuilder = ctx.db.query("exercises");
+        const trainerFiltered = await trainerQueryBuilder.withIndex("by_trainer_and_active", (q: any) => {
+          let indexQuery = q;
+          if (firstName) indexQuery = indexQuery.eq("trainerFirstName", firstName);
+          if (lastName) indexQuery = indexQuery.eq("trainerLastName", lastName);
+          if (!showInactive) indexQuery = indexQuery.eq("isActive", true);
+          return indexQuery;
+        }).collect();
+        // Sort by difficultyOrder then name in-memory
+        trainerFiltered.sort((a, b) => {
+          if ((a.difficultyOrder ?? 0) !== (b.difficultyOrder ?? 0)) {
+            return (a.difficultyOrder ?? 0) - (b.difficultyOrder ?? 0);
+          }
+          return a.name.localeCompare(b.name);
+        });
+        // Manual pagination
+        const startIdx = cursorNon ? 0 : 0;
+        const endIndex = startIdx + numItemsNon;
+        const paginatedPage = trainerFiltered.slice(startIdx, endIndex);
+        paginatedResult = {
+          page: paginatedPage,
+          isDone: endIndex >= trainerFiltered.length,
+          continueCursor: endIndex >= trainerFiltered.length ? undefined : String(endIndex),
+        };
+      } catch (error) {
+        // If trainer filter fails (index issues or missing data), log and return empty
+        console.error("Error filtering by trainer name:", args.trainerName, error);
+        paginatedResult = {
+          page: [],
+          isDone: true,
+          continueCursor: undefined,
+        };
+      }
     } else {
       // No trainer filter, use difficulty index for sorting
       // Note: Cannot use .withIndex() after .filter(), so we filter in-memory
@@ -1801,6 +1811,45 @@ export const updateVideoUrl = mutation({
 });
 
 
+/**
+ * Update trainer data and isActive status on an exercise
+ * Used by migration scripts to populate trainer fields
+ */
+export const updateTrainerData = mutation({
+  args: {
+    exerciseId: v.id("exercises"),
+    trainerFirstName: v.string(),
+    trainerLastName: v.string(),
+    isActive: v.boolean(),
+    adminSecret: v.optional(v.string()),
+  },
+  handler: async (ctx, args) => {
+    // Admin secret check for migration scripts
+    if (!isAdminSecret(args.adminSecret)) {
+      throw new Error("Unauthorized: admin secret required");
+    }
+
+    const { exerciseId, trainerFirstName, trainerLastName, isActive } = args;
+    
+    // Verify exercise exists
+    const exercise = await ctx.db.get(exerciseId);
+    if (!exercise) {
+      throw new Error(`Exercise not found: ${exerciseId}`);
+    }
+    
+    // Update trainer fields and isActive
+    await ctx.db.patch(exerciseId, {
+      trainerFirstName,
+      trainerLastName,
+      isActive,
+    });
+    return { success: true, exerciseId, trainerFirstName, trainerLastName, isActive };
+  },
+});
+
+
+
+
 
 
 
@@ -1823,6 +1872,38 @@ export const listForMigration = query({
       _id: exercise._id,
       name: exercise.name,
       videoUrl: exercise.videoUrl,
+      trainerFirstName: exercise.trainerFirstName,
+      trainerLastName: exercise.trainerLastName,
+      isActive: exercise.isActive,
     }));
+  },
+});
+
+/**
+ * Get Jasmine Hensley's exercises using the trainer index
+ */
+export const getJasmineExercises = query({
+  args: {
+    limit: v.optional(v.number()),
+    cursor: v.optional(v.string()),
+  },
+  handler: async (ctx, args) => {
+    const limit = args.limit ?? 50;
+    const cursor = args.cursor || null;
+    try {
+      const result = await ctx.db
+        .query("exercises")
+        .withIndex("by_trainer_and_active", (q) => q
+          .eq("trainerFirstName", "Jasmine")
+          .eq("trainerLastName", "Hensley")
+          .eq("isActive", true)
+        )
+        .paginate({ cursor, numItems: limit });
+      return result;
+    } catch (error) {
+      console.error("Error fetching Jasmine's exercises:", error);
+      // Return empty result instead of crashing
+      return { page: [], isDone: true, continueCursor: null };
+    }
   },
 });

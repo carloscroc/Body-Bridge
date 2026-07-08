@@ -21,7 +21,7 @@ const ExercisesView: React.FC<ExercisesViewProps> = ({ onSelect }) => {
   const { user } = useAuth();
   const [activeCategory, setActiveCategory] = useState('All');
   const [searchQuery, setSearchQuery] = useState('');
-  const [showOnlyJasmine, setShowOnlyJasmine] = useState(true);
+  const [showOnlyJasmine, setShowOnlyJasmine] = useState(false);
   
   type SortOption = 'popular' | 'difficulty' | 'alphabetical';
   const [sortBy, setSortBy] = useState<SortOption>('popular');
