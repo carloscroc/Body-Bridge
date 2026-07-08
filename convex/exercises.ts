@@ -216,7 +216,8 @@ export const advancedSearch = query({
       // Trainer filter requires different index, collect and sort in-memory
       const [firstName, ...lastNameParts] = args.trainerName.trim().split(' ');
       const lastName = lastNameParts.join(' ');
-      const trainerFiltered = await diffQueryBuilder.withIndex("by_trainer_and_active", (q: any) => {
+      const trainerQueryBuilder = ctx.db.query("exercises");
+      const trainerFiltered = await trainerQueryBuilder.withIndex("by_trainer_and_active", (q: any) => {
         let indexQuery = q;
         if (firstName) indexQuery = indexQuery.eq("trainerFirstName", firstName);
         if (lastName) indexQuery = indexQuery.eq("trainerLastName", lastName);

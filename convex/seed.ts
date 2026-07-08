@@ -308,7 +308,7 @@ export const updateExerciseTrainerFields = mutation({
         await ctx.db.patch(exercise._id, {
           trainerFirstName,
           trainerLastName,
-          sourceSystem,
+          sourceSystem: exercise.sourceSystem as any,
           tags,
         });
         updatedCount++;

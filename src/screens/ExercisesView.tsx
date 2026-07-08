@@ -21,6 +21,7 @@ const ExercisesView: React.FC<ExercisesViewProps> = ({ onSelect }) => {
   const { user } = useAuth();
   const [activeCategory, setActiveCategory] = useState('All');
   const [searchQuery, setSearchQuery] = useState('');
+  const [showOnlyJasmine, setShowOnlyJasmine] = useState(true);
   
   type SortOption = 'popular' | 'difficulty' | 'alphabetical';
   const [sortBy, setSortBy] = useState<SortOption>('popular');
@@ -71,6 +72,7 @@ const ExercisesView: React.FC<ExercisesViewProps> = ({ onSelect }) => {
       sortBy: isSearching ? undefined : sortBy,
       limit: currentLimit,
       cursor: cursor,
+      trainerName: showOnlyJasmine ? 'Jasmine Hensley' : undefined,
     }
   );
 

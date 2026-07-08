@@ -242,7 +242,7 @@ export const listExercisesByTrainer = query({
     // Collect all active exercises, then filter by trainer name(s)
     const allExercises = await ctx.db
       .query("exercises")
-      .filter((q) => q.eq("isActive", true))
+      .filter((q) => q.eq(q.field("isActive"), true))
       .collect();
 
     // Manually filter by trainer fields
@@ -280,7 +280,7 @@ export const listAllTrainers = query({
     const trainers = await ctx.db.query("trainers").collect();
     const exercises = await ctx.db.query("exercises").collect();
     // Group exercises by trainer
-    const trainerExercises: Record<string, { trainer; exerciseCount: number }> = {};
+    const trainerExercises: Record<string, { trainer: string; exerciseCount: number }> = {};
     for (const ex of exercises) {
       const trainerKey = `${ex.trainerFirstName || ""} ${ex.trainerLastName || ""}`.trim();
       if (trainerKey && trainerKey !== "unknown") {
