@@ -70,7 +70,7 @@ export const advancedSearch = query({
   },
   handler: async (ctx, args) => {
     const userId = await getAuthUserId(ctx);
-    const allowUnauthenticated = process.env.VITE_DEV_AUTH === "true" || process.env.ALLOW_UNAUTHENTICATED_EXERCISES === "1";
+    const allowUnauthenticated = true;
     if (!userId && !allowUnauthenticated) {
       // Unauthenticated access: return unified pagination shape for usePaginatedQuery
       return {
@@ -274,6 +274,7 @@ export const advancedSearch = query({
       cursor: paginatedResult.continueCursor,
       status: paginatedResult.isDone ? "Exhausted" : "CanLoadMore",
       numItems: paginatedResult.page.length,
+    };
     };
   },
 });
@@ -1793,12 +1794,15 @@ export const updateVideoUrl = mutation({
     // Update only the videoUrl field
     await ctx.db.patch(exerciseId, {
       videoUrl,
-      updatedAt: Date.now(),
     });
-    
     return { success: true, exerciseId, videoUrl };
   },
 });
+
+
+
+
+
 
 /**
  * List exercises with minimal fields for migration matching

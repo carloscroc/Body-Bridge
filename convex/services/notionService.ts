@@ -51,16 +51,16 @@ export class NotionExerciseService {
 
     return {
       name: this.getTitleText(props.Name),
-      videoUrl: this.getUrlText(props.Video),
-      instructions: this.getRichTextArray(props.Instructions),
-      equipment: this.getMultiSelectArray(props.Equipment),
-      primaryMuscles: this.getMultiSelectArray(props['Primary Muscles']),
-      secondaryMuscles: this.getMultiSelectArray(props['Secondary Muscles']),
-      difficulty: this.getSelectValue(props.Difficulty),
-      sets: this.getNumberValue(props.Sets)?.toString() || '',
-      reps: this.getNumberValue(props.Reps)?.toString() || '',
+      videoUrl: this.getUrlText(props['⭐Video']),
+      instructions: this.getRichTextArray(props['⭐Exercise Instructions']),
+      equipment: this.getMultiSelectArray(props['⭐Equipment']),
+      primaryMuscles: this.getMultiSelectArray(props['⭐Muscles Used']),
+      secondaryMuscles: [],
+      difficulty: 'Intermediate',
+      sets: '3',
+      reps: '10-12',
       rest: this.getNumberValue(props['Rest (seconds)'])?.toString(),
-      category: this.getSelectValue(props.Category),
+      category: this.getSelectValue(props['⭐Movement Type']) || 'General',
     };
   }
 

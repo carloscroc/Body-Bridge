@@ -98,7 +98,7 @@ export const syncNotionExercises = action({
       const exerciseData = {
         libraryId: `notion-${trainer.notionDatabaseId}-${notionExercise.name}`,
         name: notionExercise.name,
-        category: notionExercise.category,
+        category: notionExercise.category || 'General',
         muscleGroup: notionExercise.primaryMuscles[0] || "General",
         primaryMuscles: notionExercise.primaryMuscles,
         secondaryMuscles: notionExercise.secondaryMuscles,
