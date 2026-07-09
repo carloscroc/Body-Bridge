@@ -29,7 +29,7 @@ export const migrateTrainerData = internalMutation({
 
     for (const exercise of exercises) {
       // Skip if already has the correct trainer data
-      if (exercise.trainerFirstName === trainerFirstName && 
+      if (exercise.trainerFirstName === trainerFirstName &&
           exercise.trainerLastName === trainerLastName &&
           exercise.isActive !== false) {
         skipped++;
@@ -51,6 +51,64 @@ export const migrateTrainerData = internalMutation({
       total: exercises.length, 
       updated, 
       skipped 
+    };
+  },
+});
+
+/**
+ * Tag all Notion-sourced exercises with Jasmine Hensley as trainer
+ * This fixes the trainerFirstName/trainerLastName fields so the app filter works
+ */
+export const tagNotionAsJasmine = internalMutation({
+  args: {
+    adminSecret: v.optional(v.string()),
+  },
+  handler: async (ctx, args) => {
+    // Admin secret check
+    if (!isAdminSecret(args.adminSecret)) {
+      throw new Error("Unauthorized: admin secret required");
+    }
+
+    const trainerFirstName = "Jasmine";
+    const trainerLastName = "Hensley";
+    const sourceSystem = "notion";
+
+    // Get all Notion-sourced exercises
+    const exercises = await ctx.db
+      .query("exercises")
+      .withIndex("by_source_system", (q) => q.eq("sourceSystem", sourceSystem))
+      .collect();
+
+    console.log(`Found ${exercises.length} ${sourceSystem} exercises to update to ${trainerFirstName} ${trainerLastName}...`);
+
+    let updated = 0;
+    let skipped = 0;
+
+    for (const exercise of exercises) {
+      // Skip if already has the correct trainer data
+      if (exercise.trainerFirstName === trainerFirstName &&
+          exercise.trainerLastName === trainerLastName &&
+          exercise.isActive !== false) {
+        skipped++;
+        continue;
+      }
+
+      await ctx.db.patch(exercise._id, {
+        trainerFirstName,
+        trainerLastName,
+        isActive: true,
+      });
+      updated++;
+    }
+
+    console.log(`Updated ${updated} exercises, skipped ${skipped}`);
+
+    return {
+      success: true,
+      source: sourceSystem,
+      total: exercises.length,
+      updated,
+      skipped,
     };
   },
 });

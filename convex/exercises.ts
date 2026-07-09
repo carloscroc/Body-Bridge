@@ -217,16 +217,16 @@ export const advancedSearch = query({
       const [firstName, ...lastNameParts] = args.trainerName.trim().split(' ');
       const lastName = lastNameParts.join(' ');
       try {
-        const trainerQueryBuilder = ctx.db.query("exercises");
-        const trainerFiltered = await trainerQueryBuilder.withIndex("by_trainer_and_active", (q: any) => {
+        const trainerFiltered = await trainerQueryBuilder.withIndex("by_trainer", (q: any) => {
           let indexQuery = q;
           if (firstName) indexQuery = indexQuery.eq("trainerFirstName", firstName);
           if (lastName) indexQuery = indexQuery.eq("trainerLastName", lastName);
-          if (!showInactive) indexQuery = indexQuery.eq("isActive", true);
           return indexQuery;
         }).collect();
+        // Filter by isActive in-memory
+        const activeTrainerFiltered = showInactive ? trainerFiltered : trainerFiltered.filter((ex: any) => ex.isActive !== false);
         // Sort by difficultyOrder then name in-memory
-        trainerFiltered.sort((a, b) => {
+        activeTrainerFiltered.sort((a, b) => {
           if ((a.difficultyOrder ?? 0) !== (b.difficultyOrder ?? 0)) {
             return (a.difficultyOrder ?? 0) - (b.difficultyOrder ?? 0);
           }
@@ -235,11 +235,11 @@ export const advancedSearch = query({
         // Manual pagination
         const startIdx = cursorNon ? 0 : 0;
         const endIndex = startIdx + numItemsNon;
-        const paginatedPage = trainerFiltered.slice(startIdx, endIndex);
+        const paginatedPage = activeTrainerFiltered.slice(startIdx, endIndex);
         paginatedResult = {
           page: paginatedPage,
-          isDone: endIndex >= trainerFiltered.length,
-          continueCursor: endIndex >= trainerFiltered.length ? undefined : String(endIndex),
+          isDone: endIndex >= activeTrainerFiltered.length,
+          continueCursor: endIndex >= activeTrainerFiltered.length ? undefined : String(endIndex),
         };
       } catch (error) {
         // If trainer filter fails (index issues or missing data), log and return empty
@@ -249,8 +249,9 @@ export const advancedSearch = query({
           isDone: true,
           continueCursor: undefined,
         };
-      }
+        };
     } else {
+      // No trainer filter, use difficulty index for sorting
       // No trainer filter, use difficulty index for sorting
       // Note: Cannot use .withIndex() after .filter(), so we filter in-memory
       const allResults = await ctx.db.query("exercises")

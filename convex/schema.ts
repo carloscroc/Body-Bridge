@@ -132,7 +132,7 @@ export default defineSchema({
     .index("by_difficultyOrder_name", ["difficultyOrder", "name"])
     .index("by_workoutCount", ["workoutCount"])
     .index("by_coach", ["coachId"])
-    .index("by_trainer_and_active", ["trainerFirstName", "trainerLastName", "isActive"])
+    .index("by_trainer", ["trainerFirstName", "trainerLastName"])
     .index("by_source_system", ["sourceSystem"])
     .searchIndex("search_name", {
       searchField: "name",
