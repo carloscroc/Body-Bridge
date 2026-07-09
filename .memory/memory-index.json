@@ -6489,5 +6489,337 @@
       "project": "Body-Bridge",
       "directory": "C:\\Users\\thebe\\Downloads\\Body-Bridge"
     }
+  },
+  {
+    "id": "mem_1783533194853_9nc44es1a",
+    "timestamp": "2026-07-08T17:53:14.853Z",
+    "category": "performance",
+    "type": "build",
+    "importance": "medium",
+    "summary": "Build completed successfully in unknowns",
+    "content": "Build Status: SUCCESS\nDuration: unknowns\nWarnings: 0\nErrors: 0\nBundle Size: 0.00 MB\n\nBuild completed successfully",
+    "tags": [
+      "build",
+      "performance",
+      "success"
+    ],
+    "metadata": {
+      "duration": "unknown",
+      "success": true,
+      "warnings": 0,
+      "errors": 0,
+      "bundle_size": "0.00 MB"
+    }
+  },
+  {
+    "id": "mem_1783536069348_7wzt2xugt",
+    "timestamp": "2026-07-08T18:41:09.349Z",
+    "category": "context",
+    "type": "session-start",
+    "importance": "low",
+    "summary": "Session started: sess_1783536 [Body-Bridge]",
+    "content": "Session ID: sess_1783536069347\nDirectory: C:\\Users\\thebe\\Downloads\\Body-Bridge\nWorktree: C:\\Users\\thebe\\Downloads\\Body-Bridge\nProject: Body-Bridge\nStarted: 2026-07-08T18:41:09.348Z",
+    "tags": [
+      "session",
+      "start",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1783536069347",
+      "project": "Body-Bridge",
+      "directory": "C:\\Users\\thebe\\Downloads\\Body-Bridge"
+    }
+  },
+  {
+    "id": "mem_1783536088673_x3wnlby6k",
+    "timestamp": "2026-07-08T18:41:28.673Z",
+    "category": "context",
+    "type": "session-start",
+    "importance": "low",
+    "summary": "Session started: sess_1783536 [Body-Bridge]",
+    "content": "Session ID: sess_1783536088672\nDirectory: C:\\Users\\thebe\\Downloads\\Body-Bridge\nWorktree: C:\\Users\\thebe\\Downloads\\Body-Bridge\nProject: Body-Bridge\nStarted: 2026-07-08T18:41:28.673Z",
+    "tags": [
+      "session",
+      "start",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1783536088672",
+      "project": "Body-Bridge",
+      "directory": "C:\\Users\\thebe\\Downloads\\Body-Bridge"
+    }
+  },
+  {
+    "id": "mem_1783541189091_yxkyiehru",
+    "timestamp": "2026-07-08T20:06:29.091Z",
+    "category": "context",
+    "type": "session",
+    "importance": "medium",
+    "summary": "Session ended: sess_1783536 (85m) [Body-Bridge]",
+    "content": "Session ID: sess_1783536088672\nProject: Body-Bridge\nDuration: 85 minutes\nBranch: main\nFiles modified: 3\nChanged files:\n  - .memory/memory-index.json\n  - convex/exercises.ts\n  - src/screens/ExercisesView.tsx\nStarted: 2026-07-08T18:41:28.672Z\nEnded: 2026-07-08T20:06:29.091Z",
+    "tags": [
+      "session",
+      "end",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1783536088672",
+      "project": "Body-Bridge",
+      "duration_minutes": 85,
+      "branch": "main",
+      "files_modified": 3,
+      "files_list": [
+        ".memory/memory-index.json",
+        "convex/exercises.ts",
+        "src/screens/ExercisesView.tsx"
+      ]
+    }
+  },
+  {
+    "id": "mem_1783552278836_0x4yl38e9",
+    "timestamp": "2026-07-08T23:11:18.836Z",
+    "category": "performance",
+    "type": "build",
+    "importance": "medium",
+    "summary": "Build completed successfully in unknowns",
+    "content": "Build Status: SUCCESS\nDuration: unknowns\nWarnings: 0\nErrors: 0\nBundle Size: 0.00 MB\n\nBuild completed successfully",
+    "tags": [
+      "build",
+      "performance",
+      "success"
+    ],
+    "metadata": {
+      "duration": "unknown",
+      "success": true,
+      "warnings": 0,
+      "errors": 0,
+      "bundle_size": "0.00 MB"
+    }
+  },
+  {
+    "id": "mem_1783552391536_m7y1daf8z",
+    "timestamp": "2026-07-08T23:13:11.536Z",
+    "category": "performance",
+    "type": "build",
+    "importance": "medium",
+    "summary": "Build completed successfully in unknowns",
+    "content": "Build Status: SUCCESS\nDuration: unknowns\nWarnings: 0\nErrors: 0\nBundle Size: 0.00 MB\n\nBuild completed successfully",
+    "tags": [
+      "build",
+      "performance",
+      "success"
+    ],
+    "metadata": {
+      "duration": "unknown",
+      "success": true,
+      "warnings": 0,
+      "errors": 0,
+      "bundle_size": "0.00 MB"
+    }
+  },
+  {
+    "id": "mem_1783554017495_4nwwuo5y2",
+    "timestamp": "2026-07-08T23:40:17.495Z",
+    "category": "context",
+    "type": "session-start",
+    "importance": "low",
+    "summary": "Session started: sess_1783554 [Body-Bridge]",
+    "content": "Session ID: sess_1783554017494\nDirectory: C:\\Users\\thebe\\Downloads\\Body-Bridge\nWorktree: C:\\Users\\thebe\\Downloads\\Body-Bridge\nProject: Body-Bridge\nStarted: 2026-07-08T23:40:17.495Z",
+    "tags": [
+      "session",
+      "start",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1783554017494",
+      "project": "Body-Bridge",
+      "directory": "C:\\Users\\thebe\\Downloads\\Body-Bridge"
+    }
+  },
+  {
+    "id": "mem_1783554099638_2238c01s6",
+    "timestamp": "2026-07-08T23:41:39.638Z",
+    "category": "context",
+    "type": "session-start",
+    "importance": "low",
+    "summary": "Session started: sess_1783554 [Body-Bridge]",
+    "content": "Session ID: sess_1783554099637\nDirectory: C:\\Users\\thebe\\Downloads\\Body-Bridge\nWorktree: C:\\Users\\thebe\\Downloads\\Body-Bridge\nProject: Body-Bridge\nStarted: 2026-07-08T23:41:39.638Z",
+    "tags": [
+      "session",
+      "start",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1783554099637",
+      "project": "Body-Bridge",
+      "directory": "C:\\Users\\thebe\\Downloads\\Body-Bridge"
+    }
+  },
+  {
+    "id": "mem_1783554191359_hlqw2g9f0",
+    "timestamp": "2026-07-08T23:43:11.359Z",
+    "category": "context",
+    "type": "session",
+    "importance": "medium",
+    "summary": "Session ended: sess_1783554 (2m) [Body-Bridge]",
+    "content": "Session ID: sess_1783554099637\nProject: Body-Bridge\nDuration: 2 minutes\nBranch: main\nFiles modified: 2\nChanged files:\n  - .memory/memory-index.json\n  - convex/_generated/api.d.ts\nStarted: 2026-07-08T23:41:39.637Z\nEnded: 2026-07-08T23:43:11.359Z",
+    "tags": [
+      "session",
+      "end",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1783554099637",
+      "project": "Body-Bridge",
+      "duration_minutes": 2,
+      "branch": "main",
+      "files_modified": 2,
+      "files_list": [
+        ".memory/memory-index.json",
+        "convex/_generated/api.d.ts"
+      ]
+    }
+  },
+  {
+    "id": "mem_1783555954567_3lgx33ffn",
+    "timestamp": "2026-07-09T00:12:34.567Z",
+    "category": "performance",
+    "type": "build",
+    "importance": "medium",
+    "summary": "Build completed successfully in unknowns",
+    "content": "Build Status: SUCCESS\nDuration: unknowns\nWarnings: 0\nErrors: 0\nBundle Size: 0.00 MB\n\nBuild completed successfully",
+    "tags": [
+      "build",
+      "performance",
+      "success"
+    ],
+    "metadata": {
+      "duration": "unknown",
+      "success": true,
+      "warnings": 0,
+      "errors": 0,
+      "bundle_size": "0.00 MB"
+    }
+  },
+  {
+    "id": "mem_1783556032021_ee1me2l3u",
+    "timestamp": "2026-07-09T00:13:52.021Z",
+    "category": "performance",
+    "type": "build",
+    "importance": "medium",
+    "summary": "Build completed successfully in unknowns",
+    "content": "Build Status: SUCCESS\nDuration: unknowns\nWarnings: 0\nErrors: 0\nBundle Size: 0.00 MB\n\nBuild completed successfully",
+    "tags": [
+      "build",
+      "performance",
+      "success"
+    ],
+    "metadata": {
+      "duration": "unknown",
+      "success": true,
+      "warnings": 0,
+      "errors": 0,
+      "bundle_size": "0.00 MB"
+    }
+  },
+  {
+    "id": "mem_1783559916877_a0i8jzt3p",
+    "timestamp": "2026-07-09T01:18:36.877Z",
+    "category": "performance",
+    "type": "build",
+    "importance": "medium",
+    "summary": "Build completed successfully in unknowns",
+    "content": "Build Status: SUCCESS\nDuration: unknowns\nWarnings: 0\nErrors: 0\nBundle Size: 0.00 MB\n\nBuild completed successfully",
+    "tags": [
+      "build",
+      "performance",
+      "success"
+    ],
+    "metadata": {
+      "duration": "unknown",
+      "success": true,
+      "warnings": 0,
+      "errors": 0,
+      "bundle_size": "0.00 MB"
+    }
+  },
+  {
+    "id": "mem_1783598743877_sf3831cm1",
+    "timestamp": "2026-07-09T12:05:43.877Z",
+    "category": "performance",
+    "type": "build",
+    "importance": "medium",
+    "summary": "Build completed successfully in unknowns",
+    "content": "Build Status: SUCCESS\nDuration: unknowns\nWarnings: 0\nErrors: 0\nBundle Size: 0.00 MB\n\nBuild completed successfully",
+    "tags": [
+      "build",
+      "performance",
+      "success"
+    ],
+    "metadata": {
+      "duration": "unknown",
+      "success": true,
+      "warnings": 0,
+      "errors": 0,
+      "bundle_size": "0.00 MB"
+    }
+  },
+  {
+    "id": "mem_1783600178068_hfco34uob",
+    "timestamp": "2026-07-09T12:29:38.068Z",
+    "category": "context",
+    "type": "session",
+    "importance": "medium",
+    "summary": "Session ended: sess_1783599 (5m) [opencode-telegram-bot]",
+    "content": "Session ID: sess_1783599899668\nProject: opencode-telegram-bot\nDuration: 5 minutes\nBranch: main\nFiles modified: 2\nChanged files:\n  - .memory/memory-index.json\n  - convex/_generated/api.d.ts\nStarted: 2026-07-09T12:24:59.668Z\nEnded: 2026-07-09T12:29:38.066Z",
+    "tags": [
+      "session",
+      "end",
+      "auto-captured",
+      "opencode-telegram-bot"
+    ],
+    "metadata": {
+      "session_id": "sess_1783599899668",
+      "project": "opencode-telegram-bot",
+      "duration_minutes": 5,
+      "branch": "main",
+      "files_modified": 2,
+      "files_list": [
+        ".memory/memory-index.json",
+        "convex/_generated/api.d.ts"
+      ]
+    }
+  },
+  {
+    "id": "mem_1783600196611_t1cethmba",
+    "timestamp": "2026-07-09T12:29:56.611Z",
+    "category": "context",
+    "type": "session",
+    "importance": "medium",
+    "summary": "Session ended: sess_1783599 (5m) [opencode-telegram-bot]",
+    "content": "Session ID: sess_1783599899668\nProject: opencode-telegram-bot\nDuration: 5 minutes\nBranch: main\nFiles modified: 2\nChanged files:\n  - .memory/memory-index.json\n  - convex/_generated/api.d.ts\nStarted: 2026-07-09T12:24:59.668Z\nEnded: 2026-07-09T12:29:56.611Z",
+    "tags": [
+      "session",
+      "end",
+      "auto-captured",
+      "opencode-telegram-bot"
+    ],
+    "metadata": {
+      "session_id": "sess_1783599899668",
+      "project": "opencode-telegram-bot",
+      "duration_minutes": 5,
+      "branch": "main",
+      "files_modified": 2,
+      "files_list": [
+        ".memory/memory-index.json",
+        "convex/_generated/api.d.ts"
+      ]
+    }
   }
 ]
