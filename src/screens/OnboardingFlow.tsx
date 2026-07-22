@@ -23,7 +23,7 @@ import { Member, UserSettings, TrainingGoal, ExperienceLevel } from '../types';
 import CityAutocomplete from '../components/CityAutocomplete';
 
 const MagneticButton = ({ children, onClick, className, disabled }: any) => {
-  const ref = useRef<HTMLButtonElement>(null);
+  const buttonRef = useRef<HTMLButtonElement>(null);
   const x = useMotionValue(0);
   const y = useMotionValue(0);
 
@@ -33,7 +33,7 @@ const MagneticButton = ({ children, onClick, className, disabled }: any) => {
   const handleMouseMove = (e: React.MouseEvent) => {
     if (typeof window !== 'undefined' && window.innerWidth < 768) return;
     const { clientX, clientY } = e;
-    const { left, top, width, height } = ref.current!.getBoundingClientRect();
+    const { left, top, width, height } = buttonRef.current!.getBoundingClientRect();
     const centerX = left + width / 2;
     const centerY = top + height / 2;
     x.set(clientX - centerX);
@@ -47,7 +47,7 @@ const MagneticButton = ({ children, onClick, className, disabled }: any) => {
 
   return (
     <motion.button
-      ref={ref}
+      ref={buttonRef}
       onClick={onClick}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}

@@ -128,7 +128,7 @@ export function resolveHighEndExerciseImage(exercise: any): string {
   }
 
   const name = (exercise.name || "").toLowerCase();
-  const muscle = (exercise.muscleGroup || "").toLowerCase();
+  const muscle = (exercise.bodyRegion || "").toLowerCase();
   const equipment = getEquipment(name);
 
   // 1. Try Exact Exercise Keyword Match

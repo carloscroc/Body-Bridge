@@ -410,7 +410,7 @@ const PremiumExerciseCard: React.FC<PremiumExerciseCardProps> = ({
             }}
           >
             <Target size={11} className="text-white/60" />
-            <span className="text-[10px] text-white/60 truncate">{exercise.muscleGroup}</span>
+            <span className="text-[10px] text-white/60 truncate">{exercise.bodyRegion}</span>
             <span className="text-[10px] text-white/30">•</span>
             <span className="text-[10px] text-white/60">{exercise.category}</span>
           </motion.div>

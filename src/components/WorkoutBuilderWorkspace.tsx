@@ -102,7 +102,7 @@ const WorkoutBuilderWorkspace: React.FC<WorkoutBuilderWorkspaceProps> = ({
           intensity: 'Medium',
           image: exercise?.image || 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&q=80&w=800',
           format: WorkoutFormat.USER_PACED,
-          focus: exercise ? [exercise.muscleGroup] : [],
+          focus: exercise ? [exercise.bodyRegion] : [],
           warmupExercises: [],
           exercises: [],
           cooldownExercises: [],
@@ -144,7 +144,7 @@ const WorkoutBuilderWorkspace: React.FC<WorkoutBuilderWorkspaceProps> = ({
     exerciseId: exercise?.id || '',
     name: exercise?.name || '',
     image: exercise?.image || '',
-    muscleGroup: exercise?.muscleGroup || '',
+    bodyRegion: exercise?.bodyRegion || '', // Renamed from muscleGroup for clarity
     sets: useDuration ? undefined : sets,
     reps: useDuration ? undefined : `${reps} reps`,
     duration: useDuration ? duration : undefined,
@@ -292,7 +292,7 @@ const WorkoutBuilderWorkspace: React.FC<WorkoutBuilderWorkspaceProps> = ({
       coachNotes: activeWorkout.notes || '',
       exercises: combined.map(we => ({
         id: we.exerciseId, name: we.name, image: we.image, category: 'Custom',
-        muscleGroup: we.muscleGroup, equipment: 'Various', difficulty: 'Medium',
+        bodyRegion: we.bodyRegion, equipment: 'Various', difficulty: 'Medium',
         duration: we.duration, reps: we.reps, videoUrl: we.videoUrl
       })),
       isCustom: true
@@ -401,7 +401,7 @@ const WorkoutBuilderWorkspace: React.FC<WorkoutBuilderWorkspaceProps> = ({
             </div>
             <div>
               <h3 className="text-xl font-bold text-white tracking-tight leading-none mb-2">{exercise.name}</h3>
-              <p className="text-[11px] font-black uppercase tracking-widest text-white/30">{exercise.muscleGroup} • {exercise.difficulty}</p>
+              <p className="text-[11px] font-black uppercase tracking-widest text-white/30">{exercise.bodyRegion} • {exercise.difficulty}</p>
             </div>
           </div>
 
@@ -549,7 +549,7 @@ const WorkoutBuilderWorkspace: React.FC<WorkoutBuilderWorkspaceProps> = ({
               onClick={() => {
                 const d = new Date().toISOString();
                 setActiveWorkout({
-                  id: `draft_${Date.now()}`, title: 'NEW WORKOUT', description: '', intensity: 'Medium', image: exercise.image, focus: [exercise.muscleGroup], warmupExercises: [], exercises: [], cooldownExercises: [], equipment: [exercise.equipment], createdAt: d, updatedAt: d, totalDuration: '0 min', estimatedKcal: 0
+                  id: `draft_${Date.now()}`, title: 'NEW WORKOUT', description: '', intensity: 'Medium', image: exercise.image, focus: [exercise.bodyRegion], warmupExercises: [], exercises: [], cooldownExercises: [], equipment: [exercise.equipment], createdAt: d, updatedAt: d, totalDuration: '0 min', estimatedKcal: 0
                 });
                 setTitleValue('NEW WORKOUT');
               }}

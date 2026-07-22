@@ -6,10 +6,10 @@
   "scripts": {
     "config:generate": "node scripts/generateAppConfig.cjs",
     "postinstall": "node scripts/patch-capacitor-android.cjs",
-    "dev": "npm run config:generate && npm run dev:all",
+    "dev": "npm run dev:all",
     "dev:app": "concurrently --kill-others --names \"SERVER,CLIENT\" --prefix-colors \"blue,green\" \"npm run dev:server\" \"npm run dev:client\"",
     "dev:convex": "node scripts/runConvexDev.mjs",
-    "dev:all": "concurrently --kill-others --names \"CONVEX,SERVER,CLIENT\" --prefix-colors \"yellow,blue,green\" \"npm run dev:convex\" \"npm run dev:server\" \"npm run dev:client\"",
+    "dev:all": "npm run config:generate && concurrently --kill-others --names \"CONVEX,SERVER,CLIENT\" --prefix-colors \"yellow,blue,green\" \"npm run dev:convex\" \"npm run dev:server\" \"npm run dev:client\"",
     "dev:client": "node scripts/runViteDev.mjs",
     "dev:server": "node server/server.js",
     "deploy:convex": "node scripts/deployConvex.mjs",

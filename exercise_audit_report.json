@@ -1,0 +1,306 @@
+{
+  "summary": {
+    "totalExercises": 1100,
+    "uniqueExercises": 818,
+    "confirmedDuplicates": 161,
+    "probableDuplicates": 58,
+    "legitimateVariants": 5
+  },
+  "duplicateGroups": [
+    {
+      "canonicalCandidateId": "k575jbtjpqba3tfr4012n6bn4580774m",
+      "duplicateIds": [
+        "k5745x7z1tjxfcs3e1mjt8pyrd80765h"
+      ],
+      "reason": "exact name match",
+      "differences": [
+        "libraryId: 9abf568c-6840-414b-b82e-53a3ccb3a16c",
+        "libraryId: 84e88faa-ecf0-497e-b6db-5b8c575bc6aa"
+      ],
+      "trainerSpecificUrls": {
+        "k575jbtjpqba3tfr4012n6bn4580774m": "https://www.youtube.com/watch?v=wm47Swzn_98",
+        "k5745x7z1tjxfcs3e1mjt8pyrd80765h": "https://www.youtube.com/watch?v=wm47Swzn_98"
+      },
+      "confidence": "confirmed"
+    },
+    {
+      "canonicalCandidateId": "k57cecwaynpd588j8ccbn5z9c18076ej",
+      "duplicateIds": [
+        "k5741g0aq1enzkfgvvjg8nhxfd806jqr"
+      ],
+      "reason": "exact name match",
+      "differences": [
+        "libraryId: 9bcb5fa9-c5e3-4ed3-bee9-99b906d74df4",
+        "libraryId: 4fbef52c-8530-4601-afd6-e195b5f3a8f8"
+      ],
+      "trainerSpecificUrls": {
+        "k57cecwaynpd588j8ccbn5z9c18076ej": "https://www.youtube.com/watch?v=h_yZV27H684",
+        "k5741g0aq1enzkfgvvjg8nhxfd806jqr": "https://www.youtube.com/watch?v=h_yZV27H684"
+      },
+      "confidence": "confirmed"
+    },
+    {
+      "canonicalCandidateId": "k574jzpyzrxytk0drstkgxr531806sah",
+      "duplicateIds": [
+        "k57dncafh4azdmgxn20yskv721807wp6"
+      ],
+      "reason": "exact name match",
+      "differences": [
+        "libraryId: 5336cf14-9651-4576-ab7e-35a8fc1a877d",
+        "libraryId: 61ef59ec-1356-4170-9b37-f95e1ab98c62"
+      ],
+      "trainerSpecificUrls": {
+        "k574jzpyzrxytk0drstkgxr531806sah": "https://www.youtube.com/watch?v=zDSvdyyxH4w",
+        "k57dncafh4azdmgxn20yskv721807wp6": "https://www.youtube.com/watch?v=zDSvdyyxH4w"
+      },
+      "confidence": "confirmed"
+    },
+    {
+      "canonicalCandidateId": "k577g7zfrbstc829e6tftxw285807r57",
+      "duplicateIds": [
+        "k57bm98gdaqv9a539x49cbdpex807j7d"
+      ],
+      "reason": "exact name match",
+      "differences": [
+        "libraryId: 296cbbaa-b5f1-4554-b1ce-534f07f622f8",
+        "libraryId: b6082b4c-bc64-4d26-b87d-4e89779df331"
+      ],
+      "trainerSpecificUrls": {
+        "k577g7zfrbstc829e6tftxw285807r57": "https://www.youtube.com/watch?v=aEgyCi1J1qI&t=82s",
+        "k57bm98gdaqv9a539x49cbdpex807j7d": "https://www.youtube.com/watch?v=aEgyCi1J1qI&t=82s"
+      },
+      "confidence": "confirmed"
+    },
+    {
+      "canonicalCandidateId": "k578x1vx82ry3a7830rg3zrjw1806t91",
+      "duplicateIds": [
+        "k574hfntxwv1qcmnwqfe0j83s1806e5h"
+      ],
+      "reason": "exact name match",
+      "differences": [
+        "libraryId: da11699b-ebb3-4c21-a420-92ccccf7db42",
+        "libraryId: ca56f15e-5b64-4003-a18b-19d40a2bc90a"
+      ],
+      "trainerSpecificUrls": {},
+      "confidence": "confirmed"
+    },
+    {
+      "canonicalCandidateId": "k57bjrsqveeet6qq07dsepgs7x8069xn",
+      "duplicateIds": [
+        "k574eexz5v8c4zhjtv9drsx38n807fqr"
+      ],
+      "reason": "exact name match",
+      "differences": [
+        "libraryId: 04f11588-4190-41a2-87b2-470284cd2d58",
+        "libraryId: ec8223f0-eff2-4562-8d13-74fdd054b21b"
+      ],
+      "trainerSpecificUrls": {
+        "k57bjrsqveeet6qq07dsepgs7x8069xn": "https://www.youtube.com/watch?v=h1xQabdHdes",
+        "k574eexz5v8c4zhjtv9drsx38n807fqr": "https://www.youtube.com/watch?v=h1xQabdHdes"
+      },
+      "confidence": "confirmed"
+    },
+    {
+      "canonicalCandidateId": "k574peewxefhqb4j63pnw91awn806at2",
+      "duplicateIds": [
+        "k57421jajrzq5pjpt0dqn57tmh807pew"
+      ],
+      "reason": "exact name match",
+      "differences": [
+        "libraryId: 98561594-7950-402d-8662-8084cda956ce",
+        "libraryId: 532eae03-9df5-45c4-8064-85a729e85d23"
+      ],
+      "trainerSpecificUrls": {
+        "k574peewxefhqb4j63pnw91awn806at2": "https://www.youtube.com/watch?v=ScGo0VV85qA",
+        "k57421jajrzq5pjpt0dqn57tmh807pew": "https://www.youtube.com/watch?v=ScGo0VV85qA"
+      },
+      "confidence": "confirmed"
+    },
+    {
+      "canonicalCandidateId": "k570k7y8a58bnqz297cj54yyxs806t8b",
+      "duplicateIds": [
+        "k576v2b3z1dba3b8y1nmz15s0s807z36"
+      ],
+      "reason": "exact name match",
+      "differences": [
+        "libraryId: b978c570-e683-4810-ba8e-3a3689e7d80f",
+        "libraryId: a63a5fd1-9078-4388-8f27-9d0c491b9542"
+      ],
+      "trainerSpecificUrls": {},
+      "confidence": "confirmed"
+    },
+    {
+      "canonicalCandidateId": "k572vy3e3s9721f22kxw9q3cqn806vcm",
+      "duplicateIds": [
+        "k57dbhx334y5m7jj9jmwnex2zd807btj"
+      ],
+      "reason": "exact name match",
+      "differences": [
+        "libraryId: b1cb1921-aa1b-40d5-ad9b-c9457bc81720",
+        "libraryId: 96a5d2d3-dae4-4d50-b955-74bc42304f66"
+      ],
+      "trainerSpecificUrls": {},
+      "confidence": "confirmed"
+    },
+    {
+      "canonicalCandidateId": "k577favcrjt3wm1n49xq6fq3gs807eke",
+      "duplicateIds": [
+        "k5776cymehjrcqnb9btvc1cb4n807hk4"
+      ],
+      "reason": "exact name match",
+      "differences": [
+        "libraryId: c7498982-fe90-4628-a599-b5a022e3ad7c",
+        "libraryId: 79e7b5b2-cdea-4e5a-8f0b-afcd1a13e1be"
+      ],
+      "trainerSpecificUrls": {},
+      "confidence": "confirmed"
+    }
+  ],
+  "probableGroups": [
+    {
+      "ids": [
+        "k57c8y7awhmt9h1vwz9a64fsdx80699w",
+        "k574ekta4a8xqd4m4z9j5z3cv5806keb"
+      ],
+      "reason": "multiple similarity criteria met",
+      "whyProbable": "Name ratio: 0.33, primary muscles match, equipment different",
+      "confidence": "low"
+    },
+    {
+      "ids": [
+        "k579nta1np7b7dj73tmjqw9ev9807n5h",
+        "k57dcj5zz3ev0rvc1gz9yqe6pn806b4z"
+      ],
+      "reason": "multiple similarity criteria met",
+      "whyProbable": "Name ratio: 0.34, primary muscles match, equipment different",
+      "confidence": "low"
+    },
+    {
+      "ids": [
+        "k57242ysa5pjv36a9dm76f48pd8067hq",
+        "k57cgjwm7hzsgpjtv8d04pbf1n807czr"
+      ],
+      "reason": "multiple similarity criteria met",
+      "whyProbable": "Name ratio: 0.25, primary muscles match, equipment different",
+      "confidence": "low"
+    },
+    {
+      "ids": [
+        "k574jnfd9342ctjnanczmf81vx806zx4",
+        "k57bnk93fabdn3kdwd37ebqes9806kz1"
+      ],
+      "reason": "multiple similarity criteria met",
+      "whyProbable": "Name ratio: 0.37, primary muscles match, equipment different",
+      "confidence": "low"
+    },
+    {
+      "ids": [
+        "k57bgbszzw2zr4byxj598m5k1x8062w8",
+        "k577cby9rbtjtej3a5cszhv19x807jcv"
+      ],
+      "reason": "multiple similarity criteria met",
+      "whyProbable": "Name ratio: 0.32, primary muscles match, equipment different",
+      "confidence": "low"
+    },
+    {
+      "ids": [
+        "k577q4kfjyyzsz0knx2vka1xen80670d",
+        "k577egywms2ak7xggnart3kr21807bty"
+      ],
+      "reason": "multiple similarity criteria met",
+      "whyProbable": "Name ratio: 0.40, primary muscles match, equipment different",
+      "confidence": "low"
+    },
+    {
+      "ids": [
+        "k573c0xj0rc9daj3nzf0946ets8072z7",
+        "k570rnhznycn4nwjk8qb7jan6d806aga"
+      ],
+      "reason": "multiple similarity criteria met",
+      "whyProbable": "Name ratio: 0.47, primary muscles match, equipment different",
+      "confidence": "low"
+    },
+    {
+      "ids": [
+        "k578gy6fkcvsg2we3p9e9q1x2d807jwb",
+        "k57e3a75xrn87y0wqhhs760zr580708t"
+      ],
+      "reason": "multiple similarity criteria met",
+      "whyProbable": "Name ratio: 0.23, primary muscles match, equipment different",
+      "confidence": "low"
+    },
+    {
+      "ids": [
+        "k57bz30aa4zrqv1w7846vwz44s806zqr",
+        "k57fhzw9fwyqt8zcy3rcthh8m1807fcp"
+      ],
+      "reason": "multiple similarity criteria met",
+      "whyProbable": "Name ratio: 0.45, primary muscles match, equipment different",
+      "confidence": "low"
+    },
+    {
+      "ids": [
+        "k571fdmqpe2s014jw43rpbpatx806fpa",
+        "k5793fckhcaqh7v8b4wx06y9qn806ffa"
+      ],
+      "reason": "multiple similarity criteria met",
+      "whyProbable": "Name ratio: 0.38, primary muscles match, equipment different",
+      "confidence": "low"
+    }
+  ],
+  "legitimateVariants": [
+    {
+      "ids": [
+        "k574jzpyzrxytk0drstkgxr531806sah",
+        "k57djdfsrt06rtz599s6h64q59807g3s",
+        "k57dncafh4azdmgxn20yskv721807wp6",
+        "k574jw3vcbexcrrfhkmsed1cq98066w5"
+      ],
+      "reason": "different equipment produces distinct movement",
+      "whyDistinct": "Base exercise crunch with equipment variants: [\"['machine']: 2 exercises\", \"['cable']: 2 exercises\"]"
+    },
+    {
+      "ids": [
+        "k576d0q2mebgft59n780bpd2g5806m7m",
+        "k57052v3dxxgg6t3w47e8n84f980682k",
+        "k57110pd3484ge99gwxkyg735h807f6e",
+        "k57c7bxy7xfhegfpq2va5fhy9h807bjm"
+      ],
+      "reason": "different equipment produces distinct movement",
+      "whyDistinct": "Base exercise bench press with equipment variants: [\"['barbell', 'bench']: 2 exercises\", \"['bench', 'dumbbell']: 1 exercises\", \"['machine']: 1 exercises\"]"
+    },
+    {
+      "ids": [
+        "k57dy67vatea3n8b617mepqb59807n1j",
+        "k578451kcmm3p81kgdyrsxneyx806hbm",
+        "k5742bjbfkkhmdf99cc4zntwfn807wf4"
+      ],
+      "reason": "different equipment produces distinct movement",
+      "whyDistinct": "Base exercise shrug with equipment variants: [\"['barbell']: 2 exercises\", \"['dumbbell']: 1 exercises\"]"
+    },
+    {
+      "ids": [
+        "k579z0txx3g10v0kgv0spx17s5806nkn",
+        "k579qs3n4n4n5hcavj5bz2rfyh807w2k",
+        "k573y5f30ns048y5w5fxep84w9806a20"
+      ],
+      "reason": "different equipment produces distinct movement",
+      "whyDistinct": "Base exercise squat to a bench with equipment variants: [\"['barbell']: 2 exercises\", \"['dumbbell']: 1 exercises\"]"
+    },
+    {
+      "ids": [
+        "k57537rxyk00sxaagskc1nvkcs8078j9",
+        "k57f627pm8efr6g88mr3zkpw3h80708n",
+        "k574ewtfjp9ewp9h5wa5njg6s580663d"
+      ],
+      "reason": "different equipment produces distinct movement",
+      "whyDistinct": "Base exercise reverse crunch with equipment variants: [\"['cable']: 2 exercises\", \"['none']: 1 exercises\"]"
+    }
+  ],
+  "uniqueExercisesCount": 818,
+  "recommendations": [
+    "Merge 161 confirmed duplicate groups into canonical exercises",
+    "Review 58 probable groups manually",
+    "Keep 5 legitimate variant groups separate"
+  ]
+}

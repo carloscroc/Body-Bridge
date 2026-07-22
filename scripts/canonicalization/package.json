@@ -1,0 +1,14 @@
+{
+  "name": "body-bridge-canonicalization-scripts",
+  "version": "1.0.0",
+  "description": "Scripts for generating and validating canonicalization plans",
+  "type": "module",
+  "scripts": {
+    "analyze": "node analyzeExport.cjs",
+    "generate": "node generatePlan.cjs",
+    "validate": "node validatePlan.cjs"
+  },
+  "dependencies": {
+    "crypto": "^1.0.1"
+  }
+}

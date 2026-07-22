@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 const distAssetsPath = path.resolve(__dirname, '..', 'dist', 'assets');
-const expectedUrl = 'https://groovy-pig-414.convex.cloud';
+const expectedUrl = 'https://upbeat-chickadee-781.convex.cloud';
 const leakedLocalUrl = '127.0.0.1:3210';
 
 if (!fs.existsSync(distAssetsPath)) {

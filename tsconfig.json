@@ -31,6 +31,8 @@
   },
   "exclude": [
     "convex/**/*.ts",
-    "convex/**/*.tsx"
+    "convex/**/*.tsx",
+    "tools/plane-testing/**/*",
+    "scripts/**/*"
   ]
 }

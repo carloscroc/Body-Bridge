@@ -240,7 +240,7 @@ const UserPacedPlayer: React.FC<UserPacedPlayerProps> = ({
                     <h3 className="text-3xl font-black text-white mb-2 tracking-tight leading-tight">{currentExercise.name}</h3>
                     <div className="flex items-center gap-3">
                       <span className="px-3 py-1 rounded-full bg-white/10 text-white/80 text-[10px] font-bold uppercase tracking-widest">{currentExercise.category}</span>
-                      <span className="px-3 py-1 rounded-full bg-white/10 text-white/80 text-[10px] font-bold uppercase tracking-widest">{currentExercise.muscleGroup}</span>
+                      <span className="px-3 py-1 rounded-full bg-white/10 text-white/80 text-[10px] font-bold uppercase tracking-widest">{currentExercise.bodyRegion}</span>
                     </div>
                   </div>
 

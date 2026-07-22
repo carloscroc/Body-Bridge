@@ -1,4 +1,4 @@
-const targetUrl = 'https://groovy-pig-414.convex.cloud';
+const targetUrl = 'https://upbeat-chickadee-781.convex.cloud';
 const fatal = process.argv.includes('--fatal');
 
 async function main() {

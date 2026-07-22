@@ -1,6 +1,6 @@
 /**
  * Standalone auth-flow probe.
- * Runs against PRODUCTION Convex (groovy-pig-414) to see exactly which step
+ * Runs against DEVELOPMENT Convex (upbeat-chickadee-781) to see exactly which step
  * fails: signIn → JWT present → /api/query auth → getOrCreateUser mutation →
  * completeOnboarding mutation.
  *
@@ -11,7 +11,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const CONVEX_URL = 'https://groovy-pig-414.convex.cloud';
+const CONVEX_URL = 'https://upbeat-chickadee-781.convex.cloud';
 const CONVEX_AUTH_URL = CONVEX_URL + '/api/auth';
 
 const ts = Date.now();

@@ -9,7 +9,7 @@ test('auth flow and onboarding validation', async ({ page }) => {
   console.log(`Starting test for user: ${email}`);
 
   // 1. Navigate to landing page
-  await page.goto('http://localhost:7770', { waitUntil: 'networkidle' });
+  await page.goto('http://localhost:7770', { waitUntil: 'domcontentloaded' });
   
   // Wait for initial load
   await expect(page.locator('h1')).toContainText('BODY BRIDGE', { timeout: 15000 });

@@ -4,6 +4,7 @@ import { api } from '@convex/_generated/api';
 import { Exercise, WorkoutExercise } from '../types';
 import { Search, X, Dumbbell, Loader2 } from 'lucide-react';
 import { PremiumExerciseGrid } from './PremiumExerciseCard';
+import ExerciseDetailModal from './ExerciseDetailModal';
 import { resolveHighEndExerciseImage } from '../utils/imageResolver';
 
 interface ExercisePickerProps {
@@ -23,7 +24,7 @@ function mapExercise(ex: any): Exercise {
     name: ex.name,
     image: ex.imageUrl || '',
     category: ex.category,
-    muscleGroup: ex.muscleGroup,
+    bodyRegion: ex.bodyRegion, // Renamed from muscleGroup for clarity
     agonistMuscles: [
       ...(ex.primaryMuscles || []),
       ...(ex.secondaryMuscles || []),
@@ -49,6 +50,7 @@ const ExercisePicker: React.FC<ExercisePickerProps> = ({
   const [searchQuery, setSearchQuery] = useState('');
   const [activeCategory, setActiveCategory] = useState('All');
   const [selectedExercise, setSelectedExercise] = useState<Exercise | null>(null);
+  const [modalExercise, setModalExercise] = useState<Exercise | null>(null);
 
   // --- Pagination state ---
   const [cursor, setCursor] = useState<string | undefined>(undefined);
@@ -70,7 +72,7 @@ const ExercisePicker: React.FC<ExercisePickerProps> = ({
 
   // Fetch current page from backend
   const result = useQuery(
-    api.exercises.advancedSearch,
+    api.trainerExercises.listExercisesForTrainer,
     isOpen
       ? {
           query: queryArg,
@@ -125,7 +127,7 @@ const ExercisePicker: React.FC<ExercisePickerProps> = ({
       exerciseId: exercise.id,
       name: exercise.name,
       image: exercise.image,
-      muscleGroup: exercise.muscleGroup,
+      bodyRegion: exercise.bodyRegion, // Renamed from muscleGroup for clarity
       sets: hasDuration ? undefined : 3,
       reps: hasDuration ? undefined : reps,
       duration: hasDuration ? exercise.duration : undefined,
@@ -134,6 +136,7 @@ const ExercisePicker: React.FC<ExercisePickerProps> = ({
     };
     onExerciseAdd(workoutExercise);
     setSelectedExercise(null);
+    setModalExercise(null);
   };
 
   const showLoadMore = paginationStatus === 'CanLoadMore' && exercises.length > 0;
@@ -226,7 +229,10 @@ const ExercisePicker: React.FC<ExercisePickerProps> = ({
               <PremiumExerciseGrid
                 exercises={exercises}
                 selectedId={selectedExercise?.id || null}
-                onSelect={(exercise) => setSelectedExercise(exercise)}
+                onSelect={(exercise) => {
+                  setSelectedExercise(exercise);
+                  setModalExercise(exercise);
+                }}
                 onAdd={(exercise) => handleAddExercise(exercise)}
               />
 
@@ -255,6 +261,20 @@ const ExercisePicker: React.FC<ExercisePickerProps> = ({
             </>
           )}
         </div>
+
+        {/* Exercise Detail Modal */}
+        {modalExercise && (
+          <ExerciseDetailModal
+            exercise={modalExercise}
+            onClose={() => {
+              setModalExercise(null);
+              setSelectedExercise(null);
+            }}
+            onAddToWorkout={(exercise) => {
+              handleAddExercise(exercise);
+            }}
+          />
+        )}
       </div>
     </div>
   );

@@ -1,8 +1,8 @@
-import React, { useMemo, forwardRef } from 'react';
+import React, { useMemo, forwardRef, useCallback, type Ref } from 'react';
 import { resolveVideoSource } from "../utils/videoSource";
 
 type Props = {
-  source: string | undefined | null;
+  videoUrl: string | undefined | null;
   className?: string;
   poster?: string;
   autoPlay?: boolean;
@@ -11,11 +11,50 @@ type Props = {
   playsInline?: boolean;
   preload?: string;
   style?: React.CSSProperties;
+  onLoadStart?: () => void;
+  onCanPlay?: () => void;
+  onReady?: () => void;
+  onPlay?: () => void;
+  onPause?: () => void;
 };
 
 const VideoPlayer = forwardRef<HTMLVideoElement, Props>(function VideoPlayer(props, ref) {
-  const { source, className, poster, autoPlay = false, muted = false, controls = true, playsInline = true, preload = "metadata", style } = props;
-  const resolved = useMemo(() => resolveVideoSource(source), [source]);
+  const { 
+    videoUrl, 
+    className, 
+    poster, 
+    autoPlay = false, 
+    muted = false, 
+    controls = true, 
+    playsInline = true, 
+    preload = "metadata", 
+    style,
+    onLoadStart,
+    onCanPlay,
+    onReady,
+    onPlay,
+    onPause
+  } = props;
+  
+  const resolved = useMemo(() => resolveVideoSource(videoUrl), [videoUrl]);
+  
+  const handleLoadStart = useCallback(() => {
+    if (onLoadStart) onLoadStart();
+  }, [onLoadStart]);
+
+  const handleCanPlay = useCallback(() => {
+    if (onReady) onReady();
+    if (onCanPlay) onCanPlay();
+  }, [onReady, onCanPlay]);
+
+  const handlePlay = useCallback(() => {
+    if (onPlay) onPlay();
+  }, [onPlay]);
+
+  const handlePause = useCallback(() => {
+    if (onPause) onPause();
+  }, [onPause]);
+
   if (!resolved) return null;
 
   // Prefer iframe-like sources if given; otherwise render a simple HTML5 video
@@ -29,10 +68,7 @@ const VideoPlayer = forwardRef<HTMLVideoElement, Props>(function VideoPlayer(pro
         style={{ width: '100%', height: '100%', border: 0, ...style }}
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
         allowFullScreen
-        onLoad={() => {
-           console.log('[VIDEO DEBUG] iframe onLoad');
-           if ((props as any).onReady) (props as any).onReady();
-        }}
+        onLoad={handleLoadStart}
       />
     );
   }
@@ -50,12 +86,10 @@ const VideoPlayer = forwardRef<HTMLVideoElement, Props>(function VideoPlayer(pro
       playsInline={playsInline}
       preload={preload as any}
       style={{ width: '100%', height: '100%', ...style }}
-      onLoadStart={() => {
-        if ((props as any).onLoadStart) (props as any).onLoadStart();
-      }}
-      onCanPlay={() => {
-        if ((props as any).onReady) (props as any).onReady();
-      }}
+      onLoadStart={handleLoadStart}
+      onCanPlay={handleCanPlay}
+      onPlay={handlePlay}
+      onPause={handlePause}
     />
   );
 });

@@ -1,5 +1,3 @@
-
-
 export interface NotionPage {
   id: string;
   properties: Record<string, any>;
@@ -8,6 +6,7 @@ export interface NotionPage {
 export interface NotionExercise {
   name: string;
   videoUrl?: string;
+  notionPageId?: string;
   instructions: string[];
   equipment: string[];
   primaryMuscles: string[];
@@ -52,6 +51,7 @@ export class NotionExerciseService {
     return {
       name: this.getTitleText(props.Name),
       videoUrl: this.getUrlText(props['⭐Video']),
+      notionPageId: page.id,
       instructions: this.getRichTextArray(props['⭐Exercise Instructions']),
       equipment: this.getMultiSelectArray(props['⭐Equipment']),
       primaryMuscles: this.getMultiSelectArray(props['⭐Muscles Used']),

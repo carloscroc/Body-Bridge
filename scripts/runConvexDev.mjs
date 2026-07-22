@@ -64,6 +64,8 @@ if (!CONVEX_DEPLOYMENT) {
   cleanEnv.CONVEX_SELF_HOSTED_URL = CONVEX_SELF_HOSTED_URL || 'http://localhost:8443';
 }
 cleanEnv.CONVEX_SITE_URL = CONVEX_SITE_URL || 'http://127.0.0.1:3211';
+cleanEnv.CONVEX_LOCAL_BACKEND_STARTUP_TIMEOUT_SECS =
+  cleanEnv.CONVEX_LOCAL_BACKEND_STARTUP_TIMEOUT_SECS || '120';
 
 if (!cleanEnv.JWT_PRIVATE_KEY || !cleanEnv.JWKS) {
   const localAuthKeys = generateLocalAuthKeys();
@@ -84,6 +86,9 @@ function runConvex(args) {
 
 function startLocalDevServer() {
   console.log('[dev:convex] Starting local Convex development server...');
+  console.log(
+    `[dev:convex] Local backend startup timeout: ${cleanEnv.CONVEX_LOCAL_BACKEND_STARTUP_TIMEOUT_SECS}s`
+  );
   const child = runConvex([
     'dev',
     '--typecheck', 'disable',

@@ -271,7 +271,7 @@ const ExerciseDetail: React.FC<ExerciseDetailProps> = ({
       <div className="flex-1 bg-black pt-12 overflow-y-auto custom-scrollbar pb-40">
         <div className="px-10 grid grid-cols-3 gap-2 mb-16 animate-silk-up" style={{ animationDelay: '0.3s' }}>
           {[
-            { label: 'BODY AREA', value: exercise.muscleGroup, icon: <Target size={14} /> },
+            { label: 'BODY AREA', value: exercise.bodyRegion, icon: <Target size={14} /> },
             { label: 'EQUIPMENT', value: exercise.equipment, icon: <Dumbbell size={14} /> },
             { label: 'LEVEL', value: exercise.difficulty, icon: <Clock size={14} /> }
           ].map((fact, i) => (

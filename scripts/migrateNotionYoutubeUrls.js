@@ -10,7 +10,7 @@ import { ConvexHttpClient } from 'convex/browser';
 dotenv.config({ path: '.env.local' });
 
 const NOTION_DATABASE_ID = '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';
-const CONVEX_URL = process.env.VITE_CONVEX_URL || 'https://groovy-pig-414.convex.cloud';
+const CONVEX_URL = process.env.VITE_CONVEX_URL || 'https://upbeat-chickadee-781.convex.cloud';
 const ADMIN_SECRET = process.env.ADMIN_SCRIPT_SECRET || 'testsecret123';
 const NOTION_ACCESS_TOKEN = process.env.NOTION_ACCESS_TOKEN;
 

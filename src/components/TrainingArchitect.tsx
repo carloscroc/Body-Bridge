@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
-import { useMutation, useQuery } from 'convex/react';
+import { useMutation } from 'convex/react';
 import { api } from '@convex/_generated/api';
 import { X, Plus, Dumbbell, Flame, Clock, ChevronDown, ChevronUp, Sparkles, Copy, Check, ImageIcon, Upload, Trash2 } from 'lucide-react';
 import { UserWorkout, WorkoutExercise } from '../types';
@@ -52,7 +52,6 @@ const TrainingArchitect: React.FC<TrainingArchitectProps> = ({
 }) => {
   const createProgramMutation = useMutation(api.programs.createProgram);
   const addToPlanMutation = useMutation(api.userPlans.addToPlan);
-  const exercisesQuery = useQuery(api.exercises.advancedSearch, {});
   
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');

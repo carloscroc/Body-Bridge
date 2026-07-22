@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useEffect, useCallback, useRef } from 'react';
-import { Search, Filter, Dumbbell, Play } from 'lucide-react';
+import { Search, Filter, Dumbbell, Plus } from 'lucide-react';
 import { useQuery, useMutation } from 'convex/react';
 import { api } from '@convex/_generated/api';
 import type { Exercise } from '../types';
@@ -7,7 +7,103 @@ import { resolveHighEndExerciseImage } from '../utils/imageResolver';
 import PremiumHeader from '../components/PremiumHeader';
 import PremiumSectionHeader from '../components/PremiumSectionHeader';
 import LibraryActionMenu from '../components/LibraryActionMenu';
+import ExerciseDetailModal from '../components/ExerciseDetailModal';
+import VideoPreviewModal from '../components/VideoPreviewModal';
 import { useAuth } from '../services/AuthContext';
+
+interface ExerciseCardProps {
+  exercise: Exercise;
+  onClick: (ex: Exercise) => void;
+  onAddToWorkout: (ex: Exercise) => void;
+  onPreviewVideo?: (ex: Exercise) => void;
+}
+
+const ExerciseCard: React.FC<ExerciseCardProps> = ({ exercise, onClick, onAddToWorkout, onPreviewVideo }) => {
+  const [isHovering, setIsHovering] = useState(false);
+  const [imageError, setImageError] = useState(false);
+
+  const handleMouseEnter = useCallback(() => {
+    setIsHovering(true);
+  }, []);
+
+  const handleMouseLeave = useCallback(() => {
+    setIsHovering(false);
+  }, []);
+
+  const handleAddToWorkout = useCallback((e: React.MouseEvent) => {
+    e.stopPropagation();
+    onAddToWorkout(exercise);
+  }, [exercise, onAddToWorkout]);
+
+  const handleCardClick = useCallback(() => {
+    onClick(exercise);
+  }, [exercise, onClick]);
+
+  const handleMediaClick = useCallback((e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (onPreviewVideo && exercise.videoUrl) {
+      onPreviewVideo(exercise);
+    } else {
+      onClick(exercise);
+    }
+  }, [exercise, onClick, onPreviewVideo]);
+
+  return (
+    <button
+      type="button"
+      onClick={handleCardClick}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      className="relative aspect-[4/5] rounded-[28px] overflow-hidden press-scale group shadow-xl border border-white/5 bg-zinc-900 text-left"
+      data-testid="exercise-card"
+    >
+      {/* Media area - clickable to open video preview */}
+      <button
+        type="button"
+        onClick={handleMediaClick}
+        className="w-full h-full relative cursor-pointer"
+      >
+        {exercise.image && exercise.image !== '' && !imageError ? (
+          <img
+            src={exercise.image}
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+            alt={exercise.name}
+            onError={() => setImageError(true)}
+          />
+        ) : (
+          <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-white/5 to-white/[0.02]">
+            <Dumbbell size={32} className="text-white/15" />
+          </div>
+        )}
+      </button>
+
+      {/* Scrim overlay */}
+      <div className={`absolute inset-0 scrim-overlay transition-opacity duration-300 ${
+        isHovering ? 'opacity-80' : 'opacity-60'
+      }`} />
+
+      {/* Add to Workout button - appears on hover */}
+      <div className={`absolute top-4 right-4 transition-all duration-300 ${
+        isHovering ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2'
+      }`}>
+        <button
+          type="button"
+          onClick={handleAddToWorkout}
+          className="h-8 px-3 rounded-full bg-white text-black flex items-center gap-1.5 shadow-lg hover:bg-white/90 transition-all"
+        >
+          <Plus size={12} strokeWidth={3} />
+          <span className="text-[8px] font-black uppercase tracking-wider">Add</span>
+        </button>
+      </div>
+
+      {/* Exercise info */}
+      <div className="absolute bottom-5 left-5 right-5">
+        <h3 className="text-xs font-bold leading-tight text-white">{exercise.name}</h3>
+        <p className="text-[8px] font-black uppercase tracking-widest text-white/30 mt-1.5">{exercise.bodyRegion}</p>
+      </div>
+    </button>
+  );
+};
 
 const CATEGORIES = ['All', 'Strength', 'Yoga', 'HIIT', 'Cardio', 'Power'];
 const INITIAL_LIMIT = 20;
@@ -21,7 +117,8 @@ const ExercisesView: React.FC<ExercisesViewProps> = ({ onSelect }) => {
   const { user } = useAuth();
   const [activeCategory, setActiveCategory] = useState('All');
   const [searchQuery, setSearchQuery] = useState('');
-  const [showOnlyJasmine, setShowOnlyJasmine] = useState(true);
+  const [selectedExercise, setSelectedExercise] = useState<Exercise | null>(null);
+  const [previewExercise, setPreviewExercise] = useState<Exercise | null>(null);
   
   type SortOption = 'popular' | 'difficulty' | 'alphabetical';
   const [sortBy, setSortBy] = useState<SortOption>('popular');
@@ -65,14 +162,12 @@ const ExercisesView: React.FC<ExercisesViewProps> = ({ onSelect }) => {
   const isSearching = searchQuery.trim().length > 0;
   
   const result = useQuery(
-    api.exercises.advancedSearch,
+    api.trainerExercises.listExercisesForTrainer,
     {
       query: queryArg,
       category: categoryFilter,
-      sortBy: isSearching ? undefined : sortBy,
       limit: currentLimit,
       cursor: cursor,
-      trainerName: showOnlyJasmine ? 'Jasmine Hensley' : undefined,
     }
   );
 
@@ -82,7 +177,7 @@ const ExercisesView: React.FC<ExercisesViewProps> = ({ onSelect }) => {
       name: ex.name,
       image: ex.imageUrl || '',
       category: ex.category,
-      muscleGroup: ex.muscleGroup,
+      bodyRegion: ex.bodyRegion, // Renamed from muscleGroup for clarity
       agonistMuscles: [
         ...(ex.primaryMuscles || []),
         ...(ex.secondaryMuscles || []),
@@ -211,42 +306,19 @@ const ExercisesView: React.FC<ExercisesViewProps> = ({ onSelect }) => {
       ) : exercises.length === 0 ? (
         <div className="flex-1 flex flex-col items-center justify-center">
           <Dumbbell className="h-12 w-12 mb-4 text-white/20" />
-          <p className="text-white/60 text-sm">No exercises yet. Check back soon!</p>
+          <p className="text-white/60 text-sm">No exercises available yet for this trainer.</p>
         </div>
       ) : (
         <>
           <div className="flex-1 grid grid-cols-2 gap-3.5 animate-slide-up">
             {exercises.map(ex => (
-              <button
+              <ExerciseCard
                 key={ex.id}
-                type="button"
-                onClick={() => onSelect(ex)}
-                className="relative aspect-[4/5] rounded-[28px] overflow-hidden press-scale group shadow-xl border border-white/5 bg-zinc-900 text-left"
-              >
-                {ex.image && ex.image !== '' ? (
-                  <img 
-                    src={ex.image} 
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
-                    alt={ex.name} 
-                  />
-                ) : (
-                  <div className="w-full h-full flex items-center justify-center bg-white/5">
-                    <Dumbbell size={32} className="text-white/10" />
-                  </div>
-                )}
-                <div className="absolute inset-0 scrim-overlay opacity-60 group-hover:opacity-90 transition-opacity" />
-                
-                {ex.videoUrl && (
-                  <div className="absolute top-4 right-4 w-6 h-6 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center border border-white/20">
-                    <Play size={10} className="text-white fill-white ml-0.5" />
-                  </div>
-                )}
-
-                <div className="absolute bottom-5 left-5 right-5">
-                  <h3 className="text-xs font-bold leading-tight text-white">{ex.name}</h3>
-                  <p className="text-[8px] font-black uppercase tracking-widest text-white/30 mt-1.5">{ex.muscleGroup}</p>
-                </div>
-              </button>
+                exercise={ex}
+                onClick={setSelectedExercise}
+                onAddToWorkout={onSelect}
+                onPreviewVideo={setPreviewExercise}
+              />
             ))}
           </div>
 
@@ -269,6 +341,19 @@ const ExercisesView: React.FC<ExercisesViewProps> = ({ onSelect }) => {
           </div>
         </>
       )}
+      
+      {/* Exercise Detail Modal */}
+      <ExerciseDetailModal
+        exercise={selectedExercise}
+        onClose={() => setSelectedExercise(null)}
+        onAddToWorkout={onSelect}
+      />
+
+      {/* Video Preview Modal */}
+      <VideoPreviewModal
+        exercise={previewExercise}
+        onClose={() => setPreviewExercise(null)}
+      />
     </div>
   );
 };

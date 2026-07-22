@@ -1,9 +1,8 @@
 import { defineConvexConfig } from "convex";
 
 export default defineConvexConfig({
-  // Local development configuration
+  // Cloud development configuration — targets Convex Cloud dev deployment
   development: {
-    deployment: "local",
-    selfHosted: true,
+    deployment: "cloud",
   },
 });

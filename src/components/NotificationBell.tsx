@@ -15,7 +15,8 @@ const NotificationBell: React.FC = () => {
   const dropdownRef = useRef<HTMLDivElement>(null);
   const [pos, setPos] = useState<{ top: number; left: number; width: number }>({ top: 0, left: 0, width: DROPDOWN_WIDTH });
   
-  const unreadCount = useQuery(api.notifications.getUnreadCount) || 0;
+  const unreadCountResult = useQuery(api.notifications.getUnreadCount);
+  const unreadCount = typeof unreadCountResult === 'number' ? unreadCountResult : 0;
   const notifications = useQuery(api.notifications.getNotifications, {
     paginationOpts: { numItems: 10, cursor: null }
   });

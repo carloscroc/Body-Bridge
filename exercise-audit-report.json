@@ -1,0 +1,674 @@
+{
+  "summary": {
+    "totalExercises": 343,
+    "uniqueExercises": 291,
+    "confirmedDuplicates": 26,
+    "probableDuplicates": 4,
+    "legitimateVariants": 0,
+    "duplicateGroups": 22
+  },
+  "duplicateGroups": [
+    {
+      "canonicalCandidateId": "k97eeqbknqv7dc7k5h86abmv4s88y2py",
+      "canonicalCandidateName": "Cable Crossover",
+      "duplicateIds": [
+        "k97acz229ef4mw87h4kaw5kvhs88ymq9",
+        "k97fy80qwgcj9wh5z6ev5yn3j588zaxg"
+      ],
+      "duplicateNames": [
+        "Low Cable Crossover",
+        "Cable Crossover from High"
+      ],
+      "reason": "high_name_similarity",
+      "differences": [
+        "primary muscles: Pectorals, Anterior Deltoids vs Lower Pectorals, Pectorals",
+        "secondary muscles: Core, Biceps vs Anterior Deltoids, Core",
+        "primary muscles: Pectorals, Anterior Deltoids vs Lower Pectorals, Anterior Deltoids"
+      ],
+      "trainerSpecificUrls": {
+        "k97eeqbknqv7dc7k5h86abmv4s88y2py": "https://www.youtube.com/watch?v=U-qHPIq6GWg",
+        "k97acz229ef4mw87h4kaw5kvhs88ymq9": "https://www.youtube.com/watch?v=qWix9d3PV3k"
+      },
+      "confidence": "confirmed",
+      "exerciseCount": 3,
+      "uniqueTrainers": []
+    },
+    {
+      "canonicalCandidateId": "k979ynh47caybgqsqn6ptrmpw988y8e3",
+      "canonicalCandidateName": "Inverted Row",
+      "duplicateIds": [
+        "k97006k009gsq8wzp5des1c49588zjj5"
+      ],
+      "duplicateNames": [
+        "Inverted Row on Rings"
+      ],
+      "reason": "high_name_similarity",
+      "differences": [
+        "equipment: Smith Machine vs Gymnastic Rings",
+        "primary muscles: Latissimus Dorsi, Rhomboids, Trapezius, Biceps vs Lats, Rhomboids, Trapezius, Biceps, Core",
+        "secondary muscles: Core, Rear Deltoids vs Rear Deltoids, Glutes, Hip Flexors"
+      ],
+      "trainerSpecificUrls": {},
+      "confidence": "confirmed",
+      "exerciseCount": 2,
+      "uniqueTrainers": []
+    },
+    {
+      "canonicalCandidateId": "k970b802z40f5r07d88xzvcjnn88zhqr",
+      "canonicalCandidateName": "Cable Lateral Raise",
+      "duplicateIds": [
+        "k976gbrancv8tc22qmscs30hq188yp5c"
+      ],
+      "duplicateNames": [
+        "Single-Arm Cable Lateral Raise"
+      ],
+      "reason": "high_name_similarity",
+      "differences": [
+        "secondary muscles: Anterior Deltoids, Upper Traps, Forearms vs Anterior Deltoids, Upper Traps"
+      ],
+      "trainerSpecificUrls": {},
+      "confidence": "confirmed",
+      "exerciseCount": 2,
+      "uniqueTrainers": []
+    },
+    {
+      "canonicalCandidateId": "k97155k2r27xw6s0aseazm87cx88zpaq",
+      "canonicalCandidateName": "Dumbbell Clean and Press",
+      "duplicateIds": [
+        "k97cg02cnjbwp71s8bdck1np9n88zb4m"
+      ],
+      "duplicateNames": [
+        "Dumbbell Clean"
+      ],
+      "reason": "high_name_similarity",
+      "differences": [
+        "primary muscles: Anterior Deltoids, Lateral Deltoids, Traps, Triceps vs Shoulders, Core, Quadriceps, Glutes, Hamstrings",
+        "secondary muscles: Core, Calves, Glutes vs Traps, Calves, Forearms, Grip, Biceps",
+        "instructions differ"
+      ],
+      "trainerSpecificUrls": {},
+      "confidence": "confirmed",
+      "exerciseCount": 2,
+      "uniqueTrainers": []
+    },
+    {
+      "canonicalCandidateId": "k9773pkjh2m80b6w4xfa5jcma188y462",
+      "canonicalCandidateName": "Bulgarian Split Squat with Dumbbells",
+      "duplicateIds": [
+        "k97axq591jrt0zjaqng3td8dmx89ywns",
+        "k973ntnrzvqrchzcdj9mjtxc2589zjda"
+      ],
+      "duplicateNames": [
+        "Split Squat",
+        "Split Squat"
+      ],
+      "reason": "high_name_similarity",
+      "differences": [
+        "equipment: Dumbbells, Bench vs Bodyweight",
+        "equipment: Dumbbells, Bench vs Bodyweight",
+        "primary muscles: Quadriceps, Glutes, Hamstrings vs Quads, Glutes",
+        "secondary muscles: Core, Calves, Stabilizers vs Hamstrings, Adductors",
+        "primary muscles: Quadriceps, Glutes, Hamstrings vs Quadriceps, Gluteus Maximus, Hamstrings",
+        "secondary muscles: Core, Calves, Stabilizers vs Hip Stabilizers, Core",
+        "instructions differ",
+        "instructions differ"
+      ],
+      "trainerSpecificUrls": {
+        "k973ntnrzvqrchzcdj9mjtxc2589zjda": "https://youtube.com/shorts/uaCI3N_0Ucc?feature=share"
+      },
+      "confidence": "confirmed",
+      "exerciseCount": 3,
+      "uniqueTrainers": []
+    },
+    {
+      "canonicalCandidateId": "k9743j4pyvm3nxm0jw2kje85c988ytdd",
+      "canonicalCandidateName": "Dumbbell Step-Up",
+      "duplicateIds": [
+        "k972cjq90m9z0nepy1k8xyhd6989z86c"
+      ],
+      "duplicateNames": [
+        "Step-Up"
+      ],
+      "reason": "high_name_similarity",
+      "differences": [
+        "equipment: Dumbbells, Box, Bench vs Box, Step, Bench",
+        "primary muscles: Quadriceps, Glutes, Hamstrings vs Quads, Glutes",
+        "secondary muscles: Core, Calves, Stabilizers vs Hamstrings, Calves",
+        "instructions differ"
+      ],
+      "trainerSpecificUrls": {},
+      "confidence": "confirmed",
+      "exerciseCount": 2,
+      "uniqueTrainers": []
+    },
+    {
+      "canonicalCandidateId": "k97ds2k2m0bpyp4qcxtg4ajvan88yq6f",
+      "canonicalCandidateName": "Cable Kickback Glutes",
+      "duplicateIds": [
+        "k973mdwcmkymww594nj9g9dcdn88yaxh"
+      ],
+      "duplicateNames": [
+        "Cable Kickback"
+      ],
+      "reason": "high_name_similarity",
+      "differences": [
+        "equipment: Cable Machine, Ankle Strap vs Cable Machine, Single Handle",
+        "primary muscles: Gluteus Maximus, Hamstrings vs Triceps Brachii, Lateral Head",
+        "secondary muscles: Core, Lower Back vs Shoulders, Core",
+        "instructions differ"
+      ],
+      "trainerSpecificUrls": {},
+      "confidence": "confirmed",
+      "exerciseCount": 2,
+      "uniqueTrainers": []
+    },
+    {
+      "canonicalCandidateId": "k97dhx6marfnt6a9ej7qrf7yjx88zttb",
+      "canonicalCandidateName": "Dumbbell Goblet Squat",
+      "duplicateIds": [
+        "k971w79r9xxkpjb7bjmm1hcs5h8ahnvp"
+      ],
+      "duplicateNames": [
+        "Goblet Squat"
+      ],
+      "reason": "high_name_similarity",
+      "differences": [
+        "primary muscles: Quadriceps, Glutes, Core vs Quadriceps, Glutes",
+        "secondary muscles: Hamstrings, Calves, Upper Back vs Hamstrings, Calves",
+        "instructions differ"
+      ],
+      "trainerSpecificUrls": {
+        "k971w79r9xxkpjb7bjmm1hcs5h8ahnvp": "https://www.youtube.com/watch?v=2yjwXTZQDDI"
+      },
+      "confidence": "confirmed",
+      "exerciseCount": 2,
+      "uniqueTrainers": []
+    },
+    {
+      "canonicalCandidateId": "k97b1a1neakx4rng98kjzg3sks88zj4g",
+      "canonicalCandidateName": "Hammer Curl",
+      "duplicateIds": [
+        "k97djxr9sft7r4568r866q9e4d88yy55"
+      ],
+      "duplicateNames": [
+        "Cable Hammer Curl"
+      ],
+      "reason": "high_name_similarity",
+      "differences": [
+        "equipment: Dumbbells vs Cable Machine, Rope Attachment",
+        "primary muscles: Brachialis, Brachioradialis, Biceps Brachii vs Brachialis, Brachioradialis, Biceps",
+        "secondary muscles: Forearms, Wrist Extensors vs Forearms"
+      ],
+      "trainerSpecificUrls": {},
+      "confidence": "confirmed",
+      "exerciseCount": 2,
+      "uniqueTrainers": []
+    },
+    {
+      "canonicalCandidateId": "k97b85by71yweyrbp49hn01sx988z4ed",
+      "canonicalCandidateName": "Rowing Machine",
+      "duplicateIds": [
+        "k973h5g3zb3s1cmve7nmmmx9e188yj46"
+      ],
+      "duplicateNames": [
+        "Rowing Machine Intervals"
+      ],
+      "reason": "high_name_similarity",
+      "differences": [
+        "primary muscles: Latissimus Dorsi, Quadriceps, Glutes, Core, Biceps vs Lats, Quadriceps, Glutes, Core, Biceps",
+        "instructions differ"
+      ],
+      "trainerSpecificUrls": {},
+      "confidence": "confirmed",
+      "exerciseCount": 2,
+      "uniqueTrainers": []
+    },
+    {
+      "canonicalCandidateId": "k974548b2ewqvpt160fvj3r6a188yxt5",
+      "canonicalCandidateName": "Jump Rope",
+      "duplicateIds": [
+        "k977d5bzbbfnysxdtemtpc6gzh88y86h"
+      ],
+      "duplicateNames": [
+        "Jump Rope Double Unders"
+      ],
+      "reason": "high_name_similarity",
+      "differences": [
+        "primary muscles: Calves, Quadriceps, Shoulders, Forearms vs Calves, Shoulders, Forearms, Core",
+        "secondary muscles: Core, Glutes, Hip Flexors vs Quadriceps, Hip Flexors, Wrist Flexors",
+        "instructions differ"
+      ],
+      "trainerSpecificUrls": {},
+      "confidence": "confirmed",
+      "exerciseCount": 2,
+      "uniqueTrainers": []
+    },
+    {
+      "canonicalCandidateId": "k972e0590az1tz3kp48v4snw4188y6bw",
+      "canonicalCandidateName": "Treadmill Sprint Intervals",
+      "duplicateIds": [
+        "k974zpbmkd3er46yd4h539y5d588zkwq"
+      ],
+      "duplicateNames": [
+        "Sprint Intervals"
+      ],
+      "reason": "high_name_similarity",
+      "differences": [
+        "equipment: Treadmill vs Running Track",
+        "secondary muscles: Core, Shoulders vs Core, Shoulders, Arms",
+        "instructions differ"
+      ],
+      "trainerSpecificUrls": {},
+      "confidence": "confirmed",
+      "exerciseCount": 2,
+      "uniqueTrainers": []
+    },
+    {
+      "canonicalCandidateId": "k978bwvz22a3phspjnt5wcv1t588zsn3",
+      "canonicalCandidateName": "Pallof Press",
+      "duplicateIds": [
+        "k971m683yw343f4y3ej2222zz988znn2",
+        "k97anx514h69ysx6qefwajgy4n88zkh8",
+        "k975drdvxnkk7whfd8882q9y7n88yd39"
+      ],
+      "duplicateNames": [
+        "Cable Pallof Press with Rotation",
+        "Band Pallof Press",
+        "Pallof Press with Band"
+      ],
+      "reason": "high_name_similarity",
+      "differences": [
+        "equipment: Cable Machine, Handle vs Resistance Band",
+        "equipment: Cable Machine, Handle vs Resistance Band",
+        "primary muscles: Obliques, Transverse Abdominis vs Obliques, Transverse Abdominis, Rectus Abdominis",
+        "secondary muscles: Shoulders, Chest, Glutes vs Shoulders, Hips, Glutes",
+        "primary muscles: Obliques, Transverse Abdominis vs Obliques, Transverse Abdominis, Core Stabilizers",
+        "primary muscles: Obliques, Transverse Abdominis vs Obliques, Transverse Abdominis, Core Stabilizers"
+      ],
+      "trainerSpecificUrls": {},
+      "confidence": "confirmed",
+      "exerciseCount": 4,
+      "uniqueTrainers": []
+    },
+    {
+      "canonicalCandidateId": "k977n8kmv6jnwt62yjy9w6ayth88zxhx",
+      "canonicalCandidateName": "Tabata Bodyweight Squats",
+      "duplicateIds": [
+        "k97bh4v7vjaf8stnt3a367xdds89zenj"
+      ],
+      "duplicateNames": [
+        "Bodyweight Squat"
+      ],
+      "reason": "high_name_similarity",
+      "differences": [
+        "equipment: Timer vs Bodyweight",
+        "primary muscles: Quadriceps, Glutes, Hamstrings, Calves vs Quads, Glutes, Hamstrings",
+        "secondary muscles: Core, Hip Flexors vs Adductors, Calves",
+        "instructions differ"
+      ],
+      "trainerSpecificUrls": {
+        "k97bh4v7vjaf8stnt3a367xdds89zenj": "https://youtube.com/shorts/GsVcud7qteM?feature=share"
+      },
+      "confidence": "confirmed",
+      "exerciseCount": 2,
+      "uniqueTrainers": []
+    },
+    {
+      "canonicalCandidateId": "k978hb2t036wze0k04eensrays88zaq2",
+      "canonicalCandidateName": "Turkish Get-Up",
+      "duplicateIds": [
+        "k978eypkzvmbmgn3195mq19t7n88zf5v"
+      ],
+      "duplicateNames": [
+        "Kettlebell Turkish Get-Up"
+      ],
+      "reason": "high_name_similarity",
+      "differences": [
+        "none significant"
+      ],
+      "trainerSpecificUrls": {},
+      "confidence": "confirmed",
+      "exerciseCount": 2,
+      "uniqueTrainers": []
+    },
+    {
+      "canonicalCandidateId": "k97avdxy21w8ancs0ej5qm7xqs88ywfc",
+      "canonicalCandidateName": "Band Row",
+      "duplicateIds": [
+        "k97fbkhs3hx409tbpchrrvyq2588zh2d",
+        "k97bpq2knx5cz0k6pqmfx02w9988z8kv",
+        "k975vvxcnrp15e3b48dqstatth88z7hf"
+      ],
+      "duplicateNames": [
+        "Band Pull-Aparts",
+        "Band Pull-Through",
+        "Band Pull-Aparts with Hold"
+      ],
+      "reason": "high_name_similarity",
+      "differences": [
+        "primary muscles: Latissimus Dorsi, Rhomboids, Mid Traps, Biceps vs Rear Deltoids, Rhomboids, Mid Traps, Rotator Cuff",
+        "secondary muscles: Rear Deltoids, Core, Forearms vs Lower Traps, Teres Minor",
+        "primary muscles: Latissimus Dorsi, Rhomboids, Mid Traps, Biceps vs Gluteus Maximus, Hamstrings, Core, Quadriceps",
+        "secondary muscles: Rear Deltoids, Core, Forearms vs Hip Flexors, Lower Back, Adductors",
+        "primary muscles: Latissimus Dorsi, Rhomboids, Mid Traps, Biceps vs Rear Deltoids, Rhomboids, Mid Traps, Rotator Cuff",
+        "secondary muscles: Rear Deltoids, Core, Forearms vs Lower Traps, Core, Forearms",
+        "instructions differ"
+      ],
+      "trainerSpecificUrls": {},
+      "confidence": "confirmed",
+      "exerciseCount": 4,
+      "uniqueTrainers": []
+    },
+    {
+      "canonicalCandidateId": "k97fr6r5kpdvbdv6916qpms21h88yzgm",
+      "canonicalCandidateName": "Band Overhead Squat",
+      "duplicateIds": [
+        "k976e1zdn03q0zq0bx9ba3ckp588ynmc"
+      ],
+      "duplicateNames": [
+        "Overhead Squat"
+      ],
+      "reason": "high_name_similarity",
+      "differences": [
+        "equipment: Resistance Band vs Barbell, Weight Plates",
+        "primary muscles: Quadriceps, Glutes, Shoulders, Core, Hip Flexors vs Shoulders, Core, Quadriceps, Glutes, Traps, Ankle Stabilizers",
+        "secondary muscles: Hamstrings, Calves, Upper Back, Triceps vs Upper Back, Hamstrings, Hip Flexors, Grip, Forearms"
+      ],
+      "trainerSpecificUrls": {},
+      "confidence": "confirmed",
+      "exerciseCount": 2,
+      "uniqueTrainers": []
+    },
+    {
+      "canonicalCandidateId": "k97axwhbkyqdmz96qc054xh2ys88zxz6",
+      "canonicalCandidateName": "Single-Leg Glute Bridge with Band",
+      "duplicateIds": [
+        "k970ks5209h4y43egaq4379xxd89zkdw",
+        "k97fzxxjjw8bs11xgk5r0xgrpx89zdxj"
+      ],
+      "duplicateNames": [
+        "Glute Bridge",
+        "Glute Bridge"
+      ],
+      "reason": "high_name_similarity",
+      "differences": [
+        "equipment: Resistance Band, Yoga Mat vs Bodyweight",
+        "equipment: Resistance Band, Yoga Mat vs Bodyweight",
+        "primary muscles: Gluteus Maximus, Hamstrings, Core vs Glutes, Hamstrings",
+        "secondary muscles: Hip Flexors, Lower Back, Gluteus Medius vs Lower Back, Core",
+        "primary muscles: Gluteus Maximus, Hamstrings, Core vs Glutes, Hamstrings",
+        "secondary muscles: Hip Flexors, Lower Back, Gluteus Medius vs Lower Back, Core",
+        "instructions differ",
+        "instructions differ"
+      ],
+      "trainerSpecificUrls": {},
+      "confidence": "confirmed",
+      "exerciseCount": 3,
+      "uniqueTrainers": []
+    },
+    {
+      "canonicalCandidateId": "k9796rx8cyxe4d5j6qcr3wd1m589y80t",
+      "canonicalCandidateName": "Dumbbell Romanian Deadlift",
+      "duplicateIds": [
+        "k973sa49ja1nn6c137va9bs0a98ahama"
+      ],
+      "duplicateNames": [
+        "Romanian Deadlift"
+      ],
+      "reason": "high_name_similarity",
+      "differences": [
+        "equipment: Dumbbell vs Barbell, Dumbbells",
+        "secondary muscles: Lower Back, Core vs Lower Back, Trapezius",
+        "instructions differ"
+      ],
+      "trainerSpecificUrls": {},
+      "confidence": "confirmed",
+      "exerciseCount": 2,
+      "uniqueTrainers": []
+    }
+  ],
+  "probableGroups": [
+    {
+      "ids": [
+        "k97dwa4j8pyp2qtwzsh77rx0c588yd21",
+        "k97f4n9aq7ef9080rd34beyrbn88z04h"
+      ],
+      "names": [
+        "Close-Grip Barbell Bench Press",
+        "Close-Grip Bench Press"
+      ],
+      "reason": "moderate_name_similarity",
+      "whyProbable": "equipment differs: different_equipment; primary muscles overlap: 20%; secondary muscles overlap: 0%",
+      "confidence": "medium",
+      "avgSimilarity": 75
+    },
+    {
+      "ids": [
+        "k97dj6mjw6189w2weynvnbtrxn88ykv3",
+        "k977a4tttejgwsexxtwrazave188zs8r"
+      ],
+      "names": [
+        "Single-Arm Landmine Chest Press",
+        "Single-Arm Landmine Press"
+      ],
+      "reason": "moderate_name_similarity",
+      "whyProbable": "equipment differs: different_equipment; primary muscles overlap: 40%; secondary muscles overlap: 33%",
+      "confidence": "medium",
+      "avgSimilarity": 75
+    },
+    {
+      "ids": [
+        "k971cvsp350dpstvk4mz5krdwn89zzby",
+        "k976xp64cbm7nrf00qxsa9ka7d89zhpx",
+        "k9739s55bwhef2svkt909dtrnh89zcds"
+      ],
+      "names": [
+        "Bodyweight Box Squat - 90°",
+        "Bodyweight Box Squat - Above 90",
+        "Bodyweight Box Squat - Below 90"
+      ],
+      "reason": "moderate_name_similarity",
+      "whyProbable": "primary muscles overlap: 25%; secondary muscles overlap: 0%; primary muscles overlap: 38%; secondary muscles overlap: 0%",
+      "confidence": "medium",
+      "avgSimilarity": 75
+    }
+  ],
+  "legitimateVariants": [],
+  "uniqueExercisesCount": 291,
+  "sampleUniqueExercises": [
+    {
+      "id": "k97bkfwfxrwybm3f5an0t8ghhx88zf23",
+      "name": "Machine Chest Press",
+      "category": "Strength",
+      "equipment": [
+        "Machine"
+      ]
+    },
+    {
+      "id": "k979tev3cfkxy17gcdqrkrtwt588z2mh",
+      "name": "Incline Machine Fly",
+      "category": "Strength",
+      "equipment": [
+        "Machine"
+      ]
+    },
+    {
+      "id": "k97fbft7efp644w425f2jrvbwn88ysbd",
+      "name": "Pec Deck Machine",
+      "category": "Strength",
+      "equipment": [
+        "Machine"
+      ]
+    },
+    {
+      "id": "k97bd6kr26ezqjagckcyn0tv7h88z4gd",
+      "name": "Single-Arm Dumbbell Fly",
+      "category": "Strength",
+      "equipment": [
+        "Dumbbell",
+        "Bench"
+      ]
+    },
+    {
+      "id": "k9718fx55t2ggrgw8t43gw0d6988zb8m",
+      "name": "Dumbbell Floor Press",
+      "category": "Strength",
+      "equipment": [
+        "Dumbbells"
+      ]
+    },
+    {
+      "id": "k97awj3qy1g4sc1bc8dtj81xsh88zypx",
+      "name": "Guillotine Press",
+      "category": "Strength",
+      "equipment": [
+        "Barbell",
+        "Bench"
+      ]
+    },
+    {
+      "id": "k97fkhjg7p3h42qaqv0c83qh6n88y5qx",
+      "name": "Weighted Push-Up",
+      "category": "Strength",
+      "equipment": [
+        "Weight Plate"
+      ]
+    },
+    {
+      "id": "k97c9snerfpqft3sxxmeb6fwas88zkkx",
+      "name": "Band-Resisted Push-Up",
+      "category": "Strength",
+      "equipment": [
+        "Resistance Band"
+      ]
+    },
+    {
+      "id": "k978zt8jabe82betmb0n656m6188zne2",
+      "name": "Decline Dumbbell Press",
+      "category": "Strength",
+      "equipment": [
+        "Dumbbells",
+        "Decline Bench"
+      ]
+    },
+    {
+      "id": "k972txdrzsk27cmnbqvt03f03s88zvpg",
+      "name": "Smith Machine Incline Press",
+      "category": "Strength",
+      "equipment": [
+        "Smith Machine",
+        "Bench"
+      ]
+    },
+    {
+      "id": "k97bjsb59q2sckzqd72rahd7zs88zna6",
+      "name": "Chest Dips",
+      "category": "Strength",
+      "equipment": [
+        "Dip Bars"
+      ]
+    },
+    {
+      "id": "k973nj2jh37j6n5f620ps8f28n88yzcw",
+      "name": "Svend Press",
+      "category": "Strength",
+      "equipment": [
+        "Weight Plate"
+      ]
+    },
+    {
+      "id": "k97avrrz0f0ssvmd9beq6n0a0h88yk8d",
+      "name": "Dumbbell Squeeze Press",
+      "category": "Strength",
+      "equipment": [
+        "Dumbbells",
+        "Bench"
+      ]
+    },
+    {
+      "id": "k97d1928dmzxdkxscc4k89w96x88y50y",
+      "name": "Reverse Grip Bench Press",
+      "category": "Strength",
+      "equipment": [
+        "Barbell",
+        "Bench"
+      ]
+    },
+    {
+      "id": "k973hsff8z5dbj1v8qr8t6czhh88zgqe",
+      "name": "Mechanical Drop Set Chest Press",
+      "category": "Strength",
+      "equipment": [
+        "Machine"
+      ]
+    },
+    {
+      "id": "k972efvg02kk1qzk9cekcm1q8d88zbhk",
+      "name": "Band Chest Fly",
+      "category": "Strength",
+      "equipment": [
+        "Resistance Band"
+      ]
+    },
+    {
+      "id": "k973ss6k62vjpnvcwjstqnmhwd88y6r8",
+      "name": "Iso-Lateral Chest Press",
+      "category": "Strength",
+      "equipment": [
+        "Machine"
+      ]
+    },
+    {
+      "id": "k97dc9mpy2ca29jejqk734sw3588zjh6",
+      "name": "Dumbbell Pullover on Flat Bench",
+      "category": "Strength",
+      "equipment": [
+        "Dumbbell",
+        "Bench"
+      ]
+    },
+    {
+      "id": "k97b826kd9arzh669x5jd8jmwx88zjsc",
+      "name": "Machine Decline Press",
+      "category": "Strength",
+      "equipment": [
+        "Machine"
+      ]
+    },
+    {
+      "id": "k979cyygtcqh9t0xngf1005xf188zmqg",
+      "name": "Resistance Band Floor Press",
+      "category": "Strength",
+      "equipment": [
+        "Resistance Band"
+      ]
+    }
+  ],
+  "recommendations": [
+    "Merge 19 confirmed duplicate groups into canonical exercises",
+    "Review 3 probable duplicate groups manually",
+    "Keep 0 legitimate variant groups separate",
+    "291 exercises appear to be unique",
+    "Trainer-specific video URLs should be preserved during merging"
+  ],
+  "analysisMetadata": {
+    "analysisTimestamp": "2026-07-17T22:00:27.234Z",
+    "comparisonCriteria": [
+      "normalized name (case-insensitive, trimmed, common variations)",
+      "equipment array comparison",
+      "primaryMuscles and secondaryMuscles overlap analysis",
+      "category matching",
+      "instructions normalization",
+      "movement pattern inference",
+      "body position detection",
+      "unilateral vs bilateral status",
+      "source identifiers (sourceSystem, sourceId, libraryId)",
+      "trainer relationships (trainerFirstName, trainerLastName)"
+    ],
+    "confidenceThresholds": {
+      "confirmedDuplicate": 0.85,
+      "probableDuplicate": 0.6,
+      "legitimateVariant": 0
+    }
+  }
+}

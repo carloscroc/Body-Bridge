@@ -77,3 +77,7 @@ android/local.properties
 # MemPalace per-project files (issue #185)
 mempalace.yaml
 entities.json
+
+# Production export directories (canonicalization migration)
+temp_export_dir/
+temp_export.zip

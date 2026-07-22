@@ -191,7 +191,7 @@ export const listEvents = query({
 export const listCalendarExercises = query({
   args: {
     category: v.optional(v.string()),
-    muscleGroup: v.optional(v.string()),
+    bodyRegion: v.optional(v.string()),
   },
   handler: async (ctx, args) => {
     if (args.category) {
@@ -200,9 +200,9 @@ export const listCalendarExercises = query({
         .take(100);
     } 
     
-    if (args.muscleGroup) {
+    if (args.bodyRegion) {
       return await ctx.db.query("exercises")
-        .withIndex("by_muscle", (q) => q.eq("muscleGroup", args.muscleGroup!))
+        .withIndex("by_bodyRegion", (q) => q.eq("bodyRegion", args.bodyRegion!))
         .take(100);
     }
 

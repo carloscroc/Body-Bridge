@@ -101,7 +101,7 @@ export interface Exercise {
   name: string;
   image: string;
   category: string;
-  muscleGroup: string;
+  bodyRegion: string; // Renamed from muscleGroup for clarity
   // Muscle targeting — primaryMuscles/secondaryMuscles from Convex, agonistMuscles as legacy alias
   primaryMuscles?: string[];
   secondaryMuscles?: string[];
@@ -126,7 +126,7 @@ export interface WorkoutExercise {
   exerciseId: string;
   name: string;
   image: string;
-  muscleGroup: string;
+  bodyRegion: string; // Renamed from muscleGroup for clarity
   sets?: number;
   reps?: string;
   duration?: string;

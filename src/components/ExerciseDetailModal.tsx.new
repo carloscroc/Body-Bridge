@@ -1,0 +1,63 @@
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { X, Play, Dumbbell, Target, Clock, Zap, Info, Plus } from 'lucide-react';
+import { Exercise } from '../types';
+import VideoPlayer from './VideoPlayer';
+
+interface ExerciseDetailModalProps {
+  exercise: Exercise | null;
+  onClose: () => void;
+  onAddToWorkout?: (exercise: Exercise) => void;
+}
+
+const ExerciseDetailModal: React.FC<ExerciseDetailModalProps> = ({ exercise, onClose, onAddToWorkout }) => {
+  if (!exercise) return null;
+
+  const [isVideoLoading, setIsVideoLoading] = useState(true);
+
+  const getDifficultyColor = (difficulty: string) => {
+    switch (difficulty.toLowerCase()) {
+      case 'beginner':
+        return 'bg-green-500/20 text-green-400 border-green-500/30';
+      case 'intermediate':
+        return 'bg-amber-500/20 text-amber-400 border-amber-500/30';
+      case 'advanced':
+        return 'bg-red-500/20 text-red-400 border-red-500/30';
+      default:
+        return 'bg-white/10 text-white/70 border-white/20';
+    }
+  };
+
+  return (
+    <AnimatePresence>
+      {exercise && (
+        <>
+          {/* Backdrop */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            onClick={onClose}
+            onClose
+            className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50"
+          />
+
+          {/* Modal */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.95, y: 20 }}
+            transition={{ 
+              type: "spring",
+              damping: 25,
+              stiffness: 300,
+              duration: 0.3
+            }}
+            className="fixed inset-4 md:inset-auto md:top-1/2 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2 md:w-[95vw] md:max-w-2xl md:max-h-[90vh] z-50"
+          >
+            <div className="h-full w-full bg-zinc-900 rounded-3xl overflow-hidden shadow-2xl border border-white/10 flex flex-col">
+              {/* Header with close button */}
+              <div className="relative flex-shrink-0">
+                {/* Video or Image */}
+                <div className="relative w-full aspect-video bg-black">

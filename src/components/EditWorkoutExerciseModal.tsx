@@ -84,7 +84,7 @@ const EditWorkoutExerciseModal: React.FC<EditWorkoutExerciseModalProps> = ({
           <img src={exercise.image} alt={exercise.name} className="w-16 h-16 rounded-2xl object-cover" />
           <div className="min-w-0">
             <h3 className="text-[18px] font-bold text-white truncate">{exercise.name}</h3>
-            <p className="text-[12px] text-white/40 truncate">{exercise.muscleGroup}</p>
+            <p className="text-[12px] text-white/40 truncate">{exercise.bodyRegion}</p>
           </div>
         </div>
 

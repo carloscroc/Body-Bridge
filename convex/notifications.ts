@@ -91,7 +91,7 @@ export const getUnreadCount = query({
       .withIndex("by_userId_isRead_createdAt", (q) =>
         q.eq("userId", profileId).eq("isRead", false)
       )
-      .collect();
+      .take(100);
 
     return unread.length;
   },
@@ -119,19 +119,29 @@ export const markAllAsRead = mutation({
   args: {},
   handler: async (ctx) => {
     const profileId = await requireProfileId(ctx);
-    const unread = await ctx.db
-      .query("notifications")
-      .withIndex("by_userId_isRead_createdAt", (q) =>
-        q.eq("userId", profileId).eq("isRead", false)
-      )
-      .collect();
 
-    for (const notification of unread) {
-      await ctx.db.patch(notification._id, {
-        isRead: true,
-        readAt: Date.now(),
-        updatedAt: Date.now(),
-      });
+    let cursor: string | null = null;
+    let hasMore = true;
+    const batchSize = 100;
+
+    while (hasMore) {
+      const result = await ctx.db
+        .query("notifications")
+        .withIndex("by_userId_isRead_createdAt", (q) =>
+          q.eq("userId", profileId).eq("isRead", false)
+        )
+        .paginate({ numItems: batchSize, cursor });
+
+      for (const notification of result.page) {
+        await ctx.db.patch(notification._id, {
+          isRead: true,
+          readAt: Date.now(),
+          updatedAt: Date.now(),
+        });
+      }
+
+      hasMore = !result.isDone;
+      cursor = result.continueCursor;
     }
   },
 });

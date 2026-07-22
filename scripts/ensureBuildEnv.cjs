@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const FALLBACK_CONVEX_URL = 'https://groovy-pig-414.convex.cloud';
+const FALLBACK_CONVEX_URL = 'https://upbeat-chickadee-781.convex.cloud';
 const ENV_FILE_PATH = path.resolve(__dirname, '..', '.env.production');
 
 const convexUrl = process.env.VITE_CONVEX_URL || FALLBACK_CONVEX_URL;
@@ -12,9 +12,9 @@ const diagLine = process.env.VITE_DIAG ? `VITE_DIAG=${process.env.VITE_DIAG}` : 
 
 const envFileContents = [
   `VITE_CONVEX_URL=${convexUrl}`,
-  'VITE_CONVEX_SITE_URL=https://groovy-pig-414.convex.site',
+  'VITE_CONVEX_SITE_URL=https://upbeat-chickadee-781.convex.site',
   'VITE_APP_NAME=Body Bridge',
-  'CONVEX_DEPLOYMENT=groovy-pig-414',
+  'CONVEX_DEPLOYMENT=upbeat-chickadee-781',
   diagLine,
   '',
 ].filter(Boolean).join('\n');
@@ -22,7 +22,7 @@ const envFileContents = [
 fs.writeFileSync(ENV_FILE_PATH, envFileContents, 'utf8');
 
 if (!process.env.VITE_CONVEX_URL) {
-  console.error('WARNING: VITE_CONVEX_URL is not set. Falling back to https://groovy-pig-414.convex.cloud for this build.');
+  console.error('WARNING: VITE_CONVEX_URL is not set. Falling back to https://upbeat-chickadee-781.convex.cloud for this build.');
 }
 
 console.log(`Build env written to .env.production: VITE_CONVEX_URL=${convexUrl}`);

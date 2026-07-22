@@ -83,60 +83,29 @@ export default defineSchema({
   exercises: defineTable({
     libraryId: v.string(),
     name: v.string(),
-    category: v.string(),
-    muscleGroup: v.string(),
-    primaryMuscles: v.array(v.string()),
-    secondaryMuscles: v.array(v.string()),
-    equipment: v.array(v.string()),
-    overview: v.string(),
-    instructions: v.array(v.string()),
-    benefits: v.array(v.string()),
-    videoUrl: v.optional(v.string()),
+    lifecycle: v.union(v.literal("draft"), v.literal("ready"), v.literal("archived")),
+    // Required for minimal draft
+    // Optional fields for incremental completion
+    category: v.optional(v.string()),
+    bodyRegion: v.optional(v.string()), // Renamed from muscleGroup for clarity
+    primaryMuscles: v.optional(v.array(v.string())),
+    secondaryMuscles: v.optional(v.array(v.string())),
+    equipment: v.optional(v.array(v.string())),
+    overview: v.optional(v.string()),
+    instructions: v.optional(v.array(v.string())),
+    benefits: v.optional(v.array(v.string())),
+    tags: v.optional(v.array(v.string())),
     imageUrl: v.optional(v.string()),
-    imageMetadata: v.optional(v.any()),
-    difficulty: v.union(v.literal("Beginner"), v.literal("Intermediate"), v.literal("Advanced")),
-    sets: v.string(),
-    reps: v.string(),
-    tags: v.array(v.string()),
-    tempo: v.optional(v.string()),
-    rest: v.optional(v.string()),
-    weight: v.optional(v.string()),
-    notes: v.optional(v.string()),
-    duration: v.optional(v.string()),
-    distance: v.optional(v.string()),
-    rpe: v.optional(v.number()),
-    power: v.optional(v.string()),
-    cadence: v.optional(v.string()),
-    heartRate: v.optional(v.string()),
-    load: v.optional(v.string()),
-    speed: v.optional(v.string()),
-    bpm: v.optional(v.number()),
-    calories: v.optional(v.number()),
-    metadata: v.optional(v.any()),
-    coachId: v.optional(v.id("profiles")),
-    createdAt: v.optional(v.number()),
-    difficultyOrder: v.optional(v.number()),
-    workoutCount: v.optional(v.number()),
-    trainerFirstName: v.optional(v.string()),
-    trainerLastName: v.optional(v.string()),
-    sourceSystem: v.optional(v.union(v.literal("notion"), v.literal("seed"), v.literal("manual"), v.literal("import"))),
-    sourceId: v.optional(v.string()),
-    isActive: v.optional(v.boolean()),
+    // createdAt removed - use Convex _creationTime
   })
     .index("by_libraryId", ["libraryId"])
+    .index("by_lifecycle", ["lifecycle"])
     .index("by_category", ["category"])
-    .index("by_muscle", ["muscleGroup"])
-    .index("by_difficulty", ["difficulty"])
-    .index("by_difficulty_order", ["difficultyOrder"])
+    .index("by_bodyRegion", ["bodyRegion"])
     .index("by_name", ["name"])
-    .index("by_difficultyOrder_name", ["difficultyOrder", "name"])
-    .index("by_workoutCount", ["workoutCount"])
-    .index("by_coach", ["coachId"])
-    .index("by_trainer", ["trainerFirstName", "trainerLastName"])
-    .index("by_source_system", ["sourceSystem"])
     .searchIndex("search_name", {
       searchField: "name",
-      filterFields: ["category", "muscleGroup", "difficulty", "coachId"],
+      filterFields: ["category", "bodyRegion", "lifecycle"],
     }),
 
   trainers: defineTable({
@@ -145,15 +114,37 @@ export default defineSchema({
     fullName: v.string(),
     email: v.optional(v.string()),
     notionDatabaseId: v.optional(v.string()),
-    notionAccessToken: v.optional(v.string()),
     profileId: v.optional(v.id("profiles")),
-    createdAt: v.number(),
+    // createdAt removed - use Convex _creationTime
     updatedAt: v.number(),
     isActive: v.boolean(),
   })
     .index("by_fullName", ["fullName"])
     .index("by_active", ["isActive"])
     .index("by_profile", ["profileId"]),
+
+  // Trainer → Exercise many-to-many relationship.
+  // A row here means "trainer X has made canonical exercise Y available,
+  // playable at `videoUrl`." Visibility for a trainer is driven ENTIRELY
+  // by this table — an exercise with no assignment row for the active
+  // trainer is hidden, regardless of what is in the `exercises` table.
+  // The canonical `exercises.videoUrl` is NEVER used as a fallback.
+  trainerExercises: defineTable({
+    trainerId: v.id("trainers"),
+    exerciseId: v.id("exercises"),
+    // Trainer-specific playable URL. Required; empty/whitespace is treated
+    // as "not available" and the exercise is hidden.
+    videoUrl: v.string(),
+    // Simplified source metadata: only origin system and optional external ID
+    sourceSystem: v.union(v.literal("notion"), v.literal("manual")),
+    sourceId: v.optional(v.string()),
+    isActive: v.boolean(),
+    assignedAt: v.number(),
+    updatedAt: v.number(),
+  })
+    .index("by_trainer", ["trainerId"])
+    .index("by_trainer_exercise", ["trainerId", "exerciseId"])
+    .index("by_exercise", ["exerciseId"]),
   workouts: defineTable({
     userId: v.id("profiles"),
     title: v.string(),
@@ -439,5 +430,39 @@ export default defineSchema({
   })
     .index("by_userId_createdAt", ["userId", "createdAt"])
     .index("by_userId_isRead_createdAt", ["userId", "isRead", "createdAt"]),
+  
+  // Migration state tracking for long-running data migrations
+  migrationState: defineTable({
+    migrationName: v.string(),
+    planHash: v.string(),
+    status: v.union(
+      v.literal("pending"),
+      v.literal("running"),
+      v.literal("paused"),
+      v.literal("completed"),
+      v.literal("blocked"),
+      v.literal("failed")
+    ),
+    startedAt: v.number(),
+    updatedAt: v.number(),
+    completedAt: v.optional(v.number()),
+    totalGroups: v.number(),
+    completedGroupIds: v.array(v.string()),
+    completedBatchIds: v.array(v.string()),
+    blockedGroupIds: v.optional(v.array(v.string())),
+    lockToken: v.string(),
+    lockOwnerId: v.optional(v.string()),
+    lockAcquiredAt: v.optional(v.number()),
+    lockExpiresAt: v.optional(v.number()),
+    operatorId: v.optional(v.string()),
+    preflightHash: v.optional(v.string()),
+    batchManifest: v.optional(v.any()),
+    totalBatches: v.number(),
+    currentBatchId: v.optional(v.string()),
+    failureReason: v.optional(v.string()),
+    errorDetails: v.optional(v.any()),
+  })
+    .index("by_name_status", ["migrationName", "status"])
+    .index("by_lock_expires", ["lockExpiresAt"]),
   
 });

@@ -4,13 +4,25 @@ import { api } from "./_generated/api";
 import { NotionExerciseService, NotionExercise } from "./services/notionService";
 import type { Id } from "./_generated/dataModel";
 
+/**
+ * Normalize a string to a stable libraryId format.
+ * Converts to lowercase, replaces spaces and special chars with hyphens,
+ * removes consecutive hyphens, and trims.
+ */
+function normalizeToLibraryId(input: string): string {
+  return input
+    .toLowerCase()
+    .trim()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+}
+
 export const upsertTrainer = mutation({
   args: {
     firstName: v.string(),
     lastName: v.string(),
     email: v.optional(v.string()),
     notionDatabaseId: v.string(),
-    notionAccessToken: v.string(),
   },
   handler: async (ctx, args) => {
     const fullName = `${args.firstName} ${args.lastName}`;
@@ -26,7 +38,6 @@ export const upsertTrainer = mutation({
       const trainer = existingTrainers[0];
       await ctx.db.patch(trainer._id, {
         notionDatabaseId: args.notionDatabaseId,
-        notionAccessToken: args.notionAccessToken,
         email: args.email,
         updatedAt: Date.now(),
       });
@@ -40,8 +51,6 @@ export const upsertTrainer = mutation({
       fullName,
       email: args.email,
       notionDatabaseId: args.notionDatabaseId,
-      notionAccessToken: args.notionAccessToken,
-      createdAt: Date.now(),
       updatedAt: Date.now(),
       isActive: true,
     });
@@ -57,18 +66,24 @@ export const syncNotionExercises = action({
   },
   handler: async (ctx, args): Promise<{ synced: number; results: Array<{ name: string; action: string }>; trainer: string }> => {
     // Fetch trainer configuration
-    const trainer = await ctx.runQuery(api.notion.getTrainerById, { trainerId: args.trainerId }) as { _id: Id<"trainers">; firstName: string; lastName: string; fullName: string; notionDatabaseId: string; notionAccessToken: string; profileId?: Id<"profiles"> } | null;
+    const trainer = await ctx.runQuery(api.notion.getTrainerById, { trainerId: args.trainerId }) as { _id: Id<"trainers">; firstName: string; lastName: string; fullName: string; notionDatabaseId: string; profileId?: Id<"profiles"> } | null;
     if (!trainer) {
       throw new Error("Trainer not found");
     }
 
-    if (!trainer.notionDatabaseId || !trainer.notionAccessToken) {
-      throw new Error("Trainer not configured with Notion credentials");
+    if (!trainer.notionDatabaseId) {
+      throw new Error("Trainer not configured with Notion database ID");
+    }
+
+    // Get Notion access token from environment variable (NOTION_API_KEY)
+    const notionAccessToken = process.env.NOTION_API_KEY;
+    if (!notionAccessToken) {
+      throw new Error("NOTION_API_KEY environment variable not configured");
     }
 
     // Create Notion service
     const notionService = new NotionExerciseService(
-      trainer.notionAccessToken,
+      notionAccessToken,
       trainer.notionDatabaseId,
       {
         firstName: trainer.firstName,
@@ -82,70 +97,76 @@ export const syncNotionExercises = action({
     // Sync each exercise
     const results = [];
     for (const notionExercise of notionExercises) {
-      // Check if exercise already exists (by sourceSystem and sourceId)
-      const notionExercisesForTrainer = await ctx.runQuery(api.notion.getExercisesBySourceSystem, { sourceSystem: "notion" });
-      
-      const existingExercises = notionExercisesForTrainer.filter(
-        (ex) => ex.sourceId === notionExercise.name && !!ex.sourceId
+      // Check if exercise already exists in trainerExercises (by sourceSystem and sourceId)
+      const existingTrainerExercises = await ctx.runQuery(api.notion.getTrainerExercisesBySourceSystem, {
+        trainerId: args.trainerId,
+        sourceSystem: "notion",
+      });
+
+      const existingAssignment = existingTrainerExercises.find(
+        (te: any) => te.sourceId === notionExercise.name
       );
-      if (existingExercises.length > 0 && !args.forceResync) {
+
+      if (existingAssignment && !args.forceResync) {
         // Skip if already exists and not forcing resync
         results.push({ name: notionExercise.name, action: "skipped" });
         continue;
       }
 
-      // Insert or update exercise
-      const exerciseData = {
-        libraryId: `notion-${trainer.notionDatabaseId}-${notionExercise.name}`,
-        name: notionExercise.name,
-        category: notionExercise.category || 'General',
-        muscleGroup: notionExercise.primaryMuscles[0] || "General",
-        primaryMuscles: notionExercise.primaryMuscles,
-        secondaryMuscles: notionExercise.secondaryMuscles,
-        equipment: notionExercise.equipment,
-        overview: `Exercise from ${trainer.fullName}'s library`,
-        instructions: notionExercise.instructions,
-        benefits: [],
-        videoUrl: notionExercise.videoUrl,
-        imageUrl: undefined,
-        difficulty: notionExercise.difficulty,
-        sets: notionExercise.sets,
-        reps: notionExercise.reps,
-        tempo: undefined,
-        rest: notionExercise.rest,
-        tags: [`Trainer: ${trainer.fullName}`, "Notion Import"],
-        weight: undefined,
-        notes: undefined,
-        duration: undefined,
-        distance: undefined,
-        rpe: undefined,
-        power: undefined,
-        cadence: undefined,
-        heartRate: undefined,
-        load: undefined,
-        speed: undefined,
-        bpm: undefined,
-        calories: undefined,
-        metadata: undefined,
-        coachId: trainer.profileId,
-        createdAt: Date.now(),
-        difficultyOrder: getDifficultyOrder(notionExercise.difficulty),
-        workoutCount: 0,
-        trainerFirstName: trainer.firstName,
-        trainerLastName: trainer.lastName,
-        sourceSystem: "notion" as const,
-        sourceId: notionExercise.name,
-        isActive: true,
-      };
+      // Insert or update the canonical exercise
+      const libraryId = normalizeToLibraryId(notionExercise.name);
 
+      // Check if canonical exercise exists by libraryId
+      const existingExercises = await ctx.runQuery(api.notion.getExercisesByLibraryId, {
+        libraryId,
+      });
+
+      let exerciseId: Id<"exercises">;
       if (existingExercises.length > 0) {
-        // Update existing
-        await ctx.runMutation(api.notion.updateExercise, { exerciseId: existingExercises[0]._id, exerciseData });
-        results.push({ name: notionExercise.name, action: "updated" });
+        exerciseId = existingExercises[0]._id;
+        results.push({ name: notionExercise.name, action: "updated_canonical" });
       } else {
-        // Insert new
-        await ctx.runMutation(api.notion.insertExercise, { exerciseData });
-        results.push({ name: notionExercise.name, action: "inserted" });
+        // Insert new canonical exercise
+        exerciseId = await ctx.runMutation(api.notion.insertCanonicalExercise, {
+          exerciseData: {
+            libraryId,
+            name: notionExercise.name,
+            category: notionExercise.category || 'General',
+            bodyRegion: notionExercise.primaryMuscles[0] || "General", // Changed from muscleGroup
+            primaryMuscles: notionExercise.primaryMuscles,
+            secondaryMuscles: notionExercise.secondaryMuscles,
+            equipment: notionExercise.equipment,
+            overview: `Exercise from ${trainer.fullName}'s library`,
+            instructions: notionExercise.instructions,
+            benefits: [],
+            tags: ["Notion Import"],
+            lifecycle: "ready",
+          },
+        });
+        results.push({ name: notionExercise.name, action: "inserted_canonical" });
+      }
+
+      // Create or update trainer assignment with the video URL
+      if (existingAssignment) {
+        await ctx.runMutation(api.trainerExercises.assignExerciseToTrainer, {
+          trainerId: args.trainerId,
+          exerciseId: exerciseId,
+          videoUrl: notionExercise.videoUrl || "",
+          sourceSystem: "notion",
+          sourceId: notionExercise.name,
+          adminSecret: process.env.ADMIN_SCRIPT_SECRET,
+        });
+        results.push({ name: notionExercise.name, action: "updated_assignment" });
+      } else {
+        await ctx.runMutation(api.trainerExercises.assignExerciseToTrainer, {
+          trainerId: args.trainerId,
+          exerciseId: exerciseId,
+          videoUrl: notionExercise.videoUrl || "",
+          sourceSystem: "notion",
+          sourceId: notionExercise.name,
+          adminSecret: process.env.ADMIN_SCRIPT_SECRET,
+        });
+        results.push({ name: notionExercise.name, action: "assigned" });
       }
     }
 
@@ -165,47 +186,36 @@ export const getTrainerById = query({
   },
 });
 
-export const getExercisesBySourceSystem = query({
-  args: { sourceSystem: v.union(v.literal("notion"), v.literal("seed"), v.literal("manual"), v.literal("import")) },
+export const getTrainerExercisesBySourceSystem = query({
+  args: {
+    trainerId: v.id("trainers"),
+    sourceSystem: v.union(v.literal("notion"), v.literal("manual")),
+  },
+  handler: async (ctx, args) => {
+    const assignments = await ctx.db
+      .query("trainerExercises")
+      .withIndex("by_trainer", (q) => q.eq("trainerId", args.trainerId))
+      .collect();
+    return assignments.filter((te: any) => te.sourceSystem === args.sourceSystem);
+  },
+});
+
+export const getExercisesByLibraryId = query({
+  args: { libraryId: v.string() },
   handler: async (ctx, args) => {
     return await ctx.db
       .query("exercises")
-      .withIndex("by_source_system", (q) => q.eq("sourceSystem", args.sourceSystem))
+      .withIndex("by_libraryId", (q) => q.eq("libraryId", args.libraryId))
       .collect();
   },
 });
 
-export const updateExercise = mutation({
-  args: {
-    exerciseId: v.id("exercises"),
-    exerciseData: v.any(),
-  },
-  handler: async (ctx, args) => {
-    await ctx.db.patch(args.exerciseId, args.exerciseData);
-  },
-});
-
-export const insertExercise = mutation({
+export const insertCanonicalExercise = mutation({
   args: { exerciseData: v.any() },
   handler: async (ctx, args) => {
     return await ctx.db.insert("exercises", args.exerciseData);
   },
 });
-
-function getDifficultyOrder(
-  difficulty: "Beginner" | "Intermediate" | "Advanced"
-): number {
-  switch (difficulty) {
-    case "Beginner":
-      return 1;
-    case "Intermediate":
-      return 2;
-    case "Advanced":
-      return 3;
-    default:
-      return 2;
-  }
-}
 
 export const listTrainers = query({
   args: {
@@ -225,51 +235,42 @@ export const listTrainers = query({
         fullName: trainer.fullName,
         email: trainer.email,
         isActive: trainer.isActive,
-        hasNotionConfig: !!(
-          trainer.notionDatabaseId && trainer.notionAccessToken
-        ),
-        createdAt: trainer.createdAt,
+        hasNotionConfig: !!trainer.notionDatabaseId,
       }));
   },
 });
 
 export const listExercisesByTrainer = query({
   args: {
-    trainerFirstName: v.optional(v.string()),
-    trainerLastName: v.optional(v.string()),
+    trainerId: v.id("trainers"),
   },
   handler: async (ctx, args) => {
-    // Collect all active exercises, then filter by trainer name(s)
-    const allExercises = await ctx.db
-      .query("exercises")
-      .filter((q) => q.eq(q.field("isActive"), true))
+    // Get all active trainer-exercise assignments for this trainer
+    const trainerAssignments = await ctx.db
+      .query("trainerExercises")
+      .withIndex("by_trainer", (q) => q.eq("trainerId", args.trainerId))
       .collect();
 
-    // Manually filter by trainer fields
-    const exercises = allExercises.filter(ex => {
-      if (args.trainerFirstName && ex.trainerFirstName !== args.trainerFirstName) {
-        return false;
-      }
-      if (args.trainerLastName && ex.trainerLastName !== args.trainerLastName) {
-        return false;
-      }
-      return true;
-    });
+    const activeAssignments = trainerAssignments.filter((te: any) => te.isActive === true && te.videoUrl.trim().length > 0);
 
-    // Group by trainer for easier navigation
-    const byTrainer: Record<string, typeof exercises> = {};
-    for (const ex of exercises) {
-      const trainerKey = `${ex.trainerFirstName || "unknown"} ${ex.trainerLastName || ""}`.trim();
-      if (!byTrainer[trainerKey]) {
-        byTrainer[trainerKey] = [];
+    // Resolve canonical exercises for each assignment
+    const exercises = [];
+    for (const assignment of activeAssignments) {
+      const exercise = await ctx.db.get(assignment.exerciseId);
+      if (exercise) {
+        exercises.push({
+          ...exercise,
+          videoUrl: assignment.videoUrl,
+          trainerExerciseId: assignment._id,
+          sourceSystem: assignment.sourceSystem,
+          sourceId: assignment.sourceId,
+        });
       }
-      byTrainer[trainerKey].push(ex);
     }
 
     return {
       exercises,
-      byTrainer,
-      trainers: Object.keys(byTrainer),
+      count: exercises.length,
     };
   },
 });
@@ -278,24 +279,15 @@ export const listAllTrainers = query({
   args: {},
   handler: async (ctx, args) => {
     const trainers = await ctx.db.query("trainers").collect();
-    const exercises = await ctx.db.query("exercises").collect();
-    // Group exercises by trainer
-    const trainerExercises: Record<string, { trainer: string; exerciseCount: number }> = {};
-    for (const ex of exercises) {
-      const trainerKey = `${ex.trainerFirstName || ""} ${ex.trainerLastName || ""}`.trim();
-      if (trainerKey && trainerKey !== "unknown") {
-        if (!trainerExercises[trainerKey]) {
-          // Find the trainer record
-          const trainerRec = trainers.find(
-            t => t.firstName === ex.trainerFirstName && t.lastName === ex.trainerLastName
-          );
-          trainerExercises[trainerKey] = {
-            trainer: trainerRec?.fullName || trainerKey,
-            exerciseCount: 0,
-          };
-        }
-        trainerExercises[trainerKey].exerciseCount++;
-      }
+
+    // Get exercise count per trainer from trainerExercises
+    const trainerExercises = await ctx.db.query("trainerExercises").collect();
+    const activeTrainerExercises = trainerExercises.filter((te: any) => te.isActive);
+
+    const trainerCounts: Record<string, number> = {};
+    for (const te of activeTrainerExercises) {
+      const trainerId = te.trainerId.toString();
+      trainerCounts[trainerId] = (trainerCounts[trainerId] || 0) + 1;
     }
 
     return {
@@ -306,10 +298,8 @@ export const listAllTrainers = query({
         fullName: trainer.fullName,
         email: trainer.email,
         isActive: trainer.isActive,
-        hasNotionConfig: !!(
-          trainer.notionDatabaseId && trainer.notionAccessToken
-        ),
-        exerciseCount: trainerExercises[trainer.fullName]?.exerciseCount || 0,
+        hasNotionConfig: !!trainer.notionDatabaseId,
+        exerciseCount: trainerCounts[trainer._id.toString()] || 0,
       })),
     };
   },

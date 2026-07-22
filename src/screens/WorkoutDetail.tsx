@@ -151,7 +151,7 @@ const WorkoutDetail: React.FC<WorkoutDetailProps> = ({ workout, onBack, onSelect
           exerciseId: ex.id,
           name: ex.name,
           image: ex.image,
-          muscleGroup: ex.muscleGroup,
+          muscleGroup: ex.bodyRegion,
           sets: ex.sets,
           reps: ex.reps,
           duration: ex.duration,
@@ -429,7 +429,7 @@ const WorkoutDetail: React.FC<WorkoutDetailProps> = ({ workout, onBack, onSelect
                     >
                       <h4 className="text-[15px] font-bold text-white tracking-tight mb-1 truncate uppercase italic group-hover:text-white/90 transition-colors">{ex.name}</h4>
                       <p className="text-[10px] font-black uppercase tracking-[0.15em] text-white/25 group-hover:text-white/40 transition-colors">
-                        {ex.duration || ex.reps} • {ex.muscleGroup.toUpperCase()}
+                        {ex.duration || ex.reps} • {ex.bodyRegion.toUpperCase()}
                       </p>
                     </div>
                     <div

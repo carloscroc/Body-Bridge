@@ -1,6 +1,6 @@
 import { test, expect } from "@playwright/test";
 
-import { resolveHighEndExerciseImage } from "../utils/imageResolver";
+import { resolveHighEndExerciseImage } from "../src/utils/imageResolver";
 
 test("passes through Convex storage URLs from exercise.image", () => {
   const ex: any = {

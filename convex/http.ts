@@ -119,7 +119,7 @@ http.route({
 
     const query = url.searchParams.get("query") ?? undefined;
     const category = url.searchParams.get("category") ?? undefined;
-    const muscle = url.searchParams.get("muscle") ?? undefined;
+    const bodyRegion = url.searchParams.get("bodyRegion") ?? undefined;
     const equipment = url.searchParams.getAll("equipment");
     const onlyMyExercises = url.searchParams.get("onlyMyExercises") === "true";
 
@@ -129,7 +129,7 @@ http.route({
     const result = (await ctx.runQuery(api.exercises.advancedSearch, {
       query,
       category,
-      muscle,
+      bodyRegion,
       equipment: equipment.length > 0 ? equipment : undefined,
       limit: Number.isFinite(limit) ? limit : 25,
       cursor: cursor ?? undefined,

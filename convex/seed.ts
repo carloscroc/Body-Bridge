@@ -155,12 +155,12 @@ export const insertUser = mutation({
     if (!isAdminSecret(args.adminSecret)) {
       throw new Error("Unauthorized: Invalid admin secret");
     }
+
     // Create user and profile
     const userId = await ctx.db.insert("users", {
       email: args.user.email,
       name: args.user.name,
       image: args.user.image,
-      createdAt: Date.now(),
     });
 
     const profileId = await ctx.db.insert("profiles", {
@@ -241,7 +241,7 @@ export const insertExercise = mutation({
     exercise: v.object({
       name: v.string(),
       category: v.string(),
-      muscleGroup: v.string(),
+      bodyRegion: v.string(), // Renamed from muscleGroup
       primaryMuscles: v.array(v.string()),
       secondaryMuscles: v.array(v.string()),
       equipment: v.array(v.string()),
@@ -264,59 +264,9 @@ export const insertExercise = mutation({
     const exerciseId = await ctx.db.insert("exercises", {
       ...args.exercise,
       libraryId: `seed-${args.exercise.name.toLowerCase().replace(/\s+/g, "-")}`,
-      difficultyOrder: args.exercise.difficulty === "Beginner" ? 1 : args.exercise.difficulty === "Intermediate" ? 2 : 3,
-      trainerFirstName: "open-source",
-      trainerLastName: "",
-      sourceSystem: "seed",
-      sourceId: args.exercise.name,
-      isActive: true,
       tags: [...args.exercise.tags, "Trainer: open-source"],
-      createdAt: Date.now(),
+      lifecycle: "ready",
     });
-  },
-});
-
-export const updateExerciseTrainerFields = mutation({
-  args: {
-    adminSecret: v.optional(v.string()),
-  },
-  handler: async (ctx, args) => {
-    if (!isAdminSecret(args.adminSecret)) {
-      throw new Error("Unauthorized: Invalid admin secret");
-    }
-    
-    // Get all exercises that don't have trainer fields set
-    const exercises = await ctx.db.query("exercises").collect();
-    
-    let updatedCount = 0;
-    for (const exercise of exercises) {
-      // Check if trainer fields are already set
-      if (!exercise.trainerFirstName) {
-        // Determine trainer based on sourceSystem
-        const trainerFirstName = exercise.sourceSystem === "notion" ? "Jasmine" : "open-source";
-        const trainerLastName = exercise.sourceSystem === "notion" ? "Hensley" : "";
-        const sourceSystem = exercise.sourceSystem || "unknown";
-        const trainerTag = `Trainer: ${trainerFirstName} ${trainerLastName}`.trim();
-        
-        // Add trainer tag if not already present
-        const tags = exercise.tags || [];
-        if (!tags.includes(trainerTag)) {
-          tags.push(trainerTag);
-        }
-        
-        // Update exercise with trainer fields
-        await ctx.db.patch(exercise._id, {
-          trainerFirstName,
-          trainerLastName,
-          sourceSystem: exercise.sourceSystem as any,
-          tags,
-        });
-        updatedCount++;
-      }
-    }
-    
-    console.log(`Updated ${updatedCount} exercises with trainer fields`);
-    return { updatedCount };
   },
 });
 
@@ -348,27 +298,6 @@ export const mapExerciseToTag = mutation({
     }
     // Update exercise with tag
     // For now, just return success
-    return { success: true };
-  },
-});
-
-export const mapExerciseToMedia = mutation({
-  args: {
-    adminSecret: v.optional(v.string()),
-    exerciseId: v.id("exercises"),
-    mediaId: v.string(),
-    mediaType: v.union(v.literal("video"), v.literal("image")),
-  },
-  handler: async (ctx, args) => {
-    if (!isAdminSecret(args.adminSecret)) {
-      throw new Error("Unauthorized: Invalid admin secret");
-    }
-    // Update exercise with media
-    if (args.mediaType === "video") {
-      await ctx.db.patch(args.exerciseId, { videoUrl: args.mediaId });
-    } else {
-      await ctx.db.patch(args.exerciseId, { imageUrl: args.mediaId });
-    }
     return { success: true };
   },
 });
