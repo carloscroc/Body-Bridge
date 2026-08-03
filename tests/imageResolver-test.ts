@@ -1,4 +1,4 @@
-import { resolveHighEndWorkoutImage } from "../utils/imageResolver";
+import { resolveHighEndWorkoutImage } from "../src/utils/imageResolver";
 
 // Simple test harness for resolveHighEndWorkoutImage
 const titles: string[] = [

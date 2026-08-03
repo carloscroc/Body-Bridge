@@ -1,4 +1,4 @@
-import { resolveHighEndWorkoutImage } from "../../utils/imageResolver";
+import { resolveHighEndWorkoutImage } from "../../src/utils/imageResolver";
 import { writeFileSync } from "fs";
 import { join } from "path";
 
