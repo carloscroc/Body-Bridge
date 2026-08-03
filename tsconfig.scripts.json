@@ -1,0 +1,46 @@
+{
+  "//": "Active Node tooling scripts referenced by package.json. Node-appropriate config; intentionally does NOT include browser lib.",
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "lib": ["ES2022"],
+    "types": ["node"],
+    "allowJs": true,
+    "checkJs": false,
+    "noEmit": true,
+    "skipLibCheck": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "allowImportingTsExtensions": true
+  },
+  "include": [
+    "scripts/generateAppConfig.cjs",
+    "scripts/patch-capacitor-android.cjs",
+    "scripts/runConvexDev.mjs",
+    "scripts/runViteDev.mjs",
+    "scripts/deployConvex.mjs",
+    "scripts/ensureBuildEnv.cjs",
+    "scripts/postbuild-csp.mjs",
+    "scripts/postbuild-memory.js",
+    "scripts/verifyBuild.cjs",
+    "scripts/captureExerciseImages.js",
+    "scripts/context-manager.js",
+    "scripts/mempalace-client.js",
+    "scripts/memory-hooks.js",
+    "scripts/posttest-memory.js",
+    "scripts/security-memory.js",
+    "scripts/create-plane-ticket.cjs",
+    "scripts/start-symphony-work.cjs",
+    "scripts/plane-lib/context-gatherer.cjs",
+    "scripts/plane-lib/evidence-collector.cjs",
+    "scripts/plane-lib/plane-api-client.cjs",
+    "scripts/plane-lib/reference-builder.cjs",
+    "scripts/plane-lib/template-renderer.cjs"
+  ],
+  "exclude": [
+    "node_modules/**/*"
+  ]
+}
