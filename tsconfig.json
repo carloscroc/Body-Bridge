@@ -29,10 +29,35 @@
     "allowImportingTsExtensions": true,
     "noEmit": true
   },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.js",
+    "src/**/*.jsx",
+    "server/**/*.ts",
+    "server/**/*.tsx",
+    "server/**/*.js",
+    "tests/**/*.ts",
+    "tests/**/*.tsx",
+    "vite.config.ts",
+    "playwright.config.ts",
+    "tailwind.config.js",
+    "postcss.config.js",
+    "capacitor.config.json",
+    "components.json",
+    "knip.json",
+    "convex.config.ts"
+  ],
   "exclude": [
     "convex/**/*.ts",
     "convex/**/*.tsx",
     "tools/plane-testing/**/*",
-    "scripts/**/*"
+    "scripts/**/*",
+    "convex_backup/**/*",
+    "project-archive/**/*",
+    "android/**/*",
+    "ios/**/*",
+    "dist/**/*",
+    "node_modules/**/*"
   ]
 }

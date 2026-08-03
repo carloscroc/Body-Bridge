@@ -1,8 +1,5 @@
-import { defineConvexConfig } from "convex";
+import { defineApp } from "convex/server";
 
-export default defineConvexConfig({
-  // Cloud development configuration — targets Convex Cloud dev deployment
-  development: {
-    deployment: "cloud",
-  },
-});
+// Cloud development configuration is set via the Convex CLI
+// (`npx convex dev --cloud`) and the `CONVEX_DEPLOYMENT` env var, not in-app.
+export default defineApp();

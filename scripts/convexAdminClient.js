@@ -39,12 +39,6 @@ export async function fetchExercises() {
   });
 }
 
-  const client = getHttpClient();
-  return await client.query(api.exercises.fetchExercises, {
-    adminSecret: getAdminSecret(),
-  });
-}
-
 export async function generateUploadUrl() {
   const client = getHttpClient();
   return await client.mutation(api.exercises.generateUploadUrl, {
