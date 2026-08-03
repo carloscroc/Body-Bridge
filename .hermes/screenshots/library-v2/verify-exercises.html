@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Body Bridge Exercise Library Verification</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #0a0a0a;
+            color: #ffffff;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .header h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        
+        .stats {
+            background: #1a1a1a;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: space-around;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #4ade80;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            color: #888;
+        }
+        
+        .exercises-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .exercise-card {
+            background: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 15px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+        }
+        
+        .exercise-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            border-color: #4ade80;
+        }
+        
+        .exercise-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+        
+        .exercise-region {
+            font-size: 0.85rem;
+            color: #4ade80;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .exercise-video {
+            background: #333;
+            border-radius: 4px;
+            height: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+            overflow: hidden;
+        }
+        
+        .exercise-video iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .exercise-video-placeholder {
+            text-align: center;
+            color: #888;
+            padding: 20px;
+        }
+        
+        .exercise-video-placeholder .icon {
+            font-size: 2rem;
+            margin-bottom: 5px;
+        }
+        
+        .exercise-description {
+            font-size: 0.85rem;
+            color: #aaa;
+            line-height: 1.4;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 50px;
+            color: #888;
+        }
+        
+        .error {
+            background: #3d1a1a;
+            border: 1px solid #ff4444;
+            color: #ff6666;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .modal.active {
+            display: flex;
+        }
+        
+        .modal-content {
+            background: #1a1a1a;
+            border-radius: 8px;
+            max-width: 600px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 20px;
+        }
+        
+        .modal-close {
+            float: right;
+            cursor: pointer;
+            font-size: 1.5rem;
+            line-height: 1;
+            color: #888;
+        }
+        
+        .modal-close:hover {
+            color: #fff;
+        }
+        
+        .modal-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+        
+        .modal-video {
+            background: #333;
+            border-radius: 4px;
+            height: 300px;
+            margin-bottom: 15px;
+            overflow: hidden;
+        }
+        
+        .modal-video iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .modal-section {
+            margin-bottom: 15px;
+        }
+        
+        .modal-label {
+            font-size: 0.8rem;
+            color: #4ade80;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .modal-text {
+            font-size: 0.95rem;
+            color: #ddd;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Body Bridge Exercise Library</h1>
+        <p>Direct Database Verification</p>
+    </div>
+    
+    <div class="stats" id="stats">
+        <div class="stat-item">
+            <div class="stat-value" id="stat-exercises">-</div>
+            <div class="stat-label">Total Exercises</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-value" id="stat-videos">-</div>
+            <div class="stat-label">With Videos</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-value" id="stat-trainers">-</div>
+            <div class="stat-label">Trainers</div>
+        </div>
+    </div>
+    
+    <div id="error" class="error" style="display: none;"></div>
+    
+    <div id="loading" class="loading">
+        <p>Loading exercises from Convex database...</p>
+    </div>
+    
+    <div class="exercises-grid" id="exercises-grid"></div>
+    
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <span class="modal-close" id="modal-close">&times;</span>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+    
+    <script>
+        const CONVEX_URL = 'https://upbeat-chickadee-781.convex.cloud';
+        const DEPLOYMENT = 'thebest-croc:body-bridge-fitness:dev/thebest-croc';
+        
+        async function callConvex(functionName, args = {}) {
+            const response = await fetch(`${CONVEX_URL}/api/query/${functionName}`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    format: 'json',
+                    args: args
+                })
+            });
+            
+            if (!response.ok) {
+                throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+            }
+            
+            return await response.json();
+        }
+        
+        function showError(message) {
+            const errorDiv = document.getElementById('error');
+            errorDiv.textContent = message;
+            errorDiv.style.display = 'block';
+            document.getElementById('loading').style.display = 'none';
+        }
+        
+        function showStats(exercises, trainers) {
+            document.getElementById('stat-exercises').textContent = exercises.length;
+            document.getElementById('stat-videos').textContent = exercises.filter(e => e.videoUrl).length;
+            document.getElementById('stat-trainers').textContent = trainers;
+        }
+        
+        function renderExercises(exercises) {
+            const grid = document.getElementById('exercises-grid');
+            grid.innerHTML = '';
+            
+            exercises.forEach(exercise => {
+                const card = document.createElement('div');
+                card.className = 'exercise-card';
+                card.onclick = () => showModal(exercise);
+                
+                const videoHtml = exercise.videoUrl 
+                    ? `<div class="exercise-video">
+                        <iframe src="${exercise.videoUrl.replace('watch?v=', 'embed/')}" allowfullscreen></iframe>
+                       </div>`
+                    : `<div class="exercise-video">
+                        <div class="exercise-video-placeholder">
+                            <div class="icon">▶</div>
+                            <div>No Video</div>
+                        </div>
+                       </div>`;
+                
+                card.innerHTML = `
+                    ${videoHtml}
+                    <div class="exercise-region">${exercise.bodyRegion || 'General'}</div>
+                    <div class="exercise-name">${exercise.name}</div>
+                    <div class="exercise-description">${exercise.overview || 'No description available'}</div>
+                `;
+                
+                grid.appendChild(card);
+            });
+        }
+        
+        function showModal(exercise) {
+            const modal = document.getElementById('modal');
+            const modalBody = document.getElementById('modal-body');
+            
+            const videoHtml = exercise.videoUrl 
+                ? `<div class="modal-video">
+                    <iframe src="${exercise.videoUrl.replace('watch?v=', 'embed/')}" allowfullscreen></iframe>
+                   </div>`
+                : `<div class="modal-video" style="display: flex; align-items: center; justify-content: center;">
+                    <div class="exercise-video-placeholder">
+                        <div class="icon">▶</div>
+                        <div>No Video Available</div>
+                    </div>
+                   </div>`;
+            
+            modalBody.innerHTML = `
+                <div class="modal-title">${exercise.name}</div>
+                ${videoHtml}
+                <div class="modal-section">
+                    <div class="modal-label">Body Region</div>
+                    <div class="modal-text">${exercise.bodyRegion || 'Not specified'}</div>
+                </div>
+                <div class="modal-section">
+                    <div class="modal-label">Category</div>
+                    <div class="modal-text">${exercise.category || 'Not specified'}</div>
+                </div>
+                <div class="modal-section">
+                    <div class="modal-label">Difficulty</div>
+                    <div class="modal-text">${exercise.difficulty || 'Not specified'}</div>
+                </div>
+                <div class="modal-section">
+                    <div class="modal-label">Video URL</div>
+                    <div class="modal-text"><a href="${exercise.videoUrl || '#'}" target="_blank" style="color: #4ade80;">${exercise.videoUrl || 'No video'}</a></div>
+                </div>
+                <div class="modal-section">
+                    <div class="modal-label">Description</div>
+                    <div class="modal-text">${exercise.overview || 'No description available'}</div>
+                </div>
+                <div class="modal-section">
+                    <div class="modal-label">Instructions</div>
+                    <div class="modal-text">${exercise.instructions || 'No instructions available'}</div>
+                </div>
+            `;
+            
+            modal.classList.add('active');
+        }
+        
+        document.getElementById('modal-close').onclick = () => {
+            document.getElementById('modal').classList.remove('active');
+        };
+        
+        document.getElementById('modal').onclick = (e) => {
+            if (e.target.id === 'modal') {
+                document.getElementById('modal').classList.remove('active');
+            }
+        };
+        
+        async function init() {
+            try {
+                const exercises = await callConvex('trainerExercises:listExercisesForTrainer', {});
+                
+                if (exercises && exercises.page) {
+                    showStats(exercises.page, 1);
+                    renderExercises(exercises.page);
+                    document.getElementById('loading').style.display = 'none';
+                } else {
+                    showError('No exercises found in database');
+                }
+            } catch (error) {
+                showError(`Failed to load exercises: ${error.message}`);
+            }
+        }
+        
+        init();
+    </script>
+</body>
+</html>

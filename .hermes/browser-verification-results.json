@@ -1,0 +1,186 @@
+{
+  "testEmail": "browser_verify_1784836434433@test.local",
+  "testTimestamp": 1784836434433,
+  "phase1": {
+    "httpStatus": 200,
+    "pageTitle": "Body Bridge Fitness",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "url": "http://127.0.0.1:7770/",
+    "bodyTextPreview": "\n  \n  \n  \n  FBODY BRIDGEBridge The GapAI COACH ACTIVEStart TrainingSign In\n        .blur-surface {\n          backdrop-filter: blur(20px);\n          -webkit-backdrop-filter: blur(20px);\n        }\n        .press-scale:active {\n          transform: scale(0.97);\n        }\n        .editorial-title {\n    ",
+    "hasBodyBridge": true,
+    "convexRequestCount": 3,
+    "hasConvexConnection": true
+  },
+  "phase2": {
+    "signupCompleted": true,
+    "localStorage": {
+      "allKeys": [],
+      "authKeyCount": 0,
+      "hasJWT": false,
+      "hasRefreshToken": false,
+      "hasLastAuthEmail": false
+    },
+    "identityPropagated": false,
+    "sessionPersistedAfterReload": false
+  },
+  "phase3": {
+    "jwtPresent": false
+  },
+  "phase4": {},
+  "phase5": {},
+  "phase6": {
+    "libraryLoaded": false,
+    "bodyRegionUI": {
+      "hasBodyRegionText": false,
+      "categoryFiltersFound": [],
+      "totalButtons": 2,
+      "sampleTexts": [
+        "Start Training",
+        "Sign In"
+      ],
+      "bodyTextPreview": "F\nBODY BRIDGE\n\nBridge The Gap\n\nAI COACH ACTIVE\nSTART TRAINING\nSIGN IN"
+    },
+    "bodyRegionIsFilter": false,
+    "bodyRegionIsMetadataOnly": true
+  },
+  "phase7": {
+    "beforeSignOut": {
+      "hasJWT": false,
+      "hasRefreshToken": false,
+      "keyCount": 0,
+      "allKeys": []
+    },
+    "sessionActiveBeforeSignOut": false,
+    "securityCheck": {
+      "adminSecretInLocal": false,
+      "adminSecretInSession": false,
+      "localKeyCount": 0,
+      "sessionKeyCount": 0,
+      "localKeys": []
+    },
+    "persistedAfterReload": false,
+    "signedOut": false,
+    "sessionRemovedAfterSignOut": true,
+    "afterSignOutState": {
+      "hasJWT": false,
+      "authKeyCount": 0,
+      "allKeys": [],
+      "bodyText": "F\nBODY BRIDGE\n\nBridge The Gap\n\nAI COACH ACTIVE\nSTART TRAINING\nSIGN IN"
+    }
+  },
+  "consoleErrors": [
+    "Failed to load resource: the server responded with a status of 404 ()",
+    "[CONVEX A(auth:signIn)] [Request ID: 2fb8becd76f592cd] Server Error\nUncaught Error: Uncaught TypeError: \"pkcs8\" must be PKCS#8 formatted string\n\n",
+    "[Auth] signIn error: Error: [CONVEX A(auth:signIn)] [Request ID: 2fb8becd76f592cd] Server Error\nUncaught Error: Uncaught TypeError: \"pkcs8\" must be PKCS#8 formatted string\n\n\n  Called by client\n    at BaseConvexClient.action (http://127.0.0.1:7770/node_modules/.vite/deps/chunk-MQQU7TM6.js?v=8ac1c85d:",
+    "Failed to load resource: the server responded with a status of 404 ()",
+    "Failed to load resource: the server responded with a status of 404 ()"
+  ],
+  "consoleWarnings": [
+    "[Auth] Token sync not available: ReferenceError: require is not defined\n    at http://127.0.0.1:7770/src/services/AuthContext.tsx:10:3",
+    "[Auth] Token sync not available: ReferenceError: require is not defined\n    at http://127.0.0.1:7770/src/services/AuthContext.tsx:10:3",
+    "[Auth] Token sync not available: ReferenceError: require is not defined\n    at http://127.0.0.1:7770/src/services/AuthContext.tsx:10:3"
+  ],
+  "networkErrors": [
+    {
+      "url": "https://upbeat-chickadee-781.convex.cloud/api/health",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://upbeat-chickadee-781.convex.cloud/api/health",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://upbeat-chickadee-781.convex.cloud/api/health",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://upbeat-chickadee-781.convex.cloud/api/health",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://upbeat-chickadee-781.convex.cloud/api/health",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://upbeat-chickadee-781.convex.cloud/api/health",
+      "failure": "net::ERR_ABORTED"
+    }
+  ],
+  "convexRequests": [
+    {
+      "url": "https://upbeat-chickadee-781.convex.cloud/api/health",
+      "method": "GET"
+    },
+    {
+      "url": "https://upbeat-chickadee-781.convex.cloud/api/health",
+      "method": "GET"
+    },
+    {
+      "url": "https://upbeat-chickadee-781.convex.cloud/",
+      "method": "GET"
+    },
+    {
+      "url": "https://upbeat-chickadee-781.convex.cloud/api/health",
+      "method": "GET"
+    },
+    {
+      "url": "https://upbeat-chickadee-781.convex.cloud/api/health",
+      "method": "GET"
+    },
+    {
+      "url": "https://upbeat-chickadee-781.convex.cloud/",
+      "method": "GET"
+    },
+    {
+      "url": "https://upbeat-chickadee-781.convex.cloud/api/health",
+      "method": "GET"
+    },
+    {
+      "url": "https://upbeat-chickadee-781.convex.cloud/api/health",
+      "method": "GET"
+    },
+    {
+      "url": "https://upbeat-chickadee-781.convex.cloud/",
+      "method": "GET"
+    }
+  ],
+  "forbiddenRequests": [],
+  "pageErrors": [],
+  "screenshots": [
+    {
+      "name": "phase1-initial-load",
+      "filename": "phase1-initial-load.png"
+    },
+    {
+      "name": "phase2-signup-form",
+      "filename": "phase2-signup-form.png"
+    },
+    {
+      "name": "phase2-signup-filled",
+      "filename": "phase2-signup-filled.png"
+    },
+    {
+      "name": "phase2-after-signup",
+      "filename": "phase2-after-signup.png"
+    },
+    {
+      "name": "phase2-after-reload",
+      "filename": "phase2-after-reload.png"
+    },
+    {
+      "name": "phase6-exercise-library",
+      "filename": "phase6-exercise-library.png"
+    },
+    {
+      "name": "phase7-after-signout",
+      "filename": "phase7-after-signout.png"
+    },
+    {
+      "name": "final-state",
+      "filename": "final-state.png"
+    }
+  ]
+}

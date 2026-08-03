@@ -9752,5 +9752,2165 @@
       "errors": 0,
       "bundle_size": "0.00 MB"
     }
+  },
+  {
+    "id": "mem_1784732017018_u7rog2jfq",
+    "timestamp": "2026-07-22T14:53:37.018Z",
+    "category": "context",
+    "type": "session-start",
+    "importance": "low",
+    "summary": "Session started: sess_1784732 [Body-Bridge]",
+    "content": "Session ID: sess_1784732017017\nDirectory: C:\\Users\\thebe\\Downloads\\Body-Bridge\nWorktree: C:\\Users\\thebe\\Downloads\\Body-Bridge\nProject: Body-Bridge\nStarted: 2026-07-22T14:53:37.018Z",
+    "tags": [
+      "session",
+      "start",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1784732017017",
+      "project": "Body-Bridge",
+      "directory": "C:\\Users\\thebe\\Downloads\\Body-Bridge"
+    }
+  },
+  {
+    "id": "mem_1784732020096_3a05gwcia",
+    "timestamp": "2026-07-22T14:53:40.096Z",
+    "category": "context",
+    "type": "session",
+    "importance": "medium",
+    "summary": "Session ended: sess_1784732 (0m) [Body-Bridge]",
+    "content": "Session ID: sess_1784732017017\nProject: Body-Bridge\nDuration: 0 minutes\nBranch: main\nFiles modified: 1\nChanged files:\n  - .memory/memory-index.json\nStarted: 2026-07-22T14:53:37.017Z\nEnded: 2026-07-22T14:53:40.096Z",
+    "tags": [
+      "session",
+      "end",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1784732017017",
+      "project": "Body-Bridge",
+      "duration_minutes": 0,
+      "branch": "main",
+      "files_modified": 1,
+      "files_list": [
+        ".memory/memory-index.json"
+      ]
+    }
+  },
+  {
+    "id": "mem_1784732097004_68kvtiayk",
+    "timestamp": "2026-07-22T14:54:57.004Z",
+    "category": "context",
+    "type": "session-start",
+    "importance": "low",
+    "summary": "Session started: sess_1784732 [Body-Bridge]",
+    "content": "Session ID: sess_1784732097002\nDirectory: C:\\Users\\thebe\\Downloads\\Body-Bridge\nWorktree: C:\\Users\\thebe\\Downloads\\Body-Bridge\nProject: Body-Bridge\nStarted: 2026-07-22T14:54:57.003Z",
+    "tags": [
+      "session",
+      "start",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1784732097002",
+      "project": "Body-Bridge",
+      "directory": "C:\\Users\\thebe\\Downloads\\Body-Bridge"
+    }
+  },
+  {
+    "id": "mem_1784732099903_l715uuz9f",
+    "timestamp": "2026-07-22T14:54:59.903Z",
+    "category": "context",
+    "type": "session",
+    "importance": "medium",
+    "summary": "Session ended: sess_1784732 (0m) [Body-Bridge]",
+    "content": "Session ID: sess_1784732097002\nProject: Body-Bridge\nDuration: 0 minutes\nBranch: main\nFiles modified: 1\nChanged files:\n  - .memory/memory-index.json\nStarted: 2026-07-22T14:54:57.002Z\nEnded: 2026-07-22T14:54:59.903Z",
+    "tags": [
+      "session",
+      "end",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1784732097002",
+      "project": "Body-Bridge",
+      "duration_minutes": 0,
+      "branch": "main",
+      "files_modified": 1,
+      "files_list": [
+        ".memory/memory-index.json"
+      ]
+    }
+  },
+  {
+    "id": "mem_1784732320090_1lijr8no9",
+    "timestamp": "2026-07-22T14:58:40.090Z",
+    "category": "context",
+    "type": "session-start",
+    "importance": "low",
+    "summary": "Session started: sess_1784732 [Body-Bridge]",
+    "content": "Session ID: sess_1784732320089\nDirectory: C:\\Users\\thebe\\Downloads\\Body-Bridge\nWorktree: C:\\Users\\thebe\\Downloads\\Body-Bridge\nProject: Body-Bridge\nStarted: 2026-07-22T14:58:40.090Z",
+    "tags": [
+      "session",
+      "start",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1784732320089",
+      "project": "Body-Bridge",
+      "directory": "C:\\Users\\thebe\\Downloads\\Body-Bridge"
+    }
+  },
+  {
+    "id": "mem_1784732322619_avjy0sonm",
+    "timestamp": "2026-07-22T14:58:42.619Z",
+    "category": "context",
+    "type": "session",
+    "importance": "medium",
+    "summary": "Session ended: sess_1784732 (0m) [Body-Bridge]",
+    "content": "Session ID: sess_1784732320089\nProject: Body-Bridge\nDuration: 0 minutes\nBranch: main\nFiles modified: 1\nChanged files:\n  - .memory/memory-index.json\nStarted: 2026-07-22T14:58:40.089Z\nEnded: 2026-07-22T14:58:42.619Z",
+    "tags": [
+      "session",
+      "end",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1784732320089",
+      "project": "Body-Bridge",
+      "duration_minutes": 0,
+      "branch": "main",
+      "files_modified": 1,
+      "files_list": [
+        ".memory/memory-index.json"
+      ]
+    }
+  },
+  {
+    "id": "mem_1784732440705_ydehoquo1",
+    "timestamp": "2026-07-22T15:00:40.705Z",
+    "category": "context",
+    "type": "session-start",
+    "importance": "low",
+    "summary": "Session started: sess_1784732 [Body-Bridge]",
+    "content": "Session ID: sess_1784732440703\nDirectory: C:\\Users\\thebe\\Downloads\\Body-Bridge\nWorktree: C:\\Users\\thebe\\Downloads\\Body-Bridge\nProject: Body-Bridge\nStarted: 2026-07-22T15:00:40.704Z",
+    "tags": [
+      "session",
+      "start",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1784732440703",
+      "project": "Body-Bridge",
+      "directory": "C:\\Users\\thebe\\Downloads\\Body-Bridge"
+    }
+  },
+  {
+    "id": "mem_1784732451617_o5q1kalov",
+    "timestamp": "2026-07-22T15:00:51.618Z",
+    "category": "context",
+    "type": "session",
+    "importance": "medium",
+    "summary": "Session ended: sess_1784732 (0m) [Body-Bridge]",
+    "content": "Session ID: sess_1784732440703\nProject: Body-Bridge\nDuration: 0 minutes\nBranch: unknown\nFiles modified: 0\nNo uncommitted changes\nStarted: 2026-07-22T15:00:40.703Z\nEnded: 2026-07-22T15:00:51.617Z",
+    "tags": [
+      "session",
+      "end",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1784732440703",
+      "project": "Body-Bridge",
+      "duration_minutes": 0,
+      "branch": "unknown",
+      "files_modified": 0,
+      "files_list": []
+    }
+  },
+  {
+    "id": "mem_1784732451671_gcbqbtwtj",
+    "timestamp": "2026-07-22T15:00:51.671Z",
+    "category": "context",
+    "type": "session",
+    "importance": "medium",
+    "summary": "Session ended: sess_1784732 (0m) [Body-Bridge]",
+    "content": "Session ID: sess_1784732440703\nProject: Body-Bridge\nDuration: 0 minutes\nBranch: unknown\nFiles modified: 0\nNo uncommitted changes\nStarted: 2026-07-22T15:00:40.703Z\nEnded: 2026-07-22T15:00:51.671Z",
+    "tags": [
+      "session",
+      "end",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1784732440703",
+      "project": "Body-Bridge",
+      "duration_minutes": 0,
+      "branch": "unknown",
+      "files_modified": 0,
+      "files_list": []
+    }
+  },
+  {
+    "id": "mem_1784732816839_uet8ljmm2",
+    "timestamp": "2026-07-22T15:06:56.839Z",
+    "category": "context",
+    "type": "session-start",
+    "importance": "low",
+    "summary": "Session started: sess_1784732 [Body-Bridge]",
+    "content": "Session ID: sess_1784732816838\nDirectory: C:\\Users\\thebe\\Downloads\\Body-Bridge\nWorktree: C:\\Users\\thebe\\Downloads\\Body-Bridge\nProject: Body-Bridge\nStarted: 2026-07-22T15:06:56.839Z",
+    "tags": [
+      "session",
+      "start",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1784732816838",
+      "project": "Body-Bridge",
+      "directory": "C:\\Users\\thebe\\Downloads\\Body-Bridge"
+    }
+  },
+  {
+    "id": "mem_1784732826749_ihycucajr",
+    "timestamp": "2026-07-22T15:07:06.749Z",
+    "category": "context",
+    "type": "session",
+    "importance": "medium",
+    "summary": "Session ended: sess_1784732 (0m) [Body-Bridge]",
+    "content": "Session ID: sess_1784732816838\nProject: Body-Bridge\nDuration: 0 minutes\nBranch: main\nFiles modified: 1\nChanged files:\n  - .memory/memory-index.json\nStarted: 2026-07-22T15:06:56.838Z\nEnded: 2026-07-22T15:07:06.749Z",
+    "tags": [
+      "session",
+      "end",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1784732816838",
+      "project": "Body-Bridge",
+      "duration_minutes": 0,
+      "branch": "main",
+      "files_modified": 1,
+      "files_list": [
+        ".memory/memory-index.json"
+      ]
+    }
+  },
+  {
+    "id": "mem_1784732827466_jtyyilh4r",
+    "timestamp": "2026-07-22T15:07:07.466Z",
+    "category": "context",
+    "type": "session",
+    "importance": "medium",
+    "summary": "Session ended: sess_1784732 (0m) [Body-Bridge]",
+    "content": "Session ID: sess_1784732816838\nProject: Body-Bridge\nDuration: 0 minutes\nBranch: main\nFiles modified: 1\nChanged files:\n  - .memory/memory-index.json\nStarted: 2026-07-22T15:06:56.838Z\nEnded: 2026-07-22T15:07:07.466Z",
+    "tags": [
+      "session",
+      "end",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1784732816838",
+      "project": "Body-Bridge",
+      "duration_minutes": 0,
+      "branch": "main",
+      "files_modified": 1,
+      "files_list": [
+        ".memory/memory-index.json"
+      ]
+    }
+  },
+  {
+    "id": "mem_1784732875715_eb05q9gp2",
+    "timestamp": "2026-07-22T15:07:55.715Z",
+    "category": "context",
+    "type": "session-start",
+    "importance": "low",
+    "summary": "Session started: sess_1784732 [Body-Bridge]",
+    "content": "Session ID: sess_1784732875714\nDirectory: C:\\Users\\thebe\\Downloads\\Body-Bridge\nWorktree: C:\\Users\\thebe\\Downloads\\Body-Bridge\nProject: Body-Bridge\nStarted: 2026-07-22T15:07:55.715Z",
+    "tags": [
+      "session",
+      "start",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1784732875714",
+      "project": "Body-Bridge",
+      "directory": "C:\\Users\\thebe\\Downloads\\Body-Bridge"
+    }
+  },
+  {
+    "id": "mem_1784732905343_qhazvy6nt",
+    "timestamp": "2026-07-22T15:08:25.343Z",
+    "category": "context",
+    "type": "session",
+    "importance": "medium",
+    "summary": "Session ended: sess_1784732 (0m) [Body-Bridge]",
+    "content": "Session ID: sess_1784732875714\nProject: Body-Bridge\nDuration: 0 minutes\nBranch: main\nFiles modified: 1\nChanged files:\n  - .memory/memory-index.json\nStarted: 2026-07-22T15:07:55.714Z\nEnded: 2026-07-22T15:08:25.343Z",
+    "tags": [
+      "session",
+      "end",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1784732875714",
+      "project": "Body-Bridge",
+      "duration_minutes": 0,
+      "branch": "main",
+      "files_modified": 1,
+      "files_list": [
+        ".memory/memory-index.json"
+      ]
+    }
+  },
+  {
+    "id": "mem_1784733077212_7ugxpqflx",
+    "timestamp": "2026-07-22T15:11:17.212Z",
+    "category": "context",
+    "type": "session-start",
+    "importance": "low",
+    "summary": "Session started: sess_1784733 [Body-Bridge]",
+    "content": "Session ID: sess_1784733077208\nDirectory: C:\\Users\\thebe\\Downloads\\Body-Bridge\nWorktree: C:\\Users\\thebe\\Downloads\\Body-Bridge\nProject: Body-Bridge\nStarted: 2026-07-22T15:11:17.211Z",
+    "tags": [
+      "session",
+      "start",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1784733077208",
+      "project": "Body-Bridge",
+      "directory": "C:\\Users\\thebe\\Downloads\\Body-Bridge"
+    }
+  },
+  {
+    "id": "mem_1784733691989_eie0gmgvn",
+    "timestamp": "2026-07-22T15:21:31.989Z",
+    "category": "context",
+    "type": "session-start",
+    "importance": "low",
+    "summary": "Session started: sess_1784733 [Body-Bridge]",
+    "content": "Session ID: sess_1784733691988\nDirectory: C:\\Users\\thebe\\Downloads\\Body-Bridge\nWorktree: C:\\Users\\thebe\\Downloads\\Body-Bridge\nProject: Body-Bridge\nStarted: 2026-07-22T15:21:31.988Z",
+    "tags": [
+      "session",
+      "start",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1784733691988",
+      "project": "Body-Bridge",
+      "directory": "C:\\Users\\thebe\\Downloads\\Body-Bridge"
+    }
+  },
+  {
+    "id": "mem_1784733871101_hqgmg4pg8",
+    "timestamp": "2026-07-22T15:24:31.101Z",
+    "category": "context",
+    "type": "session",
+    "importance": "medium",
+    "summary": "Session ended: sess_1784733 (3m) [Body-Bridge]",
+    "content": "Session ID: sess_1784733691988\nProject: Body-Bridge\nDuration: 3 minutes\nBranch: unknown\nFiles modified: 0\nNo uncommitted changes\nStarted: 2026-07-22T15:21:31.988Z\nEnded: 2026-07-22T15:24:31.100Z",
+    "tags": [
+      "session",
+      "end",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1784733691988",
+      "project": "Body-Bridge",
+      "duration_minutes": 3,
+      "branch": "unknown",
+      "files_modified": 0,
+      "files_list": []
+    }
+  },
+  {
+    "id": "mem_1784737684375_zb50o5598",
+    "timestamp": "2026-07-22T16:28:04.375Z",
+    "category": "context",
+    "type": "session-start",
+    "importance": "low",
+    "summary": "Session started: sess_1784737 [Body-Bridge]",
+    "content": "Session ID: sess_1784737684374\nDirectory: C:\\Users\\thebe\\Downloads\\Body-Bridge\nWorktree: C:\\Users\\thebe\\Downloads\\Body-Bridge\nProject: Body-Bridge\nStarted: 2026-07-22T16:28:04.375Z",
+    "tags": [
+      "session",
+      "start",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1784737684374",
+      "project": "Body-Bridge",
+      "directory": "C:\\Users\\thebe\\Downloads\\Body-Bridge"
+    }
+  },
+  {
+    "id": "mem_1784737769873_nkyr54v8k",
+    "timestamp": "2026-07-22T16:29:29.873Z",
+    "category": "context",
+    "type": "session",
+    "importance": "medium",
+    "summary": "Session ended: sess_1784737 (1m) [Body-Bridge]",
+    "content": "Session ID: sess_1784737684374\nProject: Body-Bridge\nDuration: 1 minutes\nBranch: main\nFiles modified: 1\nChanged files:\n  - .memory/memory-index.json\nStarted: 2026-07-22T16:28:04.374Z\nEnded: 2026-07-22T16:29:29.873Z",
+    "tags": [
+      "session",
+      "end",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1784737684374",
+      "project": "Body-Bridge",
+      "duration_minutes": 1,
+      "branch": "main",
+      "files_modified": 1,
+      "files_list": [
+        ".memory/memory-index.json"
+      ]
+    }
+  },
+  {
+    "id": "mem_1784738636990_4flwkmzqn",
+    "timestamp": "2026-07-22T16:43:56.990Z",
+    "category": "context",
+    "type": "session-start",
+    "importance": "low",
+    "summary": "Session started: sess_1784738 [Body-Bridge]",
+    "content": "Session ID: sess_1784738636989\nDirectory: C:\\Users\\thebe\\Downloads\\Body-Bridge\nWorktree: C:\\Users\\thebe\\Downloads\\Body-Bridge\nProject: Body-Bridge\nStarted: 2026-07-22T16:43:56.990Z",
+    "tags": [
+      "session",
+      "start",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1784738636989",
+      "project": "Body-Bridge",
+      "directory": "C:\\Users\\thebe\\Downloads\\Body-Bridge"
+    }
+  },
+  {
+    "id": "mem_1784739196924_6n7dzfcuh",
+    "timestamp": "2026-07-22T16:53:16.924Z",
+    "category": "context",
+    "type": "session",
+    "importance": "medium",
+    "summary": "Session ended: sess_1784738 (9m) [Body-Bridge]",
+    "content": "Session ID: sess_1784738636989\nProject: Body-Bridge\nDuration: 9 minutes\nBranch: main\nFiles modified: 1\nChanged files:\n  - .memory/memory-index.json\nStarted: 2026-07-22T16:43:56.989Z\nEnded: 2026-07-22T16:53:16.924Z",
+    "tags": [
+      "session",
+      "end",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1784738636989",
+      "project": "Body-Bridge",
+      "duration_minutes": 9,
+      "branch": "main",
+      "files_modified": 1,
+      "files_list": [
+        ".memory/memory-index.json"
+      ]
+    }
+  },
+  {
+    "id": "mem_1784740756203_0gxyxs4vf",
+    "timestamp": "2026-07-22T17:19:16.203Z",
+    "category": "context",
+    "type": "session-start",
+    "importance": "low",
+    "summary": "Session started: sess_1784740 [Body-Bridge]",
+    "content": "Session ID: sess_1784740756202\nDirectory: C:\\Users\\thebe\\Downloads\\Body-Bridge\nWorktree: C:\\Users\\thebe\\Downloads\\Body-Bridge\nProject: Body-Bridge\nStarted: 2026-07-22T17:19:16.203Z",
+    "tags": [
+      "session",
+      "start",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1784740756202",
+      "project": "Body-Bridge",
+      "directory": "C:\\Users\\thebe\\Downloads\\Body-Bridge"
+    }
+  },
+  {
+    "id": "mem_1784741016550_3zkzwmj1b",
+    "timestamp": "2026-07-22T17:23:36.550Z",
+    "category": "context",
+    "type": "session",
+    "importance": "medium",
+    "summary": "Session ended: sess_1784740 (4m) [Body-Bridge]",
+    "content": "Session ID: sess_1784740756202\nProject: Body-Bridge\nDuration: 4 minutes\nBranch: main\nFiles modified: 1\nChanged files:\n  - .memory/memory-index.json\nStarted: 2026-07-22T17:19:16.202Z\nEnded: 2026-07-22T17:23:36.550Z",
+    "tags": [
+      "session",
+      "end",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1784740756202",
+      "project": "Body-Bridge",
+      "duration_minutes": 4,
+      "branch": "main",
+      "files_modified": 1,
+      "files_list": [
+        ".memory/memory-index.json"
+      ]
+    }
+  },
+  {
+    "id": "mem_1784743309823_hue88y16u",
+    "timestamp": "2026-07-22T18:01:49.823Z",
+    "category": "context",
+    "type": "session-start",
+    "importance": "low",
+    "summary": "Session started: sess_1784743 [Body-Bridge]",
+    "content": "Session ID: sess_1784743309822\nDirectory: C:\\Users\\thebe\\Downloads\\Body-Bridge\nWorktree: C:\\Users\\thebe\\Downloads\\Body-Bridge\nProject: Body-Bridge\nStarted: 2026-07-22T18:01:49.822Z",
+    "tags": [
+      "session",
+      "start",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1784743309822",
+      "project": "Body-Bridge",
+      "directory": "C:\\Users\\thebe\\Downloads\\Body-Bridge"
+    }
+  },
+  {
+    "id": "mem_1784743318425_h52wj9xtw",
+    "timestamp": "2026-07-22T18:01:58.425Z",
+    "category": "context",
+    "type": "session",
+    "importance": "medium",
+    "summary": "Session ended: sess_1784743 (0m) [Body-Bridge]",
+    "content": "Session ID: sess_1784743309822\nProject: Body-Bridge\nDuration: 0 minutes\nBranch: main\nFiles modified: 1\nChanged files:\n  - .memory/memory-index.json\nStarted: 2026-07-22T18:01:49.822Z\nEnded: 2026-07-22T18:01:58.425Z",
+    "tags": [
+      "session",
+      "end",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1784743309822",
+      "project": "Body-Bridge",
+      "duration_minutes": 0,
+      "branch": "main",
+      "files_modified": 1,
+      "files_list": [
+        ".memory/memory-index.json"
+      ]
+    }
+  },
+  {
+    "id": "mem_1784743318989_s2ea0z9r3",
+    "timestamp": "2026-07-22T18:01:58.989Z",
+    "category": "context",
+    "type": "session",
+    "importance": "medium",
+    "summary": "Session ended: sess_1784743 (0m) [Body-Bridge]",
+    "content": "Session ID: sess_1784743309822\nProject: Body-Bridge\nDuration: 0 minutes\nBranch: main\nFiles modified: 1\nChanged files:\n  - .memory/memory-index.json\nStarted: 2026-07-22T18:01:49.822Z\nEnded: 2026-07-22T18:01:58.988Z",
+    "tags": [
+      "session",
+      "end",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1784743309822",
+      "project": "Body-Bridge",
+      "duration_minutes": 0,
+      "branch": "main",
+      "files_modified": 1,
+      "files_list": [
+        ".memory/memory-index.json"
+      ]
+    }
+  },
+  {
+    "id": "mem_1784743351786_d695ur52p",
+    "timestamp": "2026-07-22T18:02:31.786Z",
+    "category": "context",
+    "type": "session-start",
+    "importance": "low",
+    "summary": "Session started: sess_1784743 [Body-Bridge]",
+    "content": "Session ID: sess_1784743351785\nDirectory: C:\\Users\\thebe\\Downloads\\Body-Bridge\nWorktree: C:\\Users\\thebe\\Downloads\\Body-Bridge\nProject: Body-Bridge\nStarted: 2026-07-22T18:02:31.786Z",
+    "tags": [
+      "session",
+      "start",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1784743351785",
+      "project": "Body-Bridge",
+      "directory": "C:\\Users\\thebe\\Downloads\\Body-Bridge"
+    }
+  },
+  {
+    "id": "mem_1784743354240_tr62ullyd",
+    "timestamp": "2026-07-22T18:02:34.240Z",
+    "category": "context",
+    "type": "session",
+    "importance": "medium",
+    "summary": "Session ended: sess_1784743 (0m) [Body-Bridge]",
+    "content": "Session ID: sess_1784743351785\nProject: Body-Bridge\nDuration: 0 minutes\nBranch: main\nFiles modified: 1\nChanged files:\n  - .memory/memory-index.json\nStarted: 2026-07-22T18:02:31.785Z\nEnded: 2026-07-22T18:02:34.240Z",
+    "tags": [
+      "session",
+      "end",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1784743351785",
+      "project": "Body-Bridge",
+      "duration_minutes": 0,
+      "branch": "main",
+      "files_modified": 1,
+      "files_list": [
+        ".memory/memory-index.json"
+      ]
+    }
+  },
+  {
+    "id": "mem_1784743377129_rkwtpr8u3",
+    "timestamp": "2026-07-22T18:02:57.129Z",
+    "category": "context",
+    "type": "session-start",
+    "importance": "low",
+    "summary": "Session started: sess_1784743 [Body-Bridge]",
+    "content": "Session ID: sess_1784743377128\nDirectory: C:\\Users\\thebe\\Downloads\\Body-Bridge\nWorktree: C:\\Users\\thebe\\Downloads\\Body-Bridge\nProject: Body-Bridge\nStarted: 2026-07-22T18:02:57.129Z",
+    "tags": [
+      "session",
+      "start",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1784743377128",
+      "project": "Body-Bridge",
+      "directory": "C:\\Users\\thebe\\Downloads\\Body-Bridge"
+    }
+  },
+  {
+    "id": "mem_1784743379779_y5roefwkd",
+    "timestamp": "2026-07-22T18:02:59.779Z",
+    "category": "context",
+    "type": "session",
+    "importance": "medium",
+    "summary": "Session ended: sess_1784743 (0m) [Body-Bridge]",
+    "content": "Session ID: sess_1784743377128\nProject: Body-Bridge\nDuration: 0 minutes\nBranch: main\nFiles modified: 1\nChanged files:\n  - .memory/memory-index.json\nStarted: 2026-07-22T18:02:57.128Z\nEnded: 2026-07-22T18:02:59.779Z",
+    "tags": [
+      "session",
+      "end",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1784743377128",
+      "project": "Body-Bridge",
+      "duration_minutes": 0,
+      "branch": "main",
+      "files_modified": 1,
+      "files_list": [
+        ".memory/memory-index.json"
+      ]
+    }
+  },
+  {
+    "id": "mem_1784743398926_f8m0p8leu",
+    "timestamp": "2026-07-22T18:03:18.926Z",
+    "category": "context",
+    "type": "session-start",
+    "importance": "low",
+    "summary": "Session started: sess_1784743 [Body-Bridge]",
+    "content": "Session ID: sess_1784743398924\nDirectory: C:\\Users\\thebe\\Downloads\\Body-Bridge\nWorktree: C:\\Users\\thebe\\Downloads\\Body-Bridge\nProject: Body-Bridge\nStarted: 2026-07-22T18:03:18.925Z",
+    "tags": [
+      "session",
+      "start",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1784743398924",
+      "project": "Body-Bridge",
+      "directory": "C:\\Users\\thebe\\Downloads\\Body-Bridge"
+    }
+  },
+  {
+    "id": "mem_1784743402789_dbulvzi9r",
+    "timestamp": "2026-07-22T18:03:22.789Z",
+    "category": "context",
+    "type": "session",
+    "importance": "medium",
+    "summary": "Session ended: sess_1784743 (0m) [Body-Bridge]",
+    "content": "Session ID: sess_1784743398924\nProject: Body-Bridge\nDuration: 0 minutes\nBranch: main\nFiles modified: 1\nChanged files:\n  - .memory/memory-index.json\nStarted: 2026-07-22T18:03:18.924Z\nEnded: 2026-07-22T18:03:22.789Z",
+    "tags": [
+      "session",
+      "end",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1784743398924",
+      "project": "Body-Bridge",
+      "duration_minutes": 0,
+      "branch": "main",
+      "files_modified": 1,
+      "files_list": [
+        ".memory/memory-index.json"
+      ]
+    }
+  },
+  {
+    "id": "mem_1784743419950_jrdr07vvf",
+    "timestamp": "2026-07-22T18:03:39.950Z",
+    "category": "context",
+    "type": "session-start",
+    "importance": "low",
+    "summary": "Session started: sess_1784743 [Body-Bridge]",
+    "content": "Session ID: sess_1784743419948\nDirectory: C:\\Users\\thebe\\Downloads\\Body-Bridge\nWorktree: C:\\Users\\thebe\\Downloads\\Body-Bridge\nProject: Body-Bridge\nStarted: 2026-07-22T18:03:39.949Z",
+    "tags": [
+      "session",
+      "start",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1784743419948",
+      "project": "Body-Bridge",
+      "directory": "C:\\Users\\thebe\\Downloads\\Body-Bridge"
+    }
+  },
+  {
+    "id": "mem_1784743423131_8ps9zsott",
+    "timestamp": "2026-07-22T18:03:43.131Z",
+    "category": "context",
+    "type": "session",
+    "importance": "medium",
+    "summary": "Session ended: sess_1784743 (0m) [Body-Bridge]",
+    "content": "Session ID: sess_1784743419948\nProject: Body-Bridge\nDuration: 0 minutes\nBranch: main\nFiles modified: 1\nChanged files:\n  - .memory/memory-index.json\nStarted: 2026-07-22T18:03:39.948Z\nEnded: 2026-07-22T18:03:43.131Z",
+    "tags": [
+      "session",
+      "end",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1784743419948",
+      "project": "Body-Bridge",
+      "duration_minutes": 0,
+      "branch": "main",
+      "files_modified": 1,
+      "files_list": [
+        ".memory/memory-index.json"
+      ]
+    }
+  },
+  {
+    "id": "mem_1784743435969_hjgljb2w9",
+    "timestamp": "2026-07-22T18:03:55.969Z",
+    "category": "context",
+    "type": "session-start",
+    "importance": "low",
+    "summary": "Session started: sess_1784743 [Body-Bridge]",
+    "content": "Session ID: sess_1784743435968\nDirectory: C:\\Users\\thebe\\Downloads\\Body-Bridge\nWorktree: C:\\Users\\thebe\\Downloads\\Body-Bridge\nProject: Body-Bridge\nStarted: 2026-07-22T18:03:55.969Z",
+    "tags": [
+      "session",
+      "start",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1784743435968",
+      "project": "Body-Bridge",
+      "directory": "C:\\Users\\thebe\\Downloads\\Body-Bridge"
+    }
+  },
+  {
+    "id": "mem_1784743438928_08i018jq7",
+    "timestamp": "2026-07-22T18:03:58.928Z",
+    "category": "context",
+    "type": "session",
+    "importance": "medium",
+    "summary": "Session ended: sess_1784743 (0m) [Body-Bridge]",
+    "content": "Session ID: sess_1784743435968\nProject: Body-Bridge\nDuration: 0 minutes\nBranch: main\nFiles modified: 1\nChanged files:\n  - .memory/memory-index.json\nStarted: 2026-07-22T18:03:55.968Z\nEnded: 2026-07-22T18:03:58.927Z",
+    "tags": [
+      "session",
+      "end",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1784743435968",
+      "project": "Body-Bridge",
+      "duration_minutes": 0,
+      "branch": "main",
+      "files_modified": 1,
+      "files_list": [
+        ".memory/memory-index.json"
+      ]
+    }
+  },
+  {
+    "id": "mem_1784743457529_bpjxbwzsm",
+    "timestamp": "2026-07-22T18:04:17.529Z",
+    "category": "context",
+    "type": "session-start",
+    "importance": "low",
+    "summary": "Session started: sess_1784743 [Body-Bridge]",
+    "content": "Session ID: sess_1784743457528\nDirectory: C:\\Users\\thebe\\Downloads\\Body-Bridge\nWorktree: C:\\Users\\thebe\\Downloads\\Body-Bridge\nProject: Body-Bridge\nStarted: 2026-07-22T18:04:17.529Z",
+    "tags": [
+      "session",
+      "start",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1784743457528",
+      "project": "Body-Bridge",
+      "directory": "C:\\Users\\thebe\\Downloads\\Body-Bridge"
+    }
+  },
+  {
+    "id": "mem_1784743460569_3t1swvkmg",
+    "timestamp": "2026-07-22T18:04:20.569Z",
+    "category": "context",
+    "type": "session",
+    "importance": "medium",
+    "summary": "Session ended: sess_1784743 (0m) [Body-Bridge]",
+    "content": "Session ID: sess_1784743457528\nProject: Body-Bridge\nDuration: 0 minutes\nBranch: main\nFiles modified: 1\nChanged files:\n  - .memory/memory-index.json\nStarted: 2026-07-22T18:04:17.528Z\nEnded: 2026-07-22T18:04:20.569Z",
+    "tags": [
+      "session",
+      "end",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1784743457528",
+      "project": "Body-Bridge",
+      "duration_minutes": 0,
+      "branch": "main",
+      "files_modified": 1,
+      "files_list": [
+        ".memory/memory-index.json"
+      ]
+    }
+  },
+  {
+    "id": "mem_1784743520718_uhbxos92g",
+    "timestamp": "2026-07-22T18:05:20.718Z",
+    "category": "context",
+    "type": "session-start",
+    "importance": "low",
+    "summary": "Session started: sess_1784743 [Body-Bridge]",
+    "content": "Session ID: sess_1784743520717\nDirectory: C:\\Users\\thebe\\Downloads\\Body-Bridge\nWorktree: C:\\Users\\thebe\\Downloads\\Body-Bridge\nProject: Body-Bridge\nStarted: 2026-07-22T18:05:20.718Z",
+    "tags": [
+      "session",
+      "start",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1784743520717",
+      "project": "Body-Bridge",
+      "directory": "C:\\Users\\thebe\\Downloads\\Body-Bridge"
+    }
+  },
+  {
+    "id": "mem_1784743540258_mmz9tc8bt",
+    "timestamp": "2026-07-22T18:05:40.258Z",
+    "category": "context",
+    "type": "session",
+    "importance": "medium",
+    "summary": "Session ended: sess_1784743 (0m) [Body-Bridge]",
+    "content": "Session ID: sess_1784743520717\nProject: Body-Bridge\nDuration: 0 minutes\nBranch: main\nFiles modified: 1\nChanged files:\n  - .memory/memory-index.json\nStarted: 2026-07-22T18:05:20.717Z\nEnded: 2026-07-22T18:05:40.258Z",
+    "tags": [
+      "session",
+      "end",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1784743520717",
+      "project": "Body-Bridge",
+      "duration_minutes": 0,
+      "branch": "main",
+      "files_modified": 1,
+      "files_list": [
+        ".memory/memory-index.json"
+      ]
+    }
+  },
+  {
+    "id": "mem_1784743668840_3josh0rvu",
+    "timestamp": "2026-07-22T18:07:48.840Z",
+    "category": "context",
+    "type": "session-start",
+    "importance": "low",
+    "summary": "Session started: sess_1784743 [Body-Bridge]",
+    "content": "Session ID: sess_1784743668839\nDirectory: C:\\Users\\thebe\\Downloads\\Body-Bridge\nWorktree: C:\\Users\\thebe\\Downloads\\Body-Bridge\nProject: Body-Bridge\nStarted: 2026-07-22T18:07:48.840Z",
+    "tags": [
+      "session",
+      "start",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1784743668839",
+      "project": "Body-Bridge",
+      "directory": "C:\\Users\\thebe\\Downloads\\Body-Bridge"
+    }
+  },
+  {
+    "id": "mem_1784744963807_vtbvtmb20",
+    "timestamp": "2026-07-22T18:29:23.807Z",
+    "category": "context",
+    "type": "session",
+    "importance": "medium",
+    "summary": "Session ended: sess_1784743 (22m) [Body-Bridge]",
+    "content": "Session ID: sess_1784743668839\nProject: Body-Bridge\nDuration: 22 minutes\nBranch: main\nFiles modified: 5\nChanged files:\n  - .memory/memory-index.json\n  - package-lock.json\n  - package.json\n  - scripts/convexAdminClient.js\n  - tsconfig.json\nStarted: 2026-07-22T18:07:48.839Z\nEnded: 2026-07-22T18:29:23.807Z",
+    "tags": [
+      "session",
+      "end",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1784743668839",
+      "project": "Body-Bridge",
+      "duration_minutes": 22,
+      "branch": "main",
+      "files_modified": 5,
+      "files_list": [
+        ".memory/memory-index.json",
+        "package-lock.json",
+        "package.json",
+        "scripts/convexAdminClient.js",
+        "tsconfig.json"
+      ]
+    }
+  },
+  {
+    "id": "mem_1784746559588_xhr49arj1",
+    "timestamp": "2026-07-22T18:55:59.588Z",
+    "category": "context",
+    "type": "session-start",
+    "importance": "low",
+    "summary": "Session started: sess_1784746 [Body-Bridge]",
+    "content": "Session ID: sess_1784746559587\nDirectory: C:\\Users\\thebe\\Downloads\\Body-Bridge\nWorktree: C:\\Users\\thebe\\Downloads\\Body-Bridge\nProject: Body-Bridge\nStarted: 2026-07-22T18:55:59.588Z",
+    "tags": [
+      "session",
+      "start",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1784746559587",
+      "project": "Body-Bridge",
+      "directory": "C:\\Users\\thebe\\Downloads\\Body-Bridge"
+    }
+  },
+  {
+    "id": "mem_1784748441296_7u3owixwz",
+    "timestamp": "2026-07-22T19:27:21.296Z",
+    "category": "performance",
+    "type": "build",
+    "importance": "medium",
+    "summary": "Build completed successfully in unknowns",
+    "content": "Build Status: SUCCESS\nDuration: unknowns\nWarnings: 0\nErrors: 0\nBundle Size: 0.00 MB\n\nBuild completed successfully",
+    "tags": [
+      "build",
+      "performance",
+      "success"
+    ],
+    "metadata": {
+      "duration": "unknown",
+      "success": true,
+      "warnings": 0,
+      "errors": 0,
+      "bundle_size": "0.00 MB"
+    }
+  },
+  {
+    "id": "mem_1784748516139_8gvi7us03",
+    "timestamp": "2026-07-22T19:28:36.139Z",
+    "category": "context",
+    "type": "session",
+    "importance": "medium",
+    "summary": "Session ended: sess_1784746 (33m) [Body-Bridge]",
+    "content": "Session ID: sess_1784746559587\nProject: Body-Bridge\nDuration: 33 minutes\nBranch: main\nFiles modified: 21\nChanged files:\n  - .memory/memory-index.json\n  - convex.config.ts\n  - package-lock.json\n  - package.json\n  - scripts/convexAdminClient.js\n  - src/components/PremiumExerciseCard.tsx\n  - src/components/TabBar.tsx\n  - src/components/TrainingArchitect.tsx\n  - src/components/UnifiedNavMenu.tsx\n  - src/components/players/UserPacedPlayer.tsx\n  - src/screens/Calendar/index.tsx\n  - src/screens/CommunityView.tsx\n  - src/screens/ExerciseDetail.tsx\n  - src/screens/HomeView.tsx\n  - src/screens/SettingsView.tsx\n  - src/screens/WorkoutDetail.tsx\n  - src/screens/WorkoutsView.tsx\n  - src/utils/sanitize.ts\n  - tests/evidence/imageResolver-program-titles-test.ts\n  - tests/imageResolver-test.ts\n  - tsconfig.json\nStarted: 2026-07-22T18:55:59.587Z\nEnded: 2026-07-22T19:28:36.139Z",
+    "tags": [
+      "session",
+      "end",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1784746559587",
+      "project": "Body-Bridge",
+      "duration_minutes": 33,
+      "branch": "main",
+      "files_modified": 21,
+      "files_list": [
+        ".memory/memory-index.json",
+        "convex.config.ts",
+        "package-lock.json",
+        "package.json",
+        "scripts/convexAdminClient.js",
+        "src/components/PremiumExerciseCard.tsx",
+        "src/components/TabBar.tsx",
+        "src/components/TrainingArchitect.tsx",
+        "src/components/UnifiedNavMenu.tsx",
+        "src/components/players/UserPacedPlayer.tsx",
+        "src/screens/Calendar/index.tsx",
+        "src/screens/CommunityView.tsx",
+        "src/screens/ExerciseDetail.tsx",
+        "src/screens/HomeView.tsx",
+        "src/screens/SettingsView.tsx",
+        "src/screens/WorkoutDetail.tsx",
+        "src/screens/WorkoutsView.tsx",
+        "src/utils/sanitize.ts",
+        "tests/evidence/imageResolver-program-titles-test.ts",
+        "tests/imageResolver-test.ts",
+        "tsconfig.json"
+      ]
+    }
+  },
+  {
+    "id": "mem_1784748668853_8mns20jv5",
+    "timestamp": "2026-07-22T19:31:08.853Z",
+    "category": "performance",
+    "type": "build",
+    "importance": "medium",
+    "summary": "Build completed successfully in unknowns",
+    "content": "Build Status: SUCCESS\nDuration: unknowns\nWarnings: 0\nErrors: 0\nBundle Size: 0.00 MB\n\nBuild completed successfully",
+    "tags": [
+      "build",
+      "performance",
+      "success"
+    ],
+    "metadata": {
+      "duration": "unknown",
+      "success": true,
+      "warnings": 0,
+      "errors": 0,
+      "bundle_size": "0.00 MB"
+    }
+  },
+  {
+    "id": "mem_1784814771353_bfpbdwwmf",
+    "timestamp": "2026-07-23T13:52:51.353Z",
+    "category": "context",
+    "type": "session-start",
+    "importance": "low",
+    "summary": "Session started: sess_1784814 [Body-Bridge]",
+    "content": "Session ID: sess_1784814771352\nDirectory: C:\\Users\\thebe\\Downloads\\Body-Bridge\nWorktree: C:\\Users\\thebe\\Downloads\\Body-Bridge\nProject: Body-Bridge\nStarted: 2026-07-23T13:52:51.353Z",
+    "tags": [
+      "session",
+      "start",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1784814771352",
+      "project": "Body-Bridge",
+      "directory": "C:\\Users\\thebe\\Downloads\\Body-Bridge"
+    }
+  },
+  {
+    "id": "mem_1784815761225_c8k5ysuh4",
+    "timestamp": "2026-07-23T14:09:21.225Z",
+    "category": "context",
+    "type": "session",
+    "importance": "medium",
+    "summary": "Session ended: sess_1784814 (16m) [Body-Bridge]",
+    "content": "Session ID: sess_1784814771352\nProject: Body-Bridge\nDuration: 16 minutes\nBranch: main\nFiles modified: 21\nChanged files:\n  - .memory/memory-index.json\n  - convex.config.ts\n  - package-lock.json\n  - package.json\n  - scripts/convexAdminClient.js\n  - src/components/PremiumExerciseCard.tsx\n  - src/components/TabBar.tsx\n  - src/components/TrainingArchitect.tsx\n  - src/components/UnifiedNavMenu.tsx\n  - src/components/players/UserPacedPlayer.tsx\n  - src/screens/Calendar/index.tsx\n  - src/screens/CommunityView.tsx\n  - src/screens/ExerciseDetail.tsx\n  - src/screens/HomeView.tsx\n  - src/screens/SettingsView.tsx\n  - src/screens/WorkoutDetail.tsx\n  - src/screens/WorkoutsView.tsx\n  - src/utils/sanitize.ts\n  - tests/evidence/imageResolver-program-titles-test.ts\n  - tests/imageResolver-test.ts\n  - tsconfig.json\nStarted: 2026-07-23T13:52:51.352Z\nEnded: 2026-07-23T14:09:21.224Z",
+    "tags": [
+      "session",
+      "end",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1784814771352",
+      "project": "Body-Bridge",
+      "duration_minutes": 16,
+      "branch": "main",
+      "files_modified": 21,
+      "files_list": [
+        ".memory/memory-index.json",
+        "convex.config.ts",
+        "package-lock.json",
+        "package.json",
+        "scripts/convexAdminClient.js",
+        "src/components/PremiumExerciseCard.tsx",
+        "src/components/TabBar.tsx",
+        "src/components/TrainingArchitect.tsx",
+        "src/components/UnifiedNavMenu.tsx",
+        "src/components/players/UserPacedPlayer.tsx",
+        "src/screens/Calendar/index.tsx",
+        "src/screens/CommunityView.tsx",
+        "src/screens/ExerciseDetail.tsx",
+        "src/screens/HomeView.tsx",
+        "src/screens/SettingsView.tsx",
+        "src/screens/WorkoutDetail.tsx",
+        "src/screens/WorkoutsView.tsx",
+        "src/utils/sanitize.ts",
+        "tests/evidence/imageResolver-program-titles-test.ts",
+        "tests/imageResolver-test.ts",
+        "tsconfig.json"
+      ]
+    }
+  },
+  {
+    "id": "mem_1784819713893_z2m9l1ghh",
+    "timestamp": "2026-07-23T15:15:13.893Z",
+    "category": "context",
+    "type": "session-start",
+    "importance": "low",
+    "summary": "Session started: sess_1784819 [Body-Bridge]",
+    "content": "Session ID: sess_1784819713892\nDirectory: C:\\Users\\thebe\\Downloads\\Body-Bridge\nWorktree: C:\\Users\\thebe\\Downloads\\Body-Bridge\nProject: Body-Bridge\nStarted: 2026-07-23T15:15:13.893Z",
+    "tags": [
+      "session",
+      "start",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1784819713892",
+      "project": "Body-Bridge",
+      "directory": "C:\\Users\\thebe\\Downloads\\Body-Bridge"
+    }
+  },
+  {
+    "id": "mem_1784819865556_hnttc5nnz",
+    "timestamp": "2026-07-23T15:17:45.556Z",
+    "category": "context",
+    "type": "session",
+    "importance": "medium",
+    "summary": "Session ended: sess_1784819 (3m) [Body-Bridge]",
+    "content": "Session ID: sess_1784819713892\nProject: Body-Bridge\nDuration: 3 minutes\nBranch: main\nFiles modified: 21\nChanged files:\n  - .memory/memory-index.json\n  - convex.config.ts\n  - package-lock.json\n  - package.json\n  - scripts/convexAdminClient.js\n  - src/components/PremiumExerciseCard.tsx\n  - src/components/TabBar.tsx\n  - src/components/TrainingArchitect.tsx\n  - src/components/UnifiedNavMenu.tsx\n  - src/components/players/UserPacedPlayer.tsx\n  - src/screens/Calendar/index.tsx\n  - src/screens/CommunityView.tsx\n  - src/screens/ExerciseDetail.tsx\n  - src/screens/HomeView.tsx\n  - src/screens/SettingsView.tsx\n  - src/screens/WorkoutDetail.tsx\n  - src/screens/WorkoutsView.tsx\n  - src/utils/sanitize.ts\n  - tests/evidence/imageResolver-program-titles-test.ts\n  - tests/imageResolver-test.ts\n  - tsconfig.json\nStarted: 2026-07-23T15:15:13.892Z\nEnded: 2026-07-23T15:17:45.555Z",
+    "tags": [
+      "session",
+      "end",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1784819713892",
+      "project": "Body-Bridge",
+      "duration_minutes": 3,
+      "branch": "main",
+      "files_modified": 21,
+      "files_list": [
+        ".memory/memory-index.json",
+        "convex.config.ts",
+        "package-lock.json",
+        "package.json",
+        "scripts/convexAdminClient.js",
+        "src/components/PremiumExerciseCard.tsx",
+        "src/components/TabBar.tsx",
+        "src/components/TrainingArchitect.tsx",
+        "src/components/UnifiedNavMenu.tsx",
+        "src/components/players/UserPacedPlayer.tsx",
+        "src/screens/Calendar/index.tsx",
+        "src/screens/CommunityView.tsx",
+        "src/screens/ExerciseDetail.tsx",
+        "src/screens/HomeView.tsx",
+        "src/screens/SettingsView.tsx",
+        "src/screens/WorkoutDetail.tsx",
+        "src/screens/WorkoutsView.tsx",
+        "src/utils/sanitize.ts",
+        "tests/evidence/imageResolver-program-titles-test.ts",
+        "tests/imageResolver-test.ts",
+        "tsconfig.json"
+      ]
+    }
+  },
+  {
+    "id": "mem_1784820224625_j2alcutzd",
+    "timestamp": "2026-07-23T15:23:44.625Z",
+    "category": "context",
+    "type": "session-start",
+    "importance": "low",
+    "summary": "Session started: sess_1784820 [Body-Bridge]",
+    "content": "Session ID: sess_1784820224624\nDirectory: C:\\Users\\thebe\\Downloads\\Body-Bridge\nWorktree: C:\\Users\\thebe\\Downloads\\Body-Bridge\nProject: Body-Bridge\nStarted: 2026-07-23T15:23:44.625Z",
+    "tags": [
+      "session",
+      "start",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1784820224624",
+      "project": "Body-Bridge",
+      "directory": "C:\\Users\\thebe\\Downloads\\Body-Bridge"
+    }
+  },
+  {
+    "id": "mem_1784820450524_g374v37s0",
+    "timestamp": "2026-07-23T15:27:30.524Z",
+    "category": "context",
+    "type": "session",
+    "importance": "medium",
+    "summary": "Session ended: sess_1784820 (4m) [Body-Bridge]",
+    "content": "Session ID: sess_1784820224624\nProject: Body-Bridge\nDuration: 4 minutes\nBranch: main\nFiles modified: 21\nChanged files:\n  - .memory/memory-index.json\n  - convex.config.ts\n  - package-lock.json\n  - package.json\n  - scripts/convexAdminClient.js\n  - src/components/PremiumExerciseCard.tsx\n  - src/components/TabBar.tsx\n  - src/components/TrainingArchitect.tsx\n  - src/components/UnifiedNavMenu.tsx\n  - src/components/players/UserPacedPlayer.tsx\n  - src/screens/Calendar/index.tsx\n  - src/screens/CommunityView.tsx\n  - src/screens/ExerciseDetail.tsx\n  - src/screens/HomeView.tsx\n  - src/screens/SettingsView.tsx\n  - src/screens/WorkoutDetail.tsx\n  - src/screens/WorkoutsView.tsx\n  - src/utils/sanitize.ts\n  - tests/evidence/imageResolver-program-titles-test.ts\n  - tests/imageResolver-test.ts\n  - tsconfig.json\nStarted: 2026-07-23T15:23:44.624Z\nEnded: 2026-07-23T15:27:30.523Z",
+    "tags": [
+      "session",
+      "end",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1784820224624",
+      "project": "Body-Bridge",
+      "duration_minutes": 4,
+      "branch": "main",
+      "files_modified": 21,
+      "files_list": [
+        ".memory/memory-index.json",
+        "convex.config.ts",
+        "package-lock.json",
+        "package.json",
+        "scripts/convexAdminClient.js",
+        "src/components/PremiumExerciseCard.tsx",
+        "src/components/TabBar.tsx",
+        "src/components/TrainingArchitect.tsx",
+        "src/components/UnifiedNavMenu.tsx",
+        "src/components/players/UserPacedPlayer.tsx",
+        "src/screens/Calendar/index.tsx",
+        "src/screens/CommunityView.tsx",
+        "src/screens/ExerciseDetail.tsx",
+        "src/screens/HomeView.tsx",
+        "src/screens/SettingsView.tsx",
+        "src/screens/WorkoutDetail.tsx",
+        "src/screens/WorkoutsView.tsx",
+        "src/utils/sanitize.ts",
+        "tests/evidence/imageResolver-program-titles-test.ts",
+        "tests/imageResolver-test.ts",
+        "tsconfig.json"
+      ]
+    }
+  },
+  {
+    "id": "mem_1784821694994_04nvjb98a",
+    "timestamp": "2026-07-23T15:48:14.994Z",
+    "category": "context",
+    "type": "session-start",
+    "importance": "low",
+    "summary": "Session started: sess_1784821 [Body-Bridge]",
+    "content": "Session ID: sess_1784821694993\nDirectory: C:\\Users\\thebe\\Downloads\\Body-Bridge\nWorktree: C:\\Users\\thebe\\Downloads\\Body-Bridge\nProject: Body-Bridge\nStarted: 2026-07-23T15:48:14.994Z",
+    "tags": [
+      "session",
+      "start",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1784821694993",
+      "project": "Body-Bridge",
+      "directory": "C:\\Users\\thebe\\Downloads\\Body-Bridge"
+    }
+  },
+  {
+    "id": "mem_1784821811311_wri3v3yf3",
+    "timestamp": "2026-07-23T15:50:11.311Z",
+    "category": "context",
+    "type": "session",
+    "importance": "medium",
+    "summary": "Session ended: sess_1784821 (2m) [Body-Bridge]",
+    "content": "Session ID: sess_1784821694993\nProject: Body-Bridge\nDuration: 2 minutes\nBranch: main\nFiles modified: 21\nChanged files:\n  - .memory/memory-index.json\n  - convex.config.ts\n  - package-lock.json\n  - package.json\n  - scripts/convexAdminClient.js\n  - src/components/PremiumExerciseCard.tsx\n  - src/components/TabBar.tsx\n  - src/components/TrainingArchitect.tsx\n  - src/components/UnifiedNavMenu.tsx\n  - src/components/players/UserPacedPlayer.tsx\n  - src/screens/Calendar/index.tsx\n  - src/screens/CommunityView.tsx\n  - src/screens/ExerciseDetail.tsx\n  - src/screens/HomeView.tsx\n  - src/screens/SettingsView.tsx\n  - src/screens/WorkoutDetail.tsx\n  - src/screens/WorkoutsView.tsx\n  - src/utils/sanitize.ts\n  - tests/evidence/imageResolver-program-titles-test.ts\n  - tests/imageResolver-test.ts\n  - tsconfig.json\nStarted: 2026-07-23T15:48:14.993Z\nEnded: 2026-07-23T15:50:11.311Z",
+    "tags": [
+      "session",
+      "end",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1784821694993",
+      "project": "Body-Bridge",
+      "duration_minutes": 2,
+      "branch": "main",
+      "files_modified": 21,
+      "files_list": [
+        ".memory/memory-index.json",
+        "convex.config.ts",
+        "package-lock.json",
+        "package.json",
+        "scripts/convexAdminClient.js",
+        "src/components/PremiumExerciseCard.tsx",
+        "src/components/TabBar.tsx",
+        "src/components/TrainingArchitect.tsx",
+        "src/components/UnifiedNavMenu.tsx",
+        "src/components/players/UserPacedPlayer.tsx",
+        "src/screens/Calendar/index.tsx",
+        "src/screens/CommunityView.tsx",
+        "src/screens/ExerciseDetail.tsx",
+        "src/screens/HomeView.tsx",
+        "src/screens/SettingsView.tsx",
+        "src/screens/WorkoutDetail.tsx",
+        "src/screens/WorkoutsView.tsx",
+        "src/utils/sanitize.ts",
+        "tests/evidence/imageResolver-program-titles-test.ts",
+        "tests/imageResolver-test.ts",
+        "tsconfig.json"
+      ]
+    }
+  },
+  {
+    "id": "mem_1784821951883_hm1ipwz4j",
+    "timestamp": "2026-07-23T15:52:31.883Z",
+    "category": "context",
+    "type": "session-start",
+    "importance": "low",
+    "summary": "Session started: sess_1784821 [Body-Bridge]",
+    "content": "Session ID: sess_1784821951882\nDirectory: C:\\Users\\thebe\\Downloads\\Body-Bridge\nWorktree: C:\\Users\\thebe\\Downloads\\Body-Bridge\nProject: Body-Bridge\nStarted: 2026-07-23T15:52:31.882Z",
+    "tags": [
+      "session",
+      "start",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1784821951882",
+      "project": "Body-Bridge",
+      "directory": "C:\\Users\\thebe\\Downloads\\Body-Bridge"
+    }
+  },
+  {
+    "id": "mem_1784822491709_099m6lsvg",
+    "timestamp": "2026-07-23T16:01:31.709Z",
+    "category": "context",
+    "type": "session",
+    "importance": "medium",
+    "summary": "Session ended: sess_1784821 (9m) [Body-Bridge]",
+    "content": "Session ID: sess_1784821951882\nProject: Body-Bridge\nDuration: 9 minutes\nBranch: main\nFiles modified: 21\nChanged files:\n  - .memory/memory-index.json\n  - convex.config.ts\n  - package-lock.json\n  - package.json\n  - scripts/convexAdminClient.js\n  - src/components/PremiumExerciseCard.tsx\n  - src/components/TabBar.tsx\n  - src/components/TrainingArchitect.tsx\n  - src/components/UnifiedNavMenu.tsx\n  - src/components/players/UserPacedPlayer.tsx\n  - src/screens/Calendar/index.tsx\n  - src/screens/CommunityView.tsx\n  - src/screens/ExerciseDetail.tsx\n  - src/screens/HomeView.tsx\n  - src/screens/SettingsView.tsx\n  - src/screens/WorkoutDetail.tsx\n  - src/screens/WorkoutsView.tsx\n  - src/utils/sanitize.ts\n  - tests/evidence/imageResolver-program-titles-test.ts\n  - tests/imageResolver-test.ts\n  - tsconfig.json\nStarted: 2026-07-23T15:52:31.882Z\nEnded: 2026-07-23T16:01:31.709Z",
+    "tags": [
+      "session",
+      "end",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1784821951882",
+      "project": "Body-Bridge",
+      "duration_minutes": 9,
+      "branch": "main",
+      "files_modified": 21,
+      "files_list": [
+        ".memory/memory-index.json",
+        "convex.config.ts",
+        "package-lock.json",
+        "package.json",
+        "scripts/convexAdminClient.js",
+        "src/components/PremiumExerciseCard.tsx",
+        "src/components/TabBar.tsx",
+        "src/components/TrainingArchitect.tsx",
+        "src/components/UnifiedNavMenu.tsx",
+        "src/components/players/UserPacedPlayer.tsx",
+        "src/screens/Calendar/index.tsx",
+        "src/screens/CommunityView.tsx",
+        "src/screens/ExerciseDetail.tsx",
+        "src/screens/HomeView.tsx",
+        "src/screens/SettingsView.tsx",
+        "src/screens/WorkoutDetail.tsx",
+        "src/screens/WorkoutsView.tsx",
+        "src/utils/sanitize.ts",
+        "tests/evidence/imageResolver-program-titles-test.ts",
+        "tests/imageResolver-test.ts",
+        "tsconfig.json"
+      ]
+    }
+  },
+  {
+    "id": "mem_1784824302389_mjcc9pbnu",
+    "timestamp": "2026-07-23T16:31:42.389Z",
+    "category": "context",
+    "type": "session-start",
+    "importance": "low",
+    "summary": "Session started: sess_1784824 [Body-Bridge]",
+    "content": "Session ID: sess_1784824302387\nDirectory: C:\\Users\\thebe\\Downloads\\Body-Bridge\nWorktree: C:\\Users\\thebe\\Downloads\\Body-Bridge\nProject: Body-Bridge\nStarted: 2026-07-23T16:31:42.388Z",
+    "tags": [
+      "session",
+      "start",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1784824302387",
+      "project": "Body-Bridge",
+      "directory": "C:\\Users\\thebe\\Downloads\\Body-Bridge"
+    }
+  },
+  {
+    "id": "mem_1784825103222_kb80egcjo",
+    "timestamp": "2026-07-23T16:45:03.222Z",
+    "category": "context",
+    "type": "session",
+    "importance": "medium",
+    "summary": "Session ended: sess_1784824 (13m) [Body-Bridge]",
+    "content": "Session ID: sess_1784824302387\nProject: Body-Bridge\nDuration: 13 minutes\nBranch: main\nFiles modified: 21\nChanged files:\n  - .memory/memory-index.json\n  - convex.config.ts\n  - package-lock.json\n  - package.json\n  - scripts/convexAdminClient.js\n  - src/components/PremiumExerciseCard.tsx\n  - src/components/TabBar.tsx\n  - src/components/TrainingArchitect.tsx\n  - src/components/UnifiedNavMenu.tsx\n  - src/components/players/UserPacedPlayer.tsx\n  - src/screens/Calendar/index.tsx\n  - src/screens/CommunityView.tsx\n  - src/screens/ExerciseDetail.tsx\n  - src/screens/HomeView.tsx\n  - src/screens/SettingsView.tsx\n  - src/screens/WorkoutDetail.tsx\n  - src/screens/WorkoutsView.tsx\n  - src/utils/sanitize.ts\n  - tests/evidence/imageResolver-program-titles-test.ts\n  - tests/imageResolver-test.ts\n  - tsconfig.json\nStarted: 2026-07-23T16:31:42.387Z\nEnded: 2026-07-23T16:45:03.222Z",
+    "tags": [
+      "session",
+      "end",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1784824302387",
+      "project": "Body-Bridge",
+      "duration_minutes": 13,
+      "branch": "main",
+      "files_modified": 21,
+      "files_list": [
+        ".memory/memory-index.json",
+        "convex.config.ts",
+        "package-lock.json",
+        "package.json",
+        "scripts/convexAdminClient.js",
+        "src/components/PremiumExerciseCard.tsx",
+        "src/components/TabBar.tsx",
+        "src/components/TrainingArchitect.tsx",
+        "src/components/UnifiedNavMenu.tsx",
+        "src/components/players/UserPacedPlayer.tsx",
+        "src/screens/Calendar/index.tsx",
+        "src/screens/CommunityView.tsx",
+        "src/screens/ExerciseDetail.tsx",
+        "src/screens/HomeView.tsx",
+        "src/screens/SettingsView.tsx",
+        "src/screens/WorkoutDetail.tsx",
+        "src/screens/WorkoutsView.tsx",
+        "src/utils/sanitize.ts",
+        "tests/evidence/imageResolver-program-titles-test.ts",
+        "tests/imageResolver-test.ts",
+        "tsconfig.json"
+      ]
+    }
+  },
+  {
+    "id": "mem_1784825243616_v93su6ijs",
+    "timestamp": "2026-07-23T16:47:23.616Z",
+    "category": "context",
+    "type": "session-start",
+    "importance": "low",
+    "summary": "Session started: sess_1784825 [Body-Bridge]",
+    "content": "Session ID: sess_1784825243616\nDirectory: C:\\Users\\thebe\\Downloads\\Body-Bridge\nWorktree: C:\\Users\\thebe\\Downloads\\Body-Bridge\nProject: Body-Bridge\nStarted: 2026-07-23T16:47:23.616Z",
+    "tags": [
+      "session",
+      "start",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1784825243616",
+      "project": "Body-Bridge",
+      "directory": "C:\\Users\\thebe\\Downloads\\Body-Bridge"
+    }
+  },
+  {
+    "id": "mem_1784825974923_2zv55dvvp",
+    "timestamp": "2026-07-23T16:59:34.923Z",
+    "category": "context",
+    "type": "session",
+    "importance": "medium",
+    "summary": "Session ended: sess_1784825 (12m) [Body-Bridge]",
+    "content": "Session ID: sess_1784825243616\nProject: Body-Bridge\nDuration: 12 minutes\nBranch: main\nFiles modified: 21\nChanged files:\n  - .memory/memory-index.json\n  - convex.config.ts\n  - package-lock.json\n  - package.json\n  - scripts/convexAdminClient.js\n  - src/components/PremiumExerciseCard.tsx\n  - src/components/TabBar.tsx\n  - src/components/TrainingArchitect.tsx\n  - src/components/UnifiedNavMenu.tsx\n  - src/components/players/UserPacedPlayer.tsx\n  - src/screens/Calendar/index.tsx\n  - src/screens/CommunityView.tsx\n  - src/screens/ExerciseDetail.tsx\n  - src/screens/HomeView.tsx\n  - src/screens/SettingsView.tsx\n  - src/screens/WorkoutDetail.tsx\n  - src/screens/WorkoutsView.tsx\n  - src/utils/sanitize.ts\n  - tests/evidence/imageResolver-program-titles-test.ts\n  - tests/imageResolver-test.ts\n  - tsconfig.json\nStarted: 2026-07-23T16:47:23.616Z\nEnded: 2026-07-23T16:59:34.923Z",
+    "tags": [
+      "session",
+      "end",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1784825243616",
+      "project": "Body-Bridge",
+      "duration_minutes": 12,
+      "branch": "main",
+      "files_modified": 21,
+      "files_list": [
+        ".memory/memory-index.json",
+        "convex.config.ts",
+        "package-lock.json",
+        "package.json",
+        "scripts/convexAdminClient.js",
+        "src/components/PremiumExerciseCard.tsx",
+        "src/components/TabBar.tsx",
+        "src/components/TrainingArchitect.tsx",
+        "src/components/UnifiedNavMenu.tsx",
+        "src/components/players/UserPacedPlayer.tsx",
+        "src/screens/Calendar/index.tsx",
+        "src/screens/CommunityView.tsx",
+        "src/screens/ExerciseDetail.tsx",
+        "src/screens/HomeView.tsx",
+        "src/screens/SettingsView.tsx",
+        "src/screens/WorkoutDetail.tsx",
+        "src/screens/WorkoutsView.tsx",
+        "src/utils/sanitize.ts",
+        "tests/evidence/imageResolver-program-titles-test.ts",
+        "tests/imageResolver-test.ts",
+        "tsconfig.json"
+      ]
+    }
+  },
+  {
+    "id": "mem_1784826973104_82k5m5ldl",
+    "timestamp": "2026-07-23T17:16:13.104Z",
+    "category": "context",
+    "type": "session-start",
+    "importance": "low",
+    "summary": "Session started: sess_1784826 [Body-Bridge]",
+    "content": "Session ID: sess_1784826973103\nDirectory: C:\\Users\\thebe\\Downloads\\Body-Bridge\nWorktree: C:\\Users\\thebe\\Downloads\\Body-Bridge\nProject: Body-Bridge\nStarted: 2026-07-23T17:16:13.104Z",
+    "tags": [
+      "session",
+      "start",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1784826973103",
+      "project": "Body-Bridge",
+      "directory": "C:\\Users\\thebe\\Downloads\\Body-Bridge"
+    }
+  },
+  {
+    "id": "mem_1784832267616_8lncsuylh",
+    "timestamp": "2026-07-23T18:44:27.616Z",
+    "category": "context",
+    "type": "session-start",
+    "importance": "low",
+    "summary": "Session started: sess_1784832 [Body-Bridge]",
+    "content": "Session ID: sess_1784832267615\nDirectory: C:\\Users\\thebe\\Downloads\\Body-Bridge\nWorktree: C:\\Users\\thebe\\Downloads\\Body-Bridge\nProject: Body-Bridge\nStarted: 2026-07-23T18:44:27.616Z",
+    "tags": [
+      "session",
+      "start",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1784832267615",
+      "project": "Body-Bridge",
+      "directory": "C:\\Users\\thebe\\Downloads\\Body-Bridge"
+    }
+  },
+  {
+    "id": "mem_1784832553084_krmjdu836",
+    "timestamp": "2026-07-23T18:49:13.084Z",
+    "category": "context",
+    "type": "session",
+    "importance": "medium",
+    "summary": "Session ended: sess_1784832 (5m) [Body-Bridge]",
+    "content": "Session ID: sess_1784832267615\nProject: Body-Bridge\nDuration: 5 minutes\nBranch: main\nFiles modified: 22\nChanged files:\n  - .memory/memory-index.json\n  - convex.config.ts\n  - convex/test_internal_harness.ts\n  - package-lock.json\n  - package.json\n  - scripts/convexAdminClient.js\n  - src/components/PremiumExerciseCard.tsx\n  - src/components/TabBar.tsx\n  - src/components/TrainingArchitect.tsx\n  - src/components/UnifiedNavMenu.tsx\n  - src/components/players/UserPacedPlayer.tsx\n  - src/screens/Calendar/index.tsx\n  - src/screens/CommunityView.tsx\n  - src/screens/ExerciseDetail.tsx\n  - src/screens/HomeView.tsx\n  - src/screens/SettingsView.tsx\n  - src/screens/WorkoutDetail.tsx\n  - src/screens/WorkoutsView.tsx\n  - src/utils/sanitize.ts\n  - tests/evidence/imageResolver-program-titles-test.ts\n  - tests/imageResolver-test.ts\n  - tsconfig.json\nStarted: 2026-07-23T18:44:27.615Z\nEnded: 2026-07-23T18:49:13.083Z",
+    "tags": [
+      "session",
+      "end",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1784832267615",
+      "project": "Body-Bridge",
+      "duration_minutes": 5,
+      "branch": "main",
+      "files_modified": 22,
+      "files_list": [
+        ".memory/memory-index.json",
+        "convex.config.ts",
+        "convex/test_internal_harness.ts",
+        "package-lock.json",
+        "package.json",
+        "scripts/convexAdminClient.js",
+        "src/components/PremiumExerciseCard.tsx",
+        "src/components/TabBar.tsx",
+        "src/components/TrainingArchitect.tsx",
+        "src/components/UnifiedNavMenu.tsx",
+        "src/components/players/UserPacedPlayer.tsx",
+        "src/screens/Calendar/index.tsx",
+        "src/screens/CommunityView.tsx",
+        "src/screens/ExerciseDetail.tsx",
+        "src/screens/HomeView.tsx",
+        "src/screens/SettingsView.tsx",
+        "src/screens/WorkoutDetail.tsx",
+        "src/screens/WorkoutsView.tsx",
+        "src/utils/sanitize.ts",
+        "tests/evidence/imageResolver-program-titles-test.ts",
+        "tests/imageResolver-test.ts",
+        "tsconfig.json"
+      ]
+    }
+  },
+  {
+    "id": "mem_1784832918424_ulc487jo7",
+    "timestamp": "2026-07-23T18:55:18.424Z",
+    "category": "context",
+    "type": "session-start",
+    "importance": "low",
+    "summary": "Session started: sess_1784832 [Body-Bridge]",
+    "content": "Session ID: sess_1784832918423\nDirectory: C:\\Users\\thebe\\Downloads\\Body-Bridge\nWorktree: C:\\Users\\thebe\\Downloads\\Body-Bridge\nProject: Body-Bridge\nStarted: 2026-07-23T18:55:18.424Z",
+    "tags": [
+      "session",
+      "start",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1784832918423",
+      "project": "Body-Bridge",
+      "directory": "C:\\Users\\thebe\\Downloads\\Body-Bridge"
+    }
+  },
+  {
+    "id": "mem_1784833250950_cfjdo84ly",
+    "timestamp": "2026-07-23T19:00:50.950Z",
+    "category": "context",
+    "type": "session",
+    "importance": "medium",
+    "summary": "Session ended: sess_1784832 (6m) [Body-Bridge]",
+    "content": "Session ID: sess_1784832918423\nProject: Body-Bridge\nDuration: 6 minutes\nBranch: main\nFiles modified: 23\nChanged files:\n  - .memory/memory-index.json\n  - convex.config.ts\n  - convex/test_internal_harness.ts\n  - convex/trainerExercises.ts\n  - package-lock.json\n  - package.json\n  - scripts/convexAdminClient.js\n  - src/components/PremiumExerciseCard.tsx\n  - src/components/TabBar.tsx\n  - src/components/TrainingArchitect.tsx\n  - src/components/UnifiedNavMenu.tsx\n  - src/components/players/UserPacedPlayer.tsx\n  - src/screens/Calendar/index.tsx\n  - src/screens/CommunityView.tsx\n  - src/screens/ExerciseDetail.tsx\n  - src/screens/HomeView.tsx\n  - src/screens/SettingsView.tsx\n  - src/screens/WorkoutDetail.tsx\n  - src/screens/WorkoutsView.tsx\n  - src/utils/sanitize.ts\n  - tests/evidence/imageResolver-program-titles-test.ts\n  - tests/imageResolver-test.ts\n  - tsconfig.json\nStarted: 2026-07-23T18:55:18.424Z\nEnded: 2026-07-23T19:00:50.950Z",
+    "tags": [
+      "session",
+      "end",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1784832918423",
+      "project": "Body-Bridge",
+      "duration_minutes": 6,
+      "branch": "main",
+      "files_modified": 23,
+      "files_list": [
+        ".memory/memory-index.json",
+        "convex.config.ts",
+        "convex/test_internal_harness.ts",
+        "convex/trainerExercises.ts",
+        "package-lock.json",
+        "package.json",
+        "scripts/convexAdminClient.js",
+        "src/components/PremiumExerciseCard.tsx",
+        "src/components/TabBar.tsx",
+        "src/components/TrainingArchitect.tsx",
+        "src/components/UnifiedNavMenu.tsx",
+        "src/components/players/UserPacedPlayer.tsx",
+        "src/screens/Calendar/index.tsx",
+        "src/screens/CommunityView.tsx",
+        "src/screens/ExerciseDetail.tsx",
+        "src/screens/HomeView.tsx",
+        "src/screens/SettingsView.tsx",
+        "src/screens/WorkoutDetail.tsx",
+        "src/screens/WorkoutsView.tsx",
+        "src/utils/sanitize.ts",
+        "tests/evidence/imageResolver-program-titles-test.ts",
+        "tests/imageResolver-test.ts",
+        "tsconfig.json"
+      ]
+    }
+  },
+  {
+    "id": "mem_1784833419171_82irvi72w",
+    "timestamp": "2026-07-23T19:03:39.171Z",
+    "category": "context",
+    "type": "session-start",
+    "importance": "low",
+    "summary": "Session started: sess_1784833 [Body-Bridge]",
+    "content": "Session ID: sess_1784833419170\nDirectory: C:\\Users\\thebe\\Downloads\\Body-Bridge\nWorktree: C:\\Users\\thebe\\Downloads\\Body-Bridge\nProject: Body-Bridge\nStarted: 2026-07-23T19:03:39.171Z",
+    "tags": [
+      "session",
+      "start",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1784833419170",
+      "project": "Body-Bridge",
+      "directory": "C:\\Users\\thebe\\Downloads\\Body-Bridge"
+    }
+  },
+  {
+    "id": "mem_1784833524477_o1z4tqicu",
+    "timestamp": "2026-07-23T19:05:24.477Z",
+    "category": "context",
+    "type": "session",
+    "importance": "medium",
+    "summary": "Session ended: sess_1784833 (2m) [Body-Bridge]",
+    "content": "Session ID: sess_1784833419170\nProject: Body-Bridge\nDuration: 2 minutes\nBranch: main\nFiles modified: 23\nChanged files:\n  - .memory/memory-index.json\n  - convex.config.ts\n  - convex/test_internal_harness.ts\n  - convex/trainerExercises.ts\n  - package-lock.json\n  - package.json\n  - scripts/convexAdminClient.js\n  - src/components/PremiumExerciseCard.tsx\n  - src/components/TabBar.tsx\n  - src/components/TrainingArchitect.tsx\n  - src/components/UnifiedNavMenu.tsx\n  - src/components/players/UserPacedPlayer.tsx\n  - src/screens/Calendar/index.tsx\n  - src/screens/CommunityView.tsx\n  - src/screens/ExerciseDetail.tsx\n  - src/screens/HomeView.tsx\n  - src/screens/SettingsView.tsx\n  - src/screens/WorkoutDetail.tsx\n  - src/screens/WorkoutsView.tsx\n  - src/utils/sanitize.ts\n  - tests/evidence/imageResolver-program-titles-test.ts\n  - tests/imageResolver-test.ts\n  - tsconfig.json\nStarted: 2026-07-23T19:03:39.170Z\nEnded: 2026-07-23T19:05:24.477Z",
+    "tags": [
+      "session",
+      "end",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1784833419170",
+      "project": "Body-Bridge",
+      "duration_minutes": 2,
+      "branch": "main",
+      "files_modified": 23,
+      "files_list": [
+        ".memory/memory-index.json",
+        "convex.config.ts",
+        "convex/test_internal_harness.ts",
+        "convex/trainerExercises.ts",
+        "package-lock.json",
+        "package.json",
+        "scripts/convexAdminClient.js",
+        "src/components/PremiumExerciseCard.tsx",
+        "src/components/TabBar.tsx",
+        "src/components/TrainingArchitect.tsx",
+        "src/components/UnifiedNavMenu.tsx",
+        "src/components/players/UserPacedPlayer.tsx",
+        "src/screens/Calendar/index.tsx",
+        "src/screens/CommunityView.tsx",
+        "src/screens/ExerciseDetail.tsx",
+        "src/screens/HomeView.tsx",
+        "src/screens/SettingsView.tsx",
+        "src/screens/WorkoutDetail.tsx",
+        "src/screens/WorkoutsView.tsx",
+        "src/utils/sanitize.ts",
+        "tests/evidence/imageResolver-program-titles-test.ts",
+        "tests/imageResolver-test.ts",
+        "tsconfig.json"
+      ]
+    }
+  },
+  {
+    "id": "mem_1784833627589_3wo61a49x",
+    "timestamp": "2026-07-23T19:07:07.589Z",
+    "category": "context",
+    "type": "session-start",
+    "importance": "low",
+    "summary": "Session started: sess_1784833 [Body-Bridge]",
+    "content": "Session ID: sess_1784833627588\nDirectory: C:\\Users\\thebe\\Downloads\\Body-Bridge\nWorktree: C:\\Users\\thebe\\Downloads\\Body-Bridge\nProject: Body-Bridge\nStarted: 2026-07-23T19:07:07.588Z",
+    "tags": [
+      "session",
+      "start",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1784833627588",
+      "project": "Body-Bridge",
+      "directory": "C:\\Users\\thebe\\Downloads\\Body-Bridge"
+    }
+  },
+  {
+    "id": "mem_1784833643737_fcr4i9491",
+    "timestamp": "2026-07-23T19:07:23.737Z",
+    "category": "context",
+    "type": "session",
+    "importance": "medium",
+    "summary": "Session ended: sess_1784833 (0m) [Body-Bridge]",
+    "content": "Session ID: sess_1784833627588\nProject: Body-Bridge\nDuration: 0 minutes\nBranch: main\nFiles modified: 23\nChanged files:\n  - .memory/memory-index.json\n  - convex.config.ts\n  - convex/test_internal_harness.ts\n  - convex/trainerExercises.ts\n  - package-lock.json\n  - package.json\n  - scripts/convexAdminClient.js\n  - src/components/PremiumExerciseCard.tsx\n  - src/components/TabBar.tsx\n  - src/components/TrainingArchitect.tsx\n  - src/components/UnifiedNavMenu.tsx\n  - src/components/players/UserPacedPlayer.tsx\n  - src/screens/Calendar/index.tsx\n  - src/screens/CommunityView.tsx\n  - src/screens/ExerciseDetail.tsx\n  - src/screens/HomeView.tsx\n  - src/screens/SettingsView.tsx\n  - src/screens/WorkoutDetail.tsx\n  - src/screens/WorkoutsView.tsx\n  - src/utils/sanitize.ts\n  - tests/evidence/imageResolver-program-titles-test.ts\n  - tests/imageResolver-test.ts\n  - tsconfig.json\nStarted: 2026-07-23T19:07:07.588Z\nEnded: 2026-07-23T19:07:23.737Z",
+    "tags": [
+      "session",
+      "end",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1784833627588",
+      "project": "Body-Bridge",
+      "duration_minutes": 0,
+      "branch": "main",
+      "files_modified": 23,
+      "files_list": [
+        ".memory/memory-index.json",
+        "convex.config.ts",
+        "convex/test_internal_harness.ts",
+        "convex/trainerExercises.ts",
+        "package-lock.json",
+        "package.json",
+        "scripts/convexAdminClient.js",
+        "src/components/PremiumExerciseCard.tsx",
+        "src/components/TabBar.tsx",
+        "src/components/TrainingArchitect.tsx",
+        "src/components/UnifiedNavMenu.tsx",
+        "src/components/players/UserPacedPlayer.tsx",
+        "src/screens/Calendar/index.tsx",
+        "src/screens/CommunityView.tsx",
+        "src/screens/ExerciseDetail.tsx",
+        "src/screens/HomeView.tsx",
+        "src/screens/SettingsView.tsx",
+        "src/screens/WorkoutDetail.tsx",
+        "src/screens/WorkoutsView.tsx",
+        "src/utils/sanitize.ts",
+        "tests/evidence/imageResolver-program-titles-test.ts",
+        "tests/imageResolver-test.ts",
+        "tsconfig.json"
+      ]
+    }
+  },
+  {
+    "id": "mem_1784833859346_o8dxo4c8r",
+    "timestamp": "2026-07-23T19:10:59.346Z",
+    "category": "context",
+    "type": "session-start",
+    "importance": "low",
+    "summary": "Session started: sess_1784833 [Body-Bridge]",
+    "content": "Session ID: sess_1784833859345\nDirectory: C:\\Users\\thebe\\Downloads\\Body-Bridge\nWorktree: C:\\Users\\thebe\\Downloads\\Body-Bridge\nProject: Body-Bridge\nStarted: 2026-07-23T19:10:59.346Z",
+    "tags": [
+      "session",
+      "start",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1784833859345",
+      "project": "Body-Bridge",
+      "directory": "C:\\Users\\thebe\\Downloads\\Body-Bridge"
+    }
+  },
+  {
+    "id": "mem_1784834208257_3riyplmhn",
+    "timestamp": "2026-07-23T19:16:48.257Z",
+    "category": "context",
+    "type": "session",
+    "importance": "medium",
+    "summary": "Session ended: sess_1784833 (6m) [Body-Bridge]",
+    "content": "Session ID: sess_1784833859345\nProject: Body-Bridge\nDuration: 6 minutes\nBranch: main\nFiles modified: 23\nChanged files:\n  - .memory/memory-index.json\n  - convex.config.ts\n  - convex/test_internal_harness.ts\n  - convex/trainerExercises.ts\n  - package-lock.json\n  - package.json\n  - scripts/convexAdminClient.js\n  - src/components/PremiumExerciseCard.tsx\n  - src/components/TabBar.tsx\n  - src/components/TrainingArchitect.tsx\n  - src/components/UnifiedNavMenu.tsx\n  - src/components/players/UserPacedPlayer.tsx\n  - src/screens/Calendar/index.tsx\n  - src/screens/CommunityView.tsx\n  - src/screens/ExerciseDetail.tsx\n  - src/screens/HomeView.tsx\n  - src/screens/SettingsView.tsx\n  - src/screens/WorkoutDetail.tsx\n  - src/screens/WorkoutsView.tsx\n  - src/utils/sanitize.ts\n  - tests/evidence/imageResolver-program-titles-test.ts\n  - tests/imageResolver-test.ts\n  - tsconfig.json\nStarted: 2026-07-23T19:10:59.345Z\nEnded: 2026-07-23T19:16:48.257Z",
+    "tags": [
+      "session",
+      "end",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1784833859345",
+      "project": "Body-Bridge",
+      "duration_minutes": 6,
+      "branch": "main",
+      "files_modified": 23,
+      "files_list": [
+        ".memory/memory-index.json",
+        "convex.config.ts",
+        "convex/test_internal_harness.ts",
+        "convex/trainerExercises.ts",
+        "package-lock.json",
+        "package.json",
+        "scripts/convexAdminClient.js",
+        "src/components/PremiumExerciseCard.tsx",
+        "src/components/TabBar.tsx",
+        "src/components/TrainingArchitect.tsx",
+        "src/components/UnifiedNavMenu.tsx",
+        "src/components/players/UserPacedPlayer.tsx",
+        "src/screens/Calendar/index.tsx",
+        "src/screens/CommunityView.tsx",
+        "src/screens/ExerciseDetail.tsx",
+        "src/screens/HomeView.tsx",
+        "src/screens/SettingsView.tsx",
+        "src/screens/WorkoutDetail.tsx",
+        "src/screens/WorkoutsView.tsx",
+        "src/utils/sanitize.ts",
+        "tests/evidence/imageResolver-program-titles-test.ts",
+        "tests/imageResolver-test.ts",
+        "tsconfig.json"
+      ]
+    }
+  },
+  {
+    "id": "mem_1784834411864_ho652kg3c",
+    "timestamp": "2026-07-23T19:20:11.864Z",
+    "category": "performance",
+    "type": "build",
+    "importance": "medium",
+    "summary": "Build completed successfully in unknowns",
+    "content": "Build Status: SUCCESS\nDuration: unknowns\nWarnings: 0\nErrors: 0\nBundle Size: 0.00 MB\n\nBuild completed successfully",
+    "tags": [
+      "build",
+      "performance",
+      "success"
+    ],
+    "metadata": {
+      "duration": "unknown",
+      "success": true,
+      "warnings": 0,
+      "errors": 0,
+      "bundle_size": "0.00 MB"
+    }
+  },
+  {
+    "id": "mem_1784835126680_qqx2hsnqi",
+    "timestamp": "2026-07-23T19:32:06.680Z",
+    "category": "context",
+    "type": "session-start",
+    "importance": "low",
+    "summary": "Session started: sess_1784835 [Body-Bridge]",
+    "content": "Session ID: sess_1784835126679\nDirectory: C:\\Users\\thebe\\Downloads\\Body-Bridge\nWorktree: C:\\Users\\thebe\\Downloads\\Body-Bridge\nProject: Body-Bridge\nStarted: 2026-07-23T19:32:06.680Z",
+    "tags": [
+      "session",
+      "start",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1784835126679",
+      "project": "Body-Bridge",
+      "directory": "C:\\Users\\thebe\\Downloads\\Body-Bridge"
+    }
+  },
+  {
+    "id": "mem_1784836504024_pg9v5aajw",
+    "timestamp": "2026-07-23T19:55:04.024Z",
+    "category": "context",
+    "type": "session-start",
+    "importance": "low",
+    "summary": "Session started: sess_1784836 [Body-Bridge]",
+    "content": "Session ID: sess_1784836504023\nDirectory: C:\\Users\\thebe\\Downloads\\Body-Bridge\nWorktree: C:\\Users\\thebe\\Downloads\\Body-Bridge\nProject: Body-Bridge\nStarted: 2026-07-23T19:55:04.024Z",
+    "tags": [
+      "session",
+      "start",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1784836504023",
+      "project": "Body-Bridge",
+      "directory": "C:\\Users\\thebe\\Downloads\\Body-Bridge"
+    }
+  },
+  {
+    "id": "mem_1784836504639_43wj5z37g",
+    "timestamp": "2026-07-23T19:55:04.639Z",
+    "category": "context",
+    "type": "session-start",
+    "importance": "low",
+    "summary": "Session started: sess_1784836 [Body-Bridge]",
+    "content": "Session ID: sess_1784836504639\nDirectory: C:\\Users\\thebe\\Downloads\\Body-Bridge\nWorktree: C:\\Users\\thebe\\Downloads\\Body-Bridge\nProject: Body-Bridge\nStarted: 2026-07-23T19:55:04.639Z",
+    "tags": [
+      "session",
+      "start",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1784836504639",
+      "project": "Body-Bridge",
+      "directory": "C:\\Users\\thebe\\Downloads\\Body-Bridge"
+    }
+  },
+  {
+    "id": "mem_1784837013088_cjslni6xb",
+    "timestamp": "2026-07-23T20:03:33.088Z",
+    "category": "context",
+    "type": "session",
+    "importance": "medium",
+    "summary": "Session ended: sess_1784836 (8m) [Body-Bridge]",
+    "content": "Session ID: sess_1784836504639\nProject: Body-Bridge\nDuration: 8 minutes\nBranch: main\nFiles modified: 23\nChanged files:\n  - .memory/memory-index.json\n  - convex.config.ts\n  - convex/test_internal_harness.ts\n  - convex/trainerExercises.ts\n  - package-lock.json\n  - package.json\n  - scripts/convexAdminClient.js\n  - src/components/PremiumExerciseCard.tsx\n  - src/components/TabBar.tsx\n  - src/components/TrainingArchitect.tsx\n  - src/components/UnifiedNavMenu.tsx\n  - src/components/players/UserPacedPlayer.tsx\n  - src/screens/Calendar/index.tsx\n  - src/screens/CommunityView.tsx\n  - src/screens/ExerciseDetail.tsx\n  - src/screens/HomeView.tsx\n  - src/screens/SettingsView.tsx\n  - src/screens/WorkoutDetail.tsx\n  - src/screens/WorkoutsView.tsx\n  - src/utils/sanitize.ts\n  - tests/evidence/imageResolver-program-titles-test.ts\n  - tests/imageResolver-test.ts\n  - tsconfig.json\nStarted: 2026-07-23T19:55:04.639Z\nEnded: 2026-07-23T20:03:33.088Z",
+    "tags": [
+      "session",
+      "end",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1784836504639",
+      "project": "Body-Bridge",
+      "duration_minutes": 8,
+      "branch": "main",
+      "files_modified": 23,
+      "files_list": [
+        ".memory/memory-index.json",
+        "convex.config.ts",
+        "convex/test_internal_harness.ts",
+        "convex/trainerExercises.ts",
+        "package-lock.json",
+        "package.json",
+        "scripts/convexAdminClient.js",
+        "src/components/PremiumExerciseCard.tsx",
+        "src/components/TabBar.tsx",
+        "src/components/TrainingArchitect.tsx",
+        "src/components/UnifiedNavMenu.tsx",
+        "src/components/players/UserPacedPlayer.tsx",
+        "src/screens/Calendar/index.tsx",
+        "src/screens/CommunityView.tsx",
+        "src/screens/ExerciseDetail.tsx",
+        "src/screens/HomeView.tsx",
+        "src/screens/SettingsView.tsx",
+        "src/screens/WorkoutDetail.tsx",
+        "src/screens/WorkoutsView.tsx",
+        "src/utils/sanitize.ts",
+        "tests/evidence/imageResolver-program-titles-test.ts",
+        "tests/imageResolver-test.ts",
+        "tsconfig.json"
+      ]
+    }
+  },
+  {
+    "id": "mem_1785643142873_8rcu56urq",
+    "timestamp": "2026-08-02T03:59:02.873Z",
+    "category": "context",
+    "type": "session-start",
+    "importance": "low",
+    "summary": "Session started: sess_1785643 [Body-Bridge]",
+    "content": "Session ID: sess_1785643142872\nDirectory: C:\\Users\\thebe\\Downloads\\Body-Bridge\nWorktree: C:\\Users\\thebe\\Downloads\\Body-Bridge\nProject: Body-Bridge\nStarted: 2026-08-02T03:59:02.872Z",
+    "tags": [
+      "session",
+      "start",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1785643142872",
+      "project": "Body-Bridge",
+      "directory": "C:\\Users\\thebe\\Downloads\\Body-Bridge"
+    }
+  },
+  {
+    "id": "mem_1785643217415_i1j454cty",
+    "timestamp": "2026-08-02T04:00:17.415Z",
+    "category": "context",
+    "type": "session",
+    "importance": "medium",
+    "summary": "Session ended: sess_1785643 (1m) [Body-Bridge]",
+    "content": "Session ID: sess_1785643142872\nProject: Body-Bridge\nDuration: 1 minutes\nBranch: main\nFiles modified: 30\nChanged files:\n  - .memory/memory-index.json\n  - convex.config.ts\n  - convex/_generated/api.d.ts\n  - convex/exercises.ts\n  - convex/lib/sharedHelpers.ts\n  - convex/notion.ts\n  - convex/schema.ts\n  - convex/seed.ts\n  - convex/test_internal_harness.ts\n  - convex/trainerExercises.ts\n  - package-lock.json\n  - package.json\n  - scripts/convexAdminClient.js\n  - src/App.tsx\n  - src/components/PremiumExerciseCard.tsx\n  - src/components/TabBar.tsx\n  - src/components/TrainingArchitect.tsx\n  - src/components/UnifiedNavMenu.tsx\n  - src/components/players/UserPacedPlayer.tsx\n  - src/screens/Calendar/index.tsx\n  - src/screens/CommunityView.tsx\n  - src/screens/ExerciseDetail.tsx\n  - src/screens/HomeView.tsx\n  - src/screens/SettingsView.tsx\n  - src/screens/WorkoutDetail.tsx\n  - src/screens/WorkoutsView.tsx\n  - src/utils/sanitize.ts\n  - tests/evidence/imageResolver-program-titles-test.ts\n  - tests/imageResolver-test.ts\n  - tsconfig.json\nStarted: 2026-08-02T03:59:02.872Z\nEnded: 2026-08-02T04:00:17.415Z",
+    "tags": [
+      "session",
+      "end",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1785643142872",
+      "project": "Body-Bridge",
+      "duration_minutes": 1,
+      "branch": "main",
+      "files_modified": 30,
+      "files_list": [
+        ".memory/memory-index.json",
+        "convex.config.ts",
+        "convex/_generated/api.d.ts",
+        "convex/exercises.ts",
+        "convex/lib/sharedHelpers.ts",
+        "convex/notion.ts",
+        "convex/schema.ts",
+        "convex/seed.ts",
+        "convex/test_internal_harness.ts",
+        "convex/trainerExercises.ts",
+        "package-lock.json",
+        "package.json",
+        "scripts/convexAdminClient.js",
+        "src/App.tsx",
+        "src/components/PremiumExerciseCard.tsx",
+        "src/components/TabBar.tsx",
+        "src/components/TrainingArchitect.tsx",
+        "src/components/UnifiedNavMenu.tsx",
+        "src/components/players/UserPacedPlayer.tsx",
+        "src/screens/Calendar/index.tsx",
+        "src/screens/CommunityView.tsx",
+        "src/screens/ExerciseDetail.tsx",
+        "src/screens/HomeView.tsx",
+        "src/screens/SettingsView.tsx",
+        "src/screens/WorkoutDetail.tsx",
+        "src/screens/WorkoutsView.tsx",
+        "src/utils/sanitize.ts",
+        "tests/evidence/imageResolver-program-titles-test.ts",
+        "tests/imageResolver-test.ts",
+        "tsconfig.json"
+      ]
+    }
+  },
+  {
+    "id": "mem_1785763158913_l69cnktq2",
+    "timestamp": "2026-08-03T13:19:18.913Z",
+    "category": "context",
+    "type": "session-start",
+    "importance": "low",
+    "summary": "Session started: sess_1785763 [Body-Bridge]",
+    "content": "Session ID: sess_1785763158912\nDirectory: C:\\Users\\thebe\\Downloads\\Body-Bridge\nWorktree: C:\\Users\\thebe\\Downloads\\Body-Bridge\nProject: Body-Bridge\nStarted: 2026-08-03T13:19:18.913Z",
+    "tags": [
+      "session",
+      "start",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1785763158912",
+      "project": "Body-Bridge",
+      "directory": "C:\\Users\\thebe\\Downloads\\Body-Bridge"
+    }
+  },
+  {
+    "id": "mem_1785763463564_toy9pz2r",
+    "timestamp": "2026-08-03T13:24:23.564Z",
+    "category": "context",
+    "type": "session",
+    "importance": "medium",
+    "summary": "Session ended: sess_1785763 (5m) [Body-Bridge]",
+    "content": "Session ID: sess_1785763158912\nProject: Body-Bridge\nDuration: 5 minutes\nBranch: main\nFiles modified: 13\nChanged files:\n  - .memory/memory-index.json\n  - convex.config.ts\n  - convex/_generated/api.d.ts\n  - convex/test_internal_harness.ts\n  - package-lock.json\n  - package.json\n  - scripts/convexAdminClient.js\n  - src/App.tsx\n  - src/utils/sanitize.ts\n  - test-results/.last-run.json\n  - tests/evidence/imageResolver-program-titles-test.ts\n  - tests/imageResolver-test.ts\n  - tsconfig.json\nStarted: 2026-08-03T13:19:18.912Z\nEnded: 2026-08-03T13:24:23.564Z",
+    "tags": [
+      "session",
+      "end",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1785763158912",
+      "project": "Body-Bridge",
+      "duration_minutes": 5,
+      "branch": "main",
+      "files_modified": 13,
+      "files_list": [
+        ".memory/memory-index.json",
+        "convex.config.ts",
+        "convex/_generated/api.d.ts",
+        "convex/test_internal_harness.ts",
+        "package-lock.json",
+        "package.json",
+        "scripts/convexAdminClient.js",
+        "src/App.tsx",
+        "src/utils/sanitize.ts",
+        "test-results/.last-run.json",
+        "tests/evidence/imageResolver-program-titles-test.ts",
+        "tests/imageResolver-test.ts",
+        "tsconfig.json"
+      ]
+    }
+  },
+  {
+    "id": "mem_1785763494109_d2ajuqiw6",
+    "timestamp": "2026-08-03T13:24:54.109Z",
+    "category": "context",
+    "type": "session",
+    "importance": "medium",
+    "summary": "Session ended: sess_1785763 (6m) [Body-Bridge]",
+    "content": "Session ID: sess_1785763158912\nProject: Body-Bridge\nDuration: 6 minutes\nBranch: main\nFiles modified: 13\nChanged files:\n  - .memory/memory-index.json\n  - convex.config.ts\n  - convex/_generated/api.d.ts\n  - convex/test_internal_harness.ts\n  - package-lock.json\n  - package.json\n  - scripts/convexAdminClient.js\n  - src/App.tsx\n  - src/utils/sanitize.ts\n  - test-results/.last-run.json\n  - tests/evidence/imageResolver-program-titles-test.ts\n  - tests/imageResolver-test.ts\n  - tsconfig.json\nStarted: 2026-08-03T13:19:18.912Z\nEnded: 2026-08-03T13:24:54.109Z",
+    "tags": [
+      "session",
+      "end",
+      "auto-captured",
+      "Body-Bridge"
+    ],
+    "metadata": {
+      "session_id": "sess_1785763158912",
+      "project": "Body-Bridge",
+      "duration_minutes": 6,
+      "branch": "main",
+      "files_modified": 13,
+      "files_list": [
+        ".memory/memory-index.json",
+        "convex.config.ts",
+        "convex/_generated/api.d.ts",
+        "convex/test_internal_harness.ts",
+        "package-lock.json",
+        "package.json",
+        "scripts/convexAdminClient.js",
+        "src/App.tsx",
+        "src/utils/sanitize.ts",
+        "test-results/.last-run.json",
+        "tests/evidence/imageResolver-program-titles-test.ts",
+        "tests/imageResolver-test.ts",
+        "tsconfig.json"
+      ]
+    }
   }
 ]
