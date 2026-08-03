@@ -548,7 +548,14 @@ export default function App() {
         </Suspense>
       )}
 
-      {!isAuthLoading && (devForceSettings ? (
+      {!isAuthLoading && (devForceExercises ? (
+        // DEV: force-show exercises for visual verification
+        <div className="h-full overflow-y-auto custom-scrollbar transition-opacity duration-300">
+          <Suspense fallback={<ViewLoader />}>
+            <ExercisesView onSelect={() => {}} />
+          </Suspense>
+        </div>
+      ) : devForceSettings ? (
         // DEV: force-show settings for visual verification
         <div className="h-full overflow-y-auto custom-scrollbar transition-opacity duration-300">
           <Suspense fallback={<ViewLoader />}>
