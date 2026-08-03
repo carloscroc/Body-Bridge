@@ -26,7 +26,7 @@ const TabBar: React.FC<TabBarProps> = ({ activeTab, onTabChange }) => {
               }`}
             >
               <div className={`${isActive ? 'scale-90' : 'scale-110'} transition-transform duration-200`}>
-                {React.cloneElement(tab.icon as React.ReactElement, { 
+                {React.cloneElement(tab.icon as React.ReactElement<{ size?: number; strokeWidth?: number }>, { 
                   size: isActive ? 18 : 22, 
                   strokeWidth: isActive ? 2.5 : 2 
                 })}

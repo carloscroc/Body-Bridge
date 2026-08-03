@@ -71,7 +71,7 @@ const UserPacedPlayer: React.FC<UserPacedPlayerProps> = ({
       <div className="absolute inset-0 z-0 bg-black">
         {videoUrl ? (
           <VideoPlayer
-            source={videoUrl}
+            videoUrl={videoUrl}
             poster={currentExercise.image}
             className="w-full h-full object-cover"
             autoPlay={isVideoPlaying}

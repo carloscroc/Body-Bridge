@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Menu, Calendar, Dumbbell, Utensils, Users, ChevronRight } from 'lucide-react';
+import { Menu, Calendar, Dumbbell, Utensils, Users, ChevronRight, CheckCircle } from 'lucide-react';
 
 interface UnifiedNavMenuProps {
   onNavigateToToday?: () => void;

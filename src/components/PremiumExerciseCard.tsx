@@ -31,14 +31,14 @@ interface PremiumExerciseCardProps {
 
 // Spring configuration for premium feel
 const springConfig = {
-  type: "spring",
+  type: "spring" as const,
   stiffness: 400,
   damping: 30,
   mass: 1
 };
 
 const elasticSpring = {
-  type: "spring",
+  type: "spring" as const,
   stiffness: 300,
   damping: 20,
   mass: 0.8
@@ -96,7 +96,7 @@ const PremiumExerciseCard: React.FC<PremiumExerciseCardProps> = ({
     setIsHovered(true);
   }, []);
 
-  const createRipple = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
+  const createRipple = useCallback((e: React.MouseEvent<HTMLElement>) => {
     if (!cardRef.current) return;
     
     const rect = cardRef.current.getBoundingClientRect();
@@ -117,7 +117,7 @@ const PremiumExerciseCard: React.FC<PremiumExerciseCardProps> = ({
     }, 800);
   }, []);
 
-  const createParticles = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
+  const createParticles = useCallback((e: React.MouseEvent<HTMLElement>) => {
     if (!cardRef.current) return;
     
     const rect = cardRef.current.getBoundingClientRect();
@@ -142,7 +142,7 @@ const PremiumExerciseCard: React.FC<PremiumExerciseCardProps> = ({
     }, 1000);
   }, []);
 
-  const handleClick = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
+  const handleClick = useCallback((e: React.MouseEvent<HTMLElement>) => {
     createRipple(e);
     onSelect();
   }, [createRipple, onSelect]);

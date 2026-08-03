@@ -119,7 +119,18 @@ const TrainingArchitect: React.FC<TrainingArchitectProps> = ({
         difficulty,
         tags: selectedFocus,
         coverImage: coverImage || undefined,
-        exercises: allExercises, // In unified builder, we send all exercises
+        exercises: allExercises.map(ex => ({
+          exerciseId: ex.exerciseId,
+          name: ex.name,
+          image: ex.image,
+          muscleGroup: ex.bodyRegion,
+          sets: ex.sets,
+          reps: ex.reps,
+          duration: ex.duration,
+          restSeconds: ex.restSeconds,
+          order: ex.order,
+          videoUrl: ex.videoUrl,
+        })), // In unified builder, we send all exercises
         // We'll also store the section info in the exercise metadata if needed, 
         // but for now let's keep it simple.
       });
