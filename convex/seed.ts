@@ -266,6 +266,7 @@ export const insertExercise = mutation({
       libraryId: `seed-${args.exercise.name.toLowerCase().replace(/\s+/g, "-")}`,
       tags: [...args.exercise.tags, "Trainer: open-source"],
       lifecycle: "ready",
+      instructions: args.exercise.instructions.join("\n\n"),
     });
   },
 });

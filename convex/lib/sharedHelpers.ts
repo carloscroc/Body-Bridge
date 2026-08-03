@@ -27,14 +27,14 @@ export function normalizeToLibraryId(input: string): string {
  * 2. Normalize libraryId
  * 3. Reject empty normalized identifier
  * 4. Query by_libraryId index
- * 5. Throw when existing record found
- * 6. Insert only when absent
- * 7. Return created record ID
+ * 5. Return existing ID instead of throwing (idempotent)
+ * 6. Query by_sourceSystem_sourceId index (double dedup)
+ * 7. Insert only when absent
+ * 8. Return created or existing record ID
  * 
  * @param ctx - Mutation context
  * @param args - Validated exercise arguments
- * @returns The ID of the created exercise
- * @throws Error if exercise with libraryId already exists
+ * @returns The ID of the created or existing exercise
  */
 export async function createCanonicalExercise(
   ctx: MutationCtx,
@@ -42,6 +42,19 @@ export async function createCanonicalExercise(
     name: string;
     libraryId?: string;
     lifecycle?: "draft" | "ready" | "archived";
+
+    // Notion fields
+    sourceSystem?: "notion" | "manual";
+    sourceId?: string;
+    category?: string;
+    bodyRegion?: string;
+    primaryMuscles?: string[];
+    secondaryMuscles?: string[];
+    equipment?: string[];
+    difficulty?: "Beginner" | "Intermediate" | "Advanced";
+    overview?: string;
+    instructions?: string;
+    coverPhoto?: string;
   }
 ): Promise<Id<"exercises">> {
   // Generate or normalize libraryId
@@ -54,15 +67,28 @@ export async function createCanonicalExercise(
     throw new Error("libraryId cannot be empty after normalization");
   }
 
-  // Query by_libraryId
-  const existing = await ctx.db
+  // Double dedup: First check by_libraryId
+  const existingByLibraryId = await ctx.db
     .query("exercises")
     .withIndex("by_libraryId", (q) => q.eq("libraryId", libraryId))
     .first();
 
-  // Throw when existing record found
-  if (existing) {
-    throw new Error(`Exercise with libraryId "${libraryId}" already exists`);
+  if (existingByLibraryId) {
+    return existingByLibraryId._id;
+  }
+
+  // Double dedup: Also check by_sourceSystem_sourceId if provided
+  if (args.sourceSystem && args.sourceId) {
+    const existingBySource = await ctx.db
+      .query("exercises")
+      .withIndex("by_sourceSystem_sourceId", (q) =>
+        q.eq("sourceSystem", args.sourceSystem).eq("sourceId", args.sourceId)
+      )
+      .first();
+
+    if (existingBySource) {
+      return existingBySource._id;
+    }
   }
 
   // Insert only when absent
@@ -70,6 +96,17 @@ export async function createCanonicalExercise(
     libraryId,
     name: args.name,
     lifecycle: args.lifecycle || "draft",
+    category: args.category,
+    bodyRegion: args.bodyRegion,
+    primaryMuscles: args.primaryMuscles,
+    secondaryMuscles: args.secondaryMuscles,
+    equipment: args.equipment,
+    difficulty: args.difficulty,
+    overview: args.overview,
+    instructions: args.instructions,
+    coverPhoto: args.coverPhoto,
+    sourceSystem: args.sourceSystem,
+    sourceId: args.sourceId,
   });
 
   return exerciseId;

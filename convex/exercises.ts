@@ -218,8 +218,12 @@ export const publishExercise = mutation({
       throw new Error("Only draft exercises can be published");
     }
 
+    // Convert instructions array to string for schema compatibility
+    const instructionsString = args.publicationData.instructions.join("\n\n");
+
     await ctx.db.patch(args.exerciseId, {
       ...args.publicationData,
+      instructions: instructionsString,
       lifecycle: "ready",
       overview: args.publicationData.overview || exercise.name,
       benefits: args.publicationData.benefits || [],
@@ -257,6 +261,9 @@ export const addExercise = mutation({
       lifecycle: args.lifecycle || "ready",
     });
 
+    // Convert instructions array to string for schema compatibility
+    const instructionsString = args.instructions.join("\n\n");
+
     // Fill in defaults for required fields in schema
     const exerciseData = {
       bodyRegion: args.bodyRegion,
@@ -264,7 +271,7 @@ export const addExercise = mutation({
       secondaryMuscles: args.secondaryMuscles,
       equipment: args.equipment,
       tags: args.tags,
-      instructions: args.instructions,
+      instructions: instructionsString,
       category: args.category || 'strength',
       overview: args.overview || args.name,
       benefits: args.benefits || [],
@@ -287,7 +294,7 @@ export const updateExercise = mutation({
       secondaryMuscles: v.optional(v.array(v.string())),
       equipment: v.optional(v.array(v.string())),
       tags: v.optional(v.array(v.string())),
-      instructions: v.optional(v.array(v.string())),
+      instructions: v.optional(v.union(v.string(), v.array(v.string()))),
       category: v.optional(v.string()),
       overview: v.optional(v.string()),
       imageUrl: v.optional(v.string()),
@@ -310,7 +317,14 @@ export const updateExercise = mutation({
       return await ctx.db.get((args as any).id);
     }
     await requireTrainer(ctx);
-    await ctx.db.patch(args.id, args.updates);
+    
+    // Convert instructions array to string if needed
+    const updates = { ...args.updates };
+    if (updates.instructions && Array.isArray(updates.instructions)) {
+      updates.instructions = updates.instructions.join("\n\n");
+    }
+    
+    await ctx.db.patch(args.id, updates as any);
     return await ctx.db.get(args.id);
   },
 });
@@ -434,7 +448,7 @@ export const batchCreate = mutation({
         secondaryMuscles: ex.secondaryMuscles,
         equipment: ex.equipment,
         tags: ex.tags,
-        instructions: ex.instructions,
+        instructions: ex.instructions.join("\n\n"),
         category: ex.category || "strength",
         overview: ex.overview || ex.name,
         benefits: ex.benefits || [],

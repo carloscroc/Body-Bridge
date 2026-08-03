@@ -5,8 +5,8 @@ import type { Doc } from "./_generated/dataModel";
 import type { Id } from "./_generated/dataModel";
 import { assignExerciseToTrainerHelper } from "./lib/sharedHelpers";
 
-// Non-exported admin secret checker (mirrors exercises.ts).
-function isAdminSecret(secret?: string): boolean {
+// Exported admin secret checker (mirrors exercises.ts and trainers.ts). Used by the
+export function isAdminSecret(secret?: string): boolean {
   return typeof secret === "string" && secret === process.env.ADMIN_SCRIPT_SECRET;
 }
 

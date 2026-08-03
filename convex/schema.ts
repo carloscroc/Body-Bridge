@@ -91,11 +91,16 @@ export default defineSchema({
     primaryMuscles: v.optional(v.array(v.string())),
     secondaryMuscles: v.optional(v.array(v.string())),
     equipment: v.optional(v.array(v.string())),
+    difficulty: v.optional(v.union(v.literal("Beginner"), v.literal("Intermediate"), v.literal("Advanced"))),
     overview: v.optional(v.string()),
-    instructions: v.optional(v.array(v.string())),
+    instructions: v.optional(v.string()),
     benefits: v.optional(v.array(v.string())),
     tags: v.optional(v.array(v.string())),
     imageUrl: v.optional(v.string()),
+    // Source tracking for Notion sync
+    sourceSystem: v.optional(v.union(v.literal("notion"), v.literal("manual"))),
+    sourceId: v.optional(v.string()),
+    coverPhoto: v.optional(v.string()), // First URL from coverPhoto[]
     // createdAt removed - use Convex _creationTime
   })
     .index("by_libraryId", ["libraryId"])
@@ -103,6 +108,7 @@ export default defineSchema({
     .index("by_category", ["category"])
     .index("by_bodyRegion", ["bodyRegion"])
     .index("by_name", ["name"])
+    .index("by_sourceSystem_sourceId", ["sourceSystem", "sourceId"])
     .searchIndex("search_name", {
       searchField: "name",
       filterFields: ["category", "bodyRegion", "lifecycle"],
