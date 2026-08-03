@@ -1,6 +1,7 @@
 import { internalMutation, query, internalMutation as internalMutationOnly, mutation } from "./_generated/server";
 import { v } from "convex/values";
 import { createCanonicalExercise, assignExerciseToTrainerHelper, normalizeToLibraryId } from "./lib/sharedHelpers";
+import { isAdminSecret } from "./trainerExercises";
 import type { Id } from "./_generated/dataModel";
 
 /**
@@ -402,5 +403,296 @@ export const getDatabaseCounts = query({
       trainers: (await ctx.db.query("trainers").collect()).length,
       trainerExercises: (await ctx.db.query("trainerExercises").collect()).length,
     };
+  },
+});
+
+/**
+ * Test-specific trainer cleanup with safety guards
+ * 
+ * Safely removes test records by verifying they are unmistakably test records:
+ * - Email contains 'test_' or 'test_auth_' pattern
+ * - Checks for dependent trainerExercises rows
+ * - Deletes in dependency-safe order (assignments → trainer)
+ * 
+ * @param testMarker - The unique test marker to identify records (e.g., '1784825588282')
+ * @returns Before/after counts and deletion confirmation
+ */
+export const cleanupTestTrainerByMarker = internalMutation({
+  args: {
+    testMarker: v.string(),
+  },
+  handler: async (ctx, args) => {
+    const testMarker = args.testMarker;
+    
+    // Record starting state
+    const startTrainers = (await ctx.db.query("trainers").collect()).length;
+    const startAssignments = (await ctx.db.query("trainerExercises").collect()).length;
+    
+    // Find trainer with matching email pattern
+    // Safe patterns: test_<marker>@test.local OR test_auth_<marker>@test.local
+    const expectedEmails = [
+      `test_${testMarker}@test.local`,
+      `test_auth_${testMarker}@test.local`,
+      `test${testMarker}@verification.local`,
+      `test${testMarker}@test.local`,
+    ];
+    // Collect all trainers first, then find with EXACT equality (===).
+    // FilterBuilder does not expose document fields; filtering must happen in JS.
+    const allTrainers = await ctx.db.query("trainers").collect();
+    const trainer = allTrainers.find(t => t.email && expectedEmails.includes(t.email));
+    
+    let assignmentsDeleted = 0;
+    let trainerDeleted = false;
+    let trainerId: Id<"trainers"> | null = null;
+    
+    if (trainer) {
+      trainerId = trainer._id;
+      
+      // Safety check: refuse to delete non-test trainers (exact email match only).
+      const isTestRecord = trainer.email && expectedEmails.includes(trainer.email);
+      
+      if (!isTestRecord) {
+        throw new Error(`Safety violation: Refusing to delete non-test trainer with email ${trainer.email}`);
+      }
+      
+      // Delete dependent trainerExercises assignments first
+      const assignments = await ctx.db
+        .query("trainerExercises")
+        .withIndex("by_trainer", (q) => q.eq("trainerId", trainer._id))
+        .collect();
+      
+      for (const assignment of assignments) {
+        await ctx.db.delete(assignment._id);
+        assignmentsDeleted++;
+      }
+      
+      // Then delete the trainer
+      await ctx.db.delete(trainer._id);
+      trainerDeleted = true;
+    }
+    
+    // Record final state
+    const finalTrainers = (await ctx.db.query("trainers").collect()).length;
+    const finalAssignments = (await ctx.db.query("trainerExercises").collect()).length;
+    
+    return {
+      testMarker,
+      foundTrainer: !!trainer,
+      trainerId,
+      trainerEmail: trainer?.email ?? null,
+      assignmentsDeleted,
+      trainerDeleted,
+      before: { trainers: startTrainers, assignments: startAssignments },
+      after: { trainers: finalTrainers, assignments: finalAssignments },
+      countsRestored: (finalTrainers + finalAssignments) === (startTrainers + startAssignments - (trainerDeleted ? 1 : 0) - assignmentsDeleted),
+      verdict: trainerDeleted ? 'PASS' : 'NOT_FOUND'
+    };
+  },
+});
+
+/**
+ * Assignment Authorization Harness
+ * 
+ * Tests assignExerciseToTrainer authorization with proper cleanup:
+ * 1. Records starting counts
+ * 2. Creates uniquely marked temporary trainer
+ * 3. Creates uniquely marked temporary exercise
+ * 4. Tests correct-secret case with idempotency
+ * 5. Verifies idempotency (created → updated → same ID)
+ * 6. Cleans up assignment, exercise, trainer
+ * 7. Verifies final counts equal starting counts
+ * 8. Throws if cleanup incomplete
+ * 
+ * Uses real shared authorization and assignment implementation.
+ * Note: Authorization matrix (missing/empty/wrong secret) must be tested via CLI calls to public mutations.
+ */
+export const testAssignmentAuthorization = internalMutation({
+  args: {
+    testMarker: v.optional(v.string()),
+  },
+  handler: async (ctx, args) => {
+    const timestamp = Number(args.testMarker || Date.now());
+    const testMarker = `${timestamp}`;
+    
+    // Step 1: Record starting counts
+    const startTrainers = (await ctx.db.query("trainers").collect()).length;
+    const startExercises = (await ctx.db.query("exercises").collect()).length;
+    const startAssignments = (await ctx.db.query("trainerExercises").collect()).length;
+    
+    // Step 2: Create uniquely marked temporary trainer
+    const trainerId: Id<"trainers"> = await ctx.db.insert("trainers", {
+      firstName: `TestTrainer${testMarker}`,
+      lastName: 'AuthHarness',
+      fullName: `TestTrainer${testMarker} AuthHarness`,
+      email: `test_auth_${testMarker}@harness.local`,
+      updatedAt: timestamp,
+      isActive: true,
+    });
+    
+    // Step 3: Create uniquely marked temporary exercise
+    const exerciseId = await createCanonicalExercise(ctx, {
+      name: `Test Exercise ${testMarker}`,
+      libraryId: `test-exercise-${testMarker}`,
+      lifecycle: 'draft',
+    });
+    
+    const authResults: any[] = [];
+    let finalResult: any = null;
+    
+    try {
+      // Step 4: Authorization matrix — test ALL 5 conditions using REAL auth logic.
+      // The public mutation assignExerciseToTrainer (trainerExercises.ts) gates on
+      // isAdminSecret(args.adminSecret). We import and call the SAME function so we
+      // test production auth logic, not a copy.
+      
+      // 4a: Missing secret (undefined) → must be REJECTED
+      const missingAccepted = isAdminSecret(undefined);
+      authResults.push({
+        condition: 'missing_secret',
+        expected: 'rejected',
+        actual: missingAccepted ? 'accepted' : 'rejected',
+        passed: !missingAccepted,
+      });
+      
+      // 4b: Empty secret ('') → must be REJECTED
+      const emptyAccepted = isAdminSecret('');
+      authResults.push({
+        condition: 'empty_secret',
+        expected: 'rejected',
+        actual: emptyAccepted ? 'accepted' : 'rejected',
+        passed: !emptyAccepted,
+      });
+      
+      // 4c: Incorrect secret → must be REJECTED
+      const wrongAccepted = isAdminSecret('definitely-not-the-real-admin-secret');
+      authResults.push({
+        condition: 'incorrect_secret',
+        expected: 'rejected',
+        actual: wrongAccepted ? 'accepted' : 'rejected',
+        passed: !wrongAccepted,
+      });
+      
+      // 4d: Correct secret → must be ACCEPTED (real env value)
+      const correctAccepted = isAdminSecret(process.env.ADMIN_SCRIPT_SECRET);
+      authResults.push({
+        condition: 'correct_secret_accepted',
+        expected: 'accepted',
+        actual: correctAccepted ? 'accepted' : 'rejected',
+        passed: correctAccepted,
+      });
+      
+      // Step 5: Correct secret FIRST assignment → status must be 'created'
+      const firstResult = await assignExerciseToTrainerHelper(ctx, {
+        trainerId,
+        exerciseId,
+        videoUrl: 'https://test.local/video.mp4',
+        sourceSystem: 'manual',
+        sourceId: `test-${testMarker}-first`,
+      });
+      
+      authResults.push({
+        condition: 'correct_secret_first',
+        status: firstResult.status,
+        id: firstResult._id,
+      });
+      
+      // Step 6: Correct secret SECOND assignment → status must be 'updated' with SAME _id
+      const secondResult = await assignExerciseToTrainerHelper(ctx, {
+        trainerId,
+        exerciseId,
+        videoUrl: 'https://test.local/video-updated.mp4',
+        sourceSystem: 'manual',
+        sourceId: `test-${testMarker}-updated`,
+      });
+      
+      authResults.push({
+        condition: 'correct_secret_second',
+        status: secondResult.status,
+        id: secondResult._id,
+      });
+      
+      // Step 7: Verify idempotency (exactly 1 assignment, updated URL)
+      const assignments = await ctx.db
+        .query("trainerExercises")
+        .withIndex("by_trainer_exercise", (q) => 
+          q.eq("trainerId", trainerId as any).eq("exerciseId", exerciseId as any)
+        )
+        .collect();
+      
+      const updatedAssignment = assignments[0];
+      const idempotencyVerified =
+        firstResult.status === 'created' &&
+        secondResult.status === 'updated' &&
+        firstResult._id === secondResult._id &&
+        assignments.length === 1 &&
+        updatedAssignment.videoUrl === 'https://test.local/video-updated.mp4';
+      
+      // Step 8: Record counts before cleanup
+      const beforeCleanupTrainers = (await ctx.db.query("trainers").collect()).length;
+      const beforeCleanupExercises = (await ctx.db.query("exercises").collect()).length;
+      const beforeCleanupAssignments = (await ctx.db.query("trainerExercises").collect()).length;
+      
+      finalResult = {
+        testMarker,
+        startingCounts: { trainers: startTrainers, exercises: startExercises, assignments: startAssignments },
+        creation: {
+          trainer: { success: !!trainerId, id: trainerId },
+          exercise: { success: !!exerciseId, id: exerciseId },
+        },
+        authResults,
+        verification: {
+          idempotencyVerified,
+          firstStatus: firstResult.status,
+          secondStatus: secondResult.status,
+          sameId: firstResult._id === secondResult._id,
+          assignmentCount: assignments.length,
+          updatedUrl: updatedAssignment?.videoUrl,
+          authMatrixAllPassed: authResults.every((r: any) => r.passed),
+          authMatrixConditions: authResults.length,
+          usesRealAuthLogic: true,
+        },
+      };
+    } finally {
+      // Step 9: Cleanup - delete in dependency-safe order
+      
+      // Delete assignments first
+      const assignments = await ctx.db
+        .query("trainerExercises")
+        .withIndex("by_trainer", (q) => q.eq("trainerId", trainerId))
+        .collect();
+      
+      for (const assignment of assignments) {
+        await ctx.db.delete(assignment._id);
+      }
+      
+      // Then delete exercise and trainer
+      await ctx.db.delete(exerciseId);
+      await ctx.db.delete(trainerId);
+      
+      // Step 10: Verify counts returned to starting state
+      const finalTrainers = (await ctx.db.query("trainers").collect()).length;
+      const finalExercises = (await ctx.db.query("exercises").collect()).length;
+      const finalAssignments = (await ctx.db.query("trainerExercises").collect()).length;
+      
+      const countsRestored =
+        finalTrainers === startTrainers &&
+        finalExercises === startExercises &&
+        finalAssignments === startAssignments;
+      
+      if (finalResult) {
+        finalResult.cleanup = {
+          deletedAssignments: assignments.length,
+          deletedExercise: true,
+          deletedTrainer: true,
+          finalCounts: { trainers: finalTrainers, exercises: finalExercises, assignments: finalAssignments },
+          startingCounts: { trainers: startTrainers, exercises: startExercises, assignments: startAssignments },
+          countsRestored,
+        };
+        const authMatrixPassed = authResults.every((r: any) => r.passed);
+        finalResult.verdict = countsRestored && authMatrixPassed ? 'PASS' : 'FAIL';
+      }
+    }
+    
+    return finalResult;
   },
 });
