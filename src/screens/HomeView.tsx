@@ -89,12 +89,28 @@ const HomeView: React.FC<HomeViewProps> = ({
     return dailyPlanData.map((item) => {
       const workout = item.item as Workout;
       const meal = item.item as Meal;
-      
+      const startTime = item.scheduledTime || '09:00';
+
+      // Derive endTime from workout duration (default 60 min for meals or unparseable durations)
+      const durationMinutes = (() => {
+        if (item.type === 'workout' && workout.duration) {
+          const m = /\d+/.exec(workout.duration);
+          return m ? parseInt(m[0], 10) : 60;
+        }
+        return 30;
+      })();
+      const [hh, mm] = startTime.split(':').map(Number);
+      const startDate = new Date();
+      startDate.setHours(hh || 0, mm || 0, 0, 0);
+      startDate.setMinutes(startDate.getMinutes() + durationMinutes);
+      const endTime = `${String(startDate.getHours()).padStart(2, '0')}:${String(startDate.getMinutes()).padStart(2, '0')}`;
+
       return {
         id: item._id,
         title: item.type === 'workout' ? workout.title : meal.title,
-        type: item.type === 'workout' ? 'workout' : 'nutrition',
-        startTime: item.scheduledTime || '09:00',
+        type: item.type === 'workout' ? 'workout' as const : 'nutrition' as const,
+        startTime,
+        endTime,
         completed: item.completed
       };
     });

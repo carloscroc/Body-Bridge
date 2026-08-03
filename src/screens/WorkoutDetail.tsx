@@ -157,7 +157,7 @@ const WorkoutDetail: React.FC<WorkoutDetailProps> = ({ workout, onBack, onSelect
           duration: ex.duration,
           rest: ex.rest,
           weight: ex.weight,
-          notes: ex.notes,
+          notes: ex.overview,
           completed: false,
         })),
         duration: totalTimeElapsed,

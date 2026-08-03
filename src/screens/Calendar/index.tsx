@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { PlanItem, Workout, Meal } from '../../types';
+import { PlanItem, Workout, Meal, MealType, WorkoutSlotType } from '../../types';
 import { ArrowLeft, Calendar, CalendarDays, ChevronLeft, ChevronRight, LayoutGrid, List, Menu, Plus, X, Dumbbell, Utensils, Zap, Copy } from 'lucide-react';
 import { useQuery, useMutation } from 'convex/react';
 import { api } from '@convex/_generated/api';
@@ -59,7 +59,19 @@ const CalendarView: React.FC<CalendarViewProps> = ({
     endDate: dateRange.end 
   });
   
-  const events = useMemo(() => generateCalendarEvents(planItemsRaw || []), [planItemsRaw]);
+  const events = useMemo(
+    () =>
+      generateCalendarEvents(
+        (planItemsRaw || []).map(
+          (p): PlanItem => ({
+            ...p,
+            id: p._id,
+            mealType: p.mealType as MealType | WorkoutSlotType | undefined,
+          })
+        )
+      ),
+    [planItemsRaw]
+  );
   const updateItem = useMutation(api.userPlans.updatePlanItem);
   const removeItem = useMutation(api.userPlans.removeFromPlan);
 

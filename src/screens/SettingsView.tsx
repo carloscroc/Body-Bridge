@@ -346,7 +346,7 @@ const SettingsView: React.FC<SettingsViewProps> = ({ onBack, onLogout }) => {
     }
   };
 
-  const updateNested = (category: keyof UserSettings, updates: any) => {
+  const updateNested = (category: Exclude<keyof UserSettings, 'theme'>, updates: Record<string, unknown>) => {
     if (!settings) return;
     setSettings({
       ...settings,

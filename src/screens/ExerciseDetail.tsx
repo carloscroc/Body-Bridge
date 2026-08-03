@@ -432,7 +432,7 @@ const ExerciseDetail: React.FC<ExerciseDetailProps> = ({
 
                   <div className="w-full bg-black aspect-video max-h-[70vh]">
                     <VideoPlayer
-                      source={exercise.videoUrl}
+                      videoUrl={exercise.videoUrl}
                       autoPlay
                       controls
                       playsInline

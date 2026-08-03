@@ -758,7 +758,7 @@ const CommunityTab = ({ onOpenProfile }: { onOpenProfile: (name: string) => void
   const activePostComments = useQuery(
     api.social.getCommentsByPost,
     activeCommentsPostId
-      ? { postId: activeCommentsPostId as Id<"posts">, paginationOpts: { numItems: 50, cursor: null } }
+      ? { postId: activeCommentsPostId as Id<"socialPosts">, paginationOpts: { numItems: 50, cursor: null } }
       : "skip"
   );
 
@@ -800,20 +800,20 @@ const CommunityTab = ({ onOpenProfile }: { onOpenProfile: (name: string) => void
 
   const toggleLike = async (postId: string) => {
     if (!user) return;
-    await toggleLikeMutation({ postId: postId as Id<"posts"> });
+    await toggleLikeMutation({ postId: postId as Id<"socialPosts"> });
   };
 
   const toggleCommentLike = async (commentId: string) => {
     if (!user) return;
-    await toggleLikeMutation({ commentId: commentId as Id<"comments"> });
+    await toggleLikeMutation({ commentId: commentId as Id<"socialComments"> });
   };
 
   const addComment = async (content: string, parentCommentId?: string) => {
     if (!profileId || !activeCommentsPostId) return;
     await createCommentMutation({
-      postId: activeCommentsPostId as Id<"posts">,
+      postId: activeCommentsPostId as Id<"socialPosts">,
       content,
-      parentCommentId: parentCommentId as Id<"comments"> | undefined,
+      parentCommentId: parentCommentId as Id<"socialComments"> | undefined,
     });
   };
 
