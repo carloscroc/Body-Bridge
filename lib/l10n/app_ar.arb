@@ -1160,5 +1160,14 @@
   "rirHint": "0 يعني أنك لا تستطيع تكرارًا آخر، و2 يعني أنه بقي لديك تكراران.",
   "addWeekWidget": "إضافة أداة الأسبوع",
 
-  "gamificationSetting": "الميداليات والمستويات"
+  "gamificationSetting": "الميداليات والمستويات",
+
+  "authErrorInvalidEmail": "يبدو البريد الإلكتروني غير صحيح.",
+  "authErrorWrongPassword": "البريد الإلكتروني أو كلمة المرور غير صحيحة.",
+  "authErrorUserNotFound": "لا يوجد حساب بهذا البريد الإلكتروني.",
+  "authErrorEmailAlreadyInUse": "هذا البريد الإلكتروني له حساب بالفعل.",
+  "authErrorWeakPassword": "كلمة المرور ضعيفة جدًا.",
+  "authErrorTooManyRequests": "محاولات كثيرة جدًا. حاول مرة أخرى لاحقًا.",
+  "authErrorNetwork": "أنت غير متصل — تسجيل الدخول يحتاج إلى إنترنت.",
+  "authErrorUnknown": "فشل تسجيل الدخول. حاول مرة أخرى."
 }

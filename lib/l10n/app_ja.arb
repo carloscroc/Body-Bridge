@@ -1160,5 +1160,14 @@
   "rirHint": "0 はもう 1 回もできない、2 はあと 2 回できた状態。",
   "addWeekWidget": "今週のウィジェットを追加",
 
-  "gamificationSetting": "メダルとレベル"
+  "gamificationSetting": "メダルとレベル",
+
+  "authErrorInvalidEmail": "メールアドレスが正しくないようです。",
+  "authErrorWrongPassword": "メールアドレスまたはパスワードが違います。",
+  "authErrorUserNotFound": "そのメールアドレスのアカウントが見つかりません。",
+  "authErrorEmailAlreadyInUse": "そのメールアドレスはすでに登録済みです。",
+  "authErrorWeakPassword": "パスワードが弱すぎます。",
+  "authErrorTooManyRequests": "試行回数が多すぎます。しばらくしてからお試しください。",
+  "authErrorNetwork": "オフラインです — サインインにはインターネットが必要です。",
+  "authErrorUnknown": "サインインできませんでした。もう一度お試しください。"
 }

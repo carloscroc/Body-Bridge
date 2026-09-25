@@ -1160,5 +1160,14 @@
   "rirHint": "0 — більше жодного повторення, 2 — залишалося два.",
   "addWeekWidget": "Додати віджет тижня",
 
-  "gamificationSetting": "Медалі та рівні"
+  "gamificationSetting": "Медалі та рівні",
+
+  "authErrorInvalidEmail": "Адреса електронної пошти виглядає неправильною.",
+  "authErrorWrongPassword": "Неправильна пошта або пароль.",
+  "authErrorUserNotFound": "Акаунт з такою поштою не знайдено.",
+  "authErrorEmailAlreadyInUse": "Для цієї пошти вже є акаунт.",
+  "authErrorWeakPassword": "Пароль занадто слабкий.",
+  "authErrorTooManyRequests": "Забагато спроб. Спробуйте пізніше.",
+  "authErrorNetwork": "Ви не в мережі — для входу потрібен інтернет.",
+  "authErrorUnknown": "Не вдалося увійти. Спробуйте ще раз."
 }

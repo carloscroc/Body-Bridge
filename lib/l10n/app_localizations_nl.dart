@@ -2999,4 +2999,28 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get gamificationSetting => 'Medailles en niveaus';
+
+  @override
+  String get authErrorInvalidEmail => 'Dit e-mailadres lijkt niet te kloppen.';
+
+  @override
+  String get authErrorWrongPassword => 'Verkeerde e-mail of wachtwoord.';
+
+  @override
+  String get authErrorUserNotFound => 'Geen account gevonden voor dat e-mailadres.';
+
+  @override
+  String get authErrorEmailAlreadyInUse => 'Er is al een account voor dat e-mailadres.';
+
+  @override
+  String get authErrorWeakPassword => 'Het wachtwoord is te zwak.';
+
+  @override
+  String get authErrorTooManyRequests => 'Te veel pogingen. Probeer het later opnieuw.';
+
+  @override
+  String get authErrorNetwork => 'Je bent offline — inloggen vereist internet.';
+
+  @override
+  String get authErrorUnknown => 'Inloggen mislukt. Probeer het opnieuw.';
 }

@@ -1160,5 +1160,14 @@
   "rirHint": "0 表示一次都做不動了，2 表示還能再做兩次。",
   "addWeekWidget": "新增本週小工具",
 
-  "gamificationSetting": "獎牌和等級"
+  "gamificationSetting": "獎牌和等級",
+
+  "authErrorInvalidEmail": "電子郵件地址好像不正確。",
+  "authErrorWrongPassword": "電子郵件或密碼錯誤。",
+  "authErrorUserNotFound": "找不到該電子郵件的帳號。",
+  "authErrorEmailAlreadyInUse": "該電子郵件已有帳號。",
+  "authErrorWeakPassword": "密碼太弱。",
+  "authErrorTooManyRequests": "嘗試次數過多，請稍後再試。",
+  "authErrorNetwork": "目前離線 — 登入需要網路。",
+  "authErrorUnknown": "登入失敗，請再試一次。"
 }

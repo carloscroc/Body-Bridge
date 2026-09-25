@@ -1160,5 +1160,14 @@
   "rirHint": "0 is er geen meer kunnen doen, 2 is er nog twee over hebben.",
   "addWeekWidget": "Weekwidget toevoegen",
 
-  "gamificationSetting": "Medailles en niveaus"
+  "gamificationSetting": "Medailles en niveaus",
+
+  "authErrorInvalidEmail": "Dit e-mailadres lijkt niet te kloppen.",
+  "authErrorWrongPassword": "Verkeerde e-mail of wachtwoord.",
+  "authErrorUserNotFound": "Geen account gevonden voor dat e-mailadres.",
+  "authErrorEmailAlreadyInUse": "Er is al een account voor dat e-mailadres.",
+  "authErrorWeakPassword": "Het wachtwoord is te zwak.",
+  "authErrorTooManyRequests": "Te veel pogingen. Probeer het later opnieuw.",
+  "authErrorNetwork": "Je bent offline — inloggen vereist internet.",
+  "authErrorUnknown": "Inloggen mislukt. Probeer het opnieuw."
 }

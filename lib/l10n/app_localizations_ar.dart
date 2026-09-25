@@ -2985,4 +2985,28 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get gamificationSetting => 'الميداليات والمستويات';
+
+  @override
+  String get authErrorInvalidEmail => 'يبدو البريد الإلكتروني غير صحيح.';
+
+  @override
+  String get authErrorWrongPassword => 'البريد الإلكتروني أو كلمة المرور غير صحيحة.';
+
+  @override
+  String get authErrorUserNotFound => 'لا يوجد حساب بهذا البريد الإلكتروني.';
+
+  @override
+  String get authErrorEmailAlreadyInUse => 'هذا البريد الإلكتروني له حساب بالفعل.';
+
+  @override
+  String get authErrorWeakPassword => 'كلمة المرور ضعيفة جدًا.';
+
+  @override
+  String get authErrorTooManyRequests => 'محاولات كثيرة جدًا. حاول مرة أخرى لاحقًا.';
+
+  @override
+  String get authErrorNetwork => 'أنت غير متصل — تسجيل الدخول يحتاج إلى إنترنت.';
+
+  @override
+  String get authErrorUnknown => 'فشل تسجيل الدخول. حاول مرة أخرى.';
 }
