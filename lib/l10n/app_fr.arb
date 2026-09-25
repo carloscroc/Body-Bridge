@@ -1160,5 +1160,14 @@
   "rirHint": "0, c'est ne plus pouvoir en faire une ; 2, qu'il en restait deux.",
   "addWeekWidget": "Ajouter le widget de la semaine",
 
-  "gamificationSetting": "Médailles et niveaux"
+  "gamificationSetting": "Médailles et niveaux",
+
+  "authErrorInvalidEmail": "Cette adresse e-mail semble incorrecte.",
+  "authErrorWrongPassword": "E-mail ou mot de passe incorrect.",
+  "authErrorUserNotFound": "Aucun compte trouvé pour cet e-mail.",
+  "authErrorEmailAlreadyInUse": "Un compte existe déjà avec cet e-mail.",
+  "authErrorWeakPassword": "Le mot de passe est trop faible.",
+  "authErrorTooManyRequests": "Trop de tentatives. Réessayez plus tard.",
+  "authErrorNetwork": "Vous êtes hors ligne — la connexion nécessite Internet.",
+  "authErrorUnknown": "Échec de la connexion. Réessayez."
 }

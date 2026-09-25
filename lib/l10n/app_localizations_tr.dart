@@ -2994,4 +2994,28 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get gamificationSetting => 'Madalyalar ve seviyeler';
+
+  @override
+  String get authErrorInvalidEmail => 'E-posta adresi yanlış görünüyor.';
+
+  @override
+  String get authErrorWrongPassword => 'E-posta veya şifre hatalı.';
+
+  @override
+  String get authErrorUserNotFound => 'Bu e-posta ile hesap bulunamadı.';
+
+  @override
+  String get authErrorEmailAlreadyInUse => 'Bu e-posta zaten bir hesaba kayıtlı.';
+
+  @override
+  String get authErrorWeakPassword => 'Şifre çok zayıf.';
+
+  @override
+  String get authErrorTooManyRequests => 'Çok fazla deneme. Daha sonra tekrar deneyin.';
+
+  @override
+  String get authErrorNetwork => 'Çevrimdışısınız — giriş yapmak için internet gerekir.';
+
+  @override
+  String get authErrorUnknown => 'Giriş başarısız oldu. Tekrar deneyin.';
 }

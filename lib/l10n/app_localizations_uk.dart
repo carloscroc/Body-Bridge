@@ -2997,4 +2997,28 @@ class AppLocalizationsUk extends AppLocalizations {
 
   @override
   String get gamificationSetting => 'Медалі та рівні';
+
+  @override
+  String get authErrorInvalidEmail => 'Адреса електронної пошти виглядає неправильною.';
+
+  @override
+  String get authErrorWrongPassword => 'Неправильна пошта або пароль.';
+
+  @override
+  String get authErrorUserNotFound => 'Акаунт з такою поштою не знайдено.';
+
+  @override
+  String get authErrorEmailAlreadyInUse => 'Для цієї пошти вже є акаунт.';
+
+  @override
+  String get authErrorWeakPassword => 'Пароль занадто слабкий.';
+
+  @override
+  String get authErrorTooManyRequests => 'Забагато спроб. Спробуйте пізніше.';
+
+  @override
+  String get authErrorNetwork => 'Ви не в мережі — для входу потрібен інтернет.';
+
+  @override
+  String get authErrorUnknown => 'Не вдалося увійти. Спробуйте ще раз.';
 }

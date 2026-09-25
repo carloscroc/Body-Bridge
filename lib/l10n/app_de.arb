@@ -1028,5 +1028,14 @@
   "rirHint": "0 heißt, keine Wiederholung mehr, 2 heißt, zwei wären noch gegangen.",
   "addWeekWidget": "Wochen-Widget hinzufügen",
 
-  "gamificationSetting": "Medaillen und Stufen"
+  "gamificationSetting": "Medaillen und Stufen",
+
+  "authErrorInvalidEmail": "Diese E-Mail-Adresse sieht falsch aus.",
+  "authErrorWrongPassword": "Falsche E-Mail oder falsches Passwort.",
+  "authErrorUserNotFound": "Kein Konto mit dieser E-Mail gefunden.",
+  "authErrorEmailAlreadyInUse": "Für diese E-Mail gibt es schon ein Konto.",
+  "authErrorWeakPassword": "Das Passwort ist zu schwach.",
+  "authErrorTooManyRequests": "Zu viele Versuche. Bitte später erneut versuchen.",
+  "authErrorNetwork": "Du bist offline — zum Anmelden wird Internet benötigt.",
+  "authErrorUnknown": "Anmeldung fehlgeschlagen. Bitte erneut versuchen."
 }

@@ -1041,5 +1041,14 @@
   "rirHint": "0 is nothing left in the tank, 2 is two reps to spare.",
   "addWeekWidget": "Add week widget",
 
-  "gamificationSetting": "Medals and levels"
+  "gamificationSetting": "Medals and levels",
+
+  "authErrorInvalidEmail": "Email address looks wrong.",
+  "authErrorWrongPassword": "Wrong email or password.",
+  "authErrorUserNotFound": "No account found for that email.",
+  "authErrorEmailAlreadyInUse": "That email already has an account.",
+  "authErrorWeakPassword": "Password is too weak.",
+  "authErrorTooManyRequests": "Too many attempts. Try again later.",
+  "authErrorNetwork": "You are offline — sign in needs internet.",
+  "authErrorUnknown": "Sign in failed. Try again."
 }

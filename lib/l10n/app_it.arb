@@ -1008,5 +1008,14 @@
   "rirHint": "0 è non riuscire a farne un’altra; 2, che te ne restavano due.",
   "addWeekWidget": "Aggiungi widget della settimana",
 
-  "gamificationSetting": "Medaglie e livelli"
+  "gamificationSetting": "Medaglie e livelli",
+
+  "authErrorInvalidEmail": "L'indirizzo email non sembra corretto.",
+  "authErrorWrongPassword": "Email o password non corretti.",
+  "authErrorUserNotFound": "Nessun account trovato per questa email.",
+  "authErrorEmailAlreadyInUse": "Questa email ha già un account.",
+  "authErrorWeakPassword": "La password è troppo debole.",
+  "authErrorTooManyRequests": "Troppi tentativi. Riprova più tardi.",
+  "authErrorNetwork": "Sei offline — per accedere serve internet.",
+  "authErrorUnknown": "Accesso non riuscito. Riprova."
 }

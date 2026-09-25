@@ -920,5 +920,14 @@
   "rirHint": "0 表示一次都做不动了，2 表示还能再做两次。",
   "addWeekWidget": "添加本周小组件",
 
-  "gamificationSetting": "勋章和等级"
+  "gamificationSetting": "勋章和等级",
+
+  "authErrorInvalidEmail": "邮箱地址好像不对。",
+  "authErrorWrongPassword": "邮箱或密码错误。",
+  "authErrorUserNotFound": "没有找到该邮箱的账号。",
+  "authErrorEmailAlreadyInUse": "该邮箱已注册账号。",
+  "authErrorWeakPassword": "密码太弱。",
+  "authErrorTooManyRequests": "尝试次数过多，请稍后再试。",
+  "authErrorNetwork": "当前离线 — 登录需要联网。",
+  "authErrorUnknown": "登录失败，请重试。"
 }

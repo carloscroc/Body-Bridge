@@ -949,5 +949,14 @@
   "rirHint": "0 — больше ни одного повтора, 2 — оставалось два.",
   "addWeekWidget": "Добавить виджет недели",
 
-  "gamificationSetting": "Медали и уровни"
+  "gamificationSetting": "Медали и уровни",
+
+  "authErrorInvalidEmail": "Адрес электронной почты выглядит неверным.",
+  "authErrorWrongPassword": "Неверная почта или пароль.",
+  "authErrorUserNotFound": "Аккаунт с такой почтой не найден.",
+  "authErrorEmailAlreadyInUse": "Для этой почты уже есть аккаунт.",
+  "authErrorWeakPassword": "Пароль слишком слабый.",
+  "authErrorTooManyRequests": "Слишком много попыток. Попробуйте позже.",
+  "authErrorNetwork": "Вы не в сети — для входа нужен интернет.",
+  "authErrorUnknown": "Не удалось войти. Попробуйте ещё раз."
 }

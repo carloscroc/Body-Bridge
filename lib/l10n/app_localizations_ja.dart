@@ -2902,4 +2902,28 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get gamificationSetting => 'メダルとレベル';
+
+  @override
+  String get authErrorInvalidEmail => 'メールアドレスが正しくないようです。';
+
+  @override
+  String get authErrorWrongPassword => 'メールアドレスまたはパスワードが違います。';
+
+  @override
+  String get authErrorUserNotFound => 'そのメールアドレスのアカウントが見つかりません。';
+
+  @override
+  String get authErrorEmailAlreadyInUse => 'そのメールアドレスはすでに登録済みです。';
+
+  @override
+  String get authErrorWeakPassword => 'パスワードが弱すぎます。';
+
+  @override
+  String get authErrorTooManyRequests => '試行回数が多すぎます。しばらくしてからお試しください。';
+
+  @override
+  String get authErrorNetwork => 'オフラインです — サインインにはインターネットが必要です。';
+
+  @override
+  String get authErrorUnknown => 'サインインできませんでした。もう一度お試しください。';
 }
