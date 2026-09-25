@@ -111,6 +111,14 @@ abstract class FitCore extends ChangeNotifier {
 
   void backFromPreferences() => popRoute(fallback: 'settings');
 
+  void goAccount() => pushRoute('account');
+
+  void backFromAccount() => popRoute(fallback: 'preferences');
+
+  void goPaywall() => pushRoute('paywall');
+
+  void backFromPaywall() => popRoute();
+
   void _setRoute(String r, {bool reset = false}) {
     if (reset) _routeStack.clear();
     route = r;

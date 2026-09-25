@@ -3079,4 +3079,83 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get gamificationSetting => 'Медали и уровни';
+
+  @override
+  String get accountTitle => 'Аккаунт';
+
+  @override
+  String get accountSection => 'Аккаунт';
+
+  @override
+  String get accountRowGuest => 'Войдите или создайте аккаунт';
+
+  @override
+  String get accountGuestBlurb => 'Создайте аккаунт, чтобы сохранить премиум-доступ.';
+
+  @override
+  String accountSignedInAs(String email) {
+    return 'Вы вошли как $email';
+  }
+
+  @override
+  String get signOut => 'Выйти';
+
+  @override
+  String get signIn => 'Войти';
+
+  @override
+  String get createAccount => 'Создать аккаунт';
+
+  @override
+  String get startFree => 'Начать бесплатно';
+
+  @override
+  String get emailLabel => 'Эл. почта';
+
+  @override
+  String get passwordLabel => 'Пароль';
+
+  @override
+  String get emailInvalid => 'Введите корректный адрес эл. почты';
+
+  @override
+  String get passwordTooShort => 'Пароль должен содержать не менее 6 символов';
+
+  @override
+  String get authFailedGeneric => 'Не удалось выполнить запрос.';
+
+  @override
+  String get tierFree => 'FREE';
+
+  @override
+  String get tierNormal => 'NORMAL';
+
+  @override
+  String get tierPremium => 'PREMIUM';
+
+  @override
+  String get paywallTitle => 'Откройте Премиум';
+
+  @override
+  String paywallPrice(String price) {
+    return '$price / мес.';
+  }
+
+  @override
+  String get paywallCtaUpgrade => 'Улучшить';
+
+  @override
+  String get paywallBenefit1 => 'Планирование тренировок с ИИ';
+
+  @override
+  String get paywallBenefit2 => 'Премиум-аналитика тренировок';
+
+  @override
+  String get paywallBenefit3 => 'Поддержка развития приложения';
+
+  @override
+  String get paywallFootnote => 'Отмена в любой момент. Оплата пока недоступна.';
+
+  @override
+  String get billingComingSoon => 'Оплата скоро появится.';
 }

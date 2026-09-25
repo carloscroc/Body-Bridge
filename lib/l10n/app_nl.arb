@@ -1161,4 +1161,31 @@
   "addWeekWidget": "Weekwidget toevoegen",
 
   "gamificationSetting": "Medailles en niveaus"
+,
+
+  "accountTitle": "Account",
+  "accountSection": "Account",
+  "accountRowGuest": "Log in of maak een account",
+  "accountGuestBlurb": "Maak een account om je premium toegang te behouden.",
+  "accountSignedInAs": "Ingelogd als {email}",
+  "signOut": "Uitloggen",
+  "signIn": "Inloggen",
+  "createAccount": "Account aanmaken",
+  "startFree": "Gratis beginnen",
+  "emailLabel": "E-mail",
+  "passwordLabel": "Wachtwoord",
+  "emailInvalid": "Voer een geldig e-mailadres in",
+  "passwordTooShort": "Het wachtwoord moet minimaal 6 tekens bevatten",
+  "authFailedGeneric": "We konden de aanvraag niet voltooien.",
+  "tierFree": "FREE",
+  "tierNormal": "NORMAL",
+  "tierPremium": "PREMIUM",
+  "paywallTitle": "Premium ontgrendelen",
+  "paywallPrice": "{price} / maand",
+  "paywallCtaUpgrade": "Upgraden",
+  "paywallBenefit1": "AI-gestuurde routineplanning",
+  "paywallBenefit2": "Premium trainingsinzichten",
+  "paywallBenefit3": "Ondersteun doorontwikkeling",
+  "paywallFootnote": "Op elk moment opzegbaar. Betalen is nog niet beschikbaar.",
+  "billingComingSoon": "Betalen komt binnenkort."
 }

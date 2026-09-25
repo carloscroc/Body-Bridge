@@ -2985,4 +2985,83 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get gamificationSetting => 'الميداليات والمستويات';
+
+  @override
+  String get accountTitle => 'الحساب';
+
+  @override
+  String get accountSection => 'الحساب';
+
+  @override
+  String get accountRowGuest => 'سجّل الدخول أو أنشئ حسابًا';
+
+  @override
+  String get accountGuestBlurb => 'أنشئ حسابًا لربط مزايا النسخة المميزة.';
+
+  @override
+  String accountSignedInAs(String email) {
+    return 'تم تسجيل الدخول باسم $email';
+  }
+
+  @override
+  String get signOut => 'تسجيل الخروج';
+
+  @override
+  String get signIn => 'تسجيل الدخول';
+
+  @override
+  String get createAccount => 'إنشاء حساب';
+
+  @override
+  String get startFree => 'ابدأ مجانًا';
+
+  @override
+  String get emailLabel => 'البريد الإلكتروني';
+
+  @override
+  String get passwordLabel => 'كلمة المرور';
+
+  @override
+  String get emailInvalid => 'أدخل بريدًا إلكترونيًا صحيحًا';
+
+  @override
+  String get passwordTooShort => 'كلمة المرور يجب أن تكون 6 أحرف على الأقل';
+
+  @override
+  String get authFailedGeneric => 'تعذر إكمال الطلب.';
+
+  @override
+  String get tierFree => 'FREE';
+
+  @override
+  String get tierNormal => 'NORMAL';
+
+  @override
+  String get tierPremium => 'PREMIUM';
+
+  @override
+  String get paywallTitle => 'افتح النسخة المميزة';
+
+  @override
+  String paywallPrice(String price) {
+    return '$price / شهر';
+  }
+
+  @override
+  String get paywallCtaUpgrade => 'ترقية';
+
+  @override
+  String get paywallBenefit1 => 'تخطيط التمارين بالذكاء الاصطناعي';
+
+  @override
+  String get paywallBenefit2 => 'تحليلات تدريب مميزة';
+
+  @override
+  String get paywallBenefit3 => 'دعم التطوير المستمر';
+
+  @override
+  String get paywallFootnote => 'يمكنك الإلغاء في أي وقت. الفوترة غير متاحة بعد.';
+
+  @override
+  String get billingComingSoon => 'الفوترة قريبًا.';
 }

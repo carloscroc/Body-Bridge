@@ -6,6 +6,7 @@ import 'package:flutter/services.dart';
 import 'package:phosphoricons_flutter/phosphoricons_flutter.dart';
 
 import '../l10n/l10n.dart';
+import '../screens/account_screen.dart';
 import '../screens/about_screen.dart';
 import '../screens/ai_plan_screen.dart';
 import '../screens/compare_screen.dart';
@@ -17,6 +18,7 @@ import '../screens/note_edit_screen.dart';
 import '../screens/notes_screen.dart';
 import '../screens/onboarding_screen.dart';
 import '../screens/places_screen.dart';
+import '../screens/paywall_screen.dart';
 import '../screens/plan_import_sheet.dart';
 import '../screens/progress_screen.dart';
 import '../screens/routine_edit_screen.dart';
@@ -56,6 +58,8 @@ class _AppShellState extends State<AppShell> with WidgetsBindingObserver {
     'session',
     'about',
     'ai-plan',
+    'account',
+    'paywall',
     'awards',
     'exercise-detail',
     'measures',
@@ -355,6 +359,10 @@ class _AppShellState extends State<AppShell> with WidgetsBindingObserver {
         return ProfileScreen();
       case 'preferences':
         return SettingsScreen();
+      case 'account':
+        return AccountScreen();
+      case 'paywall':
+        return PaywallScreen();
       case 'moments':
         return MomentsScreen();
       case 'awards':

@@ -1009,4 +1009,31 @@
   "addWeekWidget": "Aggiungi widget della settimana",
 
   "gamificationSetting": "Medaglie e livelli"
+,
+
+  "accountTitle": "Account",
+  "accountSection": "Account",
+  "accountRowGuest": "Accedi o crea un account",
+  "accountGuestBlurb": "Crea un account per mantenere collegato il tuo accesso premium.",
+  "accountSignedInAs": "Accesso effettuato come {email}",
+  "signOut": "Esci",
+  "signIn": "Accedi",
+  "createAccount": "Crea account",
+  "startFree": "Inizia gratis",
+  "emailLabel": "Email",
+  "passwordLabel": "Password",
+  "emailInvalid": "Inserisci un indirizzo email valido",
+  "passwordTooShort": "La password deve contenere almeno 6 caratteri",
+  "authFailedGeneric": "Non è stato possibile completare la richiesta.",
+  "tierFree": "FREE",
+  "tierNormal": "NORMAL",
+  "tierPremium": "PREMIUM",
+  "paywallTitle": "Sblocca Premium",
+  "paywallPrice": "{price} / mese",
+  "paywallCtaUpgrade": "Passa a Premium",
+  "paywallBenefit1": "Pianificazione delle routine con IA",
+  "paywallBenefit2": "Analisi premium dell'allenamento",
+  "paywallBenefit3": "Sostieni lo sviluppo continuo",
+  "paywallFootnote": "Annulla quando vuoi. La fatturazione non è ancora disponibile.",
+  "billingComingSoon": "La fatturazione arriva presto."
 }

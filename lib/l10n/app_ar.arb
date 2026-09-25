@@ -1161,4 +1161,31 @@
   "addWeekWidget": "إضافة أداة الأسبوع",
 
   "gamificationSetting": "الميداليات والمستويات"
+,
+
+  "accountTitle": "الحساب",
+  "accountSection": "الحساب",
+  "accountRowGuest": "سجّل الدخول أو أنشئ حسابًا",
+  "accountGuestBlurb": "أنشئ حسابًا لربط مزايا النسخة المميزة.",
+  "accountSignedInAs": "تم تسجيل الدخول باسم {email}",
+  "signOut": "تسجيل الخروج",
+  "signIn": "تسجيل الدخول",
+  "createAccount": "إنشاء حساب",
+  "startFree": "ابدأ مجانًا",
+  "emailLabel": "البريد الإلكتروني",
+  "passwordLabel": "كلمة المرور",
+  "emailInvalid": "أدخل بريدًا إلكترونيًا صحيحًا",
+  "passwordTooShort": "كلمة المرور يجب أن تكون 6 أحرف على الأقل",
+  "authFailedGeneric": "تعذر إكمال الطلب.",
+  "tierFree": "FREE",
+  "tierNormal": "NORMAL",
+  "tierPremium": "PREMIUM",
+  "paywallTitle": "افتح النسخة المميزة",
+  "paywallPrice": "{price} / شهر",
+  "paywallCtaUpgrade": "ترقية",
+  "paywallBenefit1": "تخطيط التمارين بالذكاء الاصطناعي",
+  "paywallBenefit2": "تحليلات تدريب مميزة",
+  "paywallBenefit3": "دعم التطوير المستمر",
+  "paywallFootnote": "يمكنك الإلغاء في أي وقت. الفوترة غير متاحة بعد.",
+  "billingComingSoon": "الفوترة قريبًا."
 }

@@ -1161,4 +1161,31 @@
   "addWeekWidget": "Hafta widget’ı ekle",
 
   "gamificationSetting": "Madalyalar ve seviyeler"
+,
+
+  "accountTitle": "Hesap",
+  "accountSection": "Hesap",
+  "accountRowGuest": "Giriş yap veya hesap oluştur",
+  "accountGuestBlurb": "Premium erişimini korumak için hesap oluştur.",
+  "accountSignedInAs": "{email} olarak giriş yapıldı",
+  "signOut": "Çıkış yap",
+  "signIn": "Giriş yap",
+  "createAccount": "Hesap oluştur",
+  "startFree": "Ücretsiz başla",
+  "emailLabel": "E-posta",
+  "passwordLabel": "Şifre",
+  "emailInvalid": "Geçerli bir e-posta adresi gir",
+  "passwordTooShort": "Şifre en az 6 karakter olmalı",
+  "authFailedGeneric": "İstek tamamlanamadı.",
+  "tierFree": "FREE",
+  "tierNormal": "NORMAL",
+  "tierPremium": "PREMIUM",
+  "paywallTitle": "Premium'u Aç",
+  "paywallPrice": "ayda {price}",
+  "paywallCtaUpgrade": "Yükselt",
+  "paywallBenefit1": "Yapay zekâ destekli rutin planlama",
+  "paywallBenefit2": "Premium antrenman analizleri",
+  "paywallBenefit3": "Sürekli gelişimi destekle",
+  "paywallFootnote": "Dilediğin zaman iptal et. Ödeme henüz kullanılamıyor.",
+  "billingComingSoon": "Ödeme çok yakında."
 }

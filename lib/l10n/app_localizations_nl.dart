@@ -2999,4 +2999,83 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get gamificationSetting => 'Medailles en niveaus';
+
+  @override
+  String get accountTitle => 'Account';
+
+  @override
+  String get accountSection => 'Account';
+
+  @override
+  String get accountRowGuest => 'Log in of maak een account';
+
+  @override
+  String get accountGuestBlurb => 'Maak een account om je premium toegang te behouden.';
+
+  @override
+  String accountSignedInAs(String email) {
+    return 'Ingelogd als $email';
+  }
+
+  @override
+  String get signOut => 'Uitloggen';
+
+  @override
+  String get signIn => 'Inloggen';
+
+  @override
+  String get createAccount => 'Account aanmaken';
+
+  @override
+  String get startFree => 'Gratis beginnen';
+
+  @override
+  String get emailLabel => 'E-mail';
+
+  @override
+  String get passwordLabel => 'Wachtwoord';
+
+  @override
+  String get emailInvalid => 'Voer een geldig e-mailadres in';
+
+  @override
+  String get passwordTooShort => 'Het wachtwoord moet minimaal 6 tekens bevatten';
+
+  @override
+  String get authFailedGeneric => 'We konden de aanvraag niet voltooien.';
+
+  @override
+  String get tierFree => 'FREE';
+
+  @override
+  String get tierNormal => 'NORMAL';
+
+  @override
+  String get tierPremium => 'PREMIUM';
+
+  @override
+  String get paywallTitle => 'Premium ontgrendelen';
+
+  @override
+  String paywallPrice(String price) {
+    return '$price / maand';
+  }
+
+  @override
+  String get paywallCtaUpgrade => 'Upgraden';
+
+  @override
+  String get paywallBenefit1 => 'AI-gestuurde routineplanning';
+
+  @override
+  String get paywallBenefit2 => 'Premium trainingsinzichten';
+
+  @override
+  String get paywallBenefit3 => 'Ondersteun doorontwikkeling';
+
+  @override
+  String get paywallFootnote => 'Op elk moment opzegbaar. Betalen is nog niet beschikbaar.';
+
+  @override
+  String get billingComingSoon => 'Betalen komt binnenkort.';
 }

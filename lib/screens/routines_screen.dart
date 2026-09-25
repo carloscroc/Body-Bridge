@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:phosphoricons_flutter/phosphoricons_flutter.dart';
 
 import '../catalog/program_templates.dart';
+import '../constants/billing.dart';
 import '../l10n/l10n.dart';
 import '../models/workout.dart';
 import '../state/fit_state.dart';
@@ -10,6 +11,7 @@ import '../theme/app_theme.dart';
 import '../widgets/dialogs.dart';
 import '../widgets/glass.dart';
 import '../widgets/liquid_notch.dart';
+import '../widgets/premium_gate.dart';
 import '../widgets/routine_folder.dart';
 import '../widgets/svg_icon.dart';
 import '../widgets/ui_kit.dart';
@@ -99,10 +101,14 @@ class RoutinesScreen extends StatelessWidget {
               onTap: () => showPlanImportSheet(context),
             ),
             const SizedBox(height: 10),
-            GhostButton(
-              label: t.aiRoutine,
-              icon: PhosphorIconsRegular.sparkle,
+            FeatureGate(
+              feature: kFeatureAiPlan,
               onTap: fit.goAiPlan,
+              child: GhostButton(
+                label: t.aiRoutine,
+                icon: PhosphorIconsRegular.sparkle,
+                onTap: fit.goAiPlan,
+              ),
             ),
           ],
         ),

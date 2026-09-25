@@ -921,4 +921,31 @@
   "addWeekWidget": "Adicionar widget da semana",
 
   "gamificationSetting": "Medalhas e níveis"
+,
+
+  "accountTitle": "Conta",
+  "accountSection": "Conta",
+  "accountRowGuest": "Entre ou crie uma conta",
+  "accountGuestBlurb": "Crie uma conta para manter seu acesso premium conectado.",
+  "accountSignedInAs": "Conectado como {email}",
+  "signOut": "Sair",
+  "signIn": "Entrar",
+  "createAccount": "Criar conta",
+  "startFree": "Começar grátis",
+  "emailLabel": "E-mail",
+  "passwordLabel": "Senha",
+  "emailInvalid": "Digite um e-mail válido",
+  "passwordTooShort": "A senha deve ter pelo menos 6 caracteres",
+  "authFailedGeneric": "Não foi possível concluir a solicitação.",
+  "tierFree": "FREE",
+  "tierNormal": "NORMAL",
+  "tierPremium": "PREMIUM",
+  "paywallTitle": "Desbloqueie o Premium",
+  "paywallPrice": "{price} / mês",
+  "paywallCtaUpgrade": "Assinar",
+  "paywallBenefit1": "Planejamento de treinos com IA",
+  "paywallBenefit2": "Análises premium de treino",
+  "paywallBenefit3": "Apoie o desenvolvimento contínuo",
+  "paywallFootnote": "Cancele quando quiser. O pagamento ainda não está disponível.",
+  "billingComingSoon": "O pagamento chega em breve."
 }
