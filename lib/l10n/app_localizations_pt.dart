@@ -3016,4 +3016,83 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get authErrorUnknown => 'Falha ao entrar. Tente novamente.';
+
+  @override
+  String get accountTitle => 'Conta';
+
+  @override
+  String get accountSection => 'Conta';
+
+  @override
+  String get accountRowGuest => 'Entre ou crie uma conta';
+
+  @override
+  String get accountGuestBlurb => 'Crie uma conta para manter seu acesso premium conectado.';
+
+  @override
+  String accountSignedInAs(String email) {
+    return 'Conectado como $email';
+  }
+
+  @override
+  String get signOut => 'Sair';
+
+  @override
+  String get signIn => 'Entrar';
+
+  @override
+  String get createAccount => 'Criar conta';
+
+  @override
+  String get startFree => 'Começar grátis';
+
+  @override
+  String get emailLabel => 'E-mail';
+
+  @override
+  String get passwordLabel => 'Senha';
+
+  @override
+  String get emailInvalid => 'Digite um e-mail válido';
+
+  @override
+  String get passwordTooShort => 'A senha deve ter pelo menos 6 caracteres';
+
+  @override
+  String get authFailedGeneric => 'Não foi possível concluir a solicitação.';
+
+  @override
+  String get tierFree => 'FREE';
+
+  @override
+  String get tierNormal => 'NORMAL';
+
+  @override
+  String get tierPremium => 'PREMIUM';
+
+  @override
+  String get paywallTitle => 'Desbloqueie o Premium';
+
+  @override
+  String paywallPrice(String price) {
+    return '$price / mês';
+  }
+
+  @override
+  String get paywallCtaUpgrade => 'Assinar';
+
+  @override
+  String get paywallBenefit1 => 'Planejamento de treinos com IA';
+
+  @override
+  String get paywallBenefit2 => 'Análises premium de treino';
+
+  @override
+  String get paywallBenefit3 => 'Apoie o desenvolvimento contínuo';
+
+  @override
+  String get paywallFootnote => 'Cancele quando quiser. O pagamento ainda não está disponível.';
+
+  @override
+  String get billingComingSoon => 'O pagamento chega em breve.';
 }

@@ -3021,4 +3021,83 @@ class AppLocalizationsUk extends AppLocalizations {
 
   @override
   String get authErrorUnknown => 'Не вдалося увійти. Спробуйте ще раз.';
+
+  @override
+  String get accountTitle => 'Акаунт';
+
+  @override
+  String get accountSection => 'Акаунт';
+
+  @override
+  String get accountRowGuest => 'Увійдіть або створіть акаунт';
+
+  @override
+  String get accountGuestBlurb => 'Створіть акаунт, щоб зберегти преміум-доступ.';
+
+  @override
+  String accountSignedInAs(String email) {
+    return 'Ви увійшли як $email';
+  }
+
+  @override
+  String get signOut => 'Вийти';
+
+  @override
+  String get signIn => 'Увійти';
+
+  @override
+  String get createAccount => 'Створити акаунт';
+
+  @override
+  String get startFree => 'Почати безкоштовно';
+
+  @override
+  String get emailLabel => 'Ел. пошта';
+
+  @override
+  String get passwordLabel => 'Пароль';
+
+  @override
+  String get emailInvalid => 'Введіть коректну адресу ел. пошти';
+
+  @override
+  String get passwordTooShort => 'Пароль має містити щонайменше 6 символів';
+
+  @override
+  String get authFailedGeneric => 'Не вдалося виконати запит.';
+
+  @override
+  String get tierFree => 'FREE';
+
+  @override
+  String get tierNormal => 'NORMAL';
+
+  @override
+  String get tierPremium => 'PREMIUM';
+
+  @override
+  String get paywallTitle => 'Відкрийте Преміум';
+
+  @override
+  String paywallPrice(String price) {
+    return '$price / міс.';
+  }
+
+  @override
+  String get paywallCtaUpgrade => 'Покращити';
+
+  @override
+  String get paywallBenefit1 => 'Планування тренувань із ШІ';
+
+  @override
+  String get paywallBenefit2 => 'Преміум-аналітика тренувань';
+
+  @override
+  String get paywallBenefit3 => 'Підтримка розвитку застосунку';
+
+  @override
+  String get paywallFootnote => 'Скасувати можна будь-коли. Оплата поки недоступна.';
+
+  @override
+  String get billingComingSoon => 'Оплата скоро з\'явиться.';
 }

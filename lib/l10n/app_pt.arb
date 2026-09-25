@@ -63,7 +63,13 @@
   "nextExercise": "PRÓXIMO",
   "skipExercise": "Pular este exercício?",
   "skipExerciseBody": "Você não marcou nenhuma série, então nada será registrado de \"{name}\".",
-  "@skipExerciseBody": { "placeholders": { "name": { "type": "String" } } },
+  "@skipExerciseBody": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
   "dropExerciseAction": "Remover exercício",
   "restOff": "Desligado",
   "setCol": "#",
@@ -541,9 +547,7 @@
   "repsOnlyHint": "Log this exercise without weight.",
   "useDefaultArt": "Back to the default art",
   "daysShort": "{n}d",
-
   "focusCard": "O foco de hoje",
-
   "autoAdvance": "Passar ao seguinte sozinho",
   "keepScreenOn": "Manter o ecrã ligado durante o treino",
   "lockWorkout": "Bloquear o ecrã",
@@ -558,47 +562,62 @@
   "autoAdvanceHint": "Ao marcar a última série de um exercício, o treino passa ao seguinte.",
   "autoProgress": "Subir o peso sozinho",
   "autoProgressHint": "Se cumprires todas as repetições, o próximo treino começa {w} acima.",
-  "@autoProgressHint": { "placeholders": { "w": { "type": "String" } } },
-
+  "@autoProgressHint": {
+    "placeholders": {
+      "w": {
+        "type": "String"
+      }
+    }
+  },
   "placePlates": "Discos e barra",
   "platesAll": "Tudo disponível",
   "platesOwned": "{n, plural, =1{{n} medida} other{{n} medidas}}",
-  "@platesOwned": { "placeholders": { "n": { "type": "int" } } },
+  "@platesOwned": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
   "platePairs": "PARES",
   "plateAchievable": "O mais perto que consegues carregar: {w}",
-  "@plateAchievable": { "placeholders": { "w": { "type": "String" } } },
-
+  "@plateAchievable": {
+    "placeholders": {
+      "w": {
+        "type": "String"
+      }
+    }
+  },
   "autoWarmup": "Começar com aquecimento",
   "autoWarmupHint": "Adiciona as séries de aquecimento ao abrir o treino.",
-
   "trainReminder": "Aviso para treinar",
   "trainReminderHint": "Um aviso a esta hora, só nos dias com rotina planeada.",
   "notifTrainChannel": "Aviso para treinar",
   "notifTrainChannelWhy": "Um toque para treinar nos dias que planeaste.",
   "notifTrainTitle": "Hora de treinar",
   "notifTrainBody": "A tua rotina está à espera.",
-
   "exportCatalog": "Exportar lista de exercícios",
   "importRoutine": "Importar uma rotina (JSON)",
   "planIntro": "Faz-me uma rotina de treino usando só os exercícios desta lista.",
   "planFormat": "Responde só com JSON, com esta forma:",
   "planImported": "{n, plural, =1{{n} exercício adicionado à rotina} other{{n} exercícios adicionados à rotina}}",
-  "@planImported": { "placeholders": { "n": { "type": "int" } } },
+  "@planImported": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
   "planNothing": "Nenhum exercício desse ficheiro está na tua biblioteca",
   "planFailed": "Esse ficheiro não é uma rotina que se consiga ler",
-
   "routineGroup": "Grupo",
   "newGroup": "Grupo novo",
   "noGroup": "Sem grupo",
   "groupNameHint": "Empurrar / Puxar / Pernas, 5×5…",
-
   "filters": "Filtros",
-
   "setsPlannedHint": "Escolhe quantas séries queres de cada um. O treino abre com elas prontas.",
-
   "nextTime": "PRÓXIMO",
   "nextHold": "o mesmo peso até cumprires todas as repetições",
-
   "bgPhoto": "A tua foto",
   "bgPhotoPick": "Escolher uma foto",
   "bgPhotoChange": "Mudar a foto",
@@ -608,24 +627,39 @@
   "dimMedium": "Média",
   "dimStrong": "Forte",
   "bgPhotoHint": "Fica atrás de tudo, escurecida para a app continuar legível.",
-
   "reminderSmart": "Inteligente",
   "reminderFixed": "Hora fixa",
   "reminderSmartHint": "Usa os dias e a hora a que costumas treinar, e cala-se se já treinaste nesse dia.",
   "reminderSmartEmpty": "Treina mais umas quantas vezes e vai aprender os teus dias.",
   "habitFocus": "o que costumas fazer às {day}",
-  "@habitFocus": { "placeholders": { "day": { "type": "String" } } },
-
+  "@habitFocus": {
+    "placeholders": {
+      "day": {
+        "type": "String"
+      }
+    }
+  },
   "duplicateRoutine": "Duplicar a rotina",
   "copySuffix": "{name} (cópia)",
-  "@copySuffix": { "placeholders": { "name": { "type": "String" } } },
+  "@copySuffix": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
   "saveAsRoutine": "GUARDAR COMO ROTINA",
   "savedAsRoutine": "Guardada como rotina",
-
   "templates": "Planos prontos",
   "templatesHint": "Programas clássicos, montados com a tua biblioteca. Depois podes mudar tudo.",
   "templateAdded": "{n, plural, =1{{n} rotina adicionada} other{{n} rotinas adicionadas}}",
-  "@templateAdded": { "placeholders": { "n": { "type": "int" } } },
+  "@templateAdded": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
   "tplFullbody": "Três dias de corpo inteiro por semana. Por onde se começa.",
   "tplPpl": "Empurrar, puxar e pernas. Três ou seis dias por semana.",
   "tplUpperlower": "Tronco e pernas, quatro dias por semana.",
@@ -633,16 +667,19 @@
   "tplStartingstrength": "Agachamento em todos, dois treinos que se alternam.",
   "tplHome": "Só uma barra para te pendurares e o chão.",
   "dayCount": "{n, plural, =1{{n} dia} other{{n} dias}}",
-  "@dayCount": { "placeholders": { "n": { "type": "int" } } },
-
+  "@dayCount": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
   "logRpe": "Registar o esforço (RPE)",
   "rpeTitle": "ESFORÇO (RPE)",
   "rpeHint": "10 é não conseguires mais nenhuma; 8, que sobravam duas.",
-
   "superset": "Supersérie",
   "supersetLink": "Encadear com o seguinte",
   "supersetHint": "Sem descanso entre exercícios encadeados: passas logo ao seguinte.",
-
   "aiRoutine": "Rotina com IA",
   "aiIntro": "O GymMane não fala com nenhuma IA. Tu tiras a tua lista de exercícios, colas no assistente que já usas e trazes a resposta de volta. Do telemóvel não sai nada sozinho.",
   "aiStep1": "Exporta a tua lista de exercícios. Se escolheste um sítio, só leva o que podes fazer lá.",
@@ -650,7 +687,13 @@
   "aiStep3": "Guarda a resposta num ficheiro: JSON ou texto simples, tanto faz.",
   "aiStep4": "Importa-o aqui. Os nomes são cruzados com a tua biblioteca e a rotina fica montada.",
   "aiMissing": "{n, plural, =1{1 nome não estava na tua biblioteca} other{{n} nomes não estavam na tua biblioteca}}",
-  "@aiMissing": { "placeholders": { "n": { "type": "int" } } },
+  "@aiMissing": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
   "importApps": "Que apps lê",
   "importOtherCsv": "Qualquer outro CSV com data, exercício, repetições e peso",
   "importAskApp": "Precisas de outra app? Pede-ma",
@@ -765,7 +808,6 @@
   "momentsEmptyHint": "Fotografe a academia, o quadro, como montou a barra… o que quiser lembrar. Ficam no telefone e só você vê.",
   "coverLabel": "CAPA",
   "removeCover": "Tirar capa",
-
   "startTitle": "Iniciar treino",
   "logTitle": "Registrar um treino",
   "logHint": "Sem cronômetro — só preencha o que você fez.",
@@ -775,9 +817,7 @@
   "plannedRoutine": "PLANEJADA",
   "logWorkoutAction": "REGISTRAR UM TREINO",
   "logging": "REGISTRANDO",
-
   "placesLabel": "Meus locais",
-
   "undo": "Desfazer",
   "deleteSet": "Excluir série",
   "setDeleted": "Série excluída",
@@ -806,7 +846,6 @@
   "suggestInWorkoutsHint": "Desligado, não aparece nas sugestões. Você ainda pode adicioná-lo à mão.",
   "dontSuggest": "Não sugerir mais",
   "noLongerSuggested": "Não será mais sugerido",
-
   "onbPlaceTitle": "Onde você treina?",
   "onbPlaceWhy": "Marque todos os lugares onde você treina. Só vamos sugerir o que dá para fazer em cada um.",
   "onbPlaceGear": "O que você tem lá?",
@@ -829,7 +868,6 @@
   "saveChanges": "Salvar alterações",
   "noStepsYet": "Ainda não há passos. Escreva os seus para lembrar como você faz.",
   "addSteps": "Escrever os passos",
-
   "setTypeRestPause": "Rest-pause",
   "planFormatNotes": "Use os nomes dos exercícios exatamente como aparecem na lista. \"sets\", \"reps\", \"weight\" (na unidade indicada), \"rest\" em segundos e \"days\" são opcionais. \"superset\": true liga um exercício ao seguinte. Para várias semanas, agrupe as rotinas dentro de \"weeks\" como no segundo exemplo.",
   "planSets": "Planejar séries",
@@ -859,7 +897,6 @@
   "importAction": "Importar",
   "showFormat": "Ver o formato",
   "shareAsFile": "Compartilhar como arquivo",
-
   "recoveryTab": "Recuperação",
   "recoveryOverall": "Corpo {pct}% recuperado",
   "recoveryAllFresh": "Tudo recuperado. Bom dia para treinar o que quiser.",
@@ -869,24 +906,19 @@
   "recoveryHint": "Toque num músculo para ver quanto ele se recuperou. Séries recentes pesam mais, e as mais pesadas (pelo RPE) mais ainda.",
   "recoveryPct": "{pct}% recuperado",
   "readyInHours": "pronto em ~{h} h",
-
   "tplAbcd": "Quatro dias: peito e tríceps, costas e bíceps, pernas, ombros e abdômen.",
   "tplAbcde": "Cinco dias, um grupo em cada: peito, costas, pernas, ombros, braços.",
-
   "elapsedCaps": "DECORRIDO",
   "tapToSkip": "Toque para pular",
   "tapToStop": "Toque para parar",
-
   "screenLocked": "Tela bloqueada",
   "lockedHint": "Mantenha pressionada a digital no topo para desbloquear",
-
   "liveDoneSet": "Série feita",
   "liveSkipRest": "Pular descanso",
   "livePause": "Pausar",
   "liveResume": "Retomar",
   "liveNext": "Próximo",
   "liveUpNext": "Depois: {name}",
-
   "stickerOpen": "Compartilhar numa foto",
   "stickerNoPhoto": "Sem foto",
   "stickerWorkout": "Treino",
@@ -895,33 +927,26 @@
   "stickerHint": "Arraste para mover e faça pinça para mudar o tamanho ou girar",
   "stickerSaved": "Salva na sua galeria",
   "stickerWeek": "Esta semana",
-
   "getReady": "Prepare-se",
-
   "stickerGallery": "Galeria",
   "stickerCamera": "Câmera",
   "shareIntroTitle": "Compartilhe esta rotina",
   "shareIntroBody": "Envie para seu par, um amigo ou sua família. Eles recebem um arquivo pequeno que abre no GymMane e adiciona a rotina com um toque, com séries e pesos.",
   "removedFromRoutine": "Removido da rotina",
-
   "radarTitle": "Este mês",
   "radarHint": "Veja quais áreas precisam de mais trabalho",
   "radarEmpty": "Treine este mês para ver seu equilíbrio",
   "radarBalanced": "Bom equilíbrio até agora",
   "radarFocus": "Precisa de mais: {list}",
-
   "countdownReady": "Prepare-se",
   "countdownSkip": "Toque para começar já",
   "countdownSetting": "Contagem regressiva ao começar",
-
   "effortSetting": "Anotar o esforço",
   "effortHint": "RPE: 10 é não conseguir fazer mais uma; 8, que sobravam duas. RIR conta as repetições que te sobravam. Se a série o tiver, o 1RM estimado usa a tabela de RPE.",
   "rirTitle": "RESERVA (RIR)",
   "rirHint": "0 é não conseguir fazer mais uma; 2, que sobravam duas.",
   "addWeekWidget": "Adicionar widget da semana",
-
   "gamificationSetting": "Medalhas e níveis",
-
   "authErrorInvalidEmail": "O endereço de e-mail parece inválido.",
   "authErrorWrongPassword": "E-mail ou senha incorretos.",
   "authErrorUserNotFound": "Nenhuma conta encontrada para esse e-mail.",
@@ -929,5 +954,30 @@
   "authErrorWeakPassword": "A senha é muito fraca.",
   "authErrorTooManyRequests": "Tentativas demais. Tente novamente mais tarde.",
   "authErrorNetwork": "Você está offline — entrar precisa de internet.",
-  "authErrorUnknown": "Falha ao entrar. Tente novamente."
+  "authErrorUnknown": "Falha ao entrar. Tente novamente.",
+  "accountTitle": "Conta",
+  "accountSection": "Conta",
+  "accountRowGuest": "Entre ou crie uma conta",
+  "accountGuestBlurb": "Crie uma conta para manter seu acesso premium conectado.",
+  "accountSignedInAs": "Conectado como {email}",
+  "signOut": "Sair",
+  "signIn": "Entrar",
+  "createAccount": "Criar conta",
+  "startFree": "Começar grátis",
+  "emailLabel": "E-mail",
+  "passwordLabel": "Senha",
+  "emailInvalid": "Digite um e-mail válido",
+  "passwordTooShort": "A senha deve ter pelo menos 6 caracteres",
+  "authFailedGeneric": "Não foi possível concluir a solicitação.",
+  "tierFree": "FREE",
+  "tierNormal": "NORMAL",
+  "tierPremium": "PREMIUM",
+  "paywallTitle": "Desbloqueie o Premium",
+  "paywallPrice": "{price} / mês",
+  "paywallCtaUpgrade": "Assinar",
+  "paywallBenefit1": "Planejamento de treinos com IA",
+  "paywallBenefit2": "Análises premium de treino",
+  "paywallBenefit3": "Apoie o desenvolvimento contínuo",
+  "paywallFootnote": "Cancele quando quiser. O pagamento ainda não está disponível.",
+  "billingComingSoon": "O pagamento chega em breve."
 }

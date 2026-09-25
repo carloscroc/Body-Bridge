@@ -2941,4 +2941,83 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get authErrorUnknown => '로그인에 실팔했습니다. 다시 시도해 주세요.';
+
+  @override
+  String get accountTitle => '계정';
+
+  @override
+  String get accountSection => '계정';
+
+  @override
+  String get accountRowGuest => '로그인 또는 계정 만들기';
+
+  @override
+  String get accountGuestBlurb => '계정을 만들면 프리미엄 혜택을 그대로 유지할 수 있어요.';
+
+  @override
+  String accountSignedInAs(String email) {
+    return '$email로 로그인됨';
+  }
+
+  @override
+  String get signOut => '로그아웃';
+
+  @override
+  String get signIn => '로그인';
+
+  @override
+  String get createAccount => '계정 만들기';
+
+  @override
+  String get startFree => '무료로 시작';
+
+  @override
+  String get emailLabel => '이메일';
+
+  @override
+  String get passwordLabel => '비밀번호';
+
+  @override
+  String get emailInvalid => '올바른 이메일 주소를 입력하세요';
+
+  @override
+  String get passwordTooShort => '비밀번호는 6자 이상이어야 합니다';
+
+  @override
+  String get authFailedGeneric => '요청을 완료할 수 없습니다.';
+
+  @override
+  String get tierFree => 'FREE';
+
+  @override
+  String get tierNormal => 'NORMAL';
+
+  @override
+  String get tierPremium => 'PREMIUM';
+
+  @override
+  String get paywallTitle => '프리미엄 잠금 해제';
+
+  @override
+  String paywallPrice(String price) {
+    return '월 $price';
+  }
+
+  @override
+  String get paywallCtaUpgrade => '업그레이드';
+
+  @override
+  String get paywallBenefit1 => 'AI 기반 루틴 계획';
+
+  @override
+  String get paywallBenefit2 => '프리미엄 훈련 인사이트';
+
+  @override
+  String get paywallBenefit3 => '지속적인 개발 지원';
+
+  @override
+  String get paywallFootnote => '언제든지 해지할 수 있어요. 결제는 아직 제공되지 않습니다.';
+
+  @override
+  String get billingComingSoon => '결제 기능이 곧 제공될 예정입니다.';
 }

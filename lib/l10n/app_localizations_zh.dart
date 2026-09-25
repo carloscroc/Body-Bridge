@@ -2887,6 +2887,85 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get authErrorUnknown => '登录失败，请重试。';
+
+  @override
+  String get accountTitle => '账户';
+
+  @override
+  String get accountSection => '账户';
+
+  @override
+  String get accountRowGuest => '登录或创建账户';
+
+  @override
+  String get accountGuestBlurb => '创建账户，绑定你的高级版权益。';
+
+  @override
+  String accountSignedInAs(String email) {
+    return '以 $email 登录';
+  }
+
+  @override
+  String get signOut => '退出登录';
+
+  @override
+  String get signIn => '登录';
+
+  @override
+  String get createAccount => '创建账户';
+
+  @override
+  String get startFree => '免费开始';
+
+  @override
+  String get emailLabel => '邮箱';
+
+  @override
+  String get passwordLabel => '密码';
+
+  @override
+  String get emailInvalid => '请输入有效的邮箱地址';
+
+  @override
+  String get passwordTooShort => '密码至少需要 6 个字符';
+
+  @override
+  String get authFailedGeneric => '无法完成该请求。';
+
+  @override
+  String get tierFree => 'FREE';
+
+  @override
+  String get tierNormal => 'NORMAL';
+
+  @override
+  String get tierPremium => 'PREMIUM';
+
+  @override
+  String get paywallTitle => '解锁高级版';
+
+  @override
+  String paywallPrice(String price) {
+    return '$price / 月';
+  }
+
+  @override
+  String get paywallCtaUpgrade => '升级';
+
+  @override
+  String get paywallBenefit1 => 'AI 智能训练计划';
+
+  @override
+  String get paywallBenefit2 => '高级训练洞察';
+
+  @override
+  String get paywallBenefit3 => '支持持续开发';
+
+  @override
+  String get paywallFootnote => '可随时取消。付费功能尚未开放。';
+
+  @override
+  String get billingComingSoon => '付费功能即将上线。';
 }
 
 /// The translations for Chinese, using the Han script (`zh_Hant`).
@@ -5795,4 +5874,83 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
 
   @override
   String get authErrorUnknown => '登入失敗，請再試一次。';
+
+  @override
+  String get accountTitle => '帳號';
+
+  @override
+  String get accountSection => '帳號';
+
+  @override
+  String get accountRowGuest => '登入或建立帳號';
+
+  @override
+  String get accountGuestBlurb => '建立帳號，綁定你的進階版權益。';
+
+  @override
+  String accountSignedInAs(String email) {
+    return '以 $email 登入';
+  }
+
+  @override
+  String get signOut => '登出';
+
+  @override
+  String get signIn => '登入';
+
+  @override
+  String get createAccount => '建立帳號';
+
+  @override
+  String get startFree => '免費開始';
+
+  @override
+  String get emailLabel => '電子郵件';
+
+  @override
+  String get passwordLabel => '密碼';
+
+  @override
+  String get emailInvalid => '請輸入有效的電子郵件地址';
+
+  @override
+  String get passwordTooShort => '密碼至少需要 6 個字元';
+
+  @override
+  String get authFailedGeneric => '無法完成該請求。';
+
+  @override
+  String get tierFree => 'FREE';
+
+  @override
+  String get tierNormal => 'NORMAL';
+
+  @override
+  String get tierPremium => 'PREMIUM';
+
+  @override
+  String get paywallTitle => '解鎖進階版';
+
+  @override
+  String paywallPrice(String price) {
+    return '$price / 月';
+  }
+
+  @override
+  String get paywallCtaUpgrade => '升級';
+
+  @override
+  String get paywallBenefit1 => 'AI 智慧訓練計畫';
+
+  @override
+  String get paywallBenefit2 => '進階訓練洞察';
+
+  @override
+  String get paywallBenefit3 => '支持持續開發';
+
+  @override
+  String get paywallFootnote => '可隨時取消。付費功能尚未開放。';
+
+  @override
+  String get billingComingSoon => '付費功能即將上線。';
 }

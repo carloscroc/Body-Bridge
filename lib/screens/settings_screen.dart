@@ -21,7 +21,9 @@ import '../services/home_widget_bridge.dart';
 import '../services/rest_alarm.dart';
 import '../services/sqlite_reader.dart';
 import '../services/workout_import.dart';
+import '../state/account_gate.dart';
 import '../state/fit_state.dart';
+import '../widgets/premium_gate.dart';
 import '../theme/app_colors.dart';
 import '../theme/app_theme.dart';
 import '../widgets/body_rulers.dart';
@@ -33,6 +35,7 @@ import '../widgets/photo_source_sheet.dart';
 import '../widgets/profile_avatar.dart';
 import '../widgets/ruler_picker.dart';
 import '../widgets/timer_panel.dart';
+import '../widgets/tier_badge.dart';
 import 'profile_screen.dart';
 import '../widgets/ui_kit.dart';
 
@@ -58,9 +61,37 @@ class SettingsScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: riseAll([
-            ScreenHeader(title: t.settings, onBack: fit.backFromPreferences),
-            const SizedBox(height: 20),
-            _sectionLabel(gc, t.preferences),
+             ScreenHeader(title: t.settings, onBack: fit.backFromPreferences),
+             const SizedBox(height: 20),
+             _sectionLabel(gc, t.accountSection),
+             const SizedBox(height: 8),
+             AnimatedBuilder(
+               animation: context.accountGate,
+               builder: (context, _) {
+                 final snapshot = context.accountGate.snapshot;
+                 return SoftCard(
+                   radius: 20,
+                   borderColor: Colors.transparent,
+                   padding: const EdgeInsets.symmetric(horizontal: 16),
+                   child: GestureDetector(
+                     behavior: HitTestBehavior.opaque,
+                     onTap: fit.goAccount,
+                     child: _prefRow(
+                       gc,
+                       PhosphorIconsRegular.userCircle,
+                       snapshot.tier.isSignedIn ? snapshot.email ?? t.accountRowGuest : t.accountRowGuest,
+                       Row(mainAxisSize: MainAxisSize.min, children: [
+                         TierBadge(snapshot.tier),
+                         const SizedBox(width: 8),
+                         Icon(PhosphorIconsRegular.caretRight, size: 15, color: gc.textTertiary),
+                       ]),
+                     ),
+                   ),
+                 );
+               },
+             ),
+             const SizedBox(height: 18),
+             _sectionLabel(gc, t.preferences),
             const SizedBox(height: 8),
             SoftCard(
               radius: 20,

@@ -3028,4 +3028,83 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get authErrorUnknown => 'Échec de la connexion. Réessayez.';
+
+  @override
+  String get accountTitle => 'Compte';
+
+  @override
+  String get accountSection => 'Compte';
+
+  @override
+  String get accountRowGuest => 'Connectez-vous ou créez un compte';
+
+  @override
+  String get accountGuestBlurb => 'Créez un compte pour garder votre accès premium connecté.';
+
+  @override
+  String accountSignedInAs(String email) {
+    return 'Connecté en tant que $email';
+  }
+
+  @override
+  String get signOut => 'Se déconnecter';
+
+  @override
+  String get signIn => 'Se connecter';
+
+  @override
+  String get createAccount => 'Créer un compte';
+
+  @override
+  String get startFree => 'Commencer gratuitement';
+
+  @override
+  String get emailLabel => 'E-mail';
+
+  @override
+  String get passwordLabel => 'Mot de passe';
+
+  @override
+  String get emailInvalid => 'Saisissez une adresse e-mail valide';
+
+  @override
+  String get passwordTooShort => 'Le mot de passe doit contenir au moins 6 caractères';
+
+  @override
+  String get authFailedGeneric => 'Nous n\'avons pas pu terminer la demande.';
+
+  @override
+  String get tierFree => 'FREE';
+
+  @override
+  String get tierNormal => 'NORMAL';
+
+  @override
+  String get tierPremium => 'PREMIUM';
+
+  @override
+  String get paywallTitle => 'Débloquer Premium';
+
+  @override
+  String paywallPrice(String price) {
+    return '$price / mois';
+  }
+
+  @override
+  String get paywallCtaUpgrade => 'Passer Premium';
+
+  @override
+  String get paywallBenefit1 => 'Planification des routines par IA';
+
+  @override
+  String get paywallBenefit2 => 'Analyses d\'entraînement premium';
+
+  @override
+  String get paywallBenefit3 => 'Soutenir le développement continu';
+
+  @override
+  String get paywallFootnote => 'Annulez à tout moment. Le paiement n\'est pas encore disponible.';
+
+  @override
+  String get billingComingSoon => 'Le paiement arrive bientôt.';
 }
