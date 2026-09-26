@@ -3079,4 +3079,28 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get gamificationSetting => 'Медали и уровни';
+
+  @override
+  String get authErrorInvalidEmail => 'Адрес электронной почты выглядит неверным.';
+
+  @override
+  String get authErrorWrongPassword => 'Неверная почта или пароль.';
+
+  @override
+  String get authErrorUserNotFound => 'Аккаунт с такой почтой не найден.';
+
+  @override
+  String get authErrorEmailAlreadyInUse => 'Для этой почты уже есть аккаунт.';
+
+  @override
+  String get authErrorWeakPassword => 'Пароль слишком слабый.';
+
+  @override
+  String get authErrorTooManyRequests => 'Слишком много попыток. Попробуйте позже.';
+
+  @override
+  String get authErrorNetwork => 'Вы не в сети — для входа нужен интернет.';
+
+  @override
+  String get authErrorUnknown => 'Не удалось войти. Попробуйте ещё раз.';
 }

@@ -968,5 +968,14 @@
   "rirHint": "0 es no poder con una más; 2, que te sobraban dos.",
   "addWeekWidget": "Añadir widget de la semana",
 
-  "gamificationSetting": "Medallas y niveles"
+  "gamificationSetting": "Medallas y niveles",
+
+  "authErrorInvalidEmail": "El correo electrónico no parece válido.",
+  "authErrorWrongPassword": "Correo o contraseña incorrectos.",
+  "authErrorUserNotFound": "No hay ninguna cuenta con ese correo.",
+  "authErrorEmailAlreadyInUse": "Ese correo ya tiene una cuenta.",
+  "authErrorWeakPassword": "La contraseña es demasiado débil.",
+  "authErrorTooManyRequests": "Demasiados intentos. Prueba más tarde.",
+  "authErrorNetwork": "Estás sin conexión: para iniciar sesión necesitas internet.",
+  "authErrorUnknown": "No se pudo iniciar sesión. Inténtalo de nuevo."
 }

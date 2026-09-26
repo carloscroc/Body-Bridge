@@ -1160,5 +1160,14 @@
   "rirHint": "0 bir tekrar daha yapamamak, 2 iki tekrar daha yapabilmek demek.",
   "addWeekWidget": "Hafta widget’ı ekle",
 
-  "gamificationSetting": "Madalyalar ve seviyeler"
+  "gamificationSetting": "Madalyalar ve seviyeler",
+
+  "authErrorInvalidEmail": "E-posta adresi yanlış görünüyor.",
+  "authErrorWrongPassword": "E-posta veya şifre hatalı.",
+  "authErrorUserNotFound": "Bu e-posta ile hesap bulunamadı.",
+  "authErrorEmailAlreadyInUse": "Bu e-posta zaten bir hesaba kayıtlı.",
+  "authErrorWeakPassword": "Şifre çok zayıf.",
+  "authErrorTooManyRequests": "Çok fazla deneme. Daha sonra tekrar deneyin.",
+  "authErrorNetwork": "Çevrimdışısınız — giriş yapmak için internet gerekir.",
+  "authErrorUnknown": "Giriş başarısız oldu. Tekrar deneyin."
 }

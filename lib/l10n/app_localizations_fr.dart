@@ -3004,4 +3004,28 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get gamificationSetting => 'Médailles et niveaux';
+
+  @override
+  String get authErrorInvalidEmail => 'Cette adresse e-mail semble incorrecte.';
+
+  @override
+  String get authErrorWrongPassword => 'E-mail ou mot de passe incorrect.';
+
+  @override
+  String get authErrorUserNotFound => 'Aucun compte trouvé pour cet e-mail.';
+
+  @override
+  String get authErrorEmailAlreadyInUse => 'Un compte existe déjà avec cet e-mail.';
+
+  @override
+  String get authErrorWeakPassword => 'Le mot de passe est trop faible.';
+
+  @override
+  String get authErrorTooManyRequests => 'Trop de tentatives. Réessayez plus tard.';
+
+  @override
+  String get authErrorNetwork => 'Vous êtes hors ligne — la connexion nécessite Internet.';
+
+  @override
+  String get authErrorUnknown => 'Échec de la connexion. Réessayez.';
 }

@@ -920,5 +920,14 @@
   "rirHint": "0 é não conseguir fazer mais uma; 2, que sobravam duas.",
   "addWeekWidget": "Adicionar widget da semana",
 
-  "gamificationSetting": "Medalhas e níveis"
+  "gamificationSetting": "Medalhas e níveis",
+
+  "authErrorInvalidEmail": "O endereço de e-mail parece inválido.",
+  "authErrorWrongPassword": "E-mail ou senha incorretos.",
+  "authErrorUserNotFound": "Nenhuma conta encontrada para esse e-mail.",
+  "authErrorEmailAlreadyInUse": "Esse e-mail já tem uma conta.",
+  "authErrorWeakPassword": "A senha é muito fraca.",
+  "authErrorTooManyRequests": "Tentativas demais. Tente novamente mais tarde.",
+  "authErrorNetwork": "Você está offline — entrar precisa de internet.",
+  "authErrorUnknown": "Falha ao entrar. Tente novamente."
 }

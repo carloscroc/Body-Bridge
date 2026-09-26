@@ -1160,5 +1160,14 @@
   "rirHint": "0 to brak sił na kolejne powtórzenie, 2 to jeszcze dwa w zapasie.",
   "addWeekWidget": "Dodaj widżet tygodnia",
 
-  "gamificationSetting": "Medale i poziomy"
+  "gamificationSetting": "Medale i poziomy",
+
+  "authErrorInvalidEmail": "Adres e-mail wygląda na nieprawidłowy.",
+  "authErrorWrongPassword": "Nieprawidłowy e-mail lub hasło.",
+  "authErrorUserNotFound": "Nie znaleziono konta dla tego adresu e-mail.",
+  "authErrorEmailAlreadyInUse": "Ten e-mail ma już konto.",
+  "authErrorWeakPassword": "Hasło jest zbyt słabe.",
+  "authErrorTooManyRequests": "Za dużo prób. Spróbuj później.",
+  "authErrorNetwork": "Jesteś offline — logowanie wymaga internetu.",
+  "authErrorUnknown": "Logowanie nie powiodło się. Spróbuj ponownie."
 }
