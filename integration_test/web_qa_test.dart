@@ -9,6 +9,7 @@ import 'package:gymmane/app/app_shell.dart';
 import 'package:gymmane/l10n/l10n.dart';
 import 'package:gymmane/state/fit_state.dart';
 import 'package:gymmane/theme/app_colors.dart';
+import 'package:gymmane/theme/app_theme.dart';
 
 void main() {
   final binding = IntegrationTestWidgetsFlutterBinding.ensureInitialized();
