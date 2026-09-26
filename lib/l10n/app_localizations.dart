@@ -5366,53 +5366,155 @@ abstract class AppLocalizations {
   /// **'Medals and levels'**
   String get gamificationSetting;
 
-  /// No description provided for @authErrorInvalidEmail.
+  /// No description provided for @accountTitle.
   ///
   /// In en, this message translates to:
-  /// **'Email address looks wrong.'**
-  String get authErrorInvalidEmail;
+  /// **'Account'**
+  String get accountTitle;
 
-  /// No description provided for @authErrorWrongPassword.
+  /// No description provided for @accountSection.
   ///
   /// In en, this message translates to:
-  /// **'Wrong email or password.'**
-  String get authErrorWrongPassword;
+  /// **'Account'**
+  String get accountSection;
 
-  /// No description provided for @authErrorUserNotFound.
+  /// No description provided for @accountRowGuest.
   ///
   /// In en, this message translates to:
-  /// **'No account found for that email.'**
-  String get authErrorUserNotFound;
+  /// **'Sign in or create account'**
+  String get accountRowGuest;
 
-  /// No description provided for @authErrorEmailAlreadyInUse.
+  /// No description provided for @accountGuestBlurb.
   ///
   /// In en, this message translates to:
-  /// **'That email already has an account.'**
-  String get authErrorEmailAlreadyInUse;
+  /// **'Create an account to keep your premium access connected.'**
+  String get accountGuestBlurb;
 
-  /// No description provided for @authErrorWeakPassword.
+  /// No description provided for @accountSignedInAs.
   ///
   /// In en, this message translates to:
-  /// **'Password is too weak.'**
-  String get authErrorWeakPassword;
+  /// **'Signed in as {email}'**
+  String accountSignedInAs(String email);
 
-  /// No description provided for @authErrorTooManyRequests.
+  /// No description provided for @signOut.
   ///
   /// In en, this message translates to:
-  /// **'Too many attempts. Try again later.'**
-  String get authErrorTooManyRequests;
+  /// **'Sign out'**
+  String get signOut;
 
-  /// No description provided for @authErrorNetwork.
+  /// No description provided for @signIn.
   ///
   /// In en, this message translates to:
-  /// **'You are offline — sign in needs internet.'**
-  String get authErrorNetwork;
+  /// **'Sign in'**
+  String get signIn;
 
-  /// No description provided for @authErrorUnknown.
+  /// No description provided for @createAccount.
   ///
   /// In en, this message translates to:
-  /// **'Sign in failed. Try again.'**
-  String get authErrorUnknown;
+  /// **'Create account'**
+  String get createAccount;
+
+  /// No description provided for @startFree.
+  ///
+  /// In en, this message translates to:
+  /// **'Start free'**
+  String get startFree;
+
+  /// No description provided for @emailLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Email'**
+  String get emailLabel;
+
+  /// No description provided for @passwordLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Password'**
+  String get passwordLabel;
+
+  /// No description provided for @emailInvalid.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter a valid email address'**
+  String get emailInvalid;
+
+  /// No description provided for @passwordTooShort.
+  ///
+  /// In en, this message translates to:
+  /// **'Password must be at least 6 characters'**
+  String get passwordTooShort;
+
+  /// No description provided for @authFailedGeneric.
+  ///
+  /// In en, this message translates to:
+  /// **'We couldn\'t complete that request.'**
+  String get authFailedGeneric;
+
+  /// No description provided for @tierFree.
+  ///
+  /// In en, this message translates to:
+  /// **'FREE'**
+  String get tierFree;
+
+  /// No description provided for @tierNormal.
+  ///
+  /// In en, this message translates to:
+  /// **'NORMAL'**
+  String get tierNormal;
+
+  /// No description provided for @tierPremium.
+  ///
+  /// In en, this message translates to:
+  /// **'PREMIUM'**
+  String get tierPremium;
+
+  /// No description provided for @paywallTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Unlock Premium'**
+  String get paywallTitle;
+
+  /// No description provided for @paywallPrice.
+  ///
+  /// In en, this message translates to:
+  /// **'{price} / month'**
+  String paywallPrice(String price);
+
+  /// No description provided for @paywallCtaUpgrade.
+  ///
+  /// In en, this message translates to:
+  /// **'Upgrade'**
+  String get paywallCtaUpgrade;
+
+  /// No description provided for @paywallBenefit1.
+  ///
+  /// In en, this message translates to:
+  /// **'AI-powered routine planning'**
+  String get paywallBenefit1;
+
+  /// No description provided for @paywallBenefit2.
+  ///
+  /// In en, this message translates to:
+  /// **'Premium training insights'**
+  String get paywallBenefit2;
+
+  /// No description provided for @paywallBenefit3.
+  ///
+  /// In en, this message translates to:
+  /// **'Support ongoing development'**
+  String get paywallBenefit3;
+
+  /// No description provided for @paywallFootnote.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel anytime. Billing is not available yet.'**
+  String get paywallFootnote;
+
+  /// No description provided for @billingComingSoon.
+  ///
+  /// In en, this message translates to:
+  /// **'Billing is coming soon.'**
+  String get billingComingSoon;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

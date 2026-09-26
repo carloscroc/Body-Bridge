@@ -2996,26 +2996,81 @@ class AppLocalizationsTr extends AppLocalizations {
   String get gamificationSetting => 'Madalyalar ve seviyeler';
 
   @override
-  String get authErrorInvalidEmail => 'E-posta adresi yanlış görünüyor.';
+  String get accountTitle => 'Hesap';
 
   @override
-  String get authErrorWrongPassword => 'E-posta veya şifre hatalı.';
+  String get accountSection => 'Hesap';
 
   @override
-  String get authErrorUserNotFound => 'Bu e-posta ile hesap bulunamadı.';
+  String get accountRowGuest => 'Giriş yap veya hesap oluştur';
 
   @override
-  String get authErrorEmailAlreadyInUse => 'Bu e-posta zaten bir hesaba kayıtlı.';
+  String get accountGuestBlurb => 'Premium erişimini korumak için hesap oluştur.';
 
   @override
-  String get authErrorWeakPassword => 'Şifre çok zayıf.';
+  String accountSignedInAs(String email) {
+    return '$email olarak giriş yapıldı';
+  }
 
   @override
-  String get authErrorTooManyRequests => 'Çok fazla deneme. Daha sonra tekrar deneyin.';
+  String get signOut => 'Çıkış yap';
 
   @override
-  String get authErrorNetwork => 'Çevrimdışısınız — giriş yapmak için internet gerekir.';
+  String get signIn => 'Giriş yap';
 
   @override
-  String get authErrorUnknown => 'Giriş başarısız oldu. Tekrar deneyin.';
+  String get createAccount => 'Hesap oluştur';
+
+  @override
+  String get startFree => 'Ücretsiz başla';
+
+  @override
+  String get emailLabel => 'E-posta';
+
+  @override
+  String get passwordLabel => 'Şifre';
+
+  @override
+  String get emailInvalid => 'Geçerli bir e-posta adresi gir';
+
+  @override
+  String get passwordTooShort => 'Şifre en az 6 karakter olmalı';
+
+  @override
+  String get authFailedGeneric => 'İstek tamamlanamadı.';
+
+  @override
+  String get tierFree => 'FREE';
+
+  @override
+  String get tierNormal => 'NORMAL';
+
+  @override
+  String get tierPremium => 'PREMIUM';
+
+  @override
+  String get paywallTitle => 'Premium\'u Aç';
+
+  @override
+  String paywallPrice(String price) {
+    return 'ayda $price';
+  }
+
+  @override
+  String get paywallCtaUpgrade => 'Yükselt';
+
+  @override
+  String get paywallBenefit1 => 'Yapay zekâ destekli rutin planlama';
+
+  @override
+  String get paywallBenefit2 => 'Premium antrenman analizleri';
+
+  @override
+  String get paywallBenefit3 => 'Sürekli gelişimi destekle';
+
+  @override
+  String get paywallFootnote => 'Dilediğin zaman iptal et. Ödeme henüz kullanılamıyor.';
+
+  @override
+  String get billingComingSoon => 'Ödeme çok yakında.';
 }

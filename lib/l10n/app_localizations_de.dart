@@ -3009,26 +3009,81 @@ class AppLocalizationsDe extends AppLocalizations {
   String get gamificationSetting => 'Medaillen und Stufen';
 
   @override
-  String get authErrorInvalidEmail => 'Diese E-Mail-Adresse sieht falsch aus.';
+  String get accountTitle => 'Konto';
 
   @override
-  String get authErrorWrongPassword => 'Falsche E-Mail oder falsches Passwort.';
+  String get accountSection => 'Konto';
 
   @override
-  String get authErrorUserNotFound => 'Kein Konto mit dieser E-Mail gefunden.';
+  String get accountRowGuest => 'Anmelden oder Konto erstellen';
 
   @override
-  String get authErrorEmailAlreadyInUse => 'Für diese E-Mail gibt es schon ein Konto.';
+  String get accountGuestBlurb => 'Erstelle ein Konto, um deinen Premium-Zugang zu behalten.';
 
   @override
-  String get authErrorWeakPassword => 'Das Passwort ist zu schwach.';
+  String accountSignedInAs(String email) {
+    return 'Angemeldet als $email';
+  }
 
   @override
-  String get authErrorTooManyRequests => 'Zu viele Versuche. Bitte später erneut versuchen.';
+  String get signOut => 'Abmelden';
 
   @override
-  String get authErrorNetwork => 'Du bist offline — zum Anmelden wird Internet benötigt.';
+  String get signIn => 'Anmelden';
 
   @override
-  String get authErrorUnknown => 'Anmeldung fehlgeschlagen. Bitte erneut versuchen.';
+  String get createAccount => 'Konto erstellen';
+
+  @override
+  String get startFree => 'Kostenlos starten';
+
+  @override
+  String get emailLabel => 'E-Mail';
+
+  @override
+  String get passwordLabel => 'Passwort';
+
+  @override
+  String get emailInvalid => 'Gib eine gültige E-Mail-Adresse ein';
+
+  @override
+  String get passwordTooShort => 'Das Passwort muss mindestens 6 Zeichen lang sein';
+
+  @override
+  String get authFailedGeneric => 'Das konnte nicht abgeschlossen werden.';
+
+  @override
+  String get tierFree => 'FREE';
+
+  @override
+  String get tierNormal => 'NORMAL';
+
+  @override
+  String get tierPremium => 'PREMIUM';
+
+  @override
+  String get paywallTitle => 'Premium freischalten';
+
+  @override
+  String paywallPrice(String price) {
+    return '$price / Monat';
+  }
+
+  @override
+  String get paywallCtaUpgrade => 'Upgraden';
+
+  @override
+  String get paywallBenefit1 => 'KI-gestützte Routinenplanung';
+
+  @override
+  String get paywallBenefit2 => 'Premium-Trainingseinblicke';
+
+  @override
+  String get paywallBenefit3 => 'Unterstütze die Weiterentwicklung';
+
+  @override
+  String get paywallFootnote => 'Jederzeit kündbar. Abrechnung ist noch nicht verfügbar.';
+
+  @override
+  String get billingComingSoon => 'Abrechnung kommt bald.';
 }

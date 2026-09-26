@@ -3081,26 +3081,81 @@ class AppLocalizationsRu extends AppLocalizations {
   String get gamificationSetting => 'Медали и уровни';
 
   @override
-  String get authErrorInvalidEmail => 'Адрес электронной почты выглядит неверным.';
+  String get accountTitle => 'Аккаунт';
 
   @override
-  String get authErrorWrongPassword => 'Неверная почта или пароль.';
+  String get accountSection => 'Аккаунт';
 
   @override
-  String get authErrorUserNotFound => 'Аккаунт с такой почтой не найден.';
+  String get accountRowGuest => 'Войдите или создайте аккаунт';
 
   @override
-  String get authErrorEmailAlreadyInUse => 'Для этой почты уже есть аккаунт.';
+  String get accountGuestBlurb => 'Создайте аккаунт, чтобы сохранить премиум-доступ.';
 
   @override
-  String get authErrorWeakPassword => 'Пароль слишком слабый.';
+  String accountSignedInAs(String email) {
+    return 'Вы вошли как $email';
+  }
 
   @override
-  String get authErrorTooManyRequests => 'Слишком много попыток. Попробуйте позже.';
+  String get signOut => 'Выйти';
 
   @override
-  String get authErrorNetwork => 'Вы не в сети — для входа нужен интернет.';
+  String get signIn => 'Войти';
 
   @override
-  String get authErrorUnknown => 'Не удалось войти. Попробуйте ещё раз.';
+  String get createAccount => 'Создать аккаунт';
+
+  @override
+  String get startFree => 'Начать бесплатно';
+
+  @override
+  String get emailLabel => 'Эл. почта';
+
+  @override
+  String get passwordLabel => 'Пароль';
+
+  @override
+  String get emailInvalid => 'Введите корректный адрес эл. почты';
+
+  @override
+  String get passwordTooShort => 'Пароль должен содержать не менее 6 символов';
+
+  @override
+  String get authFailedGeneric => 'Не удалось выполнить запрос.';
+
+  @override
+  String get tierFree => 'FREE';
+
+  @override
+  String get tierNormal => 'NORMAL';
+
+  @override
+  String get tierPremium => 'PREMIUM';
+
+  @override
+  String get paywallTitle => 'Откройте Премиум';
+
+  @override
+  String paywallPrice(String price) {
+    return '$price / мес.';
+  }
+
+  @override
+  String get paywallCtaUpgrade => 'Улучшить';
+
+  @override
+  String get paywallBenefit1 => 'Планирование тренировок с ИИ';
+
+  @override
+  String get paywallBenefit2 => 'Премиум-аналитика тренировок';
+
+  @override
+  String get paywallBenefit3 => 'Поддержка развития приложения';
+
+  @override
+  String get paywallFootnote => 'Отмена в любой момент. Оплата пока недоступна.';
+
+  @override
+  String get billingComingSoon => 'Оплата скоро появится.';
 }

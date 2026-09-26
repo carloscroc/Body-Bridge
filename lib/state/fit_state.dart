@@ -906,6 +906,10 @@ class FitState extends FitCore
         trainStep == 'review' ? trainBack() : closeTrain();
       case 'preferences':
         backFromPreferences();
+      case 'account':
+        backFromAccount();
+      case 'paywall':
+        backFromPaywall();
       case 'moments':
         backFromMoments();
       case 'awards':

@@ -2904,26 +2904,81 @@ class AppLocalizationsJa extends AppLocalizations {
   String get gamificationSetting => 'メダルとレベル';
 
   @override
-  String get authErrorInvalidEmail => 'メールアドレスが正しくないようです。';
+  String get accountTitle => 'アカウント';
 
   @override
-  String get authErrorWrongPassword => 'メールアドレスまたはパスワードが違います。';
+  String get accountSection => 'アカウント';
 
   @override
-  String get authErrorUserNotFound => 'そのメールアドレスのアカウントが見つかりません。';
+  String get accountRowGuest => 'サインインまたはアカウント作成';
 
   @override
-  String get authErrorEmailAlreadyInUse => 'そのメールアドレスはすでに登録済みです。';
+  String get accountGuestBlurb => 'アカウントを作成するとプレミアム機能を利用できます。';
 
   @override
-  String get authErrorWeakPassword => 'パスワードが弱すぎます。';
+  String accountSignedInAs(String email) {
+    return '$email としてサインイン中';
+  }
 
   @override
-  String get authErrorTooManyRequests => '試行回数が多すぎます。しばらくしてからお試しください。';
+  String get signOut => 'サインアウト';
 
   @override
-  String get authErrorNetwork => 'オフラインです — サインインにはインターネットが必要です。';
+  String get signIn => 'サインイン';
 
   @override
-  String get authErrorUnknown => 'サインインできませんでした。もう一度お試しください。';
+  String get createAccount => 'アカウントを作成';
+
+  @override
+  String get startFree => '無料で始める';
+
+  @override
+  String get emailLabel => 'メールアドレス';
+
+  @override
+  String get passwordLabel => 'パスワード';
+
+  @override
+  String get emailInvalid => '有効なメールアドレスを入力してください';
+
+  @override
+  String get passwordTooShort => 'パスワードは6文字以上で入力してください';
+
+  @override
+  String get authFailedGeneric => 'リクエストを完了できませんでした。';
+
+  @override
+  String get tierFree => 'FREE';
+
+  @override
+  String get tierNormal => 'NORMAL';
+
+  @override
+  String get tierPremium => 'PREMIUM';
+
+  @override
+  String get paywallTitle => 'プレミアムをアンロック';
+
+  @override
+  String paywallPrice(String price) {
+    return '月額 $price';
+  }
+
+  @override
+  String get paywallCtaUpgrade => 'アップグレード';
+
+  @override
+  String get paywallBenefit1 => 'AI によるルーティン作成';
+
+  @override
+  String get paywallBenefit2 => 'プレミアムなトレーニング分析';
+
+  @override
+  String get paywallBenefit3 => '継続的な開発を支援';
+
+  @override
+  String get paywallFootnote => 'いつでもキャンセルできます。課金はまだ利用できません。';
+
+  @override
+  String get billingComingSoon => '課金機能はまもなく提供予定です。';
 }

@@ -2919,26 +2919,81 @@ class AppLocalizationsKo extends AppLocalizations {
   String get gamificationSetting => '메달과 레벨';
 
   @override
-  String get authErrorInvalidEmail => '이메일 주소가 올바르지 않은 것 같습니다.';
+  String get accountTitle => '계정';
 
   @override
-  String get authErrorWrongPassword => '이메일 또는 비밀번호가 틀셨습니다.';
+  String get accountSection => '계정';
 
   @override
-  String get authErrorUserNotFound => '해당 이메일로 등록된 계정이 없습니다.';
+  String get accountRowGuest => '로그인 또는 계정 만들기';
 
   @override
-  String get authErrorEmailAlreadyInUse => '이 이메일로 이미 계정이 있습니다.';
+  String get accountGuestBlurb => '계정을 만들면 프리미엄 혜택을 그대로 유지할 수 있어요.';
 
   @override
-  String get authErrorWeakPassword => '비밀번호가 너무 약합니다.';
+  String accountSignedInAs(String email) {
+    return '$email로 로그인됨';
+  }
 
   @override
-  String get authErrorTooManyRequests => '시도 횟수가 너무 많습니다. 잠시 후 다시 시도해 주세요.';
+  String get signOut => '로그아웃';
 
   @override
-  String get authErrorNetwork => '오프라인 상태입니다 — 로그인하려면 인터넷이 필요합니다.';
+  String get signIn => '로그인';
 
   @override
-  String get authErrorUnknown => '로그인에 실팔했습니다. 다시 시도해 주세요.';
+  String get createAccount => '계정 만들기';
+
+  @override
+  String get startFree => '무료로 시작';
+
+  @override
+  String get emailLabel => '이메일';
+
+  @override
+  String get passwordLabel => '비밀번호';
+
+  @override
+  String get emailInvalid => '올바른 이메일 주소를 입력하세요';
+
+  @override
+  String get passwordTooShort => '비밀번호는 6자 이상이어야 합니다';
+
+  @override
+  String get authFailedGeneric => '요청을 완료할 수 없습니다.';
+
+  @override
+  String get tierFree => 'FREE';
+
+  @override
+  String get tierNormal => 'NORMAL';
+
+  @override
+  String get tierPremium => 'PREMIUM';
+
+  @override
+  String get paywallTitle => '프리미엄 잠금 해제';
+
+  @override
+  String paywallPrice(String price) {
+    return '월 $price';
+  }
+
+  @override
+  String get paywallCtaUpgrade => '업그레이드';
+
+  @override
+  String get paywallBenefit1 => 'AI 기반 루틴 계획';
+
+  @override
+  String get paywallBenefit2 => '프리미엄 훈련 인사이트';
+
+  @override
+  String get paywallBenefit3 => '지속적인 개발 지원';
+
+  @override
+  String get paywallFootnote => '언제든지 해지할 수 있어요. 결제는 아직 제공되지 않습니다.';
+
+  @override
+  String get billingComingSoon => '결제 기능이 곧 제공될 예정입니다.';
 }

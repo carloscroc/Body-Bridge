@@ -2998,26 +2998,81 @@ class AppLocalizationsIt extends AppLocalizations {
   String get gamificationSetting => 'Medaglie e livelli';
 
   @override
-  String get authErrorInvalidEmail => 'L\'indirizzo email non sembra corretto.';
+  String get accountTitle => 'Account';
 
   @override
-  String get authErrorWrongPassword => 'Email o password non corretti.';
+  String get accountSection => 'Account';
 
   @override
-  String get authErrorUserNotFound => 'Nessun account trovato per questa email.';
+  String get accountRowGuest => 'Accedi o crea un account';
 
   @override
-  String get authErrorEmailAlreadyInUse => 'Questa email ha già un account.';
+  String get accountGuestBlurb => 'Crea un account per mantenere collegato il tuo accesso premium.';
 
   @override
-  String get authErrorWeakPassword => 'La password è troppo debole.';
+  String accountSignedInAs(String email) {
+    return 'Accesso effettuato come $email';
+  }
 
   @override
-  String get authErrorTooManyRequests => 'Troppi tentativi. Riprova più tardi.';
+  String get signOut => 'Esci';
 
   @override
-  String get authErrorNetwork => 'Sei offline — per accedere serve internet.';
+  String get signIn => 'Accedi';
 
   @override
-  String get authErrorUnknown => 'Accesso non riuscito. Riprova.';
+  String get createAccount => 'Crea account';
+
+  @override
+  String get startFree => 'Inizia gratis';
+
+  @override
+  String get emailLabel => 'Email';
+
+  @override
+  String get passwordLabel => 'Password';
+
+  @override
+  String get emailInvalid => 'Inserisci un indirizzo email valido';
+
+  @override
+  String get passwordTooShort => 'La password deve contenere almeno 6 caratteri';
+
+  @override
+  String get authFailedGeneric => 'Non è stato possibile completare la richiesta.';
+
+  @override
+  String get tierFree => 'FREE';
+
+  @override
+  String get tierNormal => 'NORMAL';
+
+  @override
+  String get tierPremium => 'PREMIUM';
+
+  @override
+  String get paywallTitle => 'Sblocca Premium';
+
+  @override
+  String paywallPrice(String price) {
+    return '$price / mese';
+  }
+
+  @override
+  String get paywallCtaUpgrade => 'Passa a Premium';
+
+  @override
+  String get paywallBenefit1 => 'Pianificazione delle routine con IA';
+
+  @override
+  String get paywallBenefit2 => 'Analisi premium dell\'allenamento';
+
+  @override
+  String get paywallBenefit3 => 'Sostieni lo sviluppo continuo';
+
+  @override
+  String get paywallFootnote => 'Annulla quando vuoi. La fatturazione non è ancora disponibile.';
+
+  @override
+  String get billingComingSoon => 'La fatturazione arriva presto.';
 }

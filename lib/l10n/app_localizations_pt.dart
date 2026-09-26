@@ -2994,26 +2994,81 @@ class AppLocalizationsPt extends AppLocalizations {
   String get gamificationSetting => 'Medalhas e níveis';
 
   @override
-  String get authErrorInvalidEmail => 'O endereço de e-mail parece inválido.';
+  String get accountTitle => 'Conta';
 
   @override
-  String get authErrorWrongPassword => 'E-mail ou senha incorretos.';
+  String get accountSection => 'Conta';
 
   @override
-  String get authErrorUserNotFound => 'Nenhuma conta encontrada para esse e-mail.';
+  String get accountRowGuest => 'Entre ou crie uma conta';
 
   @override
-  String get authErrorEmailAlreadyInUse => 'Esse e-mail já tem uma conta.';
+  String get accountGuestBlurb => 'Crie uma conta para manter seu acesso premium conectado.';
 
   @override
-  String get authErrorWeakPassword => 'A senha é muito fraca.';
+  String accountSignedInAs(String email) {
+    return 'Conectado como $email';
+  }
 
   @override
-  String get authErrorTooManyRequests => 'Tentativas demais. Tente novamente mais tarde.';
+  String get signOut => 'Sair';
 
   @override
-  String get authErrorNetwork => 'Você está offline — entrar precisa de internet.';
+  String get signIn => 'Entrar';
 
   @override
-  String get authErrorUnknown => 'Falha ao entrar. Tente novamente.';
+  String get createAccount => 'Criar conta';
+
+  @override
+  String get startFree => 'Começar grátis';
+
+  @override
+  String get emailLabel => 'E-mail';
+
+  @override
+  String get passwordLabel => 'Senha';
+
+  @override
+  String get emailInvalid => 'Digite um e-mail válido';
+
+  @override
+  String get passwordTooShort => 'A senha deve ter pelo menos 6 caracteres';
+
+  @override
+  String get authFailedGeneric => 'Não foi possível concluir a solicitação.';
+
+  @override
+  String get tierFree => 'FREE';
+
+  @override
+  String get tierNormal => 'NORMAL';
+
+  @override
+  String get tierPremium => 'PREMIUM';
+
+  @override
+  String get paywallTitle => 'Desbloqueie o Premium';
+
+  @override
+  String paywallPrice(String price) {
+    return '$price / mês';
+  }
+
+  @override
+  String get paywallCtaUpgrade => 'Assinar';
+
+  @override
+  String get paywallBenefit1 => 'Planejamento de treinos com IA';
+
+  @override
+  String get paywallBenefit2 => 'Análises premium de treino';
+
+  @override
+  String get paywallBenefit3 => 'Apoie o desenvolvimento contínuo';
+
+  @override
+  String get paywallFootnote => 'Cancele quando quiser. O pagamento ainda não está disponível.';
+
+  @override
+  String get billingComingSoon => 'O pagamento chega em breve.';
 }

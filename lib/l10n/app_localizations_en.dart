@@ -2991,26 +2991,81 @@ class AppLocalizationsEn extends AppLocalizations {
   String get gamificationSetting => 'Medals and levels';
 
   @override
-  String get authErrorInvalidEmail => 'Email address looks wrong.';
+  String get accountTitle => 'Account';
 
   @override
-  String get authErrorWrongPassword => 'Wrong email or password.';
+  String get accountSection => 'Account';
 
   @override
-  String get authErrorUserNotFound => 'No account found for that email.';
+  String get accountRowGuest => 'Sign in or create account';
 
   @override
-  String get authErrorEmailAlreadyInUse => 'That email already has an account.';
+  String get accountGuestBlurb => 'Create an account to keep your premium access connected.';
 
   @override
-  String get authErrorWeakPassword => 'Password is too weak.';
+  String accountSignedInAs(String email) {
+    return 'Signed in as $email';
+  }
 
   @override
-  String get authErrorTooManyRequests => 'Too many attempts. Try again later.';
+  String get signOut => 'Sign out';
 
   @override
-  String get authErrorNetwork => 'You are offline — sign in needs internet.';
+  String get signIn => 'Sign in';
 
   @override
-  String get authErrorUnknown => 'Sign in failed. Try again.';
+  String get createAccount => 'Create account';
+
+  @override
+  String get startFree => 'Start free';
+
+  @override
+  String get emailLabel => 'Email';
+
+  @override
+  String get passwordLabel => 'Password';
+
+  @override
+  String get emailInvalid => 'Enter a valid email address';
+
+  @override
+  String get passwordTooShort => 'Password must be at least 6 characters';
+
+  @override
+  String get authFailedGeneric => 'We couldn\'t complete that request.';
+
+  @override
+  String get tierFree => 'FREE';
+
+  @override
+  String get tierNormal => 'NORMAL';
+
+  @override
+  String get tierPremium => 'PREMIUM';
+
+  @override
+  String get paywallTitle => 'Unlock Premium';
+
+  @override
+  String paywallPrice(String price) {
+    return '$price / month';
+  }
+
+  @override
+  String get paywallCtaUpgrade => 'Upgrade';
+
+  @override
+  String get paywallBenefit1 => 'AI-powered routine planning';
+
+  @override
+  String get paywallBenefit2 => 'Premium training insights';
+
+  @override
+  String get paywallBenefit3 => 'Support ongoing development';
+
+  @override
+  String get paywallFootnote => 'Cancel anytime. Billing is not available yet.';
+
+  @override
+  String get billingComingSoon => 'Billing is coming soon.';
 }
