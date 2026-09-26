@@ -2865,6 +2865,30 @@ class AppLocalizationsZh extends AppLocalizations {
   String get gamificationSetting => '勋章和等级';
 
   @override
+  String get authErrorInvalidEmail => '邮箱地址好像不对。';
+
+  @override
+  String get authErrorWrongPassword => '邮箱或密码错误。';
+
+  @override
+  String get authErrorUserNotFound => '没有找到该邮箱的账号。';
+
+  @override
+  String get authErrorEmailAlreadyInUse => '该邮箱已注册账号。';
+
+  @override
+  String get authErrorWeakPassword => '密码太弱。';
+
+  @override
+  String get authErrorTooManyRequests => '尝试次数过多，请稍后再试。';
+
+  @override
+  String get authErrorNetwork => '当前离线 — 登录需要联网。';
+
+  @override
+  String get authErrorUnknown => '登录失败，请重试。';
+
+  @override
   String get accountTitle => '账户';
 
   @override
@@ -5826,6 +5850,30 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
 
   @override
   String get gamificationSetting => '獎牌和等級';
+
+  @override
+  String get authErrorInvalidEmail => '電子郵件地址好像不正確。';
+
+  @override
+  String get authErrorWrongPassword => '電子郵件或密碼錯誤。';
+
+  @override
+  String get authErrorUserNotFound => '找不到該電子郵件的帳號。';
+
+  @override
+  String get authErrorEmailAlreadyInUse => '該電子郵件已有帳號。';
+
+  @override
+  String get authErrorWeakPassword => '密碼太弱。';
+
+  @override
+  String get authErrorTooManyRequests => '嘗試次數過多，請稍後再試。';
+
+  @override
+  String get authErrorNetwork => '目前離線 — 登入需要網路。';
+
+  @override
+  String get authErrorUnknown => '登入失敗，請再試一次。';
 
   @override
   String get accountTitle => '帳號';

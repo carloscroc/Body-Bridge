@@ -5366,6 +5366,54 @@ abstract class AppLocalizations {
   /// **'Medals and levels'**
   String get gamificationSetting;
 
+  /// No description provided for @authErrorInvalidEmail.
+  ///
+  /// In en, this message translates to:
+  /// **'Email address looks wrong.'**
+  String get authErrorInvalidEmail;
+
+  /// No description provided for @authErrorWrongPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Wrong email or password.'**
+  String get authErrorWrongPassword;
+
+  /// No description provided for @authErrorUserNotFound.
+  ///
+  /// In en, this message translates to:
+  /// **'No account found for that email.'**
+  String get authErrorUserNotFound;
+
+  /// No description provided for @authErrorEmailAlreadyInUse.
+  ///
+  /// In en, this message translates to:
+  /// **'That email already has an account.'**
+  String get authErrorEmailAlreadyInUse;
+
+  /// No description provided for @authErrorWeakPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Password is too weak.'**
+  String get authErrorWeakPassword;
+
+  /// No description provided for @authErrorTooManyRequests.
+  ///
+  /// In en, this message translates to:
+  /// **'Too many attempts. Try again later.'**
+  String get authErrorTooManyRequests;
+
+  /// No description provided for @authErrorNetwork.
+  ///
+  /// In en, this message translates to:
+  /// **'You are offline — sign in needs internet.'**
+  String get authErrorNetwork;
+
+  /// No description provided for @authErrorUnknown.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign in failed. Try again.'**
+  String get authErrorUnknown;
+
   /// No description provided for @accountTitle.
   ///
   /// In en, this message translates to:

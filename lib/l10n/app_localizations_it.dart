@@ -2998,6 +2998,30 @@ class AppLocalizationsIt extends AppLocalizations {
   String get gamificationSetting => 'Medaglie e livelli';
 
   @override
+  String get authErrorInvalidEmail => 'L\'indirizzo email non sembra corretto.';
+
+  @override
+  String get authErrorWrongPassword => 'Email o password non corretti.';
+
+  @override
+  String get authErrorUserNotFound => 'Nessun account trovato per questa email.';
+
+  @override
+  String get authErrorEmailAlreadyInUse => 'Questa email ha già un account.';
+
+  @override
+  String get authErrorWeakPassword => 'La password è troppo debole.';
+
+  @override
+  String get authErrorTooManyRequests => 'Troppi tentativi. Riprova più tardi.';
+
+  @override
+  String get authErrorNetwork => 'Sei offline — per accedere serve internet.';
+
+  @override
+  String get authErrorUnknown => 'Accesso non riuscito. Riprova.';
+
+  @override
   String get accountTitle => 'Account';
 
   @override
