@@ -2936,21 +2936,69 @@ class AppLocalizationsZh extends AppLocalizations {
   String get tierFree => 'FREE';
 
   @override
-  String get tierNormal => 'NORMAL';
+  String get tierBasic => 'BASIC';
 
   @override
-  String get tierPremium => 'PREMIUM';
+  String get tierAdvanced => 'ADVANCED';
+
+  @override
+  String get tierEnterprise => 'ENTERPRISE';
+
+  @override
+  String get deleteAccount => '删除账号';
+
+  @override
+  String get deleteAccountConfirmTitle => '删除账号？';
+
+  @override
+  String get deleteAccountConfirmBody => '这将删除你的账号和云端资料。本地训练记录会保留在这台手机上。';
+
+  @override
+  String get deleteAccountDelete => '删除';
+
+  @override
+  String get deleteAccountDone => '账号已删除。';
+
+  @override
+  String get deleteAccountReauth => '请重新登录以删除你的账号。';
+
+  @override
+  String get deleteAccountFailed => '删除账号失败，请重试。';
 
   @override
   String get paywallTitle => '解锁高级版';
 
   @override
-  String paywallPrice(String price) {
-    return '$price / 月';
-  }
+  String get paywallCtaUpgrade => '升级';
 
   @override
-  String get paywallCtaUpgrade => '升级';
+  String get paywallRoutinesUpsell => '无限计划是 BASIC 功能';
+
+  @override
+  String get paywallHistoryUpsell => '完整历史是 BASIC 功能';
+
+  @override
+  String get paywallPlanBasic => 'BASIC';
+
+  @override
+  String get paywallPlanAdvanced => 'ADVANCED';
+
+  @override
+  String get paywallMonthly => '月';
+
+  @override
+  String get paywallYearly => '年';
+
+  @override
+  String get paywallComingSoonBadge => '即将推出';
+
+  @override
+  String get freeHistoryNotice => '仅显示最近 7 天。升级以查看全部历史。';
+
+  @override
+  String routinesFreeCount(int count, int max) {
+    return '免费计划 $count/$max';
+  }
 
   @override
   String get paywallBenefit1 => 'AI 智能训练计划';
@@ -5923,21 +5971,69 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
   String get tierFree => 'FREE';
 
   @override
-  String get tierNormal => 'NORMAL';
+  String get tierBasic => 'BASIC';
 
   @override
-  String get tierPremium => 'PREMIUM';
+  String get tierAdvanced => 'ADVANCED';
+
+  @override
+  String get tierEnterprise => 'ENTERPRISE';
+
+  @override
+  String get deleteAccount => '刪除帳號';
+
+  @override
+  String get deleteAccountConfirmTitle => '刪除帳號？';
+
+  @override
+  String get deleteAccountConfirmBody => '這會刪除你的帳號和雲端資料。本機訓練紀錄會保留在這支手機上。';
+
+  @override
+  String get deleteAccountDelete => '刪除';
+
+  @override
+  String get deleteAccountDone => '帳號已刪除。';
+
+  @override
+  String get deleteAccountReauth => '請重新登入以刪除你的帳號。';
+
+  @override
+  String get deleteAccountFailed => '無法刪除帳號，請再試一次。';
 
   @override
   String get paywallTitle => '解鎖進階版';
 
   @override
-  String paywallPrice(String price) {
-    return '$price / 月';
-  }
+  String get paywallCtaUpgrade => '升級';
 
   @override
-  String get paywallCtaUpgrade => '升級';
+  String get paywallRoutinesUpsell => '無限課表是 BASIC 功能';
+
+  @override
+  String get paywallHistoryUpsell => '完整歷史是 BASIC 功能';
+
+  @override
+  String get paywallPlanBasic => 'BASIC';
+
+  @override
+  String get paywallPlanAdvanced => 'ADVANCED';
+
+  @override
+  String get paywallMonthly => '月';
+
+  @override
+  String get paywallYearly => '年';
+
+  @override
+  String get paywallComingSoonBadge => '即將推出';
+
+  @override
+  String get freeHistoryNotice => '僅顯示最近 7 天。升級以查看全部歷史。';
+
+  @override
+  String routinesFreeCount(int count, int max) {
+    return '免費課表 $count/$max';
+  }
 
   @override
   String get paywallBenefit1 => 'AI 智慧訓練計畫';

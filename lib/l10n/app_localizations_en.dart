@@ -3062,21 +3062,70 @@ class AppLocalizationsEn extends AppLocalizations {
   String get tierFree => 'FREE';
 
   @override
-  String get tierNormal => 'NORMAL';
+  String get tierBasic => 'BASIC';
 
   @override
-  String get tierPremium => 'PREMIUM';
+  String get tierAdvanced => 'ADVANCED';
+
+  @override
+  String get tierEnterprise => 'ENTERPRISE';
+
+  @override
+  String get deleteAccount => 'Delete account';
+
+  @override
+  String get deleteAccountConfirmTitle => 'Delete account?';
+
+  @override
+  String get deleteAccountConfirmBody =>
+      'This deletes your account and cloud profile. Local workouts stay on this phone.';
+
+  @override
+  String get deleteAccountDelete => 'Delete';
+
+  @override
+  String get deleteAccountDone => 'Account deleted.';
+
+  @override
+  String get deleteAccountReauth => 'Sign in again to delete your account.';
+
+  @override
+  String get deleteAccountFailed => 'Couldn\'t delete the account. Try again.';
 
   @override
   String get paywallTitle => 'Unlock Premium';
 
   @override
-  String paywallPrice(String price) {
-    return '$price / month';
-  }
+  String get paywallCtaUpgrade => 'Upgrade';
 
   @override
-  String get paywallCtaUpgrade => 'Upgrade';
+  String get paywallRoutinesUpsell => 'Unlimited routines is a BASIC feature';
+
+  @override
+  String get paywallHistoryUpsell => 'Full history is a BASIC feature';
+
+  @override
+  String get paywallPlanBasic => 'BASIC';
+
+  @override
+  String get paywallPlanAdvanced => 'ADVANCED';
+
+  @override
+  String get paywallMonthly => 'month';
+
+  @override
+  String get paywallYearly => 'year';
+
+  @override
+  String get paywallComingSoonBadge => 'Coming soon';
+
+  @override
+  String get freeHistoryNotice => 'Showing the last 7 days. Upgrade for your full history.';
+
+  @override
+  String routinesFreeCount(int count, int max) {
+    return '$count of $max free routines';
+  }
 
   @override
   String get paywallBenefit1 => 'AI-powered routine planning';

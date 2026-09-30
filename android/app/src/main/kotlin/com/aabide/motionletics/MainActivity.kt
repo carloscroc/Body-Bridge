@@ -1,4 +1,4 @@
-package com.gymmane.app
+package com.aabide.motionletics
 
 import android.content.ContentValues
 import android.content.Context

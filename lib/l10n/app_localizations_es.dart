@@ -3064,21 +3064,70 @@ class AppLocalizationsEs extends AppLocalizations {
   String get tierFree => 'FREE';
 
   @override
-  String get tierNormal => 'NORMAL';
+  String get tierBasic => 'BASIC';
 
   @override
-  String get tierPremium => 'PREMIUM';
+  String get tierAdvanced => 'ADVANCED';
+
+  @override
+  String get tierEnterprise => 'ENTERPRISE';
+
+  @override
+  String get deleteAccount => 'Eliminar cuenta';
+
+  @override
+  String get deleteAccountConfirmTitle => '¿Eliminar cuenta?';
+
+  @override
+  String get deleteAccountConfirmBody =>
+      'Esto elimina tu cuenta y tu perfil en la nube. Los entrenamientos locales se quedan en este teléfono.';
+
+  @override
+  String get deleteAccountDelete => 'Eliminar';
+
+  @override
+  String get deleteAccountDone => 'Cuenta eliminada.';
+
+  @override
+  String get deleteAccountReauth => 'Inicia sesión de nuevo para eliminar tu cuenta.';
+
+  @override
+  String get deleteAccountFailed => 'No se pudo eliminar la cuenta. Inténtalo de nuevo.';
 
   @override
   String get paywallTitle => 'Desbloquea Premium';
 
   @override
-  String paywallPrice(String price) {
-    return '$price / mes';
-  }
+  String get paywallCtaUpgrade => 'Mejorar';
 
   @override
-  String get paywallCtaUpgrade => 'Mejorar';
+  String get paywallRoutinesUpsell => 'Las rutinas ilimitadas son una función BASIC';
+
+  @override
+  String get paywallHistoryUpsell => 'El historial completo es una función BASIC';
+
+  @override
+  String get paywallPlanBasic => 'BASIC';
+
+  @override
+  String get paywallPlanAdvanced => 'ADVANCED';
+
+  @override
+  String get paywallMonthly => 'mes';
+
+  @override
+  String get paywallYearly => 'año';
+
+  @override
+  String get paywallComingSoonBadge => 'Próximamente';
+
+  @override
+  String get freeHistoryNotice => 'Mostrando los últimos 7 días. Mejora para ver todo tu historial.';
+
+  @override
+  String routinesFreeCount(int count, int max) {
+    return '$count de $max rutinas gratis';
+  }
 
   @override
   String get paywallBenefit1 => 'Planificación de rutinas con IA';

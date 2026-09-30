@@ -3065,21 +3065,70 @@ class AppLocalizationsPt extends AppLocalizations {
   String get tierFree => 'FREE';
 
   @override
-  String get tierNormal => 'NORMAL';
+  String get tierBasic => 'BASIC';
 
   @override
-  String get tierPremium => 'PREMIUM';
+  String get tierAdvanced => 'ADVANCED';
+
+  @override
+  String get tierEnterprise => 'ENTERPRISE';
+
+  @override
+  String get deleteAccount => 'Eliminar conta';
+
+  @override
+  String get deleteAccountConfirmTitle => 'Eliminar conta?';
+
+  @override
+  String get deleteAccountConfirmBody =>
+      'Isto elimina a sua conta e o perfil na nuvem. Os treinos locais ficam neste telefone.';
+
+  @override
+  String get deleteAccountDelete => 'Eliminar';
+
+  @override
+  String get deleteAccountDone => 'Conta eliminada.';
+
+  @override
+  String get deleteAccountReauth => 'Inicie sessão novamente para eliminar a sua conta.';
+
+  @override
+  String get deleteAccountFailed => 'Não foi possível eliminar a conta. Tente novamente.';
 
   @override
   String get paywallTitle => 'Desbloqueie o Premium';
 
   @override
-  String paywallPrice(String price) {
-    return '$price / mês';
-  }
+  String get paywallCtaUpgrade => 'Assinar';
 
   @override
-  String get paywallCtaUpgrade => 'Assinar';
+  String get paywallRoutinesUpsell => 'Rotinas ilimitadas é uma função BASIC';
+
+  @override
+  String get paywallHistoryUpsell => 'O histórico completo é uma função BASIC';
+
+  @override
+  String get paywallPlanBasic => 'BASIC';
+
+  @override
+  String get paywallPlanAdvanced => 'ADVANCED';
+
+  @override
+  String get paywallMonthly => 'mês';
+
+  @override
+  String get paywallYearly => 'ano';
+
+  @override
+  String get paywallComingSoonBadge => 'Brevemente';
+
+  @override
+  String get freeHistoryNotice => 'A mostrar os últimos 7 dias. Faça upgrade para ver todo o seu histórico.';
+
+  @override
+  String routinesFreeCount(int count, int max) {
+    return '$count de $max rotinas grátis';
+  }
 
   @override
   String get paywallBenefit1 => 'Planejamento de treinos com IA';

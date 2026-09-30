@@ -2975,21 +2975,69 @@ class AppLocalizationsJa extends AppLocalizations {
   String get tierFree => 'FREE';
 
   @override
-  String get tierNormal => 'NORMAL';
+  String get tierBasic => 'BASIC';
 
   @override
-  String get tierPremium => 'PREMIUM';
+  String get tierAdvanced => 'ADVANCED';
+
+  @override
+  String get tierEnterprise => 'ENTERPRISE';
+
+  @override
+  String get deleteAccount => 'アカウントを削除';
+
+  @override
+  String get deleteAccountConfirmTitle => 'アカウントを削除しますか？';
+
+  @override
+  String get deleteAccountConfirmBody => 'アカウントとクラウドプロフィールが削除されます。ローカルのワークアウトはこの端末に残ります。';
+
+  @override
+  String get deleteAccountDelete => '削除';
+
+  @override
+  String get deleteAccountDone => 'アカウントを削除しました。';
+
+  @override
+  String get deleteAccountReauth => 'アカウントを削除するには再度サインインしてください。';
+
+  @override
+  String get deleteAccountFailed => 'アカウントを削除できませんでした。もう一度お試しください。';
 
   @override
   String get paywallTitle => 'プレミアムをアンロック';
 
   @override
-  String paywallPrice(String price) {
-    return '月額 $price';
-  }
+  String get paywallCtaUpgrade => 'アップグレード';
 
   @override
-  String get paywallCtaUpgrade => 'アップグレード';
+  String get paywallRoutinesUpsell => 'ルーティン無制限はBASIC機能です';
+
+  @override
+  String get paywallHistoryUpsell => '全履歴はBASIC機能です';
+
+  @override
+  String get paywallPlanBasic => 'BASIC';
+
+  @override
+  String get paywallPlanAdvanced => 'ADVANCED';
+
+  @override
+  String get paywallMonthly => '月';
+
+  @override
+  String get paywallYearly => '年';
+
+  @override
+  String get paywallComingSoonBadge => '近日公開';
+
+  @override
+  String get freeHistoryNotice => '過去7日間を表示中。全履歴を見るにはアップグレードしてください。';
+
+  @override
+  String routinesFreeCount(int count, int max) {
+    return '無料ルーティン $max 件中 $count 件';
+  }
 
   @override
   String get paywallBenefit1 => 'AI によるルーティン作成';

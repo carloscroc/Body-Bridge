@@ -3080,21 +3080,71 @@ class AppLocalizationsDe extends AppLocalizations {
   String get tierFree => 'FREE';
 
   @override
-  String get tierNormal => 'NORMAL';
+  String get tierBasic => 'BASIC';
 
   @override
-  String get tierPremium => 'PREMIUM';
+  String get tierAdvanced => 'ADVANCED';
+
+  @override
+  String get tierEnterprise => 'ENTERPRISE';
+
+  @override
+  String get deleteAccount => 'Konto löschen';
+
+  @override
+  String get deleteAccountConfirmTitle => 'Konto löschen?';
+
+  @override
+  String get deleteAccountConfirmBody =>
+      'Dies löscht dein Konto und dein Cloud-Profil. Lokale Workouts bleiben auf diesem Telefon.';
+
+  @override
+  String get deleteAccountDelete => 'Löschen';
+
+  @override
+  String get deleteAccountDone => 'Konto gelöscht.';
+
+  @override
+  String get deleteAccountReauth => 'Melde dich erneut an, um dein Konto zu löschen.';
+
+  @override
+  String get deleteAccountFailed => 'Konto konnte nicht gelöscht werden. Versuche es erneut.';
 
   @override
   String get paywallTitle => 'Premium freischalten';
 
   @override
-  String paywallPrice(String price) {
-    return '$price / Monat';
-  }
+  String get paywallCtaUpgrade => 'Upgraden';
 
   @override
-  String get paywallCtaUpgrade => 'Upgraden';
+  String get paywallRoutinesUpsell => 'Unbegrenzte Trainingspläne sind eine BASIC-Funktion';
+
+  @override
+  String get paywallHistoryUpsell => 'Vollständiger Verlauf ist eine BASIC-Funktion';
+
+  @override
+  String get paywallPlanBasic => 'BASIC';
+
+  @override
+  String get paywallPlanAdvanced => 'ADVANCED';
+
+  @override
+  String get paywallMonthly => 'Monat';
+
+  @override
+  String get paywallYearly => 'Jahr';
+
+  @override
+  String get paywallComingSoonBadge => 'Kommt bald';
+
+  @override
+  String get freeHistoryNotice =>
+      'Die letzten 7 Tage werden angezeigt. Upgrade für deinen vollständigen Verlauf.';
+
+  @override
+  String routinesFreeCount(int count, int max) {
+    return '$count von $max kostenlosen Trainingsplänen';
+  }
 
   @override
   String get paywallBenefit1 => 'KI-gestützte Routinenplanung';

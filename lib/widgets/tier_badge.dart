@@ -14,29 +14,40 @@ class TierBadge extends StatelessWidget {
   Widget build(BuildContext context) {
     final gc = context.gc;
     final (label, textColor, decoration) = switch (tier) {
-      AccountTier.premium => (
-          t.tierPremium,
-          gc.bg,
-          BoxDecoration(
-            gradient: LinearGradient(colors: [gc.accent, gc.brass]),
-            borderRadius: BorderRadius.circular(100),
-          ),
+      AccountTier.enterprise => (
+        t.tierEnterprise,
+        gc.bg,
+        BoxDecoration(
+          gradient: LinearGradient(colors: [gc.sage, gc.brass]),
+          borderRadius: BorderRadius.circular(100),
         ),
-      AccountTier.normal => (
-          t.tierNormal,
-          gc.info,
-          BoxDecoration(color: gc.info.withValues(alpha: 0.16), borderRadius: BorderRadius.circular(100)),
+      ),
+      AccountTier.advanced => (
+        t.tierAdvanced,
+        gc.bg,
+        BoxDecoration(
+          gradient: LinearGradient(colors: [gc.accent, gc.brass]),
+          borderRadius: BorderRadius.circular(100),
         ),
+      ),
+      AccountTier.basic => (
+        t.tierBasic,
+        gc.info,
+        BoxDecoration(color: gc.info.withValues(alpha: 0.16), borderRadius: BorderRadius.circular(100)),
+      ),
       AccountTier.free || AccountTier.signedOut => (
-          t.tierFree,
-          gc.textSecondary,
-          BoxDecoration(color: gc.mutedFill, borderRadius: BorderRadius.circular(100)),
-        ),
+        t.tierFree,
+        gc.textSecondary,
+        BoxDecoration(color: gc.mutedFill, borderRadius: BorderRadius.circular(100)),
+      ),
     };
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
       decoration: decoration,
-      child: Text(label, style: AppTheme.f(9.5, weight: FontWeight.w700, color: textColor, letterSpacing: 1.1)),
+      child: Text(
+        label,
+        style: AppTheme.f(9.5, weight: FontWeight.w700, color: textColor, letterSpacing: 1.1),
+      ),
     );
   }
 }

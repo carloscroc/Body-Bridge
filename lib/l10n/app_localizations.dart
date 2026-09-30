@@ -5504,17 +5504,65 @@ abstract class AppLocalizations {
   /// **'FREE'**
   String get tierFree;
 
-  /// No description provided for @tierNormal.
+  /// No description provided for @tierBasic.
   ///
   /// In en, this message translates to:
-  /// **'NORMAL'**
-  String get tierNormal;
+  /// **'BASIC'**
+  String get tierBasic;
 
-  /// No description provided for @tierPremium.
+  /// No description provided for @tierAdvanced.
   ///
   /// In en, this message translates to:
-  /// **'PREMIUM'**
-  String get tierPremium;
+  /// **'ADVANCED'**
+  String get tierAdvanced;
+
+  /// No description provided for @tierEnterprise.
+  ///
+  /// In en, this message translates to:
+  /// **'ENTERPRISE'**
+  String get tierEnterprise;
+
+  /// No description provided for @deleteAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete account'**
+  String get deleteAccount;
+
+  /// No description provided for @deleteAccountConfirmTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete account?'**
+  String get deleteAccountConfirmTitle;
+
+  /// No description provided for @deleteAccountConfirmBody.
+  ///
+  /// In en, this message translates to:
+  /// **'This deletes your account and cloud profile. Local workouts stay on this phone.'**
+  String get deleteAccountConfirmBody;
+
+  /// No description provided for @deleteAccountDelete.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete'**
+  String get deleteAccountDelete;
+
+  /// No description provided for @deleteAccountDone.
+  ///
+  /// In en, this message translates to:
+  /// **'Account deleted.'**
+  String get deleteAccountDone;
+
+  /// No description provided for @deleteAccountReauth.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign in again to delete your account.'**
+  String get deleteAccountReauth;
+
+  /// No description provided for @deleteAccountFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Couldn\'t delete the account. Try again.'**
+  String get deleteAccountFailed;
 
   /// No description provided for @paywallTitle.
   ///
@@ -5522,17 +5570,65 @@ abstract class AppLocalizations {
   /// **'Unlock Premium'**
   String get paywallTitle;
 
-  /// No description provided for @paywallPrice.
-  ///
-  /// In en, this message translates to:
-  /// **'{price} / month'**
-  String paywallPrice(String price);
-
   /// No description provided for @paywallCtaUpgrade.
   ///
   /// In en, this message translates to:
   /// **'Upgrade'**
   String get paywallCtaUpgrade;
+
+  /// No description provided for @paywallRoutinesUpsell.
+  ///
+  /// In en, this message translates to:
+  /// **'Unlimited routines is a BASIC feature'**
+  String get paywallRoutinesUpsell;
+
+  /// No description provided for @paywallHistoryUpsell.
+  ///
+  /// In en, this message translates to:
+  /// **'Full history is a BASIC feature'**
+  String get paywallHistoryUpsell;
+
+  /// No description provided for @paywallPlanBasic.
+  ///
+  /// In en, this message translates to:
+  /// **'BASIC'**
+  String get paywallPlanBasic;
+
+  /// No description provided for @paywallPlanAdvanced.
+  ///
+  /// In en, this message translates to:
+  /// **'ADVANCED'**
+  String get paywallPlanAdvanced;
+
+  /// No description provided for @paywallMonthly.
+  ///
+  /// In en, this message translates to:
+  /// **'month'**
+  String get paywallMonthly;
+
+  /// No description provided for @paywallYearly.
+  ///
+  /// In en, this message translates to:
+  /// **'year'**
+  String get paywallYearly;
+
+  /// No description provided for @paywallComingSoonBadge.
+  ///
+  /// In en, this message translates to:
+  /// **'Coming soon'**
+  String get paywallComingSoonBadge;
+
+  /// No description provided for @freeHistoryNotice.
+  ///
+  /// In en, this message translates to:
+  /// **'Showing the last 7 days. Upgrade for your full history.'**
+  String get freeHistoryNotice;
+
+  /// No description provided for @routinesFreeCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} of {max} free routines'**
+  String routinesFreeCount(int count, int max);
 
   /// No description provided for @paywallBenefit1.
   ///

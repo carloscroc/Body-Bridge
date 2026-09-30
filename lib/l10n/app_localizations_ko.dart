@@ -2990,21 +2990,69 @@ class AppLocalizationsKo extends AppLocalizations {
   String get tierFree => 'FREE';
 
   @override
-  String get tierNormal => 'NORMAL';
+  String get tierBasic => 'BASIC';
 
   @override
-  String get tierPremium => 'PREMIUM';
+  String get tierAdvanced => 'ADVANCED';
+
+  @override
+  String get tierEnterprise => 'ENTERPRISE';
+
+  @override
+  String get deleteAccount => '계정 삭제';
+
+  @override
+  String get deleteAccountConfirmTitle => '계정을 삭제할까요?';
+
+  @override
+  String get deleteAccountConfirmBody => '계정과 클라우드 프로필이 삭제됩니다. 로컬 운동 기록은 이 휴대폰에 남습니다.';
+
+  @override
+  String get deleteAccountDelete => '삭제';
+
+  @override
+  String get deleteAccountDone => '계정이 삭제되었습니다.';
+
+  @override
+  String get deleteAccountReauth => '계정을 삭제하려면 다시 로그인하세요.';
+
+  @override
+  String get deleteAccountFailed => '계정을 삭제하지 못했습니다. 다시 시도해 주세요.';
 
   @override
   String get paywallTitle => '프리미엄 잠금 해제';
 
   @override
-  String paywallPrice(String price) {
-    return '월 $price';
-  }
+  String get paywallCtaUpgrade => '업그레이드';
 
   @override
-  String get paywallCtaUpgrade => '업그레이드';
+  String get paywallRoutinesUpsell => '무제한 루틴은 BASIC 기능입니다';
+
+  @override
+  String get paywallHistoryUpsell => '전체 기록은 BASIC 기능입니다';
+
+  @override
+  String get paywallPlanBasic => 'BASIC';
+
+  @override
+  String get paywallPlanAdvanced => 'ADVANCED';
+
+  @override
+  String get paywallMonthly => '월';
+
+  @override
+  String get paywallYearly => '년';
+
+  @override
+  String get paywallComingSoonBadge => '곧 제공';
+
+  @override
+  String get freeHistoryNotice => '최근 7일간 표시 중입니다. 전체 기록을 보려면 업그레이드하세요.';
+
+  @override
+  String routinesFreeCount(int count, int max) {
+    return '무료 루틴 $max개 중 $count개';
+  }
 
   @override
   String get paywallBenefit1 => 'AI 기반 루틴 계획';

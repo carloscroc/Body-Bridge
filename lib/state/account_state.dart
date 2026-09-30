@@ -9,7 +9,7 @@ import '../services/entitlements_service.dart';
 /// entitlements tier. Screens watch [account] with AnimatedBuilder exactly as
 /// they watch `fit`.
 
-enum AccountPhase { signedOut, signedInFree, signedInNormal, signedInPremium }
+enum AccountPhase { signedOut, signedInFree, signedInBasic, signedInAdvanced, signedInEnterprise }
 
 class AccountState extends ChangeNotifier {
   AccountPhase _phase = AccountPhase.signedOut;
@@ -55,8 +55,9 @@ class AccountState extends ChangeNotifier {
       // Signed in but Convex dormant or offline: cached value is free.
       _set(switch (EntitlementsService.instance.current.tier) {
         Tier.free => AccountPhase.signedInFree,
-        Tier.normal => AccountPhase.signedInNormal,
-        Tier.premium => AccountPhase.signedInPremium,
+        Tier.basic => AccountPhase.signedInBasic,
+        Tier.advanced => AccountPhase.signedInAdvanced,
+        Tier.enterprise => AccountPhase.signedInEnterprise,
       });
     } catch (e, st) {
       _fail(e, st);

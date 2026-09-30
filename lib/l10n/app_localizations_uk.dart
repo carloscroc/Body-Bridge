@@ -3070,21 +3070,70 @@ class AppLocalizationsUk extends AppLocalizations {
   String get tierFree => 'FREE';
 
   @override
-  String get tierNormal => 'NORMAL';
+  String get tierBasic => 'BASIC';
 
   @override
-  String get tierPremium => 'PREMIUM';
+  String get tierAdvanced => 'ADVANCED';
+
+  @override
+  String get tierEnterprise => 'ENTERPRISE';
+
+  @override
+  String get deleteAccount => 'Видалити акаунт';
+
+  @override
+  String get deleteAccountConfirmTitle => 'Видалити акаунт?';
+
+  @override
+  String get deleteAccountConfirmBody =>
+      'Це видалить ваш акаунт і хмарний профіль. Локальні тренування залишаться на цьому телефоні.';
+
+  @override
+  String get deleteAccountDelete => 'Видалити';
+
+  @override
+  String get deleteAccountDone => 'Акаунт видалено.';
+
+  @override
+  String get deleteAccountReauth => 'Увійдіть знову, щоб видалити акаунт.';
+
+  @override
+  String get deleteAccountFailed => 'Не вдалося видалити акаунт. Спробуйте ще раз.';
 
   @override
   String get paywallTitle => 'Відкрийте Преміум';
 
   @override
-  String paywallPrice(String price) {
-    return '$price / міс.';
-  }
+  String get paywallCtaUpgrade => 'Покращити';
 
   @override
-  String get paywallCtaUpgrade => 'Покращити';
+  String get paywallRoutinesUpsell => 'Необмежені програми — функція BASIC';
+
+  @override
+  String get paywallHistoryUpsell => 'Повна історія — функція BASIC';
+
+  @override
+  String get paywallPlanBasic => 'BASIC';
+
+  @override
+  String get paywallPlanAdvanced => 'ADVANCED';
+
+  @override
+  String get paywallMonthly => 'міс.';
+
+  @override
+  String get paywallYearly => 'рік';
+
+  @override
+  String get paywallComingSoonBadge => 'Незабаром';
+
+  @override
+  String get freeHistoryNotice => 'Показано останні 7 днів. Покращіть тариф, щоб побачити всю історію.';
+
+  @override
+  String routinesFreeCount(int count, int max) {
+    return '$count з $max безкоштовних програм';
+  }
 
   @override
   String get paywallBenefit1 => 'Планування тренувань із ШІ';
