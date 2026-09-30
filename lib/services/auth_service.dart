@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:convex_flutter/convex_flutter.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
@@ -77,6 +78,42 @@ class AuthService {
       }
     }
     await EntitlementsService.instance.onSignedOut();
+  }
+
+  /// Deletes the cloud profile, then the Firebase account, then signs out.
+  ///
+  /// Offline-first: the Convex mutation runs first and any failure there (or
+  /// on the Firebase delete itself) is logged, never propagated — local
+  /// cleanup must always proceed. The one intentional rethrow is
+  /// [AuthException]('requiresRecentLogin') so the UI can ask for re-auth
+  /// while the user stays signed in; in that case the sign-out below is
+  /// skipped.
+  Future<void> deleteAccount() async {
+    try {
+      await ConvexClient.instance.mutation(name: 'users:deleteAccount', args: {});
+    } catch (e, st) {
+      debugPrint('Convex deleteAccount unavailable (continuing): ${_brief(e, st)}');
+    }
+    var settled = true;
+    try {
+      if (await ensureInitialized()) {
+        try {
+          await FirebaseAuth.instance.currentUser?.delete();
+        } on FirebaseAuthException catch (e) {
+          if (e.code == 'requires-recent-login') {
+            settled = false; // still signed in: re-auth required first
+            throw const AuthException('requiresRecentLogin');
+          }
+          debugPrint('Firebase account delete failed: ${_keyOf(e.code)}');
+        }
+      }
+    } on AuthException {
+      rethrow;
+    } catch (e, st) {
+      debugPrint('Account delete failed: ${_brief(e, st)}');
+    } finally {
+      if (settled) await signOut();
+    }
   }
 
   /// Current Firebase ID token, or null when signed out / unavailable.

@@ -3067,21 +3067,70 @@ class AppLocalizationsTr extends AppLocalizations {
   String get tierFree => 'FREE';
 
   @override
-  String get tierNormal => 'NORMAL';
+  String get tierBasic => 'BASIC';
 
   @override
-  String get tierPremium => 'PREMIUM';
+  String get tierAdvanced => 'ADVANCED';
+
+  @override
+  String get tierEnterprise => 'ENTERPRISE';
+
+  @override
+  String get deleteAccount => 'Hesabı sil';
+
+  @override
+  String get deleteAccountConfirmTitle => 'Hesap silinsin mi?';
+
+  @override
+  String get deleteAccountConfirmBody =>
+      'Bu işlem hesabınızı ve bulut profilinizi siler. Yerel antrenmanlar bu telefonda kalır.';
+
+  @override
+  String get deleteAccountDelete => 'Sil';
+
+  @override
+  String get deleteAccountDone => 'Hesap silindi.';
+
+  @override
+  String get deleteAccountReauth => 'Hesabınızı silmek için tekrar giriş yapın.';
+
+  @override
+  String get deleteAccountFailed => 'Hesap silinemedi. Tekrar deneyin.';
 
   @override
   String get paywallTitle => 'Premium\'u Aç';
 
   @override
-  String paywallPrice(String price) {
-    return 'ayda $price';
-  }
+  String get paywallCtaUpgrade => 'Yükselt';
 
   @override
-  String get paywallCtaUpgrade => 'Yükselt';
+  String get paywallRoutinesUpsell => 'Sınırsız programlar bir BASIC özelliğidir';
+
+  @override
+  String get paywallHistoryUpsell => 'Tam geçmiş bir BASIC özelliğidir';
+
+  @override
+  String get paywallPlanBasic => 'BASIC';
+
+  @override
+  String get paywallPlanAdvanced => 'ADVANCED';
+
+  @override
+  String get paywallMonthly => 'ay';
+
+  @override
+  String get paywallYearly => 'yıl';
+
+  @override
+  String get paywallComingSoonBadge => 'Yakında';
+
+  @override
+  String get freeHistoryNotice => 'Son 7 gün gösteriliyor. Tüm geçmişiniz için yükseltin.';
+
+  @override
+  String routinesFreeCount(int count, int max) {
+    return '$max ücretsiz programdan $count';
+  }
 
   @override
   String get paywallBenefit1 => 'Yapay zekâ destekli rutin planlama';

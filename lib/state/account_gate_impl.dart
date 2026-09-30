@@ -1,6 +1,5 @@
 import 'dart:async';
 
-import '../constants/billing.dart';
 import '../services/auth_service.dart';
 import 'account_gate.dart';
 import 'account_state.dart';
@@ -33,14 +32,15 @@ class RealAccountGate extends AccountGate {
 
   @override
   AccountSnapshot get snapshot => AccountSnapshot(
-        tier: switch (account.phase) {
-          AccountPhase.signedOut => AccountTier.signedOut,
-          AccountPhase.signedInFree => AccountTier.free,
-          AccountPhase.signedInNormal => AccountTier.normal,
-          AccountPhase.signedInPremium => AccountTier.premium,
-        },
-        email: _email(),
-      );
+    tier: switch (account.phase) {
+      AccountPhase.signedOut => AccountTier.signedOut,
+      AccountPhase.signedInFree => AccountTier.free,
+      AccountPhase.signedInBasic => AccountTier.basic,
+      AccountPhase.signedInAdvanced => AccountTier.advanced,
+      AccountPhase.signedInEnterprise => AccountTier.enterprise,
+    },
+    email: _email(),
+  );
 
   String? _email() {
     try {
@@ -51,11 +51,7 @@ class RealAccountGate extends AccountGate {
   }
 
   @override
-  bool canAccess(String feature) => switch (snapshot.tier) {
-        AccountTier.premium => true,
-        AccountTier.normal => feature == kFeatureAiPlan,
-        _ => false,
-      };
+  bool canAccess(String feature) => tierCan(snapshot.tier, feature);
 
   @override
   Future<void> signIn(String email, String password) async {
@@ -75,6 +71,12 @@ class RealAccountGate extends AccountGate {
     // AuthService.signOut already clears the entitlements; the phase change
     // propagates back through the [account] listener.
     await AuthService.instance.signOut();
+  }
+
+  @override
+  Future<void> deleteAccount() async {
+    await account.warmUp();
+    await AuthService.instance.deleteAccount();
   }
 
   @override

@@ -20,8 +20,7 @@ class FakeAccountState {
     }
   }
 
-  bool get signedIn =>
-      _status != FakeAccountStatus.signedOut;
+  bool get signedIn => _status != FakeAccountStatus.signedOut;
 
   final StreamController<FakeAccountStatus> statusesController =
       StreamController<FakeAccountStatus>.broadcast();
@@ -32,4 +31,4 @@ class FakeAccountState {
   Future<void> dispose() => statusesController.close();
 }
 
-enum FakeAccountStatus { signedOut, signedInFree, signedInNormal, signedInPremium }
+enum FakeAccountStatus { signedOut, signedInFree, signedInBasic, signedInAdvanced, signedInEnterprise }

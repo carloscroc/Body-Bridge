@@ -3077,21 +3077,71 @@ class AppLocalizationsFr extends AppLocalizations {
   String get tierFree => 'FREE';
 
   @override
-  String get tierNormal => 'NORMAL';
+  String get tierBasic => 'BASIC';
 
   @override
-  String get tierPremium => 'PREMIUM';
+  String get tierAdvanced => 'ADVANCED';
+
+  @override
+  String get tierEnterprise => 'ENTERPRISE';
+
+  @override
+  String get deleteAccount => 'Supprimer le compte';
+
+  @override
+  String get deleteAccountConfirmTitle => 'Supprimer le compte ?';
+
+  @override
+  String get deleteAccountConfirmBody =>
+      'Cette action supprime votre compte et votre profil cloud. Les séances locales restent sur ce téléphone.';
+
+  @override
+  String get deleteAccountDelete => 'Supprimer';
+
+  @override
+  String get deleteAccountDone => 'Compte supprimé.';
+
+  @override
+  String get deleteAccountReauth => 'Reconnecte-toi pour supprimer ton compte.';
+
+  @override
+  String get deleteAccountFailed => 'Impossible de supprimer le compte. Réessaie.';
 
   @override
   String get paywallTitle => 'Débloquer Premium';
 
   @override
-  String paywallPrice(String price) {
-    return '$price / mois';
-  }
+  String get paywallCtaUpgrade => 'Passer Premium';
 
   @override
-  String get paywallCtaUpgrade => 'Passer Premium';
+  String get paywallRoutinesUpsell => 'Les programmes illimités sont une fonctionnalité BASIC';
+
+  @override
+  String get paywallHistoryUpsell => 'L\'historique complet est une fonctionnalité BASIC';
+
+  @override
+  String get paywallPlanBasic => 'BASIC';
+
+  @override
+  String get paywallPlanAdvanced => 'ADVANCED';
+
+  @override
+  String get paywallMonthly => 'mois';
+
+  @override
+  String get paywallYearly => 'an';
+
+  @override
+  String get paywallComingSoonBadge => 'Bientôt disponible';
+
+  @override
+  String get freeHistoryNotice =>
+      'Les 7 derniers jours sont affichés. Passe à l\'offre supérieure pour tout ton historique.';
+
+  @override
+  String routinesFreeCount(int count, int max) {
+    return '$count programmes gratuits sur $max';
+  }
 
   @override
   String get paywallBenefit1 => 'Planification des routines par IA';

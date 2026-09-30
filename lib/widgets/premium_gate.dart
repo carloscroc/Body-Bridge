@@ -23,6 +23,10 @@ extension PremiumContext on BuildContext {
   AccountGate get accountGate => PremiumGate.maybeOf(this)?.gate ?? AccountGate.instance;
 
   bool canAccess(String feature) => accountGate.canAccess(feature);
+
+  /// Capability-flavored alias of [canAccess]: [capability] is a server
+  /// capability key (kCap*).
+  bool can(String capability) => accountGate.canAccess(capability);
 }
 
 class FeatureGate extends StatelessWidget {
@@ -34,7 +38,7 @@ class FeatureGate extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Pressable(
-        onTap: context.canAccess(feature) ? onTap : fit.goPaywall,
-        child: IgnorePointer(child: child),
-      );
+    onTap: context.canAccess(feature) ? onTap : fit.goPaywall,
+    child: IgnorePointer(child: child),
+  );
 }

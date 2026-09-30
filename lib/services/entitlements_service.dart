@@ -4,60 +4,127 @@ import 'dart:convert';
 import 'package:convex_flutter/convex_flutter.dart';
 import 'package:flutter/foundation.dart';
 
-/// Convex-backed account tier and feature flags, offline-first: without a
+/// Convex-backed account tier and capabilities, offline-first: without a
 /// CONVEX_URL, or while offline, the service stays dormant and reports free.
+
+// KEEP IN SYNC with motionletics-backend convex/lib.ts
+const List<String> kTiers = <String>['free', 'basic', 'advanced', 'enterprise'];
+
+// KEEP IN SYNC with motionletics-backend convex/lib.ts
+const List<String> kCapabilities = <String>[
+  'workout_tracking',
+  'recent_history',
+  'full_history',
+  'cloud_backup',
+  'cloud_sync',
+  'unlimited_routines',
+  'progress_charts',
+  'advanced_analytics',
+  'personalized_programs',
+  'premium_programs',
+  'premium_videos',
+  'trainer_features',
+  'community_browse',
+  'community_post',
+  'community_media_upload',
+  'organization_management',
+];
+
+// KEEP IN SYNC with motionletics-backend convex/lib.ts (monotonic supersets)
+const Map<String, List<String>> kPlanCapabilities = <String, List<String>>{
+  'free': <String>['workout_tracking', 'recent_history'],
+  'basic': <String>[
+    'workout_tracking',
+    'recent_history',
+    'full_history',
+    'cloud_backup',
+    'cloud_sync',
+    'unlimited_routines',
+    'progress_charts',
+    'community_browse',
+    'community_post',
+    'community_media_upload',
+  ],
+  'advanced': <String>[
+    'workout_tracking',
+    'recent_history',
+    'full_history',
+    'cloud_backup',
+    'cloud_sync',
+    'unlimited_routines',
+    'progress_charts',
+    'community_browse',
+    'community_post',
+    'community_media_upload',
+    'advanced_analytics',
+    'personalized_programs',
+    'premium_programs',
+    'premium_videos',
+    'trainer_features',
+  ],
+  'enterprise': <String>[
+    'workout_tracking',
+    'recent_history',
+    'full_history',
+    'cloud_backup',
+    'cloud_sync',
+    'unlimited_routines',
+    'progress_charts',
+    'community_browse',
+    'community_post',
+    'community_media_upload',
+    'advanced_analytics',
+    'personalized_programs',
+    'premium_programs',
+    'premium_videos',
+    'trainer_features',
+    'organization_management',
+  ],
+};
 
 enum Tier {
   free,
-  normal,
-  premium;
+  basic,
+  advanced,
+  enterprise;
 
   /// Tolerant: anything unknown (including null) falls back to free.
   static Tier fromName(String? name) => switch (name) {
-    'normal' => Tier.normal,
-    'premium' => Tier.premium,
+    'basic' => Tier.basic,
+    'advanced' => Tier.advanced,
+    'enterprise' => Tier.enterprise,
     _ => Tier.free,
   };
 }
 
-enum EntitlementFeature { canTrain, canTrackStats, canUsePremiumWorkouts, canUseAiCoach }
-
 class Entitlements {
-  const Entitlements({
-    this.tier = Tier.free,
-    this.canTrain = true,
-    this.canTrackStats = true,
-    this.canUsePremiumWorkouts = false,
-    this.canUseAiCoach = false,
-  });
+  const Entitlements({this.tier = Tier.free, this.capabilities = const <String>[]});
 
-  static const Entitlements free = Entitlements();
+  /// Dormant / guest value: the free plan's capabilities.
+  static final Entitlements free = Entitlements(capabilities: List.unmodifiable(kPlanCapabilities['free']!));
 
   final Tier tier;
-  final bool canTrain;
-  final bool canTrackStats;
-  final bool canUsePremiumWorkouts;
-  final bool canUseAiCoach;
+  final List<String> capabilities;
 
-  /// Maps the Convex `entitlements:get` document 1:1 — camelCase keys as the
-  /// server sends them, tolerant of missing fields.
+  /// Maps the Convex `entitlements:get` document to the capability model —
+  /// `{tier, capabilities: string[], cloud_retention_until}`. Tolerant of
+  /// missing/old fields: when the doc carries only a tier, capabilities are
+  /// derived from the kPlanCapabilities mirror.
   factory Entitlements.fromJson(Map<String, dynamic> json) {
-    final flags = (json['entitlements'] as Map<String, dynamic>?) ?? const {};
+    final tier = Tier.fromName(json['tier'] as String?);
+    final raw = json['capabilities'];
+    final caps = <String>[
+      if (raw is List)
+        for (final c in raw)
+          if (c is String) c,
+    ];
     return Entitlements(
-      tier: Tier.fromName(json['tier'] as String?),
-      canTrain: flags['canTrain'] as bool? ?? true,
-      canTrackStats: flags['canTrackStats'] as bool? ?? true,
-      canUsePremiumWorkouts: flags['canUsePremiumWorkouts'] as bool? ?? false,
-      canUseAiCoach: flags['canUseAiCoach'] as bool? ?? false,
+      tier: tier,
+      capabilities: caps.isNotEmpty ? caps : kPlanCapabilities[tier.name] ?? const <String>[],
     );
   }
 
-  bool can(EntitlementFeature feature) => switch (feature) {
-    EntitlementFeature.canTrain => canTrain,
-    EntitlementFeature.canTrackStats => canTrackStats,
-    EntitlementFeature.canUsePremiumWorkouts => canUsePremiumWorkouts,
-    EntitlementFeature.canUseAiCoach => canUseAiCoach,
-  };
+  bool can(String capability) => capabilities.contains(capability);
 }
 
 class EntitlementsService {
@@ -84,7 +151,7 @@ class EntitlementsService {
 
   Stream<Entitlements> get entitlements => _changes.stream;
 
-  bool canAccess(EntitlementFeature feature) => _current.can(feature);
+  bool can(String capability) => _current.can(capability);
 
   /// Memoized and never throws. Empty CONVEX_URL means dormant free mode with
   /// no connection attempt beyond what initialize does locally.

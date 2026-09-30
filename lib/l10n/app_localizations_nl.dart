@@ -3072,21 +3072,71 @@ class AppLocalizationsNl extends AppLocalizations {
   String get tierFree => 'FREE';
 
   @override
-  String get tierNormal => 'NORMAL';
+  String get tierBasic => 'BASIC';
 
   @override
-  String get tierPremium => 'PREMIUM';
+  String get tierAdvanced => 'ADVANCED';
+
+  @override
+  String get tierEnterprise => 'ENTERPRISE';
+
+  @override
+  String get deleteAccount => 'Account verwijderen';
+
+  @override
+  String get deleteAccountConfirmTitle => 'Account verwijderen?';
+
+  @override
+  String get deleteAccountConfirmBody =>
+      'Hiermee word je account en cloudprofiel verwijderd. Lokale workouts blijven op deze telefoon.';
+
+  @override
+  String get deleteAccountDelete => 'Verwijderen';
+
+  @override
+  String get deleteAccountDone => 'Account verwijderd.';
+
+  @override
+  String get deleteAccountReauth => 'Log opnieuw in om je account te verwijderen.';
+
+  @override
+  String get deleteAccountFailed => 'Kon het account niet verwijderen. Probeer het opnieuw.';
 
   @override
   String get paywallTitle => 'Premium ontgrendelen';
 
   @override
-  String paywallPrice(String price) {
-    return '$price / maand';
-  }
+  String get paywallCtaUpgrade => 'Upgraden';
 
   @override
-  String get paywallCtaUpgrade => 'Upgraden';
+  String get paywallRoutinesUpsell => 'Onbeperkte routines is een BASIC-functie';
+
+  @override
+  String get paywallHistoryUpsell => 'Volledige geschiedenis is een BASIC-functie';
+
+  @override
+  String get paywallPlanBasic => 'BASIC';
+
+  @override
+  String get paywallPlanAdvanced => 'ADVANCED';
+
+  @override
+  String get paywallMonthly => 'maand';
+
+  @override
+  String get paywallYearly => 'jaar';
+
+  @override
+  String get paywallComingSoonBadge => 'Binnenkort';
+
+  @override
+  String get freeHistoryNotice =>
+      'De laatste 7 dagen worden getoond. Upgrade voor je volledige geschiedenis.';
+
+  @override
+  String routinesFreeCount(int count, int max) {
+    return '$count van $max gratis routines';
+  }
 
   @override
   String get paywallBenefit1 => 'AI-gestuurde routineplanning';

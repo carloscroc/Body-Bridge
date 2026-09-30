@@ -3069,21 +3069,71 @@ class AppLocalizationsIt extends AppLocalizations {
   String get tierFree => 'FREE';
 
   @override
-  String get tierNormal => 'NORMAL';
+  String get tierBasic => 'BASIC';
 
   @override
-  String get tierPremium => 'PREMIUM';
+  String get tierAdvanced => 'ADVANCED';
+
+  @override
+  String get tierEnterprise => 'ENTERPRISE';
+
+  @override
+  String get deleteAccount => 'Elimina account';
+
+  @override
+  String get deleteAccountConfirmTitle => 'Eliminare l\'account?';
+
+  @override
+  String get deleteAccountConfirmBody =>
+      'Elimina il tuo account e il profilo cloud. Gli allenamenti locali restano su questo telefono.';
+
+  @override
+  String get deleteAccountDelete => 'Elimina';
+
+  @override
+  String get deleteAccountDone => 'Account eliminato.';
+
+  @override
+  String get deleteAccountReauth => 'Accedi di nuovo per eliminare il tuo account.';
+
+  @override
+  String get deleteAccountFailed => 'Impossibile eliminare l\'account. Riprova.';
 
   @override
   String get paywallTitle => 'Sblocca Premium';
 
   @override
-  String paywallPrice(String price) {
-    return '$price / mese';
-  }
+  String get paywallCtaUpgrade => 'Passa a Premium';
 
   @override
-  String get paywallCtaUpgrade => 'Passa a Premium';
+  String get paywallRoutinesUpsell => 'Le routine illimitate sono una funzione BASIC';
+
+  @override
+  String get paywallHistoryUpsell => 'La cronologia completa è una funzione BASIC';
+
+  @override
+  String get paywallPlanBasic => 'BASIC';
+
+  @override
+  String get paywallPlanAdvanced => 'ADVANCED';
+
+  @override
+  String get paywallMonthly => 'mese';
+
+  @override
+  String get paywallYearly => 'anno';
+
+  @override
+  String get paywallComingSoonBadge => 'In arrivo';
+
+  @override
+  String get freeHistoryNotice =>
+      'Vengono mostrati gli ultimi 7 giorni. Passa a un piano superiore per tutta la cronologia.';
+
+  @override
+  String routinesFreeCount(int count, int max) {
+    return '$count di $max routine gratuite';
+  }
 
   @override
   String get paywallBenefit1 => 'Pianificazione delle routine con IA';

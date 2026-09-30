@@ -3058,21 +3058,70 @@ class AppLocalizationsAr extends AppLocalizations {
   String get tierFree => 'FREE';
 
   @override
-  String get tierNormal => 'NORMAL';
+  String get tierBasic => 'BASIC';
 
   @override
-  String get tierPremium => 'PREMIUM';
+  String get tierAdvanced => 'ADVANCED';
+
+  @override
+  String get tierEnterprise => 'ENTERPRISE';
+
+  @override
+  String get deleteAccount => 'حذف الحساب';
+
+  @override
+  String get deleteAccountConfirmTitle => 'حذف الحساب؟';
+
+  @override
+  String get deleteAccountConfirmBody =>
+      'سيؤدي هذا إلى حذف حسابك وملفك الشخصي في السحابة. تبقى التمارين المحلية على هذا الهاتف.';
+
+  @override
+  String get deleteAccountDelete => 'حذف';
+
+  @override
+  String get deleteAccountDone => 'تم حذف الحساب.';
+
+  @override
+  String get deleteAccountReauth => 'سجّل الدخول مجددًا لحذف حسابك.';
+
+  @override
+  String get deleteAccountFailed => 'تعذّر حذف الحساب. حاول مرة أخرى.';
 
   @override
   String get paywallTitle => 'افتح النسخة المميزة';
 
   @override
-  String paywallPrice(String price) {
-    return '$price / شهر';
-  }
+  String get paywallCtaUpgrade => 'ترقية';
 
   @override
-  String get paywallCtaUpgrade => 'ترقية';
+  String get paywallRoutinesUpsell => 'الروتينات غير المحدودة ميزة BASIC';
+
+  @override
+  String get paywallHistoryUpsell => 'السجل الكامل ميزة BASIC';
+
+  @override
+  String get paywallPlanBasic => 'BASIC';
+
+  @override
+  String get paywallPlanAdvanced => 'ADVANCED';
+
+  @override
+  String get paywallMonthly => 'شهر';
+
+  @override
+  String get paywallYearly => 'سنة';
+
+  @override
+  String get paywallComingSoonBadge => 'قريبًا';
+
+  @override
+  String get freeHistoryNotice => 'يتم عرض آخر 7 أيام. قم بالترقية لعرض سجلك الكامل.';
+
+  @override
+  String routinesFreeCount(int count, int max) {
+    return '$count من $max روتينات مجانية';
+  }
 
   @override
   String get paywallBenefit1 => 'تخطيط التمارين بالذكاء الاصطناعي';

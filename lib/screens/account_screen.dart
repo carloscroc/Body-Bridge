@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:phosphoricons_flutter/phosphoricons_flutter.dart';
 
 import '../l10n/l10n.dart';
+import '../services/auth_service.dart';
 import '../state/account_gate.dart';
 import '../state/fit_state.dart';
 import '../theme/app_colors.dart';
 import '../theme/app_theme.dart';
+import '../widgets/dialogs.dart';
 import '../widgets/entrance.dart';
 import '../widgets/premium_gate.dart';
 import '../widgets/tier_badge.dart';
@@ -25,6 +27,7 @@ class _AccountScreenState extends State<AccountScreen> {
   final _password = TextEditingController();
   bool _createMode = true;
   bool _submitting = false;
+  bool _deleting = false;
   String? _emailError;
   String? _passwordError;
   String? _authError;
@@ -69,19 +72,30 @@ class _AccountScreenState extends State<AccountScreen> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Text(_t.accountGuestBlurb, style: AppTheme.f(13.5, weight: FontWeight.w500, color: gc.textSecondary, height: 1.45)),
+          Text(
+            _t.accountGuestBlurb,
+            style: AppTheme.f(13.5, weight: FontWeight.w500, color: gc.textSecondary, height: 1.45),
+          ),
           const SizedBox(height: 18),
           SegToggle([
             SegOption(_t.createAccount, _createMode, () => setState(() => _createMode = true)),
             SegOption(_t.signIn, !_createMode, () => setState(() => _createMode = false)),
           ], hPad: 12),
           const SizedBox(height: 20),
-          _field(controller: _email, label: _t.emailLabel, error: _emailError, keyboardType: TextInputType.emailAddress),
+          _field(
+            controller: _email,
+            label: _t.emailLabel,
+            error: _emailError,
+            keyboardType: TextInputType.emailAddress,
+          ),
           const SizedBox(height: 14),
           _field(controller: _password, label: _t.passwordLabel, error: _passwordError, obscureText: true),
           if (_authError != null) ...[
             const SizedBox(height: 10),
-            Text(_authError!, style: AppTheme.f(12, weight: FontWeight.w600, color: gc.danger)),
+            Text(
+              _authError!,
+              style: AppTheme.f(12, weight: FontWeight.w600, color: gc.danger),
+            ),
           ],
           const SizedBox(height: 20),
           _submitting
@@ -89,7 +103,11 @@ class _AccountScreenState extends State<AccountScreen> {
                   height: 56,
                   alignment: Alignment.center,
                   decoration: BoxDecoration(color: gc.ember, borderRadius: BorderRadius.circular(100)),
-                  child: SizedBox(width: 22, height: 22, child: CircularProgressIndicator(strokeWidth: 2, color: gc.onEmber)),
+                  child: SizedBox(
+                    width: 22,
+                    height: 22,
+                    child: CircularProgressIndicator(strokeWidth: 2, color: gc.onEmber),
+                  ),
                 )
               : PrimaryButton(label: _createMode ? _t.startFree : _t.signIn, onTap: () => _submit(gate)),
         ],
@@ -104,14 +122,92 @@ class _AccountScreenState extends State<AccountScreen> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Text(_t.accountSignedInAs(snapshot.email ?? ''), style: AppTheme.f(14, weight: FontWeight.w600, color: gc.text)),
+          Text(
+            _t.accountSignedInAs(snapshot.email ?? ''),
+            style: AppTheme.f(14, weight: FontWeight.w600, color: gc.text),
+          ),
           const SizedBox(height: 14),
           Align(alignment: Alignment.centerLeft, child: TierBadge(snapshot.tier)),
           const SizedBox(height: 20),
-          GhostButton(label: _t.signOut, icon: PhosphorIconsRegular.signOut, onTap: () => gate.signOut()),
+          GhostButton(
+            label: _t.signOut,
+            icon: PhosphorIconsRegular.signOut,
+            onTap: _deleting ? () {} : () => gate.signOut(),
+          ),
+          const SizedBox(height: 10),
+          if (_deleting)
+            Container(
+              height: 46,
+              alignment: Alignment.center,
+              decoration: BoxDecoration(color: gc.bgRaised2, borderRadius: BorderRadius.circular(100)),
+              child: SizedBox(
+                width: 20,
+                height: 20,
+                child: CircularProgressIndicator(strokeWidth: 2, color: gc.danger),
+              ),
+            )
+          else
+            _dangerGhostButton(
+              context,
+              _t.deleteAccount,
+              PhosphorIconsRegular.trash,
+              () => _deleteAccount(context, gate),
+            ),
         ],
       ),
     );
+  }
+
+  /// GhostButton-style button with destructive (gc.danger) styling.
+  Widget _dangerGhostButton(BuildContext context, String label, IconData icon, VoidCallback onTap) {
+    final gc = context.gc;
+    return Pressable(
+      onTap: onTap,
+      child: Container(
+        height: 46,
+        padding: const EdgeInsets.symmetric(horizontal: 20),
+        alignment: Alignment.center,
+        decoration: BoxDecoration(color: gc.bgRaised2, borderRadius: BorderRadius.circular(100)),
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Icon(icon, size: 16, color: gc.danger),
+            const SizedBox(width: 8),
+            Text(
+              titleCase(label),
+              style: AppTheme.f(13.5, weight: FontWeight.w700, color: gc.danger),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Future<void> _deleteAccount(BuildContext context, AccountGate gate) async {
+    final ok = await askConfirm(
+      context,
+      title: _t.deleteAccountConfirmTitle,
+      body: _t.deleteAccountConfirmBody,
+      confirmLabel: _t.deleteAccountDelete,
+      danger: true,
+    );
+    if (!ok || !mounted) return;
+    setState(() => _deleting = true);
+    void snack(String message) =>
+        ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(message)));
+    try {
+      await gate.deleteAccount();
+      if (mounted) snack(_t.deleteAccountDone);
+    } on AuthException catch (e) {
+      if (mounted) {
+        snack(e.key == 'requiresRecentLogin' ? _t.deleteAccountReauth : _t.deleteAccountFailed);
+      }
+    } catch (e) {
+      debugPrint('Delete account failed: $e');
+      if (mounted) snack(_t.deleteAccountFailed);
+    } finally {
+      if (mounted) setState(() => _deleting = false);
+    }
   }
 
   Widget _field({
@@ -125,7 +221,10 @@ class _AccountScreenState extends State<AccountScreen> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        Text(label, style: AppTheme.f(11, weight: FontWeight.w700, color: gc.textSecondary, letterSpacing: 1)),
+        Text(
+          label,
+          style: AppTheme.f(11, weight: FontWeight.w700, color: gc.textSecondary, letterSpacing: 1),
+        ),
         const SizedBox(height: 7),
         TextField(
           controller: controller,
@@ -145,7 +244,10 @@ class _AccountScreenState extends State<AccountScreen> {
         ),
         if (error != null) ...[
           const SizedBox(height: 5),
-          Text(error, style: AppTheme.f(11.5, weight: FontWeight.w600, color: gc.danger)),
+          Text(
+            error,
+            style: AppTheme.f(11.5, weight: FontWeight.w600, color: gc.danger),
+          ),
         ],
       ],
     );
@@ -170,7 +272,11 @@ class _AccountScreenState extends State<AccountScreen> {
     } catch (error) {
       if (mounted) {
         final detail = error.toString().replaceFirst(RegExp(r'^(StateError|Exception):\s*'), '');
-        setState(() => _authError = detail.isEmpty || detail == _t.authFailedGeneric ? _t.authFailedGeneric : '${_t.authFailedGeneric}\n$detail');
+        setState(
+          () => _authError = detail.isEmpty || detail == _t.authFailedGeneric
+              ? _t.authFailedGeneric
+              : '${_t.authFailedGeneric}\n$detail',
+        );
       }
     } finally {
       if (mounted) setState(() => _submitting = false);

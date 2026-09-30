@@ -3072,21 +3072,70 @@ class AppLocalizationsPl extends AppLocalizations {
   String get tierFree => 'FREE';
 
   @override
-  String get tierNormal => 'NORMAL';
+  String get tierBasic => 'BASIC';
 
   @override
-  String get tierPremium => 'PREMIUM';
+  String get tierAdvanced => 'ADVANCED';
+
+  @override
+  String get tierEnterprise => 'ENTERPRISE';
+
+  @override
+  String get deleteAccount => 'Usuń konto';
+
+  @override
+  String get deleteAccountConfirmTitle => 'Usunąć konto?';
+
+  @override
+  String get deleteAccountConfirmBody =>
+      'To usuwa Twoje konto i profil w chmurze. Lokalne treningi zostają na tym telefonie.';
+
+  @override
+  String get deleteAccountDelete => 'Usuń';
+
+  @override
+  String get deleteAccountDone => 'Konto usunięte.';
+
+  @override
+  String get deleteAccountReauth => 'Zaloguj się ponownie, aby usunąć konto.';
+
+  @override
+  String get deleteAccountFailed => 'Nie udało się usunąć konta. Spróbuj ponownie.';
 
   @override
   String get paywallTitle => 'Odblokuj Premium';
 
   @override
-  String paywallPrice(String price) {
-    return '$price / mies.';
-  }
+  String get paywallCtaUpgrade => 'Ulepsz';
 
   @override
-  String get paywallCtaUpgrade => 'Ulepsz';
+  String get paywallRoutinesUpsell => 'Nieograniczone plany to funkcja BASIC';
+
+  @override
+  String get paywallHistoryUpsell => 'Pełna historia to funkcja BASIC';
+
+  @override
+  String get paywallPlanBasic => 'BASIC';
+
+  @override
+  String get paywallPlanAdvanced => 'ADVANCED';
+
+  @override
+  String get paywallMonthly => 'mies.';
+
+  @override
+  String get paywallYearly => 'rok';
+
+  @override
+  String get paywallComingSoonBadge => 'Wkrótce';
+
+  @override
+  String get freeHistoryNotice => 'Pokazujemy ostatnie 7 dni. Ulepsz, aby zobaczyć pełną historię.';
+
+  @override
+  String routinesFreeCount(int count, int max) {
+    return '$count z $max darmowych planów';
+  }
 
   @override
   String get paywallBenefit1 => 'Planowanie treningów z AI';
