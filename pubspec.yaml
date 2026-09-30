@@ -30,6 +30,12 @@ dependencies:
   archive: ^4.0.9
   app_settings: ^8.0.3
   convex_flutter: ^3.0.1
+  # Test-hold pin: convex_flutter 3.0.1 ships frb codegen 2.11.1 but allows
+  # ^2.11.1, which resolves to 2.13.0 and throws at runtime
+  # ("codegen version (2.11.1) should be the same as runtime version").
+  # REMOVE when convex_flutter publishes a matching release (flagged to
+  # dev-orchestrator via T-C card).
+  flutter_rust_bridge: 2.11.1
   firebase_core: ^4.15.0
   firebase_auth: ^6.7.0
 
