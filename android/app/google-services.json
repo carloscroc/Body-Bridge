@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1072465704849",
+    "project_id": "motionletics",
+    "storage_bucket": "motionletics.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1072465704849:android:b5dddc05ca565d140e0c30",
+        "android_client_info": {
+          "package_name": "com.aabide.motionletics"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA17ETk9mKSqPGcgmttfEogFNhIeXxaIOA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1072465704849:android:1442e6f88365fe290e0c30",
+        "android_client_info": {
+          "package_name": "com.gymmane.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA17ETk9mKSqPGcgmttfEogFNhIeXxaIOA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
