@@ -1,4 +1,4 @@
-package com.aabide.motionletics
+package com.bodybridge.fitness
 
 import android.appwidget.AppWidgetManager
 import android.content.Context

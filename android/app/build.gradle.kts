@@ -15,7 +15,7 @@ if (keystorePropertiesFile.exists()) {
 }
 
 android {
-    namespace = "com.aabide.motionletics"
+    namespace = "com.bodybridge.fitness"
     compileSdk = 36
     ndkVersion = flutter.ndkVersion
 
@@ -30,7 +30,7 @@ android {
     }
 
     defaultConfig {
-        applicationId = "com.aabide.motionletics"
+        applicationId = "com.bodybridge.fitness"
         minSdk = 24
         targetSdk = 36
         versionCode = flutter.versionCode

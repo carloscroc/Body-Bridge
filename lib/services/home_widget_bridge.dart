@@ -11,8 +11,8 @@ import '../widgets/home_widget_views.dart';
 class HomeWidgetBridge {
   HomeWidgetBridge._();
 
-  static const _pkg = 'com.aabide.motionletics';
-  static const appGroup = 'group.com.aabide.motionletics';
+  static const _pkg = 'com.bodybridge.fitness';
+  static const appGroup = 'group.com.bodybridge.fitness';
   static const heatmapKey = 'heatmap_img';
   static const statsKey = 'stats_img';
   static const bodyKey = 'body_img';

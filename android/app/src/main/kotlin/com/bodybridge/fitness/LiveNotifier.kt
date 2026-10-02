@@ -1,4 +1,4 @@
-package com.aabide.motionletics
+package com.bodybridge.fitness
 
 import android.app.Notification
 import android.app.NotificationChannel
@@ -27,7 +27,7 @@ import java.io.ByteArrayOutputStream
 object LiveNotifier {
     private const val ID = 1003
     private const val CHANNEL = "live_workout_v2"
-    private const val ACTION = "com.aabide.motionletics.LIVE_ACTION"
+    private const val ACTION = "com.bodybridge.fitness.LIVE_ACTION"
     private const val FLASH_MS = 1600L
 
     var dart: MethodChannel? = null
@@ -58,7 +58,7 @@ object LiveNotifier {
         val nm = ctx.getSystemService(NotificationManager::class.java) ?: return
         val now = System.currentTimeMillis()
 
-        val name = a["title"] as? String ?: "GymMane"
+        val name = a["title"] as? String ?: "Body Bridge"
         val detail = a["detail"] as? String ?: ""
         val restLabel = a["restLabel"] as? String ?: ""
         val next = a["next"] as? String

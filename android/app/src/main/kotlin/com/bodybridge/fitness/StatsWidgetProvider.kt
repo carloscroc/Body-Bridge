@@ -1,4 +1,4 @@
-package com.aabide.motionletics
+package com.bodybridge.fitness
 
 import android.appwidget.AppWidgetManager
 import android.content.Context
@@ -6,7 +6,7 @@ import android.content.SharedPreferences
 import android.widget.RemoteViews
 import es.antonborri.home_widget.HomeWidgetProvider
 
-class BodyWidgetProvider : HomeWidgetProvider() {
+class StatsWidgetProvider : HomeWidgetProvider() {
     override fun onUpdate(
         context: Context,
         appWidgetManager: AppWidgetManager,
@@ -14,8 +14,8 @@ class BodyWidgetProvider : HomeWidgetProvider() {
         widgetData: SharedPreferences
     ) {
         appWidgetIds.forEach { widgetId ->
-            val views = RemoteViews(context.packageName, R.layout.widget_body).apply {
-                bindThemedImage(context, widgetData, "body_img")
+            val views = RemoteViews(context.packageName, R.layout.widget_stats).apply {
+                bindThemedImage(context, widgetData, "stats_img")
             }
             appWidgetManager.updateAppWidget(widgetId, views)
         }

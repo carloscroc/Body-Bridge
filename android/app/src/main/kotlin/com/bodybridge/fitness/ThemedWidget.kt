@@ -1,4 +1,4 @@
-package com.aabide.motionletics
+package com.bodybridge.fitness
 
 import android.app.AlarmManager
 import android.app.PendingIntent
@@ -79,7 +79,7 @@ abstract class DayWidgetProvider : HomeWidgetProvider() {
     )
 
     companion object {
-        private const val ACTION_NEW_DAY = "com.aabide.motionletics.NEW_DAY"
+        private const val ACTION_NEW_DAY = "com.bodybridge.fitness.NEW_DAY"
         private val rollover = setOf(
             ACTION_NEW_DAY,
             Intent.ACTION_TIME_CHANGED,

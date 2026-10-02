@@ -915,7 +915,7 @@ class SettingsScreen extends StatelessWidget {
         if (context.mounted) _snack(context, t.pinUnsupported);
         return;
       }
-      await HomeWidget.requestPinWidget(qualifiedAndroidName: 'com.aabide.motionletics.$provider');
+      await HomeWidget.requestPinWidget(qualifiedAndroidName: 'com.bodybridge.fitness.$provider');
     } catch (_) {
       if (context.mounted) _snack(context, t.pinUnsupported);
     }
