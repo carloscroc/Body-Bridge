@@ -108,13 +108,13 @@ class _StickerEditorState extends State<StickerEditor> {
 
   Future<void> _share() => _run((png) async {
         final dir = await getTemporaryDirectory();
-        final file = File('${dir.path}/gymmane-sticker.png');
+        final file = File('${dir.path}/body-bridge-sticker.png');
         await file.writeAsBytes(png, flush: true);
-        await SharePlus.instance.share(ShareParams(files: [XFile(file.path)], subject: 'GymMane'));
+        await SharePlus.instance.share(ShareParams(files: [XFile(file.path)], subject: 'Body Bridge'));
       });
 
   Future<void> _save() => _run((png) async {
-        final ok = await saveImageToGallery(png, 'gymmane-${DateTime.now().millisecondsSinceEpoch}.png');
+        final ok = await saveImageToGallery(png, 'body-bridge-${DateTime.now().millisecondsSinceEpoch}.png');
         if (!ok) throw StateError('save');
         HapticFeedback.lightImpact();
         if (mounted) {
@@ -413,7 +413,7 @@ class _Sticker extends StatelessWidget {
           colorBlendMode: BlendMode.srcIn,
         ),
         const SizedBox(width: 5),
-        Text('GymMane', style: _s(size, FontWeight.w900, alpha: 0.9, spacing: 0.2)),
+        Text('Body Bridge', style: _s(size, FontWeight.w900, alpha: 0.9, spacing: 0.2)),
       ]);
 
   Widget _kicker(String text) =>

@@ -23,7 +23,7 @@ class GymManeApp extends StatelessWidget {
       builder: (context, _) => PremiumGate(
         gate: gate,
         child: MaterialApp(
-          title: 'GymMane',
+          title: 'Body Bridge',
           debugShowCheckedModeBanner: false,
           theme: AppTheme.light,
           darkTheme: AppTheme.dark,

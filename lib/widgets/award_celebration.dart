@@ -82,7 +82,7 @@ class _AwardCelebrationState extends State<AwardCelebration> with TickerProvider
           final stamp = DateTime.now().millisecondsSinceEpoch;
           final ok = await saveImageToGallery(
             data.buffer.asUint8List(),
-            'gymmane-${widget.id.name}-$stamp.png',
+            'body-bridge-${widget.id.name}-$stamp.png',
           );
           if (ok) message = t.awardSaved;
         }
@@ -277,7 +277,7 @@ class _SaveCard extends StatelessWidget {
               padding: const EdgeInsets.fromLTRB(28, 36, 28, 32),
               child: Column(
                 children: [
-                  Text('GymMane', style: AppTheme.f(17, weight: FontWeight.w800, color: gc.text)),
+                  Text('Body Bridge', style: AppTheme.f(17, weight: FontWeight.w800, color: gc.text)),
                   const Spacer(),
                   Medal(id: id, size: 208),
                   const SizedBox(height: 36),

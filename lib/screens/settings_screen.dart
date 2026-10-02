@@ -579,10 +579,10 @@ class SettingsScreen extends StatelessWidget {
     }
     final dir = await getTemporaryDirectory();
     final stamp = DateTime.now().toIso8601String().split('T').first;
-    final file = File('${dir.path}/gymmane-workouts-$stamp.csv');
+    final file = File('${dir.path}/body-bridge-workouts-$stamp.csv');
     await file.writeAsString(fit.exportCsv());
     if (!context.mounted) return;
-    await SharePlus.instance.share(ShareParams(files: [XFile(file.path)], subject: 'GymMane workouts'));
+    await SharePlus.instance.share(ShareParams(files: [XFile(file.path)], subject: 'Body Bridge workouts'));
   }
 
   Future<void> _resetAll(BuildContext context) async {
@@ -600,10 +600,10 @@ class SettingsScreen extends StatelessWidget {
   Future<void> _exportBackup(BuildContext context) async {
     final dir = await getTemporaryDirectory();
     final stamp = DateTime.now().toIso8601String().split('T').first;
-    final file = File('${dir.path}/gymmane-backup-$stamp.zip');
+    final file = File('${dir.path}/body-bridge-backup-$stamp.zip');
     await file.writeAsBytes(await buildBackupZip(), flush: true);
     if (!context.mounted) return;
-    await SharePlus.instance.share(ShareParams(files: [XFile(file.path)], subject: 'GymMane backup'));
+    await SharePlus.instance.share(ShareParams(files: [XFile(file.path)], subject: 'Body Bridge backup'));
   }
 
   Future<void> _importBackup(BuildContext context) async {

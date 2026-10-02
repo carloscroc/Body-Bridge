@@ -289,7 +289,7 @@ void main() {
 
     bool looksLikeUi(String t) => RegExp(r'^[A-Z]').hasMatch(t) || t.contains(' ');
 
-    const allowed = {'GymMane', 'GYMMANE', 'GYM · MANE', 'M', 'F', 'kg', 'lb', 'cm', 'EN', 'ES'};
+    const allowed = {'Body Bridge', 'BODY BRIDGE', 'M', 'F', 'kg', 'lb', 'cm', 'EN', 'ES'};
 
     final offenders = <String>[];
 
