@@ -1,4 +1,4 @@
-# Forge
+# Body Bridge
 
 A fitness and workout application built with React, TypeScript, and Convex.
 
