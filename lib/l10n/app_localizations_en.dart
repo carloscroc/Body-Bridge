@@ -1294,7 +1294,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get importHint =>
-      'Choose a .zip (or older .json) backup exported from GymMane. This replaces your current data, media included.';
+      'Choose a .zip (or older .json) backup exported from Body Bridge. This replaces your current data, media included.';
 
   @override
   String get import => 'Import';
@@ -1346,7 +1346,7 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
-  String get aboutGymmane => 'About GymMane';
+  String get aboutGymmane => 'About Body Bridge';
 
   @override
   String get yourProfile => 'YOUR PROFILE';
@@ -2119,7 +2119,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get aiIntro =>
-      'GymMane never talks to an AI. You take your exercise list out, you paste it into whatever assistant you already use, and you bring its answer back in. Nothing leaves the phone on its own.';
+      'Body Bridge never talks to an AI. You take your exercise list out, you paste it into whatever assistant you already use, and you bring its answer back in. Nothing leaves the phone on its own.';
 
   @override
   String get aiStep1 =>
@@ -2159,7 +2159,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get awardFirstStepName => 'First step';
 
   @override
-  String get awardFirstStepLine => 'Welcome to GymMane. This one is on the house.';
+  String get awardFirstStepLine => 'Welcome to Body Bridge. This one is on the house.';
 
   @override
   String get awardFirstWorkoutName => 'First workout';
@@ -2757,14 +2757,15 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String shareMessage(String name) {
-    return '$name — open the file with GymMane to add it.';
+    return '$name — open the file with Body Bridge to add it.';
   }
 
   @override
   String get importRoutines => 'Import routines';
 
   @override
-  String get importPasteHint => 'Paste a routine here: one shared from GymMane, an AI answer, JSON or CSV.';
+  String get importPasteHint =>
+      'Paste a routine here: one shared from Body Bridge, an AI answer, JSON or CSV.';
 
   @override
   String get pasteAction => 'Paste';
@@ -2796,10 +2797,11 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
-  String get nothingToImport => 'Nothing here GymMane can import';
+  String get nothingToImport => 'Nothing here Body Bridge can import';
 
   @override
-  String get aiStepCopy => 'Copy the request. It carries your exercise list and the format GymMane reads.';
+  String get aiStepCopy =>
+      'Copy the request. It carries your exercise list and the format Body Bridge reads.';
 
   @override
   String get aiStepAsk => 'Paste it into any AI and say what you want: days per week, goal, how many weeks.';
@@ -2940,7 +2942,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get shareIntroBody =>
-      'Send it to your partner, a friend or your family. They get a small file that opens in GymMane and adds it in one tap, with its sets and weights.';
+      'Send it to your partner, a friend or your family. They get a small file that opens in Body Bridge and adds it in one tap, with its sets and weights.';
 
   @override
   String get removedFromRoutine => 'Removed from the routine';

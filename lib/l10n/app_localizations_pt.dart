@@ -1296,7 +1296,7 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get importHint =>
-      'Escolha um backup .json exportado do GymMane. Isso substituirá seus dados atuais.';
+      'Escolha um backup .json exportado do Body Bridge. Isso substituirá seus dados atuais.';
 
   @override
   String get import => 'Importar';
@@ -1348,7 +1348,7 @@ class AppLocalizationsPt extends AppLocalizations {
   }
 
   @override
-  String get aboutGymmane => 'Sobre GymMane';
+  String get aboutGymmane => 'Sobre Body Bridge';
 
   @override
   String get yourProfile => 'SEU PERFIL';
@@ -2121,7 +2121,7 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get aiIntro =>
-      'O GymMane não fala com nenhuma IA. Tu tiras a tua lista de exercícios, colas no assistente que já usas e trazes a resposta de volta. Do telemóvel não sai nada sozinho.';
+      'O Body Bridge não fala com nenhuma IA. Tu tiras a tua lista de exercícios, colas no assistente que já usas e trazes a resposta de volta. Do telemóvel não sai nada sozinho.';
 
   @override
   String get aiStep1 =>
@@ -2160,7 +2160,7 @@ class AppLocalizationsPt extends AppLocalizations {
   String get awardFirstStepName => 'Primeiro passo';
 
   @override
-  String get awardFirstStepLine => 'Bem-vindo ao GymMane. Esta é por conta da casa.';
+  String get awardFirstStepLine => 'Bem-vindo ao Body Bridge. Esta é por conta da casa.';
 
   @override
   String get awardFirstWorkoutName => 'Primeiro treino';
@@ -2758,7 +2758,7 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String shareMessage(String name) {
-    return '$name — abra o arquivo com o GymMane para adicionar.';
+    return '$name — abra o arquivo com o Body Bridge para adicionar.';
   }
 
   @override
@@ -2766,7 +2766,7 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get importPasteHint =>
-      'Cole aqui uma rotina: uma compartilhada do GymMane, a resposta de uma IA, JSON ou CSV.';
+      'Cole aqui uma rotina: uma compartilhada do Body Bridge, a resposta de uma IA, JSON ou CSV.';
 
   @override
   String get pasteAction => 'Colar';
@@ -2798,10 +2798,11 @@ class AppLocalizationsPt extends AppLocalizations {
   }
 
   @override
-  String get nothingToImport => 'Não há nada aqui que o GymMane possa importar';
+  String get nothingToImport => 'Não há nada aqui que o Body Bridge possa importar';
 
   @override
-  String get aiStepCopy => 'Copie o pedido. Ele leva sua lista de exercícios e o formato que o GymMane lê.';
+  String get aiStepCopy =>
+      'Copie o pedido. Ele leva sua lista de exercícios e o formato que o Body Bridge lê.';
 
   @override
   String get aiStepAsk =>
@@ -2943,7 +2944,7 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get shareIntroBody =>
-      'Envie para seu par, um amigo ou sua família. Eles recebem um arquivo pequeno que abre no GymMane e adiciona a rotina com um toque, com séries e pesos.';
+      'Envie para seu par, um amigo ou sua família. Eles recebem um arquivo pequeno que abre no Body Bridge e adiciona a rotina com um toque, com séries e pesos.';
 
   @override
   String get removedFromRoutine => 'Removido da rotina';

@@ -1262,7 +1262,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get importBackup => '백업 가져오기';
 
   @override
-  String get importHint => 'GymMane에서 내보낸 .zip(또는 이전 .json) 백업을 선택하세요. 미디어를 포함한 현재 데이터가 대체됩니다.';
+  String get importHint => 'Body Bridge에서 내보낸 .zip(또는 이전 .json) 백업을 선택하세요. 미디어를 포함한 현재 데이터가 대체됩니다.';
 
   @override
   String get import => '가져오기';
@@ -1309,7 +1309,7 @@ class AppLocalizationsKo extends AppLocalizations {
   }
 
   @override
-  String get aboutGymmane => 'GymMane 정보';
+  String get aboutGymmane => 'Body Bridge 정보';
 
   @override
   String get yourProfile => '내 프로필';
@@ -1924,7 +1924,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get planNothing => '이 파일의 운동이 라이브러리와 일치하지 않습니다';
 
   @override
-  String get planFailed => '이 파일은 GymMane이 읽을 수 있는 루틴이 아닙니다';
+  String get planFailed => '이 파일은 Body Bridge이 읽을 수 있는 루틴이 아닙니다';
 
   @override
   String get routineGroup => '그룹';
@@ -2067,7 +2067,7 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get aiIntro =>
-      'GymMane은 AI와 직접 통신하지 않습니다. 운동 목록을 내보내고 이미 사용하는 AI 도우미에 붙여넣은 뒤 응답을 다시 가져옵니다. 어떤 데이터도 자동으로 휴대전화 밖으로 나가지 않습니다.';
+      'Body Bridge은 AI와 직접 통신하지 않습니다. 운동 목록을 내보내고 이미 사용하는 AI 도우미에 붙여넣은 뒤 응답을 다시 가져옵니다. 어떤 데이터도 자동으로 휴대전화 밖으로 나가지 않습니다.';
 
   @override
   String get aiStep1 => '운동 목록을 내보냅니다. 장소를 선택했다면 그곳에서 할 수 있는 운동만 포함됩니다.';
@@ -2105,7 +2105,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get awardFirstStepName => '첫걸음';
 
   @override
-  String get awardFirstStepLine => 'GymMane에 오신 것을 환영합니다. 이건 선물입니다.';
+  String get awardFirstStepLine => 'Body Bridge에 오신 것을 환영합니다. 이건 선물입니다.';
 
   @override
   String get awardFirstWorkoutName => '첫 운동';
@@ -2692,14 +2692,14 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String shareMessage(String name) {
-    return '$name — GymMane으로 파일을 열어 추가하세요.';
+    return '$name — Body Bridge으로 파일을 열어 추가하세요.';
   }
 
   @override
   String get importRoutines => '루틴 가져오기';
 
   @override
-  String get importPasteHint => '여기에 루틴을 붙여 넣으세요: GymMane에서 공유한 루틴, AI 답변, JSON 또는 CSV.';
+  String get importPasteHint => '여기에 루틴을 붙여 넣으세요: Body Bridge에서 공유한 루틴, AI 답변, JSON 또는 CSV.';
 
   @override
   String get pasteAction => '붙여 넣기';
@@ -2726,10 +2726,10 @@ class AppLocalizationsKo extends AppLocalizations {
   }
 
   @override
-  String get nothingToImport => 'GymMane이 가져올 수 있는 내용이 없어요';
+  String get nothingToImport => 'Body Bridge이 가져올 수 있는 내용이 없어요';
 
   @override
-  String get aiStepCopy => '요청을 복사하세요. 내 운동 목록과 GymMane이 읽는 형식이 들어 있어요.';
+  String get aiStepCopy => '요청을 복사하세요. 내 운동 목록과 Body Bridge이 읽는 형식이 들어 있어요.';
 
   @override
   String get aiStepAsk => '아무 AI에나 붙여 넣고 원하는 걸 말하세요: 주당 일수, 목표, 몇 주인지.';
@@ -2868,7 +2868,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get shareIntroTitle => '이 루틴 공유하기';
 
   @override
-  String get shareIntroBody => '연인, 친구, 가족에게 보내 보세요. GymMane으로 열리는 작은 파일이 가고, 세트와 무게까지 한 번에 추가돼요.';
+  String get shareIntroBody => '연인, 친구, 가족에게 보내 보세요. Body Bridge으로 열리는 작은 파일이 가고, 세트와 무게까지 한 번에 추가돼요.';
 
   @override
   String get removedFromRoutine => '루틴에서 뺐어요';

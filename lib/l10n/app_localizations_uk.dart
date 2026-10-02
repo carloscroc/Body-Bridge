@@ -1294,7 +1294,7 @@ class AppLocalizationsUk extends AppLocalizations {
 
   @override
   String get importHint =>
-      'Обери резервну копію .zip (або старий .json), експортовану з GymMane. Поточні дані, включно з медіа, буде замінено.';
+      'Обери резервну копію .zip (або старий .json), експортовану з Body Bridge. Поточні дані, включно з медіа, буде замінено.';
 
   @override
   String get import => 'Імпортувати';
@@ -1346,7 +1346,7 @@ class AppLocalizationsUk extends AppLocalizations {
   }
 
   @override
-  String get aboutGymmane => 'Про GymMane';
+  String get aboutGymmane => 'Про Body Bridge';
 
   @override
   String get yourProfile => 'ТВІЙ ПРОФІЛЬ';
@@ -1971,7 +1971,7 @@ class AppLocalizationsUk extends AppLocalizations {
   String get planNothing => 'Жодна вправа з файлу не відповідає бібліотеці';
 
   @override
-  String get planFailed => 'Цей файл не є програмою, яку GymMane може прочитати';
+  String get planFailed => 'Цей файл не є програмою, яку Body Bridge може прочитати';
 
   @override
   String get routineGroup => 'Група';
@@ -2121,7 +2121,7 @@ class AppLocalizationsUk extends AppLocalizations {
 
   @override
   String get aiIntro =>
-      'GymMane ніколи напряму не зв’язується зі ШІ. Ти експортуєш список вправ, вставляєш його в асистент, яким уже користуєшся, а потім імпортуєш відповідь. Нічого саме не залишає телефон.';
+      'Body Bridge ніколи напряму не зв’язується зі ШІ. Ти експортуєш список вправ, вставляєш його в асистент, яким уже користуєшся, а потім імпортуєш відповідь. Нічого саме не залишає телефон.';
 
   @override
   String get aiStep1 =>
@@ -2160,7 +2160,7 @@ class AppLocalizationsUk extends AppLocalizations {
   String get awardFirstStepName => 'Перший крок';
 
   @override
-  String get awardFirstStepLine => 'Ласкаво просимо до GymMane. Ця нагорода — подарунок.';
+  String get awardFirstStepLine => 'Ласкаво просимо до Body Bridge. Ця нагорода — подарунок.';
 
   @override
   String get awardFirstWorkoutName => 'Перше тренування';
@@ -2757,14 +2757,14 @@ class AppLocalizationsUk extends AppLocalizations {
 
   @override
   String shareMessage(String name) {
-    return '$name — відкрийте файл у GymMane, щоб додати.';
+    return '$name — відкрийте файл у Body Bridge, щоб додати.';
   }
 
   @override
   String get importRoutines => 'Імпортувати програми';
 
   @override
-  String get importPasteHint => 'Вставте програму сюди: поширену з GymMane, відповідь ШІ, JSON або CSV.';
+  String get importPasteHint => 'Вставте програму сюди: поширену з Body Bridge, відповідь ШІ, JSON або CSV.';
 
   @override
   String get pasteAction => 'Вставити';
@@ -2803,10 +2803,10 @@ class AppLocalizationsUk extends AppLocalizations {
   }
 
   @override
-  String get nothingToImport => 'Тут немає нічого, що GymMane може імпортувати';
+  String get nothingToImport => 'Тут немає нічого, що Body Bridge може імпортувати';
 
   @override
-  String get aiStepCopy => 'Скопіюйте запит. У ньому ваш список вправ і формат, який читає GymMane.';
+  String get aiStepCopy => 'Скопіюйте запит. У ньому ваш список вправ і формат, який читає Body Bridge.';
 
   @override
   String get aiStepAsk =>
@@ -2948,7 +2948,7 @@ class AppLocalizationsUk extends AppLocalizations {
 
   @override
   String get shareIntroBody =>
-      'Надішліть її партнеру, другу чи родині. Вони отримають невеликий файл, який відкривається в GymMane і додає програму одним дотиком, разом із підходами та вагами.';
+      'Надішліть її партнеру, другу чи родині. Вони отримають невеликий файл, який відкривається в Body Bridge і додає програму одним дотиком, разом із підходами та вагами.';
 
   @override
   String get removedFromRoutine => 'Прибрано з програми';

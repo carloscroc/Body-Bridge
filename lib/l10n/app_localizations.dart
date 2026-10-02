@@ -2327,7 +2327,7 @@ abstract class AppLocalizations {
   /// No description provided for @importHint.
   ///
   /// In en, this message translates to:
-  /// **'Choose a .zip (or older .json) backup exported from GymMane. This replaces your current data, media included.'**
+  /// **'Choose a .zip (or older .json) backup exported from Body Bridge. This replaces your current data, media included.'**
   String get importHint;
 
   /// No description provided for @import.
@@ -2399,7 +2399,7 @@ abstract class AppLocalizations {
   /// No description provided for @aboutGymmane.
   ///
   /// In en, this message translates to:
-  /// **'About GymMane'**
+  /// **'About Body Bridge'**
   String get aboutGymmane;
 
   /// No description provided for @yourProfile.
@@ -3815,7 +3815,7 @@ abstract class AppLocalizations {
   /// No description provided for @aiIntro.
   ///
   /// In en, this message translates to:
-  /// **'GymMane never talks to an AI. You take your exercise list out, you paste it into whatever assistant you already use, and you bring its answer back in. Nothing leaves the phone on its own.'**
+  /// **'Body Bridge never talks to an AI. You take your exercise list out, you paste it into whatever assistant you already use, and you bring its answer back in. Nothing leaves the phone on its own.'**
   String get aiIntro;
 
   /// No description provided for @aiStep1.
@@ -3875,7 +3875,7 @@ abstract class AppLocalizations {
   /// No description provided for @awardFirstStepLine.
   ///
   /// In en, this message translates to:
-  /// **'Welcome to GymMane. This one is on the house.'**
+  /// **'Welcome to Body Bridge. This one is on the house.'**
   String get awardFirstStepLine;
 
   /// No description provided for @awardFirstWorkoutName.
@@ -4955,7 +4955,7 @@ abstract class AppLocalizations {
   /// No description provided for @shareMessage.
   ///
   /// In en, this message translates to:
-  /// **'{name} — open the file with GymMane to add it.'**
+  /// **'{name} — open the file with Body Bridge to add it.'**
   String shareMessage(String name);
 
   /// No description provided for @importRoutines.
@@ -4967,7 +4967,7 @@ abstract class AppLocalizations {
   /// No description provided for @importPasteHint.
   ///
   /// In en, this message translates to:
-  /// **'Paste a routine here: one shared from GymMane, an AI answer, JSON or CSV.'**
+  /// **'Paste a routine here: one shared from Body Bridge, an AI answer, JSON or CSV.'**
   String get importPasteHint;
 
   /// No description provided for @pasteAction.
@@ -5009,13 +5009,13 @@ abstract class AppLocalizations {
   /// No description provided for @nothingToImport.
   ///
   /// In en, this message translates to:
-  /// **'Nothing here GymMane can import'**
+  /// **'Nothing here Body Bridge can import'**
   String get nothingToImport;
 
   /// No description provided for @aiStepCopy.
   ///
   /// In en, this message translates to:
-  /// **'Copy the request. It carries your exercise list and the format GymMane reads.'**
+  /// **'Copy the request. It carries your exercise list and the format Body Bridge reads.'**
   String get aiStepCopy;
 
   /// No description provided for @aiStepAsk.
@@ -5273,7 +5273,7 @@ abstract class AppLocalizations {
   /// No description provided for @shareIntroBody.
   ///
   /// In en, this message translates to:
-  /// **'Send it to your partner, a friend or your family. They get a small file that opens in GymMane and adds it in one tap, with its sets and weights.'**
+  /// **'Send it to your partner, a friend or your family. They get a small file that opens in Body Bridge and adds it in one tap, with its sets and weights.'**
   String get shareIntroBody;
 
   /// No description provided for @removedFromRoutine.

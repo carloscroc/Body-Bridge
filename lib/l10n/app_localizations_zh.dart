@@ -1239,7 +1239,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get importBackup => '导入备份';
 
   @override
-  String get importHint => '选择从 GymMane 导出的 .json 备份文件。这将会覆盖你当前的数据。';
+  String get importHint => '选择从 Body Bridge 导出的 .json 备份文件。这将会覆盖你当前的数据。';
 
   @override
   String get import => '导入';
@@ -1281,7 +1281,7 @@ class AppLocalizationsZh extends AppLocalizations {
   }
 
   @override
-  String get aboutGymmane => '关于 GymMane';
+  String get aboutGymmane => '关于 Body Bridge';
 
   @override
   String get yourProfile => '个人资料';
@@ -2029,7 +2029,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get aiRoutine => '用 AI 生成计划';
 
   @override
-  String get aiIntro => 'GymMane 不会和任何 AI 通信。你把动作清单导出，粘贴给你惯用的助手，再把它的回答导回来。手机不会自己往外发任何东西。';
+  String get aiIntro => 'Body Bridge 不会和任何 AI 通信。你把动作清单导出，粘贴给你惯用的助手，再把它的回答导回来。手机不会自己往外发任何东西。';
 
   @override
   String get aiStep1 => '导出你的动作清单。如果选了场地，只会包含你在那里能做的动作。';
@@ -2061,7 +2061,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get awardFirstStepName => '第一步';
 
   @override
-  String get awardFirstStepLine => '欢迎来到 GymMane，这枚是送你的。';
+  String get awardFirstStepLine => '欢迎来到 Body Bridge，这枚是送你的。';
 
   @override
   String get awardFirstWorkoutName => '第一次训练';
@@ -2641,14 +2641,14 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String shareMessage(String name) {
-    return '$name —— 用 GymMane 打开这个文件即可添加。';
+    return '$name —— 用 Body Bridge 打开这个文件即可添加。';
   }
 
   @override
   String get importRoutines => '导入训练计划';
 
   @override
-  String get importPasteHint => '在这里粘贴训练计划：GymMane 分享的内容、AI 的回答、JSON 或 CSV 都可以。';
+  String get importPasteHint => '在这里粘贴训练计划：Body Bridge 分享的内容、AI 的回答、JSON 或 CSV 都可以。';
 
   @override
   String get pasteAction => '粘贴';
@@ -2673,10 +2673,10 @@ class AppLocalizationsZh extends AppLocalizations {
   }
 
   @override
-  String get nothingToImport => '这里没有 GymMane 能导入的内容';
+  String get nothingToImport => '这里没有 Body Bridge 能导入的内容';
 
   @override
-  String get aiStepCopy => '复制请求。它包含你的动作列表和 GymMane 能读取的格式。';
+  String get aiStepCopy => '复制请求。它包含你的动作列表和 Body Bridge 能读取的格式。';
 
   @override
   String get aiStepAsk => '把它粘贴到任意 AI 里，说出你的需求：每周几天、目标、几周。';
@@ -2815,7 +2815,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get shareIntroTitle => '分享这个计划';
 
   @override
-  String get shareIntroBody => '发给你的伴侣、朋友或家人。他们会收到一个小文件，用 GymMane 打开，一点就能加入，组数和重量都在。';
+  String get shareIntroBody => '发给你的伴侣、朋友或家人。他们会收到一个小文件，用 Body Bridge 打开，一点就能加入，组数和重量都在。';
 
   @override
   String get removedFromRoutine => '已从计划中移除';
@@ -4251,7 +4251,7 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
   String get importBackup => '匯入備份';
 
   @override
-  String get importHint => '選擇從 GymMane 匯出的 .zip 備份（或舊版 .json）。目前資料（包括媒體）將被取代。';
+  String get importHint => '選擇從 Body Bridge 匯出的 .zip 備份（或舊版 .json）。目前資料（包括媒體）將被取代。';
 
   @override
   String get import => '匯入';
@@ -4293,7 +4293,7 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
   }
 
   @override
-  String get aboutGymmane => '關於 GymMane';
+  String get aboutGymmane => '關於 Body Bridge';
 
   @override
   String get yourProfile => '你的個人檔案';
@@ -4908,7 +4908,7 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
   String get planNothing => '此檔案中的動作都與你的資料庫不符';
 
   @override
-  String get planFailed => '這個檔案不是 GymMane 能讀取的課表';
+  String get planFailed => '這個檔案不是 Body Bridge 能讀取的課表';
 
   @override
   String get routineGroup => '群組';
@@ -5050,7 +5050,7 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
   String get aiRoutine => 'AI 課表';
 
   @override
-  String get aiIntro => 'GymMane 絕不直接與 AI 通訊。你先匯出動作清單，貼到你已在使用的 AI 助手，再把回覆匯入。任何資料都不會自行離開手機。';
+  String get aiIntro => 'Body Bridge 絕不直接與 AI 通訊。你先匯出動作清單，貼到你已在使用的 AI 助手，再把回覆匯入。任何資料都不會自行離開手機。';
 
   @override
   String get aiStep1 => '匯出動作清單。如果已選擇地點，清單只會包含你在那裡能做的動作。';
@@ -5088,7 +5088,7 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
   String get awardFirstStepName => '第一步';
 
   @override
-  String get awardFirstStepLine => '歡迎來到 GymMane。這個送給你。';
+  String get awardFirstStepLine => '歡迎來到 Body Bridge。這個送給你。';
 
   @override
   String get awardFirstWorkoutName => '第一次訓練';
@@ -5674,14 +5674,14 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
 
   @override
   String shareMessage(String name) {
-    return '$name — 用 GymMane 開啟檔案即可加入。';
+    return '$name — 用 Body Bridge 開啟檔案即可加入。';
   }
 
   @override
   String get importRoutines => '匯入課表';
 
   @override
-  String get importPasteHint => '在這裡貼上課表：從 GymMane 分享的、AI 的回答、JSON 或 CSV。';
+  String get importPasteHint => '在這裡貼上課表：從 Body Bridge 分享的、AI 的回答、JSON 或 CSV。';
 
   @override
   String get pasteAction => '貼上';
@@ -5708,10 +5708,10 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
   }
 
   @override
-  String get nothingToImport => '這裡沒有 GymMane 能匯入的內容';
+  String get nothingToImport => '這裡沒有 Body Bridge 能匯入的內容';
 
   @override
-  String get aiStepCopy => '複製這段請求。裡面有你的動作清單和 GymMane 讀得懂的格式。';
+  String get aiStepCopy => '複製這段請求。裡面有你的動作清單和 Body Bridge 讀得懂的格式。';
 
   @override
   String get aiStepAsk => '貼到任何 AI，說出你的需求：每週幾天、目標、幾週。';
@@ -5850,7 +5850,7 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
   String get shareIntroTitle => '分享這個課表';
 
   @override
-  String get shareIntroBody => '傳給你的伴侶、朋友或家人。他們會收到一個小檔案，用 GymMane 開啟，一點就能加入，組數和重量都在。';
+  String get shareIntroBody => '傳給你的伴侶、朋友或家人。他們會收到一個小檔案，用 Body Bridge 開啟，一點就能加入，組數和重量都在。';
 
   @override
   String get removedFromRoutine => '已從課表移除';

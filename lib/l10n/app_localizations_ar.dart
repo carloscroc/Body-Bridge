@@ -1286,7 +1286,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get importHint =>
-      'اختر نسخة احتياطية .zip (أو .json أقدم) تم تصديرها من GymMane. سيؤدي ذلك إلى استبدال بياناتك الحالية بما فيها الوسائط.';
+      'اختر نسخة احتياطية .zip (أو .json أقدم) تم تصديرها من Body Bridge. سيؤدي ذلك إلى استبدال بياناتك الحالية بما فيها الوسائط.';
 
   @override
   String get import => 'استيراد';
@@ -1338,7 +1338,7 @@ class AppLocalizationsAr extends AppLocalizations {
   }
 
   @override
-  String get aboutGymmane => 'حول GymMane';
+  String get aboutGymmane => 'حول Body Bridge';
 
   @override
   String get yourProfile => 'ملفك الشخصي';
@@ -1961,7 +1961,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get planNothing => 'لا يوجد تمرين في هذا الملف يطابق مكتبتك';
 
   @override
-  String get planFailed => 'هذا الملف ليس روتينًا يمكن لـ GymMane قراءته';
+  String get planFailed => 'هذا الملف ليس روتينًا يمكن لـ Body Bridge قراءته';
 
   @override
   String get routineGroup => 'مجموعة';
@@ -2110,7 +2110,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get aiIntro =>
-      'لا يتواصل GymMane مباشرةً مع أي ذكاء اصطناعي. تصدّر قائمة تمارينك وتلصقها في المساعد الذي تستخدمه ثم تستورد رده. لا شيء يغادر هاتفك تلقائيًا.';
+      'لا يتواصل Body Bridge مباشرةً مع أي ذكاء اصطناعي. تصدّر قائمة تمارينك وتلصقها في المساعد الذي تستخدمه ثم تستورد رده. لا شيء يغادر هاتفك تلقائيًا.';
 
   @override
   String get aiStep1 => 'صدّر قائمة تمارينك. إذا اخترت مكانًا فستحتوي فقط على ما يمكنك فعله هناك.';
@@ -2148,7 +2148,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get awardFirstStepName => 'الخطوة الأولى';
 
   @override
-  String get awardFirstStepLine => 'مرحبًا بك في GymMane. هذه هدية لك.';
+  String get awardFirstStepLine => 'مرحبًا بك في Body Bridge. هذه هدية لك.';
 
   @override
   String get awardFirstWorkoutName => 'التمرين الأول';
@@ -2744,14 +2744,15 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String shareMessage(String name) {
-    return '$name — افتح الملف باستخدام GymMane لإضافته.';
+    return '$name — افتح الملف باستخدام Body Bridge لإضافته.';
   }
 
   @override
   String get importRoutines => 'استيراد روتينات';
 
   @override
-  String get importPasteHint => 'الصق روتينًا هنا: مشارك من GymMane أو رد من ذكاء اصطناعي أو JSON أو CSV.';
+  String get importPasteHint =>
+      'الصق روتينًا هنا: مشارك من Body Bridge أو رد من ذكاء اصطناعي أو JSON أو CSV.';
 
   @override
   String get pasteAction => 'لصق';
@@ -2792,10 +2793,10 @@ class AppLocalizationsAr extends AppLocalizations {
   }
 
   @override
-  String get nothingToImport => 'لا يوجد هنا ما يمكن لـ GymMane استيراده';
+  String get nothingToImport => 'لا يوجد هنا ما يمكن لـ Body Bridge استيراده';
 
   @override
-  String get aiStepCopy => 'انسخ الطلب. يحتوي على قائمة تمارينك والتنسيق الذي يقرؤه GymMane.';
+  String get aiStepCopy => 'انسخ الطلب. يحتوي على قائمة تمارينك والتنسيق الذي يقرؤه Body Bridge.';
 
   @override
   String get aiStepAsk => 'الصقه في أي ذكاء اصطناعي وقل ما تريد: أيام في الأسبوع، الهدف، عدد الأسابيع.';
@@ -2936,7 +2937,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get shareIntroBody =>
-      'أرسله إلى شريكك أو صديق أو عائلتك. سيصلهم ملف صغير يُفتح في GymMane ويضيف الروتين بلمسة واحدة، مع مجموعاته وأوزانه.';
+      'أرسله إلى شريكك أو صديق أو عائلتك. سيصلهم ملف صغير يُفتح في Body Bridge ويضيف الروتين بلمسة واحدة، مع مجموعاته وأوزانه.';
 
   @override
   String get removedFromRoutine => 'أُزيل من الروتين';
