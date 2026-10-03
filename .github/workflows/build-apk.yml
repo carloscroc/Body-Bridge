@@ -177,6 +177,44 @@ jobs:
       - name: Test
         run: flutter test
 
+      # Firebase auth config is passed as --dart-define=FB_* flags ONLY when the
+      # FIREBASE_CONFIG_B64 repo secret exists; omitted otherwise (the app
+      # degrades gracefully to guest mode).
+      - name: Resolve Firebase dart-defines
+        id: fb
+        env:
+          FIREBASE_CONFIG_B64: ${{ secrets.FIREBASE_CONFIG_B64 }}
+        run: |
+          set -euo pipefail
+          if [ -n "${FIREBASE_CONFIG_B64:-}" ]; then
+            CONFIG_JSON="$(printf '%s' "$FIREBASE_CONFIG_B64" | base64 -d)"
+            ARGS="$(python3 - "$CONFIG_JSON" <<'PYEOF'
+          import json, sys
+
+          c = json.loads(sys.argv[1])
+          pairs = (
+              ('FB_API_KEY', 'apiKey'),
+              ('FB_APP_ID', 'appId'),
+              ('FB_SENDER_ID', 'messagingSenderId'),
+              ('FB_PROJECT_ID', 'projectId'),
+              ('FB_AUTH_DOMAIN', 'authDomain'),
+              ('FB_STORAGE_BUCKET', 'storageBucket'),
+          )
+          parts = []
+          for flag, key in pairs:
+              val = c.get(key)
+              if val:
+                  parts.append('--dart-define=' + flag + '=' + str(val))
+          print(' '.join(parts))
+          PYEOF
+          )"
+            echo 'Firebase FB_* dart-defines injected via --dart-define'
+            echo "args=$ARGS" >> "$GITHUB_OUTPUT"
+          else
+            echo 'building without Firebase dart-defines (guest-mode fallback)'
+            echo "args=" >> "$GITHUB_OUTPUT"
+          fi
+
       # ABI splits keep each APK small instead of one fat APK.
       # --dart-define=CONVEX_URL is injected ONLY when the CONVEX_URL repo
       # secret exists; omitted otherwise (the app degrades gracefully).
@@ -188,7 +226,7 @@ jobs:
           CONVEX_URL: ${{ secrets.CONVEX_URL }}
         run: |
           set -euo pipefail
-          ARGS=(flutter build apk --release --split-per-abi)
+          ARGS=(flutter build apk --release --split-per-abi ${{ steps.fb.outputs.args }})
           if [ -n "${CONVEX_URL:-}" ]; then
             ARGS+=(--dart-define=CONVEX_URL="$CONVEX_URL")
             echo 'CONVEX_URL injected via --dart-define'
@@ -200,15 +238,15 @@ jobs:
       - name: Rename APKs
         run: |
           cd build/app/outputs/flutter-apk
-          mv app-arm64-v8a-release.apk     GymMane-arm64-v8a.apk
-          mv app-armeabi-v7a-release.apk   GymMane-armeabi-v7a.apk
-          mv app-x86_64-release.apk        GymMane-x86_64.apk
+          mv app-arm64-v8a-release.apk     body-bridge-arm64-v8a.apk
+          mv app-armeabi-v7a-release.apk   body-bridge-armeabi-v7a.apk
+          mv app-x86_64-release.apk        body-bridge-x86_64.apk
 
       - name: Upload APK artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: gymmane-apks
-          path: build/app/outputs/flutter-apk/GymMane-*.apk
+          name: body-bridge-apks
+          path: build/app/outputs/flutter-apk/body-bridge-*.apk
           if-no-files-found: error
 
   release:
@@ -361,13 +399,51 @@ jobs:
           KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
           KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
         run: |
-          echo "$KEYSTORE_BASE64" | base64 -d > android/app/gymmane-release.jks
+          echo "$KEYSTORE_BASE64" | base64 -d > android/app/bodybridge-release.jks
           cat > android/key.properties <<EOF
           storePassword=$KEYSTORE_PASSWORD
           keyPassword=$KEY_PASSWORD
           keyAlias=$KEY_ALIAS
-          storeFile=gymmane-release.jks
+          storeFile=bodybridge-release.jks
           EOF
+
+      # Firebase auth config is passed as --dart-define=FB_* flags ONLY when the
+      # FIREBASE_CONFIG_B64 repo secret exists; omitted otherwise (the app
+      # degrades gracefully to guest mode).
+      - name: Resolve Firebase dart-defines
+        id: fb
+        env:
+          FIREBASE_CONFIG_B64: ${{ secrets.FIREBASE_CONFIG_B64 }}
+        run: |
+          set -euo pipefail
+          if [ -n "${FIREBASE_CONFIG_B64:-}" ]; then
+            CONFIG_JSON="$(printf '%s' "$FIREBASE_CONFIG_B64" | base64 -d)"
+            ARGS="$(python3 - "$CONFIG_JSON" <<'PYEOF'
+          import json, sys
+
+          c = json.loads(sys.argv[1])
+          pairs = (
+              ('FB_API_KEY', 'apiKey'),
+              ('FB_APP_ID', 'appId'),
+              ('FB_SENDER_ID', 'messagingSenderId'),
+              ('FB_PROJECT_ID', 'projectId'),
+              ('FB_AUTH_DOMAIN', 'authDomain'),
+              ('FB_STORAGE_BUCKET', 'storageBucket'),
+          )
+          parts = []
+          for flag, key in pairs:
+              val = c.get(key)
+              if val:
+                  parts.append('--dart-define=' + flag + '=' + str(val))
+          print(' '.join(parts))
+          PYEOF
+          )"
+            echo 'Firebase FB_* dart-defines injected via --dart-define'
+            echo "args=$ARGS" >> "$GITHUB_OUTPUT"
+          else
+            echo 'building without Firebase dart-defines (guest-mode fallback)'
+            echo "args=" >> "$GITHUB_OUTPUT"
+          fi
 
       # Reproducible build: version name AND code come entirely from pubspec.yaml
       # (1.0.0+1), exactly like F-Droid builds it. Do NOT pass --build-name or
@@ -384,7 +460,7 @@ jobs:
           CONVEX_URL: ${{ secrets.CONVEX_URL }}
         run: |
           set -euo pipefail
-          ARGS=(flutter build apk --release --split-per-abi --split-debug-info=build/symbols)
+          ARGS=(flutter build apk --release --split-per-abi --split-debug-info=build/symbols ${{ steps.fb.outputs.args }})
           if [ -n "${CONVEX_URL:-}" ]; then
             ARGS+=(--dart-define=CONVEX_URL="$CONVEX_URL")
             echo 'CONVEX_URL injected via --dart-define'
@@ -396,16 +472,16 @@ jobs:
       - name: Rename APKs
         run: |
           cd build/app/outputs/flutter-apk
-          mv app-arm64-v8a-release.apk     GymMane-arm64-v8a.apk
-          mv app-armeabi-v7a-release.apk   GymMane-armeabi-v7a.apk
-          mv app-x86_64-release.apk        GymMane-x86_64.apk
+          mv app-arm64-v8a-release.apk     body-bridge-arm64-v8a.apk
+          mv app-armeabi-v7a-release.apk   body-bridge-armeabi-v7a.apk
+          mv app-x86_64-release.apk        body-bridge-x86_64.apk
 
       - name: Publish GitHub Release
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ inputs.tag }}
-          name: GymMane ${{ inputs.tag }}
+          name: Body Bridge ${{ inputs.tag }}
           files: |
-            build/app/outputs/flutter-apk/GymMane-arm64-v8a.apk
-            build/app/outputs/flutter-apk/GymMane-armeabi-v7a.apk
-            build/app/outputs/flutter-apk/GymMane-x86_64.apk
+            build/app/outputs/flutter-apk/body-bridge-arm64-v8a.apk
+            build/app/outputs/flutter-apk/body-bridge-armeabi-v7a.apk
+            build/app/outputs/flutter-apk/body-bridge-x86_64.apk
