@@ -3,6 +3,7 @@ import 'dart:convert';
 
 import 'package:convex_flutter/convex_flutter.dart';
 import 'package:flutter/foundation.dart';
+import 'package:gymmane/services/convex_gateway.dart';
 
 /// Convex-backed account tier and capabilities, offline-first: without a
 /// CONVEX_URL, or while offline, the service stays dormant and reports free.
@@ -132,6 +133,16 @@ class EntitlementsService {
 
   static final EntitlementsService instance = EntitlementsService._();
 
+  // Test seam: every Convex touch routes through this gateway so tests can
+  // install a fake; production keeps the real ConvexClient singleton. This
+  // closes the seam gap the existing entitlements test file documents.
+  static ConvexGateway gateway = RustConvexGateway();
+
+  // Test knobs: how long _onToken waits for the auth-applied signal, and the
+  // single ensureUser retry's backoff before it gives up and degrades.
+  static Duration authSettleTimeout = const Duration(seconds: 10);
+  static Duration unauthenticatedRetryDelay = const Duration(milliseconds: 800);
+
   /// Empty by default, which keeps the service dormant (guest/free).
   static const String _convexUrl = String.fromEnvironment('CONVEX_URL');
 
@@ -139,8 +150,8 @@ class EntitlementsService {
 
   Entitlements _current = Entitlements.free;
   String? _latestToken;
-  AuthHandleWrapper? _authHandle;
-  SubscriptionHandle? _subHandle;
+  ConvexAuthHandle? _authHandle;
+  ConvexSubscription? _subHandle;
   StreamSubscription<String?>? _tokenSub;
   bool _ready = false;
   bool _provisioned = false;
@@ -179,7 +190,7 @@ class EntitlementsService {
     try {
       _authHandle?.dispose();
       _authHandle = null;
-      if (_ready) await ConvexClient.instance.clearAuth();
+      if (_ready) await gateway.clearAuth();
     } catch (e, st) {
       debugPrint('Convex clearAuth failed: ${_brief(e, st)}');
     }
@@ -202,9 +213,11 @@ class EntitlementsService {
   }
 
   Future<void> _init() async {
-    if (_convexUrl.isEmpty) return;
+    // A fake gateway (the test seam) is always safe to initialize; the real
+    // bridge stays dormant without a CONVEX_URL, exactly as before.
+    if (_convexUrl.isEmpty && gateway is RustConvexGateway) return;
     try {
-      await ConvexClient.initialize(
+      await gateway.initialize(
         ConvexConfig(
           deploymentUrl: _convexUrl,
           clientId: 'gymmane-flutter',
@@ -225,13 +238,28 @@ class EntitlementsService {
         return;
       }
       if (_authHandle == null) {
-        _authHandle = await ConvexClient.instance.setAuthWithRefresh(
+        _authHandle = await gateway.setAuthWithRefresh(
           fetchToken: _fetchToken,
           onAuthChange: (authenticated) {
             if (!authenticated) _degradeToFree();
           },
         );
         _provisioned = false; // fresh sign-in: ensureUser runs once
+      }
+      // The race: setAuthWithRefresh returns once the token fetcher is
+      // REGISTERED, but the authenticated reconnect lands later — ensureUser
+      // used to ride the pre-auth connection and the server rejected it with
+      // Unauthenticated. Wait (bounded) for the applied signal first; on
+      // timeout we still attempt one refresh, and the retry + degrade in
+      // _refresh contains the failure.
+      if (!gateway.isAuthenticated) {
+        final applied = await gateway.authState
+            .firstWhere((authenticated) => authenticated)
+            .timeout(authSettleTimeout, onTimeout: () => false);
+        if (!applied) {
+          debugPrint('Convex auth not confirmed after '
+              '${authSettleTimeout.inSeconds}s; attempting refresh anyway');
+        }
       }
       await _refresh();
     } on TimeoutException catch (e) {
@@ -249,14 +277,20 @@ class EntitlementsService {
   /// plus a live subscription. Any failure degrades to free.
   Future<void> _refresh() async {
     try {
-      final client = ConvexClient.instance;
       if (!_provisioned) {
-        await client.mutation(name: 'users:ensureUser', args: {});
+        try {
+          await gateway.mutation(name: 'users:ensureUser', args: {});
+        } catch (e) {
+          if (!'$e'.toLowerCase().contains('unauthenticated')) rethrow;
+          // One bounded retry: auth can land just after the first attempt.
+          await Future<void>.delayed(unauthenticatedRetryDelay);
+          await gateway.mutation(name: 'users:ensureUser', args: {});
+        }
         _provisioned = true;
       }
-      _apply(await client.query('entitlements:get', {}));
+      _apply(await gateway.query('entitlements:get', {}));
       _subHandle?.cancel();
-      _subHandle = await client.subscribe(
+      _subHandle = await gateway.subscribe(
         name: 'entitlements:get',
         args: {},
         onUpdate: _apply,
