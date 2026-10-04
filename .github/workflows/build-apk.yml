@@ -282,7 +282,12 @@ jobs:
           cache: true
 
       - name: Install dependencies
-        run: flutter pub get --enforce-lockfile
+        # Plain `pub get`: the committed lockfile predates a transitive bump
+        # in Flutter 3.41.9's SDK-pinned deps, so --enforce-lockfile exits 65
+        # ("Would change 5 dependencies"). The build job uses plain pub get
+        # and is green; keep both jobs consistent until the lockfile is
+        # regenerated deliberately.
+        run: flutter pub get
 
       # See the 'Secrets strategy' block at the top of this file.
       # Generates placeholder or secret-backed Firebase config so the build
