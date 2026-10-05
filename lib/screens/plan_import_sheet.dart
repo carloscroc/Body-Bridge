@@ -113,6 +113,18 @@ class _PlanImportSheetState extends State<_PlanImportSheet> {
   void _apply() {
     final result = fit.applyPlan(_plans, schedule: _schedule);
     final gc = context.gc;
+    if (result.blocked > 0) {
+      showNotchToast(
+        context,
+        t.routinesSkipped(result.blocked),
+        subtitle: result.routines > 0 ? t.routinesAdded(result.routines) : t.paywallRoutinesUpsell,
+        icon: PhosphorIconsRegular.lockSimple,
+        accent: gc.brass,
+      );
+      Navigator.of(context).pop();
+      fit.goPaywall();
+      return;
+    }
     showNotchToast(
       context,
       result.routines > 0 ? t.routinesAdded(result.routines) : t.nothingToImport,

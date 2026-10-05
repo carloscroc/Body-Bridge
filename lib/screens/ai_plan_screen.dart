@@ -27,6 +27,7 @@ class _AiPlanScreenState extends State<AiPlanScreen> {
   List<String> _missed = const [];
   int _added = 0;
   int _routines = 0;
+  int _blocked = 0;
   bool _unreadable = false;
   bool _format = false;
 
@@ -199,6 +200,11 @@ class _AiPlanScreenState extends State<AiPlanScreen> {
             Text(_missed.join(' · '),
                 style: AppTheme.f(12, weight: FontWeight.w500, color: gc.textTertiary, height: 1.4)),
           ],
+          if (_blocked > 0) ...[
+            const SizedBox(height: 8),
+            Text(t.routinesSkipped(_blocked),
+                style: AppTheme.f(12.5, weight: FontWeight.w600, color: gc.brass)),
+          ],
           if (good) ...[
             const SizedBox(height: 10),
             GestureDetector(
@@ -255,6 +261,7 @@ class _AiPlanScreenState extends State<AiPlanScreen> {
         _added = 0;
         _routines = 0;
         _missed = const [];
+        _blocked = 0;
       });
       return;
     }
@@ -264,6 +271,7 @@ class _AiPlanScreenState extends State<AiPlanScreen> {
       _added = outcome.added;
       _routines = outcome.routines;
       _missed = outcome.missed;
+      _blocked = outcome.blocked;
     });
   }
 }

@@ -310,10 +310,25 @@ class RoutinesScreen extends StatelessWidget {
         }
         final made = fit.applyTemplate(template);
         Navigator.pop(sheet);
-        if (made == 0 || !context.mounted) return;
+        if (!context.mounted) return;
+        if (made.made == 0) {
+          if (made.blocked > 0) {
+            // The state layer hit the cap mid-template (the fast-path above
+            // can be stale, e.g. after a share-into-app import).
+            showNotchToast(
+              context,
+              t.routinesSkipped(made.blocked),
+              subtitle: t.paywallRoutinesUpsell,
+              icon: PhosphorIconsRegular.lockSimple,
+              accent: context.gc.brass,
+            );
+            fit.goPaywall();
+          }
+          return;
+        }
         showNotchToast(
           context,
-          t.templateAdded(made),
+          t.templateAdded(made.made),
           subtitle: template.name,
           icon: PhosphorIconsFill.stack,
           accent: context.gc.sage,

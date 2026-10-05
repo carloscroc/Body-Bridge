@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:gymmane/catalog/program_templates.dart';
 import 'package:gymmane/constants/billing.dart';
 import 'package:gymmane/l10n/l10n.dart';
 import 'package:gymmane/models/workout.dart';
 import 'package:gymmane/screens/routines_screen.dart';
 import 'package:gymmane/services/entitlements_service.dart';
 import 'package:gymmane/services/local_store.dart';
+import 'package:gymmane/services/plan_share.dart';
 import 'package:gymmane/state/account_gate.dart';
 import 'package:gymmane/state/fit_state.dart';
 import 'package:gymmane/theme/app_theme.dart';
@@ -205,6 +207,96 @@ void main() {
 
       expect(fit.route, 'paywall', reason: 'mandatory auth: signed-out has no unlimited_routines');
       expect(fit.routines.length, kFreeRoutineCap + 2, reason: 'no routine was created');
+    });
+  });
+
+  group('state-layer FREE cap: applyPlan / applyTemplate (import bypass regression)', () {
+    setUp(() {
+      // The file-level setUp clears routines but not the weekly plan; the
+      // template tests below schedule weekdays, so keep them isolated.
+      fit.weeklyPlan.clear();
+    });
+
+    List<PlanRoutine> plansWithNames(List<String> names) => [
+          for (final name in names)
+            ...parsePlan('{"routines": [{"name": "$name", "exercises": ["Barbell Bench Press"]}]}'),
+        ];
+
+    test('free tier below cap: applyPlan creates only up to kFreeRoutineCap, rest blocked', () {
+      AccountGate.install(FakeGate(AccountTier.free));
+
+      final result = fit.applyPlan(plansWithNames(['A', 'B', 'C', 'D', 'E']));
+
+      expect(result.routines, kFreeRoutineCap, reason: 'creation stops exactly at the cap');
+      expect(result.blocked, 2, reason: 'the plans past the cap are reported as skipped');
+      expect(result.added, kFreeRoutineCap);
+      expect(fit.routines.length, kFreeRoutineCap);
+    });
+
+    test('free tier at cap: applyPlan creates nothing, schedules nothing, blocked count correct', () {
+      AccountGate.install(FakeGate(AccountTier.free));
+      for (var i = 0; i < kFreeRoutineCap; i++) {
+        fit.createRoutine('Plan $i');
+      }
+
+      final result = fit.applyPlan(plansWithNames(['X', 'Y']), schedule: true);
+
+      expect(result.routines, 0);
+      expect(result.blocked, 2);
+      expect(fit.routines.length, kFreeRoutineCap, reason: 'the import must not overshoot the cap');
+      expect(fit.weeklyPlan, isEmpty, reason: 'blocked plans must not claim weekdays either');
+    });
+
+    test('identical routine reuse at cap stays allowed: no creation, no blocked count', () {
+      AccountGate.install(FakeGate(AccountTier.free));
+      fit.applyPlan(plansWithNames(['Same']));
+
+      final result = fit.applyPlan(plansWithNames(['Same']), schedule: true);
+
+      expect(result.routines, 0, reason: 'the identical routine is reused, not recreated');
+      expect(result.blocked, 0, reason: 'reuse is not a creation, so the cap never bites');
+      expect(fit.routines.length, 1, reason: 'the reused routine is the only one');
+    });
+
+    test('free tier below cap: applyTemplate creates up to the cap and reports the rest', () {
+      AccountGate.install(FakeGate(AccountTier.free));
+      fit.createRoutine('Plan 0');
+      fit.createRoutine('Plan 1');
+      final template = kProgramTemplates.firstWhere((t) => t.id == 'upperlower');
+
+      final result = fit.applyTemplate(template);
+
+      expect(result.made, 1, reason: 'only one routine slot was left');
+      expect(result.blocked, 3, reason: 'upperlower has 4 distinct days; 3 are skipped');
+      expect(fit.routines.length, kFreeRoutineCap);
+    });
+
+    test('free tier at cap: applyTemplate creates nothing', () {
+      AccountGate.install(FakeGate(AccountTier.free));
+      for (var i = 0; i < kFreeRoutineCap; i++) {
+        fit.createRoutine('Plan $i');
+      }
+      final template = kProgramTemplates.firstWhere((t) => t.id == 'fullbody');
+
+      final result = fit.applyTemplate(template);
+
+      expect(result.made, 0);
+      expect(result.blocked, 1, reason: 'fullbody repeats one day shape: one skipped routine');
+      expect(fit.routines.length, kFreeRoutineCap, reason: 'no ghost routines');
+      expect(fit.weeklyPlan, isEmpty, reason: 'a fully blocked template schedules nothing');
+    });
+
+    test('unlimited tier: applyPlan and applyTemplate are unaffected', () {
+      AccountGate.install(FakeGate(AccountTier.basic));
+
+      final plan = fit.applyPlan(plansWithNames(['A', 'B', 'C', 'D', 'E']));
+      expect(plan.routines, 5);
+      expect(plan.blocked, 0);
+
+      final template = fit.applyTemplate(kProgramTemplates.firstWhere((t) => t.id == 'upperlower'));
+      expect(template.made, 4);
+      expect(template.blocked, 0);
+      expect(fit.routines.length, 9);
     });
   });
 }

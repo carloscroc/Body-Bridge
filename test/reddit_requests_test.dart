@@ -298,7 +298,7 @@ void main() {
 
     test('aplicar un plan crea sus rutinas agrupadas y con sus series', () {
       final made = fit.applyTemplate(kProgramTemplates.firstWhere((x) => x.id == 'stronglifts'));
-      expect(made, 2);
+      expect(made.made, 2);
       expect(fit.routineGroups, ['StrongLifts 5×5']);
       final a = fit.routinesInGroup('StrongLifts 5×5').first;
       expect(a.exerciseIds.length, 3);
