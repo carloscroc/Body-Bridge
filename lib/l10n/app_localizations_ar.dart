@@ -1667,7 +1667,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get freeForeverWhy => 'لا اشتراك ولا إعلانات ولا ميزات محجوبة بالدفع.';
 
   @override
-  String get fullyOffline => '100% دون اتصال';
+  String get fullyOffline => 'يعمل دون اتصال أولاً';
 
   @override
   String get fullyOfflineWhy => 'تدرّب في أي مكان. يعمل دون اتصال وتبقى بياناتك على هذا الهاتف.';
@@ -1736,7 +1736,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get welcomeKicker => 'مرحبًا بك في';
 
   @override
-  String get welcomeBlurb => 'كل شيء يبقى على هاتفك. لا حساب ولا إنترنت ولا دفع.';
+  String get welcomeBlurb => 'كل شيء يُحفظ على هذا الهاتف، ويُبقي حسابك التطبيق مفتوحًا.';
 
   @override
   String get welcomeStart => 'ابدأ';
@@ -2778,6 +2778,17 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get addToMyRoutines => 'إضافة إلى روتيناتي';
+
+  @override
+  String routinesSkipped(num n) {
+    String _temp0 = intl.Intl.pluralLogic(
+      n,
+      locale: localeName,
+      other: 'تم تخطي $n روتينات',
+      one: 'تم تخطي روتين واحد',
+    );
+    return '$_temp0';
+  }
 
   @override
   String routinesAdded(int n) {

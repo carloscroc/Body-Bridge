@@ -1723,7 +1723,7 @@ class AppLocalizationsRu extends AppLocalizations {
   String get freeForeverWhy => 'Без подписок, без рекламы, ничего не спрятано за платной стеной.';
 
   @override
-  String get fullyOffline => 'Полностью офлайн';
+  String get fullyOffline => 'Сначала офлайн';
 
   @override
   String get fullyOfflineWhy => 'Тренируйтесь где угодно. Работает офлайн, данные остаются на этом телефоне.';
@@ -1799,7 +1799,8 @@ class AppLocalizationsRu extends AppLocalizations {
   String get welcomeKicker => 'ДОБРО ПОЖАЛОВАТЬ В';
 
   @override
-  String get welcomeBlurb => 'Всё остаётся на твоём телефоне. Без аккаунта, без интернета, без оплаты.';
+  String get welcomeBlurb =>
+      'Все данные хранятся на этом телефоне, а аккаунт держит приложение разблокированным.';
 
   @override
   String get welcomeStart => 'НАЧАТЬ';
@@ -2871,6 +2872,19 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get addToMyRoutines => 'Добавить к моим тренировкам';
+
+  @override
+  String routinesSkipped(num n) {
+    String _temp0 = intl.Intl.pluralLogic(
+      n,
+      locale: localeName,
+      other: 'пропущено $n программы',
+      many: 'пропущено $n программ',
+      few: 'пропущено $n программы',
+      one: 'пропущена $n программа',
+    );
+    return '$_temp0';
+  }
 
   @override
   String routinesAdded(int n) {

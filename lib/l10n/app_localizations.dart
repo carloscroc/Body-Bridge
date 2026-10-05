@@ -3041,7 +3041,7 @@ abstract class AppLocalizations {
   /// No description provided for @fullyOffline.
   ///
   /// In en, this message translates to:
-  /// **'Fully offline'**
+  /// **'Offline-first'**
   String get fullyOffline;
 
   /// No description provided for @fullyOfflineWhy.
@@ -3161,7 +3161,7 @@ abstract class AppLocalizations {
   /// No description provided for @welcomeBlurb.
   ///
   /// In en, this message translates to:
-  /// **'Everything stays on your phone. No account, no internet, nothing to pay.'**
+  /// **'Everything is stored right on this phone — your account keeps the app unlocked.'**
   String get welcomeBlurb;
 
   /// No description provided for @welcomeStart.
@@ -4999,6 +4999,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Add to my routines'**
   String get addToMyRoutines;
+
+  /// No description provided for @routinesSkipped.
+  ///
+  /// In en, this message translates to:
+  /// **'{n, plural, =1{{n} routine skipped} other{{n} routines skipped}}'**
+  String routinesSkipped(num n);
 
   /// No description provided for @routinesAdded.
   ///

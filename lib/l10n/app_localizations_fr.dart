@@ -1680,7 +1680,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get freeForeverWhy => 'Pas d’abonnement, pas de pub, rien de bloqué derrière un paiement.';
 
   @override
-  String get fullyOffline => '100 % hors ligne';
+  String get fullyOffline => 'D\'abord hors ligne';
 
   @override
   String get fullyOfflineWhy =>
@@ -1750,7 +1750,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get welcomeKicker => 'BIENVENUE SUR';
 
   @override
-  String get welcomeBlurb => 'Tout reste sur ton téléphone. Aucun compte, pas d’Internet, rien à payer.';
+  String get welcomeBlurb => 'Tout est enregistré sur ce téléphone ; votre compte garde l’app déverrouillée.';
 
   @override
   String get welcomeStart => 'COMMENCER';
@@ -2796,6 +2796,17 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get addToMyRoutines => 'Ajouter à mes routines';
+
+  @override
+  String routinesSkipped(num n) {
+    String _temp0 = intl.Intl.pluralLogic(
+      n,
+      locale: localeName,
+      other: '$n routines ignorées',
+      one: '$n routine ignorée',
+    );
+    return '$_temp0';
+  }
 
   @override
   String routinesAdded(int n) {

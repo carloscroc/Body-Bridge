@@ -606,10 +606,12 @@ class FitState extends FitCore
 
   Exercise? matchExerciseByName(String name) => matchExercise(name, allExercises);
 
-  int applyTemplate(ProgramTemplate template) {
+  ({int made, int blocked}) applyTemplate(ProgramTemplate template) {
     final planWasEmpty = weeklyPlan.isEmpty;
-    var made = 0;
+    final tier = AccountGate.instance.snapshot.tier;
+    var made = 0, blocked = 0;
     final sameDay = <String, String>{};
+    final blockedShapes = <String>{};
     for (final day in template.days) {
       final ids = <String, int>{};
       for (final (name, sets) in day.exercises) {
@@ -624,6 +626,15 @@ class FitState extends FitCore
         if (planWasEmpty && day.weekday != null) weeklyPlan[day.weekday!] = twin;
         continue;
       }
+      if (blockedShapes.contains(key)) continue;
+      // FREE cap holds for every bulk creation path, not just the screen
+      // buttons: imports and templates stop at kFreeRoutineCap and report
+      // what was skipped instead of overshooting.
+      if (!routineCreationAllowed(tier, routines.length)) {
+        blockedShapes.add(key);
+        blocked++;
+        continue;
+      }
       final id = createRoutine(day.name);
       sameDay[key] = id;
       setRoutineGroup(id, template.name);
@@ -634,11 +645,11 @@ class FitState extends FitCore
       if (planWasEmpty && day.weekday != null) weeklyPlan[day.weekday!] = id;
       made++;
     }
-    if (made == 0) return 0;
+    if (made == 0) return (made: 0, blocked: blocked);
     persistNow();
     syncTrainReminder();
     notifyListeners();
-    return made;
+    return (made: made, blocked: blocked);
   }
 
   static const planTemplate =
@@ -738,11 +749,12 @@ class FitState extends FitCore
       r.exerciseIds.length == ids.length &&
       [for (var i = 0; i < ids.length; i++) r.exerciseIds[i] == ids[i]].every((x) => x);
 
-  ({int routines, int added, List<String> missed}) applyPlan(
+  ({int routines, int added, List<String> missed, int blocked}) applyPlan(
     List<PlanRoutine> plans, {
     bool schedule = false,
   }) {
-    var made = 0, added = 0;
+    final tier = AccountGate.instance.snapshot.tier;
+    var made = 0, added = 0, blocked = 0;
     final missed = <String>[];
     for (final plan in plans) {
       final picked = <(Exercise, PlanItem)>[];
@@ -759,25 +771,33 @@ class FitState extends FitCore
       final name = plan.name.isEmpty ? t.newRoutineName : plan.name;
       final ids = [for (final p in picked) p.$1.id];
       final existing = routines.where((r) => _sameRoutine(r, name, ids) && r.group == plan.group).firstOrNull;
-      final id = existing?.id ?? createRoutine(name);
+      String? id = existing?.id;
       if (existing == null) {
-        setRoutineGroup(id, plan.group);
-        for (final (ex, item) in picked) {
-          toggleRoutineExercise(id, ex.id);
-          final sets = _plannedFrom(item);
-          if (sets.isNotEmpty) {
-            setPlannedSets(id, ex.id, sets);
-          } else if (item.sets != null) {
-            setRoutineSetCount(id, ex.id, item.sets!);
+        // FREE cap holds for every bulk creation path: imports stop at
+        // kFreeRoutineCap and report what was skipped instead of overshooting.
+        // An identical existing routine is a reuse, not a creation.
+        if (routineCreationAllowed(tier, routines.length)) {
+          id = createRoutine(name);
+          setRoutineGroup(id, plan.group);
+          for (final (ex, item) in picked) {
+            toggleRoutineExercise(id, ex.id);
+            final sets = _plannedFrom(item);
+            if (sets.isNotEmpty) {
+              setPlannedSets(id, ex.id, sets);
+            } else if (item.sets != null) {
+              setRoutineSetCount(id, ex.id, item.sets!);
+            }
+            if (item.superset) toggleChain(id, ex.id);
+            final rest = item.restSec;
+            if (rest != null && !hasCustomRest(ex.id)) setExerciseRest(ex.id, rest);
           }
-          if (item.superset) toggleChain(id, ex.id);
-          final rest = item.restSec;
-          if (rest != null && !hasCustomRest(ex.id)) setExerciseRest(ex.id, rest);
+          made++;
+          added += picked.length;
+        } else {
+          blocked++;
         }
-        made++;
-        added += picked.length;
       }
-      if (schedule) {
+      if (schedule && id != null) {
         for (final d in plan.days) {
           weeklyPlan[d] = id;
         }
@@ -788,7 +808,7 @@ class FitState extends FitCore
       syncTrainReminder();
       notifyListeners();
     }
-    return (routines: made, added: added, missed: missed);
+    return (routines: made, added: added, missed: missed, blocked: blocked);
   }
 
   List<PlannedSet> _plannedFrom(PlanItem item) {

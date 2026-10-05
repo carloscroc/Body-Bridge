@@ -1676,7 +1676,7 @@ class AppLocalizationsTr extends AppLocalizations {
   String get freeForeverWhy => 'Abonelik yok, reklam yok, ücret duvarı yok.';
 
   @override
-  String get fullyOffline => '%100 çevrimdışı';
+  String get fullyOffline => 'Önce çevrimdışı';
 
   @override
   String get fullyOfflineWhy =>
@@ -1746,7 +1746,7 @@ class AppLocalizationsTr extends AppLocalizations {
   String get welcomeKicker => 'HOŞ GELDİN';
 
   @override
-  String get welcomeBlurb => 'Her şey telefonunda kalır. Hesap yok, internet yok, ödeme yok.';
+  String get welcomeBlurb => 'Her şey bu telefonda saklanır; uygulamanın kilidini hesabın açar.';
 
   @override
   String get welcomeStart => 'BAŞLA';
@@ -2787,6 +2787,17 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get addToMyRoutines => 'Rutinlerime ekle';
+
+  @override
+  String routinesSkipped(num n) {
+    String _temp0 = intl.Intl.pluralLogic(
+      n,
+      locale: localeName,
+      other: '$n rutin atlandı',
+      one: '$n rutin atlandı',
+    );
+    return '$_temp0';
+  }
 
   @override
   String routinesAdded(int n) {
