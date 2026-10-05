@@ -1628,7 +1628,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get fullyOffline => '100%オフライン';
 
   @override
-  String get fullyOfflineWhy => 'アカウントもサーバーも不要。ワークアウトデータはこの端末から出ません。';
+  String get fullyOfflineWhy => 'いつでもどこでもトレーニング。オフラインで動作し、データはこの端末に保存されます。';
 
   @override
   String get yoursToTake => 'データはあなたのもの';
@@ -2937,7 +2937,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get accountRowGuest => 'サインインまたはアカウント作成';
 
   @override
-  String get accountGuestBlurb => 'アカウントを作成するとプレミアム機能を利用できます。';
+  String get accountGuestBlurb => 'Body Bridge を使うには無料アカウントを作成してください。';
 
   @override
   String accountSignedInAs(String email) {
@@ -2970,6 +2970,15 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get authFailedGeneric => 'リクエストを完了できませんでした。';
+
+  @override
+  String get authWallOfflineTitle => 'Body Bridge に接続できません';
+
+  @override
+  String get authWallOfflineBody => 'インターネット接続を確認して、もう一度お試しください。';
+
+  @override
+  String get authWallRetry => '再試行';
 
   @override
   String get tierFree => 'FREE';

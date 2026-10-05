@@ -1641,7 +1641,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get fullyOffline => '100% 오프라인';
 
   @override
-  String get fullyOfflineWhy => '계정도 서버도 없습니다. 운동 데이터는 이 휴대전화 밖으로 나가지 않습니다.';
+  String get fullyOfflineWhy => '어디서든 운동하세요. 오프라인에서 작동하며 데이터는 이 휴대폰에 저장됩니다.';
 
   @override
   String get yoursToTake => '데이터는 사용자의 것입니다';
@@ -2952,7 +2952,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get accountRowGuest => '로그인 또는 계정 만들기';
 
   @override
-  String get accountGuestBlurb => '계정을 만들면 프리미엄 혜택을 그대로 유지할 수 있어요.';
+  String get accountGuestBlurb => 'Body Bridge를 사용하려면 무료 계정을 만드세요.';
 
   @override
   String accountSignedInAs(String email) {
@@ -2985,6 +2985,15 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get authFailedGeneric => '요청을 완료할 수 없습니다.';
+
+  @override
+  String get authWallOfflineTitle => 'Body Bridge에 연결할 수 없어요';
+
+  @override
+  String get authWallOfflineBody => '인터넷 연결을 확인하고 다시 시도해 주세요.';
+
+  @override
+  String get authWallRetry => '다시 시도';
 
   @override
   String get tierFree => 'FREE';

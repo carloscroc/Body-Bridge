@@ -1613,7 +1613,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get fullyOffline => '完全离线';
 
   @override
-  String get fullyOfflineWhy => '无账号、无服务器。';
+  String get fullyOfflineWhy => '随时随地训练。支持离线使用，数据保存在本手机上。';
 
   @override
   String get yoursToTake => '数据归你所有';
@@ -2898,7 +2898,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get accountRowGuest => '登录或创建账户';
 
   @override
-  String get accountGuestBlurb => '创建账户，绑定你的高级版权益。';
+  String get accountGuestBlurb => '创建免费账户，即可使用 Body Bridge。';
 
   @override
   String accountSignedInAs(String email) {
@@ -2931,6 +2931,15 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get authFailedGeneric => '无法完成该请求。';
+
+  @override
+  String get authWallOfflineTitle => '无法连接 Body Bridge';
+
+  @override
+  String get authWallOfflineBody => '请检查网络连接后重试。';
+
+  @override
+  String get authWallRetry => '重试';
 
   @override
   String get tierFree => 'FREE';
@@ -4625,7 +4634,7 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
   String get fullyOffline => '100% 離線';
 
   @override
-  String get fullyOfflineWhy => '不需帳號、不連伺服器。你的訓練資料永遠不會離開這支手機。';
+  String get fullyOfflineWhy => '隨時隨地訓練。支援離線使用，資料保存在本手機上。';
 
   @override
   String get yoursToTake => '資料屬於你';
@@ -5933,7 +5942,7 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
   String get accountRowGuest => '登入或建立帳號';
 
   @override
-  String get accountGuestBlurb => '建立帳號，綁定你的進階版權益。';
+  String get accountGuestBlurb => '建立免費帳號，即可使用 Body Bridge。';
 
   @override
   String accountSignedInAs(String email) {
@@ -5966,6 +5975,15 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
 
   @override
   String get authFailedGeneric => '無法完成該請求。';
+
+  @override
+  String get authWallOfflineTitle => '無法連線至 Body Bridge';
+
+  @override
+  String get authWallOfflineBody => '請檢查網路連線後再試一次。';
+
+  @override
+  String get authWallRetry => '重試';
 
   @override
   String get tierFree => 'FREE';

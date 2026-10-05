@@ -48,7 +48,7 @@ void main() {
   });
 
   tearDown(() {
-    AccountGate.install(GuestAccountGate());
+    AccountGate.install(SignedOutGate());
     fit.resetRoute('home');
   });
 

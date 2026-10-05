@@ -2,11 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:gymmane/app/gymmane_app.dart';
 import 'package:gymmane/state/fit_state.dart';
+import 'package:gymmane/state/account_state.dart';
 import 'package:phosphoricons_flutter/phosphoricons_flutter.dart';
 
 void main() {
   testWidgets('TrainScreen step 2 displays reset picks button and toggles selection', (tester) async {
     fit.onboarded = true;
+    account.debugSetWarmedUp();
+    // trainer_features (the + custom-exercise button) is an advanced
+    // capability; the pre-mandatory-auth test only saw it through the old
+    // guest freebie, which is gone.
+    account.debugSetPhase(AccountPhase.signedInAdvanced);
     fit.selectedMuscles.clear();
     fit.selectedMuscles.addAll(['chest', 'triceps']);
     fit.trainContinue();

@@ -31,4 +31,4 @@ class FakeAccountState {
   Future<void> dispose() => statusesController.close();
 }
 
-enum FakeAccountStatus { signedOut, signedInFree, signedInBasic, signedInAdvanced, signedInEnterprise }
+enum FakeAccountStatus { signedOut, signedInFree, signedInBasic, signedInAdvanced, signedInEnterprise, error }
