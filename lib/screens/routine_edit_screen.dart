@@ -6,6 +6,7 @@ import '../catalog/exercise_catalog.dart';
 import '../l10n/l10n.dart';
 import '../models/exercise.dart';
 import '../models/workout.dart';
+import '../state/account_gate.dart';
 import '../state/fit_state.dart';
 import '../theme/app_colors.dart';
 import '../theme/app_theme.dart';
@@ -13,6 +14,7 @@ import '../widgets/dialogs.dart';
 import '../widgets/exercise_media.dart';
 import '../widgets/ruler_picker.dart';
 import '../widgets/glass.dart';
+import '../widgets/premium_gate.dart';
 import '../widgets/routine_folder.dart';
 import '../widgets/liquid_notch.dart';
 import '../widgets/set_kind.dart';
@@ -185,7 +187,7 @@ class _RoutineEditScreenState extends State<RoutineEditScreen> {
             button: true,
             label: t.duplicateRoutine,
             child: GestureDetector(
-              onTap: () => fit.openRoutine(fit.duplicateRoutine(_id)),
+              onTap: () => _duplicateGuarded(context),
               child: Padding(
                 padding: const EdgeInsets.all(6),
                 child: Icon(PhosphorIconsRegular.copySimple, size: 19, color: gc.textTertiary),
@@ -402,6 +404,26 @@ class _RoutineEditScreenState extends State<RoutineEditScreen> {
             ? fit.distanceUnit
             : '';
     return unit.isEmpty ? parts.join(' · ') : '${parts.join(' · ')} $unit';
+  }
+
+  /// FREE cap at this second creation boundary too: duplicating from inside
+  /// the editor must overshoot no more than duplicating from the list.
+  bool _canDuplicate(BuildContext context) =>
+      routineCreationAllowed(context.accountGate.snapshot.tier, fit.routines.length);
+
+  void _duplicateGuarded(BuildContext context) {
+    if (!_canDuplicate(context)) {
+      showNotchToast(
+        context,
+        t.paywallRoutinesUpsell,
+        icon: PhosphorIconsRegular.lockSimple,
+        accent: context.gc.brass,
+      );
+      fit.goPaywall();
+      return;
+    }
+    final id = fit.duplicateRoutine(_id);
+    if (id.isNotEmpty) fit.openRoutine(id);
   }
 
   void _remove(Exercise ex) {
