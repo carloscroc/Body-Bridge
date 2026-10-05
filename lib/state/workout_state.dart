@@ -1010,6 +1010,9 @@ mixin WorkoutState on FitCore, SettingsState, LibraryState, PlacesState, StatsSt
   String saveSessionAsRoutine() {
     final s = session;
     if (s == null || s.exercises.isEmpty) return '';
+    // FREE cap: the summary save is a single-routine creation boundary, so it
+    // respects the cap like New/Duplicate (UI guards) and imports (state).
+    if (!routineCreationAllowed(AccountGate.instance.snapshot.tier, routines.length)) return '';
     final id = createRoutine(t.newRoutineName);
     for (final ex in s.exercises) {
       if (exerciseById(ex.id) == null) continue;

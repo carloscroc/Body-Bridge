@@ -5,6 +5,8 @@ import 'package:gymmane/constants/billing.dart';
 import 'package:gymmane/l10n/l10n.dart';
 import 'package:gymmane/models/workout.dart';
 import 'package:gymmane/screens/routines_screen.dart';
+import 'package:gymmane/screens/routine_edit_screen.dart';
+import 'package:gymmane/screens/session_screen.dart';
 import 'package:gymmane/services/entitlements_service.dart';
 import 'package:gymmane/services/local_store.dart';
 import 'package:gymmane/services/plan_share.dart';
@@ -297,6 +299,162 @@ void main() {
       expect(template.made, 4);
       expect(template.blocked, 0);
       expect(fit.routines.length, 9);
+    });
+  });
+
+  group('FREE cap: saveSessionAsRoutine (summary save path)', () {
+    // One picked exercise with one completed working set, then the summary
+    // flow the SessionScreen "Save as routine" button sits behind.
+    void startAndFinishSession() {
+      fit.sessionPicks.clear();
+      fit.sessionPicks.add('EIeI8Vf');
+      fit.startSession();
+      expect(fit.session, isNotNull);
+      fit.toggleSet(0, 0);
+      fit.finishSession();
+      expect(fit.isSessionComplete, isTrue);
+    }
+
+    test('free at cap: saving the session as a routine is blocked', () {
+      AccountGate.install(FakeGate(AccountTier.free));
+      for (var i = 0; i < kFreeRoutineCap; i++) {
+        fit.createRoutine('Plan $i');
+      }
+      startAndFinishSession();
+
+      expect(
+        fit.saveSessionAsRoutine(),
+        isEmpty,
+        reason: 'the summary save is a creation path and must respect the cap',
+      );
+      expect(fit.routines.length, kFreeRoutineCap);
+    });
+
+    test('free below cap: saving the session creates one routine with the session exercises', () {
+      AccountGate.install(FakeGate(AccountTier.free));
+      fit.createRoutine('Plan 0');
+      startAndFinishSession();
+
+      final id = fit.saveSessionAsRoutine();
+
+      expect(id, isNotEmpty);
+      expect(fit.routines.length, 2, reason: 'the save fills the last free slot');
+      expect(fit.routines.firstWhere((r) => r.id == id).exerciseIds, ['EIeI8Vf'],
+          reason: 'the saved routine mirrors the session');
+    });
+
+    test('unlimited tier: saving the session as a routine is unaffected', () {
+      AccountGate.install(FakeGate(AccountTier.basic));
+      for (var i = 0; i < kFreeRoutineCap + 2; i++) {
+        fit.createRoutine('Plan $i');
+      }
+      startAndFinishSession();
+
+      expect(fit.saveSessionAsRoutine(), isNotEmpty);
+      expect(fit.routines.length, kFreeRoutineCap + 3);
+    });
+  });
+
+  group('FREE cap: editor duplicate + save-as-routine buttons (widget)', () {
+    Future<void> pumpScreen(WidgetTester tester, Widget child, AccountGate gate) async {
+      await tester.pumpWidget(
+        MaterialApp(
+          theme: AppTheme.dark,
+          localizationsDelegates: AppLocalizations.localizationsDelegates,
+          supportedLocales: AppLocalizations.supportedLocales,
+          home: PremiumGate(
+            gate: gate,
+            child: Scaffold(body: child),
+          ),
+        ),
+      );
+      await tester.pump(const Duration(milliseconds: 300));
+    }
+
+    // Flush the 400ms save debounce so no Timer is pending at teardown.
+    Future<void> flushTimers(WidgetTester tester) async {
+      await tester.pumpAndSettle();
+      await tester.pump(const Duration(seconds: 1));
+    }
+
+    testWidgets('the editor duplicate button routes to the paywall at the cap', (tester) async {
+      final gate = FakeGate(AccountTier.free);
+      AccountGate.install(gate);
+      for (var i = 0; i < kFreeRoutineCap; i++) {
+        fit.createRoutine('Plan $i');
+      }
+      fit.openRoutine(fit.routines.first.id);
+
+      await pumpScreen(tester, const RoutineEditScreen(), gate);
+      await tester.tap(find.bySemanticsLabel(t.duplicateRoutine));
+      await flushTimers(tester);
+
+      expect(fit.routines.length, kFreeRoutineCap, reason: 'the editor copy must not overshoot the cap');
+      expect(fit.route, 'paywall', reason: 'blocked duplicates land on the paywall like the list copy');
+    });
+
+    testWidgets('the editor duplicate button still copies under the cap', (tester) async {
+      final gate = FakeGate(AccountTier.free);
+      AccountGate.install(gate);
+      fit.createRoutine('Plan 0');
+      final originalId = fit.routines.first.id;
+      fit.openRoutine(originalId);
+
+      await pumpScreen(tester, const RoutineEditScreen(), gate);
+      await tester.tap(find.bySemanticsLabel(t.duplicateRoutine));
+      await flushTimers(tester);
+
+      expect(fit.routines.length, 2, reason: '2nd routine is still inside the free cap');
+      expect(fit.route, 'routine-edit', reason: 'the editor follows the fresh copy');
+      expect(fit.activeRoutineId, isNot(originalId));
+    });
+
+    testWidgets('save-as-routine after finishing a session routes to the paywall at the cap',
+        (tester) async {
+      final gate = FakeGate(AccountTier.free);
+      AccountGate.install(gate);
+      for (var i = 0; i < kFreeRoutineCap; i++) {
+        fit.createRoutine('Plan $i');
+      }
+      fit.sessionPicks.clear();
+      fit.sessionPicks.add('EIeI8Vf');
+      fit.startSession();
+      fit.toggleSet(0, 0);
+      fit.finishSession();
+
+      await pumpScreen(tester, const SessionScreen(), gate);
+      final saveBtn = find.byWidgetPredicate((w) => w is GhostButton && w.label == t.saveAsRoutine);
+      await tester.ensureVisible(saveBtn);
+      await tester.tap(saveBtn);
+      await flushTimers(tester);
+
+      expect(fit.routines.length, kFreeRoutineCap, reason: 'no routine may leak past the cap');
+      expect(fit.route, 'paywall', reason: 'the blocked save lands on the paywall');
+    });
+
+    testWidgets('save-as-routine after finishing a session works under the cap', (tester) async {
+      final gate = FakeGate(AccountTier.free);
+      AccountGate.install(gate);
+      fit.createRoutine('Plan 0');
+      fit.sessionPicks.clear();
+      fit.sessionPicks.add('EIeI8Vf');
+      fit.startSession();
+      fit.toggleSet(0, 0);
+      fit.finishSession();
+
+      await pumpScreen(tester, const SessionScreen(), gate);
+      final saveBtn = find.byWidgetPredicate((w) => w is GhostButton && w.label == t.saveAsRoutine);
+      await tester.ensureVisible(saveBtn);
+      await tester.tap(saveBtn);
+      await flushTimers(tester);
+
+      expect(fit.routines.length, 2, reason: 'the save fills the last free slot');
+      expect(fit.route, 'session', reason: 'the summary stays put on success');
+      expect(
+        fit.routines.any((r) => r.exerciseIds.contains('EIeI8Vf')),
+        isTrue,
+        reason: 'the saved routine carries the session exercise',
+      );
     });
   });
 }

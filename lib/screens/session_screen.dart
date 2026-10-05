@@ -6,6 +6,7 @@ import '../l10n/l10n.dart';
 import '../models/exercise.dart';
 import '../models/live_session.dart';
 import '../models/workout.dart';
+import '../state/account_gate.dart';
 import '../state/fit_state.dart';
 import '../theme/app_colors.dart';
 import '../theme/app_theme.dart';
@@ -15,6 +16,7 @@ import '../widgets/entrance.dart';
 import '../widgets/exercise_media.dart';
 import '../widgets/glass.dart';
 import '../widgets/liquid_notch.dart';
+import '../widgets/premium_gate.dart';
 import '../widgets/set_kind.dart';
 import '../widgets/share_cards.dart';
 import '../widgets/rolling_text.dart';
@@ -1201,6 +1203,17 @@ class SessionScreen extends StatelessWidget {
                 label: t.saveAsRoutine,
                 icon: PhosphorIconsRegular.listChecks,
                 onTap: () {
+                  if (!routineCreationAllowed(
+                      context.accountGate.snapshot.tier, fit.routines.length)) {
+                    showNotchToast(
+                      context,
+                      t.paywallRoutinesUpsell,
+                      icon: PhosphorIconsRegular.lockSimple,
+                      accent: gc.brass,
+                    );
+                    fit.goPaywall();
+                    return;
+                  }
                   if (fit.saveSessionAsRoutine().isEmpty) return;
                   showNotchToast(context, t.savedAsRoutine,
                       icon: PhosphorIconsFill.listChecks, accent: gc.sage);
