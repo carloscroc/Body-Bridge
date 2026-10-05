@@ -1610,7 +1610,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get freeForeverWhy => '无订阅、无广告、无付费功能。';
 
   @override
-  String get fullyOffline => '完全离线';
+  String get fullyOffline => '离线优先';
 
   @override
   String get fullyOfflineWhy => '随时随地训练。支持离线使用，数据保存在本手机上。';
@@ -1677,7 +1677,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get welcomeKicker => '欢迎使用';
 
   @override
-  String get welcomeBlurb => '所有数据均保存在你的手机上。无账号、无网络连接要求、无任何费用。';
+  String get welcomeBlurb => '所有数据均保存在这台手机上。使用应用需要登录账号。';
 
   @override
   String get welcomeStart => '立即开始';
@@ -2666,6 +2666,11 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get addToMyRoutines => '添加到我的计划';
+
+  @override
+  String routinesSkipped(num n) {
+    return '已跳过 $n 个训练计划';
+  }
 
   @override
   String routinesAdded(int n) {
@@ -4631,7 +4636,7 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
   String get freeForeverWhy => '無訂閱、無廣告、沒有付費鎖定功能。';
 
   @override
-  String get fullyOffline => '100% 離線';
+  String get fullyOffline => '離線優先';
 
   @override
   String get fullyOfflineWhy => '隨時隨地訓練。支援離線使用，資料保存在本手機上。';
@@ -4698,7 +4703,7 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
   String get welcomeKicker => '歡迎使用';
 
   @override
-  String get welcomeBlurb => '所有資料都留在手機上。不需帳號、不需網路、不用付費。';
+  String get welcomeBlurb => '所有資料都儲存在這支手機上。使用應用程式需要登入帳號。';
 
   @override
   String get welcomeStart => '開始';
@@ -5709,6 +5714,12 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
 
   @override
   String get addToMyRoutines => '加入我的課表';
+
+  @override
+  String routinesSkipped(num n) {
+    String _temp0 = intl.Intl.pluralLogic(n, locale: localeName, other: '已跳過 $n 個課表');
+    return '$_temp0';
+  }
 
   @override
   String routinesAdded(int n) {

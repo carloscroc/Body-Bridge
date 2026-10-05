@@ -1638,7 +1638,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get freeForeverWhy => '구독 없음, 광고 없음, 유료 잠금 없음.';
 
   @override
-  String get fullyOffline => '100% 오프라인';
+  String get fullyOffline => '오프라인 우선';
 
   @override
   String get fullyOfflineWhy => '어디서든 운동하세요. 오프라인에서 작동하며 데이터는 이 휴대폰에 저장됩니다.';
@@ -1705,7 +1705,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get welcomeKicker => '환영합니다';
 
   @override
-  String get welcomeBlurb => '모든 데이터는 휴대전화에 남습니다. 계정, 인터넷, 결제가 필요 없습니다.';
+  String get welcomeBlurb => '모든 데이터는 이 휴대전화에 저장됩니다. 앱 사용에는 계정이 필요합니다.';
 
   @override
   String get welcomeStart => '시작';
@@ -2718,6 +2718,12 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get addToMyRoutines => '내 루틴에 추가';
+
+  @override
+  String routinesSkipped(num n) {
+    String _temp0 = intl.Intl.pluralLogic(n, locale: localeName, other: '루틴 $n개를 건너뛰었어요');
+    return '$_temp0';
+  }
 
   @override
   String routinesAdded(int n) {

@@ -1625,7 +1625,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get freeForeverWhy => 'サブスクなし、広告なし、課金でロックされる機能なし。';
 
   @override
-  String get fullyOffline => '100%オフライン';
+  String get fullyOffline => 'オフライン優先';
 
   @override
   String get fullyOfflineWhy => 'いつでもどこでもトレーニング。オフラインで動作し、データはこの端末に保存されます。';
@@ -1692,7 +1692,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get welcomeKicker => 'ようこそ';
 
   @override
-  String get welcomeBlurb => 'すべて端末内に保存。アカウント不要、インターネット不要、支払いなし。';
+  String get welcomeBlurb => 'すべてのデータはこの端末に保存されます。アプリの利用にはアカウントが必要です。';
 
   @override
   String get welcomeStart => '始める';
@@ -2704,6 +2704,12 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get addToMyRoutines => 'マイルーティンに追加';
+
+  @override
+  String routinesSkipped(num n) {
+    String _temp0 = intl.Intl.pluralLogic(n, locale: localeName, other: 'ルーティン$n件をスキップしました');
+    return '$_temp0';
+  }
 
   @override
   String routinesAdded(int n) {
