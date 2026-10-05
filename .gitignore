@@ -76,3 +76,4 @@ desktop.ini
 android/build/
 .omo/
 .worktrees/
+.memory/

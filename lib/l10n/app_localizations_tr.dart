@@ -1679,7 +1679,8 @@ class AppLocalizationsTr extends AppLocalizations {
   String get fullyOffline => '%100 çevrimdışı';
 
   @override
-  String get fullyOfflineWhy => 'Hesap yok, sunucu yok. Antrenmanların bu telefondan asla çıkmaz.';
+  String get fullyOfflineWhy =>
+      'Her yerde antrenman yap. Çevrimdışı çalışır ve verilerin bu telefonda kalır.';
 
   @override
   String get yoursToTake => 'Verilerin senin';
@@ -3029,7 +3030,7 @@ class AppLocalizationsTr extends AppLocalizations {
   String get accountRowGuest => 'Giriş yap veya hesap oluştur';
 
   @override
-  String get accountGuestBlurb => 'Premium erişimini korumak için hesap oluştur.';
+  String get accountGuestBlurb => 'Body Bridge kullanmak için ücretsiz hesabını oluştur.';
 
   @override
   String accountSignedInAs(String email) {
@@ -3062,6 +3063,15 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get authFailedGeneric => 'İstek tamamlanamadı.';
+
+  @override
+  String get authWallOfflineTitle => 'Body Bridge\'e ulaşılamıyor';
+
+  @override
+  String get authWallOfflineBody => 'İnternet bağlantını kontrol et ve tekrar dene.';
+
+  @override
+  String get authWallRetry => 'Tekrar dene';
 
   @override
   String get tierFree => 'FREE';

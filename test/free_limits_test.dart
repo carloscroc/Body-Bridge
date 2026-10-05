@@ -28,12 +28,12 @@ void main() {
     fit.routines.clear();
     fit.onboarded = true;
     fit.resetRoute('home');
-    AccountGate.install(GuestAccountGate());
+    AccountGate.install(SignedOutGate());
   });
 
   tearDown(() {
     fit.resetRoute('home');
-    AccountGate.install(GuestAccountGate());
+    AccountGate.install(SignedOutGate());
   });
 
   group('capability predicates (pure)', () {
@@ -67,10 +67,24 @@ void main() {
       expect(routineCreationAllowed(AccountTier.enterprise, 999), isTrue);
 
       expect(
-        routineCreationAllowed(AccountTier.signedOut, 999),
+        routineCreationAllowed(AccountTier.signedOut, 0),
         isTrue,
-        reason: 'guests keep local-only usage unlimited',
+        reason: 'signedOut falls under the same FREE routine cap (0 < 3)',
       );
+      expect(
+        routineCreationAllowed(AccountTier.signedOut, kFreeRoutineCap),
+        isFalse,
+        reason: 'mandatory auth: signedOut has NO unlimited_routines, so the FREE cap applies',
+      );
+      expect(
+        routineCreationAllowed(AccountTier.signedOut, 999),
+        isFalse,
+        reason: 'mandatory auth: no guest freebies — the cap holds at any count',
+      );
+      expect(tierCan(AccountTier.signedOut, kCapUnlimitedRoutines), isFalse);
+      expect(tierCan(AccountTier.signedOut, kCapFullHistory), isFalse);
+      expect(tierCan(AccountTier.signedOut, kCapCustomExercises), isFalse);
+      expect(tierCan(AccountTier.signedOut, kCapAiPlan), isFalse);
     });
   });
 
@@ -81,13 +95,15 @@ void main() {
       return s;
     }
 
-    test('guests (signed-out) see everything', () {
+    test('signed-out (no account) sees nothing windowed because the wall blocks them first', () {
+      // Mandatory auth: a signed-out user can never reach the app shell, so
+      // the history window is a signed-in FREE concern. The predicate itself
+      // must report windowing for signedOut (no full_history capability).
       log(30);
       log(10);
       log(2);
 
-      expect(fit.visibleSessions.length, 3, reason: 'guest mode is local-only usage: no windowing');
-      expect(fit.historyIsFiltered, isFalse);
+      expect(fit.historyIsFiltered, isTrue, reason: 'signedOut has no full_history capability');
     });
 
     test('signed-in free loses sessions older than kFreeHistoryDays', () {
@@ -173,12 +189,12 @@ void main() {
       expect(fit.routines.length, 2);
     });
 
-    testWidgets('guests keep unlimited local routines', (tester) async {
+    testWidgets('signed-out gate caps routine creation: the paywall replaces it', (tester) async {
       for (var i = 0; i < kFreeRoutineCap + 2; i++) {
         fit.createRoutine('Plan $i');
       }
 
-      await pumpRoutines(tester, GuestAccountGate());
+      await pumpRoutines(tester, SignedOutGate());
 
       await tester.ensureVisible(find.text(titleCase(t.newRoutine)));
       await tester.pump(const Duration(milliseconds: 100));
@@ -187,8 +203,8 @@ void main() {
       // Flush the 400ms save debounce so no Timer is pending at teardown.
       await tester.pump(const Duration(seconds: 1));
 
-      expect(fit.route, 'routine-edit');
-      expect(fit.routines.length, kFreeRoutineCap + 3, reason: 'guest local usage is never capped');
+      expect(fit.route, 'paywall', reason: 'mandatory auth: signed-out has no unlimited_routines');
+      expect(fit.routines.length, kFreeRoutineCap + 2, reason: 'no routine was created');
     });
   });
 }

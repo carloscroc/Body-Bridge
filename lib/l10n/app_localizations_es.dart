@@ -1677,7 +1677,8 @@ class AppLocalizationsEs extends AppLocalizations {
   String get fullyOffline => 'Totalmente sin conexión';
 
   @override
-  String get fullyOfflineWhy => 'Sin cuenta, sin servidores. Tu entreno no sale de este móvil.';
+  String get fullyOfflineWhy =>
+      'Entrena en cualquier sitio. Funciona sin conexión y tus datos se quedan en este móvil.';
 
   @override
   String get yoursToTake => 'Tus datos son tuyos';
@@ -3026,7 +3027,7 @@ class AppLocalizationsEs extends AppLocalizations {
   String get accountRowGuest => 'Inicia sesión o crea una cuenta';
 
   @override
-  String get accountGuestBlurb => 'Crea una cuenta para mantener conectado tu acceso premium.';
+  String get accountGuestBlurb => 'Crea tu cuenta gratuita para usar Body Bridge.';
 
   @override
   String accountSignedInAs(String email) {
@@ -3059,6 +3060,15 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get authFailedGeneric => 'No hemos podido completar la solicitud.';
+
+  @override
+  String get authWallOfflineTitle => 'No se pudo conectar con Body Bridge';
+
+  @override
+  String get authWallOfflineBody => 'Comprueba tu conexión a internet e inténtalo de nuevo.';
+
+  @override
+  String get authWallRetry => 'Reintentar';
 
   @override
   String get tierFree => 'FREE';

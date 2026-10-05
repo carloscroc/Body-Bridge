@@ -7,6 +7,7 @@ import 'package:gymmane/services/local_store.dart';
 import 'package:gymmane/services/progress_reminder.dart';
 import 'package:gymmane/services/train_reminder.dart';
 import 'package:gymmane/state/fit_state.dart';
+import 'package:gymmane/state/account_state.dart';
 import 'package:phosphoricons_flutter/phosphoricons_flutter.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -22,6 +23,11 @@ void main() {
     TrainReminder.instance.enabled = false;
     fit.resetAllData();
     fit.completeOnboarding();
+
+    // Mandatory auth: seed a warmed-up signed-in session so the entry
+    // gate lets the app shell through (session-restore state).
+    account.debugSetWarmedUp();
+    account.debugSetPhase(AccountPhase.signedInFree);
   });
 
   void logSessions() {

@@ -7,6 +7,7 @@ import 'package:gymmane/state/fit_state.dart';
 import 'package:gymmane/theme/app_colors.dart';
 import 'package:gymmane/theme/app_theme.dart';
 import 'package:gymmane/widgets/share_cards.dart';
+import 'package:gymmane/state/account_state.dart';
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
@@ -22,6 +23,11 @@ void main() {
           LoggedSet(8, 65),
         ]),
       ]));
+
+    // Mandatory auth: seed a warmed-up signed-in session so the entry
+    // gate lets the app shell through (session-restore state).
+    account.debugSetWarmedUp();
+    account.debugSetPhase(AccountPhase.signedInFree);
   });
 
   Future<void> visit(WidgetTester tester, String route) async {

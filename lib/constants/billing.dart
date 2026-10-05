@@ -13,10 +13,6 @@ const String kCapCustomExercises = 'trainer_features';
 const int kFreeRoutineCap = 3;
 const int kFreeHistoryDays = 7;
 
-/// Capabilities guests (signed-out users) keep so local-only usage is never
-/// gated: the FREE-limit trio. AI plan stays locked for guests.
-const List<String> kGuestCapabilities = <String>[kCapUnlimitedRoutines, kCapFullHistory, kCapCustomExercises];
-
 /// Provider-agnostic paywall plan config. Placeholders: real billing is a
 /// later project. NO Play Billing / Stripe references anywhere.
 class PlanOption {

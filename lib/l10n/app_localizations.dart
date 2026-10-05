@@ -3047,7 +3047,7 @@ abstract class AppLocalizations {
   /// No description provided for @fullyOfflineWhy.
   ///
   /// In en, this message translates to:
-  /// **'No account, no servers. Your training never leaves this phone.'**
+  /// **'Train anywhere. Works offline and your data stays on this phone.'**
   String get fullyOfflineWhy;
 
   /// No description provided for @yoursToTake.
@@ -5435,7 +5435,7 @@ abstract class AppLocalizations {
   /// No description provided for @accountGuestBlurb.
   ///
   /// In en, this message translates to:
-  /// **'Create an account to keep your premium access connected.'**
+  /// **'Create your free account to use Body Bridge.'**
   String get accountGuestBlurb;
 
   /// No description provided for @accountSignedInAs.
@@ -5497,6 +5497,24 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'We couldn\'t complete that request.'**
   String get authFailedGeneric;
+
+  /// No description provided for @authWallOfflineTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Can\'t reach Body Bridge'**
+  String get authWallOfflineTitle;
+
+  /// No description provided for @authWallOfflineBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Check your internet connection and try again.'**
+  String get authWallOfflineBody;
+
+  /// No description provided for @authWallRetry.
+  ///
+  /// In en, this message translates to:
+  /// **'Try again'**
+  String get authWallRetry;
 
   /// No description provided for @tierFree.
   ///

@@ -10,11 +10,10 @@ extension AccountTierX on AccountTier {
 }
 
 /// Shared capability resolution for every gate: signed-in tiers mirror the
-/// server's kPlanCapabilities; guests (signedOut) keep the local free-limit
-/// trio so local-only usage is never gated, while cloud features (AI plan)
-/// stay locked.
+/// server's kPlanCapabilities; signed-out users have NO capabilities
+/// (mandatory auth).
 bool tierCan(AccountTier tier, String capability) => switch (tier) {
-  AccountTier.signedOut => kGuestCapabilities.contains(capability),
+  AccountTier.signedOut => false,
   _ => kPlanCapabilities[tier.name]?.contains(capability) ?? false,
 };
 
@@ -45,7 +44,7 @@ abstract class AccountGate extends ChangeNotifier {
   Future<void> signOut();
   Future<void> deleteAccount();
 
-  static AccountGate _instance = GuestAccountGate();
+  static AccountGate _instance = SignedOutGate();
 
   /// Installs the account implementation supplied by the C2 integration.
   static void install(AccountGate gate) => _instance = gate;
@@ -53,7 +52,7 @@ abstract class AccountGate extends ChangeNotifier {
   static AccountGate get instance => _instance;
 }
 
-class GuestAccountGate extends AccountGate {
+class SignedOutGate extends AccountGate {
   static const _snapshot = AccountSnapshot(tier: AccountTier.signedOut);
 
   @override
@@ -64,15 +63,15 @@ class GuestAccountGate extends AccountGate {
 
   @override
   Future<void> signIn(String email, String password) =>
-      Future<void>.error(StateError('auth unavailable in guest mode'));
+      Future<void>.error(StateError('auth unavailable: sign in required'));
 
   @override
   Future<void> signUp(String email, String password) =>
-      Future<void>.error(StateError('auth unavailable in guest mode'));
+      Future<void>.error(StateError('auth unavailable: sign in required'));
 
   @override
   Future<void> signOut() => Future<void>.value();
 
   @override
-  Future<void> deleteAccount() => Future<void>.error(StateError('auth unavailable in guest mode'));
+  Future<void> deleteAccount() => Future<void>.error(StateError('auth unavailable: sign in required'));
 }

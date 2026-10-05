@@ -5,6 +5,7 @@ import 'package:gymmane/l10n/l10n.dart';
 import 'package:gymmane/services/local_store.dart';
 import 'package:gymmane/services/progress_reminder.dart';
 import 'package:gymmane/state/fit_state.dart';
+import 'package:gymmane/state/account_state.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {
@@ -19,6 +20,11 @@ void main() {
     fit.session = null;
     fit.setBodyTimeline(false);
     fit.setPhotoInterval(30);
+
+    // Mandatory auth: seed a warmed-up signed-in session so the entry
+    // gate lets the app shell through (session-restore state).
+    account.debugSetWarmedUp();
+    account.debugSetPhase(AccountPhase.signedInFree);
   });
 
   tearDown(() {

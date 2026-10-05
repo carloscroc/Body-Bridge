@@ -6,6 +6,7 @@ import 'package:gymmane/screens/places_screen.dart';
 import 'package:gymmane/services/local_store.dart';
 import 'package:gymmane/state/fit_state.dart';
 import 'package:gymmane/theme/app_theme.dart';
+import 'package:gymmane/state/account_state.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 Widget _host(Widget Function() screen) => MaterialApp(
@@ -28,6 +29,11 @@ void main() {
     fit.exNoGearOnly = false;
     fit.clearExFilters();
     fit.onboarded = true;
+
+    // Mandatory auth: seed a warmed-up signed-in session so the entry
+    // gate lets the app shell through (session-restore state).
+    account.debugSetWarmedUp();
+    account.debugSetPhase(AccountPhase.signedInFree);
   });
 
   tearDown(() {

@@ -9,8 +9,8 @@ import 'account_state.dart';
 /// [AuthService] performs the real sign-in/sign-up/sign-out.
 ///
 /// Offline-first invariant: construction, [snapshot] and [canAccess] never
-/// throw and never touch platform channels; every service failure degrades to
-/// the guest/free view exactly like [GuestAccountGate] did at boot.
+/// throw and never touch platform channels; auth is mandatory, so any
+/// failure or signed-out phase degrades to [AccountTier.signedOut].
 class RealAccountGate extends AccountGate {
   RealAccountGate() {
     // Composition-time wiring: once the app builds the real gate, the seam
@@ -38,6 +38,7 @@ class RealAccountGate extends AccountGate {
       AccountPhase.signedInBasic => AccountTier.basic,
       AccountPhase.signedInAdvanced => AccountTier.advanced,
       AccountPhase.signedInEnterprise => AccountTier.enterprise,
+      AccountPhase.error => AccountTier.signedOut,
     },
     email: _email(),
   );
