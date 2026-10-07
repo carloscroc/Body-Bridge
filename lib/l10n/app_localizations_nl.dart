@@ -3036,6 +3036,32 @@ class AppLocalizationsNl extends AppLocalizations {
   String get authErrorUnknown => 'Inloggen mislukt. Probeer het opnieuw.';
 
   @override
+  String get brandKicker => 'TRAIN MET INTENTIE';
+
+  @override
+  String get emailHint => 'you@example.com';
+
+  @override
+  String get passwordHint => 'Minimaal 6 tekens';
+
+  @override
+  String get forgotPassword => 'Wachtwoord vergeten?';
+
+  @override
+  String get resetSend => 'Herstellink versturen';
+
+  @override
+  String get resetSentTitle => 'Check je e-mail';
+
+  @override
+  String resetSentBody(String email) {
+    return 'We hebben een herstellink gestuurd naar $email.';
+  }
+
+  @override
+  String get backToSignIn => 'Terug naar inloggen';
+
+  @override
   String get accountTitle => 'Account';
 
   @override

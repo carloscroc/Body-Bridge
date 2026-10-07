@@ -3046,6 +3046,32 @@ class AppLocalizationsDe extends AppLocalizations {
   String get authErrorUnknown => 'Anmeldung fehlgeschlagen. Bitte erneut versuchen.';
 
   @override
+  String get brandKicker => 'TRAINIERE MIT ABSICHT';
+
+  @override
+  String get emailHint => 'you@example.com';
+
+  @override
+  String get passwordHint => 'Mindestens 6 Zeichen';
+
+  @override
+  String get forgotPassword => 'Passwort vergessen?';
+
+  @override
+  String get resetSend => 'Link zum Zurücksetzen senden';
+
+  @override
+  String get resetSentTitle => 'Prüfe dein E-Mail-Postfach';
+
+  @override
+  String resetSentBody(String email) {
+    return 'Wir haben einen Link zum Zurücksetzen an $email gesendet.';
+  }
+
+  @override
+  String get backToSignIn => 'Zurück zur Anmeldung';
+
+  @override
   String get accountTitle => 'Konto';
 
   @override

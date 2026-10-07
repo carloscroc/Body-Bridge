@@ -7,6 +7,7 @@ import '../state/account_gate.dart';
 import '../state/fit_state.dart';
 import '../theme/app_colors.dart';
 import '../theme/app_theme.dart';
+import '../widgets/auth_form.dart';
 import '../widgets/dialogs.dart';
 import '../widgets/entrance.dart';
 import '../widgets/premium_gate.dart';
@@ -23,23 +24,9 @@ class AccountScreen extends StatefulWidget {
 }
 
 class _AccountScreenState extends State<AccountScreen> {
-  final _email = TextEditingController();
-  final _password = TextEditingController();
-  bool _createMode = true;
-  bool _submitting = false;
   bool _deleting = false;
-  String? _emailError;
-  String? _passwordError;
-  String? _authError;
 
   AppLocalizations get _t => widget.strings?.call() ?? t;
-
-  @override
-  void dispose() {
-    _email.dispose();
-    _password.dispose();
-    super.dispose();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -57,7 +44,7 @@ class _AccountScreenState extends State<AccountScreen> {
               children: riseAll([
                 ScreenHeader(title: _t.accountTitle, onBack: fit.backFromAccount),
                 const SizedBox(height: 24),
-                if (gate.snapshot.tier.isSignedIn) _signedIn(context, gate) else _signedOut(context, gate),
+                if (gate.snapshot.tier.isSignedIn) _signedIn(context, gate) else _signedOut(context),
               ]),
             ),
           ),
@@ -66,7 +53,7 @@ class _AccountScreenState extends State<AccountScreen> {
     );
   }
 
-  Widget _signedOut(BuildContext context, AccountGate gate) {
+  Widget _signedOut(BuildContext context) {
     final gc = context.gc;
     return SoftCard(
       child: Column(
@@ -77,39 +64,7 @@ class _AccountScreenState extends State<AccountScreen> {
             style: AppTheme.f(13.5, weight: FontWeight.w500, color: gc.textSecondary, height: 1.45),
           ),
           const SizedBox(height: 18),
-          SegToggle([
-            SegOption(_t.createAccount, _createMode, () => setState(() => _createMode = true)),
-            SegOption(_t.signIn, !_createMode, () => setState(() => _createMode = false)),
-          ], hPad: 12),
-          const SizedBox(height: 20),
-          _field(
-            controller: _email,
-            label: _t.emailLabel,
-            error: _emailError,
-            keyboardType: TextInputType.emailAddress,
-          ),
-          const SizedBox(height: 14),
-          _field(controller: _password, label: _t.passwordLabel, error: _passwordError, obscureText: true),
-          if (_authError != null) ...[
-            const SizedBox(height: 10),
-            Text(
-              _authError!,
-              style: AppTheme.f(12, weight: FontWeight.w600, color: gc.danger),
-            ),
-          ],
-          const SizedBox(height: 20),
-          _submitting
-              ? Container(
-                  height: 56,
-                  alignment: Alignment.center,
-                  decoration: BoxDecoration(color: gc.ember, borderRadius: BorderRadius.circular(100)),
-                  child: SizedBox(
-                    width: 22,
-                    height: 22,
-                    child: CircularProgressIndicator(strokeWidth: 2, color: gc.onEmber),
-                  ),
-                )
-              : PrimaryButton(label: _createMode ? _t.startFree : _t.signIn, onTap: () => _submit(gate)),
+          AuthForm(strings: () => _t),
         ],
       ),
     );
@@ -207,79 +162,6 @@ class _AccountScreenState extends State<AccountScreen> {
       if (mounted) snack(_t.deleteAccountFailed);
     } finally {
       if (mounted) setState(() => _deleting = false);
-    }
-  }
-
-  Widget _field({
-    required TextEditingController controller,
-    required String label,
-    String? error,
-    TextInputType? keyboardType,
-    bool obscureText = false,
-  }) {
-    final gc = context.gc;
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: [
-        Text(
-          label,
-          style: AppTheme.f(11, weight: FontWeight.w700, color: gc.textSecondary, letterSpacing: 1),
-        ),
-        const SizedBox(height: 7),
-        TextField(
-          controller: controller,
-          keyboardType: keyboardType,
-          obscureText: obscureText,
-          autocorrect: false,
-          enableSuggestions: !obscureText,
-          style: AppTheme.f(14, weight: FontWeight.w500, color: gc.text),
-          cursorColor: gc.accent,
-          decoration: InputDecoration(
-            filled: true,
-            fillColor: gc.bgRaised,
-            contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
-            border: OutlineInputBorder(borderRadius: BorderRadius.circular(14), borderSide: BorderSide.none),
-            hintStyle: AppTheme.f(14, weight: FontWeight.w500, color: gc.textSecondary),
-          ),
-        ),
-        if (error != null) ...[
-          const SizedBox(height: 5),
-          Text(
-            error,
-            style: AppTheme.f(11.5, weight: FontWeight.w600, color: gc.danger),
-          ),
-        ],
-      ],
-    );
-  }
-
-  Future<void> _submit(AccountGate gate) async {
-    final email = _email.text.trim();
-    final password = _password.text;
-    setState(() {
-      _emailError = RegExp(r'^[^@\s]+@[^@\s]+\.[^@\s]+$').hasMatch(email) ? null : _t.emailInvalid;
-      _passwordError = password.length >= 6 ? null : _t.passwordTooShort;
-      _authError = null;
-    });
-    if (_emailError != null || _passwordError != null) return;
-    setState(() => _submitting = true);
-    try {
-      if (_createMode) {
-        await gate.signUp(email, password);
-      } else {
-        await gate.signIn(email, password);
-      }
-    } catch (error) {
-      if (mounted) {
-        final detail = error.toString().replaceFirst(RegExp(r'^(StateError|Exception):\s*'), '');
-        setState(
-          () => _authError = detail.isEmpty || detail == _t.authFailedGeneric
-              ? _t.authFailedGeneric
-              : '${_t.authFailedGeneric}\n$detail',
-        );
-      }
-    } finally {
-      if (mounted) setState(() => _submitting = false);
     }
   }
 }

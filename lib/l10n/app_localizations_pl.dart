@@ -3038,6 +3038,32 @@ class AppLocalizationsPl extends AppLocalizations {
   String get authErrorUnknown => 'Logowanie nie powiodło się. Spróbuj ponownie.';
 
   @override
+  String get brandKicker => 'TRENUJ Z ZAMIAREM';
+
+  @override
+  String get emailHint => 'you@example.com';
+
+  @override
+  String get passwordHint => 'Co najmniej 6 znaków';
+
+  @override
+  String get forgotPassword => 'Nie pamiętasz hasła?';
+
+  @override
+  String get resetSend => 'Wyślij link do resetowania';
+
+  @override
+  String get resetSentTitle => 'Sprawdź e-mail';
+
+  @override
+  String resetSentBody(String email) {
+    return 'Wysłaliśmy link do resetowania na $email.';
+  }
+
+  @override
+  String get backToSignIn => 'Wróć do logowania';
+
+  @override
   String get accountTitle => 'Konto';
 
   @override

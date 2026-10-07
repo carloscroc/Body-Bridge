@@ -3031,6 +3031,32 @@ class AppLocalizationsPt extends AppLocalizations {
   String get authErrorUnknown => 'Falha ao entrar. Tente novamente.';
 
   @override
+  String get brandKicker => 'TREINE COM INTENÇÃO';
+
+  @override
+  String get emailHint => 'you@example.com';
+
+  @override
+  String get passwordHint => 'Pelo menos 6 caracteres';
+
+  @override
+  String get forgotPassword => 'Esqueceu a senha?';
+
+  @override
+  String get resetSend => 'Enviar link de redefinição';
+
+  @override
+  String get resetSentTitle => 'Verifique o seu e-mail';
+
+  @override
+  String resetSentBody(String email) {
+    return 'Enviamos um link de redefinição para $email.';
+  }
+
+  @override
+  String get backToSignIn => 'Voltar ao login';
+
+  @override
   String get accountTitle => 'Conta';
 
   @override

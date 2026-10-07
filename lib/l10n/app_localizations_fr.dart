@@ -3041,6 +3041,32 @@ class AppLocalizationsFr extends AppLocalizations {
   String get authErrorUnknown => 'Échec de la connexion. Réessayez.';
 
   @override
+  String get brandKicker => 'ENTRAÎNEZ-VOUS AVEC INTENTION';
+
+  @override
+  String get emailHint => 'you@example.com';
+
+  @override
+  String get passwordHint => 'Au moins 6 caractères';
+
+  @override
+  String get forgotPassword => 'Mot de passe oublié ?';
+
+  @override
+  String get resetSend => 'Envoyer le lien de réinitialisation';
+
+  @override
+  String get resetSentTitle => 'Vérifiez votre boîte mail';
+
+  @override
+  String resetSentBody(String email) {
+    return 'Nous avons envoyé un lien de réinitialisation à $email.';
+  }
+
+  @override
+  String get backToSignIn => 'Retour à la connexion';
+
+  @override
   String get accountTitle => 'Compte';
 
   @override

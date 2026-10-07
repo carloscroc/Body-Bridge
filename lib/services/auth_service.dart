@@ -69,6 +69,19 @@ class AuthService {
   Future<void> signIn({required String email, required String password}) =>
       _withFirebase(() => FirebaseAuth.instance.signInWithEmailAndPassword(email: email, password: password));
 
+  /// Sends the Firebase password-reset email; errors mapped like sign-in.
+  Future<void> sendPasswordReset({required String email}) async {
+    if (!await ensureInitialized()) throw const AuthException('unknown');
+    try {
+      await FirebaseAuth.instance.sendPasswordResetEmail(email: email);
+    } on FirebaseAuthException catch (e) {
+      throw AuthException(_keyOf(e.code));
+    } catch (e, st) {
+      debugPrint('Password reset failed: ${_brief(e, st)}');
+      throw const AuthException('unknown');
+    }
+  }
+
   Future<void> signOut() async {
     if (await ensureInitialized()) {
       try {

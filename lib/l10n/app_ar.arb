@@ -1171,6 +1171,14 @@
   "authErrorTooManyRequests": "محاولات كثيرة جدًا. حاول مرة أخرى لاحقًا.",
   "authErrorNetwork": "أنت غير متصل — تسجيل الدخول يحتاج إلى إنترنت.",
   "authErrorUnknown": "فشل تسجيل الدخول. حاول مرة أخرى.",
+  "brandKicker": "تدرّب بهدف",
+  "emailHint": "you@example.com",
+  "passwordHint": "6 أحرف على الأقل",
+  "forgotPassword": "هل نسيت كلمة المرور؟",
+  "resetSend": "أرسل رابط الاستعادة",
+  "resetSentTitle": "تحقق من بريدك الإلكتروني",
+  "resetSentBody": "أرسلنا رابط استعادة إلى {email}.",
+  "backToSignIn": "العودة لتسجيل الدخول",
   "gamificationSetting": "الميداليات والمستويات"
 ,
 

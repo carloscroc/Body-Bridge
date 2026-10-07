@@ -59,8 +59,8 @@ void main() {
 
     expect(find.textContaining('auth unavailable'), findsNothing,
         reason: 'the signed-out stub must never run in the real app');
-    expect(find.textContaining(t.authFailedGeneric), findsOneWidget,
-        reason: 'submit went RealAccountGate -> AuthService -> AuthException(unknown)');
+    expect(find.textContaining(t.authErrorUnknown), findsOneWidget,
+        reason: 'AuthException(unknown) maps to the localized authErrorUnknown, never raw text');
     expect(find.byType(AuthWallScreen), findsOneWidget,
         reason: 'a failed auth keeps the user on the wall');
     expect(tester.takeException(), isNull,

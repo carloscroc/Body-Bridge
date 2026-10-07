@@ -5420,6 +5420,54 @@ abstract class AppLocalizations {
   /// **'Sign in failed. Try again.'**
   String get authErrorUnknown;
 
+  /// No description provided for @brandKicker.
+  ///
+  /// In en, this message translates to:
+  /// **'TRAIN WITH INTENT'**
+  String get brandKicker;
+
+  /// No description provided for @emailHint.
+  ///
+  /// In en, this message translates to:
+  /// **'you@example.com'**
+  String get emailHint;
+
+  /// No description provided for @passwordHint.
+  ///
+  /// In en, this message translates to:
+  /// **'At least 6 characters'**
+  String get passwordHint;
+
+  /// No description provided for @forgotPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Forgot password?'**
+  String get forgotPassword;
+
+  /// No description provided for @resetSend.
+  ///
+  /// In en, this message translates to:
+  /// **'Send reset link'**
+  String get resetSend;
+
+  /// No description provided for @resetSentTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Check your email'**
+  String get resetSentTitle;
+
+  /// No description provided for @resetSentBody.
+  ///
+  /// In en, this message translates to:
+  /// **'We sent a reset link to {email}.'**
+  String resetSentBody(String email);
+
+  /// No description provided for @backToSignIn.
+  ///
+  /// In en, this message translates to:
+  /// **'Back to sign in'**
+  String get backToSignIn;
+
   /// No description provided for @accountTitle.
   ///
   /// In en, this message translates to:

@@ -3023,6 +3023,32 @@ class AppLocalizationsAr extends AppLocalizations {
   String get authErrorUnknown => 'فشل تسجيل الدخول. حاول مرة أخرى.';
 
   @override
+  String get brandKicker => 'تدرّب بهدف';
+
+  @override
+  String get emailHint => 'you@example.com';
+
+  @override
+  String get passwordHint => '6 أحرف على الأقل';
+
+  @override
+  String get forgotPassword => 'هل نسيت كلمة المرور؟';
+
+  @override
+  String get resetSend => 'أرسل رابط الاستعادة';
+
+  @override
+  String get resetSentTitle => 'تحقق من بريدك الإلكتروني';
+
+  @override
+  String resetSentBody(String email) {
+    return 'أرسلنا رابط استعادة إلى $email.';
+  }
+
+  @override
+  String get backToSignIn => 'العودة لتسجيل الدخول';
+
+  @override
   String get accountTitle => 'الحساب';
 
   @override

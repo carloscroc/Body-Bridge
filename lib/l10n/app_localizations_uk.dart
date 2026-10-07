@@ -3035,6 +3035,32 @@ class AppLocalizationsUk extends AppLocalizations {
   String get authErrorUnknown => 'Не вдалося увійти. Спробуйте ще раз.';
 
   @override
+  String get brandKicker => 'ТРЕНУЙ З НАМІРОЮ';
+
+  @override
+  String get emailHint => 'you@example.com';
+
+  @override
+  String get passwordHint => 'Щонайменше 6 символів';
+
+  @override
+  String get forgotPassword => 'Забули пароль?';
+
+  @override
+  String get resetSend => 'Надіслати посилання для скидання';
+
+  @override
+  String get resetSentTitle => 'Перевірте пошту';
+
+  @override
+  String resetSentBody(String email) {
+    return 'Ми надіслали посилання для скидання на $email.';
+  }
+
+  @override
+  String get backToSignIn => 'Повернутися до входу';
+
+  @override
   String get accountTitle => 'Акаунт';
 
   @override

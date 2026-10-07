@@ -2949,6 +2949,32 @@ class AppLocalizationsKo extends AppLocalizations {
   String get authErrorUnknown => '로그인에 실팔했습니다. 다시 시도해 주세요.';
 
   @override
+  String get brandKicker => '의도 있게 운동하기';
+
+  @override
+  String get emailHint => 'you@example.com';
+
+  @override
+  String get passwordHint => '6자 이상';
+
+  @override
+  String get forgotPassword => '비밀번호를 잊으셨나요?';
+
+  @override
+  String get resetSend => '재설정 링크 보내기';
+
+  @override
+  String get resetSentTitle => '이메일을 확인하세요';
+
+  @override
+  String resetSentBody(String email) {
+    return '$email로 재설정 링크를 보냈습니다.';
+  }
+
+  @override
+  String get backToSignIn => '로그인으로 돌아가기';
+
+  @override
   String get accountTitle => '계정';
 
   @override

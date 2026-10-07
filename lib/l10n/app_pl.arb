@@ -1171,6 +1171,14 @@
   "authErrorTooManyRequests": "Za dużo prób. Spróbuj później.",
   "authErrorNetwork": "Jesteś offline — logowanie wymaga internetu.",
   "authErrorUnknown": "Logowanie nie powiodło się. Spróbuj ponownie.",
+  "brandKicker": "TRENUJ Z ZAMIAREM",
+  "emailHint": "you@example.com",
+  "passwordHint": "Co najmniej 6 znaków",
+  "forgotPassword": "Nie pamiętasz hasła?",
+  "resetSend": "Wyślij link do resetowania",
+  "resetSentTitle": "Sprawdź e-mail",
+  "resetSentBody": "Wysłaliśmy link do resetowania na {email}.",
+  "backToSignIn": "Wróć do logowania",
   "gamificationSetting": "Medale i poziomy"
 ,
 

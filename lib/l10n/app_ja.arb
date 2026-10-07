@@ -1171,6 +1171,14 @@
   "authErrorTooManyRequests": "試行回数が多すぎます。しばらくしてからお試しください。",
   "authErrorNetwork": "オフラインです — サインインにはインターネットが必要です。",
   "authErrorUnknown": "サインインできませんでした。もう一度お試しください。",
+  "brandKicker": "目的を持って鍛える",
+  "emailHint": "you@example.com",
+  "passwordHint": "6文字以上",
+  "forgotPassword": "パスワードをお忘れですか？",
+  "resetSend": "再設定リンクを送信",
+  "resetSentTitle": "メールを確認してください",
+  "resetSentBody": "{email} に再設定リンクを送信しました。",
+  "backToSignIn": "サインインに戻る",
   "gamificationSetting": "メダルとレベル"
 ,
 

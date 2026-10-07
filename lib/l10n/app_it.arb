@@ -1019,6 +1019,14 @@
   "authErrorTooManyRequests": "Troppi tentativi. Riprova più tardi.",
   "authErrorNetwork": "Sei offline — per accedere serve internet.",
   "authErrorUnknown": "Accesso non riuscito. Riprova.",
+  "brandKicker": "ALLENATI CON INTENZIONE",
+  "emailHint": "you@example.com",
+  "passwordHint": "Almeno 6 caratteri",
+  "forgotPassword": "Password dimenticata?",
+  "resetSend": "Invia link di ripristino",
+  "resetSentTitle": "Controlla la tua email",
+  "resetSentBody": "Abbiamo inviato un link di ripristino a {email}.",
+  "backToSignIn": "Torna all'accesso",
   "gamificationSetting": "Medaglie e livelli"
 ,
 

@@ -1171,6 +1171,14 @@
   "authErrorTooManyRequests": "Забагато спроб. Спробуйте пізніше.",
   "authErrorNetwork": "Ви не в мережі — для входу потрібен інтернет.",
   "authErrorUnknown": "Не вдалося увійти. Спробуйте ще раз.",
+  "brandKicker": "ТРЕНУЙ З НАМІРОЮ",
+  "emailHint": "you@example.com",
+  "passwordHint": "Щонайменше 6 символів",
+  "forgotPassword": "Забули пароль?",
+  "resetSend": "Надіслати посилання для скидання",
+  "resetSentTitle": "Перевірте пошту",
+  "resetSentBody": "Ми надіслали посилання для скидання на {email}.",
+  "backToSignIn": "Повернутися до входу",
   "gamificationSetting": "Медалі та рівні"
 ,
 

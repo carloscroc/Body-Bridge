@@ -3120,6 +3120,32 @@ class AppLocalizationsRu extends AppLocalizations {
   String get authErrorUnknown => 'Не удалось войти. Попробуйте ещё раз.';
 
   @override
+  String get brandKicker => 'ТРЕНИРУЙСЯ ОСОЗНАННО';
+
+  @override
+  String get emailHint => 'you@example.com';
+
+  @override
+  String get passwordHint => 'Минимум 6 символов';
+
+  @override
+  String get forgotPassword => 'Забыли пароль?';
+
+  @override
+  String get resetSend => 'Отправить ссылку для сброса';
+
+  @override
+  String get resetSentTitle => 'Проверьте почту';
+
+  @override
+  String resetSentBody(String email) {
+    return 'Мы отправили ссылку для сброса на $email.';
+  }
+
+  @override
+  String get backToSignIn => 'Вернуться ко входу';
+
+  @override
   String get accountTitle => 'Аккаунт';
 
   @override

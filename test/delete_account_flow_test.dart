@@ -52,6 +52,10 @@ class ScriptedGate extends AccountGate {
     signedIn = false;
     notifyListeners();
   }
+
+  @override
+  Future<void> sendPasswordReset(String email) async {}
+
 }
 
 void main() {

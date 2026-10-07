@@ -1171,6 +1171,14 @@
   "authErrorTooManyRequests": "Te veel pogingen. Probeer het later opnieuw.",
   "authErrorNetwork": "Je bent offline — inloggen vereist internet.",
   "authErrorUnknown": "Inloggen mislukt. Probeer het opnieuw.",
+  "brandKicker": "TRAIN MET INTENTIE",
+  "emailHint": "you@example.com",
+  "passwordHint": "Minimaal 6 tekens",
+  "forgotPassword": "Wachtwoord vergeten?",
+  "resetSend": "Herstellink versturen",
+  "resetSentTitle": "Check je e-mail",
+  "resetSentBody": "We hebben een herstellink gestuurd naar {email}.",
+  "backToSignIn": "Terug naar inloggen",
   "gamificationSetting": "Medailles en niveaus"
 ,
 

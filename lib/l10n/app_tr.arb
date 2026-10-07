@@ -1171,6 +1171,14 @@
   "authErrorTooManyRequests": "Çok fazla deneme. Daha sonra tekrar deneyin.",
   "authErrorNetwork": "Çevrimdışısınız — giriş yapmak için internet gerekir.",
   "authErrorUnknown": "Giriş başarısız oldu. Tekrar deneyin.",
+  "brandKicker": "AMAÇLI ÇALIŞ",
+  "emailHint": "you@example.com",
+  "passwordHint": "En az 6 karakter",
+  "forgotPassword": "Şifreni mi unuttun?",
+  "resetSend": "Sıfırlama bağlantısı gönder",
+  "resetSentTitle": "E-postanı kontrol et",
+  "resetSentBody": "{email} adresine sıfırlama bağlantısı gönderdik.",
+  "backToSignIn": "Oturum açmaya dön",
   "gamificationSetting": "Madalyalar ve seviyeler"
 ,
 

@@ -3029,6 +3029,32 @@ class AppLocalizationsEs extends AppLocalizations {
   String get authErrorUnknown => 'No se pudo iniciar sesión. Inténtalo de nuevo.';
 
   @override
+  String get brandKicker => 'ENTRENA CON INTENCIÓN';
+
+  @override
+  String get emailHint => 'you@example.com';
+
+  @override
+  String get passwordHint => 'Al menos 6 caracteres';
+
+  @override
+  String get forgotPassword => '¿Olvidaste tu contraseña?';
+
+  @override
+  String get resetSend => 'Enviar enlace de restablecimiento';
+
+  @override
+  String get resetSentTitle => 'Revisa tu correo';
+
+  @override
+  String resetSentBody(String email) {
+    return 'Enviamos un enlace de restablecimiento a $email.';
+  }
+
+  @override
+  String get backToSignIn => 'Volver a iniciar sesión';
+
+  @override
   String get accountTitle => 'Cuenta';
 
   @override

@@ -1171,6 +1171,14 @@
   "authErrorTooManyRequests": "Trop de tentatives. Réessayez plus tard.",
   "authErrorNetwork": "Vous êtes hors ligne — la connexion nécessite Internet.",
   "authErrorUnknown": "Échec de la connexion. Réessayez.",
+  "brandKicker": "ENTRAÎNEZ-VOUS AVEC INTENTION",
+  "emailHint": "you@example.com",
+  "passwordHint": "Au moins 6 caractères",
+  "forgotPassword": "Mot de passe oublié ?",
+  "resetSend": "Envoyer le lien de réinitialisation",
+  "resetSentTitle": "Vérifiez votre boîte mail",
+  "resetSentBody": "Nous avons envoyé un lien de réinitialisation à {email}.",
+  "backToSignIn": "Retour à la connexion",
   "gamificationSetting": "Médailles et niveaux"
 ,
 

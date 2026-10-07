@@ -979,6 +979,14 @@
   "authErrorTooManyRequests": "Demasiados intentos. Prueba más tarde.",
   "authErrorNetwork": "Estás sin conexión: para iniciar sesión necesitas internet.",
   "authErrorUnknown": "No se pudo iniciar sesión. Inténtalo de nuevo.",
+  "brandKicker": "ENTRENA CON INTENCIÓN",
+  "emailHint": "you@example.com",
+  "passwordHint": "Al menos 6 caracteres",
+  "forgotPassword": "¿Olvidaste tu contraseña?",
+  "resetSend": "Enviar enlace de restablecimiento",
+  "resetSentTitle": "Revisa tu correo",
+  "resetSentBody": "Enviamos un enlace de restablecimiento a {email}.",
+  "backToSignIn": "Volver a iniciar sesión",
   "gamificationSetting": "Medallas y niveles"
 ,
 

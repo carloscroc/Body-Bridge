@@ -2934,6 +2934,32 @@ class AppLocalizationsJa extends AppLocalizations {
   String get authErrorUnknown => 'サインインできませんでした。もう一度お試しください。';
 
   @override
+  String get brandKicker => '目的を持って鍛える';
+
+  @override
+  String get emailHint => 'you@example.com';
+
+  @override
+  String get passwordHint => '6文字以上';
+
+  @override
+  String get forgotPassword => 'パスワードをお忘れですか？';
+
+  @override
+  String get resetSend => '再設定リンクを送信';
+
+  @override
+  String get resetSentTitle => 'メールを確認してください';
+
+  @override
+  String resetSentBody(String email) {
+    return '$email に再設定リンクを送信しました。';
+  }
+
+  @override
+  String get backToSignIn => 'サインインに戻る';
+
+  @override
   String get accountTitle => 'アカウント';
 
   @override

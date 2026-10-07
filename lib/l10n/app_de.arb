@@ -1039,6 +1039,14 @@
   "authErrorTooManyRequests": "Zu viele Versuche. Bitte später erneut versuchen.",
   "authErrorNetwork": "Du bist offline — zum Anmelden wird Internet benötigt.",
   "authErrorUnknown": "Anmeldung fehlgeschlagen. Bitte erneut versuchen.",
+  "brandKicker": "TRAINIERE MIT ABSICHT",
+  "emailHint": "you@example.com",
+  "passwordHint": "Mindestens 6 Zeichen",
+  "forgotPassword": "Passwort vergessen?",
+  "resetSend": "Link zum Zurücksetzen senden",
+  "resetSentTitle": "Prüfe dein E-Mail-Postfach",
+  "resetSentBody": "Wir haben einen Link zum Zurücksetzen an {email} gesendet.",
+  "backToSignIn": "Zurück zur Anmeldung",
   "gamificationSetting": "Medaillen und Stufen"
 ,
 

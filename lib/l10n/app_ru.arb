@@ -960,6 +960,14 @@
   "authErrorTooManyRequests": "Слишком много попыток. Попробуйте позже.",
   "authErrorNetwork": "Вы не в сети — для входа нужен интернет.",
   "authErrorUnknown": "Не удалось войти. Попробуйте ещё раз.",
+  "brandKicker": "ТРЕНИРУЙСЯ ОСОЗНАННО",
+  "emailHint": "you@example.com",
+  "passwordHint": "Минимум 6 символов",
+  "forgotPassword": "Забыли пароль?",
+  "resetSend": "Отправить ссылку для сброса",
+  "resetSentTitle": "Проверьте почту",
+  "resetSentBody": "Мы отправили ссылку для сброса на {email}.",
+  "backToSignIn": "Вернуться ко входу",
   "gamificationSetting": "Медали и уровни"
 ,
 

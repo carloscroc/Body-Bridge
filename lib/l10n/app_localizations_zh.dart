@@ -2894,6 +2894,32 @@ class AppLocalizationsZh extends AppLocalizations {
   String get authErrorUnknown => '登录失败，请重试。';
 
   @override
+  String get brandKicker => '用心训练';
+
+  @override
+  String get emailHint => 'you@example.com';
+
+  @override
+  String get passwordHint => '至少 6 个字符';
+
+  @override
+  String get forgotPassword => '忘记密码？';
+
+  @override
+  String get resetSend => '发送重置链接';
+
+  @override
+  String get resetSentTitle => '请查收邮件';
+
+  @override
+  String resetSentBody(String email) {
+    return '我们已将重置链接发送至 $email。';
+  }
+
+  @override
+  String get backToSignIn => '返回登录';
+
+  @override
   String get accountTitle => '账户';
 
   @override
@@ -5942,6 +5968,32 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
 
   @override
   String get authErrorUnknown => '登入失敗，請再試一次。';
+
+  @override
+  String get brandKicker => '用心訓練';
+
+  @override
+  String get emailHint => 'you@example.com';
+
+  @override
+  String get passwordHint => '至少 6 個字元';
+
+  @override
+  String get forgotPassword => '忘記密碼？';
+
+  @override
+  String get resetSend => '傳送重設連結';
+
+  @override
+  String get resetSentTitle => '請查看郵件';
+
+  @override
+  String resetSentBody(String email) {
+    return '我們已將重設連結寄至 $email。';
+  }
+
+  @override
+  String get backToSignIn => '返回登入';
 
   @override
   String get accountTitle => '帳號';

@@ -43,7 +43,7 @@ abstract class AccountGate extends ChangeNotifier {
   Future<void> signUp(String email, String password);
   Future<void> signOut();
   Future<void> deleteAccount();
-
+  Future<void> sendPasswordReset(String email);
   static AccountGate _instance = SignedOutGate();
 
   /// Installs the account implementation supplied by the C2 integration.
@@ -74,4 +74,8 @@ class SignedOutGate extends AccountGate {
 
   @override
   Future<void> deleteAccount() => Future<void>.error(StateError('auth unavailable: sign in required'));
+
+  @override
+  Future<void> sendPasswordReset(String email) =>
+      Future<void>.error(StateError('auth unavailable: password reset required'));
 }

@@ -3032,6 +3032,32 @@ class AppLocalizationsIt extends AppLocalizations {
   String get authErrorUnknown => 'Accesso non riuscito. Riprova.';
 
   @override
+  String get brandKicker => 'ALLENATI CON INTENZIONE';
+
+  @override
+  String get emailHint => 'you@example.com';
+
+  @override
+  String get passwordHint => 'Almeno 6 caratteri';
+
+  @override
+  String get forgotPassword => 'Password dimenticata?';
+
+  @override
+  String get resetSend => 'Invia link di ripristino';
+
+  @override
+  String get resetSentTitle => 'Controlla la tua email';
+
+  @override
+  String resetSentBody(String email) {
+    return 'Abbiamo inviato un link di ripristino a $email.';
+  }
+
+  @override
+  String get backToSignIn => 'Torna all\'accesso';
+
+  @override
   String get accountTitle => 'Account';
 
   @override

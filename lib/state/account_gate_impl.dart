@@ -81,6 +81,12 @@ class RealAccountGate extends AccountGate {
   }
 
   @override
+  Future<void> sendPasswordReset(String email) async {
+    await account.warmUp();
+    await AuthService.instance.sendPasswordReset(email: email);
+  }
+
+  @override
   void dispose() {
     _disposed = true;
     account.removeListener(_forward);

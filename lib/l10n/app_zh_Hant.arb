@@ -1171,6 +1171,14 @@
   "authErrorTooManyRequests": "嘗試次數過多，請稍後再試。",
   "authErrorNetwork": "目前離線 — 登入需要網路。",
   "authErrorUnknown": "登入失敗，請再試一次。",
+  "brandKicker": "用心訓練",
+  "emailHint": "you@example.com",
+  "passwordHint": "至少 6 個字元",
+  "forgotPassword": "忘記密碼？",
+  "resetSend": "傳送重設連結",
+  "resetSentTitle": "請查看郵件",
+  "resetSentBody": "我們已將重設連結寄至 {email}。",
+  "backToSignIn": "返回登入",
   "gamificationSetting": "獎牌和等級"
 ,
 

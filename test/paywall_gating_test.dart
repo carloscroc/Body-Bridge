@@ -37,6 +37,10 @@ class FakeGate extends AccountGate {
 
   @override
   Future<void> deleteAccount() async {}
+
+  @override
+  Future<void> sendPasswordReset(String email) async {}
+
 }
 
 void main() {

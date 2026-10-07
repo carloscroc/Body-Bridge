@@ -931,6 +931,14 @@
   "authErrorTooManyRequests": "Tentativas demais. Tente novamente mais tarde.",
   "authErrorNetwork": "Você está offline — entrar precisa de internet.",
   "authErrorUnknown": "Falha ao entrar. Tente novamente.",
+  "brandKicker": "TREINE COM INTENÇÃO",
+  "emailHint": "you@example.com",
+  "passwordHint": "Pelo menos 6 caracteres",
+  "forgotPassword": "Esqueceu a senha?",
+  "resetSend": "Enviar link de redefinição",
+  "resetSentTitle": "Verifique o seu e-mail",
+  "resetSentBody": "Enviamos um link de redefinição para {email}.",
+  "backToSignIn": "Voltar ao login",
   "gamificationSetting": "Medalhas e níveis"
 ,
 

@@ -3032,6 +3032,32 @@ class AppLocalizationsTr extends AppLocalizations {
   String get authErrorUnknown => 'Giriş başarısız oldu. Tekrar deneyin.';
 
   @override
+  String get brandKicker => 'AMAÇLI ÇALIŞ';
+
+  @override
+  String get emailHint => 'you@example.com';
+
+  @override
+  String get passwordHint => 'En az 6 karakter';
+
+  @override
+  String get forgotPassword => 'Şifreni mi unuttun?';
+
+  @override
+  String get resetSend => 'Sıfırlama bağlantısı gönder';
+
+  @override
+  String get resetSentTitle => 'E-postanı kontrol et';
+
+  @override
+  String resetSentBody(String email) {
+    return '$email adresine sıfırlama bağlantısı gönderdik.';
+  }
+
+  @override
+  String get backToSignIn => 'Oturum açmaya dön';
+
+  @override
   String get accountTitle => 'Hesap';
 
   @override
