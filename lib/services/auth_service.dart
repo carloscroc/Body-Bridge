@@ -75,7 +75,7 @@ class AuthService {
     try {
       await FirebaseAuth.instance.sendPasswordResetEmail(email: email);
     } on FirebaseAuthException catch (e) {
-      throw AuthException(_keyOf(e.code));
+      throw AuthException(authKeyOf(e.code));
     } catch (e, st) {
       debugPrint('Password reset failed: ${_brief(e, st)}');
       throw const AuthException('unknown');
@@ -117,7 +117,7 @@ class AuthService {
             settled = false; // still signed in: re-auth required first
             throw const AuthException('requiresRecentLogin');
           }
-          debugPrint('Firebase account delete failed: ${_keyOf(e.code)}');
+          debugPrint('Firebase account delete failed: ${authKeyOf(e.code)}');
         }
       }
     } on AuthException {
@@ -163,7 +163,7 @@ class AuthService {
     try {
       await op();
     } on FirebaseAuthException catch (e) {
-      throw AuthException(_keyOf(e.code));
+      throw AuthException(authKeyOf(e.code));
     } catch (e, st) {
       debugPrint('Sign in failed: ${_brief(e, st)}');
       throw const AuthException('unknown');
@@ -193,10 +193,14 @@ class AuthService {
   AppAuthState _snapshot(User? user) =>
       user == null ? const AppAuthState.signedOut() : AppAuthState.signedIn(uid: user.uid, email: user.email);
 
-  String _keyOf(String code) => switch (code) {
+  /// Firebase error code -> stable AuthException key. Static + visible for
+  /// tests: the invalid-credential mapping is asserted directly.
+  @visibleForTesting
+  static String authKeyOf(String code) => switch (code) {
+    'invalid-credential' => 'wrongPassword', // 6.x: wrong password AND unknown email (enumeration protection)
     'invalid-email' => 'invalidEmail',
-    'wrong-password' => 'wrongPassword',
-    'user-not-found' => 'userNotFound',
+    'wrong-password' => 'wrongPassword', // deprecated 2023-09; kept for older SDKs
+    'user-not-found' => 'userNotFound', // deprecated 2023-09; kept for older SDKs
     'email-already-in-use' => 'emailAlreadyInUse',
     'weak-password' => 'weakPassword',
     'too-many-requests' => 'tooManyRequests',

@@ -220,6 +220,8 @@ class _AuthFormState extends State<AuthForm> {
         if (_authError != null) _errorBanner(),
         const SizedBox(height: 20),
         _submitButton(label: tr.resetSend, onTap: _submitReset),
+        const SizedBox(height: 8),
+        GhostButton(label: tr.backToSignIn, icon: PhosphorIconsRegular.caretLeft, onTap: _backToSignIn),
       ],
     );
   }

@@ -133,4 +133,62 @@ void main() {
     expect(find.textContaining('AuthException('), findsNothing,
         reason: 'AuthException.toString() must never reach the UI');
   });
+
+  testWidgets('reset pane back affordance returns to the sign-in pane without stale errors',
+      (tester) async {
+    final gate = _ScriptedGate();
+    await pumpForm(tester, gate);
+
+    await tester.enterText(find.byType(TextField).at(0), 'rider@gymmane.app');
+    await tester.pump();
+
+    // Switch to sign-in to reveal the forgot-password link, then follow it.
+    await tester.tap(find.text(t.signIn));
+    await tester.pump();
+    await tester.tap(find.text(t.forgotPassword));
+    await tester.pump();
+
+    // Reset pane: one email field and the back affordance.
+    expect(find.byType(TextField), findsOneWidget);
+    expect(find.text(t.backToSignIn), findsOneWidget);
+
+    // The sign-in email carries into the reset field, so clear it: submit
+    // must arm the validation error instead of reaching the gate.
+    await tester.enterText(find.byType(TextField), '');
+    await tester.pump();
+
+    // Raise a stale reset error: validation returns before the gate call.
+    await tester.tap(find.byType(PrimaryButton)); // resetSend
+    await tester.pump();
+    await tester.pump(const Duration(milliseconds: 100));
+    await tester.pump(const Duration(milliseconds: 100));
+
+    expect(find.text(t.emailInvalid), findsOneWidget,
+        reason: 'the error path armed without touching the gate');
+
+    await tester.tap(find.text(t.backToSignIn));
+    await tester.pump();
+
+    // Back on the sign-in pane: segment, two fields, one submit button.
+    expect(find.byType(TextField), findsNWidgets(2));
+    expect(find.text(t.signIn), findsNWidgets(2),
+        reason: 'the segment option and the submit button both read "Sign in"');
+    expect(find.byType(PrimaryButton), findsOneWidget);
+
+    // No stale reset error and no back affordance on the sign-in pane.
+    expect(find.text(t.emailInvalid), findsNothing);
+    expect(find.text(t.backToSignIn), findsNothing);
+    expect(gate.resetEmail, isNull, reason: 'back must not submit the reset request');
+  });
+
+  test('authKeyOf maps Firebase error codes to stable keys', () {
+    expect(AuthService.authKeyOf('invalid-credential'), 'wrongPassword',
+        reason: '6.x: wrong password and unknown email both return invalid-credential');
+    expect(AuthService.authKeyOf('wrong-password'), 'wrongPassword',
+        reason: 'deprecated arm still maps for older SDKs');
+    expect(AuthService.authKeyOf('user-not-found'), 'userNotFound',
+        reason: 'deprecated arm still maps for older SDKs');
+    expect(AuthService.authKeyOf('operation-not-allowed'), 'unknown',
+        reason: 'unmapped codes fall back to unknown');
+  });
 }
