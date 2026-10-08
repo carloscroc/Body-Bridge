@@ -3184,4 +3184,88 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get billingComingSoon => 'الفوترة قريبًا.';
+
+  @override
+  String get proBadgeLabel => 'PRO';
+
+  @override
+  String get upgradeSheetTitle => 'Body Bridge Premium';
+
+  @override
+  String get upgradeSheetSubtitle => 'افتح تجربة Body Bridge الكاملة';
+
+  @override
+  String get upgradeClose => 'إغلاق';
+
+  @override
+  String get billingMonthly => 'شهري';
+
+  @override
+  String get billingAnnual => 'سنوي';
+
+  @override
+  String get planMostPopular => 'الأكثر شيوعًا';
+
+  @override
+  String get planFactFullHistory => 'السجل الكامل';
+
+  @override
+  String get planFactCloudSync => 'نسخ احتياطي ومزامنة سحابية';
+
+  @override
+  String get planFactUnlimitedRoutines => 'روتينات غير محدودة';
+
+  @override
+  String get planFactChartsCommunity => 'الرسوم البيانية والمجتمع';
+
+  @override
+  String get planFactEverythingInBasic => 'كل ما في Basic';
+
+  @override
+  String get planFactAdvancedAnalytics => 'تحليلات متقدمة';
+
+  @override
+  String get planFactPremiumPrograms => 'برامج وفيديوهات مميزة';
+
+  @override
+  String get planFactTrainerContent => 'محتوى المدرب';
+
+  @override
+  String get upgradeCtaContinueOnWeb => 'تابع على bodybridge.net';
+
+  @override
+  String get checkoutComingSoon => 'الدفع عبر الإنترنت قادم قريبًا';
+
+  @override
+  String get enterpriseContactSales => 'Enterprise — تواصل مع المبيعات';
+
+  @override
+  String get finePrintBilling => 'تتم عملية الفوترة بأمان على bodybridge.net — وليس عبر متجر Play.';
+
+  @override
+  String get lockAnalyticsTitle => 'تحليلات متقدمة';
+
+  @override
+  String get lockAnalyticsMeta => 'اتجاهات الحجم · تقديرات 1RM · توزيع العضلات';
+
+  @override
+  String get lockAnalyticsUpsell => 'افتح التحليلات المتقدمة مع Body Bridge Pro.';
+
+  @override
+  String get premiumProgramLabel => 'برنامج مميز';
+
+  @override
+  String get premiumProgramTitle => 'كتل الضخامة العضلية';
+
+  @override
+  String get premiumProgramMeta => '8 أسابيع · 4 حصص / أسبوع · بإشراف مدرب';
+
+  @override
+  String get premiumProgramUpsell => 'البرامج المميزة وفيديوهات المدربين جزء من Pro.';
+
+  @override
+  String get unlockWithPro => 'افتح مع Pro';
+
+  @override
+  String get upgradeUpsellToast => 'قم بالترقية لفتح المزيد';
 }

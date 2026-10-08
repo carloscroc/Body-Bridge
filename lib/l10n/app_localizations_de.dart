@@ -3208,4 +3208,89 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get billingComingSoon => 'Abrechnung kommt bald.';
+
+  @override
+  String get proBadgeLabel => 'PRO';
+
+  @override
+  String get upgradeSheetTitle => 'Body Bridge Premium';
+
+  @override
+  String get upgradeSheetSubtitle => 'Das komplette Body-Bridge-Erlebnis freischalten';
+
+  @override
+  String get upgradeClose => 'Schließen';
+
+  @override
+  String get billingMonthly => 'MONATLICH';
+
+  @override
+  String get billingAnnual => 'JÄHRLICH';
+
+  @override
+  String get planMostPopular => 'Am beliebtesten';
+
+  @override
+  String get planFactFullHistory => 'Voller Verlauf';
+
+  @override
+  String get planFactCloudSync => 'Cloud-Backup & Sync';
+
+  @override
+  String get planFactUnlimitedRoutines => 'Unbegrenzte Routinen';
+
+  @override
+  String get planFactChartsCommunity => 'Diagramme & Community';
+
+  @override
+  String get planFactEverythingInBasic => 'Alles aus Basic';
+
+  @override
+  String get planFactAdvancedAnalytics => 'Fortgeschrittene Analysen';
+
+  @override
+  String get planFactPremiumPrograms => 'Premium-Programme & Videos';
+
+  @override
+  String get planFactTrainerContent => 'Trainer-Inhalte';
+
+  @override
+  String get upgradeCtaContinueOnWeb => 'Weiter auf bodybridge.net';
+
+  @override
+  String get checkoutComingSoon => 'Online-Kasse kommt bald';
+
+  @override
+  String get enterpriseContactSales => 'Enterprise — Vertrieb kontaktieren';
+
+  @override
+  String get finePrintBilling =>
+      'Die Abrechnung erfolgt sicher auf bodybridge.net — nicht über den Play Store.';
+
+  @override
+  String get lockAnalyticsTitle => 'Fortgeschrittene Analysen';
+
+  @override
+  String get lockAnalyticsMeta => 'Volumen-Trends · 1RM-Schätzungen · Muskelsplit';
+
+  @override
+  String get lockAnalyticsUpsell => 'Schalte fortgeschrittene Analysen mit Body Bridge Pro frei.';
+
+  @override
+  String get premiumProgramLabel => 'Premium-Programm';
+
+  @override
+  String get premiumProgramTitle => 'Hypertrophie-Blöcke';
+
+  @override
+  String get premiumProgramMeta => '8 Wochen · 4 Einheiten / Woche · Trainer-begleitet';
+
+  @override
+  String get premiumProgramUpsell => 'Premium-Programme und Trainer-Videos sind Teil von Pro.';
+
+  @override
+  String get unlockWithPro => 'Mit Pro freischalten';
+
+  @override
+  String get upgradeUpsellToast => 'Upgrade für mehr';
 }

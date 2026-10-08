@@ -11,6 +11,7 @@ import '../widgets/entrance.dart';
 import '../widgets/exercise_media.dart';
 import '../widgets/glass.dart';
 import '../widgets/home_folder.dart';
+import '../widgets/pro_badge.dart';
 import '../widgets/svg_icon.dart';
 import '../widgets/ui_kit.dart';
 import 'progress_screen.dart';
@@ -146,6 +147,8 @@ class HomeScreen extends StatelessWidget {
             ),
           ),
         ),
+        const SizedBox(width: 10),
+        const ProBadge(),
       ],
     );
   }

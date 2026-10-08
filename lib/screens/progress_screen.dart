@@ -4,10 +4,12 @@ import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:phosphoricons_flutter/phosphoricons_flutter.dart';
 
+import '../constants/billing.dart';
 import '../l10n/l10n.dart';
 import '../models/progress_shot.dart';
 import '../models/workout.dart';
 import '../services/media_store.dart';
+import '../state/account_gate.dart';
 import '../state/fit_state.dart';
 import '../theme/app_colors.dart';
 import '../theme/app_theme.dart';
@@ -18,8 +20,10 @@ import '../widgets/entrance.dart';
 import '../widgets/exercise_media.dart';
 import '../widgets/glass.dart';
 import '../widgets/muscle_radar.dart';
+import '../widgets/premium_gate.dart';
 import '../widgets/rolling_text.dart';
 import '../widgets/ruler_picker.dart';
+import '../widgets/upgrade_sheet.dart';
 import '../widgets/ui_kit.dart';
 import 'share_sheet.dart';
 import 'start_sheet.dart';
@@ -68,6 +72,8 @@ class ProgressScreen extends StatelessWidget {
                   ),
                 ],
               ),
+              const SizedBox(height: 12),
+              _analyticsLockRow(context, gc),
               const SizedBox(height: 20),
               if (fit.visibleSessions.isEmpty) ...[_setupCard(context, gc), const SizedBox(height: 12)],
               _heroRow(context, gc, change, bw),
@@ -318,6 +324,100 @@ class ProgressScreen extends StatelessWidget {
           ],
         ],
       ),
+    );
+  }
+
+  /// Premium upsell: advanced analytics. Free and basic tiers see the locked
+  /// entry; advanced and above see nothing (zero change).
+  Widget _analyticsLockRow(BuildContext context, GymColors gc) {
+    return AnimatedBuilder(
+      animation: context.accountGate,
+      builder: (context, _) {
+        final tier = context.accountGate.snapshot.tier;
+        if (!tier.isSignedIn || tierCan(tier, kCapAdvancedAnalytics)) return const SizedBox.shrink();
+        return GestureDetector(
+          behavior: HitTestBehavior.opaque,
+          onTap: () => showUpgradeSheet(context),
+          child: Container(
+            padding: const EdgeInsets.all(18),
+            decoration: BoxDecoration(
+              color: gc.bgRaised,
+              borderRadius: BorderRadius.circular(20),
+              border: Border.all(color: gc.border),
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Row(
+                  children: [
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(t.lockAnalyticsTitle,
+                              style: AppTheme.f(15, weight: FontWeight.w700, color: gc.textSecondary)),
+                          const SizedBox(height: 2),
+                          FittedBox(
+                            fit: BoxFit.scaleDown,
+                            alignment: Alignment.centerLeft,
+                            child: Text(t.lockAnalyticsMeta,
+                                style: AppTheme.f(13, weight: FontWeight.w600, color: gc.textTertiary)),
+                          ),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(width: 12),
+                    Container(
+                      width: 26,
+                      height: 26,
+                      decoration: BoxDecoration(
+                        color: gc.bgRaised2,
+                        shape: BoxShape.circle,
+                        border: Border.all(color: gc.border),
+                      ),
+                      child: Icon(PhosphorIconsRegular.lockSimple, size: 13, color: gc.textSecondary),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 14),
+                SizedBox(
+                  height: 44,
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      for (final v in const [38, 55, 44, 70, 58, 82, 66, 50])
+                        Expanded(
+                          flex: v,
+                          child: Container(
+                            margin: const EdgeInsets.symmetric(horizontal: 2),
+                            height: 44 * v / 82,
+                            decoration: BoxDecoration(
+                              color: gc.bgRaised2,
+                              borderRadius: const BorderRadius.vertical(top: Radius.circular(3)),
+                            ),
+                          ),
+                        ),
+                    ],
+                  ),
+                ),
+                const SizedBox(height: 14),
+                Container(height: 1, color: gc.border),
+                const SizedBox(height: 12),
+                Row(
+                  children: [
+                    Icon(PhosphorIconsFill.sparkle, size: 12, color: gc.accent),
+                    const SizedBox(width: 6),
+                    Expanded(
+                      child: Text(t.lockAnalyticsUpsell,
+                          style: AppTheme.f(13, weight: FontWeight.w600, color: gc.accent)),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+        );
+      },
     );
   }
 

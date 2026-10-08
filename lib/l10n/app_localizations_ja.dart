@@ -3094,4 +3094,88 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get billingComingSoon => '課金機能はまもなく提供予定です。';
+
+  @override
+  String get proBadgeLabel => 'PRO';
+
+  @override
+  String get upgradeSheetTitle => 'Body Bridge プレミアム';
+
+  @override
+  String get upgradeSheetSubtitle => 'Body Bridge のすべての機能をアンロック';
+
+  @override
+  String get upgradeClose => '閉じる';
+
+  @override
+  String get billingMonthly => '月額';
+
+  @override
+  String get billingAnnual => '年額';
+
+  @override
+  String get planMostPopular => '一番人気';
+
+  @override
+  String get planFactFullHistory => '全履歴';
+
+  @override
+  String get planFactCloudSync => 'クラウドバックアップと同期';
+
+  @override
+  String get planFactUnlimitedRoutines => 'ルーティン無制限';
+
+  @override
+  String get planFactChartsCommunity => 'グラフとコミュニティ';
+
+  @override
+  String get planFactEverythingInBasic => 'Basic のすべて';
+
+  @override
+  String get planFactAdvancedAnalytics => '高度な分析';
+
+  @override
+  String get planFactPremiumPrograms => 'プレミアムプログラムと動画';
+
+  @override
+  String get planFactTrainerContent => 'トレーナーコンテンツ';
+
+  @override
+  String get upgradeCtaContinueOnWeb => 'bodybridge.net で続行';
+
+  @override
+  String get checkoutComingSoon => 'オンライン決済は近日公開';
+
+  @override
+  String get enterpriseContactSales => 'Enterprise — 法人向けお問い合わせ';
+
+  @override
+  String get finePrintBilling => '課金は bodybridge.net で安全に処理されます — Play ストア経由ではありません。';
+
+  @override
+  String get lockAnalyticsTitle => '高度な分析';
+
+  @override
+  String get lockAnalyticsMeta => 'ボリューム推移 · 1RM 推定 · 部位別バランス';
+
+  @override
+  String get lockAnalyticsUpsell => 'Body Bridge Pro で高度な分析をアンロック。';
+
+  @override
+  String get premiumProgramLabel => 'プレミアムプログラム';
+
+  @override
+  String get premiumProgramTitle => '筋肥大ブロック';
+
+  @override
+  String get premiumProgramMeta => '8 週間 · 週 4 セッション · トレーナー監修';
+
+  @override
+  String get premiumProgramUpsell => 'プレミアムプログラムとトレーナー動画は Pro の特典です。';
+
+  @override
+  String get unlockWithPro => 'Pro でアンロック';
+
+  @override
+  String get upgradeUpsellToast => 'アップグレードでさらにアンロック';
 }

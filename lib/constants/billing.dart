@@ -8,6 +8,8 @@ const String kCapAiPlan = 'personalized_programs';
 const String kCapUnlimitedRoutines = 'unlimited_routines';
 const String kCapFullHistory = 'full_history';
 const String kCapCustomExercises = 'trainer_features';
+const String kCapAdvancedAnalytics = 'advanced_analytics';
+const String kCapPremiumPrograms = 'premium_programs';
 
 // --- Client-side FREE limits ---
 const int kFreeRoutineCap = 3;

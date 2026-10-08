@@ -3192,4 +3192,89 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get billingComingSoon => 'O pagamento chega em breve.';
+
+  @override
+  String get proBadgeLabel => 'PRO';
+
+  @override
+  String get upgradeSheetTitle => 'Body Bridge Premium';
+
+  @override
+  String get upgradeSheetSubtitle => 'Desbloqueie a experiência completa do Body Bridge';
+
+  @override
+  String get upgradeClose => 'Fechar';
+
+  @override
+  String get billingMonthly => 'MENSAL';
+
+  @override
+  String get billingAnnual => 'ANUAL';
+
+  @override
+  String get planMostPopular => 'O mais popular';
+
+  @override
+  String get planFactFullHistory => 'Histórico completo';
+
+  @override
+  String get planFactCloudSync => 'Cópia de segurança e sincronização na nuvem';
+
+  @override
+  String get planFactUnlimitedRoutines => 'Rotinas ilimitadas';
+
+  @override
+  String get planFactChartsCommunity => 'Gráficos e comunidade';
+
+  @override
+  String get planFactEverythingInBasic => 'Tudo do Basic';
+
+  @override
+  String get planFactAdvancedAnalytics => 'Análises avançadas';
+
+  @override
+  String get planFactPremiumPrograms => 'Programas e vídeos premium';
+
+  @override
+  String get planFactTrainerContent => 'Conteúdo de treinadores';
+
+  @override
+  String get upgradeCtaContinueOnWeb => 'Continuar em bodybridge.net';
+
+  @override
+  String get checkoutComingSoon => 'Pagamento online em breve';
+
+  @override
+  String get enterpriseContactSales => 'Enterprise — Fale com as vendas';
+
+  @override
+  String get finePrintBilling =>
+      'O pagamento é processado com segurança em bodybridge.net — não pela Play Store.';
+
+  @override
+  String get lockAnalyticsTitle => 'Análises avançadas';
+
+  @override
+  String get lockAnalyticsMeta => 'Tendências de volume · estimativas de 1RM · divisão muscular';
+
+  @override
+  String get lockAnalyticsUpsell => 'Desbloqueie as análises avançadas com o Body Bridge Pro.';
+
+  @override
+  String get premiumProgramLabel => 'Programa premium';
+
+  @override
+  String get premiumProgramTitle => 'Blocos de hipertrofia';
+
+  @override
+  String get premiumProgramMeta => '8 semanas · 4 sessões / semana · com treinador';
+
+  @override
+  String get premiumProgramUpsell => 'Programas premium e vídeos de treinadores fazem parte do Pro.';
+
+  @override
+  String get unlockWithPro => 'Desbloquear com Pro';
+
+  @override
+  String get upgradeUpsellToast => 'Faça upgrade para desbloquear mais';
 }

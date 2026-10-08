@@ -3054,6 +3054,90 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get billingComingSoon => '付费功能即将上线。';
+
+  @override
+  String get proBadgeLabel => 'PRO';
+
+  @override
+  String get upgradeSheetTitle => 'Body Bridge 高级版';
+
+  @override
+  String get upgradeSheetSubtitle => '解锁完整的 Body Bridge 体验';
+
+  @override
+  String get upgradeClose => '关闭';
+
+  @override
+  String get billingMonthly => '按月';
+
+  @override
+  String get billingAnnual => '按年';
+
+  @override
+  String get planMostPopular => '最受欢迎';
+
+  @override
+  String get planFactFullHistory => '完整历史';
+
+  @override
+  String get planFactCloudSync => '云备份与同步';
+
+  @override
+  String get planFactUnlimitedRoutines => '无限训练计划';
+
+  @override
+  String get planFactChartsCommunity => '图表与社区';
+
+  @override
+  String get planFactEverythingInBasic => '包含 Basic 全部功能';
+
+  @override
+  String get planFactAdvancedAnalytics => '高级分析';
+
+  @override
+  String get planFactPremiumPrograms => '高级课程与视频';
+
+  @override
+  String get planFactTrainerContent => '教练内容';
+
+  @override
+  String get upgradeCtaContinueOnWeb => '前往 bodybridge.net 继续';
+
+  @override
+  String get checkoutComingSoon => '在线支付即将上线';
+
+  @override
+  String get enterpriseContactSales => '企业版 — 联系销售';
+
+  @override
+  String get finePrintBilling => '付款通过 bodybridge.net 安全处理 — 不经过 Play 商店。';
+
+  @override
+  String get lockAnalyticsTitle => '高级分析';
+
+  @override
+  String get lockAnalyticsMeta => '容量趋势 · 1RM 估算 · 肌肉分布';
+
+  @override
+  String get lockAnalyticsUpsell => '使用 Body Bridge Pro 解锁高级分析。';
+
+  @override
+  String get premiumProgramLabel => '高级课程';
+
+  @override
+  String get premiumProgramTitle => '增肌训练块';
+
+  @override
+  String get premiumProgramMeta => '8 周 · 每周 4 次 · 教练指导';
+
+  @override
+  String get premiumProgramUpsell => '高级课程和教练视频是 Pro 的一部分。';
+
+  @override
+  String get unlockWithPro => '用 Pro 解锁';
+
+  @override
+  String get upgradeUpsellToast => '升级以解锁更多';
 }
 
 /// The translations for Chinese, using the Han script (`zh_Hant`).
@@ -6130,4 +6214,88 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
 
   @override
   String get billingComingSoon => '付費功能即將上線。';
+
+  @override
+  String get proBadgeLabel => 'PRO';
+
+  @override
+  String get upgradeSheetTitle => 'Body Bridge 進階版';
+
+  @override
+  String get upgradeSheetSubtitle => '解鎖完整的 Body Bridge 體驗';
+
+  @override
+  String get upgradeClose => '關閉';
+
+  @override
+  String get billingMonthly => '按月';
+
+  @override
+  String get billingAnnual => '按年';
+
+  @override
+  String get planMostPopular => '最受歡迎';
+
+  @override
+  String get planFactFullHistory => '完整歷史';
+
+  @override
+  String get planFactCloudSync => '雲端備份與同步';
+
+  @override
+  String get planFactUnlimitedRoutines => '無限訓練計畫';
+
+  @override
+  String get planFactChartsCommunity => '圖表與社群';
+
+  @override
+  String get planFactEverythingInBasic => '包含 Basic 全部功能';
+
+  @override
+  String get planFactAdvancedAnalytics => '進階分析';
+
+  @override
+  String get planFactPremiumPrograms => '進階課程與影片';
+
+  @override
+  String get planFactTrainerContent => '教練內容';
+
+  @override
+  String get upgradeCtaContinueOnWeb => '前往 bodybridge.net 繼續';
+
+  @override
+  String get checkoutComingSoon => '線上付款即將推出';
+
+  @override
+  String get enterpriseContactSales => '企業版 — 聯絡銷售';
+
+  @override
+  String get finePrintBilling => '付款透過 bodybridge.net 安全處理 — 不經過 Play 商店。';
+
+  @override
+  String get lockAnalyticsTitle => '進階分析';
+
+  @override
+  String get lockAnalyticsMeta => '容量趨勢 · 1RM 估算 · 肌肉分布';
+
+  @override
+  String get lockAnalyticsUpsell => '使用 Body Bridge Pro 解鎖進階分析。';
+
+  @override
+  String get premiumProgramLabel => '進階課程';
+
+  @override
+  String get premiumProgramTitle => '增肌訓練塊';
+
+  @override
+  String get premiumProgramMeta => '8 週 · 每週 4 次 · 教練指導';
+
+  @override
+  String get premiumProgramUpsell => '進階課程與教練影片是 Pro 的一部分。';
+
+  @override
+  String get unlockWithPro => '用 Pro 解鎖';
+
+  @override
+  String get upgradeUpsellToast => '升級以解鎖更多';
 }

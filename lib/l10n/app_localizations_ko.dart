@@ -3109,4 +3109,88 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get billingComingSoon => '결제 기능이 곧 제공될 예정입니다.';
+
+  @override
+  String get proBadgeLabel => 'PRO';
+
+  @override
+  String get upgradeSheetTitle => 'Body Bridge 프리미엄';
+
+  @override
+  String get upgradeSheetSubtitle => 'Body Bridge의 모든 기능을 잠금 해제하세요';
+
+  @override
+  String get upgradeClose => '닫기';
+
+  @override
+  String get billingMonthly => '월간';
+
+  @override
+  String get billingAnnual => '연간';
+
+  @override
+  String get planMostPopular => '가장 인기';
+
+  @override
+  String get planFactFullHistory => '전체 기록';
+
+  @override
+  String get planFactCloudSync => '클라우드 백업 및 동기화';
+
+  @override
+  String get planFactUnlimitedRoutines => '무제한 루틴';
+
+  @override
+  String get planFactChartsCommunity => '차트 및 커뮤니티';
+
+  @override
+  String get planFactEverythingInBasic => 'Basic의 모든 기능';
+
+  @override
+  String get planFactAdvancedAnalytics => '고급 분석';
+
+  @override
+  String get planFactPremiumPrograms => '프리미엄 프로그램 및 영상';
+
+  @override
+  String get planFactTrainerContent => '트레이너 콘텐츠';
+
+  @override
+  String get upgradeCtaContinueOnWeb => 'bodybridge.net에서 계속';
+
+  @override
+  String get checkoutComingSoon => '온라인 결제가 곧 제공됩니다';
+
+  @override
+  String get enterpriseContactSales => 'Enterprise — 영업팀 문의';
+
+  @override
+  String get finePrintBilling => '결제는 bodybridge.net에서 안전하게 처리됩니다 — Play 스토어를 통하지 않습니다.';
+
+  @override
+  String get lockAnalyticsTitle => '고급 분석';
+
+  @override
+  String get lockAnalyticsMeta => '볼륨 추이 · 1RM 추정 · 부위별 분포';
+
+  @override
+  String get lockAnalyticsUpsell => 'Body Bridge Pro로 고급 분석을 잠금 해제하세요.';
+
+  @override
+  String get premiumProgramLabel => '프리미엄 프로그램';
+
+  @override
+  String get premiumProgramTitle => '비대 블록';
+
+  @override
+  String get premiumProgramMeta => '8주 · 주 4회 세션 · 트레이너 지도';
+
+  @override
+  String get premiumProgramUpsell => '프리미엄 프로그램과 트레이너 영상은 Pro에 포함되어 있습니다.';
+
+  @override
+  String get unlockWithPro => 'Pro로 잠금 해제';
+
+  @override
+  String get upgradeUpsellToast => '업그레이드하고 더 잠금 해제';
 }

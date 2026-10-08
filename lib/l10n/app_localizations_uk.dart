@@ -3196,4 +3196,88 @@ class AppLocalizationsUk extends AppLocalizations {
 
   @override
   String get billingComingSoon => 'Оплата скоро з\'явиться.';
+
+  @override
+  String get proBadgeLabel => 'PRO';
+
+  @override
+  String get upgradeSheetTitle => 'Body Bridge Преміум';
+
+  @override
+  String get upgradeSheetSubtitle => 'Відкрийте всі можливості Body Bridge';
+
+  @override
+  String get upgradeClose => 'Закрити';
+
+  @override
+  String get billingMonthly => 'ЩОМІСЯЧНО';
+
+  @override
+  String get billingAnnual => 'ЩОРОЧНО';
+
+  @override
+  String get planMostPopular => 'Найпопулярніший';
+
+  @override
+  String get planFactFullHistory => 'Повна історія';
+
+  @override
+  String get planFactCloudSync => 'Хмарна резервна копія та синхронізація';
+
+  @override
+  String get planFactUnlimitedRoutines => 'Необмежені комплекси';
+
+  @override
+  String get planFactChartsCommunity => 'Графіки та спільнота';
+
+  @override
+  String get planFactEverythingInBasic => 'Усе з Basic';
+
+  @override
+  String get planFactAdvancedAnalytics => 'Розширена аналітика';
+
+  @override
+  String get planFactPremiumPrograms => 'Преміум-програми та відео';
+
+  @override
+  String get planFactTrainerContent => 'Контент тренерів';
+
+  @override
+  String get upgradeCtaContinueOnWeb => 'Продовжити на bodybridge.net';
+
+  @override
+  String get checkoutComingSoon => 'Онлайн-оплата незабаром';
+
+  @override
+  String get enterpriseContactSales => 'Enterprise — зв\'язатися з відділом продажів';
+
+  @override
+  String get finePrintBilling => 'Оплата безпечно проходить на bodybridge.net — не через Play Маркет.';
+
+  @override
+  String get lockAnalyticsTitle => 'Розширена аналітика';
+
+  @override
+  String get lockAnalyticsMeta => 'Тренди обсягу · оцінка 1ПМ · розподіл м’язів';
+
+  @override
+  String get lockAnalyticsUpsell => 'Відкрийте розширену аналітику з Body Bridge Pro.';
+
+  @override
+  String get premiumProgramLabel => 'Преміум-програма';
+
+  @override
+  String get premiumProgramTitle => 'Блоки гіпертрофії';
+
+  @override
+  String get premiumProgramMeta => '8 тижнів · 4 тренування / тиждень · з тренером';
+
+  @override
+  String get premiumProgramUpsell => 'Преміум-програми та відео тренерів входять до Pro.';
+
+  @override
+  String get unlockWithPro => 'Відкрити з Pro';
+
+  @override
+  String get upgradeUpsellToast => 'Покращіть тариф, щоб відкрити більше';
 }

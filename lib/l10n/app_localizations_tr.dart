@@ -3193,4 +3193,89 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get billingComingSoon => 'Ödeme çok yakında.';
+
+  @override
+  String get proBadgeLabel => 'PRO';
+
+  @override
+  String get upgradeSheetTitle => 'Body Bridge Premium';
+
+  @override
+  String get upgradeSheetSubtitle => 'Tüm Body Bridge deneyiminin kilidini aç';
+
+  @override
+  String get upgradeClose => 'Kapat';
+
+  @override
+  String get billingMonthly => 'AYLIK';
+
+  @override
+  String get billingAnnual => 'YILLIK';
+
+  @override
+  String get planMostPopular => 'En popüler';
+
+  @override
+  String get planFactFullHistory => 'Tüm geçmiş';
+
+  @override
+  String get planFactCloudSync => 'Bulut yedekleme ve eşitleme';
+
+  @override
+  String get planFactUnlimitedRoutines => 'Sınırsız rutin';
+
+  @override
+  String get planFactChartsCommunity => 'Grafikler ve topluluk';
+
+  @override
+  String get planFactEverythingInBasic => 'Basic\'teki her şey';
+
+  @override
+  String get planFactAdvancedAnalytics => 'Gelişmiş analizler';
+
+  @override
+  String get planFactPremiumPrograms => 'Premium programlar ve videolar';
+
+  @override
+  String get planFactTrainerContent => 'Antrenör içerikleri';
+
+  @override
+  String get upgradeCtaContinueOnWeb => 'bodybridge.net\'te devam et';
+
+  @override
+  String get checkoutComingSoon => 'Çevrimiçi ödeme yakında';
+
+  @override
+  String get enterpriseContactSales => 'Enterprise — Satışlarla iletişime geç';
+
+  @override
+  String get finePrintBilling =>
+      'Ödeme güvenle bodybridge.net üzerinden yapılır — Play Store üzerinden değil.';
+
+  @override
+  String get lockAnalyticsTitle => 'Gelişmiş analizler';
+
+  @override
+  String get lockAnalyticsMeta => 'Hacim eğilimleri · 1RM tahminleri · kas dağılımı';
+
+  @override
+  String get lockAnalyticsUpsell => 'Body Bridge Pro ile gelişmiş analizlerin kilidini aç.';
+
+  @override
+  String get premiumProgramLabel => 'Premium program';
+
+  @override
+  String get premiumProgramTitle => 'Hipertrofi Blokları';
+
+  @override
+  String get premiumProgramMeta => '8 hafta · haftada 4 seans · antrenörlü';
+
+  @override
+  String get premiumProgramUpsell => 'Premium programlar ve antrenör videoları Pro\'nun parçasıdır.';
+
+  @override
+  String get unlockWithPro => 'Pro ile aç';
+
+  @override
+  String get upgradeUpsellToast => 'Daha fazlası için yükselt';
 }
