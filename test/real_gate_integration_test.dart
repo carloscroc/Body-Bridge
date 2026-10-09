@@ -7,7 +7,6 @@ import 'package:gymmane/state/account_gate.dart';
 import 'package:gymmane/state/account_gate_impl.dart';
 import 'package:gymmane/state/account_state.dart';
 import 'package:gymmane/state/fit_state.dart';
-import 'package:gymmane/widgets/ui_kit.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 /// Real-app proof of the mandatory-auth entry gate (t_f232e72e): the
@@ -42,7 +41,7 @@ void main() {
     await tester.enterText(find.byType(TextField).at(0), 'not-an-email');
     await tester.pump(const Duration(milliseconds: 100));
 
-    await tester.tap(find.text(titleCase(t.authCtaContinueEmail)));
+    await tester.tap(find.text(t.authCtaContinueEmail));
     await tester.pump();
     await tester.pump(const Duration(milliseconds: 100));
     await tester.pump(const Duration(milliseconds: 100));
@@ -59,7 +58,7 @@ void main() {
         reason: 'a failed submit must not produce a signed-in tier');
     expect(find.byType(CircularProgressIndicator), findsNothing,
         reason: 'no stuck spinner: submitting resets after the failure');
-    expect(find.text(titleCase(t.authCtaContinueEmail)), findsOneWidget,
+    expect(find.text(t.authCtaContinueEmail), findsOneWidget,
         reason: 'the submit button is back, form still usable');
   });
 
@@ -72,12 +71,12 @@ void main() {
 
     expect(find.byType(AuthWallScreen), findsOneWidget,
         reason: 'signed-out boot must show the blocking wall, not the app');
-    expect(find.text('Body Bridge'), findsOneWidget,
+    expect(find.text('BODY BRIDGE'), findsOneWidget,
         reason: 'the wall carries the wordmark');
 
     // The email step is the default: the submit button offers the code
     // handoff.
-    expect(find.text(titleCase(t.authCtaContinueEmail)), findsOneWidget,
+    expect(find.text(t.authCtaContinueEmail), findsOneWidget,
         reason: 'the email step is the default on the wall');
     expect(tester.takeException(), isNull);
   });
@@ -94,7 +93,7 @@ void main() {
 
     expect(find.byType(AuthWallScreen), findsNothing,
         reason: 'a signed-in phase leaves the wall');
-    expect(find.text(titleCase(t.authCtaContinueEmail)), findsNothing,
+    expect(find.text(t.authCtaContinueEmail), findsNothing,
         reason: 'the wall form is gone from the tree');
     expect(tester.takeException(), isNull,
         reason: 'the shell renders for the restored session');

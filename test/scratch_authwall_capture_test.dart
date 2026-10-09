@@ -1,9 +1,7 @@
 // Throwaway capture harness (scratch_ prefix = not part of the committed
 // suite): renders the real AuthWallScreen at the Samsung viewport in both
 // themes, both OTP steps, and exports PNGs to CAPTURE_DIR for visual review.
-import 'dart:convert' show JsonDecoder;
 import 'dart:io';
-import 'dart:typed_data';
 import 'dart:ui' show ImageByteFormat;
 
 import 'package:flutter/material.dart';
@@ -14,7 +12,6 @@ import 'package:gymmane/l10n/l10n.dart';
 import 'package:gymmane/screens/auth_wall_screen.dart';
 import 'package:gymmane/state/account_gate.dart';
 import 'package:gymmane/theme/app_theme.dart';
-import 'package:gymmane/widgets/ui_kit.dart';
 
 class ScriptedGate extends AccountGate {
   @override
@@ -97,7 +94,7 @@ void main() {
     // DARK theme — code step
     await tester.enterText(find.byType(TextField), 'carlos@bodybridge.app');
     await tester.pump();
-    await tester.tap(find.text(titleCase(t.authCtaContinueEmail)));
+    await tester.tap(find.text(t.authCtaContinueEmail));
     for (var i = 0; i < 6; i++) {
       await tester.pump(const Duration(milliseconds: 150));
     }
@@ -106,7 +103,7 @@ void main() {
     );
     await tester.enterText(find.byType(TextField), 'carlos@bodybridge.app');
     await tester.pump();
-    await tester.tap(find.text(titleCase(t.authCtaContinueEmail)));
+    await tester.tap(find.text(t.authCtaContinueEmail));
     for (var i = 0; i < 6; i++) {
       await tester.pump(const Duration(milliseconds: 150));
     }
@@ -122,7 +119,7 @@ void main() {
     // LIGHT theme — code step
     await tester.enterText(find.byType(TextField), 'carlos@bodybridge.app');
     await tester.pump();
-    await tester.tap(find.text(titleCase(t.authCtaContinueEmail)));
+    await tester.tap(find.text(t.authCtaContinueEmail));
     for (var i = 0; i < 6; i++) {
       await tester.pump(const Duration(milliseconds: 150));
     }
@@ -131,7 +128,7 @@ void main() {
     );
     await tester.enterText(find.byType(TextField), 'carlos@bodybridge.app');
     await tester.pump();
-    await tester.tap(find.text(titleCase(t.authCtaContinueEmail)));
+    await tester.tap(find.text(t.authCtaContinueEmail));
     for (var i = 0; i < 6; i++) {
       await tester.pump(const Duration(milliseconds: 150));
     }

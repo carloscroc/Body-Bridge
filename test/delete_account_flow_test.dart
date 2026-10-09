@@ -117,7 +117,7 @@ void main() {
     expect(find.byType(CircularProgressIndicator), findsNothing);
     expect(find.text(t.deleteAccountDone), findsOneWidget, reason: 'success shows the done snackbar');
     expect(find.byType(TextField), findsOneWidget, reason: 'the signed-out form renders automatically');
-    expect(find.text(titleCase(t.authCtaContinueEmail)), findsOneWidget);
+    expect(find.text(t.authCtaContinueEmail), findsOneWidget);
   });
 
   testWidgets('service failure -> failed snackbar, user stays signed in', (tester) async {

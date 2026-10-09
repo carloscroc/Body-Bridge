@@ -7,7 +7,6 @@ import 'package:gymmane/state/account_gate.dart';
 import 'package:gymmane/state/onboarding_gate.dart';
 import 'package:gymmane/theme/app_theme.dart';
 import 'package:gymmane/widgets/otp_auth_form.dart';
-import 'package:gymmane/widgets/ui_kit.dart';
 import 'package:phosphoricons_flutter/phosphoricons_flutter.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -121,7 +120,7 @@ void main() {
     await pumpEmailStep(tester, gate);
     await tester.enterText(find.byType(TextField), 'racer@gymmane.dev');
     await tester.pump();
-    await tester.tap(find.text(titleCase(t.authCtaContinueEmail)));
+    await tester.tap(find.text(t.authCtaContinueEmail));
     await tester.pump();
     await tester.pump(const Duration(milliseconds: 100));
     await tester.pump(const Duration(milliseconds: 300));
@@ -149,7 +148,7 @@ void main() {
 
     await tester.enterText(find.byType(TextField), 'not-an-email');
     await tester.pump();
-    await tester.tap(find.text(titleCase(t.authCtaContinueEmail)));
+    await tester.tap(find.text(t.authCtaContinueEmail));
     await tester.pump();
     await tester.pump(const Duration(milliseconds: 100));
     await tester.pump(const Duration(milliseconds: 100));
@@ -170,7 +169,7 @@ void main() {
 
     await tester.enterText(find.byType(TextField), 'racer@gymmane.dev');
     await tester.pump();
-    await tester.tap(find.text(titleCase(t.authCtaContinueEmail)));
+    await tester.tap(find.text(t.authCtaContinueEmail));
     await tester.pump();
     await tester.pump(const Duration(milliseconds: 100));
     await tester.pump(const Duration(milliseconds: 100));
@@ -193,7 +192,7 @@ void main() {
 
     await tester.enterText(find.byType(TextField), 'racer@gymmane.dev');
     await tester.pump();
-    await tester.tap(find.text(titleCase(t.authCtaContinueEmail)));
+    await tester.tap(find.text(t.authCtaContinueEmail));
     await tester.pump();
     await tester.pump(const Duration(milliseconds: 100));
     await tester.pump(const Duration(milliseconds: 100));
@@ -216,7 +215,7 @@ void main() {
     expect(find.textContaining('racer@gymmane.dev', findRichText: true),
         findsOneWidget,
         reason: 'the sent pane echoes the address (rich-text span)');
-    expect(find.text(titleCase(t.authCtaContinueEmail)), findsNothing,
+    expect(find.text(t.authCtaContinueEmail), findsNothing,
         reason: 'the email step is gone');
     expect(gate.sentCount, 1);
     expect(tester.takeException(), isNull);
