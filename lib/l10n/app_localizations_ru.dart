@@ -3353,4 +3353,86 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get authChipPlaces => 'Места';
+  String get proBadgeLabel => 'PRO';
+
+  @override
+  String get upgradeSheetTitle => 'Body Bridge Премиум';
+
+  @override
+  String get upgradeSheetSubtitle => 'Откройте все возможности Body Bridge';
+
+  @override
+  String get upgradeClose => 'Закрыть';
+
+  @override
+  String get billingMonthly => 'ЕЖЕМЕСЯЧНО';
+
+  @override
+  String get billingAnnual => 'ЕЖЕГОДНО';
+
+  @override
+  String get planMostPopular => 'Самый популярный';
+
+  @override
+  String get planFactFullHistory => 'Полная история';
+
+  @override
+  String get planFactCloudSync => 'Облачная резервная копия и синхронизация';
+
+  @override
+  String get planFactUnlimitedRoutines => 'Неограниченные комплексы';
+
+  @override
+  String get planFactChartsCommunity => 'Графики и сообщество';
+
+  @override
+  String get planFactEverythingInBasic => 'Всё из Basic';
+
+  @override
+  String get planFactAdvancedAnalytics => 'Расширенная аналитика';
+
+  @override
+  String get planFactPremiumPrograms => 'Премиум-программы и видео';
+
+  @override
+  String get planFactTrainerContent => 'Контент тренеров';
+
+  @override
+  String get upgradeCtaContinueOnWeb => 'Продолжить на bodybridge.net';
+
+  @override
+  String get checkoutComingSoon => 'Онлайн-оплата скоро появится';
+
+  @override
+  String get enterpriseContactSales => 'Enterprise — связаться с отделом продаж';
+
+  @override
+  String get finePrintBilling => 'Оплата безопасно проходит на bodybridge.net — не через Play Маркет.';
+
+  @override
+  String get lockAnalyticsTitle => 'Расширенная аналитика';
+
+  @override
+  String get lockAnalyticsMeta => 'Тренды объёма · оценка 1ПМ · распределение по мышцам';
+
+  @override
+  String get lockAnalyticsUpsell => 'Откройте расширенную аналитику с Body Bridge Pro.';
+
+  @override
+  String get premiumProgramLabel => 'Премиум-программа';
+
+  @override
+  String get premiumProgramTitle => 'Блоки гипертрофии';
+
+  @override
+  String get premiumProgramMeta => '8 недель · 4 тренировки / неделю · с тренером';
+
+  @override
+  String get premiumProgramUpsell => 'Премиум-программы и видео тренеров входят в Pro.';
+
+  @override
+  String get unlockWithPro => 'Открыть с Pro';
+
+  @override
+  String get upgradeUpsellToast => 'Улучшите тариф, чтобы открыть больше';
 }

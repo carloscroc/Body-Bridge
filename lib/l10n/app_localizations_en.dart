@@ -3261,4 +3261,87 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get authChipPlaces => 'Places';
+  String get proBadgeLabel => 'PRO';
+
+  @override
+  String get upgradeSheetTitle => 'Body Bridge Premium';
+
+  @override
+  String get upgradeSheetSubtitle => 'Unlock the full Body Bridge experience';
+
+  @override
+  String get upgradeClose => 'Close';
+
+  @override
+  String get billingMonthly => 'MONTHLY';
+
+  @override
+  String get billingAnnual => 'ANNUAL';
+
+  @override
+  String get planMostPopular => 'Most popular';
+
+  @override
+  String get planFactFullHistory => 'Full history';
+
+  @override
+  String get planFactCloudSync => 'Cloud backup & sync';
+
+  @override
+  String get planFactUnlimitedRoutines => 'Unlimited routines';
+
+  @override
+  String get planFactChartsCommunity => 'Charts & community';
+
+  @override
+  String get planFactEverythingInBasic => 'Everything in Basic';
+
+  @override
+  String get planFactAdvancedAnalytics => 'Advanced analytics';
+
+  @override
+  String get planFactPremiumPrograms => 'Premium programs & videos';
+
+  @override
+  String get planFactTrainerContent => 'Trainer content';
+
+  @override
+  String get upgradeCtaContinueOnWeb => 'Continue on bodybridge.net';
+
+  @override
+  String get checkoutComingSoon => 'Online checkout coming soon';
+
+  @override
+  String get enterpriseContactSales => 'Enterprise — Contact Sales';
+
+  @override
+  String get finePrintBilling =>
+      'Billing is handled securely on bodybridge.net — not through the Play Store.';
+
+  @override
+  String get lockAnalyticsTitle => 'Advanced analytics';
+
+  @override
+  String get lockAnalyticsMeta => 'Volume trends · 1RM estimates · muscle split';
+
+  @override
+  String get lockAnalyticsUpsell => 'Unlock advanced analytics with Body Bridge Pro.';
+
+  @override
+  String get premiumProgramLabel => 'Premium program';
+
+  @override
+  String get premiumProgramTitle => 'Hypertrophy Blocks';
+
+  @override
+  String get premiumProgramMeta => '8 weeks · 4 sessions / week · trainer-led';
+
+  @override
+  String get premiumProgramUpsell => 'Premium programs and trainer videos are part of Pro.';
+
+  @override
+  String get unlockWithPro => 'Unlock with Pro';
+
+  @override
+  String get upgradeUpsellToast => 'Upgrade to unlock more';
 }

@@ -3270,4 +3270,86 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get authChipPlaces => 'Plaatsen';
+  String get proBadgeLabel => 'PRO';
+
+  @override
+  String get upgradeSheetTitle => 'Body Bridge Premium';
+
+  @override
+  String get upgradeSheetSubtitle => 'Ontgrendel de volledige Body Bridge-ervaring';
+
+  @override
+  String get upgradeClose => 'Sluiten';
+
+  @override
+  String get billingMonthly => 'MAANDELIJKS';
+
+  @override
+  String get billingAnnual => 'JAARLIJKS';
+
+  @override
+  String get planMostPopular => 'Meest gekozen';
+
+  @override
+  String get planFactFullHistory => 'Volledige geschiedenis';
+
+  @override
+  String get planFactCloudSync => 'Cloudback-up en synchronisatie';
+
+  @override
+  String get planFactUnlimitedRoutines => 'Onbeperkte routines';
+
+  @override
+  String get planFactChartsCommunity => 'Grafieken en community';
+
+  @override
+  String get planFactEverythingInBasic => 'Alles uit Basic';
+
+  @override
+  String get planFactAdvancedAnalytics => 'Geavanceerde analyses';
+
+  @override
+  String get planFactPremiumPrograms => 'Premium programma\'s en video\'s';
+
+  @override
+  String get planFactTrainerContent => 'Trainer-inhoud';
+
+  @override
+  String get upgradeCtaContinueOnWeb => 'Ga verder op bodybridge.net';
+
+  @override
+  String get checkoutComingSoon => 'Online afrekenen komt binnenkort';
+
+  @override
+  String get enterpriseContactSales => 'Enterprise — Contact met sales';
+
+  @override
+  String get finePrintBilling => 'De betaling verloopt veilig via bodybridge.net — niet via de Play Store.';
+
+  @override
+  String get lockAnalyticsTitle => 'Geavanceerde analyses';
+
+  @override
+  String get lockAnalyticsMeta => 'Volume-trends · 1RM-schattingen · spierverdeling';
+
+  @override
+  String get lockAnalyticsUpsell => 'Ontgrendel geavanceerde analyses met Body Bridge Pro.';
+
+  @override
+  String get premiumProgramLabel => 'Premium programma';
+
+  @override
+  String get premiumProgramTitle => 'Hypertrofie-blokken';
+
+  @override
+  String get premiumProgramMeta => '8 weken · 4 sessies / week · met trainer';
+
+  @override
+  String get premiumProgramUpsell => 'Premium programma\'s en trainervideo\'s maken deel uit van Pro.';
+
+  @override
+  String get unlockWithPro => 'Ontgrendelen met Pro';
+
+  @override
+  String get upgradeUpsellToast => 'Upgrade om meer te ontgrendelen';
 }

@@ -5845,6 +5845,173 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Places'**
   String get authChipPlaces;
+  /// No description provided for @proBadgeLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'PRO'**
+  String get proBadgeLabel;
+
+  /// No description provided for @upgradeSheetTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Body Bridge Premium'**
+  String get upgradeSheetTitle;
+
+  /// No description provided for @upgradeSheetSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Unlock the full Body Bridge experience'**
+  String get upgradeSheetSubtitle;
+
+  /// No description provided for @upgradeClose.
+  ///
+  /// In en, this message translates to:
+  /// **'Close'**
+  String get upgradeClose;
+
+  /// No description provided for @billingMonthly.
+  ///
+  /// In en, this message translates to:
+  /// **'MONTHLY'**
+  String get billingMonthly;
+
+  /// No description provided for @billingAnnual.
+  ///
+  /// In en, this message translates to:
+  /// **'ANNUAL'**
+  String get billingAnnual;
+
+  /// No description provided for @planMostPopular.
+  ///
+  /// In en, this message translates to:
+  /// **'Most popular'**
+  String get planMostPopular;
+
+  /// No description provided for @planFactFullHistory.
+  ///
+  /// In en, this message translates to:
+  /// **'Full history'**
+  String get planFactFullHistory;
+
+  /// No description provided for @planFactCloudSync.
+  ///
+  /// In en, this message translates to:
+  /// **'Cloud backup & sync'**
+  String get planFactCloudSync;
+
+  /// No description provided for @planFactUnlimitedRoutines.
+  ///
+  /// In en, this message translates to:
+  /// **'Unlimited routines'**
+  String get planFactUnlimitedRoutines;
+
+  /// No description provided for @planFactChartsCommunity.
+  ///
+  /// In en, this message translates to:
+  /// **'Charts & community'**
+  String get planFactChartsCommunity;
+
+  /// No description provided for @planFactEverythingInBasic.
+  ///
+  /// In en, this message translates to:
+  /// **'Everything in Basic'**
+  String get planFactEverythingInBasic;
+
+  /// No description provided for @planFactAdvancedAnalytics.
+  ///
+  /// In en, this message translates to:
+  /// **'Advanced analytics'**
+  String get planFactAdvancedAnalytics;
+
+  /// No description provided for @planFactPremiumPrograms.
+  ///
+  /// In en, this message translates to:
+  /// **'Premium programs & videos'**
+  String get planFactPremiumPrograms;
+
+  /// No description provided for @planFactTrainerContent.
+  ///
+  /// In en, this message translates to:
+  /// **'Trainer content'**
+  String get planFactTrainerContent;
+
+  /// No description provided for @upgradeCtaContinueOnWeb.
+  ///
+  /// In en, this message translates to:
+  /// **'Continue on bodybridge.net'**
+  String get upgradeCtaContinueOnWeb;
+
+  /// No description provided for @checkoutComingSoon.
+  ///
+  /// In en, this message translates to:
+  /// **'Online checkout coming soon'**
+  String get checkoutComingSoon;
+
+  /// No description provided for @enterpriseContactSales.
+  ///
+  /// In en, this message translates to:
+  /// **'Enterprise — Contact Sales'**
+  String get enterpriseContactSales;
+
+  /// No description provided for @finePrintBilling.
+  ///
+  /// In en, this message translates to:
+  /// **'Billing is handled securely on bodybridge.net — not through the Play Store.'**
+  String get finePrintBilling;
+
+  /// No description provided for @lockAnalyticsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Advanced analytics'**
+  String get lockAnalyticsTitle;
+
+  /// No description provided for @lockAnalyticsMeta.
+  ///
+  /// In en, this message translates to:
+  /// **'Volume trends · 1RM estimates · muscle split'**
+  String get lockAnalyticsMeta;
+
+  /// No description provided for @lockAnalyticsUpsell.
+  ///
+  /// In en, this message translates to:
+  /// **'Unlock advanced analytics with Body Bridge Pro.'**
+  String get lockAnalyticsUpsell;
+
+  /// No description provided for @premiumProgramLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Premium program'**
+  String get premiumProgramLabel;
+
+  /// No description provided for @premiumProgramTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Hypertrophy Blocks'**
+  String get premiumProgramTitle;
+
+  /// No description provided for @premiumProgramMeta.
+  ///
+  /// In en, this message translates to:
+  /// **'8 weeks · 4 sessions / week · trainer-led'**
+  String get premiumProgramMeta;
+
+  /// No description provided for @premiumProgramUpsell.
+  ///
+  /// In en, this message translates to:
+  /// **'Premium programs and trainer videos are part of Pro.'**
+  String get premiumProgramUpsell;
+
+  /// No description provided for @unlockWithPro.
+  ///
+  /// In en, this message translates to:
+  /// **'Unlock with Pro'**
+  String get unlockWithPro;
+
+  /// No description provided for @upgradeUpsellToast.
+  ///
+  /// In en, this message translates to:
+  /// **'Upgrade to unlock more'**
+  String get upgradeUpsellToast;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
