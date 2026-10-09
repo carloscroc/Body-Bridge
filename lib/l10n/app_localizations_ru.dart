@@ -3353,6 +3353,8 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get authChipPlaces => 'Места';
+
+  @override
   String get proBadgeLabel => 'PRO';
 
   @override

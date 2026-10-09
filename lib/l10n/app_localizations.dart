@@ -5845,6 +5845,7 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Places'**
   String get authChipPlaces;
+
   /// No description provided for @proBadgeLabel.
   ///
   /// In en, this message translates to:

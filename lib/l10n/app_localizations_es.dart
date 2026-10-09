@@ -3261,6 +3261,8 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get authChipPlaces => 'Lugares';
+
+  @override
   String get proBadgeLabel => 'PRO';
 
   @override

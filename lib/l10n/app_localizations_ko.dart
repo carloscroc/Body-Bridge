@@ -3180,6 +3180,8 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get authChipPlaces => '장소';
+
+  @override
   String get proBadgeLabel => 'PRO';
 
   @override

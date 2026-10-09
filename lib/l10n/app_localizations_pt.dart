@@ -3263,6 +3263,8 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get authChipPlaces => 'Locais';
+
+  @override
   String get proBadgeLabel => 'PRO';
 
   @override

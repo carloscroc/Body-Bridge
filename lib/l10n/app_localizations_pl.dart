@@ -3271,6 +3271,8 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String get authChipPlaces => 'Miejsca';
+
+  @override
   String get proBadgeLabel => 'PRO';
 
   @override

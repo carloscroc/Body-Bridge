@@ -3267,6 +3267,8 @@ class AppLocalizationsUk extends AppLocalizations {
 
   @override
   String get authChipPlaces => 'Місця';
+
+  @override
   String get proBadgeLabel => 'PRO';
 
   @override

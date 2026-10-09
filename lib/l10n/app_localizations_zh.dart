@@ -3125,6 +3125,8 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get authChipPlaces => '场馆';
+
+  @override
   String get proBadgeLabel => 'PRO';
 
   @override
@@ -6354,6 +6356,8 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
 
   @override
   String get authChipPlaces => '場館';
+
+  @override
   String get proBadgeLabel => 'PRO';
 
   @override
