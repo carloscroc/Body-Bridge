@@ -292,7 +292,18 @@ class _OtpAuthFormState extends State<OtpAuthForm>
 
   @override
   Widget build(BuildContext context) {
-    return _step == _Step.email ? _emailStep(context) : _codeStep(context);
+    return LayoutBuilder(builder: (context, constraints) {
+      final Widget step =
+          _step == _Step.email ? _emailStep(context) : _codeStep(context);
+      return SingleChildScrollView(
+        child: ConstrainedBox(
+          constraints: BoxConstraints(
+            minHeight: constraints.hasBoundedHeight ? constraints.maxHeight : 0,
+          ),
+          child: Align(alignment: Alignment.bottomCenter, child: step),
+        ),
+      );
+    });
   }
 
   Widget _emailStep(BuildContext context) {
@@ -369,7 +380,6 @@ class _OtpAuthFormState extends State<OtpAuthForm>
                     height: 1.6)),
           ],
         ]),
-        if (widget.showBrandHeader && !compact) const Spacer(),
         ...riseAll([
           Text(_t.emailLabel.toUpperCase(),
               style: AppTheme.f(11,
@@ -440,71 +450,67 @@ class _OtpAuthFormState extends State<OtpAuthForm>
               animates && MediaQuery.maybeDisableAnimationsOf(context) != true);
     }
     final expired = _expiresIn() <= 0;
-    return LayoutBuilder(builder: (context, constraints) {
-      final pinned = constraints.hasBoundedHeight;
-      return Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          ...riseAll([
-            Center(
-              child: animates
-                  ? AnimatedBuilder(
-                      animation: _breath,
-                      builder: (context, child) =>
-                          Transform.scale(scale: _breath.value, child: child),
-                      child: _brandMark(gc, 44, 12, 20,
-                          shadowBlur: 20, shadowDy: 8, shadowAlpha: 0.24),
-                    )
-                  : _brandMark(gc, 44, 12, 20,
-                      shadowBlur: 20, shadowDy: 8, shadowAlpha: 0.24),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        ...riseAll([
+          Center(
+            child: animates
+                ? AnimatedBuilder(
+                    animation: _breath,
+                    builder: (context, child) =>
+                        Transform.scale(scale: _breath.value, child: child),
+                    child: _brandMark(gc, 44, 12, 20,
+                        shadowBlur: 20, shadowDy: 8, shadowAlpha: 0.24),
+                  )
+                : _brandMark(gc, 44, 12, 20,
+                    shadowBlur: 20, shadowDy: 8, shadowAlpha: 0.24),
+          ),
+          const SizedBox(height: 24),
+          Center(
+            child: Kicker(_t.authCodeKicker,
+                color: gc.accent, size: 11, spacing: 0.88),
+          ),
+          const SizedBox(height: 8),
+          Text(_t.authCodeTitle,
+              textAlign: TextAlign.center,
+              style: AppTheme.d(28,
+                  weight: FontWeight.w800, height: 1.21, color: gc.text)),
+          const SizedBox(height: 8),
+          Center(
+            child: ConstrainedBox(
+              constraints: const BoxConstraints(maxWidth: 300),
+              child: _sentTo(gc),
             ),
-            const SizedBox(height: 24),
-            Center(
-              child: Kicker(_t.authCodeKicker,
-                  color: gc.accent, size: 11, spacing: 0.88),
-            ),
-            const SizedBox(height: 8),
-            Text(_t.authCodeTitle,
-                textAlign: TextAlign.center,
-                style: AppTheme.d(28,
-                    weight: FontWeight.w800, height: 1.21, color: gc.text)),
-            const SizedBox(height: 8),
-            Center(
-              child: ConstrainedBox(
-                constraints: const BoxConstraints(maxWidth: 300),
-                child: _sentTo(gc),
-              ),
-            ),
-            const SizedBox(height: 40),
-            OtpCodeWell(
-              key: _wellKey,
-              enabled: !_verifying && !locked,
-              expired: expired,
-              hasError: _verdict == _CodeVerdict.invalid,
-              onCompleted: _verify,
-            ),
-            AnimatedSize(
-              duration: const Duration(milliseconds: 200),
-              curve: Curves.easeOut,
-              alignment: Alignment.topCenter,
-              child: _verdictBlock(gc),
-            ),
-            AnimatedSize(
-              duration: const Duration(milliseconds: 200),
-              curve: Curves.easeOut,
-              alignment: Alignment.topCenter,
-              child: _sendNoticeBlock(gc),
-            ),
-            const SizedBox(height: 24),
-            _codeMeta(gc, expired: expired),
-          ]),
-          if (!_verifying)
-            pinned ? const Spacer() : const SizedBox(height: 24),
-          if (!_verifying)
-            Align(alignment: Alignment.center, child: _backLink(gc)),
-        ],
-      );
-    });
+          ),
+          const SizedBox(height: 40),
+          OtpCodeWell(
+            key: _wellKey,
+            enabled: !_verifying && !locked,
+            expired: expired,
+            hasError: _verdict == _CodeVerdict.invalid,
+            onCompleted: _verify,
+          ),
+          AnimatedSize(
+            duration: const Duration(milliseconds: 200),
+            curve: Curves.easeOut,
+            alignment: Alignment.topCenter,
+            child: _verdictBlock(gc),
+          ),
+          AnimatedSize(
+            duration: const Duration(milliseconds: 200),
+            curve: Curves.easeOut,
+            alignment: Alignment.topCenter,
+            child: _sendNoticeBlock(gc),
+          ),
+          const SizedBox(height: 24),
+          _codeMeta(gc, expired: expired),
+        ]),
+        if (!_verifying) const SizedBox(height: 24),
+        if (!_verifying)
+          Align(alignment: Alignment.center, child: _backLink(gc)),
+      ],
+    );
   }
 
   // -- pieces ---------------------------------------------------------------

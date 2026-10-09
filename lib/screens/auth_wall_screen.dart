@@ -24,26 +24,15 @@ class AuthWallScreen extends StatelessWidget {
           const Positioned.fill(child: AppBackground(pattern: 'dots')),
           SafeArea(
             bottom: false,
-            child: LayoutBuilder(
-              builder: (context, constraints) {
-                return SingleChildScrollView(
-                  padding: EdgeInsets.fromLTRB(24, topPad, 24, 24),
-                  child: RiseScope(
-                    id: 'authwall',
-                    child: ConstrainedBox(
-                      constraints: BoxConstraints(
-                        minHeight: compact ? 0 : constraints.maxHeight - topPad - 24,
-                      ),
-                      child: IntrinsicHeight(
-                        child: OtpAuthForm(
-                          showBrandHeader: true,
-                          strings: () => t,
-                        ),
-                      ),
-                    ),
-                  ),
-                );
-              },
+            child: Padding(
+              padding: EdgeInsets.fromLTRB(24, topPad, 24, 24),
+              child: RiseScope(
+                id: 'authwall',
+                child: OtpAuthForm(
+                  showBrandHeader: true,
+                  strings: () => t,
+                ),
+              ),
             ),
           ),
         ],
