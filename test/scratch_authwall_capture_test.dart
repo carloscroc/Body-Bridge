@@ -53,6 +53,8 @@ void main() {
   setUpAll(() async {
     // Load the real Nunito assets — without this the harness renders every
     // glyph as a solid block ("squares"), which poisoned the first review set.
+    // Phosphor families are loaded too so brand glyphs (lock, clock, arrows)
+    // render as icons instead of tofu in the capture PNGs.
     final families = <String, List<String>>{
       'Nunito': [
         'assets/fonts/Nunito-Regular.ttf',
@@ -64,11 +66,23 @@ void main() {
         'assets/fonts/Nunito-ExtraBold.ttf',
         'assets/fonts/Nunito-Black.ttf',
       ],
+      'packages/phosphoricons_flutter/PhosphorRegular': [
+        'file://C:/Users/thebe/AppData/Local/Pub/Cache/hosted/pub.dev/phosphoricons_flutter-1.0.0/lib/fonts/Phosphor.ttf',
+      ],
+      'packages/phosphoricons_flutter/PhosphorFill': [
+        'file://C:/Users/thebe/AppData/Local/Pub/Cache/hosted/pub.dev/phosphoricons_flutter-1.0.0/lib/fonts/Phosphor-Fill.ttf',
+      ],
     };
     for (final entry in families.entries) {
       final loader = FontLoader(entry.key);
       for (final path in entry.value) {
-        loader.addFont(rootBundle.load(path));
+        if (path.startsWith('file://')) {
+          // Host-absolute path (pub-cache font): read straight from disk.
+          final bytes = File(path.substring(7)).readAsBytesSync();
+          loader.addFont(Future.value(bytes.buffer.asByteData()));
+        } else {
+          loader.addFont(rootBundle.load(path));
+        }
       }
       await loader.load();
     }
