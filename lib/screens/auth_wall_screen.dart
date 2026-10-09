@@ -15,6 +15,8 @@ class AuthWallScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final gc = context.gc;
+    final compact = MediaQuery.viewInsetsOf(context).bottom > 0;
+    final topPad = compact ? 24.0 : 64.0;
     return Scaffold(
       backgroundColor: gc.bg,
       body: Stack(
@@ -22,13 +24,26 @@ class AuthWallScreen extends StatelessWidget {
           const Positioned.fill(child: AppBackground(pattern: 'dots')),
           SafeArea(
             bottom: false,
-            child: SingleChildScrollView(
-              padding: EdgeInsets.fromLTRB(
-                  24, 24, 24, 32 + MediaQuery.viewInsetsOf(context).bottom),
-              child: RiseScope(
-                id: 'authwall',
-                child: OtpAuthForm(showBrandHeader: true, strings: () => t),
-              ),
+            child: LayoutBuilder(
+              builder: (context, constraints) {
+                return SingleChildScrollView(
+                  padding: EdgeInsets.fromLTRB(24, topPad, 24, 24),
+                  child: RiseScope(
+                    id: 'authwall',
+                    child: ConstrainedBox(
+                      constraints: BoxConstraints(
+                        minHeight: compact ? 0 : constraints.maxHeight - topPad - 24,
+                      ),
+                      child: IntrinsicHeight(
+                        child: OtpAuthForm(
+                          showBrandHeader: true,
+                          strings: () => t,
+                        ),
+                      ),
+                    ),
+                  ),
+                );
+              },
             ),
           ),
         ],

@@ -302,82 +302,129 @@ class _OtpAuthFormState extends State<OtpAuthForm>
         widget.showBrandHeader && View.of(context).viewInsets.bottom > 0;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: riseAll([
-        if (!compact) ...[
-          Center(child: _brandMark(gc, 96, 24, 44, dark: dark)),
-          const SizedBox(height: 18),
-          Center(child: Kicker(_t.brandKicker, color: gc.brass, size: 11.5)),
-          Text('Body Bridge',
-              textAlign: TextAlign.center,
-              style: AppTheme.d(22,
-                  weight: FontWeight.w800, letterSpacing: 1.2, color: gc.text)),
-          const SizedBox(height: 18),
-          Text(_t.authWelcomeTitle,
-              textAlign: TextAlign.center,
-              style: AppTheme.d(28, weight: FontWeight.w800, height: 1.1, color: gc.text)),
-          const SizedBox(height: 10),
-          Text(_t.authWelcomeSubline,
-              textAlign: TextAlign.center,
-              style: AppTheme.f(14,
-                  weight: FontWeight.w500, color: gc.textSecondary, height: 1.45)),
-        ],
-        const SizedBox(height: 22),
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            _emailField(gc),
-            AnimatedSize(
-              duration: const Duration(milliseconds: 180),
-              curve: Curves.easeOut,
-              alignment: Alignment.topCenter,
-              child: _emailError == null
-                  ? const SizedBox(width: double.infinity)
-                  : Padding(
-                      padding: const EdgeInsets.only(top: 8),
-                      child: Text(_emailError!,
-                          textAlign: TextAlign.center,
-                          style: AppTheme.f(12.5,
-                              weight: FontWeight.w600, color: gc.danger)),
+      children: [
+        ...riseAll([
+          if (!compact) ...[
+            Center(
+              child: SizedBox(
+                width: 240,
+                height: 96,
+                child: Stack(
+                  clipBehavior: Clip.none,
+                  alignment: Alignment.center,
+                  children: [
+                    Positioned(
+                      top: -72,
+                      child: Container(
+                        width: 240,
+                        height: 240,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          gradient: RadialGradient(
+                            colors: [
+                              gc.accent.withValues(alpha: dark ? 0.18 : 0.10),
+                              gc.accent.withValues(alpha: 0),
+                            ],
+                            stops: const [0, 0.7],
+                          ),
+                        ),
+                      ),
                     ),
+                    _brandMark(gc, 96, 24, 46),
+                  ],
+                ),
+              ),
+            ),
+            const SizedBox(height: 32),
+            Center(
+              child: Kicker(_t.brandKicker,
+                  color: gc.accent, size: 11, spacing: 0.88),
+            ),
+            const SizedBox(height: 6),
+            Text('Body Bridge'.toUpperCase(),
+                textAlign: TextAlign.center,
+                style: AppTheme.d(14,
+                    weight: FontWeight.w900,
+                    letterSpacing: 4.2,
+                    color: gc.text)),
+            const SizedBox(height: 32),
+            Center(
+              child: ConstrainedBox(
+                constraints: const BoxConstraints(maxWidth: 320),
+                child: Text(_t.authWelcomeTitle,
+                    textAlign: TextAlign.center,
+                    style: AppTheme.d(34,
+                        weight: FontWeight.w900,
+                        height: 1.18,
+                        letterSpacing: -0.34,
+                        color: gc.text)),
+              ),
+            ),
+            const SizedBox(height: 8),
+            Text(_t.authWelcomeSubline,
+                textAlign: TextAlign.center,
+                style: AppTheme.f(15,
+                    weight: FontWeight.w400,
+                    color: gc.textSecondary,
+                    height: 1.6)),
+          ],
+        ]),
+        if (widget.showBrandHeader && !compact) const Spacer(),
+        ...riseAll([
+          Text(_t.emailLabel.toUpperCase(),
+              style: AppTheme.f(11,
+                  weight: FontWeight.w700,
+                  letterSpacing: 0.88,
+                  color: gc.textSecondary)),
+          const SizedBox(height: 8),
+          _emailField(gc),
+          AnimatedSize(
+            duration: const Duration(milliseconds: 180),
+            curve: Curves.easeOut,
+            alignment: Alignment.topCenter,
+            child: _emailError == null
+                ? const SizedBox(width: double.infinity)
+                : Padding(
+                    padding: const EdgeInsets.only(top: 8),
+                    child: Text(_emailError!,
+                        textAlign: TextAlign.center,
+                        style: AppTheme.f(12.5,
+                            weight: FontWeight.w600, color: gc.danger)),
+                  ),
+          ),
+          const SizedBox(height: 16),
+        _cta(context, label: _t.authCtaContinueEmail, onTap: _send, busy: _busy),
+          if (!compact) ...[
+            const SizedBox(height: 16),
+            Text(_t.authTrustMicrocopy,
+                textAlign: TextAlign.center,
+                style: AppTheme.f(13,
+                    weight: FontWeight.w600, color: gc.textTertiary)),
+            const SizedBox(height: 24),
+            Column(
+              children: [
+                Icon(PhosphorIconsRegular.lockSimple,
+                    size: 14, color: gc.textTertiary),
+                const SizedBox(height: 8),
+                Text(_t.authPrivacyLine1,
+                    textAlign: TextAlign.center,
+                    style: AppTheme.f(13,
+                        weight: FontWeight.w600, color: gc.textTertiary)),
+                const SizedBox(height: 8),
+                Text(_t.authPrivacyLine2,
+                    textAlign: TextAlign.center,
+                    style: AppTheme.f(13,
+                        weight: FontWeight.w600, color: gc.textTertiary)),
+              ],
             ),
           ],
-        ),
-        const SizedBox(height: 14),
-        _cta(context, label: _t.authCtaContinueEmail, onTap: _send, busy: _busy),
-        if (!compact) ...[
-          const SizedBox(height: 14),
-          Text(_t.authTrustMicrocopy,
-              textAlign: TextAlign.center,
-              style: AppTheme.f(12, weight: FontWeight.w500, color: gc.textTertiary)),
-          const SizedBox(height: 6),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Icon(PhosphorIconsFill.checkCircle, size: 12, color: gc.sage),
-              const SizedBox(width: 5),
-              Flexible(
-                child: Text(_t.authPrivacyLine1,
-                    style: AppTheme.f(11.5,
-                        weight: FontWeight.w500, color: gc.textTertiary)),
-              ),
-              const SizedBox(width: 10),
-              Icon(PhosphorIconsFill.checkCircle, size: 12, color: gc.sage),
-              const SizedBox(width: 5),
-              Flexible(
-                child: Text(_t.authPrivacyLine2,
-                    style: AppTheme.f(11.5,
-                        weight: FontWeight.w500, color: gc.textTertiary)),
-              ),
-            ],
-          ),
-        ],
-      ]),
+        ]),
+      ],
     );
   }
 
   Widget _codeStep(BuildContext context) {
     final gc = context.gc;
-    final dark = Theme.brightnessOf(context) == Brightness.dark;
     final animates = RiseScope.animates(context);
     final locked = _lockSeconds() > 0;
     if (animates && !_breath.isAnimating) {
@@ -402,9 +449,9 @@ class _OtpAuthFormState extends State<OtpAuthForm>
                   animation: _breath,
                   builder: (context, child) =>
                       Transform.scale(scale: _breath.value, child: child),
-                  child: _brandMark(gc, 56, 16, 26, dark: dark),
+                  child: _brandMark(gc, 56, 16, 26),
                 )
-              : _brandMark(gc, 56, 16, 26, dark: dark),
+              : _brandMark(gc, 56, 16, 26),
         ),
         const SizedBox(height: 18),
         Center(child: Kicker(_t.authCodeKicker, color: gc.brass, size: 11.5)),
@@ -446,7 +493,9 @@ class _OtpAuthFormState extends State<OtpAuthForm>
   // -- pieces ---------------------------------------------------------------
 
   Widget _brandMark(GymColors gc, double size, double radius, double fontSize,
-      {bool dark = true}) {
+      {double shadowBlur = 36,
+      double shadowDy = 16,
+      double shadowAlpha = 0.28}) {
     return Container(
       width: size,
       height: size,
@@ -460,14 +509,14 @@ class _OtpAuthFormState extends State<OtpAuthForm>
         ),
         boxShadow: [
           BoxShadow(
-            color: gc.accent.withValues(alpha: dark ? 0.38 : 0.22),
-            blurRadius: dark ? 44 : 24,
-            offset: const Offset(0, 12),
+            color: gc.accent.withValues(alpha: shadowAlpha),
+            blurRadius: shadowBlur,
+            offset: Offset(0, shadowDy),
           ),
         ],
       ),
       child: Text('B',
-          style: AppTheme.d(fontSize, weight: FontWeight.w800, color: gc.onEmber)),
+          style: AppTheme.d(fontSize, weight: FontWeight.w900, color: gc.onEmber)),
     );
   }
 
@@ -476,42 +525,54 @@ class _OtpAuthFormState extends State<OtpAuthForm>
       child: Builder(
         builder: (context) {
           final focused = Focus.of(context).hasFocus;
+          final dark = Theme.brightnessOf(context) == Brightness.dark;
           return Container(
-            height: 54,
-            padding: const EdgeInsets.symmetric(horizontal: 14),
+            padding: const EdgeInsets.all(2),
             decoration: BoxDecoration(
-              color: gc.bgRaised,
-              borderRadius: BorderRadius.circular(14),
+              borderRadius: BorderRadius.circular(15),
               border: Border.all(
-                  color: focused ? gc.accent : gc.border, width: focused ? 1.4 : 1),
+                width: 2,
+                color: focused
+                    ? gc.accent.withValues(alpha: 0.40)
+                    : Colors.transparent,
+              ),
             ),
-            child: Row(
-              children: [
-                Icon(PhosphorIconsRegular.envelopeSimple,
-                    size: 18, color: gc.textTertiary),
-                const SizedBox(width: 10),
-                Expanded(
-                  child: TextField(
-                    controller: _emailController,
-                    focusNode: _emailFocus,
-                    autofocus: widget.showBrandHeader,
-                    keyboardType: TextInputType.emailAddress,
-                    autofillHints: const [AutofillHints.email],
-                    textInputAction: TextInputAction.done,
-                    autocorrect: false,
-                    style: AppTheme.f(15, weight: FontWeight.w600, color: gc.text),
-                    cursorColor: gc.accent,
-                    decoration: InputDecoration(
-                      hintText: _t.emailHint,
-                      hintStyle:
-                          AppTheme.f(15, weight: FontWeight.w500, color: gc.textTertiary),
-                      border: InputBorder.none,
-                      isDense: true,
-                    ),
-                    onSubmitted: (_) => _send(),
-                  ),
+            child: Container(
+              height: 52,
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              decoration: BoxDecoration(
+                color: gc.bgRaised,
+                borderRadius: BorderRadius.circular(12),
+                border: Border.all(
+                  width: 1,
+                  color: dark ? gc.accent.withValues(alpha: 0.14) : gc.border,
                 ),
-              ],
+              ),
+              child: Row(
+                children: [
+                  Expanded(
+                    child: TextField(
+                      controller: _emailController,
+                      focusNode: _emailFocus,
+                      autofocus: widget.showBrandHeader,
+                      keyboardType: TextInputType.emailAddress,
+                      autofillHints: const [AutofillHints.email],
+                      textInputAction: TextInputAction.done,
+                      autocorrect: false,
+                      style: AppTheme.f(15, weight: FontWeight.w600, color: gc.text),
+                      cursorColor: gc.accent,
+                      decoration: InputDecoration(
+                        hintText: _t.emailHint,
+                        hintStyle: AppTheme.f(15,
+                            weight: FontWeight.w400, color: gc.textTertiary),
+                        border: InputBorder.none,
+                        isDense: true,
+                      ),
+                      onSubmitted: (_) => _send(),
+                    ),
+                  ),
+                ],
+              ),
             ),
           );
         },
@@ -523,27 +584,35 @@ class _OtpAuthFormState extends State<OtpAuthForm>
       {required String label, required VoidCallback onTap, required bool busy}) {
     final gc = context.gc;
     final dark = Theme.brightnessOf(context) == Brightness.dark;
+    final fill = dark ? gc.accent : gc.ember;
     return Opacity(
       opacity: busy ? 0.55 : 1,
       child: Pressable(
         onTap: busy ? () {} : onTap,
         child: Container(
           width: double.infinity,
-          height: 56,
+          height: 52,
           alignment: Alignment.center,
           decoration: BoxDecoration(
-            color: dark ? gc.accent : gc.ember,
+            color: fill,
             borderRadius: BorderRadius.circular(100),
+            boxShadow: [
+              BoxShadow(
+                color: fill.withValues(alpha: dark ? 0.22 : 0.16),
+                blurRadius: 24,
+                offset: const Offset(0, 10),
+              ),
+            ],
           ),
           child: busy
               ? SizedBox(
                   width: 22,
                   height: 22,
-                  child:
-                      CircularProgressIndicator(strokeWidth: 2.2, color: gc.onEmber))
-              : Text(titleCase(label),
-                  style: AppTheme.f(15.5,
-                      weight: FontWeight.w700, color: gc.onEmber, letterSpacing: 0.2)),
+                  child: CircularProgressIndicator(
+                      strokeWidth: 2.2, color: gc.onEmber))
+              : Text(label,
+                  style:
+                      AppTheme.f(15, weight: FontWeight.w700, color: gc.onEmber)),
         ),
       ),
     );
