@@ -1,6 +1,8 @@
 import 'dart:async';
+import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:phosphoricons_flutter/phosphoricons_flutter.dart';
 
 import '../l10n/l10n.dart';
@@ -293,6 +295,7 @@ class _OtpAuthFormState extends State<OtpAuthForm>
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(builder: (context, constraints) {
+      final locked = _step == _Step.code && _lockSeconds() > 0;
       final Widget step =
           _step == _Step.email ? _emailStep(context) : _codeStep(context);
       return SingleChildScrollView(
@@ -300,7 +303,7 @@ class _OtpAuthFormState extends State<OtpAuthForm>
           constraints: BoxConstraints(
             minHeight: constraints.hasBoundedHeight ? constraints.maxHeight : 0,
           ),
-          child: Align(alignment: Alignment.bottomCenter, child: step),
+          child: locked ? step : IntrinsicHeight(child: step),
         ),
       );
     });
@@ -360,8 +363,8 @@ class _OtpAuthFormState extends State<OtpAuthForm>
                     color: gc.text)),
             const SizedBox(height: 32),
             Center(
-              child: ConstrainedBox(
-                constraints: const BoxConstraints(maxWidth: 320),
+              child: _ClampedText(
+                maxWidth: 250,
                 child: Text(_t.authWelcomeTitle,
                     textAlign: TextAlign.center,
                     style: AppTheme.d(34,
@@ -380,6 +383,7 @@ class _OtpAuthFormState extends State<OtpAuthForm>
                     height: 1.6)),
           ],
         ]),
+        const Spacer(),
         ...riseAll([
           Text(_t.emailLabel.toUpperCase(),
               style: AppTheme.f(11,
@@ -453,6 +457,7 @@ class _OtpAuthFormState extends State<OtpAuthForm>
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
+        const Spacer(),
         ...riseAll([
           Center(
             child: animates
@@ -468,7 +473,7 @@ class _OtpAuthFormState extends State<OtpAuthForm>
           ),
           const SizedBox(height: 24),
           Center(
-            child: Kicker(_t.authCodeKicker,
+            child: Kicker(_t.authCodeKicker.toUpperCase(),
                 color: gc.accent, size: 11, spacing: 0.88),
           ),
           const SizedBox(height: 8),
@@ -478,18 +483,20 @@ class _OtpAuthFormState extends State<OtpAuthForm>
                   weight: FontWeight.w800, height: 1.21, color: gc.text)),
           const SizedBox(height: 8),
           Center(
-            child: ConstrainedBox(
-              constraints: const BoxConstraints(maxWidth: 300),
+            child: _ClampedText(
+              maxWidth: 300,
               child: _sentTo(gc),
             ),
           ),
           const SizedBox(height: 40),
-          OtpCodeWell(
-            key: _wellKey,
-            enabled: !_verifying && !locked,
-            expired: expired,
-            hasError: _verdict == _CodeVerdict.invalid,
-            onCompleted: _verify,
+          Center(
+            child: OtpCodeWell(
+              key: _wellKey,
+              enabled: !_verifying && !locked,
+              expired: expired,
+              hasError: _verdict == _CodeVerdict.invalid,
+              onCompleted: _verify,
+            ),
           ),
           AnimatedSize(
             duration: const Duration(milliseconds: 200),
@@ -506,7 +513,7 @@ class _OtpAuthFormState extends State<OtpAuthForm>
           const SizedBox(height: 24),
           _codeMeta(gc, expired: expired),
         ]),
-        if (!_verifying) const SizedBox(height: 24),
+        if (!_verifying) const Spacer(),
         if (!_verifying)
           Align(alignment: Alignment.center, child: _backLink(gc)),
       ],
@@ -903,5 +910,65 @@ class _OtpAuthFormState extends State<OtpAuthForm>
         ),
       ),
     );
+  }
+}
+
+
+class _ClampedText extends SingleChildRenderObjectWidget {
+  const _ClampedText({required this.maxWidth, required super.child});
+
+  final double maxWidth;
+
+  @override
+  RenderObject createRenderObject(BuildContext context) =>
+      _RenderClampedText(maxWidth);
+
+  @override
+  void updateRenderObject(
+      BuildContext context, covariant _RenderClampedText renderObject) {
+    renderObject.maxWidth = maxWidth;
+  }
+}
+
+class _RenderClampedText extends RenderProxyBox {
+  _RenderClampedText(this._maxWidth);
+
+  double _maxWidth;
+  set maxWidth(double value) {
+    if (_maxWidth == value) return;
+    _maxWidth = value;
+    markNeedsLayout();
+  }
+
+  @override
+  double computeMinIntrinsicWidth(double height) =>
+      math.min(super.computeMinIntrinsicWidth(height), _maxWidth);
+
+  @override
+  double computeMaxIntrinsicWidth(double height) =>
+      math.min(super.computeMaxIntrinsicWidth(height), _maxWidth);
+
+  @override
+  double computeMinIntrinsicHeight(double width) =>
+      super.computeMinIntrinsicHeight(math.min(width, _maxWidth));
+
+  @override
+  double computeMaxIntrinsicHeight(double width) =>
+      super.computeMaxIntrinsicHeight(math.min(width, _maxWidth));
+
+  @override
+  void performLayout() {
+    final RenderBox? child = this.child;
+    if (child == null) {
+      size = constraints.smallest;
+      return;
+    }
+    final double maxW = math.min(constraints.maxWidth, _maxWidth);
+    final double minW = math.min(constraints.minWidth, maxW);
+    child.layout(
+      constraints.copyWith(minWidth: minW, maxWidth: maxW),
+      parentUsesSize: true,
+    );
+    size = constraints.constrain(child.size);
   }
 }
