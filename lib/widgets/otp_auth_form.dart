@@ -440,54 +440,71 @@ class _OtpAuthFormState extends State<OtpAuthForm>
               animates && MediaQuery.maybeDisableAnimationsOf(context) != true);
     }
     final expired = _expiresIn() <= 0;
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: riseAll([
-        Center(
-          child: animates
-              ? AnimatedBuilder(
-                  animation: _breath,
-                  builder: (context, child) =>
-                      Transform.scale(scale: _breath.value, child: child),
-                  child: _brandMark(gc, 56, 16, 26),
-                )
-              : _brandMark(gc, 56, 16, 26),
-        ),
-        const SizedBox(height: 18),
-        Center(child: Kicker(_t.authCodeKicker, color: gc.brass, size: 11.5)),
-        Text(_t.authCodeTitle,
-            textAlign: TextAlign.center,
-            style: AppTheme.d(24, weight: FontWeight.w800, height: 1.12, color: gc.text)),
-        const SizedBox(height: 10),
-        _sentTo(gc),
-        const SizedBox(height: 22),
-        OtpCodeWell(
-          key: _wellKey,
-          enabled: !_verifying && !locked,
-          expired: expired,
-          hasError: _verdict == _CodeVerdict.invalid,
-          onCompleted: _verify,
-        ),
-        AnimatedSize(
-          duration: const Duration(milliseconds: 200),
-          curve: Curves.easeOut,
-          alignment: Alignment.topCenter,
-          child: _verdictBlock(gc),
-        ),
-        AnimatedSize(
-          duration: const Duration(milliseconds: 200),
-          curve: Curves.easeOut,
-          alignment: Alignment.topCenter,
-          child: _sendNoticeBlock(gc),
-        ),
-        const SizedBox(height: 14),
-        _codeMeta(gc, expired: expired),
-        if (!_verifying) ...[
-          const SizedBox(height: 10),
-          Align(alignment: Alignment.centerLeft, child: _backLink(gc)),
+    return LayoutBuilder(builder: (context, constraints) {
+      final pinned = constraints.hasBoundedHeight;
+      return Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          ...riseAll([
+            Center(
+              child: animates
+                  ? AnimatedBuilder(
+                      animation: _breath,
+                      builder: (context, child) =>
+                          Transform.scale(scale: _breath.value, child: child),
+                      child: _brandMark(gc, 44, 12, 20,
+                          shadowBlur: 20, shadowDy: 8, shadowAlpha: 0.24),
+                    )
+                  : _brandMark(gc, 44, 12, 20,
+                      shadowBlur: 20, shadowDy: 8, shadowAlpha: 0.24),
+            ),
+            const SizedBox(height: 24),
+            Center(
+              child: Kicker(_t.authCodeKicker,
+                  color: gc.accent, size: 11, spacing: 0.88),
+            ),
+            const SizedBox(height: 8),
+            Text(_t.authCodeTitle,
+                textAlign: TextAlign.center,
+                style: AppTheme.d(28,
+                    weight: FontWeight.w800, height: 1.21, color: gc.text)),
+            const SizedBox(height: 8),
+            Center(
+              child: ConstrainedBox(
+                constraints: const BoxConstraints(maxWidth: 300),
+                child: _sentTo(gc),
+              ),
+            ),
+            const SizedBox(height: 40),
+            OtpCodeWell(
+              key: _wellKey,
+              enabled: !_verifying && !locked,
+              expired: expired,
+              hasError: _verdict == _CodeVerdict.invalid,
+              onCompleted: _verify,
+            ),
+            AnimatedSize(
+              duration: const Duration(milliseconds: 200),
+              curve: Curves.easeOut,
+              alignment: Alignment.topCenter,
+              child: _verdictBlock(gc),
+            ),
+            AnimatedSize(
+              duration: const Duration(milliseconds: 200),
+              curve: Curves.easeOut,
+              alignment: Alignment.topCenter,
+              child: _sendNoticeBlock(gc),
+            ),
+            const SizedBox(height: 24),
+            _codeMeta(gc, expired: expired),
+          ]),
+          if (!_verifying)
+            pinned ? const Spacer() : const SizedBox(height: 24),
+          if (!_verifying)
+            Align(alignment: Alignment.center, child: _backLink(gc)),
         ],
-      ]),
-    );
+      );
+    });
   }
 
   // -- pieces ---------------------------------------------------------------
@@ -629,12 +646,12 @@ class _OtpAuthFormState extends State<OtpAuthForm>
         TextSpan(text: before),
         TextSpan(
             text: _email,
-            style: AppTheme.f(13.5, weight: FontWeight.w700, color: gc.text)),
+            style: AppTheme.f(15, weight: FontWeight.w700, color: gc.text)),
         TextSpan(text: after),
       ]),
       textAlign: TextAlign.center,
-      style: AppTheme.f(13.5,
-          weight: FontWeight.w500, color: gc.textSecondary, height: 1.4),
+      style: AppTheme.f(15,
+          weight: FontWeight.w400, color: gc.textSecondary, height: 1.6),
     );
   }
 
@@ -642,21 +659,7 @@ class _OtpAuthFormState extends State<OtpAuthForm>
     final v = _verdict;
     if (v == null) return const SizedBox(width: double.infinity);
     if (v == _CodeVerdict.expired) {
-      return Padding(
-        padding: const EdgeInsets.only(top: 12),
-        child: Column(
-          children: [
-            Text(_t.authCodeExpiredVerdict,
-                textAlign: TextAlign.center,
-                style: AppTheme.f(13, weight: FontWeight.w700, color: gc.danger)),
-            const SizedBox(height: 4),
-            Text(_t.authCodeExpired,
-                textAlign: TextAlign.center,
-                style: AppTheme.f(12.5,
-                    weight: FontWeight.w500, color: gc.textSecondary)),
-          ],
-        ),
-      );
+      return _verdictRow(gc, _t.authCodeExpired);
     }
     if (v == _CodeVerdict.network) {
       return Padding(
@@ -676,11 +679,24 @@ class _OtpAuthFormState extends State<OtpAuthForm>
     }
     final text =
         v == _CodeVerdict.invalid ? _t.authCodeInvalid(_attemptsLeft) : _t.authErrorUnknown;
+    return _verdictRow(gc, text);
+  }
+
+  Widget _verdictRow(GymColors gc, String text) {
     return Padding(
-      padding: const EdgeInsets.only(top: 12),
-      child: Text(text,
-          textAlign: TextAlign.center,
-          style: AppTheme.f(12.5, weight: FontWeight.w600, color: gc.danger)),
+      padding: const EdgeInsets.only(top: 16),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Icon(PhosphorIconsFill.warning, size: 14, color: gc.danger),
+          const SizedBox(width: 8),
+          Flexible(
+            child: Text(text,
+                textAlign: TextAlign.center,
+                style: AppTheme.f(13, weight: FontWeight.w700, color: gc.danger)),
+          ),
+        ],
+      ),
     );
   }
 
@@ -717,8 +733,8 @@ class _OtpAuthFormState extends State<OtpAuthForm>
                     CircularProgressIndicator(strokeWidth: 2, color: gc.accent)),
             const SizedBox(width: 8),
             Text(_t.authVerifying,
-                style: AppTheme.f(12.5,
-                    weight: FontWeight.w500, color: gc.textSecondary)),
+                style: AppTheme.f(13,
+                    weight: FontWeight.w600, color: gc.textSecondary)),
           ],
         ),
       );
@@ -740,8 +756,8 @@ class _OtpAuthFormState extends State<OtpAuthForm>
               expired
                   ? _t.authCodeExpiredVerdict
                   : _t.authCodeExpires(_fmt(secs)),
-              style:
-                  AppTheme.f(12.5, weight: FontWeight.w500, color: metaColor),
+              style: AppTheme.f(13, weight: FontWeight.w600, color: metaColor)
+                  .copyWith(fontFeatures: [FontFeature.tabularFigures()]),
             ),
           ],
         ),
@@ -756,7 +772,7 @@ class _OtpAuthFormState extends State<OtpAuthForm>
     if (wait > 0) {
       return Text(_t.authResendIn(_fmt(wait)),
           textAlign: TextAlign.center,
-          style: AppTheme.f(12.5, weight: FontWeight.w500, color: gc.textSecondary)
+          style: AppTheme.f(13, weight: FontWeight.w600, color: gc.textTertiary)
               .copyWith(fontFeatures: [FontFeature.tabularFigures()]));
     }
     return Text.rich(
@@ -767,12 +783,13 @@ class _OtpAuthFormState extends State<OtpAuthForm>
           child: Pressable(
             onTap: _busy ? () {} : _resend,
             child: Text(_t.authResendAction,
-            style: AppTheme.f(12.5, weight: FontWeight.w700, color: gc.accent)),
+                style:
+                    AppTheme.f(13, weight: FontWeight.w700, color: gc.accent)),
           ),
         ),
       ]),
       textAlign: TextAlign.center,
-      style: AppTheme.f(12.5, weight: FontWeight.w500, color: gc.textSecondary),
+      style: AppTheme.f(13, weight: FontWeight.w600, color: gc.textSecondary),
     );
   }
 
@@ -784,6 +801,13 @@ class _OtpAuthFormState extends State<OtpAuthForm>
         shape: BoxShape.circle,
         color: gc.sage.withValues(alpha: 0.06),
         border: Border.all(color: gc.sage, width: 1.5),
+        boxShadow: [
+          BoxShadow(
+            color: gc.sage.withValues(alpha: 0.07),
+            blurRadius: 0,
+            spreadRadius: 12,
+          ),
+        ],
       ),
       alignment: Alignment.center,
       child: Container(
@@ -811,36 +835,40 @@ class _OtpAuthFormState extends State<OtpAuthForm>
                     child: ring,
                   )
                 : ring,
-            const SizedBox(height: 22),
+            const SizedBox(height: 32),
             Text(_t.authRateLimitTitle,
                 textAlign: TextAlign.center,
                 style:
-                    AppTheme.d(18, weight: FontWeight.w800, color: gc.text)),
+                    AppTheme.d(28, weight: FontWeight.w800, color: gc.text)),
             const SizedBox(height: 8),
             ConstrainedBox(
               constraints: const BoxConstraints(maxWidth: 280),
               child: Text(_t.authRateLimitBody,
                   textAlign: TextAlign.center,
-                  style: AppTheme.f(13.5,
-                      weight: FontWeight.w500,
+                  style: AppTheme.f(15,
+                      weight: FontWeight.w400,
                       color: gc.textSecondary,
-                      height: 1.45)),
+                      height: 1.6)),
             ),
+            const SizedBox(height: 40),
             if (_lockCountdown) ...[
-              const SizedBox(height: 16),
               Container(
-              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                height: 52,
+                padding: const EdgeInsets.symmetric(horizontal: 32),
+                alignment: Alignment.center,
                 decoration: BoxDecoration(
                   color: gc.bgRaised2,
-                  borderRadius: BorderRadius.circular(100),
+                  borderRadius: BorderRadius.circular(999),
                   border: Border.all(color: gc.border),
                 ),
                 child: Text(_t.authRateLimitCta(_fmtPadded(_lockSeconds())),
-                    style: AppTheme.f(12.5,
-                        weight: FontWeight.w700, color: gc.textSecondary)),
+                    style: AppTheme.f(15,
+                            weight: FontWeight.w700, color: gc.textSecondary)
+                        .copyWith(
+                            fontFeatures: [FontFeature.tabularFigures()])),
               ),
+              const SizedBox(height: 16),
             ],
-            const SizedBox(height: 14),
             Text(_t.authRateLimitRule,
                 textAlign: TextAlign.center,
                 style: AppTheme.f(12,
@@ -856,8 +884,17 @@ class _OtpAuthFormState extends State<OtpAuthForm>
       onTap: _backToEmail,
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 6),
-        child: Text(_t.otpChangeEmail,
-            style: AppTheme.f(13, weight: FontWeight.w700, color: gc.textSecondary)),
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Icon(PhosphorIconsRegular.arrowLeft,
+                size: 14, color: gc.textSecondary),
+            const SizedBox(width: 8),
+            Text(_t.otpChangeEmail,
+                style: AppTheme.f(13,
+                    weight: FontWeight.w600, color: gc.textSecondary)),
+          ],
+        ),
       ),
     );
   }

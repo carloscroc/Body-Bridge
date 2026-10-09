@@ -87,48 +87,79 @@ class OtpCodeWellState extends State<OtpCodeWell> {
     return AnimatedOpacity(
       duration: const Duration(milliseconds: 180),
       opacity: widget.enabled ? 1 : 0.6,
-      child: SizedBox(
-        height: 56,
-        child: Stack(
-          children: [
-            Row(
-              children: [
-                for (var i = 0; i < 6; i++) ...[
-                  if (i > 0) const SizedBox(width: 8),
-                  Expanded(child: _box(gc, i < text.length ? text[i] : null, i == caret)),
+      child: Center(
+        child: SizedBox(
+          height: 64,
+          child: Stack(
+            children: [
+              Row(
+                mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  for (var i = 0; i < 6; i++) ...[
+                    if (i > 0) const SizedBox(width: 8),
+                    _cell(gc, i < text.length ? text[i] : null, i == caret),
+                  ],
                 ],
-              ],
-            ),
-            Positioned.fill(
-              child: Opacity(
-                opacity: 0,
-                child: TextField(
-                  controller: _controller,
-                  focusNode: _focus,
-                  autofocus: true,
-                  enabled: widget.enabled,
-                  keyboardType: TextInputType.number,
-                  textInputAction: TextInputAction.done,
-                  autocorrect: false,
-                  enableSuggestions: false,
-                  maxLength: 6,
-                  maxLines: 1,
-                  cursorColor: Colors.transparent,
+              ),
+              Positioned.fill(
+                child: Opacity(
+                  opacity: 0,
+                  child: TextField(
+                    controller: _controller,
+                    focusNode: _focus,
+                    autofocus: true,
+                    enabled: widget.enabled,
+                    keyboardType: TextInputType.number,
+                    textInputAction: TextInputAction.done,
+                    autocorrect: false,
+                    enableSuggestions: false,
+                    maxLength: 6,
+                    maxLines: 1,
+                    cursorColor: Colors.transparent,
                   style: const TextStyle(fontSize: 1, color: Colors.transparent, height: 1),
-                  textAlign: TextAlign.center,
-                  textAlignVertical: TextAlignVertical.center,
-                  decoration: const InputDecoration(
-                    border: InputBorder.none,
-                    isDense: true,
-                    counterText: '',
-                    contentPadding: EdgeInsets.zero,
+                    textAlign: TextAlign.center,
+                    textAlignVertical: TextAlignVertical.center,
+                    decoration: const InputDecoration(
+                      border: InputBorder.none,
+                      isDense: true,
+                      counterText: '',
+                      contentPadding: EdgeInsets.zero,
+                    ),
+                    inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+                    autofillHints: const [AutofillHints.oneTimeCode],
+                    onChanged: _onChanged,
                   ),
-                  inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-                  autofillHints: const [AutofillHints.oneTimeCode],
-                  onChanged: _onChanged,
                 ),
               ),
-            ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _cell(GymColors gc, String? digit, bool isCaret) {
+    final ringed = isCaret && _focus.hasFocus && !widget.hasError;
+    return Container(
+      padding: const EdgeInsets.all(2),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(15),
+        border: Border.all(
+          width: 2,
+          color:
+              ringed ? gc.accent.withValues(alpha: 0.40) : Colors.transparent,
+        ),
+      ),
+      child: SizedBox(
+        width: 56,
+        height: 56,
+        child: Stack(
+          alignment: Alignment.center,
+          children: [
+            Positioned.fill(child: _box(gc, digit, isCaret)),
+            if (digit == null && isCaret && _focus.hasFocus)
+              _WellCaret(color: gc.accent),
           ],
         ),
       ),
@@ -136,7 +167,8 @@ class OtpCodeWellState extends State<OtpCodeWell> {
   }
 
   Widget _box(GymColors gc, String? digit, bool isCaret) {
-    final highlight = !widget.hasError && isCaret && _focus.hasFocus;
+    final dark = Theme.brightnessOf(context) == Brightness.dark;
+    final ringed = isCaret && _focus.hasFocus && !widget.hasError;
     return AnimatedContainer(
       duration: const Duration(milliseconds: 180),
       curve: Curves.easeOut,
@@ -145,8 +177,14 @@ class OtpCodeWellState extends State<OtpCodeWell> {
         color: gc.bgRaised,
         borderRadius: BorderRadius.circular(12),
         border: Border.all(
-          color: widget.hasError ? gc.danger : highlight ? gc.accent : gc.border,
-          width: widget.hasError || highlight ? 1.4 : 1,
+          width: 1,
+          color: widget.hasError
+              ? gc.danger.withValues(alpha: 0.55)
+              : ringed
+                  ? gc.accent
+                  : dark
+                      ? gc.accent.withValues(alpha: 0.14)
+                      : gc.border,
         ),
       ),
       child: Text(
@@ -155,6 +193,60 @@ class OtpCodeWellState extends State<OtpCodeWell> {
                 color: widget.expired ? gc.textTertiary : gc.text)
             .copyWith(fontFeatures: const [FontFeature.tabularFigures()]),
       ),
+    );
+  }
+}
+
+class _WellCaret extends StatefulWidget {
+  const _WellCaret({required this.color});
+
+  final Color color;
+
+  @override
+  State<_WellCaret> createState() => _WellCaretState();
+}
+
+class _WellCaretState extends State<_WellCaret>
+    with SingleTickerProviderStateMixin {
+  late final AnimationController _ctrl = AnimationController(
+    vsync: this,
+    duration: const Duration(milliseconds: 1100),
+  );
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    if (MediaQuery.maybeDisableAnimationsOf(context) == true) {
+      _ctrl.stop();
+    } else if (!_ctrl.isAnimating) {
+      _ctrl.repeat();
+    }
+  }
+
+  @override
+  void dispose() {
+    _ctrl.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final blink = MediaQuery.maybeDisableAnimationsOf(context) == true;
+    return AnimatedBuilder(
+      animation: _ctrl,
+      builder: (context, _) {
+        final on = !blink || _ctrl.value < 0.55;
+        return on
+            ? Container(
+                width: 2,
+                height: 26,
+                decoration: BoxDecoration(
+                  color: widget.color,
+                  borderRadius: BorderRadius.circular(1),
+                ),
+              )
+            : const SizedBox(width: 2, height: 26);
+      },
     );
   }
 }
