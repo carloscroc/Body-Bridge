@@ -4,16 +4,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:gymmane/l10n/l10n.dart';
 import 'package:gymmane/screens/account_screen.dart';
-import 'package:gymmane/services/auth_service.dart';
+import 'package:gymmane/services/otp_auth_service.dart';
 import 'package:gymmane/state/account_gate.dart';
 import 'package:gymmane/theme/app_theme.dart';
 import 'package:gymmane/widgets/premium_gate.dart';
 import 'package:gymmane/widgets/ui_kit.dart';
 
 /// Delete-account UI flow: destructive confirm with the EXACT contract body,
-/// busy state while the gate runs, and the three endings (deleted -> signed
-/// out, requiresRecentLogin -> stays signed in, generic failure -> stays
-/// signed in). No Firebase, no Convex — the gate seam is scripted.
+/// busy state while the gate runs, and the endings (deleted -> signed out,
+/// service failure and generic failure -> stay signed in). No Firebase, no
+/// Convex — the gate seam is scripted.
 class ScriptedGate extends AccountGate {
   ScriptedGate();
 
@@ -42,10 +42,10 @@ class ScriptedGate extends AccountGate {
   }
 
   @override
-  Future<void> signIn(String email, String password) async {}
+  Future<void> requestEmailCode(String email) async {}
 
   @override
-  Future<void> signUp(String email, String password) async {}
+  Future<bool> verifyEmailCode(String email, String code) async => true;
 
   @override
   Future<void> signOut() async {
@@ -53,8 +53,6 @@ class ScriptedGate extends AccountGate {
     notifyListeners();
   }
 
-  @override
-  Future<void> sendPasswordReset(String email) async {}
 
 }
 
@@ -118,18 +116,18 @@ void main() {
 
     expect(find.byType(CircularProgressIndicator), findsNothing);
     expect(find.text(t.deleteAccountDone), findsOneWidget, reason: 'success shows the done snackbar');
-    expect(find.byType(TextField), findsNWidgets(2), reason: 'the signed-out form renders automatically');
-    expect(find.text(titleCase(t.startFree)), findsOneWidget);
+    expect(find.byType(TextField), findsOneWidget, reason: 'the signed-out form renders automatically');
+    expect(find.text(titleCase(t.authCtaContinueEmail)), findsOneWidget);
   });
 
-  testWidgets('requiresRecentLogin -> reauth snackbar, user stays signed in', (tester) async {
-    final gate = ScriptedGate()..thrown = const AuthException('requiresRecentLogin');
+  testWidgets('service failure -> failed snackbar, user stays signed in', (tester) async {
+    final gate = ScriptedGate()..thrown = const OtpAuthException('unknown');
     await pumpAccount(tester, gate);
 
     await confirmDelete(tester);
     await tester.pump(const Duration(milliseconds: 400));
 
-    expect(find.text(t.deleteAccountReauth), findsOneWidget, reason: 'the re-auth message is shown');
+    expect(find.text(t.deleteAccountFailed), findsOneWidget, reason: 'the failure message is shown');
     expect(find.byType(TextField), findsNothing, reason: 'the user stays signed in on the account screen');
     expect(
       find.text(titleCase(t.deleteAccount)),
@@ -140,7 +138,7 @@ void main() {
   });
 
   testWidgets('generic failure -> failed snackbar, user stays signed in', (tester) async {
-    final gate = ScriptedGate()..thrown = const AuthException('networkRequested');
+    final gate = ScriptedGate()..thrown = const OtpAuthException('network');
     await pumpAccount(tester, gate);
 
     await confirmDelete(tester);

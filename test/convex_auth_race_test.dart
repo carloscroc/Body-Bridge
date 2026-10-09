@@ -4,18 +4,23 @@ import 'package:convex_flutter/convex_flutter.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:gymmane/services/convex_gateway.dart';
 import 'package:gymmane/services/entitlements_service.dart';
+import 'package:gymmane/services/otp_auth_service.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 /// Regression tests for the Convex auth race: `users:ensureUser` used to be
 /// sent before the Rust side applied the auth token, so the server rejected it
-/// with "Unauthenticated: sign in via Firebase Auth before calling this
-/// function" and the app silently degraded to local FREE.
+/// with "Unauthenticated: sign in before calling this function" and the app
+/// silently degraded to local FREE.
 ///
-/// Everything runs against a [FakeConvexGateway] through the service's
-/// gateway seam — no dart-defines needed. The service is a shared singleton,
-/// so each test resets it via onSignedOut() and installs a fresh fake; real
-/// async with short durations (no fake_async).
+/// Everything runs against a [FakeConvexGateway] through the shared gateway
+/// seam — no dart-defines needed. Sign-in enters through the email-OTP service
+/// (`verifyEmailCode` over the SAME gateway), and the entitlements service
+/// rides the resulting state changes via `bindToOtp` — the production wiring.
+/// Both services are shared singletons, so each test resets them via
+/// signOut/onSignedOut and installs a fresh fake; real async with short
+/// durations (no fake_async).
 const String _unauthenticated =
-    'Unauthenticated: sign in via Firebase Auth before calling this function';
+    'Unauthenticated: sign in before calling this function';
 
 final EntitlementsService _service = EntitlementsService.instance;
 
@@ -39,15 +44,16 @@ class FakeConvexSubscription implements ConvexSubscription {
 }
 
 /// Scriptable ConvexGateway: configurable auth delay, a number of
-/// Unauthenticated failures for users:ensureUser, and the JSON the
-/// entitlements:get read returns. Every seam call appends to [events] in call
-/// order so the tests can assert ORDER, not just outcomes.
+/// Unauthenticated failures for users:ensureUser, and the JSON the reads and
+/// auth actions return. Every seam call appends to [events] in call order so
+/// the tests can assert ORDER, not just outcomes.
 class FakeConvexGateway implements ConvexGateway {
   FakeConvexGateway({
     this.authDelay = Duration.zero,
     this.ensureUserUnauthFailures = 0,
     this.queryResponseJson = '{"tier":"basic"}',
     this.authAppliedByEnsureUser = false,
+    this.tokenValue = 'token-a',
   });
 
   /// How long after setAuthWithRefresh the applied signal lands.
@@ -62,6 +68,9 @@ class FakeConvexGateway implements ConvexGateway {
   /// When true, the first successful ensureUser applies auth (models the
   /// post-timeout attempt being the one that finally connects).
   final bool authAppliedByEnsureUser;
+
+  /// The token pair the auth actions hand back (verify + refresh).
+  String tokenValue;
 
   /// Ordered log of the seam calls the service makes.
   final List<String> events = <String>[];
@@ -141,6 +150,20 @@ class FakeConvexGateway implements ConvexGateway {
     onUpdate(queryResponseJson);
     return const FakeConvexSubscription();
   }
+
+  @override
+  Future<String> action(String name, Map<String, dynamic> args) async {
+    events.add('action:$name');
+    if (name == 'auth:refreshTokens') {
+      return '{"tokens": {"token": "$tokenValue", "refreshToken": "refresh-$tokenValue"}}';
+    }
+    final params = args['params'];
+    if (params is Map<String, dynamic> && params['code'] != null) {
+      return '{"tokens": {"token": "$tokenValue", "refreshToken": "refresh-$tokenValue"}}';
+    }
+    if (args['provider'] != null) return '{"started": true}';
+    return 'null';
+  }
 }
 
 /// Waits until [condition] holds (polling short real durations), then lets a
@@ -157,6 +180,8 @@ void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
   setUp(() {
+    // The OTP service persists the session pair through SharedPreferences.
+    SharedPreferences.setMockInitialValues({});
     // Short real durations: the retry backoff is the one the service actually
     // delays with; authSettleTimeout is per-test below.
     EntitlementsService.unauthenticatedRetryDelay = const Duration(milliseconds: 10);
@@ -169,12 +194,26 @@ void main() {
     EntitlementsService.authSettleTimeout = const Duration(seconds: 10);
   });
 
-  /// Installs [fake] and resets the shared singleton: onSignedOut disposes the
-  /// previous auth handle, nulls it and clears _provisioned, so the next
-  /// sign-in runs setAuthWithRefresh + ensureUser again from a clean slate.
+  /// Signs in through the production email-OTP path: the fake gateway hands
+  /// back the token pair, the service persists it and emits a fresh state
+  /// change that bindToOtp routes into the entitlements service.
+  Future<void> signInViaOtp(FakeConvexGateway fake, String token) async {
+    fake.tokenValue = token;
+    await otpAuthService.verifyEmailCode('racer@gymmane.dev', '123456');
+  }
+
+  /// Installs [fake] on both gateway seams and resets the shared singletons:
+  /// the OTP service drops its session, onSignedOut disposes the previous
+  /// auth handle (nulls it and clears _provisioned), and bindToOtp — which is
+  /// documented idempotent — re-subscribes the entitlements service to OTP
+  /// state changes, so the next sign-in runs setAuthWithRefresh + ensureUser
+  /// again from a clean slate.
   Future<void> reinstall(FakeConvexGateway fake) async {
     EntitlementsService.gateway = fake;
+    OtpAuthService.gateway = fake;
+    await otpAuthService.signOut();
     await _service.onSignedOut();
+    await _service.bindToOtp();
     fake.events.clear();
   }
 
@@ -182,7 +221,7 @@ void main() {
     final fake = FakeConvexGateway(authDelay: const Duration(milliseconds: 150));
     await reinstall(fake);
 
-    await _service.onSignedIn(Stream<String?>.value('token-a'));
+    await signInViaOtp(fake, 'token-a');
     await _settle(() => fake.events.contains('subscribe:entitlements:get'));
 
     expect(
@@ -205,7 +244,7 @@ void main() {
     );
     await reinstall(fake);
 
-    await _service.onSignedIn(Stream<String?>.value('token-b'));
+    await signInViaOtp(fake, 'token-b');
     await _settle(
       () => fake.ensureUserCalls >= 2 && fake.events.contains('subscribe:entitlements:get'),
     );
@@ -225,8 +264,8 @@ void main() {
     );
     await reinstall(fake);
 
-    // onSignedIn is awaited bare: the test completing is the never-throws proof.
-    await _service.onSignedIn(Stream<String?>.value('token-c'));
+    // signInViaOtp is awaited bare: the test completing is the never-throws proof.
+    await signInViaOtp(fake, 'token-c');
     await _settle(() => fake.ensureUserCalls >= 2);
 
     expect(fake.ensureUserCalls, 2, reason: 'one bounded retry, then give up');
@@ -241,7 +280,7 @@ void main() {
     EntitlementsService.authSettleTimeout = const Duration(milliseconds: 150);
     await reinstall(fake);
 
-    await _service.onSignedIn(Stream<String?>.value('token-d'));
+    await signInViaOtp(fake, 'token-d');
     await _settle(() => fake.events.contains('subscribe:entitlements:get'));
 
     final firstMutation = fake.events.indexOf('mutation:users:ensureUser');
@@ -267,7 +306,7 @@ void main() {
     EntitlementsService.authSettleTimeout = const Duration(milliseconds: 150);
     await reinstall(fake);
 
-    await _service.onSignedIn(Stream<String?>.value('token-e'));
+    await signInViaOtp(fake, 'token-e');
     await _settle(() => fake.ensureUserCalls >= 2);
 
     expect(

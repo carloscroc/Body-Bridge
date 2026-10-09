@@ -1,0 +1,795 @@
+import 'dart:async';
+
+import 'package:flutter/material.dart';
+import 'package:phosphoricons_flutter/phosphoricons_flutter.dart';
+
+import '../l10n/l10n.dart';
+import '../services/otp_auth_service.dart';
+import '../theme/app_colors.dart';
+import '../theme/app_theme.dart';
+import 'entrance.dart';
+import 'otp_code_well.dart';
+import 'premium_gate.dart';
+import 'ui_kit.dart';
+
+/// Two-step email-OTP sign-in form.
+///
+/// `showBrandHeader: true` renders the wall hero (the brand block collapses
+/// when the keyboard opens); `false` renders the compact variant used on the
+/// account screen. The code step looks identical in both hosts.
+class OtpAuthForm extends StatefulWidget {
+  const OtpAuthForm({super.key, this.showBrandHeader = false, this.strings});
+
+  final bool showBrandHeader;
+  final AppLocalizations Function()? strings;
+
+  /// Injectable clock for expiry / resend / lock countdowns in tests.
+  @visibleForTesting
+  static DateTime Function() now = DateTime.now;
+
+  @override
+  State<OtpAuthForm> createState() => _OtpAuthFormState();
+}
+
+enum _Step { email, code }
+
+enum _CodeVerdict { invalid, expired, network, error }
+
+class _OtpAuthFormState extends State<OtpAuthForm>
+    with SingleTickerProviderStateMixin {
+  static const _codeTtl = Duration(minutes: 5);
+  static const _resendCooldown = Duration(seconds: 30);
+  static const _maxAttempts = 3;
+
+  final _emailController = TextEditingController();
+  final _emailFocus = FocusNode();
+  final _wellKey = GlobalKey<OtpCodeWellState>();
+
+  _Step _step = _Step.email;
+  String _email = '';
+  bool _busy = false;
+  bool _verifying = false;
+  String? _emailError;
+  String? _sendNotice;
+
+
+  int _attemptsLeft = _maxAttempts;
+  DateTime _expiresAt = DateTime.now();
+  DateTime _resendAvailableAt = DateTime.now();
+  DateTime? _lockUntil;
+  bool _lockCountdown = false;
+  _CodeVerdict? _verdict;
+
+  Timer? _ticker;
+  AnimationController? _breathCtrl;
+
+  AnimationController get _breath => _breathCtrl ??= AnimationController(
+        vsync: this,
+        duration: const Duration(milliseconds: 1600),
+        lowerBound: 0.96,
+        upperBound: 1.04,
+      );
+
+  AppLocalizations get _t => widget.strings?.call() ?? t;
+
+  @override
+  void initState() {
+    super.initState();
+    _expiresAt = OtpAuthForm.now().add(_codeTtl);
+  }
+
+  @override
+  void dispose() {
+    _ticker?.cancel();
+    _breathCtrl?.dispose();
+    _emailController.dispose();
+    _emailFocus.dispose();
+    super.dispose();
+  }
+
+  // -- countdowns -----------------------------------------------------------
+
+  int _expiresIn() => _seconds(_expiresAt.difference(OtpAuthForm.now()));
+
+  int _resendIn() => _seconds(_resendAvailableAt.difference(OtpAuthForm.now()));
+
+  int _lockSeconds() => _lockUntil == null
+      ? 0
+      : _seconds(_lockUntil!.difference(OtpAuthForm.now()));
+
+  static int _seconds(Duration d) {
+    final s = d.inSeconds;
+    return s < 0 ? 0 : s;
+  }
+
+  String _fmt(int s) => '${s ~/ 60}:${(s % 60).toString().padLeft(2, '0')}';
+
+  String _fmtPadded(int s) =>
+      '${(s ~/ 60).toString().padLeft(2, '0')}:${(s % 60).toString().padLeft(2, '0')}';
+
+  // -- legs -----------------------------------------------------------------
+
+  Future<void> _send() async {
+    if (_busy) return;
+    final email = _emailController.text.trim();
+    if (!RegExp(r'^[^@\s]+@[^@\s]+\.[^@\s]+$').hasMatch(email)) {
+      setState(() => _emailError = _t.authErrorInvalidEmail);
+      return;
+    }
+    setState(() {
+      _busy = true;
+      _emailError = null;
+    });
+    final gate = context.accountGate;
+    var stayPut = false;
+    String? sendNotice;
+    try {
+      await gate.requestEmailCode(email);
+    } on OtpAuthException catch (e) {
+      // Network stays on the email step; rate limit reports the inline
+      // countdown there too; any other failure means the request row was
+      // committed — the code step is still the right place to be, with a
+      // banner explaining the send could not complete.
+      if (e.key == 'network') {
+        stayPut = true;
+        if (!mounted) return;
+        setState(() {
+          _busy = false;
+          _emailError = _t.authErrorNetwork;
+        });
+      } else if (e.key == 'rateLimit') {
+        stayPut = true;
+        final secs = e.retryAfterSeconds;
+        if (!mounted) return;
+        setState(() {
+          _busy = false;
+          _emailError = secs != null
+              ? _t.authRateLimitBanner(_fmtPadded(secs))
+              : _t.authErrorTooManyRequests;
+        });
+      } else {
+        sendNotice = _t.authFailedGeneric;
+      }
+    } catch (_) {
+      stayPut = true;
+    }
+    if (!mounted || stayPut) return;
+    setState(() => _busy = false);
+    _enterCodeStep(email);
+    // _enterCodeStep resets per-step state, so the notice lands after it.
+    if (sendNotice != null) {
+      setState(() => _sendNotice = sendNotice);
+    }
+  }
+
+  void _enterCodeStep(String email) {
+    setState(() {
+      _email = email;
+      _step = _Step.code;
+      _emailError = null;
+      _sendNotice = null;
+      _verdict = null;
+      _attemptsLeft = _maxAttempts;
+      _expiresAt = OtpAuthForm.now().add(_codeTtl);
+      _resendAvailableAt = OtpAuthForm.now().add(_resendCooldown);
+    });
+    _ticker ??= Timer.periodic(const Duration(seconds: 1), (_) {
+      if (mounted) setState(() {});
+    });
+  }
+
+  Future<void> _verify(String code) async {
+    if (_verifying || _lockSeconds() > 0) return;
+    setState(() {
+      _verifying = true;
+      _verdict = null;
+    });
+    final gate = context.accountGate;
+    OtpAuthException? failure;
+    var verified = false;
+    try {
+      verified = await gate.verifyEmailCode(_email, code);
+    } on OtpAuthException catch (e) {
+      failure = e;
+    } catch (_) {
+      failure = const OtpAuthException('unknown');
+    }
+    if (!mounted) return;
+    setState(() => _verifying = false);
+    final e = failure;
+    if (e == null) {
+      if (verified) return; // success — AccountState routes to the handoff
+      // The real gate returns FALSE for a wrong code (a value, not an
+      // exception); treat it exactly like the codeInvalid throw below.
+      setState(() {
+        _attemptsLeft = (_attemptsLeft - 1).clamp(1, _maxAttempts);
+        _verdict = _CodeVerdict.invalid;
+      });
+      _wellKey.currentState?.clear();
+      return;
+    }
+    switch (e.key) {
+      case 'rateLimit':
+        setState(() {
+          _lockUntil =
+              OtpAuthForm.now().add(Duration(seconds: e.retryAfterSeconds ?? 3600));
+          _lockCountdown = e.retryAfterSeconds != null;
+          _verdict = null;
+        });
+      case 'codeExpired':
+        setState(() {
+          _expiresAt = OtpAuthForm.now();
+          _resendAvailableAt = OtpAuthForm.now();
+          _verdict = _CodeVerdict.expired;
+        });
+      case 'codeInvalid':
+        setState(() {
+          _attemptsLeft = (_attemptsLeft - 1).clamp(1, _maxAttempts);
+          _verdict = _CodeVerdict.invalid;
+        });
+        _wellKey.currentState?.clear();
+      default:
+        setState(() {
+          _verdict =
+              e.key == 'network' ? _CodeVerdict.network : _CodeVerdict.error;
+        });
+        _wellKey.currentState?.clear();
+    }
+  }
+
+  Future<void> _resend() async {
+    if (_busy || _resendIn() > 0) return;
+    setState(() => _busy = true);
+    final gate = context.accountGate;
+    var networkFail = false;
+    String? notice;
+    try {
+      await gate.requestEmailCode(_email);
+    } on OtpAuthException catch (e) {
+      if (e.key == 'rateLimit') {
+        // A rate-limited resend must not re-arm the cooldown or reset
+        // attempts/expiry — only the banner shows.
+        final secs = e.retryAfterSeconds;
+        notice = secs != null
+            ? _t.authRateLimitBanner(_fmtPadded(secs))
+            : _t.authFailedGeneric;
+      } else {
+        networkFail = e.key == 'network';
+      }
+    } catch (_) {
+      networkFail = true;
+    }
+    if (!mounted) return;
+    setState(() {
+      _busy = false;
+      if (notice != null) {
+        _sendNotice = notice;
+      } else if (networkFail) {
+        _verdict = _CodeVerdict.network;
+      } else {
+        _sendNotice = null;
+        _verdict = null;
+        _attemptsLeft = _maxAttempts;
+        _expiresAt = OtpAuthForm.now().add(_codeTtl);
+        _resendAvailableAt = OtpAuthForm.now().add(_resendCooldown);
+      }
+    });
+    if (notice == null && !networkFail) _wellKey.currentState?.clear();
+  }
+
+  void _backToEmail() {
+    _ticker?.cancel();
+    _ticker = null;
+    setState(() {
+      _step = _Step.email;
+      _verdict = null;
+      _emailError = null;
+      _sendNotice = null;
+    });
+  }
+
+  // -- build ----------------------------------------------------------------
+
+  @override
+  Widget build(BuildContext context) {
+    return _step == _Step.email ? _emailStep(context) : _codeStep(context);
+  }
+
+  Widget _emailStep(BuildContext context) {
+    final gc = context.gc;
+    final dark = Theme.brightnessOf(context) == Brightness.dark;
+    final compact =
+        widget.showBrandHeader && View.of(context).viewInsets.bottom > 0;
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: riseAll([
+        if (!compact) ...[
+          Center(child: _brandMark(gc, 96, 24, 44, dark: dark)),
+          const SizedBox(height: 18),
+          Center(child: Kicker(_t.brandKicker, color: gc.brass, size: 11.5)),
+          Text('Body Bridge',
+              textAlign: TextAlign.center,
+              style: AppTheme.d(22,
+                  weight: FontWeight.w800, letterSpacing: 1.2, color: gc.text)),
+          const SizedBox(height: 18),
+          Text(_t.authWelcomeTitle,
+              textAlign: TextAlign.center,
+              style: AppTheme.d(28, weight: FontWeight.w800, height: 1.1, color: gc.text)),
+          const SizedBox(height: 10),
+          Text(_t.authWelcomeSubline,
+              textAlign: TextAlign.center,
+              style: AppTheme.f(14,
+                  weight: FontWeight.w500, color: gc.textSecondary, height: 1.45)),
+        ],
+        const SizedBox(height: 22),
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            _emailField(gc),
+            AnimatedSize(
+              duration: const Duration(milliseconds: 180),
+              curve: Curves.easeOut,
+              alignment: Alignment.topCenter,
+              child: _emailError == null
+                  ? const SizedBox(width: double.infinity)
+                  : Padding(
+                      padding: const EdgeInsets.only(top: 8),
+                      child: Text(_emailError!,
+                          textAlign: TextAlign.center,
+                          style: AppTheme.f(12.5,
+                              weight: FontWeight.w600, color: gc.danger)),
+                    ),
+            ),
+          ],
+        ),
+        const SizedBox(height: 14),
+        _cta(context, label: _t.authCtaContinueEmail, onTap: _send, busy: _busy),
+        if (!compact) ...[
+          const SizedBox(height: 14),
+          Text(_t.authTrustMicrocopy,
+              textAlign: TextAlign.center,
+              style: AppTheme.f(12, weight: FontWeight.w500, color: gc.textTertiary)),
+          const SizedBox(height: 6),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(PhosphorIconsFill.checkCircle, size: 12, color: gc.sage),
+              const SizedBox(width: 5),
+              Flexible(
+                child: Text(_t.authPrivacyLine1,
+                    style: AppTheme.f(11.5,
+                        weight: FontWeight.w500, color: gc.textTertiary)),
+              ),
+              const SizedBox(width: 10),
+              Icon(PhosphorIconsFill.checkCircle, size: 12, color: gc.sage),
+              const SizedBox(width: 5),
+              Flexible(
+                child: Text(_t.authPrivacyLine2,
+                    style: AppTheme.f(11.5,
+                        weight: FontWeight.w500, color: gc.textTertiary)),
+              ),
+            ],
+          ),
+        ],
+      ]),
+    );
+  }
+
+  Widget _codeStep(BuildContext context) {
+    final gc = context.gc;
+    final dark = Theme.brightnessOf(context) == Brightness.dark;
+    final animates = RiseScope.animates(context);
+    final locked = _lockSeconds() > 0;
+    if (animates && !_breath.isAnimating) {
+      _breath
+        ..duration = locked
+            ? const Duration(seconds: 3)
+            : const Duration(milliseconds: 1600)
+        ..repeat(reverse: true);
+    }
+    if (locked) {
+      return _lockCalm(gc,
+          motionOk:
+              animates && MediaQuery.maybeDisableAnimationsOf(context) != true);
+    }
+    final expired = _expiresIn() <= 0;
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: riseAll([
+        Center(
+          child: animates
+              ? AnimatedBuilder(
+                  animation: _breath,
+                  builder: (context, child) =>
+                      Transform.scale(scale: _breath.value, child: child),
+                  child: _brandMark(gc, 56, 16, 26, dark: dark),
+                )
+              : _brandMark(gc, 56, 16, 26, dark: dark),
+        ),
+        const SizedBox(height: 18),
+        Center(child: Kicker(_t.authCodeKicker, color: gc.brass, size: 11.5)),
+        Text(_t.authCodeTitle,
+            textAlign: TextAlign.center,
+            style: AppTheme.d(24, weight: FontWeight.w800, height: 1.12, color: gc.text)),
+        const SizedBox(height: 10),
+        _sentTo(gc),
+        const SizedBox(height: 22),
+        OtpCodeWell(
+          key: _wellKey,
+          enabled: !_verifying && !locked,
+          expired: expired,
+          hasError: _verdict == _CodeVerdict.invalid,
+          onCompleted: _verify,
+        ),
+        AnimatedSize(
+          duration: const Duration(milliseconds: 200),
+          curve: Curves.easeOut,
+          alignment: Alignment.topCenter,
+          child: _verdictBlock(gc),
+        ),
+        AnimatedSize(
+          duration: const Duration(milliseconds: 200),
+          curve: Curves.easeOut,
+          alignment: Alignment.topCenter,
+          child: _sendNoticeBlock(gc),
+        ),
+        const SizedBox(height: 14),
+        _codeMeta(gc, expired: expired),
+        if (!_verifying) ...[
+          const SizedBox(height: 10),
+          Align(alignment: Alignment.centerLeft, child: _backLink(gc)),
+        ],
+      ]),
+    );
+  }
+
+  // -- pieces ---------------------------------------------------------------
+
+  Widget _brandMark(GymColors gc, double size, double radius, double fontSize,
+      {bool dark = true}) {
+    return Container(
+      width: size,
+      height: size,
+      alignment: Alignment.center,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(radius),
+        gradient: LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+          colors: [gc.accent, gc.brass],
+        ),
+        boxShadow: [
+          BoxShadow(
+            color: gc.accent.withValues(alpha: dark ? 0.38 : 0.22),
+            blurRadius: dark ? 44 : 24,
+            offset: const Offset(0, 12),
+          ),
+        ],
+      ),
+      child: Text('B',
+          style: AppTheme.d(fontSize, weight: FontWeight.w800, color: gc.onEmber)),
+    );
+  }
+
+  Widget _emailField(GymColors gc) {
+    return Focus(
+      child: Builder(
+        builder: (context) {
+          final focused = Focus.of(context).hasFocus;
+          return Container(
+            height: 54,
+            padding: const EdgeInsets.symmetric(horizontal: 14),
+            decoration: BoxDecoration(
+              color: gc.bgRaised,
+              borderRadius: BorderRadius.circular(14),
+              border: Border.all(
+                  color: focused ? gc.accent : gc.border, width: focused ? 1.4 : 1),
+            ),
+            child: Row(
+              children: [
+                Icon(PhosphorIconsRegular.envelopeSimple,
+                    size: 18, color: gc.textTertiary),
+                const SizedBox(width: 10),
+                Expanded(
+                  child: TextField(
+                    controller: _emailController,
+                    focusNode: _emailFocus,
+                    autofocus: widget.showBrandHeader,
+                    keyboardType: TextInputType.emailAddress,
+                    autofillHints: const [AutofillHints.email],
+                    textInputAction: TextInputAction.done,
+                    autocorrect: false,
+                    style: AppTheme.f(15, weight: FontWeight.w600, color: gc.text),
+                    cursorColor: gc.accent,
+                    decoration: InputDecoration(
+                      hintText: _t.emailHint,
+                      hintStyle:
+                          AppTheme.f(15, weight: FontWeight.w500, color: gc.textTertiary),
+                      border: InputBorder.none,
+                      isDense: true,
+                    ),
+                    onSubmitted: (_) => _send(),
+                  ),
+                ),
+              ],
+            ),
+          );
+        },
+      ),
+    );
+  }
+
+  Widget _cta(BuildContext context,
+      {required String label, required VoidCallback onTap, required bool busy}) {
+    final gc = context.gc;
+    final dark = Theme.brightnessOf(context) == Brightness.dark;
+    return Opacity(
+      opacity: busy ? 0.55 : 1,
+      child: Pressable(
+        onTap: busy ? () {} : onTap,
+        child: Container(
+          width: double.infinity,
+          height: 56,
+          alignment: Alignment.center,
+          decoration: BoxDecoration(
+            color: dark ? gc.accent : gc.ember,
+            borderRadius: BorderRadius.circular(100),
+          ),
+          child: busy
+              ? SizedBox(
+                  width: 22,
+                  height: 22,
+                  child:
+                      CircularProgressIndicator(strokeWidth: 2.2, color: gc.onEmber))
+              : Text(titleCase(label),
+                  style: AppTheme.f(15.5,
+                      weight: FontWeight.w700, color: gc.onEmber, letterSpacing: 0.2)),
+        ),
+      ),
+    );
+  }
+
+  Widget _sentTo(GymColors gc) {
+    const marker = '{email}';
+    final template = _t.otpSentTo(marker);
+    final i = template.indexOf(marker);
+    final before = i < 0 ? template : template.substring(0, i);
+    final after = i < 0 ? '' : template.substring(i + marker.length);
+    return Text.rich(
+      TextSpan(children: [
+        TextSpan(text: before),
+        TextSpan(
+            text: _email,
+            style: AppTheme.f(13.5, weight: FontWeight.w700, color: gc.text)),
+        TextSpan(text: after),
+      ]),
+      textAlign: TextAlign.center,
+      style: AppTheme.f(13.5,
+          weight: FontWeight.w500, color: gc.textSecondary, height: 1.4),
+    );
+  }
+
+  Widget _verdictBlock(GymColors gc) {
+    final v = _verdict;
+    if (v == null) return const SizedBox(width: double.infinity);
+    if (v == _CodeVerdict.expired) {
+      return Padding(
+        padding: const EdgeInsets.only(top: 12),
+        child: Column(
+          children: [
+            Text(_t.authCodeExpiredVerdict,
+                textAlign: TextAlign.center,
+                style: AppTheme.f(13, weight: FontWeight.w700, color: gc.danger)),
+            const SizedBox(height: 4),
+            Text(_t.authCodeExpired,
+                textAlign: TextAlign.center,
+                style: AppTheme.f(12.5,
+                    weight: FontWeight.w500, color: gc.textSecondary)),
+          ],
+        ),
+      );
+    }
+    if (v == _CodeVerdict.network) {
+      return Padding(
+        padding: const EdgeInsets.only(top: 12),
+        child: Container(
+          width: double.infinity,
+          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
+          decoration: BoxDecoration(
+            color: gc.danger.withValues(alpha: 0.1),
+            borderRadius: BorderRadius.circular(12),
+          ),
+          child: Text(_t.authErrorNetwork,
+              textAlign: TextAlign.center,
+              style: AppTheme.f(12.5, weight: FontWeight.w600, color: gc.danger)),
+        ),
+      );
+    }
+    final text =
+        v == _CodeVerdict.invalid ? _t.authCodeInvalid(_attemptsLeft) : _t.authErrorUnknown;
+    return Padding(
+      padding: const EdgeInsets.only(top: 12),
+      child: Text(text,
+          textAlign: TextAlign.center,
+          style: AppTheme.f(12.5, weight: FontWeight.w600, color: gc.danger)),
+    );
+  }
+
+  Widget _sendNoticeBlock(GymColors gc) {
+    final notice = _sendNotice;
+    if (notice == null) return const SizedBox(width: double.infinity);
+    return Padding(
+      padding: const EdgeInsets.only(top: 12),
+      child: Container(
+        width: double.infinity,
+        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
+        decoration: BoxDecoration(
+          color: gc.danger.withValues(alpha: 0.1),
+          borderRadius: BorderRadius.circular(12),
+        ),
+        child: Text(notice,
+            textAlign: TextAlign.center,
+            style: AppTheme.f(12.5, weight: FontWeight.w600, color: gc.danger)),
+      ),
+    );
+  }
+
+  Widget _codeMeta(GymColors gc, {required bool expired}) {
+    if (_verifying) {
+      return SizedBox(
+        height: 36,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            SizedBox(
+                width: 14,
+                height: 14,
+                child:
+                    CircularProgressIndicator(strokeWidth: 2, color: gc.accent)),
+            const SizedBox(width: 8),
+            Text(_t.authVerifying,
+                style: AppTheme.f(12.5,
+                    weight: FontWeight.w500, color: gc.textSecondary)),
+          ],
+        ),
+      );
+    }
+    final secs = _expiresIn();
+    final metaColor = expired
+        ? gc.danger
+        : secs <= 60
+            ? gc.textTertiary
+            : gc.textSecondary;
+    return Column(
+      children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(PhosphorIconsRegular.timer, size: 14, color: metaColor),
+            const SizedBox(width: 6),
+            Text(
+              expired
+                  ? _t.authCodeExpiredVerdict
+                  : _t.authCodeExpires(_fmt(secs)),
+              style:
+                  AppTheme.f(12.5, weight: FontWeight.w500, color: metaColor),
+            ),
+          ],
+        ),
+        const SizedBox(height: 6),
+        _resendControl(gc),
+      ],
+    );
+  }
+
+  Widget _resendControl(GymColors gc) {
+    final wait = _resendIn();
+    if (wait > 0) {
+      return Text(_t.authResendIn(_fmt(wait)),
+          textAlign: TextAlign.center,
+          style: AppTheme.f(12.5, weight: FontWeight.w500, color: gc.textSecondary)
+              .copyWith(fontFeatures: [FontFeature.tabularFigures()]));
+    }
+    return Text.rich(
+      TextSpan(children: [
+        TextSpan(text: _t.authResendPrompt),
+        WidgetSpan(
+          alignment: PlaceholderAlignment.middle,
+          child: Pressable(
+            onTap: _busy ? () {} : _resend,
+            child: Text(_t.authResendAction,
+            style: AppTheme.f(12.5, weight: FontWeight.w700, color: gc.accent)),
+          ),
+        ),
+      ]),
+      textAlign: TextAlign.center,
+      style: AppTheme.f(12.5, weight: FontWeight.w500, color: gc.textSecondary),
+    );
+  }
+
+  Widget _lockCalm(GymColors gc, {required bool motionOk}) {
+    final ring = Container(
+      width: 72,
+      height: 72,
+      decoration: BoxDecoration(
+        shape: BoxShape.circle,
+        color: gc.sage.withValues(alpha: 0.06),
+        border: Border.all(color: gc.sage, width: 1.5),
+      ),
+      alignment: Alignment.center,
+      child: Container(
+        width: 28,
+        height: 28,
+        decoration:
+            BoxDecoration(shape: BoxShape.circle, color: gc.sageSoft),
+      ),
+    );
+    return LayoutBuilder(builder: (context, constraints) {
+      final minH = constraints.hasBoundedHeight
+          ? constraints.maxHeight
+          : MediaQuery.sizeOf(context).height;
+      return ConstrainedBox(
+        constraints: BoxConstraints(minHeight: minH),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: riseAll([
+            motionOk
+                ? AnimatedBuilder(
+                    animation: _breath,
+                    builder: (context, child) =>
+                        Transform.scale(scale: _breath.value, child: child),
+                    child: ring,
+                  )
+                : ring,
+            const SizedBox(height: 22),
+            Text(_t.authRateLimitTitle,
+                textAlign: TextAlign.center,
+                style:
+                    AppTheme.d(18, weight: FontWeight.w800, color: gc.text)),
+            const SizedBox(height: 8),
+            ConstrainedBox(
+              constraints: const BoxConstraints(maxWidth: 280),
+              child: Text(_t.authRateLimitBody,
+                  textAlign: TextAlign.center,
+                  style: AppTheme.f(13.5,
+                      weight: FontWeight.w500,
+                      color: gc.textSecondary,
+                      height: 1.45)),
+            ),
+            if (_lockCountdown) ...[
+              const SizedBox(height: 16),
+              Container(
+              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                decoration: BoxDecoration(
+                  color: gc.bgRaised2,
+                  borderRadius: BorderRadius.circular(100),
+                  border: Border.all(color: gc.border),
+                ),
+                child: Text(_t.authRateLimitCta(_fmtPadded(_lockSeconds())),
+                    style: AppTheme.f(12.5,
+                        weight: FontWeight.w700, color: gc.textSecondary)),
+              ),
+            ],
+            const SizedBox(height: 14),
+            Text(_t.authRateLimitRule,
+                textAlign: TextAlign.center,
+                style: AppTheme.f(12,
+                    weight: FontWeight.w500, color: gc.textTertiary)),
+          ]),
+        ),
+      );
+    });
+  }
+
+  Widget _backLink(GymColors gc) {
+    return Pressable(
+      onTap: _backToEmail,
+      child: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 6),
+        child: Text(_t.otpChangeEmail,
+            style: AppTheme.f(13, weight: FontWeight.w700, color: gc.textSecondary)),
+      ),
+    );
+  }
+}

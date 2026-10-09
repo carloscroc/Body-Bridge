@@ -13,14 +13,13 @@ import 'package:shared_preferences/shared_preferences.dart';
 /// Real-app proof of the mandatory-auth entry gate (t_f232e72e): the
 /// composition root boots into the production [RealAccountGate], the
 /// signed-out cold start lands on the blocking [AuthWallScreen], a failed
-/// sign-in shows the inline auth error without ever revealing app content,
-/// and a seeded signed-in phase restores the shell (session restore).
+/// email submit shows the inline validation error without ever revealing
+/// app content, and a seeded signed-in phase restores the shell (session
+/// restore).
 ///
-/// Order matters: the failed sign-in test runs FIRST. The RealAccountGate /
-/// AccountState singletons are shared across tests in this file, and once
-/// warmUp() has completed in an earlier test the submit microtask resolves
-/// differently in the fake async environment. Sign-in-first keeps the whole
-/// file deterministic.
+/// Failure-first keeps the whole file deterministic: the gate and account
+/// singletons are shared across the tests here, so the gate is exercised
+/// before any test mutates the signed-in phase.
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
@@ -36,40 +35,31 @@ void main() {
     fit.resetRoute('home');
   });
 
-  testWidgets('failed sign-in from the wall shows the auth error and stays on the wall', (tester) async {
+  testWidgets('failed email submit from the wall shows the inline error and stays on the wall', (tester) async {
     await tester.pumpWidget(const GymManeApp());
     await tester.pump(const Duration(milliseconds: 400));
 
-    await tester.enterText(find.byType(TextField).at(0), 'rider@gymmane.app');
-    await tester.enterText(find.byType(TextField).at(1), 'stable-password');
+    await tester.enterText(find.byType(TextField).at(0), 'not-an-email');
     await tester.pump(const Duration(milliseconds: 100));
 
-    // Switch to sign-in mode, then submit. PrimaryButton titleCases its
-    // label, so after the switch both the segment and the button read
-    // 'Sign in' — tap the segment first, then the button.
-    await tester.tap(find.text(t.signIn));
-    await tester.pump(const Duration(milliseconds: 100));
-    await tester.tap(find.byType(PrimaryButton));
+    await tester.tap(find.text(titleCase(t.authCtaContinueEmail)));
     await tester.pump();
-    // The submit spinner animates forever: advance in bounded steps instead
-    // of an unbounded pumpAndSettle.
-    await tester.pump(const Duration(seconds: 1));
-    await tester.pump(const Duration(seconds: 1));
-    await tester.pump(const Duration(seconds: 1));
+    await tester.pump(const Duration(milliseconds: 100));
+    await tester.pump(const Duration(milliseconds: 100));
 
     expect(find.textContaining('auth unavailable'), findsNothing,
         reason: 'the signed-out stub must never run in the real app');
-    expect(find.textContaining(t.authErrorUnknown), findsOneWidget,
-        reason: 'AuthException(unknown) maps to the localized authErrorUnknown, never raw text');
+    expect(find.text(t.authErrorInvalidEmail), findsOneWidget,
+        reason: 'a malformed email maps to the localized authErrorInvalidEmail');
     expect(find.byType(AuthWallScreen), findsOneWidget,
-        reason: 'a failed auth keeps the user on the wall');
+        reason: 'a failed submit keeps the user on the wall');
     expect(tester.takeException(), isNull,
-        reason: 'auth failure must not crash the app');
+        reason: 'a failed submit must not crash the app');
     expect(AccountGate.instance.snapshot.tier, AccountTier.signedOut,
-        reason: 'a failed sign-in must not produce a signed-in tier');
+        reason: 'a failed submit must not produce a signed-in tier');
     expect(find.byType(CircularProgressIndicator), findsNothing,
         reason: 'no stuck spinner: submitting resets after the failure');
-    expect(find.byType(PrimaryButton), findsOneWidget,
+    expect(find.text(titleCase(t.authCtaContinueEmail)), findsOneWidget,
         reason: 'the submit button is back, form still usable');
   });
 
@@ -85,9 +75,10 @@ void main() {
     expect(find.text('Body Bridge'), findsOneWidget,
         reason: 'the wall carries the wordmark');
 
-    // Sign-up is the default mode: the submit button offers the free start.
-    expect(find.text(t.startFree), findsOneWidget,
-        reason: 'sign-up (create account) is the default on the wall');
+    // The email step is the default: the submit button offers the code
+    // handoff.
+    expect(find.text(titleCase(t.authCtaContinueEmail)), findsOneWidget,
+        reason: 'the email step is the default on the wall');
     expect(tester.takeException(), isNull);
   });
 
@@ -96,14 +87,14 @@ void main() {
     await tester.pump(const Duration(milliseconds: 400));
     expect(find.byType(AuthWallScreen), findsOneWidget);
 
-    // Simulate a restored Firebase session, exactly what warmUp produces on
+    // Simulate a restored session, exactly what the boot probe produces on
     // a cold start with an existing session.
     account.debugSetPhase(AccountPhase.signedInFree);
     await tester.pump(const Duration(milliseconds: 400));
 
     expect(find.byType(AuthWallScreen), findsNothing,
         reason: 'a signed-in phase leaves the wall');
-    expect(find.text(t.startFree), findsNothing,
+    expect(find.text(titleCase(t.authCtaContinueEmail)), findsNothing,
         reason: 'the wall form is gone from the tree');
     expect(tester.takeException(), isNull,
         reason: 'the shell renders for the restored session');

@@ -35,6 +35,7 @@ import '../screens/tools_screen.dart';
 import '../screens/train_screen.dart';
 import '../services/incoming_share.dart';
 import '../state/fit_state.dart';
+import '../state/onboarding_gate.dart';
 import '../theme/app_colors.dart';
 import '../theme/app_theme.dart';
 import '../widgets/app_background.dart';
@@ -86,6 +87,7 @@ class _AppShellState extends State<AppShell> with WidgetsBindingObserver {
   @override
   void initState() {
     super.initState();
+    unawaited(onboardingGate.resolve());
     WidgetsBinding.instance.addObserver(this);
     fit.refreshAlarmPermission();
     fit.addListener(_queueCelebration);
@@ -187,9 +189,19 @@ class _AppShellState extends State<AppShell> with WidgetsBindingObserver {
   @override
   Widget build(BuildContext context) {
     return AnimatedBuilder(
-      animation: fit,
+      animation: Listenable.merge([fit, onboardingGate]),
       builder: (context, _) {
-        if (!fit.onboarded) return const OnboardingScreen();
+        if (!fit.onboarded) {
+          if (onboardingGate.resolution == OnboardingResolution.checking) {
+            return ColoredBox(
+              color: context.gc.bg,
+              child: Center(
+                child: CircularProgressIndicator(color: context.gc.accent),
+              ),
+            );
+          }
+          return const OnboardingScreen();
+        }
 
         return PopScope(
           canPop: false,

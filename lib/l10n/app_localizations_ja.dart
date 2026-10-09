@@ -2913,18 +2913,6 @@ class AppLocalizationsJa extends AppLocalizations {
   String get authErrorInvalidEmail => 'メールアドレスが正しくないようです。';
 
   @override
-  String get authErrorWrongPassword => 'メールアドレスまたはパスワードが違います。';
-
-  @override
-  String get authErrorUserNotFound => 'そのメールアドレスのアカウントが見つかりません。';
-
-  @override
-  String get authErrorEmailAlreadyInUse => 'そのメールアドレスはすでに登録済みです。';
-
-  @override
-  String get authErrorWeakPassword => 'パスワードが弱すぎます。';
-
-  @override
   String get authErrorTooManyRequests => '試行回数が多すぎます。しばらくしてからお試しください。';
 
   @override
@@ -2938,26 +2926,6 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get emailHint => 'you@example.com';
-
-  @override
-  String get passwordHint => '6文字以上';
-
-  @override
-  String get forgotPassword => 'パスワードをお忘れですか？';
-
-  @override
-  String get resetSend => '再設定リンクを送信';
-
-  @override
-  String get resetSentTitle => 'メールを確認してください';
-
-  @override
-  String resetSentBody(String email) {
-    return '$email に再設定リンクを送信しました。';
-  }
-
-  @override
-  String get backToSignIn => 'サインインに戻る';
 
   @override
   String get accountTitle => 'アカウント';
@@ -2983,22 +2951,10 @@ class AppLocalizationsJa extends AppLocalizations {
   String get signIn => 'サインイン';
 
   @override
-  String get createAccount => 'アカウントを作成';
-
-  @override
-  String get startFree => '無料で始める';
-
-  @override
   String get emailLabel => 'メールアドレス';
 
   @override
-  String get passwordLabel => 'パスワード';
-
-  @override
   String get emailInvalid => '有効なメールアドレスを入力してください';
-
-  @override
-  String get passwordTooShort => 'パスワードは6文字以上で入力してください';
 
   @override
   String get authFailedGeneric => 'リクエストを完了できませんでした。';
@@ -3038,9 +2994,6 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get deleteAccountDone => 'アカウントを削除しました。';
-
-  @override
-  String get deleteAccountReauth => 'アカウントを削除するには再度サインインしてください。';
 
   @override
   String get deleteAccountFailed => 'アカウントを削除できませんでした。もう一度お試しください。';
@@ -3094,4 +3047,122 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get billingComingSoon => '課金機能はまもなく提供予定です。';
+
+  @override
+  String get authWelcomeTitle => 'Body Bridge へようこそ';
+
+  @override
+  String get authWelcomeSubline => 'メールアドレスだけ。パスワード不要。すぐに使えます。';
+
+  @override
+  String get authCtaContinueEmail => 'メールアドレスで続行';
+
+  @override
+  String get authTrustMicrocopy => '6桁のコードを送信します。パスワードは不要です。';
+
+  @override
+  String get authPrivacyLine1 => 'データは端末内に保存されます。';
+
+  @override
+  String get authPrivacyLine2 => 'オフラインファースト、いつでも。';
+
+  @override
+  String get authCodeKicker => 'メールを確認してください';
+
+  @override
+  String get authCodeTitle => 'コードを入力';
+
+  @override
+  String otpSentTo(String email) {
+    return '$email に6桁のコードを送信しました';
+  }
+
+  @override
+  String authCodeExpires(String time) {
+    return 'コードの有効期限は残り $time';
+  }
+
+  @override
+  String get authCodeExpiredVerdict => 'コードの期限切れ';
+
+  @override
+  String get authCodeExpired => 'このコードは期限切れです。新しいコードを送信してください。';
+
+  @override
+  String get authResendPrompt => '届かない場合 ';
+
+  @override
+  String get authResendAction => '再送信';
+
+  @override
+  String authResendIn(String time) {
+    return '$time 後に再送信';
+  }
+
+  @override
+  String get authVerifying => 'コードを確認中…';
+
+  @override
+  String authCodeInvalid(int n) {
+    return 'コードが一致しません。残り $n 回です。';
+  }
+
+  @override
+  String get otpChangeEmail => '別のメールアドレスを使う';
+
+  @override
+  String get authRateLimitTitle => '試行回数が多すぎます';
+
+  @override
+  String get authRateLimitBody => '少し落ち着いて、数分後にまたお試しください。アカウントは安全です。';
+
+  @override
+  String authRateLimitCta(String time) {
+    return '$time 後に再試行';
+  }
+
+  @override
+  String get authRateLimitRule => '間違ったコードを10回入力すると、1時間リクエストが制限されます。';
+
+  @override
+  String authRateLimitBanner(String time) {
+    return '試行回数が多すぎます。$time 後にもう一度お試しください。';
+  }
+
+  @override
+  String get authWelcomeBackKicker => 'おかえりなさい';
+
+  @override
+  String authWelcomeBackTitle(String name) {
+    return 'おかえりなさい、$nameさん';
+  }
+
+  @override
+  String get authWelcomeBackBody => '前回の続きから始めましょう。';
+
+  @override
+  String get authSetupKicker => '初期設定をしましょう';
+
+  @override
+  String authSetupTitle(String name) {
+    return '$nameさん、初期設定をしましょう';
+  }
+
+  @override
+  String get authSetupBody => '5つのステップで準備完了です。';
+
+  @override
+  String get authChipName => '名前';
+
+  @override
+  String get authChipUnits => '単位';
+
+  @override
+  String get authChipBody => '身体';
+
+  @override
+  String get authChipGoal => '目標';
+
+  @override
+  String get authChipPlaces => '場所';
 }

@@ -3099,18 +3099,6 @@ class AppLocalizationsRu extends AppLocalizations {
   String get authErrorInvalidEmail => 'Адрес электронной почты выглядит неверным.';
 
   @override
-  String get authErrorWrongPassword => 'Неверная почта или пароль.';
-
-  @override
-  String get authErrorUserNotFound => 'Аккаунт с такой почтой не найден.';
-
-  @override
-  String get authErrorEmailAlreadyInUse => 'Для этой почты уже есть аккаунт.';
-
-  @override
-  String get authErrorWeakPassword => 'Пароль слишком слабый.';
-
-  @override
   String get authErrorTooManyRequests => 'Слишком много попыток. Попробуйте позже.';
 
   @override
@@ -3124,26 +3112,6 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get emailHint => 'you@example.com';
-
-  @override
-  String get passwordHint => 'Минимум 6 символов';
-
-  @override
-  String get forgotPassword => 'Забыли пароль?';
-
-  @override
-  String get resetSend => 'Отправить ссылку для сброса';
-
-  @override
-  String get resetSentTitle => 'Проверьте почту';
-
-  @override
-  String resetSentBody(String email) {
-    return 'Мы отправили ссылку для сброса на $email.';
-  }
-
-  @override
-  String get backToSignIn => 'Вернуться ко входу';
 
   @override
   String get accountTitle => 'Аккаунт';
@@ -3169,22 +3137,10 @@ class AppLocalizationsRu extends AppLocalizations {
   String get signIn => 'Войти';
 
   @override
-  String get createAccount => 'Создать аккаунт';
-
-  @override
-  String get startFree => 'Начать бесплатно';
-
-  @override
   String get emailLabel => 'Эл. почта';
 
   @override
-  String get passwordLabel => 'Пароль';
-
-  @override
   String get emailInvalid => 'Введите корректный адрес эл. почты';
-
-  @override
-  String get passwordTooShort => 'Пароль должен содержать не менее 6 символов';
 
   @override
   String get authFailedGeneric => 'Не удалось выполнить запрос.';
@@ -3225,9 +3181,6 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get deleteAccountDone => 'Аккаунт удалён.';
-
-  @override
-  String get deleteAccountReauth => 'Войдите снова, чтобы удалить аккаунт.';
 
   @override
   String get deleteAccountFailed => 'Не удалось удалить аккаунт. Попробуйте ещё раз.';
@@ -3281,4 +3234,123 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get billingComingSoon => 'Оплата скоро появится.';
+
+  @override
+  String get authWelcomeTitle => 'Добро пожаловать в Body Bridge';
+
+  @override
+  String get authWelcomeSubline => 'Одно письмо. Без пароля. Вы внутри.';
+
+  @override
+  String get authCtaContinueEmail => 'Продолжить по эл. почте';
+
+  @override
+  String get authTrustMicrocopy => 'Мы отправим 6-значный код. Пароль не нужен.';
+
+  @override
+  String get authPrivacyLine1 => 'Ваши данные остаются на устройстве.';
+
+  @override
+  String get authPrivacyLine2 => 'Всегда офлайн — прежде всего.';
+
+  @override
+  String get authCodeKicker => 'Проверьте почту';
+
+  @override
+  String get authCodeTitle => 'Введите код';
+
+  @override
+  String otpSentTo(String email) {
+    return 'Мы отправили 6-значный код на $email';
+  }
+
+  @override
+  String authCodeExpires(String time) {
+    return 'Код истекает через $time';
+  }
+
+  @override
+  String get authCodeExpiredVerdict => 'Код истёк';
+
+  @override
+  String get authCodeExpired => 'Срок действия кода истёк. Запросите новый.';
+
+  @override
+  String get authResendPrompt => 'Не пришёл код? ';
+
+  @override
+  String get authResendAction => 'Отправить снова';
+
+  @override
+  String authResendIn(String time) {
+    return 'Повторная отправка через $time';
+  }
+
+  @override
+  String get authVerifying => 'Проверяем код…';
+
+  @override
+  String authCodeInvalid(int n) {
+    return 'Код не подошёл. Осталось попыток: $n.';
+  }
+
+  @override
+  String get otpChangeEmail => 'Использовать другую почту';
+
+  @override
+  String get authRateLimitTitle => 'Слишком много попыток';
+
+  @override
+  String get authRateLimitBody =>
+      'Выдохните — попробуйте ещё раз через пару минут. Ваш аккаунт в безопасности.';
+
+  @override
+  String authRateLimitCta(String time) {
+    return 'Повторить через $time';
+  }
+
+  @override
+  String get authRateLimitRule => '10 неверных кодов блокируют запросы на час.';
+
+  @override
+  String authRateLimitBanner(String time) {
+    return 'Слишком много попыток. Повторите через $time.';
+  }
+
+  @override
+  String get authWelcomeBackKicker => 'С возвращением';
+
+  @override
+  String authWelcomeBackTitle(String name) {
+    return 'С возвращением, $name';
+  }
+
+  @override
+  String get authWelcomeBackBody => 'Продолжаем с того места, где вы остановились.';
+
+  @override
+  String get authSetupKicker => 'Давайте всё настроим';
+
+  @override
+  String authSetupTitle(String name) {
+    return 'Давайте всё настроим, $name';
+  }
+
+  @override
+  String get authSetupBody => 'Пять быстрых шагов — и приложение ваше.';
+
+  @override
+  String get authChipName => 'Имя';
+
+  @override
+  String get authChipUnits => 'Единицы';
+
+  @override
+  String get authChipBody => 'Тело';
+
+  @override
+  String get authChipGoal => 'Цель';
+
+  @override
+  String get authChipPlaces => 'Места';
 }

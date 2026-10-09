@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 import '../l10n/l10n.dart';
+import '../screens/auth_handoff.dart';
 import '../screens/auth_wall_screen.dart';
 import '../state/account_gate.dart';
 import '../state/account_gate_impl.dart';
@@ -63,7 +64,7 @@ class _EntryGate extends StatelessWidget {
         return switch (account.phase) {
           AccountPhase.error => _offlineWall(gc),
           AccountPhase.signedOut => const AuthWallScreen(),
-          _ => const AppShell(),
+          _ => account.freshSignIn ? const AuthHandoff() : const AppShell(),
         };
       },
     );

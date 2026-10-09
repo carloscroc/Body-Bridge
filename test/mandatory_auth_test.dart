@@ -2,9 +2,10 @@ import 'dart:io';
 
 import 'package:flutter_test/flutter_test.dart';
 import 'package:gymmane/constants/billing.dart';
-import 'package:gymmane/services/auth_service.dart';
+import 'package:gymmane/services/otp_auth_service.dart';
 import 'package:gymmane/state/account_gate.dart';
 import 'package:gymmane/state/account_state.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 /// Mandatory-auth contract (t_f232e72e): guest mode is abolished. A
 /// signed-out user holds zero capabilities, a signed-out boot failure lands
@@ -12,6 +13,10 @@ import 'package:gymmane/state/account_state.dart';
 /// the warm-up from a clean slate.
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
+
+  setUp(() async {
+    SharedPreferences.setMockInitialValues({});
+  });
 
   group('capability contract', () {
     test('tierCan(signedOut, anything) is false — no guest freebies', () {
@@ -51,8 +56,8 @@ void main() {
       final gate = SignedOutGate();
       expect(gate.canAccess(kCapUnlimitedRoutines), isFalse);
       expect(gate.snapshot.tier, AccountTier.signedOut);
-      await expectLater(gate.signUp('a@b.c', 'secret1'), throwsStateError);
-      await expectLater(gate.signIn('a@b.c', 'secret1'), throwsStateError);
+      await expectLater(gate.requestEmailCode('a@b.c'), throwsStateError);
+      await expectLater(gate.verifyEmailCode('a@b.c', '123456'), throwsStateError);
       await gate.signOut(); // no-op by contract
     });
   });
@@ -72,7 +77,7 @@ void main() {
 
       // AuthService.instance.current defaults to signed-out in the tester,
       // so a boot failure must surface the error phase — not a usable one.
-      state.debugFail(const AuthException('networkRequested'));
+      state.debugFail(const OtpAuthException('networkRequested'));
 
       expect(state.phase, AccountPhase.error);
       expect(state.hasError, isTrue);
@@ -85,7 +90,7 @@ void main() {
 
       // Seed a signed-in auth snapshot, then fail: signed-in offline keeps
       // its tier instead of blocking.
-      state.debugFail(const AuthException('networkRequested'), signedIn: true);
+      state.debugFail(const OtpAuthException('networkRequested'), signedIn: true);
 
       expect(state.phase, AccountPhase.signedInFree,
           reason: 'signed-in + failure keeps cached tier (contract item 3)');
@@ -95,7 +100,7 @@ void main() {
     test('retry() clears the error and re-runs warm-up', () async {
       final state = AccountState();
       addTearDown(state.dispose);
-      state.debugFail(const AuthException('networkRequested'));
+      state.debugFail(const OtpAuthException('networkRequested'));
       expect(state.hasError, isTrue);
 
       await state.retry();

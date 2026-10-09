@@ -26,6 +26,10 @@ abstract class ConvexGateway {
 
   Future<String> mutation({required String name, required Map<String, dynamic> args});
 
+  /// One-shot server action call (e.g. `auth:signIn`); returns the raw JSON
+  /// payload.
+  Future<String> action(String name, Map<String, dynamic> args);
+
   Future<ConvexSubscription> subscribe({
     required String name,
     required Map<String, dynamic> args,
@@ -81,6 +85,10 @@ class RustConvexGateway implements ConvexGateway {
   @override
   Future<String> mutation({required String name, required Map<String, dynamic> args}) =>
       ConvexClient.instance.mutation(name: name, args: args);
+
+  @override
+  Future<String> action(String name, Map<String, dynamic> args) =>
+      ConvexClient.instance.action(name: name, args: args);
 
   @override
   Future<ConvexSubscription> subscribe({

@@ -2,8 +2,9 @@ import 'dart:async';
 
 import 'package:flutter/foundation.dart';
 
-import '../services/auth_service.dart';
 import '../services/entitlements_service.dart';
+import '../services/otp_auth_service.dart';
+import 'onboarding_gate.dart';
 
 /// Signed-in phase of the account, derived from the auth state and the cached
 /// entitlements tier. Screens watch [account] with AnimatedBuilder exactly as
@@ -15,28 +16,40 @@ class AccountState extends ChangeNotifier {
   AccountPhase _phase = AccountPhase.signedOut;
   bool _warmedUp = false;
   String? _lastError;
-  StreamSubscription<AppAuthState>? _authSub;
+  bool _freshSignIn = false;
+  StreamSubscription<OtpAuthState>? _otpSub;
   StreamSubscription<Entitlements>? _entitlementsSub;
 
   AccountPhase get phase => _phase;
 
   bool get warmedUp => _warmedUp;
 
+  /// True ONLY on a runtime signed-out -> signed-in transition (a code
+  /// verified this session); cold-start restores never set it. The auth
+  /// handoff consumes it once.
+  bool get freshSignIn => _freshSignIn;
+
+  bool consumeFreshSignIn() {
+    final value = _freshSignIn;
+    _freshSignIn = false;
+    if (value) notifyListeners();
+    return value;
+  }
+
   bool get hasError => _phase == AccountPhase.error;
 
   String? get lastError => _lastError;
 
-  /// Lazily wires the auth + entitlements services. Called from sign-in or
+  /// Lazily wires the OTP + entitlements services. Called from sign-in or
   /// gating UI; safe to call any number of times and never throws.
   Future<void> warmUp() async {
     if (_warmedUp) return;
     try {
-      final auth = AuthService.instance;
-      await auth.ensureInitialized();
+      await otpAuthService.ensureInitialized();
       await EntitlementsService.instance.init();
-      await EntitlementsService.instance.onSignedIn(auth.idTokenStream);
-      _authSub = auth.stateChanges.listen(
-        (state) => _sync(),
+      await EntitlementsService.instance.bindToOtp();
+      _otpSub = otpAuthService.stateChanges.listen(
+        (state) => _sync(state),
         onError: (Object e, StackTrace st) => _fail(e, st),
       );
       _entitlementsSub = EntitlementsService.instance.entitlements.listen(
@@ -58,20 +71,26 @@ class AccountState extends ChangeNotifier {
   /// Re-runs the warm-up from scratch after a boot failure.
   /// Production API for the error screen's Retry button.
   Future<void> retry() async {
-    unawaited(_authSub?.cancel());
+    unawaited(_otpSub?.cancel());
     unawaited(_entitlementsSub?.cancel());
-    _authSub = null;
+    _otpSub = null;
     _entitlementsSub = null;
     _warmedUp = false;
     _phase = AccountPhase.signedOut;
+    _freshSignIn = false;
     _lastError = null;
     await warmUp();
   }
 
-  void _sync() {
+  void _sync([OtpAuthState? state]) {
     try {
-      final signedIn = AuthService.instance.current.isSignedIn;
+      if (state != null && state.fresh) _freshSignIn = true;
+      final signedIn = otpAuthService.isSignedIn;
       if (!signedIn) {
+        // Leaving the signed-in world re-arms the onboarding gate for the
+        // next sign-in and drops any stale handoff flag.
+        onboardingGate.reset();
+        _freshSignIn = false;
         _set(AccountPhase.signedOut);
         return;
       }
@@ -102,7 +121,7 @@ class AccountState extends ChangeNotifier {
 
   bool _isSignedInSafe() {
     try {
-      return AuthService.instance.current.isSignedIn;
+      return otpAuthService.isSignedIn;
     } catch (e, st) {
       debugPrint('Auth state unreadable: ${_brief(e, st)}');
       return false;
@@ -117,7 +136,7 @@ class AccountState extends ChangeNotifier {
 
   @override
   void dispose() {
-    unawaited(_authSub?.cancel());
+    unawaited(_otpSub?.cancel());
     unawaited(_entitlementsSub?.cancel());
     super.dispose();
   }

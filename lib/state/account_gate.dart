@@ -39,11 +39,14 @@ class AccountSnapshot {
 abstract class AccountGate extends ChangeNotifier {
   AccountSnapshot get snapshot;
   bool canAccess(String feature);
-  Future<void> signIn(String email, String password);
-  Future<void> signUp(String email, String password);
+  /// Sends the 6-digit email code; throws an OtpAuthException whose key
+  /// selects the localized message.
+  Future<void> requestEmailCode(String email);
+
+  /// Verifies the code; false means wrong code (a value, not an exception).
+  Future<bool> verifyEmailCode(String email, String code);
   Future<void> signOut();
   Future<void> deleteAccount();
-  Future<void> sendPasswordReset(String email);
   static AccountGate _instance = SignedOutGate();
 
   /// Installs the account implementation supplied by the C2 integration.
@@ -62,20 +65,16 @@ class SignedOutGate extends AccountGate {
   bool canAccess(String feature) => false;
 
   @override
-  Future<void> signIn(String email, String password) =>
+  Future<void> requestEmailCode(String email) =>
       Future<void>.error(StateError('auth unavailable: sign in required'));
 
   @override
-  Future<void> signUp(String email, String password) =>
-      Future<void>.error(StateError('auth unavailable: sign in required'));
+  Future<bool> verifyEmailCode(String email, String code) =>
+      Future<bool>.error(StateError('auth unavailable: sign in required'));
 
   @override
   Future<void> signOut() => Future<void>.value();
 
   @override
   Future<void> deleteAccount() => Future<void>.error(StateError('auth unavailable: sign in required'));
-
-  @override
-  Future<void> sendPasswordReset(String email) =>
-      Future<void>.error(StateError('auth unavailable: password reset required'));
 }

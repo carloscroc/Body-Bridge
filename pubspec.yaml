@@ -36,8 +36,6 @@ dependencies:
   # REMOVE when convex_flutter publishes a matching release (flagged to
   # dev-orchestrator via T-C card).
   flutter_rust_bridge: 2.11.1
-  firebase_core: ^4.15.0
-  firebase_auth: ^6.7.0
 
 dev_dependencies:
   flutter_test:

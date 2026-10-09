@@ -3015,18 +3015,6 @@ class AppLocalizationsNl extends AppLocalizations {
   String get authErrorInvalidEmail => 'Dit e-mailadres lijkt niet te kloppen.';
 
   @override
-  String get authErrorWrongPassword => 'Verkeerde e-mail of wachtwoord.';
-
-  @override
-  String get authErrorUserNotFound => 'Geen account gevonden voor dat e-mailadres.';
-
-  @override
-  String get authErrorEmailAlreadyInUse => 'Er is al een account voor dat e-mailadres.';
-
-  @override
-  String get authErrorWeakPassword => 'Het wachtwoord is te zwak.';
-
-  @override
   String get authErrorTooManyRequests => 'Te veel pogingen. Probeer het later opnieuw.';
 
   @override
@@ -3040,26 +3028,6 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get emailHint => 'you@example.com';
-
-  @override
-  String get passwordHint => 'Minimaal 6 tekens';
-
-  @override
-  String get forgotPassword => 'Wachtwoord vergeten?';
-
-  @override
-  String get resetSend => 'Herstellink versturen';
-
-  @override
-  String get resetSentTitle => 'Check je e-mail';
-
-  @override
-  String resetSentBody(String email) {
-    return 'We hebben een herstellink gestuurd naar $email.';
-  }
-
-  @override
-  String get backToSignIn => 'Terug naar inloggen';
 
   @override
   String get accountTitle => 'Account';
@@ -3085,22 +3053,10 @@ class AppLocalizationsNl extends AppLocalizations {
   String get signIn => 'Inloggen';
 
   @override
-  String get createAccount => 'Account aanmaken';
-
-  @override
-  String get startFree => 'Gratis beginnen';
-
-  @override
   String get emailLabel => 'E-mail';
 
   @override
-  String get passwordLabel => 'Wachtwoord';
-
-  @override
   String get emailInvalid => 'Voer een geldig e-mailadres in';
-
-  @override
-  String get passwordTooShort => 'Het wachtwoord moet minimaal 6 tekens bevatten';
 
   @override
   String get authFailedGeneric => 'We konden de aanvraag niet voltooien.';
@@ -3141,9 +3097,6 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get deleteAccountDone => 'Account verwijderd.';
-
-  @override
-  String get deleteAccountReauth => 'Log opnieuw in om je account te verwijderen.';
 
   @override
   String get deleteAccountFailed => 'Kon het account niet verwijderen. Probeer het opnieuw.';
@@ -3198,4 +3151,123 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get billingComingSoon => 'Betalen komt binnenkort.';
+
+  @override
+  String get authWelcomeTitle => 'Welkom bij Body Bridge';
+
+  @override
+  String get authWelcomeSubline => 'Eén e-mail. Geen wachtwoord. Je bent binnen.';
+
+  @override
+  String get authCtaContinueEmail => 'Doorgaan met e-mail';
+
+  @override
+  String get authTrustMicrocopy => 'We sturen een 6-cijferige code. Geen wachtwoord nodig.';
+
+  @override
+  String get authPrivacyLine1 => 'Je gegevens blijven op je toestel.';
+
+  @override
+  String get authPrivacyLine2 => 'Offline eerst, altijd.';
+
+  @override
+  String get authCodeKicker => 'Check je e-mail';
+
+  @override
+  String get authCodeTitle => 'Voer je code in';
+
+  @override
+  String otpSentTo(String email) {
+    return 'We hebben een 6-cijferige code gestuurd naar $email';
+  }
+
+  @override
+  String authCodeExpires(String time) {
+    return 'Code verloopt over $time';
+  }
+
+  @override
+  String get authCodeExpiredVerdict => 'Code verlopen';
+
+  @override
+  String get authCodeExpired => 'Deze code is verlopen. Stuur jezelf een nieuwe.';
+
+  @override
+  String get authResendPrompt => 'Niet ontvangen? ';
+
+  @override
+  String get authResendAction => 'Opnieuw verzenden';
+
+  @override
+  String authResendIn(String time) {
+    return 'Opnieuw verzenden over $time';
+  }
+
+  @override
+  String get authVerifying => 'Code controleren…';
+
+  @override
+  String authCodeInvalid(int n) {
+    return 'Die code klopt niet. Nog $n pogingen.';
+  }
+
+  @override
+  String get otpChangeEmail => 'Ander e-mailadres gebruiken';
+
+  @override
+  String get authRateLimitTitle => 'Te veel pogingen';
+
+  @override
+  String get authRateLimitBody =>
+      'Adem rustig uit — probeer het over een paar minuten opnieuw. Je account is veilig.';
+
+  @override
+  String authRateLimitCta(String time) {
+    return 'Probeer het opnieuw over $time';
+  }
+
+  @override
+  String get authRateLimitRule => '10 verkeerde codes blokkeren verzoeken voor een uur.';
+
+  @override
+  String authRateLimitBanner(String time) {
+    return 'Te veel pogingen. Probeer het opnieuw over $time.';
+  }
+
+  @override
+  String get authWelcomeBackKicker => 'Welkom terug';
+
+  @override
+  String authWelcomeBackTitle(String name) {
+    return 'Welkom terug, $name';
+  }
+
+  @override
+  String get authWelcomeBackBody => 'We gaan verder waar je gebleven was.';
+
+  @override
+  String get authSetupKicker => 'Laten we je instellen';
+
+  @override
+  String authSetupTitle(String name) {
+    return 'Laten we je instellen, $name';
+  }
+
+  @override
+  String get authSetupBody => 'Vijf snelle stappen en de app is van jou.';
+
+  @override
+  String get authChipName => 'Naam';
+
+  @override
+  String get authChipUnits => 'Eenheden';
+
+  @override
+  String get authChipBody => 'Lichaam';
+
+  @override
+  String get authChipGoal => 'Doel';
+
+  @override
+  String get authChipPlaces => 'Plaatsen';
 }

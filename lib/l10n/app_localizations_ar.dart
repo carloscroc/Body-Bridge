@@ -3002,18 +3002,6 @@ class AppLocalizationsAr extends AppLocalizations {
   String get authErrorInvalidEmail => 'يبدو البريد الإلكتروني غير صحيح.';
 
   @override
-  String get authErrorWrongPassword => 'البريد الإلكتروني أو كلمة المرور غير صحيحة.';
-
-  @override
-  String get authErrorUserNotFound => 'لا يوجد حساب بهذا البريد الإلكتروني.';
-
-  @override
-  String get authErrorEmailAlreadyInUse => 'هذا البريد الإلكتروني له حساب بالفعل.';
-
-  @override
-  String get authErrorWeakPassword => 'كلمة المرور ضعيفة جدًا.';
-
-  @override
   String get authErrorTooManyRequests => 'محاولات كثيرة جدًا. حاول مرة أخرى لاحقًا.';
 
   @override
@@ -3027,26 +3015,6 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get emailHint => 'you@example.com';
-
-  @override
-  String get passwordHint => '6 أحرف على الأقل';
-
-  @override
-  String get forgotPassword => 'هل نسيت كلمة المرور؟';
-
-  @override
-  String get resetSend => 'أرسل رابط الاستعادة';
-
-  @override
-  String get resetSentTitle => 'تحقق من بريدك الإلكتروني';
-
-  @override
-  String resetSentBody(String email) {
-    return 'أرسلنا رابط استعادة إلى $email.';
-  }
-
-  @override
-  String get backToSignIn => 'العودة لتسجيل الدخول';
 
   @override
   String get accountTitle => 'الحساب';
@@ -3072,22 +3040,10 @@ class AppLocalizationsAr extends AppLocalizations {
   String get signIn => 'تسجيل الدخول';
 
   @override
-  String get createAccount => 'إنشاء حساب';
-
-  @override
-  String get startFree => 'ابدأ مجانًا';
-
-  @override
   String get emailLabel => 'البريد الإلكتروني';
 
   @override
-  String get passwordLabel => 'كلمة المرور';
-
-  @override
   String get emailInvalid => 'أدخل بريدًا إلكترونيًا صحيحًا';
-
-  @override
-  String get passwordTooShort => 'كلمة المرور يجب أن تكون 6 أحرف على الأقل';
 
   @override
   String get authFailedGeneric => 'تعذر إكمال الطلب.';
@@ -3128,9 +3084,6 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get deleteAccountDone => 'تم حذف الحساب.';
-
-  @override
-  String get deleteAccountReauth => 'سجّل الدخول مجددًا لحذف حسابك.';
 
   @override
   String get deleteAccountFailed => 'تعذّر حذف الحساب. حاول مرة أخرى.';
@@ -3184,4 +3137,122 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get billingComingSoon => 'الفوترة قريبًا.';
+
+  @override
+  String get authWelcomeTitle => 'مرحبًا بك في Body Bridge';
+
+  @override
+  String get authWelcomeSubline => 'بريد إلكتروني واحد. بدون كلمة مرور. أنت بالداخل.';
+
+  @override
+  String get authCtaContinueEmail => 'المتابعة بالبريد الإلكتروني';
+
+  @override
+  String get authTrustMicrocopy => 'سنرسل رمزًا من 6 أرقام. لا حاجة لكلمة مرور.';
+
+  @override
+  String get authPrivacyLine1 => 'بياناتك تبقى على جهازك.';
+
+  @override
+  String get authPrivacyLine2 => 'دون اتصال أولًا، دائمًا.';
+
+  @override
+  String get authCodeKicker => 'تحقق من بريدك الإلكتروني';
+
+  @override
+  String get authCodeTitle => 'أدخل الرمز';
+
+  @override
+  String otpSentTo(String email) {
+    return 'أرسلنا رمزًا من 6 أرقام إلى $email';
+  }
+
+  @override
+  String authCodeExpires(String time) {
+    return 'ينتهي الرمز خلال $time';
+  }
+
+  @override
+  String get authCodeExpiredVerdict => 'انتهت صلاحية الرمز';
+
+  @override
+  String get authCodeExpired => 'انتهت صلاحية هذا الرمز. أرسل لنفسك رمزًا جديدًا.';
+
+  @override
+  String get authResendPrompt => 'لم يصلك؟ ';
+
+  @override
+  String get authResendAction => 'إعادة الإرسال';
+
+  @override
+  String authResendIn(String time) {
+    return 'إعادة الإرسال خلال $time';
+  }
+
+  @override
+  String get authVerifying => 'جارٍ التحقق من رمزك…';
+
+  @override
+  String authCodeInvalid(int n) {
+    return 'هذا الرمز غير صحيح. تبقت $n محاولات.';
+  }
+
+  @override
+  String get otpChangeEmail => 'استخدم بريدًا إلكترونيًا آخر';
+
+  @override
+  String get authRateLimitTitle => 'محاولات كثيرة جدًا';
+
+  @override
+  String get authRateLimitBody => 'خذ نفسًا — حاول مجددًا بعد بضع دقائق. حسابك في أمان.';
+
+  @override
+  String authRateLimitCta(String time) {
+    return 'حاول مجددًا خلال $time';
+  }
+
+  @override
+  String get authRateLimitRule => '10 رموز خاطئة تقفل الطلبات لمدة ساعة.';
+
+  @override
+  String authRateLimitBanner(String time) {
+    return 'محاولات كثيرة جدًا. حاول مجددًا خلال $time.';
+  }
+
+  @override
+  String get authWelcomeBackKicker => 'مرحبًا بعودتك';
+
+  @override
+  String authWelcomeBackTitle(String name) {
+    return 'مرحبًا بعودتك، $name';
+  }
+
+  @override
+  String get authWelcomeBackBody => 'نكمل من حيث توقفت.';
+
+  @override
+  String get authSetupKicker => 'لنجهّز حسابك';
+
+  @override
+  String authSetupTitle(String name) {
+    return 'لنجهّز حسابك، $name';
+  }
+
+  @override
+  String get authSetupBody => 'خمس خطوات سريعة ويكون التطبيق لك.';
+
+  @override
+  String get authChipName => 'الاسم';
+
+  @override
+  String get authChipUnits => 'الوحدات';
+
+  @override
+  String get authChipBody => 'الجسم';
+
+  @override
+  String get authChipGoal => 'الهدف';
+
+  @override
+  String get authChipPlaces => 'الأماكن';
 }

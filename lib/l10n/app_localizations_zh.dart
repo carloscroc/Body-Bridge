@@ -2873,18 +2873,6 @@ class AppLocalizationsZh extends AppLocalizations {
   String get authErrorInvalidEmail => '邮箱地址好像不对。';
 
   @override
-  String get authErrorWrongPassword => '邮箱或密码错误。';
-
-  @override
-  String get authErrorUserNotFound => '没有找到该邮箱的账号。';
-
-  @override
-  String get authErrorEmailAlreadyInUse => '该邮箱已注册账号。';
-
-  @override
-  String get authErrorWeakPassword => '密码太弱。';
-
-  @override
   String get authErrorTooManyRequests => '尝试次数过多，请稍后再试。';
 
   @override
@@ -2898,26 +2886,6 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get emailHint => 'you@example.com';
-
-  @override
-  String get passwordHint => '至少 6 个字符';
-
-  @override
-  String get forgotPassword => '忘记密码？';
-
-  @override
-  String get resetSend => '发送重置链接';
-
-  @override
-  String get resetSentTitle => '请查收邮件';
-
-  @override
-  String resetSentBody(String email) {
-    return '我们已将重置链接发送至 $email。';
-  }
-
-  @override
-  String get backToSignIn => '返回登录';
 
   @override
   String get accountTitle => '账户';
@@ -2943,22 +2911,10 @@ class AppLocalizationsZh extends AppLocalizations {
   String get signIn => '登录';
 
   @override
-  String get createAccount => '创建账户';
-
-  @override
-  String get startFree => '免费开始';
-
-  @override
   String get emailLabel => '邮箱';
 
   @override
-  String get passwordLabel => '密码';
-
-  @override
   String get emailInvalid => '请输入有效的邮箱地址';
-
-  @override
-  String get passwordTooShort => '密码至少需要 6 个字符';
 
   @override
   String get authFailedGeneric => '无法完成该请求。';
@@ -2998,9 +2954,6 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get deleteAccountDone => '账号已删除。';
-
-  @override
-  String get deleteAccountReauth => '请重新登录以删除你的账号。';
 
   @override
   String get deleteAccountFailed => '删除账号失败，请重试。';
@@ -3054,6 +3007,124 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get billingComingSoon => '付费功能即将上线。';
+
+  @override
+  String get authWelcomeTitle => '欢迎使用 Body Bridge';
+
+  @override
+  String get authWelcomeSubline => '一个邮箱，无需密码，即刻开启。';
+
+  @override
+  String get authCtaContinueEmail => '使用邮箱继续';
+
+  @override
+  String get authTrustMicrocopy => '我们将发送 6 位数字验证码，无需密码。';
+
+  @override
+  String get authPrivacyLine1 => '你的数据只留在设备上。';
+
+  @override
+  String get authPrivacyLine2 => '始终离线优先。';
+
+  @override
+  String get authCodeKicker => '查看你的邮箱';
+
+  @override
+  String get authCodeTitle => '输入验证码';
+
+  @override
+  String otpSentTo(String email) {
+    return '我们已向 $email 发送 6 位验证码';
+  }
+
+  @override
+  String authCodeExpires(String time) {
+    return '验证码将在 $time 后过期';
+  }
+
+  @override
+  String get authCodeExpiredVerdict => '验证码已过期';
+
+  @override
+  String get authCodeExpired => '该验证码已过期，请重新获取一个。';
+
+  @override
+  String get authResendPrompt => '没有收到？ ';
+
+  @override
+  String get authResendAction => '重新发送';
+
+  @override
+  String authResendIn(String time) {
+    return '$time 后可重新发送';
+  }
+
+  @override
+  String get authVerifying => '正在验证你的验证码…';
+
+  @override
+  String authCodeInvalid(int n) {
+    return '验证码不匹配，还剩 $n 次机会。';
+  }
+
+  @override
+  String get otpChangeEmail => '使用其他邮箱';
+
+  @override
+  String get authRateLimitTitle => '尝试次数过多';
+
+  @override
+  String get authRateLimitBody => '深呼吸——几分钟后重试。你的账号很安全。';
+
+  @override
+  String authRateLimitCta(String time) {
+    return '$time 后重试';
+  }
+
+  @override
+  String get authRateLimitRule => '连续输错 10 次将锁定请求一小时。';
+
+  @override
+  String authRateLimitBanner(String time) {
+    return '尝试次数过多。请在 $time 后重试。';
+  }
+
+  @override
+  String get authWelcomeBackKicker => '欢迎回来';
+
+  @override
+  String authWelcomeBackTitle(String name) {
+    return '欢迎回来，$name';
+  }
+
+  @override
+  String get authWelcomeBackBody => '从上次离开的地方继续。';
+
+  @override
+  String get authSetupKicker => '来完成初始设置';
+
+  @override
+  String authSetupTitle(String name) {
+    return '$name，来完成初始设置';
+  }
+
+  @override
+  String get authSetupBody => '五个快速步骤，应用就归你了。';
+
+  @override
+  String get authChipName => '姓名';
+
+  @override
+  String get authChipUnits => '单位';
+
+  @override
+  String get authChipBody => '身体';
+
+  @override
+  String get authChipGoal => '目标';
+
+  @override
+  String get authChipPlaces => '场馆';
 }
 
 /// The translations for Chinese, using the Han script (`zh_Hant`).
@@ -5949,18 +6020,6 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
   String get authErrorInvalidEmail => '電子郵件地址好像不正確。';
 
   @override
-  String get authErrorWrongPassword => '電子郵件或密碼錯誤。';
-
-  @override
-  String get authErrorUserNotFound => '找不到該電子郵件的帳號。';
-
-  @override
-  String get authErrorEmailAlreadyInUse => '該電子郵件已有帳號。';
-
-  @override
-  String get authErrorWeakPassword => '密碼太弱。';
-
-  @override
   String get authErrorTooManyRequests => '嘗試次數過多，請稍後再試。';
 
   @override
@@ -5974,26 +6033,6 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
 
   @override
   String get emailHint => 'you@example.com';
-
-  @override
-  String get passwordHint => '至少 6 個字元';
-
-  @override
-  String get forgotPassword => '忘記密碼？';
-
-  @override
-  String get resetSend => '傳送重設連結';
-
-  @override
-  String get resetSentTitle => '請查看郵件';
-
-  @override
-  String resetSentBody(String email) {
-    return '我們已將重設連結寄至 $email。';
-  }
-
-  @override
-  String get backToSignIn => '返回登入';
 
   @override
   String get accountTitle => '帳號';
@@ -6019,22 +6058,10 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
   String get signIn => '登入';
 
   @override
-  String get createAccount => '建立帳號';
-
-  @override
-  String get startFree => '免費開始';
-
-  @override
   String get emailLabel => '電子郵件';
 
   @override
-  String get passwordLabel => '密碼';
-
-  @override
   String get emailInvalid => '請輸入有效的電子郵件地址';
-
-  @override
-  String get passwordTooShort => '密碼至少需要 6 個字元';
 
   @override
   String get authFailedGeneric => '無法完成該請求。';
@@ -6074,9 +6101,6 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
 
   @override
   String get deleteAccountDone => '帳號已刪除。';
-
-  @override
-  String get deleteAccountReauth => '請重新登入以刪除你的帳號。';
 
   @override
   String get deleteAccountFailed => '無法刪除帳號，請再試一次。';
@@ -6130,4 +6154,122 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
 
   @override
   String get billingComingSoon => '付費功能即將上線。';
+
+  @override
+  String get authWelcomeTitle => '歡迎使用 Body Bridge';
+
+  @override
+  String get authWelcomeSubline => '一個信箱，免密碼，即刻開始。';
+
+  @override
+  String get authCtaContinueEmail => '使用信箱繼續';
+
+  @override
+  String get authTrustMicrocopy => '我們將寄送 6 位數驗證碼，無需密碼。';
+
+  @override
+  String get authPrivacyLine1 => '你的資料只會留在裝置上。';
+
+  @override
+  String get authPrivacyLine2 => '永遠離線優先。';
+
+  @override
+  String get authCodeKicker => '請查看你的信箱';
+
+  @override
+  String get authCodeTitle => '輸入驗證碼';
+
+  @override
+  String otpSentTo(String email) {
+    return '我們已寄送 6 位數驗證碼至 $email';
+  }
+
+  @override
+  String authCodeExpires(String time) {
+    return '驗證碼將於 $time 後失效';
+  }
+
+  @override
+  String get authCodeExpiredVerdict => '驗證碼已失效';
+
+  @override
+  String get authCodeExpired => '此驗證碼已失效，請重新索取一組。';
+
+  @override
+  String get authResendPrompt => '沒收到嗎？ ';
+
+  @override
+  String get authResendAction => '重新寄送';
+
+  @override
+  String authResendIn(String time) {
+    return '$time 後可重新寄送';
+  }
+
+  @override
+  String get authVerifying => '正在驗證你的驗證碼…';
+
+  @override
+  String authCodeInvalid(int n) {
+    return '驗證碼不符，還剩 $n 次機會。';
+  }
+
+  @override
+  String get otpChangeEmail => '使用其他信箱';
+
+  @override
+  String get authRateLimitTitle => '嘗試次數過多';
+
+  @override
+  String get authRateLimitBody => '深呼吸——幾分鐘後再試一次。你的帳號很安全。';
+
+  @override
+  String authRateLimitCta(String time) {
+    return '$time 後再試一次';
+  }
+
+  @override
+  String get authRateLimitRule => '連續輸錯 10 次將鎖定請求一小時。';
+
+  @override
+  String authRateLimitBanner(String time) {
+    return '嘗試次數過多。請於 $time 後再試。';
+  }
+
+  @override
+  String get authWelcomeBackKicker => '歡迎回來';
+
+  @override
+  String authWelcomeBackTitle(String name) {
+    return '歡迎回來，$name';
+  }
+
+  @override
+  String get authWelcomeBackBody => '從上次離開的地方繼續。';
+
+  @override
+  String get authSetupKicker => '來完成初始設定';
+
+  @override
+  String authSetupTitle(String name) {
+    return '$name，來完成初始設定';
+  }
+
+  @override
+  String get authSetupBody => '五個快速步驟，應用程式就是你的了。';
+
+  @override
+  String get authChipName => '姓名';
+
+  @override
+  String get authChipUnits => '單位';
+
+  @override
+  String get authChipBody => '身體';
+
+  @override
+  String get authChipGoal => '目標';
+
+  @override
+  String get authChipPlaces => '場館';
 }

@@ -5378,30 +5378,6 @@ abstract class AppLocalizations {
   /// **'Email address looks wrong.'**
   String get authErrorInvalidEmail;
 
-  /// No description provided for @authErrorWrongPassword.
-  ///
-  /// In en, this message translates to:
-  /// **'Wrong email or password.'**
-  String get authErrorWrongPassword;
-
-  /// No description provided for @authErrorUserNotFound.
-  ///
-  /// In en, this message translates to:
-  /// **'No account found for that email.'**
-  String get authErrorUserNotFound;
-
-  /// No description provided for @authErrorEmailAlreadyInUse.
-  ///
-  /// In en, this message translates to:
-  /// **'That email already has an account.'**
-  String get authErrorEmailAlreadyInUse;
-
-  /// No description provided for @authErrorWeakPassword.
-  ///
-  /// In en, this message translates to:
-  /// **'Password is too weak.'**
-  String get authErrorWeakPassword;
-
   /// No description provided for @authErrorTooManyRequests.
   ///
   /// In en, this message translates to:
@@ -5431,42 +5407,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'you@example.com'**
   String get emailHint;
-
-  /// No description provided for @passwordHint.
-  ///
-  /// In en, this message translates to:
-  /// **'At least 6 characters'**
-  String get passwordHint;
-
-  /// No description provided for @forgotPassword.
-  ///
-  /// In en, this message translates to:
-  /// **'Forgot password?'**
-  String get forgotPassword;
-
-  /// No description provided for @resetSend.
-  ///
-  /// In en, this message translates to:
-  /// **'Send reset link'**
-  String get resetSend;
-
-  /// No description provided for @resetSentTitle.
-  ///
-  /// In en, this message translates to:
-  /// **'Check your email'**
-  String get resetSentTitle;
-
-  /// No description provided for @resetSentBody.
-  ///
-  /// In en, this message translates to:
-  /// **'We sent a reset link to {email}.'**
-  String resetSentBody(String email);
-
-  /// No description provided for @backToSignIn.
-  ///
-  /// In en, this message translates to:
-  /// **'Back to sign in'**
-  String get backToSignIn;
 
   /// No description provided for @accountTitle.
   ///
@@ -5510,41 +5450,17 @@ abstract class AppLocalizations {
   /// **'Sign in'**
   String get signIn;
 
-  /// No description provided for @createAccount.
-  ///
-  /// In en, this message translates to:
-  /// **'Create account'**
-  String get createAccount;
-
-  /// No description provided for @startFree.
-  ///
-  /// In en, this message translates to:
-  /// **'Start free'**
-  String get startFree;
-
   /// No description provided for @emailLabel.
   ///
   /// In en, this message translates to:
   /// **'Email'**
   String get emailLabel;
 
-  /// No description provided for @passwordLabel.
-  ///
-  /// In en, this message translates to:
-  /// **'Password'**
-  String get passwordLabel;
-
   /// No description provided for @emailInvalid.
   ///
   /// In en, this message translates to:
   /// **'Enter a valid email address'**
   String get emailInvalid;
-
-  /// No description provided for @passwordTooShort.
-  ///
-  /// In en, this message translates to:
-  /// **'Password must be at least 6 characters'**
-  String get passwordTooShort;
 
   /// No description provided for @authFailedGeneric.
   ///
@@ -5623,12 +5539,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Account deleted.'**
   String get deleteAccountDone;
-
-  /// No description provided for @deleteAccountReauth.
-  ///
-  /// In en, this message translates to:
-  /// **'Sign in again to delete your account.'**
-  String get deleteAccountReauth;
 
   /// No description provided for @deleteAccountFailed.
   ///
@@ -5731,6 +5641,210 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Billing is coming soon.'**
   String get billingComingSoon;
+
+  /// No description provided for @authWelcomeTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Welcome to Body Bridge'**
+  String get authWelcomeTitle;
+
+  /// No description provided for @authWelcomeSubline.
+  ///
+  /// In en, this message translates to:
+  /// **'One email. No password. You\'re in.'**
+  String get authWelcomeSubline;
+
+  /// No description provided for @authCtaContinueEmail.
+  ///
+  /// In en, this message translates to:
+  /// **'Continue with email'**
+  String get authCtaContinueEmail;
+
+  /// No description provided for @authTrustMicrocopy.
+  ///
+  /// In en, this message translates to:
+  /// **'We\'ll send a 6-digit code. No password needed.'**
+  String get authTrustMicrocopy;
+
+  /// No description provided for @authPrivacyLine1.
+  ///
+  /// In en, this message translates to:
+  /// **'Your data stays on your device.'**
+  String get authPrivacyLine1;
+
+  /// No description provided for @authPrivacyLine2.
+  ///
+  /// In en, this message translates to:
+  /// **'Offline-first, always.'**
+  String get authPrivacyLine2;
+
+  /// No description provided for @authCodeKicker.
+  ///
+  /// In en, this message translates to:
+  /// **'Check your email'**
+  String get authCodeKicker;
+
+  /// No description provided for @authCodeTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter your code'**
+  String get authCodeTitle;
+
+  /// No description provided for @otpSentTo.
+  ///
+  /// In en, this message translates to:
+  /// **'We sent a 6-digit code to {email}'**
+  String otpSentTo(String email);
+
+  /// No description provided for @authCodeExpires.
+  ///
+  /// In en, this message translates to:
+  /// **'Code expires in {time}'**
+  String authCodeExpires(String time);
+
+  /// No description provided for @authCodeExpiredVerdict.
+  ///
+  /// In en, this message translates to:
+  /// **'Code expired'**
+  String get authCodeExpiredVerdict;
+
+  /// No description provided for @authCodeExpired.
+  ///
+  /// In en, this message translates to:
+  /// **'This code expired. Send yourself a new one.'**
+  String get authCodeExpired;
+
+  /// No description provided for @authResendPrompt.
+  ///
+  /// In en, this message translates to:
+  /// **'Didn\'t get it? '**
+  String get authResendPrompt;
+
+  /// No description provided for @authResendAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Resend'**
+  String get authResendAction;
+
+  /// No description provided for @authResendIn.
+  ///
+  /// In en, this message translates to:
+  /// **'Resend in {time}'**
+  String authResendIn(String time);
+
+  /// No description provided for @authVerifying.
+  ///
+  /// In en, this message translates to:
+  /// **'Checking your code…'**
+  String get authVerifying;
+
+  /// No description provided for @authCodeInvalid.
+  ///
+  /// In en, this message translates to:
+  /// **'That code didn\'t match. {n} attempts left.'**
+  String authCodeInvalid(int n);
+
+  /// No description provided for @otpChangeEmail.
+  ///
+  /// In en, this message translates to:
+  /// **'Use a different email'**
+  String get otpChangeEmail;
+
+  /// No description provided for @authRateLimitTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Too many attempts'**
+  String get authRateLimitTitle;
+
+  /// No description provided for @authRateLimitBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Take a breath — try again in a few minutes. Your account is safe.'**
+  String get authRateLimitBody;
+
+  /// No description provided for @authRateLimitCta.
+  ///
+  /// In en, this message translates to:
+  /// **'Try again in {time}'**
+  String authRateLimitCta(String time);
+
+  /// No description provided for @authRateLimitRule.
+  ///
+  /// In en, this message translates to:
+  /// **'10 wrong codes lock requests for an hour.'**
+  String get authRateLimitRule;
+
+  /// No description provided for @authRateLimitBanner.
+  ///
+  /// In en, this message translates to:
+  /// **'Too many attempts. Try again in {time}.'**
+  String authRateLimitBanner(String time);
+
+  /// No description provided for @authWelcomeBackKicker.
+  ///
+  /// In en, this message translates to:
+  /// **'Welcome back'**
+  String get authWelcomeBackKicker;
+
+  /// No description provided for @authWelcomeBackTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Welcome back, {name}'**
+  String authWelcomeBackTitle(String name);
+
+  /// No description provided for @authWelcomeBackBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Picking up where you left off.'**
+  String get authWelcomeBackBody;
+
+  /// No description provided for @authSetupKicker.
+  ///
+  /// In en, this message translates to:
+  /// **'Let\'s set you up'**
+  String get authSetupKicker;
+
+  /// No description provided for @authSetupTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Let\'s set you up, {name}'**
+  String authSetupTitle(String name);
+
+  /// No description provided for @authSetupBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Five quick steps and the app is yours.'**
+  String get authSetupBody;
+
+  /// No description provided for @authChipName.
+  ///
+  /// In en, this message translates to:
+  /// **'Name'**
+  String get authChipName;
+
+  /// No description provided for @authChipUnits.
+  ///
+  /// In en, this message translates to:
+  /// **'Units'**
+  String get authChipUnits;
+
+  /// No description provided for @authChipBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Body'**
+  String get authChipBody;
+
+  /// No description provided for @authChipGoal.
+  ///
+  /// In en, this message translates to:
+  /// **'Goal'**
+  String get authChipGoal;
+
+  /// No description provided for @authChipPlaces.
+  ///
+  /// In en, this message translates to:
+  /// **'Places'**
+  String get authChipPlaces;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

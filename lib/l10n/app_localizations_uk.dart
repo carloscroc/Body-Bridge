@@ -3014,18 +3014,6 @@ class AppLocalizationsUk extends AppLocalizations {
   String get authErrorInvalidEmail => 'Адреса електронної пошти виглядає неправильною.';
 
   @override
-  String get authErrorWrongPassword => 'Неправильна пошта або пароль.';
-
-  @override
-  String get authErrorUserNotFound => 'Акаунт з такою поштою не знайдено.';
-
-  @override
-  String get authErrorEmailAlreadyInUse => 'Для цієї пошти вже є акаунт.';
-
-  @override
-  String get authErrorWeakPassword => 'Пароль занадто слабкий.';
-
-  @override
   String get authErrorTooManyRequests => 'Забагато спроб. Спробуйте пізніше.';
 
   @override
@@ -3039,26 +3027,6 @@ class AppLocalizationsUk extends AppLocalizations {
 
   @override
   String get emailHint => 'you@example.com';
-
-  @override
-  String get passwordHint => 'Щонайменше 6 символів';
-
-  @override
-  String get forgotPassword => 'Забули пароль?';
-
-  @override
-  String get resetSend => 'Надіслати посилання для скидання';
-
-  @override
-  String get resetSentTitle => 'Перевірте пошту';
-
-  @override
-  String resetSentBody(String email) {
-    return 'Ми надіслали посилання для скидання на $email.';
-  }
-
-  @override
-  String get backToSignIn => 'Повернутися до входу';
 
   @override
   String get accountTitle => 'Акаунт';
@@ -3084,22 +3052,10 @@ class AppLocalizationsUk extends AppLocalizations {
   String get signIn => 'Увійти';
 
   @override
-  String get createAccount => 'Створити акаунт';
-
-  @override
-  String get startFree => 'Почати безкоштовно';
-
-  @override
   String get emailLabel => 'Ел. пошта';
 
   @override
-  String get passwordLabel => 'Пароль';
-
-  @override
   String get emailInvalid => 'Введіть коректну адресу ел. пошти';
-
-  @override
-  String get passwordTooShort => 'Пароль має містити щонайменше 6 символів';
 
   @override
   String get authFailedGeneric => 'Не вдалося виконати запит.';
@@ -3140,9 +3096,6 @@ class AppLocalizationsUk extends AppLocalizations {
 
   @override
   String get deleteAccountDone => 'Акаунт видалено.';
-
-  @override
-  String get deleteAccountReauth => 'Увійдіть знову, щоб видалити акаунт.';
 
   @override
   String get deleteAccountFailed => 'Не вдалося видалити акаунт. Спробуйте ще раз.';
@@ -3196,4 +3149,122 @@ class AppLocalizationsUk extends AppLocalizations {
 
   @override
   String get billingComingSoon => 'Оплата скоро з\'явиться.';
+
+  @override
+  String get authWelcomeTitle => 'Ласкаво просимо до Body Bridge';
+
+  @override
+  String get authWelcomeSubline => 'Один лист. Без пароля. Ви вже всередині.';
+
+  @override
+  String get authCtaContinueEmail => 'Продовжити електронною поштою';
+
+  @override
+  String get authTrustMicrocopy => 'Ми надішлемо 6-значний код. Пароль не потрібен.';
+
+  @override
+  String get authPrivacyLine1 => 'Ваші дані залишаються на пристрої.';
+
+  @override
+  String get authPrivacyLine2 => 'Завжди спершу офлайн.';
+
+  @override
+  String get authCodeKicker => 'Перевірте пошту';
+
+  @override
+  String get authCodeTitle => 'Введіть код';
+
+  @override
+  String otpSentTo(String email) {
+    return 'Ми надіслали 6-значний код на $email';
+  }
+
+  @override
+  String authCodeExpires(String time) {
+    return 'Код діє ще $time';
+  }
+
+  @override
+  String get authCodeExpiredVerdict => 'Термін дії коду минув';
+
+  @override
+  String get authCodeExpired => 'Цей код прострочений. Надішліть собі новий.';
+
+  @override
+  String get authResendPrompt => 'Не отримали код? ';
+
+  @override
+  String get authResendAction => 'Надіслати ще раз';
+
+  @override
+  String authResendIn(String time) {
+    return 'Надіслати ще раз за $time';
+  }
+
+  @override
+  String get authVerifying => 'Перевіряємо код…';
+
+  @override
+  String authCodeInvalid(int n) {
+    return 'Цей код не збігся. Залишилося спроб: $n.';
+  }
+
+  @override
+  String get otpChangeEmail => 'Використати іншу пошту';
+
+  @override
+  String get authRateLimitTitle => 'Забагато спроб';
+
+  @override
+  String get authRateLimitBody => 'Видихніть — спробуйте ще раз за кілька хвилин. Ваш акаунт у безпеці.';
+
+  @override
+  String authRateLimitCta(String time) {
+    return 'Спробувати ще раз за $time';
+  }
+
+  @override
+  String get authRateLimitRule => '10 невірних кодів блокують запити на годину.';
+
+  @override
+  String authRateLimitBanner(String time) {
+    return 'Забагато спроб. Спробуйте ще раз за $time.';
+  }
+
+  @override
+  String get authWelcomeBackKicker => 'З поверненням';
+
+  @override
+  String authWelcomeBackTitle(String name) {
+    return 'З поверненням, $name';
+  }
+
+  @override
+  String get authWelcomeBackBody => 'Продовжуємо з того місця, де ви зупинилися.';
+
+  @override
+  String get authSetupKicker => 'Налаштуємо все';
+
+  @override
+  String authSetupTitle(String name) {
+    return 'Налаштуємо все, $name';
+  }
+
+  @override
+  String get authSetupBody => 'П\'ять швидких кроків — і застосунок ваш.';
+
+  @override
+  String get authChipName => 'Ім\'я';
+
+  @override
+  String get authChipUnits => 'Одиниці';
+
+  @override
+  String get authChipBody => 'Тіло';
+
+  @override
+  String get authChipGoal => 'Мета';
+
+  @override
+  String get authChipPlaces => 'Місця';
 }

@@ -3011,18 +3011,6 @@ class AppLocalizationsTr extends AppLocalizations {
   String get authErrorInvalidEmail => 'E-posta adresi yanlış görünüyor.';
 
   @override
-  String get authErrorWrongPassword => 'E-posta veya şifre hatalı.';
-
-  @override
-  String get authErrorUserNotFound => 'Bu e-posta ile hesap bulunamadı.';
-
-  @override
-  String get authErrorEmailAlreadyInUse => 'Bu e-posta zaten bir hesaba kayıtlı.';
-
-  @override
-  String get authErrorWeakPassword => 'Şifre çok zayıf.';
-
-  @override
   String get authErrorTooManyRequests => 'Çok fazla deneme. Daha sonra tekrar deneyin.';
 
   @override
@@ -3036,26 +3024,6 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get emailHint => 'you@example.com';
-
-  @override
-  String get passwordHint => 'En az 6 karakter';
-
-  @override
-  String get forgotPassword => 'Şifreni mi unuttun?';
-
-  @override
-  String get resetSend => 'Sıfırlama bağlantısı gönder';
-
-  @override
-  String get resetSentTitle => 'E-postanı kontrol et';
-
-  @override
-  String resetSentBody(String email) {
-    return '$email adresine sıfırlama bağlantısı gönderdik.';
-  }
-
-  @override
-  String get backToSignIn => 'Oturum açmaya dön';
 
   @override
   String get accountTitle => 'Hesap';
@@ -3081,22 +3049,10 @@ class AppLocalizationsTr extends AppLocalizations {
   String get signIn => 'Giriş yap';
 
   @override
-  String get createAccount => 'Hesap oluştur';
-
-  @override
-  String get startFree => 'Ücretsiz başla';
-
-  @override
   String get emailLabel => 'E-posta';
 
   @override
-  String get passwordLabel => 'Şifre';
-
-  @override
   String get emailInvalid => 'Geçerli bir e-posta adresi gir';
-
-  @override
-  String get passwordTooShort => 'Şifre en az 6 karakter olmalı';
 
   @override
   String get authFailedGeneric => 'İstek tamamlanamadı.';
@@ -3137,9 +3093,6 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get deleteAccountDone => 'Hesap silindi.';
-
-  @override
-  String get deleteAccountReauth => 'Hesabınızı silmek için tekrar giriş yapın.';
 
   @override
   String get deleteAccountFailed => 'Hesap silinemedi. Tekrar deneyin.';
@@ -3193,4 +3146,122 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get billingComingSoon => 'Ödeme çok yakında.';
+
+  @override
+  String get authWelcomeTitle => 'Body Bridge\'e hoş geldin';
+
+  @override
+  String get authWelcomeSubline => 'Tek e-posta. Şifre yok. İçeridesin.';
+
+  @override
+  String get authCtaContinueEmail => 'E-postayla devam et';
+
+  @override
+  String get authTrustMicrocopy => 'Sana 6 haneli bir kod göndereceğiz. Şifre gerekmez.';
+
+  @override
+  String get authPrivacyLine1 => 'Verilerin cihazında kalır.';
+
+  @override
+  String get authPrivacyLine2 => 'Her zaman önce çevrimdışı.';
+
+  @override
+  String get authCodeKicker => 'E-postanı kontrol et';
+
+  @override
+  String get authCodeTitle => 'Kodunu gir';
+
+  @override
+  String otpSentTo(String email) {
+    return '$email adresine 6 haneli bir kod gönderdik';
+  }
+
+  @override
+  String authCodeExpires(String time) {
+    return 'Kod $time içinde sona eriyor';
+  }
+
+  @override
+  String get authCodeExpiredVerdict => 'Kodun süresi doldu';
+
+  @override
+  String get authCodeExpired => 'Bu kodun süresi doldu. Kendine yenisini gönder.';
+
+  @override
+  String get authResendPrompt => 'Kod mu gelmedi? ';
+
+  @override
+  String get authResendAction => 'Yeniden gönder';
+
+  @override
+  String authResendIn(String time) {
+    return '$time içinde yeniden gönder';
+  }
+
+  @override
+  String get authVerifying => 'Kodun kontrol ediliyor…';
+
+  @override
+  String authCodeInvalid(int n) {
+    return 'Bu kod eşleşmedi. $n deneme hakkın kaldı.';
+  }
+
+  @override
+  String get otpChangeEmail => 'Farklı bir e-posta kullan';
+
+  @override
+  String get authRateLimitTitle => 'Çok fazla deneme';
+
+  @override
+  String get authRateLimitBody => 'Bir nefes al — birkaç dakika sonra tekrar dene. Hesabın güvende.';
+
+  @override
+  String authRateLimitCta(String time) {
+    return '$time içinde tekrar dene';
+  }
+
+  @override
+  String get authRateLimitRule => '10 yanlış kod, istekleri bir saat boyunca kilitler.';
+
+  @override
+  String authRateLimitBanner(String time) {
+    return 'Çok fazla deneme. $time içinde tekrar dene.';
+  }
+
+  @override
+  String get authWelcomeBackKicker => 'Tekrar hoş geldin';
+
+  @override
+  String authWelcomeBackTitle(String name) {
+    return 'Tekrar hoş geldin, $name';
+  }
+
+  @override
+  String get authWelcomeBackBody => 'Kaldığın yerden devam ediyoruz.';
+
+  @override
+  String get authSetupKicker => 'Seni hazırlayalım';
+
+  @override
+  String authSetupTitle(String name) {
+    return 'Seni hazırlayalım, $name';
+  }
+
+  @override
+  String get authSetupBody => 'Beş hızlı adım ve uygulama senin.';
+
+  @override
+  String get authChipName => 'İsim';
+
+  @override
+  String get authChipUnits => 'Birimler';
+
+  @override
+  String get authChipBody => 'Vücut';
+
+  @override
+  String get authChipGoal => 'Hedef';
+
+  @override
+  String get authChipPlaces => 'Mekânlar';
 }

@@ -2,14 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:phosphoricons_flutter/phosphoricons_flutter.dart';
 
 import '../l10n/l10n.dart';
-import '../services/auth_service.dart';
 import '../state/account_gate.dart';
 import '../state/fit_state.dart';
 import '../theme/app_colors.dart';
 import '../theme/app_theme.dart';
-import '../widgets/auth_form.dart';
 import '../widgets/dialogs.dart';
 import '../widgets/entrance.dart';
+import '../widgets/otp_auth_form.dart';
 import '../widgets/premium_gate.dart';
 import '../widgets/tier_badge.dart';
 import '../widgets/ui_kit.dart';
@@ -64,7 +63,7 @@ class _AccountScreenState extends State<AccountScreen> {
             style: AppTheme.f(13.5, weight: FontWeight.w500, color: gc.textSecondary, height: 1.45),
           ),
           const SizedBox(height: 18),
-          AuthForm(strings: () => _t),
+          OtpAuthForm(showBrandHeader: false, strings: () => _t),
         ],
       ),
     );
@@ -153,10 +152,6 @@ class _AccountScreenState extends State<AccountScreen> {
     try {
       await gate.deleteAccount();
       if (mounted) snack(_t.deleteAccountDone);
-    } on AuthException catch (e) {
-      if (mounted) {
-        snack(e.key == 'requiresRecentLogin' ? _t.deleteAccountReauth : _t.deleteAccountFailed);
-      }
     } catch (e) {
       debugPrint('Delete account failed: $e');
       if (mounted) snack(_t.deleteAccountFailed);

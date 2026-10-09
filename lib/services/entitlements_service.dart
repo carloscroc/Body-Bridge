@@ -4,6 +4,7 @@ import 'dart:convert';
 import 'package:convex_flutter/convex_flutter.dart';
 import 'package:flutter/foundation.dart';
 import 'package:gymmane/services/convex_gateway.dart';
+import 'package:gymmane/services/otp_auth_service.dart';
 
 /// Convex-backed account tier and capabilities, offline-first: without a
 /// CONVEX_URL, or while offline, the service stays dormant and reports free.
@@ -152,7 +153,7 @@ class EntitlementsService {
   String? _latestToken;
   ConvexAuthHandle? _authHandle;
   ConvexSubscription? _subHandle;
-  StreamSubscription<String?>? _tokenSub;
+  StreamSubscription<OtpAuthState>? _tokenSub;
   bool _ready = false;
   bool _provisioned = false;
   Future<void>? _initFuture;
@@ -168,19 +169,33 @@ class EntitlementsService {
   /// no connection attempt beyond what initialize does locally.
   Future<void> init() => _initFuture ??= _init();
 
-  /// Wires Convex auth to the AuthService token stream; a null token clears.
-  Future<void> onSignedIn(Stream<String?> tokens) async {
+  /// Wires Convex auth to the OTP session stream; a signed-out snapshot
+  /// clears. Idempotent: rebinding cancels the previous subscription, and
+  /// an already-restored session applies immediately (late bind).
+  Future<void> bindToOtp() async {
     try {
       await init();
       if (!_ready) return;
       await _tokenSub?.cancel();
-      _tokenSub = tokens.listen(
-        (token) => unawaited(_onToken(token)),
-        onError: (Object e, StackTrace st) => debugPrint('Token stream error: ${_brief(e, st)}'),
+      _tokenSub = otpAuthService.stateChanges.listen(
+        (state) => unawaited(_onState(state)),
+        onError: (Object e, StackTrace st) => debugPrint('OTP stream error: ${_brief(e, st)}'),
       );
+      final session = otpAuthService.current;
+      if (session != null) {
+        unawaited(_onState(OtpAuthState(signedIn: true, fresh: false, email: session.email)));
+      }
     } catch (e, st) {
       debugPrint('Convex auth wiring failed: ${_brief(e, st)}');
     }
+  }
+
+  Future<void> _onState(OtpAuthState state) async {
+    if (!state.signedIn) {
+      await _onToken(null);
+      return;
+    }
+    await _onToken(await _fetchToken());
   }
 
   /// Clears Convex auth and falls back to free. Never throws.
@@ -209,6 +224,33 @@ class EntitlementsService {
       await _refresh();
     } catch (e, st) {
       debugPrint('Entitlements refresh failed: ${_brief(e, st)}');
+    }
+  }
+
+  /// One-shot `users:getMe` read (onboarding gate). Tolerant unwrap: a
+  /// `{doc: {...}}` envelope returns the nested doc; null when absent.
+  /// Throws on transport errors — the caller decides the fallback.
+  Future<Map<String, dynamic>?> queryMe() async {
+    await init();
+    if (!_ready) return null;
+    final decoded = jsonDecode(await gateway.query('users:getMe', {}));
+    if (decoded is! Map<String, dynamic>) return null;
+    if (!decoded.containsKey('doc')) return decoded;
+    final doc = decoded['doc'];
+    return doc is Map<String, dynamic> ? doc : null;
+  }
+
+  /// Best-effort `users:completeOnboarding`; true when the mutation landed.
+  Future<bool> completeCloudOnboarding() async {
+    try {
+      if (_latestToken == null) return false;
+      await init();
+      if (!_ready) return false;
+      await gateway.mutation(name: 'users:completeOnboarding', args: {});
+      return true;
+    } catch (e, st) {
+      debugPrint('completeCloudOnboarding skipped: ${_brief(e, st)}');
+      return false;
     }
   }
 
@@ -271,7 +313,14 @@ class EntitlementsService {
     }
   }
 
-  Future<String?> _fetchToken() async => _latestToken;
+  Future<String?> _fetchToken() async {
+    try {
+      await otpAuthService.refreshSession();
+    } catch (_) {
+      // Rotation is best-effort; the stored pair still gets one attempt.
+    }
+    return otpAuthService.fetchToken();
+  }
 
   /// ensureUser once per sign-in, then entitlements:get: an immediate read
   /// plus a live subscription. Any failure degrades to free.
