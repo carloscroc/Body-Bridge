@@ -459,4 +459,81 @@ void main() {
     expect(tester.takeException(), isNull);
     await unmount(tester);
   });
+
+  testWidgets(
+      'the email field keeps its text-input connection across the inset rebuild',
+      (tester) async {
+    // Regression for the device defect: the IME inset lands ~80-130ms after
+    // showSoftInput; the inset-responsive rebuild of the email step used to
+    // re-create the focused EditableText (the compact flip removed the hero
+    // children from the FRONT of the Column's child list, shifting every
+    // later slot), whose dispose closed the TextInputConnection — the app
+    // called hideSoftInput on itself and no input path remained.
+    final gate = ScriptedGate();
+    await pumpEmailStep(tester, gate);
+
+    await tester.tap(find.byType(TextField));
+    await tester.pump();
+    expect(tester.testTextInput.hasAnyClients, isTrue,
+        reason: 'tapping the field opens the text-input connection');
+
+    // The IME inset lands while the field is focused: the rebuild must not
+    // drop the connection (dropping it calls hideSoftInput — the keyboard
+    // self-dismisses and adb input text lands nowhere).
+    tester.view.viewInsets =
+        FakeViewPadding(bottom: 260 * tester.view.devicePixelRatio);
+    addTearDown(tester.view.resetViewInsets);
+    await tester.pumpWidget(
+      host(
+        OtpAuthForm(showBrandHeader: true, strings: () => t),
+        viewInsets: const EdgeInsets.only(bottom: 260),
+      ),
+    );
+    await tester.pump(const Duration(milliseconds: 200));
+
+    expect(tester.testTextInput.hasAnyClients, isTrue,
+        reason: 'the inset-driven rebuild keeps the connection alive');
+    tester.testTextInput.enterText('c');
+    await tester.pump();
+    expect(find.text('c'), findsOneWidget,
+        reason: 'typing reaches the still-attached client after the rebuild');
+
+    // Reverse leg: the keyboard goes away and the inset drains to 0 — the
+    // field must survive that rebuild too (this leg is what re-armed the
+    // flash on every subsequent tap).
+    await tester.pumpWidget(
+      host(OtpAuthForm(showBrandHeader: true, strings: () => t)),
+    );
+    await tester.pump(const Duration(milliseconds: 200));
+    expect(tester.testTextInput.hasAnyClients, isTrue,
+        reason: 'the inset-drain rebuild keeps the connection alive too');
+    expect(tester.takeException(), isNull);
+    await unmount(tester);
+  });
+
+  testWidgets(
+      'landscape with the keyboard open keeps the email field above the fold',
+      (tester) async {
+    tester.view.physicalSize = const Size(2400, 1080); // 800x360 logical @3x
+    tester.view.devicePixelRatio = 3;
+    addTearDown(tester.view.resetPhysicalSize);
+    addTearDown(tester.view.resetDevicePixelRatio);
+
+    await pumpEmailStep(
+      tester,
+      ScriptedGate(),
+      viewInsets: const EdgeInsets.only(bottom: 260),
+    );
+    await tester.pump(const Duration(milliseconds: 200));
+
+    final rect = tester.getRect(find.byType(TextField));
+    final imeTop = 360 - 260;
+    expect(rect.top, greaterThanOrEqualTo(0));
+    expect(rect.bottom, lessThanOrEqualTo(imeTop),
+        reason:
+            'the focused field sits fully in the region above the IME — '
+            'reachable with the keyboard open in landscape');
+    expect(tester.takeException(), isNull);
+    await unmount(tester);
+  });
 }
