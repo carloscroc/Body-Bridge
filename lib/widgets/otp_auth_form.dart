@@ -318,13 +318,15 @@ class _OtpAuthFormState extends State<OtpAuthForm>
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         ...riseAll([
-          // t_0abdb4f5: slot 0 must ALWAYS exist. The compact flip must
-          // substitute this slot's content (zero-height box), never remove
-          // list slots from the front: a front removal shifts every later
-          // index, re-creates the focused EditableText, and closes the
+          // t_0abdb4f5: ALL NINE hero slots must ALWAYS exist. The compact
+          // flip must substitute each slot's content (_HeroSlot / zero-height
+          // box), never remove list slots: a removal shifts every later
+          // index, and because every content slot is wrapped in the unkeyed
+          // generic Rise, the backward tail pass pairs the shifted children
+          // wrong, deactivating the focused EditableText and closing the
           // text-input connection (keyboard self-dismiss defect).
           compact
-              ? const SizedBox(height: 0)
+              ? const _HeroSlot()
               : Center(
                   child: SizedBox(
                     width: 240,
@@ -356,40 +358,48 @@ class _OtpAuthFormState extends State<OtpAuthForm>
                     ),
                   ),
                 ),
-          if (!compact) ...[
-            const SizedBox(height: 32),
-            Center(
-              child: Kicker(_t.brandKicker,
-                  color: gc.accent, size: 11, spacing: 0.88),
-            ),
-            const SizedBox(height: 6),
-            Text('Body Bridge'.toUpperCase(),
-                textAlign: TextAlign.center,
-                style: AppTheme.d(14,
-                    weight: FontWeight.w900,
-                    letterSpacing: 4.2,
-                    color: gc.text)),
-            const SizedBox(height: 32),
-            Center(
-              child: _ClampedText(
-                maxWidth: 250,
-                child: Text(_t.authWelcomeTitle,
-                    textAlign: TextAlign.center,
-                    style: AppTheme.d(34,
-                        weight: FontWeight.w900,
-                        height: 1.18,
-                        letterSpacing: -0.34,
-                        color: gc.text)),
-              ),
-            ),
-            const SizedBox(height: 8),
-            Text(_t.authWelcomeSubline,
-                textAlign: TextAlign.center,
-                style: AppTheme.f(15,
-                    weight: FontWeight.w400,
-                    color: gc.textSecondary,
-                    height: 1.6)),
-          ],
+          compact ? const SizedBox(height: 0) : const SizedBox(height: 32),
+          compact
+              ? const _HeroSlot()
+              : Center(
+                  child: Kicker(_t.brandKicker,
+                      color: gc.accent, size: 11, spacing: 0.88),
+                ),
+          compact ? const SizedBox(height: 0) : const SizedBox(height: 6),
+          compact
+              ? const _HeroSlot()
+              : Center(
+                  child: Text('Body Bridge'.toUpperCase(),
+                      textAlign: TextAlign.center,
+                      style: AppTheme.d(14,
+                          weight: FontWeight.w900,
+                          letterSpacing: 4.2,
+                          color: gc.text)),
+                ),
+          compact ? const SizedBox(height: 0) : const SizedBox(height: 32),
+          compact
+              ? const _HeroSlot()
+              : Center(
+                  child: _ClampedText(
+                    maxWidth: 250,
+                    child: Text(_t.authWelcomeTitle,
+                        textAlign: TextAlign.center,
+                        style: AppTheme.d(34,
+                            weight: FontWeight.w900,
+                            height: 1.18,
+                            letterSpacing: -0.34,
+                            color: gc.text)),
+                  ),
+                ),
+          compact ? const SizedBox(height: 0) : const SizedBox(height: 8),
+          compact
+              ? const _HeroSlot()
+              : Text(_t.authWelcomeSubline,
+                  textAlign: TextAlign.center,
+                  style: AppTheme.f(15,
+                      weight: FontWeight.w400,
+                      color: gc.textSecondary,
+                      height: 1.6)),
         ]),
         const Spacer(),
         ...riseAll([
@@ -919,6 +929,19 @@ class _OtpAuthFormState extends State<OtpAuthForm>
       ),
     );
   }
+}
+
+
+/// Zero-height placeholder for a hero slot kept mounted across the
+/// compact flip (slot-stability note in _emailStep). Deliberately NOT a
+/// bare SizedBox: riseAll passes bare SizedBoxes through unwrapped, and
+/// the slot's outer runtimeType must stay Rise in both states for
+/// Flutter's child-list sync to update the slot in place.
+class _HeroSlot extends StatelessWidget {
+  const _HeroSlot();
+
+  @override
+  Widget build(BuildContext context) => const SizedBox.shrink();
 }
 
 
