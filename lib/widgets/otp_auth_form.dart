@@ -318,37 +318,45 @@ class _OtpAuthFormState extends State<OtpAuthForm>
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         ...riseAll([
-          if (!compact) ...[
-            Center(
-              child: SizedBox(
-                width: 240,
-                height: 96,
-                child: Stack(
-                  clipBehavior: Clip.none,
-                  alignment: Alignment.center,
-                  children: [
-                    Positioned(
-                      top: -72,
-                      child: Container(
-                        width: 240,
-                        height: 240,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          gradient: RadialGradient(
-                            colors: [
-                              gc.accent.withValues(alpha: dark ? 0.18 : 0.10),
-                              gc.accent.withValues(alpha: 0),
-                            ],
-                            stops: const [0, 0.7],
+          // t_0abdb4f5: slot 0 must ALWAYS exist. The compact flip must
+          // substitute this slot's content (zero-height box), never remove
+          // list slots from the front: a front removal shifts every later
+          // index, re-creates the focused EditableText, and closes the
+          // text-input connection (keyboard self-dismiss defect).
+          compact
+              ? const SizedBox(height: 0)
+              : Center(
+                  child: SizedBox(
+                    width: 240,
+                    height: 96,
+                    child: Stack(
+                      clipBehavior: Clip.none,
+                      alignment: Alignment.center,
+                      children: [
+                        Positioned(
+                          top: -72,
+                          child: Container(
+                            width: 240,
+                            height: 240,
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              gradient: RadialGradient(
+                                colors: [
+                                  gc.accent.withValues(
+                                      alpha: dark ? 0.18 : 0.10),
+                                  gc.accent.withValues(alpha: 0),
+                                ],
+                                stops: const [0, 0.7],
+                              ),
+                            ),
                           ),
                         ),
-                      ),
+                        _brandMark(gc, 96, 24, 46),
+                      ],
                     ),
-                    _brandMark(gc, 96, 24, 46),
-                  ],
+                  ),
                 ),
-              ),
-            ),
+          if (!compact) ...[
             const SizedBox(height: 32),
             Center(
               child: Kicker(_t.brandKicker,
