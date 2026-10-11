@@ -54,6 +54,7 @@ class _OtpAuthFormState extends State<OtpAuthForm>
   String? _emailError;
   String? _sendNotice;
 
+  bool _codeArmed = false;
 
   int _attemptsLeft = _maxAttempts;
   DateTime _expiresAt = DateTime.now();
@@ -157,14 +158,14 @@ class _OtpAuthFormState extends State<OtpAuthForm>
     }
     if (!mounted || stayPut) return;
     setState(() => _busy = false);
-    _enterCodeStep(email);
+    _enterCodeStep(email, armed: sendNotice == null);
     // _enterCodeStep resets per-step state, so the notice lands after it.
     if (sendNotice != null) {
       setState(() => _sendNotice = sendNotice);
     }
   }
 
-  void _enterCodeStep(String email) {
+  void _enterCodeStep(String email, {required bool armed}) {
     setState(() {
       _email = email;
       _step = _Step.code;
@@ -174,6 +175,7 @@ class _OtpAuthFormState extends State<OtpAuthForm>
       _attemptsLeft = _maxAttempts;
       _expiresAt = OtpAuthForm.now().add(_codeTtl);
       _resendAvailableAt = OtpAuthForm.now().add(_resendCooldown);
+      _codeArmed = armed;
     });
     _ticker ??= Timer.periodic(const Duration(seconds: 1), (_) {
       if (mounted) setState(() {});
@@ -274,6 +276,7 @@ class _OtpAuthFormState extends State<OtpAuthForm>
         _attemptsLeft = _maxAttempts;
         _expiresAt = OtpAuthForm.now().add(_codeTtl);
         _resendAvailableAt = OtpAuthForm.now().add(_resendCooldown);
+        _codeArmed = true;
       }
     });
     if (notice == null && !networkFail) _wellKey.currentState?.clear();
@@ -287,6 +290,7 @@ class _OtpAuthFormState extends State<OtpAuthForm>
       _verdict = null;
       _emailError = null;
       _sendNotice = null;
+      _codeArmed = false;
     });
   }
 
@@ -471,7 +475,7 @@ class _OtpAuthFormState extends State<OtpAuthForm>
           motionOk:
               animates && MediaQuery.maybeDisableAnimationsOf(context) != true);
     }
-    final expired = _expiresIn() <= 0;
+    final expired = _codeArmed && _expiresIn() <= 0;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
@@ -770,6 +774,7 @@ class _OtpAuthFormState extends State<OtpAuthForm>
         ),
       );
     }
+    if (!_codeArmed) return _resendControl(gc);
     final secs = _expiresIn();
     final metaColor = expired
         ? gc.danger

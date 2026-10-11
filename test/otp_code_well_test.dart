@@ -122,4 +122,37 @@ void main() {
         reason: 'the five idle cells keep the faint dark base border');
     await unmount(tester);
   });
+
+  testWidgets('the six-cell row never overflows a 360dp viewport',
+      (tester) async {
+    tester.view.physicalSize = const Size(360 * 3, 800 * 3);
+    tester.view.devicePixelRatio = 3;
+    addTearDown(tester.view.resetPhysicalSize);
+    addTearDown(tester.view.resetDevicePixelRatio);
+
+    await tester.pumpWidget(MaterialApp(
+      theme: AppTheme.light,
+      home: Scaffold(
+        body: Center(
+          child: OtpCodeWell(onCompleted: noop),
+        ),
+      ),
+    ));
+    await tester.pump();
+    await tester.pump(const Duration(milliseconds: 250));
+
+    expect(tester.takeException(), isNull,
+        reason: 'the fixed 424dp well row must not overflow a 360dp '
+            'viewport. On Carlos\'s ~363dp device the black/yellow stripes '
+            'over the sixth code box were Flutter\'s overflow indicator '
+            'reading "RIGHT OVERFLOWED BY 61 PIXELS"');
+    final row = find.descendant(
+      of: find.byType(OtpCodeWell),
+      matching: find.byType(Row),
+    ).first;
+    expect(tester.getSize(row).width, lessThanOrEqualTo(360),
+        reason: 'the well row shrinks to fit the viewport width — the '
+            'shrink-to-fit invariant');
+    await unmount(tester);
+  });
 }

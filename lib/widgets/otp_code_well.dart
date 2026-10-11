@@ -90,57 +90,67 @@ class OtpCodeWellState extends State<OtpCodeWell> {
       child: Center(
         child: SizedBox(
           height: 64,
-          child: Stack(
-            children: [
-              Row(
-                mainAxisSize: MainAxisSize.min,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  for (var i = 0; i < 6; i++) ...[
-                    if (i > 0) const SizedBox(width: 8),
-                    _cell(gc, i < text.length ? text[i] : null, i == caret),
+          child: LayoutBuilder(builder: (context, constraints) {
+            const gaps = 5 * 8.0;
+            const chrome = 6 * 8.0;
+            final inner = ((constraints.maxWidth - gaps - chrome) / 6)
+                .clamp(0.0, 56.0)
+                .toDouble();
+            return Stack(
+              alignment: Alignment.center,
+              children: [
+                Row(
+                  mainAxisSize: MainAxisSize.min,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    for (var i = 0; i < 6; i++) ...[
+                      if (i > 0) const SizedBox(width: 8),
+                      _cell(gc, i < text.length ? text[i] : null, i == caret,
+                          inner),
+                    ],
                   ],
-                ],
-              ),
-              Positioned.fill(
-                child: Opacity(
-                  opacity: 0,
-                  child: TextField(
-                    controller: _controller,
-                    focusNode: _focus,
-                    autofocus: true,
-                    enabled: widget.enabled,
-                    keyboardType: TextInputType.number,
-                    textInputAction: TextInputAction.done,
-                    autocorrect: false,
-                    enableSuggestions: false,
-                    maxLength: 6,
-                    maxLines: 1,
-                    cursorColor: Colors.transparent,
+                ),
+                Positioned.fill(
+                  child: Opacity(
+                    opacity: 0,
+                    child: TextField(
+                      controller: _controller,
+                      focusNode: _focus,
+                      autofocus: true,
+                      enabled: widget.enabled,
+                      keyboardType: TextInputType.number,
+                      textInputAction: TextInputAction.done,
+                      autocorrect: false,
+                      enableSuggestions: false,
+                      maxLength: 6,
+                      maxLines: 1,
+                      cursorColor: Colors.transparent,
                   style: const TextStyle(fontSize: 1, color: Colors.transparent, height: 1),
-                    textAlign: TextAlign.center,
-                    textAlignVertical: TextAlignVertical.center,
-                    decoration: const InputDecoration(
-                      border: InputBorder.none,
-                      isDense: true,
-                      counterText: '',
-                      contentPadding: EdgeInsets.zero,
-                    ),
+                      textAlign: TextAlign.center,
+                      textAlignVertical: TextAlignVertical.center,
+                      decoration: const InputDecoration(
+                        border: InputBorder.none,
+                        isDense: true,
+                        counterText: '',
+                        contentPadding: EdgeInsets.zero,
+                      ),
                     inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-                    autofillHints: const [AutofillHints.oneTimeCode],
-                    onChanged: _onChanged,
+                      autofillHints: const [AutofillHints.oneTimeCode],
+                      onChanged: _onChanged,
+                    ),
                   ),
                 ),
-              ),
-            ],
-          ),
+              ],
+            );
+          }),
         ),
       ),
     );
   }
 
-  Widget _cell(GymColors gc, String? digit, bool isCaret) {
-    final ringed = isCaret && _focus.hasFocus && !widget.hasError;
+  Widget _cell(GymColors gc, String? digit, bool isCaret, double inner) {
+    final dangerState = widget.hasError || widget.expired;
+    final ringed = isCaret && _focus.hasFocus && !dangerState;
     return Container(
       padding: const EdgeInsets.all(2),
       decoration: BoxDecoration(
@@ -152,14 +162,14 @@ class OtpCodeWellState extends State<OtpCodeWell> {
         ),
       ),
       child: SizedBox(
-        width: 56,
-        height: 56,
+        width: inner,
+        height: inner,
         child: Stack(
           alignment: Alignment.center,
           children: [
             Positioned.fill(child: _box(gc, digit, isCaret)),
             if (digit == null && isCaret && _focus.hasFocus)
-              _WellCaret(color: gc.accent),
+              _WellCaret(color: dangerState ? gc.danger : gc.accent),
           ],
         ),
       ),
@@ -168,7 +178,8 @@ class OtpCodeWellState extends State<OtpCodeWell> {
 
   Widget _box(GymColors gc, String? digit, bool isCaret) {
     final dark = Theme.brightnessOf(context) == Brightness.dark;
-    final ringed = isCaret && _focus.hasFocus && !widget.hasError;
+    final dangerState = widget.hasError || widget.expired;
+    final ringed = isCaret && _focus.hasFocus && !dangerState;
     return AnimatedContainer(
       duration: const Duration(milliseconds: 180),
       curve: Curves.easeOut,
@@ -178,7 +189,7 @@ class OtpCodeWellState extends State<OtpCodeWell> {
         borderRadius: BorderRadius.circular(12),
         border: Border.all(
           width: 1,
-          color: widget.hasError
+          color: dangerState
               ? gc.danger.withValues(alpha: 0.55)
               : ringed
                   ? gc.accent
