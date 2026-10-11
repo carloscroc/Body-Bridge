@@ -210,14 +210,18 @@ void main() {
       final expiredKey = await toCodeStep(theme);
       _captureClock = _captureClock.add(const Duration(minutes: 6));
       await tester.pump(const Duration(seconds: 1));
+      // The ticker's setState restarts the 180ms AnimatedContainer border
+      // transition ON this frame; pump past it so the capture shows the
+      // settled danger borders, not the transition's first frame.
       FocusManager.instance.primaryFocus?.unfocus();
-      await tester.pump(const Duration(milliseconds: 200));
+      await tester.pump(const Duration(milliseconds: 250));
       await _capture(tester, expiredKey, '${name}_code_expired');
 
       // TTL lapsed, well still focused.
       final expiredFocusedKey = await toCodeStep(theme);
       _captureClock = _captureClock.add(const Duration(minutes: 6));
       await tester.pump(const Duration(seconds: 1));
+      await tester.pump(const Duration(milliseconds: 250));
       await _capture(
           tester, expiredFocusedKey, '${name}_code_expired_focused');
 
