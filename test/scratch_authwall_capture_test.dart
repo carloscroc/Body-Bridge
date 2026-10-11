@@ -1,5 +1,5 @@
 // Throwaway capture harness (scratch_ prefix = not part of the committed
-// suite): renders the real AuthWallScreen at the Samsung viewport in both
+// suite): renders the real AuthWallScreen at a 360x800 narrow viewport
 // themes, both OTP steps, and exports PNGs to CAPTURE_DIR for visual review.
 import 'dart:io';
 import 'dart:ui' show ImageByteFormat;
@@ -116,7 +116,7 @@ void main() {
     OtpAuthForm.now = () => _captureClock;
     addTearDown(() => OtpAuthForm.now = DateTime.now);
 
-    const phys = Size(1440, 3200);
+    const phys = Size(360 * 3, 800 * 3);
     tester.view.physicalSize = phys;
     tester.view.devicePixelRatio = 3.0;
     addTearDown(tester.view.reset);
