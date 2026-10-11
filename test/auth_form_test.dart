@@ -536,4 +536,49 @@ void main() {
     expect(tester.takeException(), isNull);
     await unmount(tester);
   });
+
+  testWidgets(
+      'a failed send never arms expiry: no countdown, no expired verdict,'
+      ' resend stays', (tester) async {
+    final gate =
+        ScriptedGate(requestFailure: const OtpAuthException('unknown'));
+    await toCodeStep(tester, gate);
+    expect(find.text(t.authFailedGeneric), findsOneWidget,
+        reason: 'the failed-send banner surfaces on the code step');
+
+    _clock = _clock.add(const Duration(minutes: 6));
+    await tester.pump(const Duration(seconds: 1));
+
+    expect(find.text(t.authCodeExpiredVerdict), findsNothing,
+        reason: 'a code that was never delivered must not be declared'
+            ' expired — the client-side TTL never applies to an unarmed'
+            ' session');
+    expect(find.textContaining(RegExp(r'\d:\d\d')), findsNothing,
+        reason: 'no timer row / countdown for an unarmed session'
+            ' (the 30s resend cooldown is long gone at +6min)');
+    expect(find.text(t.authResendAction), findsOneWidget,
+        reason: 'the resend affordance stays available');
+    expect(tester.takeException(), isNull);
+    await unmount(tester);
+  });
+
+  testWidgets(
+      'an armed session flips the meta row to the expired verdict once the'
+      ' TTL lapses', (tester) async {
+    final gate = ScriptedGate();
+    await toCodeStep(tester, gate);
+
+    _clock = _clock.add(const Duration(seconds: 1));
+    await tester.pump(const Duration(seconds: 1));
+    expect(find.text(t.authCodeExpires('4:59')), findsOneWidget,
+        reason: 'the armed session counts down from the 5-minute TTL');
+
+    _clock = _clock.add(const Duration(minutes: 6));
+    await tester.pump(const Duration(seconds: 1));
+    expect(find.text(t.authCodeExpiredVerdict), findsWidgets,
+        reason: 'a code that was truly sent may lapse — the kept'
+            ' success-path behavior');
+    expect(tester.takeException(), isNull);
+    await unmount(tester);
+  });
 }

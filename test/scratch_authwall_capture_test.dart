@@ -10,23 +10,44 @@ import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:gymmane/l10n/l10n.dart';
 import 'package:gymmane/screens/auth_wall_screen.dart';
+import 'package:gymmane/services/otp_auth_service.dart';
 import 'package:gymmane/state/account_gate.dart';
 import 'package:gymmane/theme/app_theme.dart';
+import 'package:gymmane/widgets/otp_auth_form.dart';
 
 class ScriptedGate extends AccountGate {
+  /// Thrown by requestEmailCode: arms the failed-send code-step path
+  /// (banner, no code ever delivered). Mutable so a capture can arm it.
+  OtpAuthException? requestFailure;
+
+  /// Thrown by verifyEmailCode. When no failure is armed the gate returns
+  /// FALSE for a wrong code (mirroring the real gate's contract) so the
+  /// invalid branch is exercised.
+  OtpAuthException? verifyFailure;
+
   @override
   AccountSnapshot get snapshot => const AccountSnapshot(tier: AccountTier.signedOut);
   @override
   bool canAccess(String feature) => false;
   @override
-  Future<void> requestEmailCode(String email) async {}
+  Future<void> requestEmailCode(String email) async {
+    final failure = requestFailure;
+    if (failure != null) throw failure;
+  }
   @override
-  Future<bool> verifyEmailCode(String email, String code) async => false;
+  Future<bool> verifyEmailCode(String email, String code) async {
+    final failure = verifyFailure;
+    if (failure != null) throw failure;
+    return false;
+  }
   @override
   Future<void> signOut() async {}
   @override
   Future<void> deleteAccount() async {}
 }
+
+/// Injectable form clock: expiry / resend / lock countdowns read it.
+DateTime _captureClock = DateTime(2026, 1, 1, 12);
 
 Future<void> _capture(WidgetTester tester, GlobalKey key, String name) async {
   await tester.binding.runAsync(() async {
@@ -89,7 +110,12 @@ void main() {
   });
 
   testWidgets('capture auth wall variants', (tester) async {
-    AccountGate.install(ScriptedGate());
+    final gate = ScriptedGate();
+    AccountGate.install(gate);
+    // The form's countdowns read this mutable clock; reset per state below.
+    OtpAuthForm.now = () => _captureClock;
+    addTearDown(() => OtpAuthForm.now = DateTime.now);
+
     const phys = Size(1440, 3200);
     tester.view.physicalSize = phys;
     tester.view.devicePixelRatio = 3.0;
@@ -97,6 +123,28 @@ void main() {
 
     final emailKey = GlobalKey();
     final codeKey = GlobalKey();
+
+    // Freshly pumped host, email typed, continue tapped, code step settled.
+    // A fresh GlobalKey per pumpWidget is REQUIRED: reusing a key makes the
+    // root adapter update the retained subtree in place, so the form would
+    // stay on the previous step instead of starting fresh on the email step.
+    Future<GlobalKey> toCodeStep(ThemeData theme,
+        {OtpAuthException? requestFailure}) async {
+      final stateKey = GlobalKey();
+      _captureClock = DateTime(2026, 1, 1, 12);
+      gate.requestFailure = requestFailure;
+      gate.verifyFailure = null;
+      await tester.pumpWidget(
+        RepaintBoundary(key: stateKey, child: _host(theme)),
+      );
+      await tester.enterText(find.byType(TextField), 'carlos@bodybridge.app');
+      await tester.pump();
+      await tester.tap(find.text(t.authCtaContinueEmail));
+      for (var i = 0; i < 6; i++) {
+        await tester.pump(const Duration(milliseconds: 150));
+      }
+      return stateKey;
+    }
 
     // DARK theme — email step
     await tester.pumpWidget(
@@ -147,5 +195,50 @@ void main() {
       await tester.pump(const Duration(milliseconds: 150));
     }
     await _capture(tester, codeKey, 'light_code_step');
+
+    // Code-step states for visual review (t_2ffc0956): the well outline
+    // states and the failed-send expiry honesty, both themes.
+    for (final (name, theme) in [
+      ('dark', AppTheme.dark),
+      ('light', AppTheme.light),
+    ]) {
+      // Success send, well focused (autofocus).
+      await _capture(
+          tester, await toCodeStep(theme), '${name}_code_normal');
+
+      // TTL lapsed, well NOT focused.
+      final expiredKey = await toCodeStep(theme);
+      _captureClock = _captureClock.add(const Duration(minutes: 6));
+      await tester.pump(const Duration(seconds: 1));
+      FocusManager.instance.primaryFocus?.unfocus();
+      await tester.pump(const Duration(milliseconds: 200));
+      await _capture(tester, expiredKey, '${name}_code_expired');
+
+      // TTL lapsed, well still focused.
+      final expiredFocusedKey = await toCodeStep(theme);
+      _captureClock = _captureClock.add(const Duration(minutes: 6));
+      await tester.pump(const Duration(seconds: 1));
+      await _capture(
+          tester, expiredFocusedKey, '${name}_code_expired_focused');
+
+      // Wrong code: danger well + verdict row.
+      final invalidKey = await toCodeStep(theme);
+      gate.verifyFailure = const OtpAuthException('codeInvalid');
+      await tester.enterText(find.byType(TextField), '000000');
+      await tester.pump(const Duration(milliseconds: 120)); // past the 80ms debounce
+      await tester.pump(const Duration(milliseconds: 300));
+      await _capture(tester, invalidKey, '${name}_code_invalid');
+      gate.verifyFailure = null;
+
+      // Failed send: banner + resend link, no code ever delivered; after the
+      // TTL lapses there must be NO timer row and NO expired verdict (the
+      // Defect-2 money shot once the lib fix lands).
+      final failsendKey = await toCodeStep(theme,
+          requestFailure: const OtpAuthException('unknown'));
+      _captureClock = _captureClock.add(const Duration(minutes: 6));
+      await tester.pump(const Duration(seconds: 1));
+      await _capture(tester, failsendKey, '${name}_code_failsend');
+      gate.requestFailure = null;
+    }
   });
 }
