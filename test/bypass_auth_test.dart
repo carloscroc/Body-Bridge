@@ -22,21 +22,31 @@ void main() {
     });
   });
 
-  group('AccountState bypass path (injectable predicate)', () {
-    test('warmUp with bypass set -> signed-in phase per tier', () {
-      // Structure: the resolution logic is pure; bypass behavior verified via warmUp path
-      final state = AccountState();
-      expect(state.phase, AccountPhase.signedOut);
-      // The bypass activates only via kBypassAuth compile-time flag.
-      // Default (no dart-define): warmUp remains the real auth wall.
-      state.debugSetWarmedUp();
-      expect(state.phase, AccountPhase.signedOut);
+  // The bypass branch of AccountState.warmUp() is compile-time gated
+  // (bool.fromEnvironment), so it only executes when this suite itself runs
+  // with --dart-define=BB_AUTH_BYPASS=true. Define-less runs skip the group
+  // below; run it with the define to exercise the ON path.
+  group('bypass ON (requires BB_AUTH_BYPASS=true)', () {
+    test('warmUp -> signed-in phase per tier + gate snapshot email', () async {
+      await account.warmUp();
+      final gate = BypassAccountGate();
+      addTearDown(gate.dispose);
+      expect(gate.snapshot.tier, kBypassTier);
+      expect(gate.snapshot.email, kBypassEmail);
     });
-    test('signOut under bypass -> signedOut', () {
-      final state = AccountState();
-      // After warmUp (or direct phase set), signOut resets to signedOut
-      state.signOut();
-      expect(state.phase, AccountPhase.signedOut);
+    test('signOut -> signedOut + null email; re-warmUp re-enters bypass', () async {
+      await account.warmUp();
+      final gate = BypassAccountGate();
+      addTearDown(gate.dispose);
+      var notifications = 0;
+      gate.addListener(() => notifications++);
+      await gate.signOut();
+      expect(gate.snapshot.tier, AccountTier.signedOut);
+      expect(gate.snapshot.email, isNull);
+      expect(notifications, greaterThan(0), reason: 'gate must notifyListeners on signOut');
+      await account.warmUp();
+      expect(gate.snapshot.tier, kBypassTier);
+      expect(gate.snapshot.email, kBypassEmail);
     });
-  });
+  }, skip: kBypassAuth ? false : 'requires --dart-define=BB_AUTH_BYPASS=true');
 }

@@ -6,7 +6,8 @@ import 'dart:async';
 import 'package:gymmane/state/account_gate.dart';
 import 'package:gymmane/state/account_state.dart';
 
-/// Compile-time flag: set via `flutter run --dart-define=BB_AUTH_BYPASS=1`
+/// Compile-time flag: set via `flutter run --dart-define=BB_AUTH_BYPASS=true`
+/// (only the exact string `true` enables it — `=1` leaves the bypass OFF).
 const bool kBypassAuth = bool.fromEnvironment('BB_AUTH_BYPASS');
 
 /// Raw tier string from dart-defines: `BB_AUTH_BYPASS_TIER=free|basic|advanced|enterprise`
