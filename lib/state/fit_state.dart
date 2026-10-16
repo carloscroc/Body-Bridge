@@ -9,6 +9,7 @@ import 'package:flutter/services.dart';
 
 import '../catalog/exercise_catalog.dart';
 import '../catalog/program_templates.dart';
+import '../catalog/trainer_catalog.dart';
 import '../l10n/l10n.dart';
 import '../models/exercise.dart';
 import '../models/live_session.dart';

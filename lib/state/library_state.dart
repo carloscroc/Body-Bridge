@@ -7,6 +7,8 @@ mixin LibraryState on FitCore {
   String? exEquipmentFilter;
   String? activeExerciseId;
   int _customSeq = 0;
+  String exSource = 'free';
+  String activeTrainerSessionId = kTrainerSessions.first.id;
   List<Exercise> get allExercises => [...kExercises, ...customExercises];
 
   Exercise? exerciseById(String id) {
@@ -32,6 +34,20 @@ mixin LibraryState on FitCore {
   void setExSearch(String v) {
     exSearch = v;
     notifyListeners();
+  }
+
+  void setExSource(String s) {
+    exSource = s;
+    notifyListeners();
+  }
+
+  void goTrainerLibrary() => pushRoute('trainer-library');
+
+  void goTrainerAssigned() => pushRoute('trainer-assigned');
+
+  void goTrainerVideo(String sessionId) {
+    activeTrainerSessionId = sessionId;
+    pushRoute('trainer-video');
   }
 
   void clearExFilters() {
