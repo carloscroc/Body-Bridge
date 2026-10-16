@@ -3184,4 +3184,96 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get billingComingSoon => 'الفوترة قريبًا.';
+
+  @override
+  String get sourceFree => 'مجاني';
+
+  @override
+  String get sourceTrainer => 'المدرب';
+
+  @override
+  String get sourceCustom => 'مخصص';
+
+  @override
+  String get advancedBadge => 'ADVANCED';
+
+  @override
+  String get trainerLibraryTitle => 'مكتبة المدرب';
+
+  @override
+  String get searchTrainerSessions => 'ابحث في جلسات المدرب';
+
+  @override
+  String get categoryAll => 'الكل';
+
+  @override
+  String get categoryStrength => 'قوة';
+
+  @override
+  String get categoryMobility => 'مرونة';
+
+  @override
+  String get categoryCore => 'كور';
+
+  @override
+  String get categoryCorrective => 'تصحيحي';
+
+  @override
+  String get categoryWarmup => 'إحماء';
+
+  @override
+  String get trainerSessionBadge => 'جلسة المدرب';
+
+  @override
+  String get newBadge => 'جديد';
+
+  @override
+  String get customAssignedTitle => 'من مدربك';
+
+  @override
+  String get fromYourTrainerBadge => 'من مدربك';
+
+  @override
+  String get dueToday => 'مستحق اليوم';
+
+  @override
+  String assignedOn(String date) {
+    return 'كُلِّف في $date';
+  }
+
+  @override
+  String get startAssignedWork => 'ابدأ التمرين المكلَّف به';
+
+  @override
+  String get unlockAdvancedTitle => 'افتح ADVANCED';
+
+  @override
+  String get benefitTrainerLibrary => 'مكتبة فيديو المدرب كاملة';
+
+  @override
+  String get benefitCoachAssignments => 'تمارين يعينها مدربك شخصياً';
+
+  @override
+  String get benefitMonthlySessions => 'جلسات مدرب جديدة كل شهر';
+
+  @override
+  String get continueOnSite => 'تابع على bodybridge.net';
+
+  @override
+  String get notNow => 'ليس الآن';
+
+  @override
+  String get lockAdvancedMessage => 'التمارين المسجلة من المدرب جزء من ADVANCED';
+
+  @override
+  String get setsLabel => 'مجموعات';
+
+  @override
+  String get repsLabel => 'عدد';
+
+  @override
+  String get addSessionToWorkout => 'أضف إلى التمرين';
+
+  @override
+  String get addedToWorkout => 'أُضيف إلى التمرين';
 }

@@ -3193,4 +3193,96 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get billingComingSoon => 'Ödeme çok yakında.';
+
+  @override
+  String get sourceFree => 'Ücretsiz';
+
+  @override
+  String get sourceTrainer => 'Antrenör';
+
+  @override
+  String get sourceCustom => 'Özel';
+
+  @override
+  String get advancedBadge => 'ADVANCED';
+
+  @override
+  String get trainerLibraryTitle => 'Antrenör Kütüphanesi';
+
+  @override
+  String get searchTrainerSessions => 'Antrenör seanslarını ara';
+
+  @override
+  String get categoryAll => 'Tümü';
+
+  @override
+  String get categoryStrength => 'Güç';
+
+  @override
+  String get categoryMobility => 'Mobilite';
+
+  @override
+  String get categoryCore => 'Core';
+
+  @override
+  String get categoryCorrective => 'Düzeltici';
+
+  @override
+  String get categoryWarmup => 'Isınma';
+
+  @override
+  String get trainerSessionBadge => 'ANTRENÖR SEANSI';
+
+  @override
+  String get newBadge => 'YENİ';
+
+  @override
+  String get customAssignedTitle => 'Antrenöründen';
+
+  @override
+  String get fromYourTrainerBadge => 'Antrenöründen';
+
+  @override
+  String get dueToday => 'Bugün';
+
+  @override
+  String assignedOn(String date) {
+    return '$date tarihinde atandı';
+  }
+
+  @override
+  String get startAssignedWork => 'Atanan antrenmanı başlat';
+
+  @override
+  String get unlockAdvancedTitle => 'ADVANCED\'i Aç';
+
+  @override
+  String get benefitTrainerLibrary => 'Tam antrenör video kütüphanesi';
+
+  @override
+  String get benefitCoachAssignments => 'Koçun kişiye özel atadığı egzersizler';
+
+  @override
+  String get benefitMonthlySessions => 'Her ay yeni antrenör seansları';
+
+  @override
+  String get continueOnSite => 'bodybridge.net\'te devam et';
+
+  @override
+  String get notNow => 'Şimdi değil';
+
+  @override
+  String get lockAdvancedMessage => 'Antrenör çekimi egzersizler ADVANCED kapsamındadır';
+
+  @override
+  String get setsLabel => 'Set';
+
+  @override
+  String get repsLabel => 'Tekrar';
+
+  @override
+  String get addSessionToWorkout => 'Antrenmana ekle';
+
+  @override
+  String get addedToWorkout => 'Antrenmana eklendi';
 }

@@ -5731,6 +5731,186 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Billing is coming soon.'**
   String get billingComingSoon;
+
+  /// No description provided for @sourceFree.
+  ///
+  /// In en, this message translates to:
+  /// **'Free'**
+  String get sourceFree;
+
+  /// No description provided for @sourceTrainer.
+  ///
+  /// In en, this message translates to:
+  /// **'Trainer'**
+  String get sourceTrainer;
+
+  /// No description provided for @sourceCustom.
+  ///
+  /// In en, this message translates to:
+  /// **'Custom'**
+  String get sourceCustom;
+
+  /// No description provided for @advancedBadge.
+  ///
+  /// In en, this message translates to:
+  /// **'ADVANCED'**
+  String get advancedBadge;
+
+  /// No description provided for @trainerLibraryTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Trainer Library'**
+  String get trainerLibraryTitle;
+
+  /// No description provided for @searchTrainerSessions.
+  ///
+  /// In en, this message translates to:
+  /// **'Search trainer sessions'**
+  String get searchTrainerSessions;
+
+  /// No description provided for @categoryAll.
+  ///
+  /// In en, this message translates to:
+  /// **'All'**
+  String get categoryAll;
+
+  /// No description provided for @categoryStrength.
+  ///
+  /// In en, this message translates to:
+  /// **'Strength'**
+  String get categoryStrength;
+
+  /// No description provided for @categoryMobility.
+  ///
+  /// In en, this message translates to:
+  /// **'Mobility'**
+  String get categoryMobility;
+
+  /// No description provided for @categoryCore.
+  ///
+  /// In en, this message translates to:
+  /// **'Core'**
+  String get categoryCore;
+
+  /// No description provided for @categoryCorrective.
+  ///
+  /// In en, this message translates to:
+  /// **'Corrective'**
+  String get categoryCorrective;
+
+  /// No description provided for @categoryWarmup.
+  ///
+  /// In en, this message translates to:
+  /// **'Warm-up'**
+  String get categoryWarmup;
+
+  /// No description provided for @trainerSessionBadge.
+  ///
+  /// In en, this message translates to:
+  /// **'TRAINER SESSION'**
+  String get trainerSessionBadge;
+
+  /// No description provided for @newBadge.
+  ///
+  /// In en, this message translates to:
+  /// **'NEW'**
+  String get newBadge;
+
+  /// No description provided for @customAssignedTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'From your trainer'**
+  String get customAssignedTitle;
+
+  /// No description provided for @fromYourTrainerBadge.
+  ///
+  /// In en, this message translates to:
+  /// **'From your trainer'**
+  String get fromYourTrainerBadge;
+
+  /// No description provided for @dueToday.
+  ///
+  /// In en, this message translates to:
+  /// **'Due today'**
+  String get dueToday;
+
+  /// No description provided for @assignedOn.
+  ///
+  /// In en, this message translates to:
+  /// **'Assigned {date}'**
+  String assignedOn(String date);
+
+  /// No description provided for @startAssignedWork.
+  ///
+  /// In en, this message translates to:
+  /// **'Start assigned work'**
+  String get startAssignedWork;
+
+  /// No description provided for @unlockAdvancedTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Unlock Advanced'**
+  String get unlockAdvancedTitle;
+
+  /// No description provided for @benefitTrainerLibrary.
+  ///
+  /// In en, this message translates to:
+  /// **'Full trainer video library'**
+  String get benefitTrainerLibrary;
+
+  /// No description provided for @benefitCoachAssignments.
+  ///
+  /// In en, this message translates to:
+  /// **'Exercises assigned personally by your coach'**
+  String get benefitCoachAssignments;
+
+  /// No description provided for @benefitMonthlySessions.
+  ///
+  /// In en, this message translates to:
+  /// **'New trainer sessions monthly'**
+  String get benefitMonthlySessions;
+
+  /// No description provided for @continueOnSite.
+  ///
+  /// In en, this message translates to:
+  /// **'Continue on bodybridge.net'**
+  String get continueOnSite;
+
+  /// No description provided for @notNow.
+  ///
+  /// In en, this message translates to:
+  /// **'Not now'**
+  String get notNow;
+
+  /// No description provided for @lockAdvancedMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Trainer-recorded exercises are part of Advanced'**
+  String get lockAdvancedMessage;
+
+  /// No description provided for @setsLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Sets'**
+  String get setsLabel;
+
+  /// No description provided for @repsLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Reps'**
+  String get repsLabel;
+
+  /// No description provided for @addSessionToWorkout.
+  ///
+  /// In en, this message translates to:
+  /// **'Add to workout'**
+  String get addSessionToWorkout;
+
+  /// No description provided for @addedToWorkout.
+  ///
+  /// In en, this message translates to:
+  /// **'Added to workout'**
+  String get addedToWorkout;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

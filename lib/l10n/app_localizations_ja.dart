@@ -3094,4 +3094,96 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get billingComingSoon => '課金機能はまもなく提供予定です。';
+
+  @override
+  String get sourceFree => '無料';
+
+  @override
+  String get sourceTrainer => 'トレーナー';
+
+  @override
+  String get sourceCustom => 'カスタム';
+
+  @override
+  String get advancedBadge => 'ADVANCED';
+
+  @override
+  String get trainerLibraryTitle => 'トレーナーライブラリ';
+
+  @override
+  String get searchTrainerSessions => 'トレーナーセッションを検索';
+
+  @override
+  String get categoryAll => 'すべて';
+
+  @override
+  String get categoryStrength => 'ストレングス';
+
+  @override
+  String get categoryMobility => 'モビリティ';
+
+  @override
+  String get categoryCore => 'コア';
+
+  @override
+  String get categoryCorrective => '矯正';
+
+  @override
+  String get categoryWarmup => 'ウォームアップ';
+
+  @override
+  String get trainerSessionBadge => 'トレーナーセッション';
+
+  @override
+  String get newBadge => 'NEW';
+
+  @override
+  String get customAssignedTitle => 'トレーナーから';
+
+  @override
+  String get fromYourTrainerBadge => 'トレーナーから';
+
+  @override
+  String get dueToday => '今日が期限';
+
+  @override
+  String assignedOn(String date) {
+    return '$dateに割り当て';
+  }
+
+  @override
+  String get startAssignedWork => '課題をスタート';
+
+  @override
+  String get unlockAdvancedTitle => 'ADVANCEDをアンロック';
+
+  @override
+  String get benefitTrainerLibrary => 'トレーナー動画のフルライブラリ';
+
+  @override
+  String get benefitCoachAssignments => 'コーチが直接割り当てた種目';
+
+  @override
+  String get benefitMonthlySessions => '毎月新しいトレーナーセッション';
+
+  @override
+  String get continueOnSite => 'bodybridge.netで続ける';
+
+  @override
+  String get notNow => '後で';
+
+  @override
+  String get lockAdvancedMessage => 'トレーナー収録の種目はADVANCEDの一部です';
+
+  @override
+  String get setsLabel => 'セット';
+
+  @override
+  String get repsLabel => 'レップ';
+
+  @override
+  String get addSessionToWorkout => 'ワークアウトに追加';
+
+  @override
+  String get addedToWorkout => 'ワークアウトに追加しました';
 }

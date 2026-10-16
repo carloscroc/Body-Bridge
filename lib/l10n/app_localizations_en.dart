@@ -3190,4 +3190,96 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get billingComingSoon => 'Billing is coming soon.';
+
+  @override
+  String get sourceFree => 'Free';
+
+  @override
+  String get sourceTrainer => 'Trainer';
+
+  @override
+  String get sourceCustom => 'Custom';
+
+  @override
+  String get advancedBadge => 'ADVANCED';
+
+  @override
+  String get trainerLibraryTitle => 'Trainer Library';
+
+  @override
+  String get searchTrainerSessions => 'Search trainer sessions';
+
+  @override
+  String get categoryAll => 'All';
+
+  @override
+  String get categoryStrength => 'Strength';
+
+  @override
+  String get categoryMobility => 'Mobility';
+
+  @override
+  String get categoryCore => 'Core';
+
+  @override
+  String get categoryCorrective => 'Corrective';
+
+  @override
+  String get categoryWarmup => 'Warm-up';
+
+  @override
+  String get trainerSessionBadge => 'TRAINER SESSION';
+
+  @override
+  String get newBadge => 'NEW';
+
+  @override
+  String get customAssignedTitle => 'From your trainer';
+
+  @override
+  String get fromYourTrainerBadge => 'From your trainer';
+
+  @override
+  String get dueToday => 'Due today';
+
+  @override
+  String assignedOn(String date) {
+    return 'Assigned $date';
+  }
+
+  @override
+  String get startAssignedWork => 'Start assigned work';
+
+  @override
+  String get unlockAdvancedTitle => 'Unlock Advanced';
+
+  @override
+  String get benefitTrainerLibrary => 'Full trainer video library';
+
+  @override
+  String get benefitCoachAssignments => 'Exercises assigned personally by your coach';
+
+  @override
+  String get benefitMonthlySessions => 'New trainer sessions monthly';
+
+  @override
+  String get continueOnSite => 'Continue on bodybridge.net';
+
+  @override
+  String get notNow => 'Not now';
+
+  @override
+  String get lockAdvancedMessage => 'Trainer-recorded exercises are part of Advanced';
+
+  @override
+  String get setsLabel => 'Sets';
+
+  @override
+  String get repsLabel => 'Reps';
+
+  @override
+  String get addSessionToWorkout => 'Add to workout';
+
+  @override
+  String get addedToWorkout => 'Added to workout';
 }

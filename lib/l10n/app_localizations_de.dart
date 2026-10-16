@@ -3208,4 +3208,96 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get billingComingSoon => 'Abrechnung kommt bald.';
+
+  @override
+  String get sourceFree => 'Kostenlos';
+
+  @override
+  String get sourceTrainer => 'Trainer';
+
+  @override
+  String get sourceCustom => 'Eigene';
+
+  @override
+  String get advancedBadge => 'ADVANCED';
+
+  @override
+  String get trainerLibraryTitle => 'Trainer-Bibliothek';
+
+  @override
+  String get searchTrainerSessions => 'Trainer-Einheiten durchsuchen';
+
+  @override
+  String get categoryAll => 'Alle';
+
+  @override
+  String get categoryStrength => 'Kraft';
+
+  @override
+  String get categoryMobility => 'Mobilität';
+
+  @override
+  String get categoryCore => 'Core';
+
+  @override
+  String get categoryCorrective => 'Korrektur';
+
+  @override
+  String get categoryWarmup => 'Aufwärmen';
+
+  @override
+  String get trainerSessionBadge => 'TRAINER-EINHEIT';
+
+  @override
+  String get newBadge => 'NEU';
+
+  @override
+  String get customAssignedTitle => 'Von deinem Trainer';
+
+  @override
+  String get fromYourTrainerBadge => 'Von deinem Trainer';
+
+  @override
+  String get dueToday => 'Heute fällig';
+
+  @override
+  String assignedOn(String date) {
+    return 'Zugewiesen am $date';
+  }
+
+  @override
+  String get startAssignedWork => 'Zugewiesenes Training starten';
+
+  @override
+  String get unlockAdvancedTitle => 'ADVANCED freischalten';
+
+  @override
+  String get benefitTrainerLibrary => 'Komplette Trainer-Videobibliothek';
+
+  @override
+  String get benefitCoachAssignments => 'Übungen, die dein Coach persönlich zuweist';
+
+  @override
+  String get benefitMonthlySessions => 'Jeden Monat neue Trainer-Einheiten';
+
+  @override
+  String get continueOnSite => 'Auf bodybridge.net weitermachen';
+
+  @override
+  String get notNow => 'Nicht jetzt';
+
+  @override
+  String get lockAdvancedMessage => 'Von Trainern aufgezeichnete Übungen sind Teil von ADVANCED';
+
+  @override
+  String get setsLabel => 'Sätze';
+
+  @override
+  String get repsLabel => 'Wdh.';
+
+  @override
+  String get addSessionToWorkout => 'Zum Workout hinzufügen';
+
+  @override
+  String get addedToWorkout => 'Zum Workout hinzugefügt';
 }

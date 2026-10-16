@@ -3054,6 +3054,98 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get billingComingSoon => '付费功能即将上线。';
+
+  @override
+  String get sourceFree => '免费';
+
+  @override
+  String get sourceTrainer => '教练';
+
+  @override
+  String get sourceCustom => '自定义';
+
+  @override
+  String get advancedBadge => 'ADVANCED';
+
+  @override
+  String get trainerLibraryTitle => '教练库';
+
+  @override
+  String get searchTrainerSessions => '搜索教练课程';
+
+  @override
+  String get categoryAll => '全部';
+
+  @override
+  String get categoryStrength => '力量';
+
+  @override
+  String get categoryMobility => '灵活性';
+
+  @override
+  String get categoryCore => '核心';
+
+  @override
+  String get categoryCorrective => '矫正';
+
+  @override
+  String get categoryWarmup => '热身';
+
+  @override
+  String get trainerSessionBadge => '教练课程';
+
+  @override
+  String get newBadge => '新';
+
+  @override
+  String get customAssignedTitle => '来自你的教练';
+
+  @override
+  String get fromYourTrainerBadge => '来自你的教练';
+
+  @override
+  String get dueToday => '今天到期';
+
+  @override
+  String assignedOn(String date) {
+    return '$date布置';
+  }
+
+  @override
+  String get startAssignedWork => '开始训练';
+
+  @override
+  String get unlockAdvancedTitle => '解锁 ADVANCED';
+
+  @override
+  String get benefitTrainerLibrary => '完整教练视频库';
+
+  @override
+  String get benefitCoachAssignments => '教练亲自布置的动作';
+
+  @override
+  String get benefitMonthlySessions => '每月更新教练课程';
+
+  @override
+  String get continueOnSite => '前往 bodybridge.net';
+
+  @override
+  String get notNow => '暂不';
+
+  @override
+  String get lockAdvancedMessage => '教练示范的动作属于 ADVANCED';
+
+  @override
+  String get setsLabel => '组';
+
+  @override
+  String get repsLabel => '次';
+
+  @override
+  String get addSessionToWorkout => '加入训练';
+
+  @override
+  String get addedToWorkout => '已加入训练';
 }
 
 /// The translations for Chinese, using the Han script (`zh_Hant`).
@@ -6130,4 +6222,96 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
 
   @override
   String get billingComingSoon => '付費功能即將上線。';
+
+  @override
+  String get sourceFree => '免費';
+
+  @override
+  String get sourceTrainer => '教練';
+
+  @override
+  String get sourceCustom => '自訂';
+
+  @override
+  String get advancedBadge => 'ADVANCED';
+
+  @override
+  String get trainerLibraryTitle => '教練庫';
+
+  @override
+  String get searchTrainerSessions => '搜尋教練課程';
+
+  @override
+  String get categoryAll => '全部';
+
+  @override
+  String get categoryStrength => '力量';
+
+  @override
+  String get categoryMobility => '靈活度';
+
+  @override
+  String get categoryCore => '核心';
+
+  @override
+  String get categoryCorrective => '矯正';
+
+  @override
+  String get categoryWarmup => '熱身';
+
+  @override
+  String get trainerSessionBadge => '教練課程';
+
+  @override
+  String get newBadge => '新';
+
+  @override
+  String get customAssignedTitle => '來自你的教練';
+
+  @override
+  String get fromYourTrainerBadge => '來自你的教練';
+
+  @override
+  String get dueToday => '今天到期';
+
+  @override
+  String assignedOn(String date) {
+    return '$date指派';
+  }
+
+  @override
+  String get startAssignedWork => '開始訓練';
+
+  @override
+  String get unlockAdvancedTitle => '解鎖 ADVANCED';
+
+  @override
+  String get benefitTrainerLibrary => '完整教練影片庫';
+
+  @override
+  String get benefitCoachAssignments => '教練親自指派的動作';
+
+  @override
+  String get benefitMonthlySessions => '每月更新教練課程';
+
+  @override
+  String get continueOnSite => '前往 bodybridge.net';
+
+  @override
+  String get notNow => '暫不';
+
+  @override
+  String get lockAdvancedMessage => '教練示範的動作屬於 ADVANCED';
+
+  @override
+  String get setsLabel => '組';
+
+  @override
+  String get repsLabel => '次';
+
+  @override
+  String get addSessionToWorkout => '加入訓練';
+
+  @override
+  String get addedToWorkout => '已加入訓練';
 }

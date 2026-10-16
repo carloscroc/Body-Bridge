@@ -3196,4 +3196,96 @@ class AppLocalizationsUk extends AppLocalizations {
 
   @override
   String get billingComingSoon => 'Оплата скоро з\'явиться.';
+
+  @override
+  String get sourceFree => 'Безкоштовно';
+
+  @override
+  String get sourceTrainer => 'Тренер';
+
+  @override
+  String get sourceCustom => 'Свої';
+
+  @override
+  String get advancedBadge => 'ADVANCED';
+
+  @override
+  String get trainerLibraryTitle => 'Бібліотека тренера';
+
+  @override
+  String get searchTrainerSessions => 'Пошук занять тренера';
+
+  @override
+  String get categoryAll => 'Усі';
+
+  @override
+  String get categoryStrength => 'Сила';
+
+  @override
+  String get categoryMobility => 'Мобільність';
+
+  @override
+  String get categoryCore => 'Кор';
+
+  @override
+  String get categoryCorrective => 'Корекція';
+
+  @override
+  String get categoryWarmup => 'Розминка';
+
+  @override
+  String get trainerSessionBadge => 'ЗАНЯТТЯ ТРЕНЕРА';
+
+  @override
+  String get newBadge => 'НОВЕ';
+
+  @override
+  String get customAssignedTitle => 'Від вашого тренера';
+
+  @override
+  String get fromYourTrainerBadge => 'Від вашого тренера';
+
+  @override
+  String get dueToday => 'На сьогодні';
+
+  @override
+  String assignedOn(String date) {
+    return 'Призначено $date';
+  }
+
+  @override
+  String get startAssignedWork => 'Почати заняття';
+
+  @override
+  String get unlockAdvancedTitle => 'Відкрийте ADVANCED';
+
+  @override
+  String get benefitTrainerLibrary => 'Повна відеобібліотека тренера';
+
+  @override
+  String get benefitCoachAssignments => 'Вправи, підібрані особисто вашим тренером';
+
+  @override
+  String get benefitMonthlySessions => 'Нові заняття щомісяця';
+
+  @override
+  String get continueOnSite => 'Продовжити на bodybridge.net';
+
+  @override
+  String get notNow => 'Не зараз';
+
+  @override
+  String get lockAdvancedMessage => 'Вправи у записі тренера входять до ADVANCED';
+
+  @override
+  String get setsLabel => 'Підходи';
+
+  @override
+  String get repsLabel => 'Повт.';
+
+  @override
+  String get addSessionToWorkout => 'Додати до тренування';
+
+  @override
+  String get addedToWorkout => 'Додано до тренування';
 }
