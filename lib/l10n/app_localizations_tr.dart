@@ -3193,4 +3193,120 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get billingComingSoon => 'Ödeme çok yakında.';
+
+  @override
+  String get myTrainer => 'ANTRENÖRÜM';
+
+  @override
+  String get assignedWorkouts => 'ATANAN ANTRENMANLAR';
+
+  @override
+  String get messageTrainer => 'Mesaj';
+
+  @override
+  String trainerSince(String date) {
+    return 'Antrenörünüz: $date tarihinden beri';
+  }
+
+  @override
+  String replyWindow(int hours) {
+    return 'Genellikle $hours sa içinde yanıtlar';
+  }
+
+  @override
+  String get chipNew => 'YENİ';
+
+  @override
+  String get chipInProgress => 'DEVAM EDİYOR';
+
+  @override
+  String get chipCompleted => 'TAMAMLANDI';
+
+  @override
+  String sentCardMeta(String date, int count, int minutes) {
+    return '$date gönderildi · $count egzersiz · ~$minutes dk';
+  }
+
+  @override
+  String sentByTrainerOn(String date) {
+    return 'Antrenörün $date tarihinde gönderdi';
+  }
+
+  @override
+  String progressPct(int pct) {
+    return '%$pct';
+  }
+
+  @override
+  String get coachNote => 'ANTRENÖR NOTU';
+
+  @override
+  String restLabel(String duration) {
+    return 'Dinlenme $duration';
+  }
+
+  @override
+  String askAboutThis(String name) {
+    return 'Bunun hakkında $name\'e sor';
+  }
+
+  @override
+  String messageHint(String name) {
+    return '$name adına mesaj...';
+  }
+
+  @override
+  String get tapToOpen => 'Açmak için dokun';
+
+  @override
+  String get todayDivider => 'BUGÜN';
+
+  @override
+  String trainerVideoMeta(String duration) {
+    return 'Antrenör videosu · $duration';
+  }
+
+  @override
+  String get gateTitle => '1:1 antrenör desteği';
+
+  @override
+  String get gateBody => 'Özel antrenmanlar ve doğrudan antrenör sohbeti Advanced kapsamındadır.';
+
+  @override
+  String get gateBenefitWorkouts => 'Vücudunuza ve sakatlıklarınıza özel antrenmanlar';
+
+  @override
+  String get gateBenefitChat => 'Antrenörünle doğrudan mesajlaşma';
+
+  @override
+  String get gateBenefitVideo => 'Formunuz için video geri bildirimi';
+
+  @override
+  String get gateCta => 'Advanced\'ı gör';
+
+  @override
+  String get gateDismiss => 'Şimdi değil';
+
+  @override
+  String get gateFootnote => 'Yükseltmeler bodybridge.net üzerinden yapılır — planınız uygulamada kalır.';
+
+  @override
+  String bannerNewWorkout(String name) {
+    return '$name\'den yeni antrenman';
+  }
+
+  @override
+  String bannerNewMessage(String name) {
+    return '$name\'den yeni mesaj';
+  }
+
+  @override
+  String get bannerTapToView => 'Görüntülemek için dokun';
+
+  @override
+  String get startSoonTitle => 'Özel seanslar yakında';
+
+  @override
+  String get startSoonBody =>
+      'Rehberli seanslar antrenör videosuyla geliyor. Bu arada bu planı antrenörünüze sorun.';
 }

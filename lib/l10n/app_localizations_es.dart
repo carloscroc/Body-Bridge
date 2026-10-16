@@ -3190,4 +3190,121 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get billingComingSoon => 'El pago llegará pronto.';
+
+  @override
+  String get myTrainer => 'MI ENTRENADOR';
+
+  @override
+  String get assignedWorkouts => 'ENTRENAMIENTOS ASIGNADOS';
+
+  @override
+  String get messageTrainer => 'Mensaje';
+
+  @override
+  String trainerSince(String date) {
+    return 'Tu entrenador desde $date';
+  }
+
+  @override
+  String replyWindow(int hours) {
+    return 'Suele responder en $hours h';
+  }
+
+  @override
+  String get chipNew => 'NUEVO';
+
+  @override
+  String get chipInProgress => 'EN CURSO';
+
+  @override
+  String get chipCompleted => 'COMPLETADO';
+
+  @override
+  String sentCardMeta(String date, int count, int minutes) {
+    return 'Enviado $date · $count ejercicios · ~$minutes min';
+  }
+
+  @override
+  String sentByTrainerOn(String date) {
+    return 'Enviado por tu entrenador el $date';
+  }
+
+  @override
+  String progressPct(int pct) {
+    return '$pct%';
+  }
+
+  @override
+  String get coachNote => 'NOTA DEL COACH';
+
+  @override
+  String restLabel(String duration) {
+    return 'Descanso $duration';
+  }
+
+  @override
+  String askAboutThis(String name) {
+    return 'Pregúntale a $name sobre esto';
+  }
+
+  @override
+  String messageHint(String name) {
+    return 'Mensaje para $name...';
+  }
+
+  @override
+  String get tapToOpen => 'Toca para abrir';
+
+  @override
+  String get todayDivider => 'HOY';
+
+  @override
+  String trainerVideoMeta(String duration) {
+    return 'Video del entrenador · $duration';
+  }
+
+  @override
+  String get gateTitle => 'Guía 1:1 de tu entrenador';
+
+  @override
+  String get gateBody =>
+      'Los entrenamientos personalizados y el chat directo con tu entrenador son parte de Advanced.';
+
+  @override
+  String get gateBenefitWorkouts => 'Entrenamientos hechos para tu cuerpo y tus lesiones';
+
+  @override
+  String get gateBenefitChat => 'Mensajería directa con tu entrenador';
+
+  @override
+  String get gateBenefitVideo => 'Feedback por video sobre tu técnica';
+
+  @override
+  String get gateCta => 'Ver Advanced';
+
+  @override
+  String get gateDismiss => 'Ahora no';
+
+  @override
+  String get gateFootnote => 'Las mejoras se hacen en bodybridge.net — tu plan sigue en la app.';
+
+  @override
+  String bannerNewWorkout(String name) {
+    return 'Nuevo entrenamiento de $name';
+  }
+
+  @override
+  String bannerNewMessage(String name) {
+    return 'Nuevo mensaje de $name';
+  }
+
+  @override
+  String get bannerTapToView => 'Toca para ver';
+
+  @override
+  String get startSoonTitle => 'Las sesiones personalizadas llegan pronto';
+
+  @override
+  String get startSoonBody =>
+      'Las sesiones guiadas llegan con el video del entrenador. Mientras tanto, pregunta a tu entrenador sobre este plan.';
 }

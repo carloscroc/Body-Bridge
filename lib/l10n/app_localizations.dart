@@ -5731,6 +5731,192 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Billing is coming soon.'**
   String get billingComingSoon;
+
+  /// Trainer feature (card t_d788f36e)
+  ///
+  /// In en, this message translates to:
+  /// **'MY TRAINER'**
+  String get myTrainer;
+
+  /// Trainer feature (card t_d788f36e)
+  ///
+  /// In en, this message translates to:
+  /// **'ASSIGNED WORKOUTS'**
+  String get assignedWorkouts;
+
+  /// Trainer feature (card t_d788f36e)
+  ///
+  /// In en, this message translates to:
+  /// **'Message'**
+  String get messageTrainer;
+
+  /// No description provided for @trainerSince.
+  ///
+  /// In en, this message translates to:
+  /// **'Your trainer since {date}'**
+  String trainerSince(String date);
+
+  /// No description provided for @replyWindow.
+  ///
+  /// In en, this message translates to:
+  /// **'Usually replies within {hours}h'**
+  String replyWindow(int hours);
+
+  /// Trainer feature (card t_d788f36e)
+  ///
+  /// In en, this message translates to:
+  /// **'NEW'**
+  String get chipNew;
+
+  /// Trainer feature (card t_d788f36e)
+  ///
+  /// In en, this message translates to:
+  /// **'IN PROGRESS'**
+  String get chipInProgress;
+
+  /// Trainer feature (card t_d788f36e)
+  ///
+  /// In en, this message translates to:
+  /// **'COMPLETED'**
+  String get chipCompleted;
+
+  /// No description provided for @sentCardMeta.
+  ///
+  /// In en, this message translates to:
+  /// **'Sent {date} · {count} exercises · ~{minutes} min'**
+  String sentCardMeta(String date, int count, int minutes);
+
+  /// No description provided for @sentByTrainerOn.
+  ///
+  /// In en, this message translates to:
+  /// **'Sent by your trainer on {date}'**
+  String sentByTrainerOn(String date);
+
+  /// No description provided for @progressPct.
+  ///
+  /// In en, this message translates to:
+  /// **'{pct}%'**
+  String progressPct(int pct);
+
+  /// Trainer feature (card t_d788f36e)
+  ///
+  /// In en, this message translates to:
+  /// **'COACH NOTE'**
+  String get coachNote;
+
+  /// No description provided for @restLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Rest {duration}'**
+  String restLabel(String duration);
+
+  /// No description provided for @askAboutThis.
+  ///
+  /// In en, this message translates to:
+  /// **'Ask {name} about this'**
+  String askAboutThis(String name);
+
+  /// No description provided for @messageHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Message {name}...'**
+  String messageHint(String name);
+
+  /// Trainer feature (card t_d788f36e)
+  ///
+  /// In en, this message translates to:
+  /// **'Tap to open'**
+  String get tapToOpen;
+
+  /// Trainer feature (card t_d788f36e)
+  ///
+  /// In en, this message translates to:
+  /// **'TODAY'**
+  String get todayDivider;
+
+  /// No description provided for @trainerVideoMeta.
+  ///
+  /// In en, this message translates to:
+  /// **'Trainer video · {duration}'**
+  String trainerVideoMeta(String duration);
+
+  /// Trainer feature (card t_d788f36e)
+  ///
+  /// In en, this message translates to:
+  /// **'1:1 trainer guidance'**
+  String get gateTitle;
+
+  /// Trainer feature (card t_d788f36e)
+  ///
+  /// In en, this message translates to:
+  /// **'Custom workouts and direct trainer chat are part of Advanced.'**
+  String get gateBody;
+
+  /// Trainer feature (card t_d788f36e)
+  ///
+  /// In en, this message translates to:
+  /// **'Workouts built for your body and your injuries'**
+  String get gateBenefitWorkouts;
+
+  /// Trainer feature (card t_d788f36e)
+  ///
+  /// In en, this message translates to:
+  /// **'Direct messaging with your trainer'**
+  String get gateBenefitChat;
+
+  /// Trainer feature (card t_d788f36e)
+  ///
+  /// In en, this message translates to:
+  /// **'Video feedback on your form'**
+  String get gateBenefitVideo;
+
+  /// Trainer feature (card t_d788f36e)
+  ///
+  /// In en, this message translates to:
+  /// **'See Advanced'**
+  String get gateCta;
+
+  /// Trainer feature (card t_d788f36e)
+  ///
+  /// In en, this message translates to:
+  /// **'Not now'**
+  String get gateDismiss;
+
+  /// Trainer feature (card t_d788f36e)
+  ///
+  /// In en, this message translates to:
+  /// **'Upgrades happen on bodybridge.net — your plan stays in the app.'**
+  String get gateFootnote;
+
+  /// No description provided for @bannerNewWorkout.
+  ///
+  /// In en, this message translates to:
+  /// **'New workout from {name}'**
+  String bannerNewWorkout(String name);
+
+  /// No description provided for @bannerNewMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'New message from {name}'**
+  String bannerNewMessage(String name);
+
+  /// Trainer feature (card t_d788f36e)
+  ///
+  /// In en, this message translates to:
+  /// **'Tap to view'**
+  String get bannerTapToView;
+
+  /// Trainer feature (card t_d788f36e)
+  ///
+  /// In en, this message translates to:
+  /// **'Custom sessions land soon'**
+  String get startSoonTitle;
+
+  /// Trainer feature (card t_d788f36e)
+  ///
+  /// In en, this message translates to:
+  /// **'Guided sessions arrive with trainer video. Meanwhile, ask your trainer about this plan.'**
+  String get startSoonBody;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

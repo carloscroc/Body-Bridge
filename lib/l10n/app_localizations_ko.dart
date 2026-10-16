@@ -3109,4 +3109,119 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get billingComingSoon => '결제 기능이 곧 제공될 예정입니다.';
+
+  @override
+  String get myTrainer => '내 트레이너';
+
+  @override
+  String get assignedWorkouts => '할당된 운동';
+
+  @override
+  String get messageTrainer => '메시지';
+
+  @override
+  String trainerSince(String date) {
+    return '$date부터 당신의 트레이너';
+  }
+
+  @override
+  String replyWindow(int hours) {
+    return '보통 $hours시간 안에 답장';
+  }
+
+  @override
+  String get chipNew => 'NEW';
+
+  @override
+  String get chipInProgress => '진행 중';
+
+  @override
+  String get chipCompleted => '완료';
+
+  @override
+  String sentCardMeta(String date, int count, int minutes) {
+    return '$date 전송 · $count개 운동 · ~$minutes분';
+  }
+
+  @override
+  String sentByTrainerOn(String date) {
+    return '트레이너가 $date에 전송';
+  }
+
+  @override
+  String progressPct(int pct) {
+    return '$pct%';
+  }
+
+  @override
+  String get coachNote => '코치 노트';
+
+  @override
+  String restLabel(String duration) {
+    return '휴식 $duration';
+  }
+
+  @override
+  String askAboutThis(String name) {
+    return '$name에게 이에 대해 물어보기';
+  }
+
+  @override
+  String messageHint(String name) {
+    return '$name에게 메시지...';
+  }
+
+  @override
+  String get tapToOpen => '탭하여 열기';
+
+  @override
+  String get todayDivider => '오늘';
+
+  @override
+  String trainerVideoMeta(String duration) {
+    return '트레이너 영상 · $duration';
+  }
+
+  @override
+  String get gateTitle => '1:1 트레이너 코칭';
+
+  @override
+  String get gateBody => '맞춤 운동과 트레이너 직접 채팅은 Advanced에 포함됩니다.';
+
+  @override
+  String get gateBenefitWorkouts => '당신의 몸과 부상에 맞춘 운동';
+
+  @override
+  String get gateBenefitChat => '트레이너와 직접 메시지';
+
+  @override
+  String get gateBenefitVideo => '자세 비디오 피드백';
+
+  @override
+  String get gateCta => 'Advanced 보기';
+
+  @override
+  String get gateDismiss => '나중에';
+
+  @override
+  String get gateFootnote => '업그레이드는 bodybridge.net에서 진행됩니다 — 플랜 관리는 앱에서 계속됩니다.';
+
+  @override
+  String bannerNewWorkout(String name) {
+    return '$name의 새 운동';
+  }
+
+  @override
+  String bannerNewMessage(String name) {
+    return '$name의 새 메시지';
+  }
+
+  @override
+  String get bannerTapToView => '탭하여 보기';
+
+  @override
+  String get startSoonTitle => '맞춤 세션이 곧 제공됩니다';
+
+  @override
+  String get startSoonBody => '가이드 세션은 트레이너 영상과 함께 제공됩니다. 그동안 트레이너에게 이 플랜에 대해 문의하세요.';
 }

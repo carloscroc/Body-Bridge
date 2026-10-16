@@ -3054,6 +3054,121 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get billingComingSoon => '付费功能即将上线。';
+
+  @override
+  String get myTrainer => '我的教练';
+
+  @override
+  String get assignedWorkouts => '已分配的训练';
+
+  @override
+  String get messageTrainer => '发消息';
+
+  @override
+  String trainerSince(String date) {
+    return '自$date起担任你的教练';
+  }
+
+  @override
+  String replyWindow(int hours) {
+    return '通常在$hours小时内回复';
+  }
+
+  @override
+  String get chipNew => '新';
+
+  @override
+  String get chipInProgress => '进行中';
+
+  @override
+  String get chipCompleted => '已完成';
+
+  @override
+  String sentCardMeta(String date, int count, int minutes) {
+    return '$date发送 · $count个动作 · 约$minutes分钟';
+  }
+
+  @override
+  String sentByTrainerOn(String date) {
+    return '你的教练于$date发送';
+  }
+
+  @override
+  String progressPct(int pct) {
+    return '$pct%';
+  }
+
+  @override
+  String get coachNote => '教练备注';
+
+  @override
+  String restLabel(String duration) {
+    return '休息 $duration';
+  }
+
+  @override
+  String askAboutThis(String name) {
+    return '就此询问$name';
+  }
+
+  @override
+  String messageHint(String name) {
+    return '给$name发消息...';
+  }
+
+  @override
+  String get tapToOpen => '点按打开';
+
+  @override
+  String get todayDivider => '今天';
+
+  @override
+  String trainerVideoMeta(String duration) {
+    return '教练视频 · $duration';
+  }
+
+  @override
+  String get gateTitle => '1对1教练指导';
+
+  @override
+  String get gateBody => '自定义训练和教练直接聊天属于 Advanced 功能。';
+
+  @override
+  String get gateBenefitWorkouts => '为你的身体和伤病量身定制的训练';
+
+  @override
+  String get gateBenefitChat => '与教练直接消息沟通';
+
+  @override
+  String get gateBenefitVideo => '针对你动作的视频反馈';
+
+  @override
+  String get gateCta => '了解 Advanced';
+
+  @override
+  String get gateDismiss => '暂不';
+
+  @override
+  String get gateFootnote => '升级在 bodybridge.net 完成 — 你的计划保留在应用内。';
+
+  @override
+  String bannerNewWorkout(String name) {
+    return '$name发来了新训练';
+  }
+
+  @override
+  String bannerNewMessage(String name) {
+    return '$name发来了新消息';
+  }
+
+  @override
+  String get bannerTapToView => '点按查看';
+
+  @override
+  String get startSoonTitle => '自定义课程即将上线';
+
+  @override
+  String get startSoonBody => '引导式课程将随教练视频一起推出。在此期间，请向教练咨询这个计划。';
 }
 
 /// The translations for Chinese, using the Han script (`zh_Hant`).
@@ -6130,4 +6245,119 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
 
   @override
   String get billingComingSoon => '付費功能即將上線。';
+
+  @override
+  String get myTrainer => '我的教練';
+
+  @override
+  String get assignedWorkouts => '已指派的訓練';
+
+  @override
+  String get messageTrainer => '傳訊息';
+
+  @override
+  String trainerSince(String date) {
+    return '自$date起擔任你的教練';
+  }
+
+  @override
+  String replyWindow(int hours) {
+    return '通常在$hours小時內回覆';
+  }
+
+  @override
+  String get chipNew => '新';
+
+  @override
+  String get chipInProgress => '進行中';
+
+  @override
+  String get chipCompleted => '已完成';
+
+  @override
+  String sentCardMeta(String date, int count, int minutes) {
+    return '$date傳送 · $count個動作 · 約$minutes分鐘';
+  }
+
+  @override
+  String sentByTrainerOn(String date) {
+    return '你的教練於$date傳送';
+  }
+
+  @override
+  String progressPct(int pct) {
+    return '$pct%';
+  }
+
+  @override
+  String get coachNote => '教練備註';
+
+  @override
+  String restLabel(String duration) {
+    return '休息 $duration';
+  }
+
+  @override
+  String askAboutThis(String name) {
+    return '就此詢問$name';
+  }
+
+  @override
+  String messageHint(String name) {
+    return '傳訊息給$name...';
+  }
+
+  @override
+  String get tapToOpen => '點按開啟';
+
+  @override
+  String get todayDivider => '今天';
+
+  @override
+  String trainerVideoMeta(String duration) {
+    return '教練影片 · $duration';
+  }
+
+  @override
+  String get gateTitle => '1對1教練指導';
+
+  @override
+  String get gateBody => '自訂訓練與教練直接聊天屬於 Advanced 功能。';
+
+  @override
+  String get gateBenefitWorkouts => '為你的身體與傷痛量身打造的訓練';
+
+  @override
+  String get gateBenefitChat => '與教練直接訊息溝通';
+
+  @override
+  String get gateBenefitVideo => '針對你動作的影片回饋';
+
+  @override
+  String get gateCta => '了解 Advanced';
+
+  @override
+  String get gateDismiss => '暫不';
+
+  @override
+  String get gateFootnote => '升級在 bodybridge.net 完成 — 你的方案保留在應用程式內。';
+
+  @override
+  String bannerNewWorkout(String name) {
+    return '$name傳來了新訓練';
+  }
+
+  @override
+  String bannerNewMessage(String name) {
+    return '$name傳來了新訊息';
+  }
+
+  @override
+  String get bannerTapToView => '點按查看';
+
+  @override
+  String get startSoonTitle => '自訂課程即將上線';
+
+  @override
+  String get startSoonBody => '引導式課程將隨教練影片一起推出。在此期間，請向教練諮詢這個計畫。';
 }

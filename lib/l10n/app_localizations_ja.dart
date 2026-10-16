@@ -3094,4 +3094,119 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get billingComingSoon => '課金機能はまもなく提供予定です。';
+
+  @override
+  String get myTrainer => 'マイトレーナー';
+
+  @override
+  String get assignedWorkouts => '割り当てられたワークアウト';
+
+  @override
+  String get messageTrainer => 'メッセージ';
+
+  @override
+  String trainerSince(String date) {
+    return '$dateからあなたのトレーナー';
+  }
+
+  @override
+  String replyWindow(int hours) {
+    return '通常$hours時間以内に返信';
+  }
+
+  @override
+  String get chipNew => '新規';
+
+  @override
+  String get chipInProgress => '進行中';
+
+  @override
+  String get chipCompleted => '完了';
+
+  @override
+  String sentCardMeta(String date, int count, int minutes) {
+    return '$date送信 · $count種目 · 約$minutes分';
+  }
+
+  @override
+  String sentByTrainerOn(String date) {
+    return 'トレーナーが$dateに送信';
+  }
+
+  @override
+  String progressPct(int pct) {
+    return '$pct%';
+  }
+
+  @override
+  String get coachNote => 'コーチメモ';
+
+  @override
+  String restLabel(String duration) {
+    return '休憩$duration';
+  }
+
+  @override
+  String askAboutThis(String name) {
+    return '$nameにこの件を質問';
+  }
+
+  @override
+  String messageHint(String name) {
+    return '$nameにメッセージ...';
+  }
+
+  @override
+  String get tapToOpen => 'タップして開く';
+
+  @override
+  String get todayDivider => '今日';
+
+  @override
+  String trainerVideoMeta(String duration) {
+    return 'トレーナー動画 · $duration';
+  }
+
+  @override
+  String get gateTitle => 'トレーナーの1対1サポート';
+
+  @override
+  String get gateBody => 'カスタムワークアウトとトレーナーとの直接チャットはAdvancedの機能です。';
+
+  @override
+  String get gateBenefitWorkouts => 'あなたの体とケガに合わせたワークアウト';
+
+  @override
+  String get gateBenefitChat => 'トレーナーとのダイレクトメッセージ';
+
+  @override
+  String get gateBenefitVideo => 'フォームのビデオフィードバック';
+
+  @override
+  String get gateCta => 'Advancedを見る';
+
+  @override
+  String get gateDismiss => '後で';
+
+  @override
+  String get gateFootnote => 'アップグレードはbodybridge.netで行われます — プラン管理はアプリ内で継続します。';
+
+  @override
+  String bannerNewWorkout(String name) {
+    return '$nameからの新しいワークアウト';
+  }
+
+  @override
+  String bannerNewMessage(String name) {
+    return '$nameからの新着メッセージ';
+  }
+
+  @override
+  String get bannerTapToView => 'タップして表示';
+
+  @override
+  String get startSoonTitle => 'カスタムセッションはもうすぐ登場';
+
+  @override
+  String get startSoonBody => 'ガイド付きセッションはトレーナー動画と共に提供されます。それまではトレーナーにこのプランについて質問してください。';
 }

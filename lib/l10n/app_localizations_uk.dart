@@ -3196,4 +3196,120 @@ class AppLocalizationsUk extends AppLocalizations {
 
   @override
   String get billingComingSoon => 'Оплата скоро з\'явиться.';
+
+  @override
+  String get myTrainer => 'МІЙ ТРЕНЕР';
+
+  @override
+  String get assignedWorkouts => 'ПРИЗНАЧЕНІ ТРЕНУВАННЯ';
+
+  @override
+  String get messageTrainer => 'Повідомлення';
+
+  @override
+  String trainerSince(String date) {
+    return 'Ваш тренер з $date';
+  }
+
+  @override
+  String replyWindow(int hours) {
+    return 'Зазвичай відповідає протягом $hours год';
+  }
+
+  @override
+  String get chipNew => 'НОВЕ';
+
+  @override
+  String get chipInProgress => 'У ПРОЦЕСІ';
+
+  @override
+  String get chipCompleted => 'ЗАВЕРШЕНО';
+
+  @override
+  String sentCardMeta(String date, int count, int minutes) {
+    return 'Надіслано $date · $count вправ · ~$minutes хв';
+  }
+
+  @override
+  String sentByTrainerOn(String date) {
+    return 'Надіслав тренер $date';
+  }
+
+  @override
+  String progressPct(int pct) {
+    return '$pct%';
+  }
+
+  @override
+  String get coachNote => 'ПРИМІТКА ТРЕНЕРА';
+
+  @override
+  String restLabel(String duration) {
+    return 'Відпочинок $duration';
+  }
+
+  @override
+  String askAboutThis(String name) {
+    return 'Запитайте $name про це';
+  }
+
+  @override
+  String messageHint(String name) {
+    return 'Повідомлення для $name...';
+  }
+
+  @override
+  String get tapToOpen => 'Торкніться, щоб відкрити';
+
+  @override
+  String get todayDivider => 'СЬОГОДНІ';
+
+  @override
+  String trainerVideoMeta(String duration) {
+    return 'Відео тренера · $duration';
+  }
+
+  @override
+  String get gateTitle => 'Персональний тренер 1:1';
+
+  @override
+  String get gateBody => 'Індивідуальні тренування та прямий чат з тренером входять до тарифу Advanced.';
+
+  @override
+  String get gateBenefitWorkouts => 'Тренування під ваше тіло та травми';
+
+  @override
+  String get gateBenefitChat => 'Прямі повідомлення тренеру';
+
+  @override
+  String get gateBenefitVideo => 'Відео-розбір вашої техніки';
+
+  @override
+  String get gateCta => 'Про Advanced';
+
+  @override
+  String get gateDismiss => 'Не зараз';
+
+  @override
+  String get gateFootnote => 'Оновлення відбувається на bodybridge.net — ваш тариф залишається в додатку.';
+
+  @override
+  String bannerNewWorkout(String name) {
+    return 'Нове тренування від $name';
+  }
+
+  @override
+  String bannerNewMessage(String name) {
+    return 'Нове повідомлення від $name';
+  }
+
+  @override
+  String get bannerTapToView => 'Торкніться, щоб переглянути';
+
+  @override
+  String get startSoonTitle => 'Індивідуальні сесії скоро з\'являться';
+
+  @override
+  String get startSoonBody =>
+      'Керовані сесії з\'являться разом із відео тренера. А тим часом запитайте тренера про цю програму.';
 }

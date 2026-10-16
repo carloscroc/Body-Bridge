@@ -3203,4 +3203,121 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get billingComingSoon => 'Le paiement arrive bientôt.';
+
+  @override
+  String get myTrainer => 'MON COACH';
+
+  @override
+  String get assignedWorkouts => 'SÉANCES ASSIGNÉES';
+
+  @override
+  String get messageTrainer => 'Message';
+
+  @override
+  String trainerSince(String date) {
+    return 'Votre coach depuis $date';
+  }
+
+  @override
+  String replyWindow(int hours) {
+    return 'Répond généralement sous $hours h';
+  }
+
+  @override
+  String get chipNew => 'NOUVEAU';
+
+  @override
+  String get chipInProgress => 'EN COURS';
+
+  @override
+  String get chipCompleted => 'TERMINÉ';
+
+  @override
+  String sentCardMeta(String date, int count, int minutes) {
+    return 'Envoyé le $date · $count exercices · ~$minutes min';
+  }
+
+  @override
+  String sentByTrainerOn(String date) {
+    return 'Envoyé par votre coach le $date';
+  }
+
+  @override
+  String progressPct(int pct) {
+    return '$pct%';
+  }
+
+  @override
+  String get coachNote => 'NOTE DU COACH';
+
+  @override
+  String restLabel(String duration) {
+    return 'Repos $duration';
+  }
+
+  @override
+  String askAboutThis(String name) {
+    return 'Demandez à $name à ce sujet';
+  }
+
+  @override
+  String messageHint(String name) {
+    return 'Message à $name...';
+  }
+
+  @override
+  String get tapToOpen => 'Touchez pour ouvrir';
+
+  @override
+  String get todayDivider => 'AUJOURD\'HUI';
+
+  @override
+  String trainerVideoMeta(String duration) {
+    return 'Vidéo du coach · $duration';
+  }
+
+  @override
+  String get gateTitle => 'Coaching 1:1';
+
+  @override
+  String get gateBody =>
+      'Les séances personnalisées et le chat direct avec votre coach font partie d\'Advanced.';
+
+  @override
+  String get gateBenefitWorkouts => 'Des séances adaptées à votre corps et à vos blessures';
+
+  @override
+  String get gateBenefitChat => 'Messagerie directe avec votre coach';
+
+  @override
+  String get gateBenefitVideo => 'Retours vidéo sur votre technique';
+
+  @override
+  String get gateCta => 'Voir Advanced';
+
+  @override
+  String get gateDismiss => 'Pas maintenant';
+
+  @override
+  String get gateFootnote => 'Les upgrades se font sur bodybridge.net — votre plan reste dans l\'app.';
+
+  @override
+  String bannerNewWorkout(String name) {
+    return 'Nouvelle séance de $name';
+  }
+
+  @override
+  String bannerNewMessage(String name) {
+    return 'Nouveau message de $name';
+  }
+
+  @override
+  String get bannerTapToView => 'Touchez pour afficher';
+
+  @override
+  String get startSoonTitle => 'Les séances personnalisées arrivent bientôt';
+
+  @override
+  String get startSoonBody =>
+      'Les séances guidées arriveront avec la vidéo du coach. En attendant, parlez-en avec votre coach.';
 }

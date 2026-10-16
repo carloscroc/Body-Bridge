@@ -3198,4 +3198,120 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get billingComingSoon => 'Betalen komt binnenkort.';
+
+  @override
+  String get myTrainer => 'MIJN TRAINER';
+
+  @override
+  String get assignedWorkouts => 'TOEGEWEZEN WORKOUTS';
+
+  @override
+  String get messageTrainer => 'Bericht';
+
+  @override
+  String trainerSince(String date) {
+    return 'Jouw trainer sinds $date';
+  }
+
+  @override
+  String replyWindow(int hours) {
+    return 'Reageert meestal binnen $hours u';
+  }
+
+  @override
+  String get chipNew => 'NIEUW';
+
+  @override
+  String get chipInProgress => 'BEZIG';
+
+  @override
+  String get chipCompleted => 'VOLTOOID';
+
+  @override
+  String sentCardMeta(String date, int count, int minutes) {
+    return 'Verzonden $date · $count oefeningen · ~$minutes min';
+  }
+
+  @override
+  String sentByTrainerOn(String date) {
+    return 'Verzonden door je trainer op $date';
+  }
+
+  @override
+  String progressPct(int pct) {
+    return '$pct%';
+  }
+
+  @override
+  String get coachNote => 'COACHNOTITIE';
+
+  @override
+  String restLabel(String duration) {
+    return 'Rust $duration';
+  }
+
+  @override
+  String askAboutThis(String name) {
+    return 'Vraag het aan $name';
+  }
+
+  @override
+  String messageHint(String name) {
+    return 'Bericht aan $name...';
+  }
+
+  @override
+  String get tapToOpen => 'Tik om te openen';
+
+  @override
+  String get todayDivider => 'VANDAAG';
+
+  @override
+  String trainerVideoMeta(String duration) {
+    return 'Trainervideo · $duration';
+  }
+
+  @override
+  String get gateTitle => '1:1 trainerbegeleiding';
+
+  @override
+  String get gateBody => 'Persoonlijke workouts en directe trainerchat horen bij Advanced.';
+
+  @override
+  String get gateBenefitWorkouts => 'Workouts afgestemd op jouw lichaam en blessures';
+
+  @override
+  String get gateBenefitChat => 'Direct berichtverkeer met je trainer';
+
+  @override
+  String get gateBenefitVideo => 'Video-feedback op je techniek';
+
+  @override
+  String get gateCta => 'Bekijk Advanced';
+
+  @override
+  String get gateDismiss => 'Niet nu';
+
+  @override
+  String get gateFootnote => 'Upgrades gaan via bodybridge.net — je plan blijft in de app.';
+
+  @override
+  String bannerNewWorkout(String name) {
+    return 'Nieuwe workout van $name';
+  }
+
+  @override
+  String bannerNewMessage(String name) {
+    return 'Nieuw bericht van $name';
+  }
+
+  @override
+  String get bannerTapToView => 'Tik om te bekijken';
+
+  @override
+  String get startSoonTitle => 'Persoonlijke sessies komen snel';
+
+  @override
+  String get startSoonBody =>
+      'Begeleide sessies komen samen met trainervideo\'s. Vraag ondertussen je trainer over dit plan.';
 }

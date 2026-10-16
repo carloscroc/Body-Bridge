@@ -3184,4 +3184,120 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get billingComingSoon => 'الفوترة قريبًا.';
+
+  @override
+  String get myTrainer => 'مدربي';
+
+  @override
+  String get assignedWorkouts => 'تمارين مخصصة';
+
+  @override
+  String get messageTrainer => 'مراسلة';
+
+  @override
+  String trainerSince(String date) {
+    return 'مدربك منذ $date';
+  }
+
+  @override
+  String replyWindow(int hours) {
+    return 'يرد عادةً خلال $hours ساعات';
+  }
+
+  @override
+  String get chipNew => 'جديد';
+
+  @override
+  String get chipInProgress => 'قيد التقدم';
+
+  @override
+  String get chipCompleted => 'مكتمل';
+
+  @override
+  String sentCardMeta(String date, int count, int minutes) {
+    return 'أُرسل $date · $count تمارين · ~$minutes د';
+  }
+
+  @override
+  String sentByTrainerOn(String date) {
+    return 'أرسله مدربك في $date';
+  }
+
+  @override
+  String progressPct(int pct) {
+    return '$pct%';
+  }
+
+  @override
+  String get coachNote => 'ملاحظة المدرب';
+
+  @override
+  String restLabel(String duration) {
+    return 'راحة $duration';
+  }
+
+  @override
+  String askAboutThis(String name) {
+    return 'اسأل $name عن هذا';
+  }
+
+  @override
+  String messageHint(String name) {
+    return 'رسالة إلى $name...';
+  }
+
+  @override
+  String get tapToOpen => 'انقر للفتح';
+
+  @override
+  String get todayDivider => 'اليوم';
+
+  @override
+  String trainerVideoMeta(String duration) {
+    return 'فيديو المدرب · $duration';
+  }
+
+  @override
+  String get gateTitle => 'إرشاد شخصي من مدربك';
+
+  @override
+  String get gateBody => 'التمارين المخصصة والدردشة المباشرة مع المدرب جزء من باقة Advanced.';
+
+  @override
+  String get gateBenefitWorkouts => 'تمارين مصممة لجسمك وإصاباتك';
+
+  @override
+  String get gateBenefitChat => 'مراسلة مباشرة مع مدربك';
+
+  @override
+  String get gateBenefitVideo => 'ملاحظات بالفيديو على أدائك';
+
+  @override
+  String get gateCta => 'اكتشف Advanced';
+
+  @override
+  String get gateDismiss => 'ليس الآن';
+
+  @override
+  String get gateFootnote => 'تتم الترقيات على bodybridge.net — تبقى خطتك داخل التطبيق.';
+
+  @override
+  String bannerNewWorkout(String name) {
+    return 'تمرين جديد من $name';
+  }
+
+  @override
+  String bannerNewMessage(String name) {
+    return 'رسالة جديدة من $name';
+  }
+
+  @override
+  String get bannerTapToView => 'انقر للعرض';
+
+  @override
+  String get startSoonTitle => 'الجلسات المخصصة قريبًا';
+
+  @override
+  String get startSoonBody =>
+      'تصل الجلسات الموجهة مع فيديو المدرب. في هذه الأثناء، اسأل مدربك عن هذا البرنامج.';
 }

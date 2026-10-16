@@ -3190,4 +3190,120 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get billingComingSoon => 'Billing is coming soon.';
+
+  @override
+  String get myTrainer => 'MY TRAINER';
+
+  @override
+  String get assignedWorkouts => 'ASSIGNED WORKOUTS';
+
+  @override
+  String get messageTrainer => 'Message';
+
+  @override
+  String trainerSince(String date) {
+    return 'Your trainer since $date';
+  }
+
+  @override
+  String replyWindow(int hours) {
+    return 'Usually replies within ${hours}h';
+  }
+
+  @override
+  String get chipNew => 'NEW';
+
+  @override
+  String get chipInProgress => 'IN PROGRESS';
+
+  @override
+  String get chipCompleted => 'COMPLETED';
+
+  @override
+  String sentCardMeta(String date, int count, int minutes) {
+    return 'Sent $date · $count exercises · ~$minutes min';
+  }
+
+  @override
+  String sentByTrainerOn(String date) {
+    return 'Sent by your trainer on $date';
+  }
+
+  @override
+  String progressPct(int pct) {
+    return '$pct%';
+  }
+
+  @override
+  String get coachNote => 'COACH NOTE';
+
+  @override
+  String restLabel(String duration) {
+    return 'Rest $duration';
+  }
+
+  @override
+  String askAboutThis(String name) {
+    return 'Ask $name about this';
+  }
+
+  @override
+  String messageHint(String name) {
+    return 'Message $name...';
+  }
+
+  @override
+  String get tapToOpen => 'Tap to open';
+
+  @override
+  String get todayDivider => 'TODAY';
+
+  @override
+  String trainerVideoMeta(String duration) {
+    return 'Trainer video · $duration';
+  }
+
+  @override
+  String get gateTitle => '1:1 trainer guidance';
+
+  @override
+  String get gateBody => 'Custom workouts and direct trainer chat are part of Advanced.';
+
+  @override
+  String get gateBenefitWorkouts => 'Workouts built for your body and your injuries';
+
+  @override
+  String get gateBenefitChat => 'Direct messaging with your trainer';
+
+  @override
+  String get gateBenefitVideo => 'Video feedback on your form';
+
+  @override
+  String get gateCta => 'See Advanced';
+
+  @override
+  String get gateDismiss => 'Not now';
+
+  @override
+  String get gateFootnote => 'Upgrades happen on bodybridge.net — your plan stays in the app.';
+
+  @override
+  String bannerNewWorkout(String name) {
+    return 'New workout from $name';
+  }
+
+  @override
+  String bannerNewMessage(String name) {
+    return 'New message from $name';
+  }
+
+  @override
+  String get bannerTapToView => 'Tap to view';
+
+  @override
+  String get startSoonTitle => 'Custom sessions land soon';
+
+  @override
+  String get startSoonBody =>
+      'Guided sessions arrive with trainer video. Meanwhile, ask your trainer about this plan.';
 }
