@@ -3123,53 +3123,6 @@ class AppLocalizationsKo extends AppLocalizations {
   String get advancedBadge => 'ADVANCED';
 
   @override
-  String get trainerLibraryTitle => '트레이너 라이브러리';
-
-  @override
-  String get searchTrainerSessions => '트레이너 세션 검색';
-
-  @override
-  String get categoryAll => '전체';
-
-  @override
-  String get categoryStrength => '근력';
-
-  @override
-  String get categoryMobility => '모빌리티';
-
-  @override
-  String get categoryCore => '코어';
-
-  @override
-  String get categoryCorrective => '교정';
-
-  @override
-  String get categoryWarmup => '웜업';
-
-  @override
-  String get trainerSessionBadge => '트레이너 세션';
-
-  @override
-  String get newBadge => 'NEW';
-
-  @override
-  String get customAssignedTitle => '트레이너 제공';
-
-  @override
-  String get fromYourTrainerBadge => '트레이너 제공';
-
-  @override
-  String get dueToday => '오늘 예정';
-
-  @override
-  String assignedOn(String date) {
-    return '$date에 할당됨';
-  }
-
-  @override
-  String get startAssignedWork => '할당된 운동 시작';
-
-  @override
   String get unlockAdvancedTitle => 'ADVANCED 잠금 해제';
 
   @override
@@ -3195,12 +3148,6 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get repsLabel => '횟수';
-
-  @override
-  String get addSessionToWorkout => '운동에 추가';
-
-  @override
-  String get addedToWorkout => '운동에 추가됨';
 
   @override
   String get trainerCatStrength => '근력';

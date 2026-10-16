@@ -3208,53 +3208,6 @@ class AppLocalizationsIt extends AppLocalizations {
   String get advancedBadge => 'ADVANCED';
 
   @override
-  String get trainerLibraryTitle => 'Libreria del trainer';
-
-  @override
-  String get searchTrainerSessions => 'Cerca sessioni del trainer';
-
-  @override
-  String get categoryAll => 'Tutti';
-
-  @override
-  String get categoryStrength => 'Forza';
-
-  @override
-  String get categoryMobility => 'Mobilità';
-
-  @override
-  String get categoryCore => 'Core';
-
-  @override
-  String get categoryCorrective => 'Correttivo';
-
-  @override
-  String get categoryWarmup => 'Riscaldamento';
-
-  @override
-  String get trainerSessionBadge => 'SESSIONE DEL TRAINER';
-
-  @override
-  String get newBadge => 'NUOVO';
-
-  @override
-  String get customAssignedTitle => 'Dal tuo trainer';
-
-  @override
-  String get fromYourTrainerBadge => 'Dal tuo trainer';
-
-  @override
-  String get dueToday => 'Per oggi';
-
-  @override
-  String assignedOn(String date) {
-    return 'Assegnato il $date';
-  }
-
-  @override
-  String get startAssignedWork => 'Inizia l\'allenamento assegnato';
-
-  @override
   String get unlockAdvancedTitle => 'Sblocca ADVANCED';
 
   @override
@@ -3280,12 +3233,6 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String get repsLabel => 'Reps';
-
-  @override
-  String get addSessionToWorkout => 'Aggiungi all\'allenamento';
-
-  @override
-  String get addedToWorkout => 'Aggiunto all\'allenamento';
 
   @override
   String get trainerCatStrength => 'Forza';

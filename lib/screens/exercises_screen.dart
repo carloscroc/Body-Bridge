@@ -113,7 +113,7 @@ class _ExercisesScreenState extends State<ExercisesScreen> {
 
   void _onSourceTap(SourceTab tab) {
     if (tab == SourceTab.free) {
-      fit.setExSource('free');
+      setState(() => fit.setExSource('free'));
       return;
     }
     if (!context.can(kCapCustomExercises)) {
@@ -123,7 +123,7 @@ class _ExercisesScreenState extends State<ExercisesScreen> {
       });
       return;
     }
-    fit.setExSource(tab.name);
+    setState(() => fit.setExSource(tab.name));
   }
 
   String _sectionLabel(Exercise ex) =>

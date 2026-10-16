@@ -3068,53 +3068,6 @@ class AppLocalizationsZh extends AppLocalizations {
   String get advancedBadge => 'ADVANCED';
 
   @override
-  String get trainerLibraryTitle => '教练库';
-
-  @override
-  String get searchTrainerSessions => '搜索教练课程';
-
-  @override
-  String get categoryAll => '全部';
-
-  @override
-  String get categoryStrength => '力量';
-
-  @override
-  String get categoryMobility => '灵活性';
-
-  @override
-  String get categoryCore => '核心';
-
-  @override
-  String get categoryCorrective => '矫正';
-
-  @override
-  String get categoryWarmup => '热身';
-
-  @override
-  String get trainerSessionBadge => '教练课程';
-
-  @override
-  String get newBadge => '新';
-
-  @override
-  String get customAssignedTitle => '来自你的教练';
-
-  @override
-  String get fromYourTrainerBadge => '来自你的教练';
-
-  @override
-  String get dueToday => '今天到期';
-
-  @override
-  String assignedOn(String date) {
-    return '$date布置';
-  }
-
-  @override
-  String get startAssignedWork => '开始训练';
-
-  @override
   String get unlockAdvancedTitle => '解锁 ADVANCED';
 
   @override
@@ -3140,12 +3093,6 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get repsLabel => '次';
-
-  @override
-  String get addSessionToWorkout => '加入训练';
-
-  @override
-  String get addedToWorkout => '已加入训练';
 
   @override
   String get trainerCatStrength => '力量';
@@ -6251,53 +6198,6 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
   String get advancedBadge => 'ADVANCED';
 
   @override
-  String get trainerLibraryTitle => '教練庫';
-
-  @override
-  String get searchTrainerSessions => '搜尋教練課程';
-
-  @override
-  String get categoryAll => '全部';
-
-  @override
-  String get categoryStrength => '力量';
-
-  @override
-  String get categoryMobility => '靈活度';
-
-  @override
-  String get categoryCore => '核心';
-
-  @override
-  String get categoryCorrective => '矯正';
-
-  @override
-  String get categoryWarmup => '熱身';
-
-  @override
-  String get trainerSessionBadge => '教練課程';
-
-  @override
-  String get newBadge => '新';
-
-  @override
-  String get customAssignedTitle => '來自你的教練';
-
-  @override
-  String get fromYourTrainerBadge => '來自你的教練';
-
-  @override
-  String get dueToday => '今天到期';
-
-  @override
-  String assignedOn(String date) {
-    return '$date指派';
-  }
-
-  @override
-  String get startAssignedWork => '開始訓練';
-
-  @override
   String get unlockAdvancedTitle => '解鎖 ADVANCED';
 
   @override
@@ -6323,12 +6223,6 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
 
   @override
   String get repsLabel => '次';
-
-  @override
-  String get addSessionToWorkout => '加入訓練';
-
-  @override
-  String get addedToWorkout => '已加入訓練';
 
   @override
   String get trainerCatStrength => '力量';

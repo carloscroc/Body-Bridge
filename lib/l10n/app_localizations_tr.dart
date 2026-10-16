@@ -3207,53 +3207,6 @@ class AppLocalizationsTr extends AppLocalizations {
   String get advancedBadge => 'ADVANCED';
 
   @override
-  String get trainerLibraryTitle => 'Antrenör Kütüphanesi';
-
-  @override
-  String get searchTrainerSessions => 'Antrenör seanslarını ara';
-
-  @override
-  String get categoryAll => 'Tümü';
-
-  @override
-  String get categoryStrength => 'Güç';
-
-  @override
-  String get categoryMobility => 'Mobilite';
-
-  @override
-  String get categoryCore => 'Core';
-
-  @override
-  String get categoryCorrective => 'Düzeltici';
-
-  @override
-  String get categoryWarmup => 'Isınma';
-
-  @override
-  String get trainerSessionBadge => 'ANTRENÖR SEANSI';
-
-  @override
-  String get newBadge => 'YENİ';
-
-  @override
-  String get customAssignedTitle => 'Antrenöründen';
-
-  @override
-  String get fromYourTrainerBadge => 'Antrenöründen';
-
-  @override
-  String get dueToday => 'Bugün';
-
-  @override
-  String assignedOn(String date) {
-    return '$date tarihinde atandı';
-  }
-
-  @override
-  String get startAssignedWork => 'Atanan antrenmanı başlat';
-
-  @override
   String get unlockAdvancedTitle => 'ADVANCED\'i Aç';
 
   @override
@@ -3279,12 +3232,6 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get repsLabel => 'Tekrar';
-
-  @override
-  String get addSessionToWorkout => 'Antrenmana ekle';
-
-  @override
-  String get addedToWorkout => 'Antrenmana eklendi';
 
   @override
   String get trainerCatStrength => 'Güç';

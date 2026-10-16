@@ -2,27 +2,29 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:gymmane/catalog/trainer_catalog.dart';
+import 'package:gymmane/catalog/trainer_exercises.dart';
 import 'package:gymmane/l10n/l10n.dart';
+import 'package:gymmane/screens/exercise_detail_screen.dart';
 import 'package:gymmane/screens/exercises_screen.dart';
-import 'package:gymmane/screens/trainer/custom_assigned_screen.dart';
+import 'package:gymmane/screens/routine_edit_screen.dart';
 import 'package:gymmane/screens/trainer/lock_overlay.dart';
 import 'package:gymmane/screens/trainer/source_tabs.dart';
-import 'package:gymmane/screens/trainer/trainer_library_screen.dart';
-import 'package:gymmane/screens/trainer/trainer_video_screen.dart';
-import 'package:gymmane/catalog/trainer_catalog.dart';
 import 'package:gymmane/services/local_store.dart';
 import 'package:gymmane/state/account_gate.dart';
 import 'package:gymmane/state/fit_state.dart';
 import 'package:gymmane/theme/app_theme.dart';
 import 'package:gymmane/widgets/premium_gate.dart';
+import 'package:gymmane/widgets/trainer_exercise_media.dart';
 import 'package:gymmane/widgets/ui_kit.dart';
 import 'package:phosphoricons_flutter/phosphoricons_flutter.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'paywall_gating_test.dart';
 
-/// Premium exercise sources: the tab strip, the lock UX and the three
-/// trainer screens. Tiers are scripted fakes — no Firebase, no network.
+/// Premium exercise sources: the tab strip and the lock UX on the existing
+/// exercises / detail / routine-picker surfaces — the trainer library has no
+/// screens of its own. Tiers are scripted fakes — no Firebase, no network.
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
@@ -74,8 +76,16 @@ void main() {
     await tester.pump(const Duration(milliseconds: 300));
   }
 
-  // Tall surface so every grid card / video section is built and findable
-  // without scrolling (the catalog is fixed: 6 sessions, 4 assignments).
+  // Row badges only — the Trainer tab chip inside the tab strip also reads
+  // "ADVANCED", so count badges outside PremiumSourceTabs.
+  int rowBadgeCount() => find
+      .text(t.advancedBadge)
+      .evaluate()
+      .where((e) => e.findAncestorWidgetOfExactType<PremiumSourceTabs>() == null)
+      .length;
+
+  // Tall surface so every row / section header is built and findable
+  // without scrolling (the trainer pool is fixed: 6 sessions, 4 assignments).
   Future<void> pumpTall(WidgetTester tester, Widget screen, AccountGate gate) async {
     tester.view.physicalSize = const Size(411, 1700);
     tester.view.devicePixelRatio = 1.0;
@@ -103,6 +113,11 @@ void main() {
     of: find.byType(PremiumSourceTabs),
     matching: find.byIcon(PhosphorIconsRegular.lockSimple),
   );
+
+  void resetSource() {
+    fit.setExSource('free');
+    fit.activeRoutineId = null;
+  }
 
   group('free tier: Exercises screen stays free + locks the gated tabs', () {
     testWidgets('3 tabs render, Trainer and Custom carry padlocks, list unchanged', (tester) async {
@@ -165,7 +180,7 @@ void main() {
       await tester.pumpAndSettle();
 
       expect(fit.route, 'home', reason: 'gated tabs never push a route');
-      expect(find.byType(TrainerLibraryScreen), findsNothing);
+      expect(fit.exSource, 'free', reason: 'gated taps never change the active source');
       expect(find.text(t.lockAdvancedMessage), findsOneWidget, reason: 'the dim overlay explains the lock');
       final overlayOpacity = tester.widget<AnimatedOpacity>(
         find.descendant(of: find.byType(TrainerLockOverlay), matching: find.byType(AnimatedOpacity)),
@@ -234,6 +249,42 @@ void main() {
         reason: 'the free list is untouched behind the Free tab',
       );
     });
+
+    test('no free path reaches trainer exercises: allExercises and the free list exclude tr-/as- ids', () {
+      AccountGate.install(FakeGate(AccountTier.free));
+      expect(
+        fit.allExercises.where((e) => isTrainerSourcedId(e.id)),
+        isEmpty,
+        reason: 'allExercises stays catalog + customs',
+      );
+      expect(
+        fit.exercisesFiltered.where((e) => isTrainerSourcedId(e.id)),
+        isEmpty,
+        reason: 'the free list never surfaces trainer items',
+      );
+      expect(fit.exercisesFiltered, isNotEmpty, reason: 'the free pool itself is intact');
+    });
+
+    testWidgets('routine editor picker: gated tabs stay locked for free users', (tester) async {
+      final gate = FakeGate(AccountTier.free);
+      AccountGate.install(gate);
+      fit.activeRoutineId = fit.createRoutine('Free Pick');
+      addTearDown(resetSource);
+      await pumpTall(tester, const RoutineEditScreen(), gate);
+
+      expect(tabPadlocks(), findsNWidgets(2));
+      await tester.tap(find.text(t.sourceTrainer));
+      await tester.pumpAndSettle();
+
+      expect(fit.route, 'home', reason: 'gated picker tabs never push a route');
+      expect(
+        find.text(titleCase(t.unlockAdvancedTitle)),
+        findsOneWidget,
+        reason: 'the upsell sheet rises from the picker too',
+      );
+      expect(find.text('Pallof Press — setup'), findsNothing, reason: 'the picker stays on the free pool');
+      expect(find.byType(TrainerExerciseMedia), findsNothing);
+    });
   });
 
   group('basic tier: same locked behavior (trainer_features is advanced-only)', () {
@@ -247,134 +298,170 @@ void main() {
       await tester.pumpAndSettle();
 
       expect(fit.route, 'home', reason: 'basic cannot enter the trainer library either');
-      expect(find.byType(TrainerLibraryScreen), findsNothing);
+      expect(fit.exSource, 'free', reason: 'gated taps never change the active source');
+      expect(find.byType(TrainerExerciseMedia), findsNothing, reason: 'no trainer content leaks in');
       expect(find.text(t.lockAdvancedMessage), findsOneWidget);
       expect(ctaFinder(), findsOneWidget);
     });
   });
 
-  group('advanced tier: the three trainer screens', () {
-    testWidgets('tapping Trainer switches the source in place', (tester) async {
+  group('advanced tier: trainer sources fold into the existing screens', () {
+    testWidgets('tapping Trainer switches the source in place — no route push', (tester) async {
       final gate = FakeGate(AccountTier.advanced);
       AccountGate.install(gate);
-      addTearDown(() => fit.setExSource('free'));
+      addTearDown(resetSource);
       await pumpExercises(tester, gate);
 
       expect(tabPadlocks(), findsNothing, reason: 'advanced is unlocked');
+      final before = fit.route;
       await tester.tap(find.text(t.sourceTrainer));
       await tester.pumpAndSettle();
 
       expect(fit.exSource, 'trainer', reason: 'sources switch in place');
-      expect(find.byType(TrainerLibraryScreen), findsNothing, reason: 'no parallel screen');
+      expect(fit.route, before, reason: 'no route push — the list swaps in place');
     });
 
-    testWidgets('TrainerLibraryScreen: coach, 6 sessions, NEW badge, category filter', (tester) async {
-      final gate = FakeGate(AccountTier.advanced);
-      AccountGate.install(gate);
-      await pumpTall(tester, const TrainerLibraryScreen(), gate);
-
-      expect(find.text(kTrainerProfile.name), findsOneWidget);
-      for (final s in kTrainerSessions) {
-        expect(find.text(s.title), findsOneWidget, reason: '${s.title} card is present');
-      }
-      expect(find.text(t.newBadge), findsOneWidget, reason: 'only the 90/90 card carries NEW');
-      expect(find.text(t.searchTrainerSessions), findsOneWidget);
-
-      // Category chip filters the grid: CORE leaves only the Pallof card.
-      await tester.tap(find.text(t.categoryCore.toUpperCase()));
-      await tester.pumpAndSettle();
-
-      expect(find.text('Pallof Press — setup'), findsOneWidget);
-      expect(find.text('90/90 Hip Switch'), findsNothing);
-      expect(find.text('Copenhagen Plank'), findsNothing);
-    });
-
-    testWidgets('tapping a card pushes the video screen with title, cues and steppers', (tester) async {
-      final gate = FakeGate(AccountTier.advanced);
-      AccountGate.install(gate);
-      await pumpTall(tester, const TrainerLibraryScreen(), gate);
-
-      await tester.tap(find.text('Pallof Press — setup'));
-      await tester.pumpAndSettle();
-
-      expect(fit.route, 'trainer-video');
-      await pumpTall(tester, TrainerVideoScreen(sessionId: kTrainerSessions.first.id), gate);
-
-      expect(find.text('Pallof Press — setup'), findsOneWidget);
-      for (final cue in kTrainerSessions.first.cues) {
-        expect(find.text(cue), findsOneWidget);
-      }
-      expect(find.text(t.setsLabel.toUpperCase()), findsOneWidget);
-      expect(find.text(t.repsLabel.toUpperCase()), findsOneWidget);
-      expect(find.text('3'), findsOneWidget, reason: 'sets hint seeds the stepper');
-      expect(find.text('10'), findsOneWidget, reason: 'reps hint seeds the stepper');
-      expect(find.text(kTrainerProfile.name), findsOneWidget);
-    });
-
-    testWidgets('video screen fits title, cues, steppers and CTA above the fold at 411x914', (tester) async {
-      final gate = FakeGate(AccountTier.advanced);
-      AccountGate.install(gate);
-      tester.view.physicalSize = const Size(411, 914);
-      tester.view.devicePixelRatio = 1.0;
-      addTearDown(tester.view.reset);
-      await tester.pumpWidget(
-        MaterialApp(
-          theme: AppTheme.dark,
-          localizationsDelegates: AppLocalizations.localizationsDelegates,
-          supportedLocales: AppLocalizations.supportedLocales,
-          home: PremiumGate(
-            gate: gate,
-            child: Scaffold(body: TrainerVideoScreen(sessionId: kTrainerSessions.first.id)),
-          ),
-        ),
-      );
-      await tester.pumpAndSettle();
-
-      final session = kTrainerSessions.first;
-      expect(find.text(session.title), findsOneWidget);
-      expect(tester.getRect(find.text(session.title)).top, greaterThanOrEqualTo(0));
-      expect(
-        tester.getRect(find.text(session.cues.first)).bottom,
-        lessThanOrEqualTo(914),
-        reason: 'the first cue is visible',
-      );
-      expect(find.text(t.setsLabel.toUpperCase()), findsOneWidget);
-      expect(find.text(t.repsLabel.toUpperCase()), findsOneWidget);
-      expect(tester.getRect(find.text('3')).bottom, lessThanOrEqualTo(914), reason: 'sets stepper visible');
-      expect(tester.getRect(find.text('10')).bottom, lessThanOrEqualTo(914), reason: 'reps stepper visible');
-      final cta = find.text(t.addSessionToWorkout);
-      expect(cta, findsOneWidget);
-      expect(tester.getRect(cta).bottom, lessThanOrEqualTo(914), reason: 'the CTA must sit above the fold');
-    });
-
-    testWidgets('Custom tab switches the assigned source in place; its screen: coach note, 4 rows, DUE TODAY on the first only', (
+    testWidgets('Trainer tab lists the 6 sessions grouped by category with thumbs and ADVANCED badges', (
       tester,
     ) async {
       final gate = FakeGate(AccountTier.advanced);
       AccountGate.install(gate);
-      addTearDown(() => fit.setExSource('free'));
-      await pumpExercises(tester, gate);
+      addTearDown(resetSource);
+      await pumpTall(tester, const ExercisesScreen(), gate);
+      await tester.tap(find.text(t.sourceTrainer));
+      await tester.pumpAndSettle();
 
+      for (final s in kTrainerSessions) {
+        expect(find.text(s.title), findsOneWidget, reason: '${s.title} row is present');
+      }
+      expect(find.byType(TrainerExerciseMedia), findsNWidgets(6), reason: 'every row carries its thumb');
+      expect(rowBadgeCount(), 6, reason: 'every row carries the badge');
+      for (final c in ['core', 'mobility', 'strength', 'corrective', 'warmup']) {
+        expect(
+          find.text(t.trainerCategory(c).toUpperCase()),
+          findsOneWidget,
+          reason: 'the $c section header is present',
+        );
+      }
+      final seen = <String>[];
+      for (final e in fit.exercisesFiltered) {
+        if (seen.isEmpty || seen.last != e.primary) seen.add(e.primary);
+      }
+      expect(seen, ['strength', 'mobility', 'core', 'corrective', 'warmup'],
+          reason: 'sections follow kTrainerCategories order');
+    });
+
+    testWidgets('Custom tab lists the 4 assigned exercises with thumbs and badges', (tester) async {
+      final gate = FakeGate(AccountTier.advanced);
+      AccountGate.install(gate);
+      addTearDown(resetSource);
+      await pumpTall(tester, const ExercisesScreen(), gate);
       await tester.tap(find.text(t.sourceCustom));
       await tester.pumpAndSettle();
 
       expect(fit.exSource, 'custom', reason: 'sources switch in place');
-      await pumpTall(tester, const CustomAssignedScreen(), gate);
-
-      expect(find.text(kTrainerCoachNote), findsOneWidget);
       for (final a in kTrainerAssignments) {
         expect(find.text(a.title), findsOneWidget, reason: '${a.title} row is present');
       }
-      expect(find.text(t.dueToday.toUpperCase()), findsOneWidget, reason: 'only the first row is due today');
-      expect(find.textContaining(t.assignedOn('')), findsWidgets);
-      for (final a in kTrainerAssignments) {
-        expect(find.text(a.durationLabel), findsOneWidget, reason: '${a.title} shows its own duration');
+      expect(find.byType(TrainerExerciseMedia), findsNWidgets(4));
+      expect(rowBadgeCount(), 4, reason: 'every row carries the badge');
+    });
+
+    testWidgets('tapping a trainer row opens exercise-detail: interactive player, no edit/media buttons', (
+      tester,
+    ) async {
+      final gate = FakeGate(AccountTier.advanced);
+      AccountGate.install(gate);
+      addTearDown(resetSource);
+      await pumpTall(tester, const ExercisesScreen(), gate);
+      await tester.tap(find.text(t.sourceTrainer));
+      await tester.pumpAndSettle();
+
+      await tester.tap(find.text('Pallof Press — setup'));
+      await tester.pumpAndSettle();
+
+      expect(fit.activeExerciseId, 'tr-pallof-setup');
+      expect(fit.route, 'exercise-detail');
+      await pumpTall(tester, const ExerciseDetailScreen(), gate);
+
+      expect(find.byType(TrainerExerciseMedia), findsOneWidget,
+          reason: 'the interactive player replaces the free art');
+      expect(find.byIcon(PhosphorIconsRegular.pencilSimple), findsNothing,
+          reason: 'trainer exercises are not editable');
+      expect(find.byIcon(PhosphorIconsRegular.trash), findsNothing,
+          reason: 'trainer exercises cannot be deleted');
+    });
+
+    testWidgets('routine editor picker: Trainer tab lists trainer exercises; adding persists on save', (
+      tester,
+    ) async {
+      final gate = FakeGate(AccountTier.advanced);
+      AccountGate.install(gate);
+      addTearDown(resetSource);
+      fit.activeRoutineId = fit.createRoutine('Trainer Pick');
+      final rid = fit.activeRoutineId!;
+      await pumpTall(tester, const RoutineEditScreen(), gate);
+
+      await tester.tap(find.text(t.sourceTrainer));
+      await tester.pumpAndSettle();
+      expect(find.text('Pallof Press — setup'), findsOneWidget);
+
+      await tester.tap(find.text('Pallof Press — setup'));
+      await tester.pumpAndSettle();
+      expect(fit.activeRoutine!.exerciseIds, contains('tr-pallof-setup'),
+          reason: 'tapping a trainer row adds it to the routine');
+
+      fit.saveAndExit();
+      final saved = fit.routines.firstWhere((r) => r.id == rid);
+      expect(saved.exerciseIds, contains('tr-pallof-setup'), reason: 'save persists the trainer id');
+      expect(fit.routineExercises(saved).first.name, 'Pallof Press — setup',
+          reason: 'routineExercises resolves the trainer name');
+    });
+
+    test('trainer ids stay rep-based: modeOf is empty like free exercises', () {
+      expect(fit.modeOf('tr-pallof-setup'), '');
+    });
+  });
+
+  group('determinism', () {
+    test('id scheme: tr-<session> and as-<session>-<seat>', () {
+      expect(trainerExercises.map((e) => e.id), [
+        'tr-pallof-setup',
+        'tr-hip-switch',
+        'tr-copenhagen-plank',
+        'tr-tibialis-raise',
+        'tr-goblet-bracing',
+        'tr-worlds-greatest-stretch',
+      ]);
+      expect(assignedExercises.map((e) => e.id), [
+        'as-pallof-setup-0',
+        'as-tibialis-raise-0',
+        'as-pallof-setup-1',
+        'as-copenhagen-plank-0',
+      ]);
+    });
+
+    test('equipment mapping: Mat/Bench/Wall→Bodyweight, Band→Band, Kettlebell→Kettlebell', () {
+      final byId = {for (final e in [...trainerExercises, ...assignedExercises]) e.id: e};
+      expect(byId['tr-pallof-setup']!.equipment, 'Band');
+      expect(byId['tr-hip-switch']!.equipment, 'Bodyweight');
+      expect(byId['tr-copenhagen-plank']!.equipment, 'Bodyweight');
+      expect(byId['tr-tibialis-raise']!.equipment, 'Bodyweight');
+      expect(byId['tr-goblet-bracing']!.equipment, 'Kettlebell');
+      expect(byId['tr-worlds-greatest-stretch']!.equipment, 'Bodyweight');
+      expect(byId['as-pallof-setup-0']!.equipment, 'Band');
+      expect(byId['as-copenhagen-plank-0']!.equipment, 'Bodyweight');
+    });
+
+    test('category grouping follows kTrainerCategories order', () {
+      AccountGate.install(FakeGate(AccountTier.advanced));
+      addTearDown(resetSource);
+      fit.setExSource('trainer');
+      final seen = <String>[];
+      for (final e in fit.exercisesFiltered) {
+        if (seen.isEmpty || seen.last != e.primary) seen.add(e.primary);
       }
-      expect(
-        find.text(t.assignedOn(t.longDate(DateTime(2026, 10, 12)))),
-        findsNWidgets(2),
-        reason: 'rows show the weekday: both Oct 12 rows carry Mon',
-      );
+      expect(seen, ['strength', 'mobility', 'core', 'corrective', 'warmup']);
     });
   });
 

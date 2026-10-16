@@ -3108,53 +3108,6 @@ class AppLocalizationsJa extends AppLocalizations {
   String get advancedBadge => 'ADVANCED';
 
   @override
-  String get trainerLibraryTitle => 'トレーナーライブラリ';
-
-  @override
-  String get searchTrainerSessions => 'トレーナーセッションを検索';
-
-  @override
-  String get categoryAll => 'すべて';
-
-  @override
-  String get categoryStrength => 'ストレングス';
-
-  @override
-  String get categoryMobility => 'モビリティ';
-
-  @override
-  String get categoryCore => 'コア';
-
-  @override
-  String get categoryCorrective => '矯正';
-
-  @override
-  String get categoryWarmup => 'ウォームアップ';
-
-  @override
-  String get trainerSessionBadge => 'トレーナーセッション';
-
-  @override
-  String get newBadge => 'NEW';
-
-  @override
-  String get customAssignedTitle => 'トレーナーから';
-
-  @override
-  String get fromYourTrainerBadge => 'トレーナーから';
-
-  @override
-  String get dueToday => '今日が期限';
-
-  @override
-  String assignedOn(String date) {
-    return '$dateに割り当て';
-  }
-
-  @override
-  String get startAssignedWork => '課題をスタート';
-
-  @override
   String get unlockAdvancedTitle => 'ADVANCEDをアンロック';
 
   @override
@@ -3180,12 +3133,6 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get repsLabel => 'レップ';
-
-  @override
-  String get addSessionToWorkout => 'ワークアウトに追加';
-
-  @override
-  String get addedToWorkout => 'ワークアウトに追加しました';
 
   @override
   String get trainerCatStrength => 'ストレングス';

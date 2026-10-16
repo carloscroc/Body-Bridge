@@ -5756,96 +5756,6 @@ abstract class AppLocalizations {
   /// **'ADVANCED'**
   String get advancedBadge;
 
-  /// No description provided for @trainerLibraryTitle.
-  ///
-  /// In en, this message translates to:
-  /// **'Trainer Library'**
-  String get trainerLibraryTitle;
-
-  /// No description provided for @searchTrainerSessions.
-  ///
-  /// In en, this message translates to:
-  /// **'Search trainer sessions'**
-  String get searchTrainerSessions;
-
-  /// No description provided for @categoryAll.
-  ///
-  /// In en, this message translates to:
-  /// **'All'**
-  String get categoryAll;
-
-  /// No description provided for @categoryStrength.
-  ///
-  /// In en, this message translates to:
-  /// **'Strength'**
-  String get categoryStrength;
-
-  /// No description provided for @categoryMobility.
-  ///
-  /// In en, this message translates to:
-  /// **'Mobility'**
-  String get categoryMobility;
-
-  /// No description provided for @categoryCore.
-  ///
-  /// In en, this message translates to:
-  /// **'Core'**
-  String get categoryCore;
-
-  /// No description provided for @categoryCorrective.
-  ///
-  /// In en, this message translates to:
-  /// **'Corrective'**
-  String get categoryCorrective;
-
-  /// No description provided for @categoryWarmup.
-  ///
-  /// In en, this message translates to:
-  /// **'Warm-up'**
-  String get categoryWarmup;
-
-  /// No description provided for @trainerSessionBadge.
-  ///
-  /// In en, this message translates to:
-  /// **'TRAINER SESSION'**
-  String get trainerSessionBadge;
-
-  /// No description provided for @newBadge.
-  ///
-  /// In en, this message translates to:
-  /// **'NEW'**
-  String get newBadge;
-
-  /// No description provided for @customAssignedTitle.
-  ///
-  /// In en, this message translates to:
-  /// **'From your trainer'**
-  String get customAssignedTitle;
-
-  /// No description provided for @fromYourTrainerBadge.
-  ///
-  /// In en, this message translates to:
-  /// **'From your trainer'**
-  String get fromYourTrainerBadge;
-
-  /// No description provided for @dueToday.
-  ///
-  /// In en, this message translates to:
-  /// **'Due today'**
-  String get dueToday;
-
-  /// No description provided for @assignedOn.
-  ///
-  /// In en, this message translates to:
-  /// **'Assigned {date}'**
-  String assignedOn(String date);
-
-  /// No description provided for @startAssignedWork.
-  ///
-  /// In en, this message translates to:
-  /// **'Start assigned work'**
-  String get startAssignedWork;
-
   /// No description provided for @unlockAdvancedTitle.
   ///
   /// In en, this message translates to:
@@ -5899,18 +5809,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Reps'**
   String get repsLabel;
-
-  /// No description provided for @addSessionToWorkout.
-  ///
-  /// In en, this message translates to:
-  /// **'Add to workout'**
-  String get addSessionToWorkout;
-
-  /// No description provided for @addedToWorkout.
-  ///
-  /// In en, this message translates to:
-  /// **'Added to workout'**
-  String get addedToWorkout;
 
   /// No description provided for @trainerCatStrength.
   ///

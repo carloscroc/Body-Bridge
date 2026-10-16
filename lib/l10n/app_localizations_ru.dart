@@ -3295,53 +3295,6 @@ class AppLocalizationsRu extends AppLocalizations {
   String get advancedBadge => 'ADVANCED';
 
   @override
-  String get trainerLibraryTitle => 'Библиотека тренера';
-
-  @override
-  String get searchTrainerSessions => 'Поиск занятий тренера';
-
-  @override
-  String get categoryAll => 'Все';
-
-  @override
-  String get categoryStrength => 'Сила';
-
-  @override
-  String get categoryMobility => 'Мобильность';
-
-  @override
-  String get categoryCore => 'Кор';
-
-  @override
-  String get categoryCorrective => 'Коррекция';
-
-  @override
-  String get categoryWarmup => 'Разминка';
-
-  @override
-  String get trainerSessionBadge => 'ЗАНЯТИЕ ТРЕНЕРА';
-
-  @override
-  String get newBadge => 'НОВОЕ';
-
-  @override
-  String get customAssignedTitle => 'От вашего тренера';
-
-  @override
-  String get fromYourTrainerBadge => 'От вашего тренера';
-
-  @override
-  String get dueToday => 'На сегодня';
-
-  @override
-  String assignedOn(String date) {
-    return 'Назначено $date';
-  }
-
-  @override
-  String get startAssignedWork => 'Начать занятие';
-
-  @override
   String get unlockAdvancedTitle => 'Откройте ADVANCED';
 
   @override
@@ -3367,12 +3320,6 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get repsLabel => 'Повт.';
-
-  @override
-  String get addSessionToWorkout => 'Добавить в тренировку';
-
-  @override
-  String get addedToWorkout => 'Добавлено в тренировку';
 
   @override
   String get trainerCatStrength => 'Сила';

@@ -33,9 +33,6 @@ import '../screens/timeline_screen.dart';
 import '../screens/tool_detail_screen.dart';
 import '../screens/tools_screen.dart';
 import '../screens/train_screen.dart';
-import '../screens/trainer/custom_assigned_screen.dart';
-import '../screens/trainer/trainer_library_screen.dart';
-import '../screens/trainer/trainer_video_screen.dart';
 import '../services/incoming_share.dart';
 import '../state/fit_state.dart';
 import '../theme/app_colors.dart';
@@ -354,12 +351,6 @@ class _AppShellState extends State<AppShell> with WidgetsBindingObserver {
         return ExercisesScreen();
       case 'exercise-detail':
         return ExerciseDetailScreen();
-      case 'trainer-library':
-        return TrainerLibraryScreen();
-      case 'trainer-assigned':
-        return CustomAssignedScreen();
-      case 'trainer-video':
-        return TrainerVideoScreen(sessionId: fit.activeTrainerSessionId);
       case 'tools':
         return ToolsScreen();
       case 'tools-detail':

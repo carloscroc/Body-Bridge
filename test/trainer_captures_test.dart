@@ -6,12 +6,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart' show FontLoader;
 import 'package:flutter_test/flutter_test.dart';
-import 'package:gymmane/catalog/trainer_catalog.dart';
 import 'package:gymmane/l10n/l10n.dart';
+import 'package:gymmane/screens/exercise_detail_screen.dart';
 import 'package:gymmane/screens/exercises_screen.dart';
-import 'package:gymmane/screens/trainer/custom_assigned_screen.dart';
-import 'package:gymmane/screens/trainer/trainer_library_screen.dart';
-import 'package:gymmane/screens/trainer/trainer_video_screen.dart';
+import 'package:gymmane/screens/routine_edit_screen.dart';
 import 'package:gymmane/services/local_store.dart';
 import 'package:gymmane/state/account_gate.dart';
 import 'package:gymmane/state/fit_state.dart';
@@ -24,8 +22,8 @@ import 'paywall_gating_test.dart';
 /// Capture harness for the premium exercise sources feature.
 ///
 /// Env-gated: runs ONLY with BB_CAPTURES=1. Plain `flutter test` registers
-/// nothing and passes trivially. With the flag on it produces 20 PNGs —
-/// 5 captures x 2 themes (dark, light) x 2 sizes (411x914, 360x800) —
+/// nothing and passes trivially. With the flag on it produces 12 PNGs —
+/// 3 captures x 2 themes (dark, light) x 2 sizes (411x914, 360x800) —
 /// under build/captures/trainer/. Output is gitignored; never commit it.
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
@@ -165,26 +163,14 @@ void main() {
       final theme = themeEntry.value;
       final size = sizeEntry.value;
 
-      testWidgets('exercises-free-$suffix', (tester) async {
+      testWidgets('exercises-trainer-$suffix', (tester) async {
         await shoot(
           tester,
           theme: theme,
           size: size,
           suffix: suffix,
-          name: 'exercises-free',
-          gate: FakeGate(AccountTier.free),
-          screen: const ExercisesScreen(),
-        );
-      });
-
-      testWidgets('exercises-locked-$suffix', (tester) async {
-        await shoot(
-          tester,
-          theme: theme,
-          size: size,
-          suffix: suffix,
-          name: 'exercises-locked',
-          gate: FakeGate(AccountTier.free),
+          name: 'exercises-trainer',
+          gate: FakeGate(AccountTier.advanced),
           screen: const ExercisesScreen(),
           beforeShot: (wt) async {
             await wt.tap(find.text(t.sourceTrainer));
@@ -193,39 +179,33 @@ void main() {
         );
       });
 
-      testWidgets('trainer-library-$suffix', (tester) async {
+      testWidgets('trainer-detail-$suffix', (tester) async {
+        fit.activeExerciseId = 'tr-pallof-setup';
         await shoot(
           tester,
           theme: theme,
           size: size,
           suffix: suffix,
-          name: 'trainer-library',
+          name: 'trainer-detail',
           gate: FakeGate(AccountTier.advanced),
-          screen: const TrainerLibraryScreen(),
+          screen: const ExerciseDetailScreen(),
         );
       });
 
-      testWidgets('trainer-video-$suffix', (tester) async {
+      testWidgets('routine-picker-trainer-$suffix', (tester) async {
+        fit.activeRoutineId = fit.createRoutine('Trainer Pick');
         await shoot(
           tester,
           theme: theme,
           size: size,
           suffix: suffix,
-          name: 'trainer-video',
+          name: 'routine-picker-trainer',
           gate: FakeGate(AccountTier.advanced),
-          screen: TrainerVideoScreen(sessionId: kTrainerSessions.first.id),
-        );
-      });
-
-      testWidgets('custom-assigned-$suffix', (tester) async {
-        await shoot(
-          tester,
-          theme: theme,
-          size: size,
-          suffix: suffix,
-          name: 'custom-assigned',
-          gate: FakeGate(AccountTier.advanced),
-          screen: const CustomAssignedScreen(),
+          screen: const RoutineEditScreen(),
+          beforeShot: (wt) async {
+            await wt.tap(find.text(t.sourceTrainer));
+            await wt.pumpAndSettle();
+          },
         );
       });
     }
