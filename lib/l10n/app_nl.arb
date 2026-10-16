@@ -1256,5 +1256,7 @@
   "bannerNewMessage": "Nieuw bericht van {name}",
   "bannerTapToView": "Tik om te bekijken",
   "startSoonTitle": "Persoonlijke sessies komen snel",
-  "startSoonBody": "Begeleide sessies komen samen met trainervideo's. Vraag ondertussen je trainer over dit plan."
+  "startSoonBody": "Begeleide sessies komen samen met trainervideo's. Vraag ondertussen je trainer over dit plan.",
+  "exercisesMeta": "{count} oefeningen · ~{minutes} min",
+  "@exercisesMeta": { "placeholders": { "count": { "type": "int" }, "minutes": { "type": "int" } } }
 }

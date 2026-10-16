@@ -3300,4 +3300,9 @@ class AppLocalizationsAr extends AppLocalizations {
   @override
   String get startSoonBody =>
       'تصل الجلسات الموجهة مع فيديو المدرب. في هذه الأثناء، اسأل مدربك عن هذا البرنامج.';
+
+  @override
+  String exercisesMeta(int count, int minutes) {
+    return '$count تمارين · ~$minutes د';
+  }
 }

@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:phosphoricons_flutter/phosphoricons_flutter.dart';
 
+import '../constants/billing.dart';
 import '../l10n/l10n.dart';
 import '../screens/account_screen.dart';
 import '../screens/about_screen.dart';
@@ -33,8 +34,12 @@ import '../screens/timeline_screen.dart';
 import '../screens/tool_detail_screen.dart';
 import '../screens/tools_screen.dart';
 import '../screens/train_screen.dart';
+import '../screens/trainer_chat_screen.dart';
+import '../screens/trainer_home_screen.dart';
+import '../screens/trainer_workout_detail_screen.dart';
 import '../services/incoming_share.dart';
 import '../state/fit_state.dart';
+import '../state/trainer_state.dart';
 import '../theme/app_colors.dart';
 import '../theme/app_theme.dart';
 import '../widgets/app_background.dart';
@@ -42,6 +47,7 @@ import '../widgets/award_celebration.dart';
 import '../widgets/dialogs.dart';
 import '../widgets/glass.dart';
 import '../widgets/liquid_notch.dart';
+import '../widgets/premium_gate.dart';
 import '../widgets/start_countdown.dart';
 
 class AppShell extends StatefulWidget {
@@ -67,6 +73,7 @@ class _AppShellState extends State<AppShell> with WidgetsBindingObserver {
     'preferences',
     'tools',
     'tools-detail',
+    'trainer',
   };
 
   static const _firstAwardWait = Duration(milliseconds: 4000);
@@ -254,7 +261,13 @@ class _AppShellState extends State<AppShell> with WidgetsBindingObserver {
                     left: 18,
                     right: 18,
                     bottom: 18 + MediaQuery.viewPaddingOf(context).bottom,
-                    child: Directionality(textDirection: TextDirection.ltr, child: _NavBar()),
+                    child: AnimatedBuilder(
+                      animation: trainer,
+                      builder: (context, _) => Directionality(
+                        textDirection: TextDirection.ltr,
+                        child: _NavBar(),
+                      ),
+                    ),
                   ),
                 if (fit.countdownUntil != null && fit.session != null)
                   Positioned.fill(
@@ -349,6 +362,12 @@ class _AppShellState extends State<AppShell> with WidgetsBindingObserver {
         return SessionScreen();
       case 'exercises':
         return ExercisesScreen();
+      case 'trainer':
+        return TrainerHomeScreen();
+      case 'trainer-workout':
+        return TrainerWorkoutDetailScreen(key: ValueKey(trainer.openAssignmentId));
+      case 'trainer-chat':
+        return TrainerChatScreen();
       case 'exercise-detail':
         return ExerciseDetailScreen();
       case 'tools':
@@ -424,7 +443,10 @@ class _NavBar extends StatefulWidget {
 class _NavBarState extends State<_NavBar> {
   static const _iw = 58.0;
   static const _fabW = 54.0;
-  static const _routes = ['home', 'progress', 'exercises', 'settings'];
+
+  // 5 content slots around the central FAB (mockup order: Today · Workouts ·
+  // My Trainer · Progress · Profile). My Trainer carries the 8px unseen dot.
+  static const _routes = ['home', 'exercises', 'trainer', 'progress', 'settings'];
 
   double? _dragX;
   int? _hover;
@@ -437,18 +459,26 @@ class _NavBarState extends State<_NavBar> {
     return i < 0 ? 0 : i;
   }
 
-  double _slotX(int i) => switch (i) {
-        0 => 0,
-        1 => _iw + _gap,
-        2 => 2 * _iw + 3 * _gap + _fabW,
-        _ => 3 * _iw + 4 * _gap + _fabW,
-      };
+  double _slotX(int i) {
+    var x = 0.0;
+    for (var j = 0; j < i; j++) {
+      x += _iw + _gap;
+      if (j == 1) x += _gap + _fabW; // FAB sits after the second slot
+    }
+    return x;
+  }
 
-  void _go(int i) => [fit.goHome, fit.goProgress, fit.goExercises, fit.goSettings][i]();
+  void _go(int i) => [
+        fit.goHome,
+        fit.goExercises,
+        fit.goTrainer,
+        fit.goProgress,
+        fit.goSettings,
+      ][i]();
 
   int _nearest(double x) {
     var best = 0;
-    for (var i = 1; i < 4; i++) {
+    for (var i = 1; i < _routes.length; i++) {
       if ((_slotX(i) + _iw / 2 - x).abs() < (_slotX(best) + _iw / 2 - x).abs()) best = i;
     }
     return best;
@@ -481,7 +511,7 @@ class _NavBarState extends State<_NavBar> {
       child: LayoutBuilder(
         builder: (context, c) {
           _slotW = c.maxWidth - 16;
-          _gap = ((_slotW - 4 * _iw - _fabW) / 4).clamp(0.0, 40.0);
+          _gap = ((_slotW - 5 * _iw - _fabW) / 5).clamp(0.0, 40.0);
           final drag = _dragX;
 
           return Stack(
@@ -536,12 +566,17 @@ class _NavBarState extends State<_NavBar> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       _item(context, 0, PhosphorIconsRegular.house, PhosphorIconsFill.house, t.home, fit.goHome),
-                      _item(context, 1, PhosphorIconsRegular.chartLineUp, PhosphorIconsFill.chartLineUp, t.progress,
-                          fit.goProgress),
-                      _fab(context),
-                      _item(context, 2, PhosphorIconsRegular.barbell, PhosphorIconsFill.barbell, t.exercises,
+                      _item(context, 1, PhosphorIconsRegular.barbell, PhosphorIconsFill.barbell, t.exercises,
                           fit.goExercises),
-                      _item(context, 3, PhosphorIconsRegular.userCircle, PhosphorIconsFill.userCircle, t.profile,
+                      _fab(context),
+                      _item(context, 2, PhosphorIconsRegular.users, PhosphorIconsFill.users, t.myTrainer,
+                          fit.goTrainer,
+                          dot: trainer.loaded &&
+                              trainer.showTabDot &&
+                              context.can(kCapCustomExercises)),
+                      _item(context, 3, PhosphorIconsRegular.chartLineUp, PhosphorIconsFill.chartLineUp, t.progress,
+                          fit.goProgress),
+                      _item(context, 4, PhosphorIconsRegular.userCircle, PhosphorIconsFill.userCircle, t.profile,
                           fit.goSettings),
                     ],
                   ),
@@ -554,7 +589,8 @@ class _NavBarState extends State<_NavBar> {
     );
   }
 
-  Widget _item(BuildContext context, int index, IconData icon, IconData iconFill, String label, VoidCallback onTap) {
+  Widget _item(BuildContext context, int index, IconData icon, IconData iconFill, String label, VoidCallback onTap,
+      {bool dot = false}) {
     final gc = context.gc;
     final selected = _selectedIndex == index;
     final lifted = selected && _dragX != null;
@@ -582,15 +618,32 @@ class _NavBarState extends State<_NavBar> {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            TweenAnimationBuilder<double>(
-              tween: Tween(begin: selected ? 1 : 0, end: selected ? 1 : 0),
-              duration: dur,
-              curve: Curves.easeOut,
-              builder: (context, t, _) => Icon(
-                selected ? iconFill : icon,
-                size: 22,
-                color: Color.lerp(gc.textTertiary, gc.text, t),
-              ),
+            Stack(
+              clipBehavior: Clip.none,
+              alignment: Alignment.center,
+              children: [
+                TweenAnimationBuilder<double>(
+                  tween: Tween(begin: selected ? 1 : 0, end: selected ? 1 : 0),
+                  duration: dur,
+                  curve: Curves.easeOut,
+                  builder: (context, t, _) => Icon(
+                    selected ? iconFill : icon,
+                    size: 22,
+                    color: Color.lerp(gc.textTertiary, gc.text, t),
+                  ),
+                ),
+                if (dot)
+                  Positioned(
+                    right: -2,
+                    top: -1,
+                    child: Container(
+                      width: 8,
+                      height: 8,
+                      decoration:
+                          BoxDecoration(color: gc.accent, shape: BoxShape.circle),
+                    ),
+                  ),
+              ],
             ),
             const SizedBox(height: 3),
             Padding(

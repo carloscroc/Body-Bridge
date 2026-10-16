@@ -3306,4 +3306,9 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get startSoonBody =>
       'Guided sessions arrive with trainer video. Meanwhile, ask your trainer about this plan.';
+
+  @override
+  String exercisesMeta(int count, int minutes) {
+    return '$count exercises · ~$minutes min';
+  }
 }

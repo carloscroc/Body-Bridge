@@ -1012,6 +1012,7 @@ class FitState extends FitCore
         backFromAiPlan();
       case 'progress':
       case 'exercises':
+      case 'trainer':
       case 'settings':
         goHome();
       case 'home':

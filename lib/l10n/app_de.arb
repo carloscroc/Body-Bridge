@@ -1124,5 +1124,7 @@
   "bannerNewMessage": "Neue Nachricht von {name}",
   "bannerTapToView": "Zum Ansehen tippen",
   "startSoonTitle": "Individuelle Einheiten kommen bald",
-  "startSoonBody": "Geführte Einheiten kommen mit dem Trainervideo. Frag bis dahin deinen Trainer zu diesem Plan."
+  "startSoonBody": "Geführte Einheiten kommen mit dem Trainervideo. Frag bis dahin deinen Trainer zu diesem Plan.",
+  "exercisesMeta": "{count} Übungen · ~{minutes} Min.",
+  "@exercisesMeta": { "placeholders": { "count": { "type": "int" }, "minutes": { "type": "int" } } }
 }

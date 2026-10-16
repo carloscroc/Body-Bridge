@@ -3312,4 +3312,9 @@ class AppLocalizationsUk extends AppLocalizations {
   @override
   String get startSoonBody =>
       'Керовані сесії з\'являться разом із відео тренера. А тим часом запитайте тренера про цю програму.';
+
+  @override
+  String exercisesMeta(int count, int minutes) {
+    return '$count вправ · ~$minutes хв';
+  }
 }

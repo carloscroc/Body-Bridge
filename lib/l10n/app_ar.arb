@@ -1256,5 +1256,7 @@
   "bannerNewMessage": "رسالة جديدة من {name}",
   "bannerTapToView": "انقر للعرض",
   "startSoonTitle": "الجلسات المخصصة قريبًا",
-  "startSoonBody": "تصل الجلسات الموجهة مع فيديو المدرب. في هذه الأثناء، اسأل مدربك عن هذا البرنامج."
+  "startSoonBody": "تصل الجلسات الموجهة مع فيديو المدرب. في هذه الأثناء، اسأل مدربك عن هذا البرنامج.",
+  "exercisesMeta": "{count} تمارين · ~{minutes} د",
+  "@exercisesMeta": { "placeholders": { "count": { "type": "int" }, "minutes": { "type": "int" } } }
 }

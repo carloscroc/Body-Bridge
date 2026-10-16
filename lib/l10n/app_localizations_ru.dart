@@ -3397,4 +3397,9 @@ class AppLocalizationsRu extends AppLocalizations {
   @override
   String get startSoonBody =>
       'Гид по сессиям появится вместе с видео тренера. А пока спросите тренера об этой программе.';
+
+  @override
+  String exercisesMeta(int count, int minutes) {
+    return '$count упражнений · ~$minutes мин';
+  }
 }

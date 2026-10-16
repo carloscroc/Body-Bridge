@@ -1256,5 +1256,7 @@
   "bannerNewMessage": "Nouveau message de {name}",
   "bannerTapToView": "Touchez pour afficher",
   "startSoonTitle": "Les séances personnalisées arrivent bientôt",
-  "startSoonBody": "Les séances guidées arriveront avec la vidéo du coach. En attendant, parlez-en avec votre coach."
+  "startSoonBody": "Les séances guidées arriveront avec la vidéo du coach. En attendant, parlez-en avec votre coach.",
+  "exercisesMeta": "{count} exercices · ~{minutes} min",
+  "@exercisesMeta": { "placeholders": { "count": { "type": "int" }, "minutes": { "type": "int" } } }
 }

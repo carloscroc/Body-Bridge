@@ -3169,6 +3169,11 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get startSoonBody => '引导式课程将随教练视频一起推出。在此期间，请向教练咨询这个计划。';
+
+  @override
+  String exercisesMeta(int count, int minutes) {
+    return '$count个动作 · 约$minutes分钟';
+  }
 }
 
 /// The translations for Chinese, using the Han script (`zh_Hant`).
@@ -6360,4 +6365,9 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
 
   @override
   String get startSoonBody => '引導式課程將隨教練影片一起推出。在此期間，請向教練諮詢這個計畫。';
+
+  @override
+  String exercisesMeta(int count, int minutes) {
+    return '$count個動作 · 約$minutes分鐘';
+  }
 }

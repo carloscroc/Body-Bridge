@@ -3309,4 +3309,9 @@ class AppLocalizationsTr extends AppLocalizations {
   @override
   String get startSoonBody =>
       'Rehberli seanslar antrenör videosuyla geliyor. Bu arada bu planı antrenörünüze sorun.';
+
+  @override
+  String exercisesMeta(int count, int minutes) {
+    return '$count egzersiz · ~$minutes dk';
+  }
 }

@@ -1256,5 +1256,7 @@
   "bannerNewMessage": "{name}'den yeni mesaj",
   "bannerTapToView": "Görüntülemek için dokun",
   "startSoonTitle": "Özel seanslar yakında",
-  "startSoonBody": "Rehberli seanslar antrenör videosuyla geliyor. Bu arada bu planı antrenörünüze sorun."
+  "startSoonBody": "Rehberli seanslar antrenör videosuyla geliyor. Bu arada bu planı antrenörünüze sorun.",
+  "exercisesMeta": "{count} egzersiz · ~{minutes} dk",
+  "@exercisesMeta": { "placeholders": { "count": { "type": "int" }, "minutes": { "type": "int" } } }
 }

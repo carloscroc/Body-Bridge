@@ -1256,5 +1256,7 @@
   "bannerNewMessage": "Nowa wiadomość od: {name}",
   "bannerTapToView": "Dotknij, aby zobaczyć",
   "startSoonTitle": "Sesje spersonalizowane wkrótce",
-  "startSoonBody": "Sesje z prowadzeniem pojawią się razem z wideo trenera. W międzyczasie zapytaj trenera o ten plan."
+  "startSoonBody": "Sesje z prowadzeniem pojawią się razem z wideo trenera. W międzyczasie zapytaj trenera o ten plan.",
+  "exercisesMeta": "{count} ćwiczeń · ~{minutes} min",
+  "@exercisesMeta": { "placeholders": { "count": { "type": "int" }, "minutes": { "type": "int" } } }
 }

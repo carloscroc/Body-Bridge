@@ -1256,5 +1256,7 @@
   "bannerNewMessage": "{name}傳來了新訊息",
   "bannerTapToView": "點按查看",
   "startSoonTitle": "自訂課程即將上線",
-  "startSoonBody": "引導式課程將隨教練影片一起推出。在此期間，請向教練諮詢這個計畫。"
+  "startSoonBody": "引導式課程將隨教練影片一起推出。在此期間，請向教練諮詢這個計畫。",
+  "exercisesMeta": "{count}個動作 · 約{minutes}分鐘",
+  "@exercisesMeta": { "placeholders": { "count": { "type": "int" }, "minutes": { "type": "int" } } }
 }

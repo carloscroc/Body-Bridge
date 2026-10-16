@@ -3314,4 +3314,9 @@ class AppLocalizationsNl extends AppLocalizations {
   @override
   String get startSoonBody =>
       'Begeleide sessies komen samen met trainervideo\'s. Vraag ondertussen je trainer over dit plan.';
+
+  @override
+  String exercisesMeta(int count, int minutes) {
+    return '$count oefeningen · ~$minutes min';
+  }
 }

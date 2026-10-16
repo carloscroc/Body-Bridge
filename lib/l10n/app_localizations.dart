@@ -5917,6 +5917,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Guided sessions arrive with trainer video. Meanwhile, ask your trainer about this plan.'**
   String get startSoonBody;
+
+  /// No description provided for @exercisesMeta.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} exercises · ~{minutes} min'**
+  String exercisesMeta(int count, int minutes);
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

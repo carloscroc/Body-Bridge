@@ -3224,4 +3224,9 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get startSoonBody => '가이드 세션은 트레이너 영상과 함께 제공됩니다. 그동안 트레이너에게 이 플랜에 대해 문의하세요.';
+
+  @override
+  String exercisesMeta(int count, int minutes) {
+    return '$count개 운동 · ~$minutes분';
+  }
 }

@@ -1016,5 +1016,7 @@
   "bannerNewMessage": "{name}发来了新消息",
   "bannerTapToView": "点按查看",
   "startSoonTitle": "自定义课程即将上线",
-  "startSoonBody": "引导式课程将随教练视频一起推出。在此期间，请向教练咨询这个计划。"
+  "startSoonBody": "引导式课程将随教练视频一起推出。在此期间，请向教练咨询这个计划。",
+  "exercisesMeta": "{count}个动作 · 约{minutes}分钟",
+  "@exercisesMeta": { "placeholders": { "count": { "type": "int" }, "minutes": { "type": "int" } } }
 }

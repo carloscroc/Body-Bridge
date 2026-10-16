@@ -1168,5 +1168,7 @@
   "startSoonTitle": "Custom sessions land soon",
   "@startSoonTitle": { "description": "Trainer feature (card t_d788f36e)" },
   "startSoonBody": "Guided sessions arrive with trainer video. Meanwhile, ask your trainer about this plan.",
-  "@startSoonBody": { "description": "Trainer feature (card t_d788f36e)" }
+  "@startSoonBody": { "description": "Trainer feature (card t_d788f36e)" },
+  "exercisesMeta": "{count} exercises · ~{minutes} min",
+  "@exercisesMeta": { "placeholders": { "count": { "type": "int" }, "minutes": { "type": "int" } } }
 }

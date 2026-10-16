@@ -1016,5 +1016,7 @@
   "bannerNewMessage": "Nova mensagem de {name}",
   "bannerTapToView": "Toque para ver",
   "startSoonTitle": "Sessões personalizadas em breve",
-  "startSoonBody": "Sessões guiadas chegam com o vídeo do treinador. Enquanto isso, pergunte ao seu treinador sobre este plano."
+  "startSoonBody": "Sessões guiadas chegam com o vídeo do treinador. Enquanto isso, pergunte ao seu treinador sobre este plano.",
+  "exercisesMeta": "{count} exercícios · ~{minutes} min",
+  "@exercisesMeta": { "placeholders": { "count": { "type": "int" }, "minutes": { "type": "int" } } }
 }
