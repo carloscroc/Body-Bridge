@@ -112,3 +112,42 @@ all 20 captures (phosphoricons_flutter is a package font — families resolve as
 message still composite blurred/dim under the upsell sheet's scrim in both themes, and the
 blur/scrim covers the header + tab strip which the mockup keeps crisp. Repairs tracked on card
 t_f3664735 (FIX2).
+
+## FIX2 — repair cycle 1 (verifier R1–R3) — commit `54e72322`
+
+- **R1 / F1 — tab fit at 360:** `source_tabs.dart` segment hPad 4→2, label↔badge gap 2→1, badge
+  hPad 3→2 (no font-size changes; SegToggle look intact). F1 test green at BOTH sizes:
+  360 → avail 41.01 vs need 36.60 (~4.4px margin), 411 → avail 58.01. Capture
+  `exercises-free-dark-360.png` shows the full "Trainer" label + padlock + ADVANCED badge with no
+  ellipsis (vision-verified at full resolution).
+- **R2 / F6 — phosphor glyphs:** root cause was the harness registering family `'Phosphor'` for
+  `Phosphor.ttf`, while the package pubspec declares **`PhosphorRegular`** (so the name matched
+  nothing). The capture harness now FontLoader-loads each of the six weight files under BOTH the
+  bare pubspec family name and the package-resolved `packages/phosphoricons_flutter/<Family>`
+  name. Regenerated captures vision-verified: real play triangle, minus/plus steppers, bookmark,
+  tab/overlay padlocks and sheet checkCircles — no tofu anywhere.
+- **R3 / F3 — lock composite:** root cause was TWO stacked scrims: the overlay's own full-screen
+  BackdropFilter(blur 7)+dim (covering header + tabs) AND the sheet route's `_BlurBarrier`
+  (BackdropFilter blur 14 + black@0.32 wrapped around the modal barrier — blurring/dimming the
+  whole screen below, lock content included). Restructured: new `TrainerLockScrim` (blur 7 +
+  bg@0.78, AnimatedOpacity-gated) is scoped to the list region only (Stack inside the list's
+  Expanded); `TrainerLockOverlay` now renders only the circle + message above the scrim;
+  `showAppSheet` gained additive `blurBarrier` / `modalBarrierColor` params (defaults preserve
+  every existing caller) and `showTrainerUpsellSheet` opens with a transparent, non-blur barrier,
+  so the visible dim comes solely from the list scrim. Captures
+  `exercises-locked-dark-411.png` / `exercises-locked-light-411.png` vision-verified: header +
+  tab strip crisp, list dimmed/blurred, circle + padlock + message crisp and legible, sheet crisp
+  — in BOTH themes, matching mockup 5.
+- **F3 test strengthened:** the locked-tab test now asserts composite legibility structurally —
+  every `ModalBarrier` carries no dim color (alpha 0), no `RenderOpacity`/`RenderAnimatedOpacity`
+  below 1.0 sits above the message, the scrim starts at/below the tab strip's bottom edge, and
+  every `BackdropFilter` in the tree lives inside `TrainerLockScrim` (no route-level blur).
+- **Gates at `54e72322`:** `flutter analyze` — No issues found (0 findings). Tier tests 49/49
+  (trainer_source + paywall_gating + i18n, incl. F1 at both sizes). `BB_CAPTURES=1` — 20/20 PNGs
+  regenerated. Full suite 588 passed / ~5 skipped / 3 failed — all three pre-existing: the smoke
+  share-sheet overflow documented above, plus auth_form + delete_account ink_sparkle
+  shader-decode host flakes ("Unsupported runtime stages format version. Expected 1, got 2" — the
+  exact signature the verifier reclassified clean after flutter clean; zero file overlap with
+  FIX2).
+- Minor divergences unchanged and non-blocking: F5 full weekday name, "ADVANCED" without the "+"
+  prefix, library chips mixed-case, dark ember=white token (documented #1 above).
