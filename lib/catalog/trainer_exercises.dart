@@ -59,3 +59,22 @@ bool isTrainerSourcedId(String id) => id.startsWith('tr-') || id.startsWith('as-
 String exerciseSectionLabel(Exercise e) => kTrainerCategoryIds.contains(e.primary)
     ? t.trainerCategory(e.primary)
     : muscleLabel(e.primary);
+
+TrainerSession trainerSessionForExerciseId(String id) {
+  if (id.startsWith('tr-')) return trainerSessionById(id.substring(3));
+  for (var i = 0; i < kTrainerAssignments.length; i++) {
+    if (id == 'as-${kTrainerAssignments[i].sessionId}-${_assignmentSeat(i)}') {
+      return trainerSessionById(kTrainerAssignments[i].sessionId);
+    }
+  }
+  return kTrainerSessions.first;
+}
+
+TrainerAssignment? trainerAssignmentForExerciseId(String id) {
+  for (var i = 0; i < kTrainerAssignments.length; i++) {
+    if (id == 'as-${kTrainerAssignments[i].sessionId}-${_assignmentSeat(i)}') {
+      return kTrainerAssignments[i];
+    }
+  }
+  return null;
+}

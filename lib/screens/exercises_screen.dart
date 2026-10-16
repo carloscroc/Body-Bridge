@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:phosphoricons_flutter/phosphoricons_flutter.dart';
 
 import '../catalog/exercise_catalog.dart';
+import '../catalog/trainer_exercises.dart';
 import '../l10n/l10n.dart';
 import '../models/exercise.dart';
 import '../services/media_store.dart';
@@ -16,6 +17,7 @@ import '../widgets/exercise_media.dart';
 import '../widgets/glass.dart';
 import '../widgets/premium_gate.dart';
 import '../widgets/svg_icon.dart';
+import '../widgets/trainer_exercise_media.dart';
 import '../widgets/ui_kit.dart';
 import 'trainer/lock_overlay.dart';
 import 'trainer/source_tabs.dart';
@@ -71,7 +73,7 @@ class _ExercisesScreenState extends State<ExercisesScreen> {
                               Padding(
                                 padding: const EdgeInsets.fromLTRB(4, 0, 0, 8),
                                 child: Text(
-                                  muscleLabel(ex.primary).toUpperCase(),
+                                  _sectionLabel(ex).toUpperCase(),
                                   style: AppTheme.f(
                                     10.5,
                                     weight: FontWeight.w700,
@@ -110,7 +112,10 @@ class _ExercisesScreenState extends State<ExercisesScreen> {
   }
 
   void _onSourceTap(SourceTab tab) {
-    if (tab == SourceTab.free) return;
+    if (tab == SourceTab.free) {
+      fit.setExSource('free');
+      return;
+    }
     if (!context.can(kCapCustomExercises)) {
       setState(() => _lockShown = true);
       showTrainerUpsellSheet(context).whenComplete(() {
@@ -118,12 +123,11 @@ class _ExercisesScreenState extends State<ExercisesScreen> {
       });
       return;
     }
-    if (tab == SourceTab.trainer) {
-      fit.goTrainerLibrary();
-    } else {
-      fit.goTrainerAssigned();
-    }
+    fit.setExSource(tab.name);
   }
+
+  String _sectionLabel(Exercise ex) =>
+      fit.exSource == 'free' ? muscleLabel(ex.primary) : exerciseSectionLabel(ex);
 
   Widget _header(BuildContext context, GymColors gc, int count) {
     return Column(
@@ -289,17 +293,47 @@ class _ExercisesScreenState extends State<ExercisesScreen> {
               padding: const EdgeInsets.fromLTRB(12, 9, 6, 9),
               child: Row(
                 children: [
-                  SizedBox(width: 52, child: ExerciseMedia(ex: ex, height: 52, radius: 15, bordered: false)),
+                        SizedBox(
+                          width: 52,
+                          child: fit.isTrainerSourced(ex.id)
+                              ? TrainerExerciseMedia(ex: ex, height: 52, radius: 15)
+                              : ExerciseMedia(ex: ex, height: 52, radius: 15, bordered: false),
+                        ),
                   const SizedBox(width: 13),
                   Expanded(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
-                          exerciseName(ex),
-                          maxLines: 1,
-                          overflow: TextOverflow.ellipsis,
-                          style: AppTheme.f(14.5, weight: FontWeight.w600, color: gc.text),
+                        Row(
+                          children: [
+                            Expanded(
+                              child: Text(
+                                exerciseName(ex),
+                                maxLines: 1,
+                                overflow: TextOverflow.ellipsis,
+                                style: AppTheme.f(14.5, weight: FontWeight.w600, color: gc.text),
+                              ),
+                            ),
+                            if (fit.isTrainerSourced(ex.id)) ...[
+                              const SizedBox(width: 5),
+                              Container(
+                                padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 2),
+                                decoration: BoxDecoration(
+                                  color: gc.textTertiary.withValues(alpha: 0.16),
+                                  borderRadius: BorderRadius.circular(100),
+                                ),
+                                child: Text(
+                                  t.advancedBadge,
+                                  style: AppTheme.f(
+                                    7.5,
+                                    weight: FontWeight.w800,
+                                    color: gc.textSecondary,
+                                    letterSpacing: 0.2,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ],
                         ),
                         const SizedBox(height: 4),
                         Text(

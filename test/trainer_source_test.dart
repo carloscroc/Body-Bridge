@@ -254,16 +254,18 @@ void main() {
   });
 
   group('advanced tier: the three trainer screens', () {
-    testWidgets('tapping Trainer pushes the trainer library route', (tester) async {
+    testWidgets('tapping Trainer switches the source in place', (tester) async {
       final gate = FakeGate(AccountTier.advanced);
       AccountGate.install(gate);
+      addTearDown(() => fit.setExSource('free'));
       await pumpExercises(tester, gate);
 
       expect(tabPadlocks(), findsNothing, reason: 'advanced is unlocked');
       await tester.tap(find.text(t.sourceTrainer));
       await tester.pumpAndSettle();
 
-      expect(fit.route, 'trainer-library', reason: 'allowed taps navigate via the fit hooks');
+      expect(fit.exSource, 'trainer', reason: 'sources switch in place');
+      expect(find.byType(TrainerLibraryScreen), findsNothing, reason: 'no parallel screen');
     });
 
     testWidgets('TrainerLibraryScreen: coach, 6 sessions, NEW badge, category filter', (tester) async {
@@ -345,17 +347,18 @@ void main() {
       expect(tester.getRect(cta).bottom, lessThanOrEqualTo(914), reason: 'the CTA must sit above the fold');
     });
 
-    testWidgets('Custom tab pushes the assigned screen: coach note, 4 rows, DUE TODAY on the first only', (
+    testWidgets('Custom tab switches the assigned source in place; its screen: coach note, 4 rows, DUE TODAY on the first only', (
       tester,
     ) async {
       final gate = FakeGate(AccountTier.advanced);
       AccountGate.install(gate);
+      addTearDown(() => fit.setExSource('free'));
       await pumpExercises(tester, gate);
 
       await tester.tap(find.text(t.sourceCustom));
       await tester.pumpAndSettle();
 
-      expect(fit.route, 'trainer-assigned');
+      expect(fit.exSource, 'custom', reason: 'sources switch in place');
       await pumpTall(tester, const CustomAssignedScreen(), gate);
 
       expect(find.text(kTrainerCoachNote), findsOneWidget);
@@ -376,7 +379,7 @@ void main() {
   });
 
   group('existing flows unaffected', () {
-    test('exercisesFiltered length is unchanged while the source state moves', () {
+    test('exercisesFiltered length is restored when the source returns to free', () {
       AccountGate.install(FakeGate(AccountTier.free));
       fit.setExSearch('bench');
       final n = fit.exercisesFiltered.length;
@@ -386,7 +389,7 @@ void main() {
       fit.setExSource('custom');
       fit.setExSource('free');
 
-      expect(fit.exercisesFiltered.length, n, reason: 'source state never touches filtering');
+      expect(fit.exercisesFiltered.length, n, reason: 'returning to free restores the catalog pool');
       expect(fit.exSource, 'free');
     });
   });

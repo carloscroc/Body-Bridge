@@ -2,6 +2,7 @@ import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:phosphoricons_flutter/phosphoricons_flutter.dart';
 
+import '../catalog/trainer_exercises.dart';
 import '../l10n/l10n.dart';
 import '../constants/billing.dart';
 import '../models/exercise.dart';
@@ -17,6 +18,7 @@ import '../widgets/ruler_picker.dart';
 import '../widgets/glass.dart';
 import '../widgets/stopwatch_card.dart';
 import '../widgets/svg_icon.dart';
+import '../widgets/trainer_exercise_media.dart';
 import '../widgets/timer_panel.dart';
 import '../widgets/ui_kit.dart';
 import 'exercises_screen.dart' show showCreateExerciseSheet;
@@ -112,37 +114,44 @@ class _ExerciseDetailScreenState extends State<ExerciseDetailScreen> {
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20),
-                child: Stack(
-                  children: [
-                    SizedBox(
-                      width: double.infinity,
-                      child: ExerciseMedia(ex: ex, height: 220, radius: 22, live: true, bordered: false),
-                    ),
-                    Positioned(
-                      bottom: 10,
-                      right: 10,
-                      child: Row(
+                child: fit.isTrainerSourced(ex.id)
+                    ? TrainerExerciseMedia(
+                        ex: ex,
+                        height: 220,
+                        radius: 22,
+                        interactive: true,
+                      )
+                    : Stack(
                         children: [
-                          if (hasMedia) ...[
-                            _mediaBtn(
-                              gc,
-                              PhosphorIconsRegular.arrowCounterClockwise,
-                              t.useDefaultArt,
-                              () => fit.clearExerciseMedia(ex.id),
+                          SizedBox(
+                            width: double.infinity,
+                            child: ExerciseMedia(ex: ex, height: 220, radius: 22, live: true, bordered: false),
+                          ),
+                          Positioned(
+                            bottom: 10,
+                            right: 10,
+                            child: Row(
+                              children: [
+                                if (hasMedia) ...[
+                                  _mediaBtn(
+                                    gc,
+                                    PhosphorIconsRegular.arrowCounterClockwise,
+                                    t.useDefaultArt,
+                                    () => fit.clearExerciseMedia(ex.id),
+                                  ),
+                                  const SizedBox(width: 8),
+                                ],
+                                _mediaBtn(
+                                  gc,
+                                  hasMedia ? PhosphorIconsRegular.pencilSimple : PhosphorIconsRegular.uploadSimple,
+                                  hasMedia ? t.changeMedia : t.addMedia,
+                                  _pickMedia,
+                                ),
+                              ],
                             ),
-                            const SizedBox(width: 8),
-                          ],
-                          _mediaBtn(
-                            gc,
-                            hasMedia ? PhosphorIconsRegular.pencilSimple : PhosphorIconsRegular.uploadSimple,
-                            hasMedia ? t.changeMedia : t.addMedia,
-                            _pickMedia,
                           ),
                         ],
                       ),
-                    ),
-                  ],
-                ),
               ),
               Padding(
                 padding: const EdgeInsets.all(20),
@@ -157,7 +166,13 @@ class _ExerciseDetailScreenState extends State<ExerciseDetailScreen> {
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        _meta(gc, t.primaryLabel, muscleLabel(ex.primary)),
+                        _meta(
+                          gc,
+                          t.primaryLabel,
+                          fit.isTrainerSourced(ex.id)
+                              ? exerciseSectionLabel(ex)
+                              : muscleLabel(ex.primary),
+                        ),
                         const SizedBox(width: 20),
                         _meta(gc, t.secondaryLabel, secondary),
                         const SizedBox(width: 20),
