@@ -155,7 +155,6 @@ class _AssignmentRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final gc = context.gc;
-    final session = trainerSessionById(assignment.sessionId);
     return GestureDetector(
       behavior: HitTestBehavior.opaque,
       onTap: () => fit.goTrainerVideo(assignment.sessionId),
@@ -185,7 +184,7 @@ class _AssignmentRow extends StatelessWidget {
                         borderRadius: BorderRadius.circular(100),
                       ),
                       child: Text(
-                        session.durationLabel,
+                        assignment.durationLabel,
                         style: AppTheme.f(9, weight: FontWeight.w600, color: Colors.white),
                       ),
                     ),
@@ -237,7 +236,7 @@ class _AssignmentRow extends StatelessWidget {
                   ),
                   const SizedBox(height: 6),
                   Text(
-                    t.assignedOn(t.shortDate(assignment.assignedDate)),
+                    t.assignedOn(t.longDate(assignment.assignedDate)),
                     style: AppTheme.f(12, weight: FontWeight.w500, color: gc.textTertiary),
                   ),
                 ],

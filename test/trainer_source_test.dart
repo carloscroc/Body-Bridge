@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:gymmane/l10n/l10n.dart';
 import 'package:gymmane/screens/exercises_screen.dart';
 import 'package:gymmane/screens/trainer/custom_assigned_screen.dart';
+import 'package:gymmane/screens/trainer/lock_overlay.dart';
 import 'package:gymmane/screens/trainer/source_tabs.dart';
 import 'package:gymmane/screens/trainer/trainer_library_screen.dart';
 import 'package:gymmane/screens/trainer/trainer_video_screen.dart';
@@ -22,6 +25,24 @@ import 'paywall_gating_test.dart';
 /// trainer screens. Tiers are scripted fakes — no Firebase, no network.
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
+
+  setUpAll(() async {
+    const files = [
+      'Nunito-Regular',
+      'Nunito-Italic',
+      'Nunito-Medium',
+      'Nunito-SemiBold',
+      'Nunito-SemiBoldItalic',
+      'Nunito-Bold',
+      'Nunito-ExtraBold',
+      'Nunito-Black',
+    ];
+    final loader = FontLoader('Nunito');
+    for (final file in files) {
+      loader.addFont(rootBundle.load('assets/fonts/$file.ttf'));
+    }
+    await loader.load();
+  });
 
   setUp(() async {
     SharedPreferences.setMockInitialValues({});
@@ -103,6 +124,36 @@ void main() {
       );
     });
 
+    testWidgets('tab labels fit without ellipsis at 360x800 and 411x914', (tester) async {
+      final gate = FakeGate(AccountTier.free);
+      AccountGate.install(gate);
+      for (final size in [const Size(360, 800), const Size(411, 914)]) {
+        tester.view.physicalSize = size;
+        tester.view.devicePixelRatio = 1.0;
+        addTearDown(tester.view.reset);
+        await tester.pumpWidget(
+          MaterialApp(
+            theme: AppTheme.dark,
+            localizationsDelegates: AppLocalizations.localizationsDelegates,
+            supportedLocales: AppLocalizations.supportedLocales,
+            home: PremiumGate(
+              gate: gate,
+              child: const Scaffold(body: ExercisesScreen()),
+            ),
+          ),
+        );
+        await tester.pump(const Duration(milliseconds: 300));
+
+        final label = find.text(t.sourceTrainer);
+        expect(label, findsOneWidget, reason: 'full Trainer label renders at ${size.width}dp');
+        final paragraph = tester.renderObject<RenderParagraph>(label);
+        debugPrint(
+          'FIT360 avail=${paragraph.constraints.maxWidth} need=${paragraph.getMaxIntrinsicWidth(double.infinity)}',
+        );
+        expect(paragraph.didExceedMaxLines, isFalse, reason: 'Trainer label truncates at ${size.width}dp');
+      }
+    });
+
     testWidgets('tapping Trainer does NOT navigate: lock overlay + upsell sheet rise instead', (
       tester,
     ) async {
@@ -116,6 +167,15 @@ void main() {
       expect(fit.route, 'home', reason: 'gated tabs never push a route');
       expect(find.byType(TrainerLibraryScreen), findsNothing);
       expect(find.text(t.lockAdvancedMessage), findsOneWidget, reason: 'the dim overlay explains the lock');
+      final overlayOpacity = tester.widget<AnimatedOpacity>(
+        find.descendant(of: find.byType(TrainerLockOverlay), matching: find.byType(AnimatedOpacity)),
+      );
+      expect(overlayOpacity.opacity, 1.0, reason: 'the lock message shows above the scrim at full opacity');
+      expect(
+        tester.getCenter(find.text(t.lockAdvancedMessage)).dy,
+        lessThan(tester.view.physicalSize.height / tester.view.devicePixelRatio * 0.5),
+        reason: 'the lock message sits in the space above the sheet',
+      );
       expect(find.text(titleCase(t.unlockAdvancedTitle)), findsOneWidget);
       expect(find.text(t.benefitTrainerLibrary), findsOneWidget);
       expect(find.text(t.benefitCoachAssignments), findsOneWidget);
@@ -217,6 +277,42 @@ void main() {
       expect(find.text(kTrainerProfile.name), findsOneWidget);
     });
 
+    testWidgets('video screen fits title, cues, steppers and CTA above the fold at 411x914', (tester) async {
+      final gate = FakeGate(AccountTier.advanced);
+      AccountGate.install(gate);
+      tester.view.physicalSize = const Size(411, 914);
+      tester.view.devicePixelRatio = 1.0;
+      addTearDown(tester.view.reset);
+      await tester.pumpWidget(
+        MaterialApp(
+          theme: AppTheme.dark,
+          localizationsDelegates: AppLocalizations.localizationsDelegates,
+          supportedLocales: AppLocalizations.supportedLocales,
+          home: PremiumGate(
+            gate: gate,
+            child: Scaffold(body: TrainerVideoScreen(sessionId: kTrainerSessions.first.id)),
+          ),
+        ),
+      );
+      await tester.pumpAndSettle();
+
+      final session = kTrainerSessions.first;
+      expect(find.text(session.title), findsOneWidget);
+      expect(tester.getRect(find.text(session.title)).top, greaterThanOrEqualTo(0));
+      expect(
+        tester.getRect(find.text(session.cues.first)).bottom,
+        lessThanOrEqualTo(914),
+        reason: 'the first cue is visible',
+      );
+      expect(find.text(t.setsLabel.toUpperCase()), findsOneWidget);
+      expect(find.text(t.repsLabel.toUpperCase()), findsOneWidget);
+      expect(tester.getRect(find.text('3')).bottom, lessThanOrEqualTo(914), reason: 'sets stepper visible');
+      expect(tester.getRect(find.text('10')).bottom, lessThanOrEqualTo(914), reason: 'reps stepper visible');
+      final cta = find.text(t.addSessionToWorkout);
+      expect(cta, findsOneWidget);
+      expect(tester.getRect(cta).bottom, lessThanOrEqualTo(914), reason: 'the CTA must sit above the fold');
+    });
+
     testWidgets('Custom tab pushes the assigned screen: coach note, 4 rows, DUE TODAY on the first only', (
       tester,
     ) async {
@@ -236,6 +332,14 @@ void main() {
       }
       expect(find.text(t.dueToday.toUpperCase()), findsOneWidget, reason: 'only the first row is due today');
       expect(find.textContaining(t.assignedOn('')), findsWidgets);
+      for (final a in kTrainerAssignments) {
+        expect(find.text(a.durationLabel), findsOneWidget, reason: '${a.title} shows its own duration');
+      }
+      expect(
+        find.text(t.assignedOn(t.longDate(DateTime(2026, 10, 12)))),
+        findsNWidgets(2),
+        reason: 'rows show the weekday: both Oct 12 rows carry Mon',
+      );
     });
   });
 

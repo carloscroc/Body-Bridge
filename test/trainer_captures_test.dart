@@ -59,6 +59,35 @@ void main() {
     final icons = FontLoader('MaterialIcons')
       ..addFont(Future.value(ByteData.sublistView(iconsFile.readAsBytesSync())));
     await icons.load();
+
+    // Phosphor glyphs live in the pub cache, one family per weight file.
+    final phosphorWin = Directory(
+      'C:/Users/thebe/AppData/Local/Pub/Cache/hosted/pub.dev/phosphoricons_flutter-1.0.0/lib/fonts',
+    );
+    final phosphorPosix = Directory(
+      '${Platform.environment['HOME'] ?? ''}/.pub-cache/hosted/pub.dev/phosphoricons_flutter-1.0.0/lib/fonts',
+    );
+    final phosphorDir = phosphorWin.existsSync() ? phosphorWin : phosphorPosix;
+    if (!phosphorDir.existsSync()) {
+      throw StateError('Phosphor fonts not found at ${phosphorWin.path} or ${phosphorPosix.path}.');
+    }
+    const phosphorFamilies = {
+      'Phosphor.ttf': 'Phosphor',
+      'Phosphor-Bold.ttf': 'PhosphorBold',
+      'Phosphor-Fill.ttf': 'PhosphorFill',
+      'Phosphor-Light.ttf': 'PhosphorLight',
+      'Phosphor-Thin.ttf': 'PhosphorThin',
+      'Phosphor-Duotone.ttf': 'PhosphorDuotone',
+    };
+    final present = phosphorDir.listSync().whereType<File>().map((f) => f.uri.pathSegments.last).toSet();
+    for (final entry in phosphorFamilies.entries) {
+      if (!present.contains(entry.key)) {
+        throw StateError('${entry.key} missing in ${phosphorDir.path}.');
+      }
+      final bytes = File('${phosphorDir.path}/${entry.key}').readAsBytesSync();
+      final loader = FontLoader(entry.value)..addFont(Future.value(ByteData.sublistView(bytes)));
+      await loader.load();
+    }
   });
 
   setUp(() async {

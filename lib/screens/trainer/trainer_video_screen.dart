@@ -85,130 +85,135 @@ class _TrainerVideoScreenState extends State<TrainerVideoScreen> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
-                    AspectRatio(
-                      aspectRatio: 9 / 16,
-                      child: Container(
-                        decoration: BoxDecoration(
-                          color: _kVideoSurface,
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                        clipBehavior: Clip.antiAlias,
-                        child: Stack(
-                          children: [
-                            Positioned.fill(child: CustomPaint(painter: _VideoArcs())),
-                            Positioned(
-                              left: 12,
-                              top: 12,
-                              child: Container(
-                                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
-                                decoration: BoxDecoration(
-                                  color: Colors.white.withValues(alpha: 0.14),
-                                  borderRadius: BorderRadius.circular(100),
-                                ),
-                                child: Text(
-                                  t.trainerSessionBadge,
-                                  style: AppTheme.f(
-                                    9,
-                                    weight: FontWeight.w800,
-                                    color: Colors.white,
-                                    letterSpacing: 1.2,
-                                  ),
-                                ),
-                              ),
+                    Center(
+                      child: FractionallySizedBox(
+                        widthFactor: 0.62,
+                        child: AspectRatio(
+                          aspectRatio: 9 / 16,
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: _kVideoSurface,
+                              borderRadius: BorderRadius.circular(20),
                             ),
-                            Center(
-                              child: GestureDetector(
-                                behavior: HitTestBehavior.opaque,
-                                onTap: () => setState(_host.togglePlay),
-                                child: Container(
-                                  width: 64,
-                                  height: 64,
-                                  decoration: BoxDecoration(
-                                    color: Colors.white.withValues(alpha: 0.18),
-                                    shape: BoxShape.circle,
-                                  ),
-                                  child: Icon(
-                                    _host.playing ? PhosphorIconsFill.pause : PhosphorIconsFill.play,
-                                    size: 26,
-                                    color: Colors.white,
+                            clipBehavior: Clip.antiAlias,
+                            child: Stack(
+                              children: [
+                                Positioned.fill(child: CustomPaint(painter: _VideoArcs())),
+                                Positioned(
+                                  left: 12,
+                                  top: 12,
+                                  child: Container(
+                                    padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
+                                    decoration: BoxDecoration(
+                                      color: Colors.white.withValues(alpha: 0.14),
+                                      borderRadius: BorderRadius.circular(100),
+                                    ),
+                                    child: Text(
+                                      t.trainerSessionBadge,
+                                      style: AppTheme.f(
+                                        9,
+                                        weight: FontWeight.w800,
+                                        color: Colors.white,
+                                        letterSpacing: 1.2,
+                                      ),
+                                    ),
                                   ),
                                 ),
-                              ),
-                            ),
-                            Positioned(
-                              left: 12,
-                              right: 12,
-                              bottom: 12,
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.stretch,
-                                children: [
-                                  LayoutBuilder(
-                                    builder: (context, box) {
-                                      final w = box.maxWidth;
-                                      return Stack(
+                                Center(
+                                  child: GestureDetector(
+                                    behavior: HitTestBehavior.opaque,
+                                    onTap: () => setState(_host.togglePlay),
+                                    child: Container(
+                                      width: 64,
+                                      height: 64,
+                                      decoration: BoxDecoration(
+                                        color: Colors.white.withValues(alpha: 0.18),
+                                        shape: BoxShape.circle,
+                                      ),
+                                      child: Icon(
+                                        _host.playing ? PhosphorIconsFill.pause : PhosphorIconsFill.play,
+                                        size: 26,
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                Positioned(
+                                  left: 12,
+                                  right: 12,
+                                  bottom: 12,
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                                    children: [
+                                      LayoutBuilder(
+                                        builder: (context, box) {
+                                          final w = box.maxWidth;
+                                          return Stack(
+                                            children: [
+                                              Container(
+                                                height: 4,
+                                                margin: const EdgeInsets.symmetric(vertical: 4),
+                                                decoration: BoxDecoration(
+                                                  color: Colors.white.withValues(alpha: 0.25),
+                                                  borderRadius: BorderRadius.circular(2),
+                                                ),
+                                              ),
+                                              Positioned(
+                                                left: 0,
+                                                top: 4,
+                                                child: Container(
+                                                  width: w * frac,
+                                                  height: 4,
+                                                  decoration: BoxDecoration(
+                                                    color: Colors.white.withValues(alpha: 0.9),
+                                                    borderRadius: BorderRadius.circular(2),
+                                                  ),
+                                                ),
+                                              ),
+                                              Positioned(
+                                                left: (w * frac - 5).clamp(0.0, w - 10).toDouble(),
+                                                top: 1,
+                                                child: Container(
+                                                  width: 10,
+                                                  height: 10,
+                                                  decoration: const BoxDecoration(
+                                                    color: Colors.white,
+                                                    shape: BoxShape.circle,
+                                                  ),
+                                                ),
+                                              ),
+                                            ],
+                                          );
+                                        },
+                                      ),
+                                      const SizedBox(height: 6),
+                                      Row(
                                         children: [
-                                          Container(
-                                            height: 4,
-                                            margin: const EdgeInsets.symmetric(vertical: 4),
-                                            decoration: BoxDecoration(
-                                              color: Colors.white.withValues(alpha: 0.25),
-                                              borderRadius: BorderRadius.circular(2),
+                                          Text(
+                                            _fmt(_host.positionSec),
+                                            style: AppTheme.f(
+                                              10.5,
+                                              weight: FontWeight.w600,
+                                              color: Colors.white.withValues(alpha: 0.75),
                                             ),
                                           ),
-                                          Positioned(
-                                            left: 0,
-                                            top: 4,
-                                            child: Container(
-                                              width: w * frac,
-                                              height: 4,
-                                              decoration: BoxDecoration(
-                                                color: Colors.white.withValues(alpha: 0.9),
-                                                borderRadius: BorderRadius.circular(2),
-                                              ),
-                                            ),
-                                          ),
-                                          Positioned(
-                                            left: (w * frac - 5).clamp(0.0, w - 10).toDouble(),
-                                            top: 1,
-                                            child: Container(
-                                              width: 10,
-                                              height: 10,
-                                              decoration: const BoxDecoration(
-                                                color: Colors.white,
-                                                shape: BoxShape.circle,
-                                              ),
+                                          const Spacer(),
+                                          Text(
+                                            _session.playerLabel,
+                                            style: AppTheme.f(
+                                              10.5,
+                                              weight: FontWeight.w600,
+                                              color: Colors.white.withValues(alpha: 0.75),
                                             ),
                                           ),
                                         ],
-                                      );
-                                    },
-                                  ),
-                                  const SizedBox(height: 6),
-                                  Row(
-                                    children: [
-                                      Text(
-                                        _fmt(_host.positionSec),
-                                        style: AppTheme.f(
-                                          10.5,
-                                          weight: FontWeight.w600,
-                                          color: Colors.white.withValues(alpha: 0.75),
-                                        ),
-                                      ),
-                                      const Spacer(),
-                                      Text(
-                                        _session.playerLabel,
-                                        style: AppTheme.f(
-                                          10.5,
-                                          weight: FontWeight.w600,
-                                          color: Colors.white.withValues(alpha: 0.75),
-                                        ),
                                       ),
                                     ],
                                   ),
-                                ],
-                              ),
+                                ),
+                              ],
                             ),
-                          ],
+                          ),
                         ),
                       ),
                     ),

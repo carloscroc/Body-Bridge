@@ -34,7 +34,7 @@ class TrainerLockOverlay extends StatelessWidget {
               filter: ImageFilter.blur(sigmaX: 7, sigmaY: 7),
               child: Container(
                 color: gc.bg.withValues(alpha: 0.78),
-                alignment: Alignment.center,
+                alignment: const Alignment(0, -0.55),
                 padding: const EdgeInsets.symmetric(horizontal: 32),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
@@ -49,7 +49,7 @@ class TrainerLockOverlay extends StatelessWidget {
                     Text(
                       t.lockAdvancedMessage,
                       textAlign: TextAlign.center,
-                      style: AppTheme.f(13.5, weight: FontWeight.w600, color: gc.textSecondary),
+                      style: AppTheme.f(13.5, weight: FontWeight.w700, color: gc.text),
                     ),
                   ],
                 ),

@@ -58,6 +58,7 @@ class TrainerAssignment {
   final String sessionId;
   final String title;
   final String prescription;
+  final int durationSec;
   final int year;
   final int month;
   final int day;
@@ -67,6 +68,7 @@ class TrainerAssignment {
     required this.sessionId,
     required this.title,
     required this.prescription,
+    required this.durationSec,
     required this.year,
     required this.month,
     required this.day,
@@ -74,6 +76,12 @@ class TrainerAssignment {
   });
 
   DateTime get assignedDate => DateTime(year, month, day);
+
+  String get durationLabel {
+    final m = durationSec ~/ 60;
+    final s = durationSec % 60;
+    return '$m:${s.toString().padLeft(2, '0')}';
+  }
 }
 
 const TrainerProfile kTrainerProfile = TrainerProfile(
@@ -143,6 +151,7 @@ const List<TrainerAssignment> kTrainerAssignments = [
     sessionId: 'pallof-setup',
     title: 'Pallof Press — tall kneeling',
     prescription: '3×10, pause 2s at top',
+    durationSec: 50,
     year: 2026,
     month: 10,
     day: 12,
@@ -152,6 +161,7 @@ const List<TrainerAssignment> kTrainerAssignments = [
     sessionId: 'tibialis-raise',
     title: 'Wall Slide — tempo',
     prescription: '2×12, 3s up, 3s down',
+    durationSec: 75,
     year: 2026,
     month: 10,
     day: 12,
@@ -160,6 +170,7 @@ const List<TrainerAssignment> kTrainerAssignments = [
     sessionId: 'pallof-setup',
     title: 'Dead Bug — breath pacing',
     prescription: '3×8 per side, exhale fully',
+    durationSec: 105,
     year: 2026,
     month: 10,
     day: 9,
@@ -168,6 +179,7 @@ const List<TrainerAssignment> kTrainerAssignments = [
     sessionId: 'copenhagen-plank',
     title: 'Copenhagen — short lever',
     prescription: '3×20s per side',
+    durationSec: 80,
     year: 2026,
     month: 10,
     day: 9,

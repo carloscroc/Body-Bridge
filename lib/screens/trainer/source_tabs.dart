@@ -54,7 +54,7 @@ class PremiumSourceTabs extends StatelessWidget {
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 200),
         curve: Curves.easeOut,
-        padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 8),
+        padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 8),
         decoration: BoxDecoration(
           color: selected ? gc.ember : Colors.transparent,
           borderRadius: BorderRadius.circular(100),
@@ -64,28 +64,28 @@ class PremiumSourceTabs extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             if (locked) ...[
-              Icon(PhosphorIconsRegular.lockSimple, size: 11, color: fg),
-              const SizedBox(width: 3),
+              Icon(PhosphorIconsRegular.lockSimple, size: 9, color: fg),
+              const SizedBox(width: 1),
             ],
             Flexible(
               child: Text(
                 label,
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
-                style: AppTheme.f(12.5, weight: FontWeight.w600, color: fg),
+                style: AppTheme.f(11, weight: FontWeight.w600, color: fg),
               ),
             ),
             if (badge != null) ...[
-              const SizedBox(width: 5),
+              const SizedBox(width: 2),
               Container(
-                padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 2),
+                padding: const EdgeInsets.symmetric(horizontal: 3, vertical: 2),
                 decoration: BoxDecoration(
                   color: (selected ? gc.onEmber : gc.textTertiary).withValues(alpha: 0.16),
                   borderRadius: BorderRadius.circular(100),
                 ),
                 child: Text(
                   badge,
-                  style: AppTheme.f(8.5, weight: FontWeight.w800, color: fg, letterSpacing: 0.6),
+                  style: AppTheme.f(7.5, weight: FontWeight.w800, color: fg, letterSpacing: 0.2),
                 ),
               ),
             ],

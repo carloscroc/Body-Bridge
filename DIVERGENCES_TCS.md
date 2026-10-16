@@ -78,3 +78,37 @@ could not be matched or verified, per P6.
   `build/captures/trainer/` (5 screens x dark/light x 411/360; gitignored, not committed).
 - `dart format` — run on every file created/edited (P4 screens + app_shell edit + both test files).
 - Working tree clean at end of P6 except gitignored `build/` artifacts.
+
+## FIX1 checkpoint (capture-review fidelity repairs)
+
+Supervisor review of the 20 PNGs raised six fidelity defects (CONTRACT_TCS_FIX1.md). The FIX1 set
+below was applied and committed as one checkpoint on `wt/t_c52ff168`.
+
+- **F1 tab strip:** equal-flex segments with tightened metrics in `source_tabs.dart` (label
+  11 w600, padlock 9, badge 7.5 w800 ls 0.2, badge hPad 3, segment hPad 4) so all three labels +
+  padlocks + the ADVANCED badge fit at 360 and 411; widget test pumps 360x800 AND 411x914 and
+  asserts the full `t.sourceTrainer` label renders without ellipsis.
+- **F2 video fold:** the video surface in `trainer_video_screen.dart` is width-constrained
+  (9:16, rounded) so title, cues, sets/reps steppers and the add-to-workout CTA all fit the fold
+  at 411x914; test asserts on-screen visibility.
+- **F3 lock overlay:** shown-state opacity target pinned to 1.0 in `lock_overlay.dart`; test
+  asserts the AnimatedOpacity target.
+- **F4 assignment durations:** `TrainerAssignment` now carries its own `durationSec`/label in
+  `trainer_catalog.dart`, seeded to the mockup values 0:50 / 1:15 / 1:45 / 1:20; row thumbs render
+  them; the asserting test was updated.
+- **F5 assigned date:** weekday added via the locale-aware `t.longDate` helper in
+  `custom_assigned_screen.dart`. Renders the full weekday name ("Monday, Oct 12") vs the mockup's
+  abbreviated "Mon, Oct 12" — kept as a documented minor divergence (non-blocking).
+- **F6 captures:** the capture harness `setUpAll` FontLoader-loads the six Phosphor weight TTFs
+  from the pub cache (test-only; no pub-cache paths in lib/).
+- Harness fix in the same commit: `trainer_source_test.dart` intrinsic-width probe uses
+  `paragraph.getMaxIntrinsicWidth(double.infinity)` — `paragraph.maxIntrinsicWidth` is not a real
+  RenderBox getter and the staged-only tree did not compile without it.
+
+**Re-review (verifier t_dbd7d0d1): FAIL.** F1 still ellipsizes at 360 on the Exercises hub
+(needs 36.60px, has 34.01px — capture `exercises-free-dark-360.png`); F6 glyphs are still tofu in
+all 20 captures (phosphoricons_flutter is a package font — families resolve as
+`packages/phosphoricons_flutter/<Family>`, the harness registers bare names); F3 lock circle +
+message still composite blurred/dim under the upsell sheet's scrim in both themes, and the
+blur/scrim covers the header + tab strip which the mockup keeps crisp. Repairs tracked on card
+t_f3664735 (FIX2).
