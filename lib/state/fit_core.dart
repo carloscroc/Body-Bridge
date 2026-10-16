@@ -109,6 +109,8 @@ abstract class FitCore extends ChangeNotifier {
 
   void goPreferences() => pushRoute('preferences');
 
+  void goCommunity() => _setRoute('community', reset: true);
+
   void backFromPreferences() => popRoute(fallback: 'settings');
 
   void goAccount() => pushRoute('account');

@@ -26,6 +26,7 @@ import '../screens/routines_screen.dart';
 import '../screens/session_screen.dart';
 import '../screens/start_sheet.dart';
 import '../screens/awards_screen.dart';
+import '../screens/community/community_feed.dart';
 import '../screens/moments_screen.dart';
 import '../screens/profile_screen.dart';
 import '../screens/settings_screen.dart';
@@ -363,6 +364,8 @@ class _AppShellState extends State<AppShell> with WidgetsBindingObserver {
         return AccountScreen();
       case 'paywall':
         return PaywallScreen();
+      case 'community':
+        return CommunityFeedScreen();
       case 'moments':
         return MomentsScreen();
       case 'awards':
@@ -424,7 +427,7 @@ class _NavBar extends StatefulWidget {
 class _NavBarState extends State<_NavBar> {
   static const _iw = 58.0;
   static const _fabW = 54.0;
-  static const _routes = ['home', 'progress', 'exercises', 'settings'];
+  static const _routes = ['home', 'progress', 'exercises', 'settings', 'community'];
 
   double? _dragX;
   int? _hover;
@@ -444,7 +447,7 @@ class _NavBarState extends State<_NavBar> {
         _ => 3 * _iw + 4 * _gap + _fabW,
       };
 
-  void _go(int i) => [fit.goHome, fit.goProgress, fit.goExercises, fit.goSettings][i]();
+  void _go(int i) => [fit.goHome, fit.goProgress, fit.goExercises, fit.goSettings, fit.goCommunity][i]();
 
   int _nearest(double x) {
     var best = 0;
