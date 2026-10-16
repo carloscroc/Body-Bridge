@@ -17,6 +17,8 @@ import '../widgets/glass.dart';
 import '../widgets/premium_gate.dart';
 import '../widgets/svg_icon.dart';
 import '../widgets/ui_kit.dart';
+import 'trainer/lock_overlay.dart';
+import 'trainer/source_tabs.dart';
 
 class ExercisesScreen extends StatefulWidget {
   const ExercisesScreen({super.key});
@@ -26,6 +28,7 @@ class ExercisesScreen extends StatefulWidget {
 
 class _ExercisesScreenState extends State<ExercisesScreen> {
   late final TextEditingController _c = TextEditingController(text: fit.exSearch);
+  bool _lockShown = false;
 
   @override
   void dispose() {
@@ -40,46 +43,51 @@ class _ExercisesScreenState extends State<ExercisesScreen> {
 
     return SafeArea(
       bottom: false,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
+      child: Stack(
         children: [
-          Padding(
-            padding: const EdgeInsets.fromLTRB(20, 12, 20, 12),
-            child: _header(context, gc, list.length),
-          ),
-          Expanded(
-            child: ListView.builder(
-              padding: const EdgeInsets.fromLTRB(20, 0, 20, 110),
-              itemCount: list.isEmpty ? 1 : list.length,
-              itemBuilder: (context, i) {
-                if (list.isEmpty) return _empty(gc);
-                final ex = list[i];
-                final first = i == 0 || list[i - 1].primary != ex.primary;
-                final last = i == list.length - 1 || list[i + 1].primary != ex.primary;
-                return Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [
-                    if (first) ...[
-                      SizedBox(height: i == 0 ? 2 : 22),
-                      Padding(
-                        padding: const EdgeInsets.fromLTRB(4, 0, 0, 8),
-                        child: Text(
-                          muscleLabel(ex.primary).toUpperCase(),
-                          style: AppTheme.f(
-                            10.5,
-                            weight: FontWeight.w700,
-                            color: gc.textTertiary,
-                            letterSpacing: 1.3,
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Padding(
+                padding: const EdgeInsets.fromLTRB(20, 12, 20, 12),
+                child: _header(context, gc, list.length),
+              ),
+              Expanded(
+                child: ListView.builder(
+                  padding: const EdgeInsets.fromLTRB(20, 0, 20, 110),
+                  itemCount: list.isEmpty ? 1 : list.length,
+                  itemBuilder: (context, i) {
+                    if (list.isEmpty) return _empty(gc);
+                    final ex = list[i];
+                    final first = i == 0 || list[i - 1].primary != ex.primary;
+                    final last = i == list.length - 1 || list[i + 1].primary != ex.primary;
+                    return Column(
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      children: [
+                        if (first) ...[
+                          SizedBox(height: i == 0 ? 2 : 22),
+                          Padding(
+                            padding: const EdgeInsets.fromLTRB(4, 0, 0, 8),
+                            child: Text(
+                              muscleLabel(ex.primary).toUpperCase(),
+                              style: AppTheme.f(
+                                10.5,
+                                weight: FontWeight.w700,
+                                color: gc.textTertiary,
+                                letterSpacing: 1.3,
+                              ),
+                            ),
                           ),
-                        ),
-                      ),
-                    ],
-                    _row(gc, ex, first: first, last: last),
-                  ],
-                );
-              },
-            ),
+                        ],
+                        _row(gc, ex, first: first, last: last),
+                      ],
+                    );
+                  },
+                ),
+              ),
+            ],
           ),
+          TrainerLockOverlay(visible: _lockShown, onDismiss: () => setState(() => _lockShown = false)),
         ],
       ),
     );
@@ -94,6 +102,22 @@ class _ExercisesScreenState extends State<ExercisesScreen> {
   void _clearAll() {
     _c.clear();
     fit.clearExFilters();
+  }
+
+  void _onSourceTap(SourceTab tab) {
+    if (tab == SourceTab.free) return;
+    if (!context.can(kCapCustomExercises)) {
+      setState(() => _lockShown = true);
+      showTrainerUpsellSheet(context).whenComplete(() {
+        if (mounted) setState(() => _lockShown = false);
+      });
+      return;
+    }
+    if (tab == SourceTab.trainer) {
+      fit.goTrainerLibrary();
+    } else {
+      fit.goTrainerAssigned();
+    }
   }
 
   Widget _header(BuildContext context, GymColors gc, int count) {
@@ -130,6 +154,13 @@ class _ExercisesScreenState extends State<ExercisesScreen> {
         ),
         const SizedBox(height: 14),
         SearchField(controller: _c, hint: t.searchExercises, onChanged: fit.setExSearch),
+        const SizedBox(height: 10),
+        PremiumSourceTabs(
+          active: SourceTab.values.firstWhere((s) => s.name == fit.exSource, orElse: () => SourceTab.free),
+          trainerLocked: !context.can(kCapCustomExercises),
+          customLocked: !context.can(kCapCustomExercises),
+          onSelected: _onSourceTap,
+        ),
         const SizedBox(height: 10),
         _quickChips(context, gc),
       ],
