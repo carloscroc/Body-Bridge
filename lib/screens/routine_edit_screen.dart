@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:phosphoricons_flutter/phosphoricons_flutter.dart';
 
 import '../catalog/exercise_catalog.dart';
+import '../catalog/trainer_exercises.dart';
 import '../constants/billing.dart';
 import '../l10n/l10n.dart';
 import '../models/exercise.dart';
@@ -734,7 +735,12 @@ class _RoutineEditScreenState extends State<RoutineEditScreen> {
                   ],
                 ),
                 const SizedBox(height: 2),
-                Text('${muscleLabel(ex.primary)} · ${t.equipment(ex.equipment)}', style: AppTheme.f(12, weight: FontWeight.w500, color: gc.textSecondary)),
+                Text(
+                  fit.isTrainerSourced(ex.id)
+                      ? '${exerciseSectionLabel(ex)} · ${t.equipment(ex.equipment)}'
+                      : '${muscleLabel(ex.primary)} · ${t.equipment(ex.equipment)}',
+                  style: AppTheme.f(12, weight: FontWeight.w500, color: gc.textSecondary),
+                ),
               ],
             ),
           ),
