@@ -359,7 +359,7 @@ class _AppShellState extends State<AppShell> with WidgetsBindingObserver {
       case 'trainer-assigned':
         return CustomAssignedScreen();
       case 'trainer-video':
-        return TrainerVideoScreen();
+        return TrainerVideoScreen(sessionId: fit.activeTrainerSessionId);
       case 'tools':
         return ToolsScreen();
       case 'tools-detail':
