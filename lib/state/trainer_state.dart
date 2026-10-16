@@ -24,11 +24,16 @@ class TrainerBanner {
 }
 
 class TrainerState extends ChangeNotifier {
-  TrainerState._();
+  TrainerState._() : repo = LocalTrainerRepository();
+
+  /// Test seam: swap the repository without touching the global singleton
+  /// pattern used by the app.
+  @visibleForTesting
+  TrainerState.forTest(this.repo);
 
   static final TrainerState instance = TrainerState._();
 
-  final TrainerRepository repo = LocalTrainerRepository();
+  final TrainerRepository repo;
 
   bool loaded = false;
   bool _loading = false;
@@ -120,7 +125,7 @@ class TrainerState extends ChangeNotifier {
   double progressOf(TrainerAssignment a) => progress[a.threadId] ?? 0;
 
   bool isNewAssignment(TrainerAssignment a) =>
-      progressOf(a) < 1 && !openedThreads.contains(a.threadId);
+      progressOf(a) <= 0 && !openedThreads.contains(a.threadId);
 
   /// NEW chip assignment count (0% and never opened).
   int get newAssignmentCount =>

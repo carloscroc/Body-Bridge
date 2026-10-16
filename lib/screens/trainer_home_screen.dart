@@ -107,11 +107,12 @@ class _TrainerHomeScreenState extends State<TrainerHomeScreen> {
         );
 
         // Gate state: the approved mockup shows the sheet over a blurred
-        // trainer surface — render the intro surface blurred + inert.
+        // trainer surface — blur the intro surface but keep the Message
+        // button tappable (the mockup's chat-entry gate opens from it).
         if (!unlocked) {
           content = ImageFiltered(
             imageFilter: ImageFilter.blur(sigmaX: 12, sigmaY: 12),
-            child: IgnorePointer(child: content),
+            child: content,
           );
         }
 
