@@ -151,3 +151,41 @@ t_f3664735 (FIX2).
   FIX2).
 - Minor divergences unchanged and non-blocking: F5 full weekday name, "ADVANCED" without the "+"
   prefix, library chips mixed-case, dark ember=white token (documented #1 above).
+
+## REWORK — trainer exercises folded into the existing flow (Carlos directive) — commits `7f6ab6ac`…`cda3b488`
+
+Product-owner revision (2026-10-16): "the flow is the same… we should not change anything other
+than adding new exercises through the personal trainer." The approved mockups' SEPARATE screens are
+RETIRED for flow (spec supersession, not a defect cycle). CONTRACT_TCS_REWORK.md governs.
+
+- **Removed entirely:** `trainer_library_screen.dart`, `trainer_video_screen.dart`,
+  `custom_assigned_screen.dart`, their `app_shell.dart` route cases + imports, and the
+  `goTrainerLibrary/Assigned/Video` + `activeTrainerSessionId` state hooks (items 3–4 of the
+  divergences above describe retired surfaces; they remain true only for the pre-rework history).
+  `lib/screens/trainer/` retains only `source_tabs.dart` + `lock_overlay.dart` (gate UX).
+- **Integration:** trainer sessions/assignments become real `Exercise` objects
+  (`lib/catalog/trainer_exercises.dart`) with stable ids `tr-<sessionId>` / `as-<sessionId>-<k>`;
+  equipment mapped Band→Band, Kettlebell→Kettlebell, Mat/Bench/Wall→Bodyweight; category becomes
+  `primary`; difficulty added to `TrainerSession` seeds; steps = cues (+ prescription for
+  assignments). `exercisesMatching(q, {source})` is source-aware; trainer/custom pools group by
+  category (`kTrainerCategories` order); `exerciseById` + `similarExercises` resolve trainer ids so
+  detail/routines/sessions treat them exactly like free exercises.
+- **Surfaces:** Exercises screen Trainer/Custom tabs switch IN PLACE (gating unchanged:
+  lock scrim + upsell, zero prices); trainer rows = identical row anatomy + video-poster thumbnail
+  (`TrainerExerciseMedia`) + ADVANCED badge; detail screen renders the host-driven player in the
+  media slot (no edit/media buttons for trainer ids); routine editor picker gains the same tabs
+  (LOCAL state — does not touch the global `exSource`). Workout flow untouched.
+- **i18n:** +5 keys × 16 ARBs (`trainerCat*`); removed 9 keys used only by the deleted screens;
+  gen-l10n tree-neutral.
+- **New divergences by directive:** coach-profile card, DUE TODAY chips, prescription italics,
+  session steppers and the standalone add-to-workout CTA are gone with their screens (assignment
+  prescriptions survive as the first how-to step); assigned rows carry the ADVANCED badge.
+- **Validator-caught fix (F1', commit `cda3b488`):** picker row subtitles used `t.muscle()` on the
+  category id → raw English fallback; now `exerciseSectionLabel` for trainer-sourced rows.
+- **OpenCode deviation worth noting:** fixed a pre-existing product bug found during CP3 —
+  `_onSourceTap` mutated `fit.exSource` without `setState`, so tab taps never re-rendered the list.
+- **Gates at `cda3b488` (operator-run, cold):** `flutter analyze` 0 issues; `flutter gen-l10n`
+  tree-neutral; full `flutter test` 596 passed / ~5 skipped / 1 failed — the documented pre-existing
+  smoke share-sheet overflow (reproduced at pre-rework `9444607b` in this worktree; 6 more passing
+  than the pre-rework baseline from the new trainer tests); `BB_CAPTURES=1` 12/12 PNGs (3 scenarios
+  × dark/light × 411/360), vision-verified incl. tab fit at 360 and light-theme legibility.
