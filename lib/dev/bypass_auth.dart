@@ -1,0 +1,102 @@
+// lib/dev/bypass_auth.dart
+// Auth bypass (compile-time, dart-define gated) — test the app with auth on hold
+
+import 'dart:async';
+
+import 'package:gymmane/state/account_gate.dart';
+import 'package:gymmane/state/account_state.dart';
+
+/// Compile-time flag: set via `flutter run --dart-define=BB_AUTH_BYPASS=1`
+const bool kBypassAuth = bool.fromEnvironment('BB_AUTH_BYPASS');
+
+/// Raw tier string from dart-defines: `BB_AUTH_BYPASS_TIER=free|basic|advanced|enterprise`
+const String _rawBypassTier = String.fromEnvironment(
+  'BB_AUTH_BYPASS_TIER',
+  defaultValue: 'advanced',
+);
+
+/// Placeholder email for bypass sessions
+const String kBypassEmail = 'dev-bypass@bodybridge.local';
+
+/// Pure function: maps tier string to AccountTier (advanced for invalid input)
+AccountTier resolveBypassTier(String tier) {
+  switch (tier.toLowerCase()) {
+    case 'free':
+      return AccountTier.free;
+    case 'basic':
+      return AccountTier.basic;
+    case 'advanced':
+      return AccountTier.advanced;
+    case 'enterprise':
+      return AccountTier.enterprise;
+    default:
+      return AccountTier.advanced; // fallback as per contract
+  }
+}
+
+/// Bypass tier resolved at compile-time.
+AccountTier get kBypassTier => resolveBypassTier(_rawBypassTier);
+
+/// Bypass account gate that mirrors the account state without Firebase/Convex calls.
+class BypassAccountGate extends AccountGate {
+  BypassAccountGate() {
+    AccountGate.install(this);
+    account.addListener(_forward);
+    unawaited(account.warmUp());
+  }
+
+  bool _disposed = false;
+
+  void _forward() {
+    if (_disposed) return;
+    notifyListeners();
+  }
+
+  @override
+  AccountSnapshot get snapshot => AccountSnapshot(
+    tier: switch (account.phase) {
+      AccountPhase.signedOut => AccountTier.signedOut,
+      AccountPhase.signedInFree => AccountTier.free,
+      AccountPhase.signedInBasic => AccountTier.basic,
+      AccountPhase.signedInAdvanced => AccountTier.advanced,
+      AccountPhase.signedInEnterprise => AccountTier.enterprise,
+      AccountPhase.error => AccountTier.signedOut,
+    },
+    email: account.phase == AccountPhase.signedOut ? null : kBypassEmail,
+  );
+
+  @override
+  bool canAccess(String feature) => tierCan(snapshot.tier, feature);
+
+  @override
+  Future<void> signIn(String email, String password) async {
+    await account.warmUp();
+  }
+
+  @override
+  Future<void> signUp(String email, String password) async {
+    await account.warmUp();
+  }
+
+  @override
+  Future<void> signOut() async {
+    account.signOut();
+  }
+
+  @override
+  Future<void> deleteAccount() async {
+    await account.warmUp();
+  }
+
+  @override
+  Future<void> sendPasswordReset(String email) async {
+    await account.warmUp();
+  }
+
+  @override
+  void dispose() {
+    _disposed = true;
+    account.removeListener(_forward);
+    super.dispose();
+  }
+}

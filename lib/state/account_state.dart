@@ -2,8 +2,10 @@ import 'dart:async';
 
 import 'package:flutter/foundation.dart';
 
+import '../dev/bypass_auth.dart';
 import '../services/auth_service.dart';
 import '../services/entitlements_service.dart';
+import 'account_gate.dart';
 
 /// Signed-in phase of the account, derived from the auth state and the cached
 /// entitlements tier. Screens watch [account] with AnimatedBuilder exactly as
@@ -29,6 +31,12 @@ class AccountState extends ChangeNotifier {
   /// Lazily wires the auth + entitlements services. Called from sign-in or
   /// gating UI; safe to call any number of times and never throws.
   Future<void> warmUp() async {
+    if (kBypassAuth) {
+      _phase = _bypassPhase(kBypassTier);
+      _warmedUp = true;
+      notifyListeners();
+      return;
+    }
     if (_warmedUp) return;
     try {
       final auth = AuthService.instance;
@@ -144,6 +152,22 @@ class AccountState extends ChangeNotifier {
       _lastError = e.toString();
       _set(AccountPhase.error);
     }
+  }
+  /// Maps [AccountTier] to [AccountPhase] for the auth bypass path.
+  AccountPhase _bypassPhase(AccountTier tier) => switch (tier) {
+    AccountTier.signedOut => AccountPhase.signedOut,
+    AccountTier.free => AccountPhase.signedInFree,
+    AccountTier.basic => AccountPhase.signedInBasic,
+    AccountTier.advanced => AccountPhase.signedInAdvanced,
+    AccountTier.enterprise => AccountPhase.signedInEnterprise,
+  };
+
+  /// Sign out the account – cancels any pending streams and sets the phase to signedOut.
+  /// Under bypass, this does nothing (no Firebase/Convex calls) and simply switches
+  /// the internal phase to signedOut.
+  void signOut() {
+    _phase = AccountPhase.signedOut;
+    notifyListeners();
   }
 }
 
