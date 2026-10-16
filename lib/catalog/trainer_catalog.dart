@@ -24,6 +24,7 @@ class TrainerSession {
   final String videoUrl;
   final String setsHint;
   final String repsHint;
+  final String difficulty;
 
   const TrainerSession({
     required this.id,
@@ -37,6 +38,7 @@ class TrainerSession {
     this.videoUrl = '',
     this.setsHint = '',
     this.repsHint = '',
+    this.difficulty = 'Beginner',
   });
 
   int get playerSec => playerDurationSec ?? durationSec;
@@ -107,6 +109,7 @@ const List<TrainerSession> kTrainerSessions = [
     ],
     setsHint: '3',
     repsHint: '10',
+    difficulty: 'Beginner',
   ),
   TrainerSession(
     id: 'hip-switch',
@@ -115,6 +118,7 @@ const List<TrainerSession> kTrainerSessions = [
     equipmentLabel: 'Mat',
     durationSec: 95,
     isNew: true,
+    difficulty: 'Intermediate',
   ),
   TrainerSession(
     id: 'copenhagen-plank',
@@ -122,6 +126,7 @@ const List<TrainerSession> kTrainerSessions = [
     category: 'strength',
     equipmentLabel: 'Bench',
     durationSec: 110,
+    difficulty: 'Advanced',
   ),
   TrainerSession(
     id: 'tibialis-raise',
@@ -129,6 +134,7 @@ const List<TrainerSession> kTrainerSessions = [
     category: 'corrective',
     equipmentLabel: 'Wall',
     durationSec: 45,
+    difficulty: 'Beginner',
   ),
   TrainerSession(
     id: 'goblet-bracing',
@@ -136,6 +142,7 @@ const List<TrainerSession> kTrainerSessions = [
     category: 'strength',
     equipmentLabel: 'Kettlebell',
     durationSec: 200,
+    difficulty: 'Intermediate',
   ),
   TrainerSession(
     id: 'worlds-greatest-stretch',
@@ -143,6 +150,7 @@ const List<TrainerSession> kTrainerSessions = [
     category: 'warmup',
     equipmentLabel: 'Mat',
     durationSec: 160,
+    difficulty: 'Beginner',
   ),
 ];
 
