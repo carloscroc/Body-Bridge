@@ -3300,4 +3300,19 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get addedToWorkout => 'Zum Workout hinzugefügt';
+
+  @override
+  String get trainerCatStrength => 'Kraft';
+
+  @override
+  String get trainerCatMobility => 'Mobilität';
+
+  @override
+  String get trainerCatCore => 'Core';
+
+  @override
+  String get trainerCatCorrective => 'Korrektur';
+
+  @override
+  String get trainerCatWarmup => 'Aufwärmen';
 }

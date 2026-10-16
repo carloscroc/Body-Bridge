@@ -1257,5 +1257,10 @@
   "setsLabel": "セット",
   "repsLabel": "レップ",
   "addSessionToWorkout": "ワークアウトに追加",
-  "addedToWorkout": "ワークアウトに追加しました"
+  "addedToWorkout": "ワークアウトに追加しました",
+  "trainerCatStrength": "ストレングス",
+  "trainerCatMobility": "モビリティ",
+  "trainerCatCore": "コア",
+  "trainerCatCorrective": "矯正",
+  "trainerCatWarmup": "ウォームアップ"
 }

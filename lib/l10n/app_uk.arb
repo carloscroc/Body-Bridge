@@ -1257,5 +1257,10 @@
   "setsLabel": "Підходи",
   "repsLabel": "Повт.",
   "addSessionToWorkout": "Додати до тренування",
-  "addedToWorkout": "Додано до тренування"
+  "addedToWorkout": "Додано до тренування",
+  "trainerCatStrength": "Сила",
+  "trainerCatMobility": "Мобільність",
+  "trainerCatCore": "Кор",
+  "trainerCatCorrective": "Корекція",
+  "trainerCatWarmup": "Розминка"
 }

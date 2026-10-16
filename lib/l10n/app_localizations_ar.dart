@@ -3276,4 +3276,19 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get addedToWorkout => 'أُضيف إلى التمرين';
+
+  @override
+  String get trainerCatStrength => 'قوة';
+
+  @override
+  String get trainerCatMobility => 'مرونة';
+
+  @override
+  String get trainerCatCore => 'كور';
+
+  @override
+  String get trainerCatCorrective => 'تصحيحي';
+
+  @override
+  String get trainerCatWarmup => 'إحماء';
 }

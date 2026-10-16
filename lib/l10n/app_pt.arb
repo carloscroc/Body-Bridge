@@ -1017,5 +1017,10 @@
   "setsLabel": "Séries",
   "repsLabel": "Reps",
   "addSessionToWorkout": "Adicionar ao treino",
-  "addedToWorkout": "Adicionado ao treino"
+  "addedToWorkout": "Adicionado ao treino",
+  "trainerCatStrength": "Força",
+  "trainerCatMobility": "Mobilidade",
+  "trainerCatCore": "Core",
+  "trainerCatCorrective": "Corretivo",
+  "trainerCatWarmup": "Aquecimento"
 }

@@ -3282,4 +3282,19 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get addedToWorkout => 'Added to workout';
+
+  @override
+  String get trainerCatStrength => 'Strength';
+
+  @override
+  String get trainerCatMobility => 'Mobility';
+
+  @override
+  String get trainerCatCore => 'Core';
+
+  @override
+  String get trainerCatCorrective => 'Corrective';
+
+  @override
+  String get trainerCatWarmup => 'Warm-up';
 }

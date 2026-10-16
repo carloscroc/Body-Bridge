@@ -3201,4 +3201,19 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get addedToWorkout => '운동에 추가됨';
+
+  @override
+  String get trainerCatStrength => '근력';
+
+  @override
+  String get trainerCatMobility => '모빌리티';
+
+  @override
+  String get trainerCatCore => '코어';
+
+  @override
+  String get trainerCatCorrective => '교정';
+
+  @override
+  String get trainerCatWarmup => '웜업';
 }

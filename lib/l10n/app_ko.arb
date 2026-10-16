@@ -1257,5 +1257,10 @@
   "setsLabel": "세트",
   "repsLabel": "횟수",
   "addSessionToWorkout": "운동에 추가",
-  "addedToWorkout": "운동에 추가됨"
+  "addedToWorkout": "운동에 추가됨",
+  "trainerCatStrength": "근력",
+  "trainerCatMobility": "모빌리티",
+  "trainerCatCore": "코어",
+  "trainerCatCorrective": "교정",
+  "trainerCatWarmup": "웜업"
 }

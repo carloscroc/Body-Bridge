@@ -3186,4 +3186,19 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get addedToWorkout => 'ワークアウトに追加しました';
+
+  @override
+  String get trainerCatStrength => 'ストレングス';
+
+  @override
+  String get trainerCatMobility => 'モビリティ';
+
+  @override
+  String get trainerCatCore => 'コア';
+
+  @override
+  String get trainerCatCorrective => '矯正';
+
+  @override
+  String get trainerCatWarmup => 'ウォームアップ';
 }

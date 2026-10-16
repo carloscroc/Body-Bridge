@@ -3288,4 +3288,19 @@ class AppLocalizationsUk extends AppLocalizations {
 
   @override
   String get addedToWorkout => 'Додано до тренування';
+
+  @override
+  String get trainerCatStrength => 'Сила';
+
+  @override
+  String get trainerCatMobility => 'Мобільність';
+
+  @override
+  String get trainerCatCore => 'Кор';
+
+  @override
+  String get trainerCatCorrective => 'Корекція';
+
+  @override
+  String get trainerCatWarmup => 'Розминка';
 }

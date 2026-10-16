@@ -1125,5 +1125,10 @@
   "setsLabel": "Sätze",
   "repsLabel": "Wdh.",
   "addSessionToWorkout": "Zum Workout hinzufügen",
-  "addedToWorkout": "Zum Workout hinzugefügt"
+  "addedToWorkout": "Zum Workout hinzugefügt",
+  "trainerCatStrength": "Kraft",
+  "trainerCatMobility": "Mobilität",
+  "trainerCatCore": "Core",
+  "trainerCatCorrective": "Korrektur",
+  "trainerCatWarmup": "Aufwärmen"
 }

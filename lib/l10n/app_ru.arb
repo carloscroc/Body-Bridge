@@ -1046,5 +1046,10 @@
   "setsLabel": "Подходы",
   "repsLabel": "Повт.",
   "addSessionToWorkout": "Добавить в тренировку",
-  "addedToWorkout": "Добавлено в тренировку"
+  "addedToWorkout": "Добавлено в тренировку",
+  "trainerCatStrength": "Сила",
+  "trainerCatMobility": "Мобильность",
+  "trainerCatCore": "Кор",
+  "trainerCatCorrective": "Коррекция",
+  "trainerCatWarmup": "Разминка"
 }

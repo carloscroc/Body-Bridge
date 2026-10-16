@@ -1017,5 +1017,10 @@
   "setsLabel": "组",
   "repsLabel": "次",
   "addSessionToWorkout": "加入训练",
-  "addedToWorkout": "已加入训练"
+  "addedToWorkout": "已加入训练",
+  "trainerCatStrength": "力量",
+  "trainerCatMobility": "灵活性",
+  "trainerCatCore": "核心",
+  "trainerCatCorrective": "矫正",
+  "trainerCatWarmup": "热身"
 }

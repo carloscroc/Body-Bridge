@@ -1257,5 +1257,10 @@
   "setsLabel": "Sets",
   "repsLabel": "Reps",
   "addSessionToWorkout": "Toevoegen aan workout",
-  "addedToWorkout": "Toegevoegd aan workout"
+  "addedToWorkout": "Toegevoegd aan workout",
+  "trainerCatStrength": "Kracht",
+  "trainerCatMobility": "Mobiliteit",
+  "trainerCatCore": "Core",
+  "trainerCatCorrective": "Corrigerend",
+  "trainerCatWarmup": "Opwarmen"
 }

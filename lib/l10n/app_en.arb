@@ -1138,5 +1138,10 @@
   "setsLabel": "Sets",
   "repsLabel": "Reps",
   "addSessionToWorkout": "Add to workout",
-  "addedToWorkout": "Added to workout"
+  "addedToWorkout": "Added to workout",
+  "trainerCatStrength": "Strength",
+  "trainerCatMobility": "Mobility",
+  "trainerCatCore": "Core",
+  "trainerCatCorrective": "Corrective",
+  "trainerCatWarmup": "Warm-up"
 }

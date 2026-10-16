@@ -1257,5 +1257,10 @@
   "setsLabel": "مجموعات",
   "repsLabel": "عدد",
   "addSessionToWorkout": "أضف إلى التمرين",
-  "addedToWorkout": "أُضيف إلى التمرين"
+  "addedToWorkout": "أُضيف إلى التمرين",
+  "trainerCatStrength": "قوة",
+  "trainerCatMobility": "مرونة",
+  "trainerCatCore": "كور",
+  "trainerCatCorrective": "تصحيحي",
+  "trainerCatWarmup": "إحماء"
 }

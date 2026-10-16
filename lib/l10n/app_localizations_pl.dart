@@ -3291,4 +3291,19 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String get addedToWorkout => 'Dodano do treningu';
+
+  @override
+  String get trainerCatStrength => 'Siła';
+
+  @override
+  String get trainerCatMobility => 'Mobilność';
+
+  @override
+  String get trainerCatCore => 'Core';
+
+  @override
+  String get trainerCatCorrective => 'Korekcyjne';
+
+  @override
+  String get trainerCatWarmup => 'Rozgrzewka';
 }

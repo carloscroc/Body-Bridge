@@ -3373,4 +3373,19 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get addedToWorkout => 'Добавлено в тренировку';
+
+  @override
+  String get trainerCatStrength => 'Сила';
+
+  @override
+  String get trainerCatMobility => 'Мобильность';
+
+  @override
+  String get trainerCatCore => 'Кор';
+
+  @override
+  String get trainerCatCorrective => 'Коррекция';
+
+  @override
+  String get trainerCatWarmup => 'Разминка';
 }

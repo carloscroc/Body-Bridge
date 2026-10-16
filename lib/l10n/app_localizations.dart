@@ -5911,6 +5911,36 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Added to workout'**
   String get addedToWorkout;
+
+  /// No description provided for @trainerCatStrength.
+  ///
+  /// In en, this message translates to:
+  /// **'Strength'**
+  String get trainerCatStrength;
+
+  /// No description provided for @trainerCatMobility.
+  ///
+  /// In en, this message translates to:
+  /// **'Mobility'**
+  String get trainerCatMobility;
+
+  /// No description provided for @trainerCatCore.
+  ///
+  /// In en, this message translates to:
+  /// **'Core'**
+  String get trainerCatCore;
+
+  /// No description provided for @trainerCatCorrective.
+  ///
+  /// In en, this message translates to:
+  /// **'Corrective'**
+  String get trainerCatCorrective;
+
+  /// No description provided for @trainerCatWarmup.
+  ///
+  /// In en, this message translates to:
+  /// **'Warm-up'**
+  String get trainerCatWarmup;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

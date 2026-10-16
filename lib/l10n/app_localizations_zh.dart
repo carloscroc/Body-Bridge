@@ -3146,6 +3146,21 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get addedToWorkout => '已加入训练';
+
+  @override
+  String get trainerCatStrength => '力量';
+
+  @override
+  String get trainerCatMobility => '灵活性';
+
+  @override
+  String get trainerCatCore => '核心';
+
+  @override
+  String get trainerCatCorrective => '矫正';
+
+  @override
+  String get trainerCatWarmup => '热身';
 }
 
 /// The translations for Chinese, using the Han script (`zh_Hant`).
@@ -6314,4 +6329,19 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
 
   @override
   String get addedToWorkout => '已加入訓練';
+
+  @override
+  String get trainerCatStrength => '力量';
+
+  @override
+  String get trainerCatMobility => '靈活度';
+
+  @override
+  String get trainerCatCore => '核心';
+
+  @override
+  String get trainerCatCorrective => '矯正';
+
+  @override
+  String get trainerCatWarmup => '熱身';
 }

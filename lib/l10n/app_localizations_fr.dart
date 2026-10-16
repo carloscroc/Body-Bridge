@@ -3295,4 +3295,19 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get addedToWorkout => 'Ajouté à la séance';
+
+  @override
+  String get trainerCatStrength => 'Force';
+
+  @override
+  String get trainerCatMobility => 'Mobilité';
+
+  @override
+  String get trainerCatCore => 'Core';
+
+  @override
+  String get trainerCatCorrective => 'Correctif';
+
+  @override
+  String get trainerCatWarmup => 'Échauffement';
 }

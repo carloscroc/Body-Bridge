@@ -1257,5 +1257,10 @@
   "setsLabel": "Set",
   "repsLabel": "Tekrar",
   "addSessionToWorkout": "Antrenmana ekle",
-  "addedToWorkout": "Antrenmana eklendi"
+  "addedToWorkout": "Antrenmana eklendi",
+  "trainerCatStrength": "Güç",
+  "trainerCatMobility": "Mobilite",
+  "trainerCatCore": "Core",
+  "trainerCatCorrective": "Düzeltici",
+  "trainerCatWarmup": "Isınma"
 }

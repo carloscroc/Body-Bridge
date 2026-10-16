@@ -3285,4 +3285,19 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get addedToWorkout => 'Antrenmana eklendi';
+
+  @override
+  String get trainerCatStrength => 'Güç';
+
+  @override
+  String get trainerCatMobility => 'Mobilite';
+
+  @override
+  String get trainerCatCore => 'Core';
+
+  @override
+  String get trainerCatCorrective => 'Düzeltici';
+
+  @override
+  String get trainerCatWarmup => 'Isınma';
 }
