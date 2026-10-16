@@ -11,6 +11,31 @@ import '../../widgets/glass.dart';
 import '../../widgets/svg_icon.dart';
 import '../../widgets/ui_kit.dart';
 
+class TrainerLockScrim extends StatelessWidget {
+  const TrainerLockScrim({super.key, required this.visible});
+
+  final bool visible;
+
+  @override
+  Widget build(BuildContext context) {
+    final gc = context.gc;
+    return IgnorePointer(
+      ignoring: !visible,
+      child: AnimatedOpacity(
+        duration: const Duration(milliseconds: 220),
+        curve: Curves.easeOut,
+        opacity: visible ? 1 : 0,
+        child: ClipRect(
+          child: BackdropFilter(
+            filter: ImageFilter.blur(sigmaX: 7, sigmaY: 7),
+            child: Container(color: gc.bg.withValues(alpha: 0.78)),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
 class TrainerLockOverlay extends StatelessWidget {
   const TrainerLockOverlay({super.key, required this.visible, required this.onDismiss});
 
@@ -30,11 +55,9 @@ class TrainerLockOverlay extends StatelessWidget {
           child: GestureDetector(
             behavior: HitTestBehavior.opaque,
             onTap: onDismiss,
-            child: BackdropFilter(
-              filter: ImageFilter.blur(sigmaX: 7, sigmaY: 7),
-              child: Container(
-                color: gc.bg.withValues(alpha: 0.78),
-                alignment: const Alignment(0, -0.55),
+            child: Align(
+              alignment: const Alignment(0, -0.55),
+              child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 32),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
@@ -69,6 +92,8 @@ Future<void> showTrainerUpsellSheet(BuildContext context) async {
     isScrollControlled: true,
     backgroundColor: gc.bgRaised,
     shape: const RoundedRectangleBorder(borderRadius: BorderRadius.vertical(top: Radius.circular(28))),
+    blurBarrier: false,
+    modalBarrierColor: Colors.transparent,
     builder: (sheetCtx) => Padding(
       padding: sheetPad(sheetCtx),
       child: Column(

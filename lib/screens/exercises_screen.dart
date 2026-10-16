@@ -53,36 +53,41 @@ class _ExercisesScreenState extends State<ExercisesScreen> {
                 child: _header(context, gc, list.length),
               ),
               Expanded(
-                child: ListView.builder(
-                  padding: const EdgeInsets.fromLTRB(20, 0, 20, 110),
-                  itemCount: list.isEmpty ? 1 : list.length,
-                  itemBuilder: (context, i) {
-                    if (list.isEmpty) return _empty(gc);
-                    final ex = list[i];
-                    final first = i == 0 || list[i - 1].primary != ex.primary;
-                    final last = i == list.length - 1 || list[i + 1].primary != ex.primary;
-                    return Column(
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
-                      children: [
-                        if (first) ...[
-                          SizedBox(height: i == 0 ? 2 : 22),
-                          Padding(
-                            padding: const EdgeInsets.fromLTRB(4, 0, 0, 8),
-                            child: Text(
-                              muscleLabel(ex.primary).toUpperCase(),
-                              style: AppTheme.f(
-                                10.5,
-                                weight: FontWeight.w700,
-                                color: gc.textTertiary,
-                                letterSpacing: 1.3,
+                child: Stack(
+                  children: [
+                    ListView.builder(
+                      padding: const EdgeInsets.fromLTRB(20, 0, 20, 110),
+                      itemCount: list.isEmpty ? 1 : list.length,
+                      itemBuilder: (context, i) {
+                        if (list.isEmpty) return _empty(gc);
+                        final ex = list[i];
+                        final first = i == 0 || list[i - 1].primary != ex.primary;
+                        final last = i == list.length - 1 || list[i + 1].primary != ex.primary;
+                        return Column(
+                          crossAxisAlignment: CrossAxisAlignment.stretch,
+                          children: [
+                            if (first) ...[
+                              SizedBox(height: i == 0 ? 2 : 22),
+                              Padding(
+                                padding: const EdgeInsets.fromLTRB(4, 0, 0, 8),
+                                child: Text(
+                                  muscleLabel(ex.primary).toUpperCase(),
+                                  style: AppTheme.f(
+                                    10.5,
+                                    weight: FontWeight.w700,
+                                    color: gc.textTertiary,
+                                    letterSpacing: 1.3,
+                                  ),
+                                ),
                               ),
-                            ),
-                          ),
-                        ],
-                        _row(gc, ex, first: first, last: last),
-                      ],
-                    );
-                  },
+                            ],
+                            _row(gc, ex, first: first, last: last),
+                          ],
+                        );
+                      },
+                    ),
+                    TrainerLockScrim(visible: _lockShown),
+                  ],
                 ),
               ),
             ],

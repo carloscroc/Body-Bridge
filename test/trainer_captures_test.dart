@@ -71,13 +71,15 @@ void main() {
     if (!phosphorDir.existsSync()) {
       throw StateError('Phosphor fonts not found at ${phosphorWin.path} or ${phosphorPosix.path}.');
     }
-    const phosphorFamilies = {
-      'Phosphor.ttf': 'Phosphor',
-      'Phosphor-Bold.ttf': 'PhosphorBold',
-      'Phosphor-Fill.ttf': 'PhosphorFill',
-      'Phosphor-Light.ttf': 'PhosphorLight',
-      'Phosphor-Thin.ttf': 'PhosphorThin',
-      'Phosphor-Duotone.ttf': 'PhosphorDuotone',
+    // Package font families resolve under BOTH the bare family name and the
+    // packages/phosphoricons_flutter/<Family> name; load each weight file twice.
+    const phosphorFamilies = <String, List<String>>{
+      'Phosphor.ttf': ['PhosphorRegular', 'packages/phosphoricons_flutter/PhosphorRegular'],
+      'Phosphor-Bold.ttf': ['PhosphorBold', 'packages/phosphoricons_flutter/PhosphorBold'],
+      'Phosphor-Fill.ttf': ['PhosphorFill', 'packages/phosphoricons_flutter/PhosphorFill'],
+      'Phosphor-Light.ttf': ['PhosphorLight', 'packages/phosphoricons_flutter/PhosphorLight'],
+      'Phosphor-Thin.ttf': ['PhosphorThin', 'packages/phosphoricons_flutter/PhosphorThin'],
+      'Phosphor-Duotone.ttf': ['PhosphorDuotone', 'packages/phosphoricons_flutter/PhosphorDuotone'],
     };
     final present = phosphorDir.listSync().whereType<File>().map((f) => f.uri.pathSegments.last).toSet();
     for (final entry in phosphorFamilies.entries) {
@@ -85,8 +87,10 @@ void main() {
         throw StateError('${entry.key} missing in ${phosphorDir.path}.');
       }
       final bytes = File('${phosphorDir.path}/${entry.key}').readAsBytesSync();
-      final loader = FontLoader(entry.value)..addFont(Future.value(ByteData.sublistView(bytes)));
-      await loader.load();
+      for (final family in entry.value) {
+        final loader = FontLoader(family)..addFont(Future.value(ByteData.sublistView(bytes)));
+        await loader.load();
+      }
     }
   });
 

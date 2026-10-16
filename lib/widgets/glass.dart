@@ -15,20 +15,25 @@ Future<T?> showAppSheet<T>({
   bool isDismissible = true,
   bool enableDrag = true,
   bool useSafeArea = false,
+  bool blurBarrier = true,
+  Color? modalBarrierColor,
 }) {
   final nav = Navigator.of(context);
-  return nav.push(_GlassSheetRoute<T>(
-    builder: builder,
-    isScrollControlled: isScrollControlled,
-    backgroundColor: backgroundColor,
-    shape: shape,
-    isDismissible: isDismissible,
-    enableDrag: enableDrag,
-    useSafeArea: useSafeArea,
-    modalBarrierColor: Colors.black.withValues(alpha: 0.32),
-    capturedThemes: InheritedTheme.capture(from: context, to: nav.context),
-    barrierLabel: MaterialLocalizations.of(context).scrimLabel,
-  ));
+  return nav.push(
+    _GlassSheetRoute<T>(
+      builder: builder,
+      isScrollControlled: isScrollControlled,
+      backgroundColor: backgroundColor,
+      shape: shape,
+      isDismissible: isDismissible,
+      enableDrag: enableDrag,
+      useSafeArea: useSafeArea,
+      modalBarrierColor: modalBarrierColor ?? Colors.black.withValues(alpha: 0.32),
+      blurBarrier: blurBarrier,
+      capturedThemes: InheritedTheme.capture(from: context, to: nav.context),
+      barrierLabel: MaterialLocalizations.of(context).scrimLabel,
+    ),
+  );
 }
 
 class _GlassSheetRoute<T> extends ModalBottomSheetRoute<T> {
@@ -43,21 +48,27 @@ class _GlassSheetRoute<T> extends ModalBottomSheetRoute<T> {
     super.modalBarrierColor,
     super.capturedThemes,
     super.barrierLabel,
+    this.blurBarrier = true,
   });
 
+  final bool blurBarrier;
+
   @override
-  Widget buildModalBarrier() => _BlurBarrier(animation: animation!, child: super.buildModalBarrier());
+  Widget buildModalBarrier() =>
+      _BlurBarrier(animation: animation!, enabled: blurBarrier, child: super.buildModalBarrier());
 }
 
 Future<T?> showAppDialog<T>({required BuildContext context, required WidgetBuilder builder}) {
   final nav = Navigator.of(context);
-  return nav.push(_GlassDialogRoute<T>(
-    context: context,
-    builder: builder,
-    barrierColor: Colors.black.withValues(alpha: 0.36),
-    themes: InheritedTheme.capture(from: context, to: nav.context),
-    barrierLabel: MaterialLocalizations.of(context).modalBarrierDismissLabel,
-  ));
+  return nav.push(
+    _GlassDialogRoute<T>(
+      context: context,
+      builder: builder,
+      barrierColor: Colors.black.withValues(alpha: 0.36),
+      themes: InheritedTheme.capture(from: context, to: nav.context),
+      barrierLabel: MaterialLocalizations.of(context).modalBarrierDismissLabel,
+    ),
+  );
 }
 
 class _GlassDialogRoute<T> extends DialogRoute<T> {
@@ -74,8 +85,16 @@ class _GlassDialogRoute<T> extends DialogRoute<T> {
 
   @override
   Widget buildTransitions(
-      BuildContext context, Animation<double> animation, Animation<double> secondary, Widget child) {
-    final curved = CurvedAnimation(parent: animation, curve: Curves.easeOutBack, reverseCurve: Curves.easeInCubic);
+    BuildContext context,
+    Animation<double> animation,
+    Animation<double> secondary,
+    Widget child,
+  ) {
+    final curved = CurvedAnimation(
+      parent: animation,
+      curve: Curves.easeOutBack,
+      reverseCurve: Curves.easeInCubic,
+    );
     return FadeTransition(
       opacity: CurvedAnimation(parent: animation, curve: Curves.easeOut),
       child: ScaleTransition(scale: Tween<double>(begin: 0.92, end: 1).animate(curved), child: child),
@@ -84,13 +103,15 @@ class _GlassDialogRoute<T> extends DialogRoute<T> {
 }
 
 class _BlurBarrier extends StatelessWidget {
-  const _BlurBarrier({required this.animation, required this.child});
+  const _BlurBarrier({required this.animation, required this.child, this.enabled = true});
 
   final Animation<double> animation;
   final Widget child;
+  final bool enabled;
 
   @override
   Widget build(BuildContext context) {
+    if (!enabled) return child;
     return AnimatedBuilder(
       animation: animation,
       child: child,
@@ -167,10 +188,7 @@ class _EdgeBlurState extends State<EdgeBlur> {
     }
 
     _filtersFor = key;
-    return _filters = [
-      layer(widget.sigma * 0.35, 0.2, 1),
-      layer(widget.sigma, 0.08, 0.66),
-    ];
+    return _filters = [layer(widget.sigma * 0.35, 0.2, 1), layer(widget.sigma, 0.08, 0.66)];
   }
 
   @override
@@ -185,7 +203,9 @@ class _EdgeBlurState extends State<EdgeBlur> {
             if (program != null)
               for (final f in _layers(program, MediaQuery.devicePixelRatioOf(context)))
                 Positioned.fill(
-                  child: ClipRect(child: BackdropFilter.grouped(filter: f, child: const SizedBox.expand())),
+                  child: ClipRect(
+                    child: BackdropFilter.grouped(filter: f, child: const SizedBox.expand()),
+                  ),
                 )
             else
               ..._strips(),
@@ -196,7 +216,8 @@ class _EdgeBlurState extends State<EdgeBlur> {
                     begin: widget.top ? Alignment.topCenter : Alignment.bottomCenter,
                     end: widget.top ? Alignment.bottomCenter : Alignment.topCenter,
                     colors: [
-                      for (final a in const [0.82, 0.62, 0.38, 0.17, 0.05, 0.0]) gc.bg.withValues(alpha: a * widget.shade),
+                      for (final a in const [0.82, 0.62, 0.38, 0.17, 0.05, 0.0])
+                        gc.bg.withValues(alpha: a * widget.shade),
                     ],
                     stops: const [0, 0.2, 0.42, 0.64, 0.84, 1],
                   ),

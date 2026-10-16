@@ -182,6 +182,38 @@ void main() {
       expect(find.text(t.benefitMonthlySessions), findsOneWidget);
       expect(ctaFinder(), findsOneWidget, reason: 'the CTA names bodybridge.net');
       expect(find.textContaining(r'$'), findsNothing, reason: 'no prices anywhere in the sheet');
+
+      // Composite legibility: no route-level dim or blur; the scrim lives only
+      // over the list region; the lock message paints at full opacity above it.
+      for (final barrier in tester.widgetList<ModalBarrier>(find.byType(ModalBarrier))) {
+        expect(
+          (barrier.color?.a ?? 0) == 0,
+          isTrue,
+          reason: 'no dimming route layer — the visible dim comes only from the list scrim',
+        );
+      }
+      RenderObject node = tester.renderObject<RenderParagraph>(find.text(t.lockAdvancedMessage));
+      while (node.parent != null) {
+        node = node.parent!;
+        if (node is RenderOpacity) {
+          expect(node.opacity, 1.0, reason: 'no partial-opacity RenderOpacity above the lock message');
+        }
+        if (node is RenderAnimatedOpacity) {
+          expect(node.opacity.value, 1.0, reason: 'no mid-fade RenderAnimatedOpacity above the lock message');
+        }
+      }
+      expect(
+        tester.getTopLeft(find.byType(TrainerLockScrim)).dy,
+        greaterThanOrEqualTo(tester.getBottomRight(find.byType(PremiumSourceTabs)).dy),
+        reason: 'the scrim starts at/below the tab strip — header and tabs are never under it',
+      );
+      final allBlurs = tester.widgetList(find.byType(BackdropFilter)).length;
+      expect(allBlurs, greaterThan(0), reason: 'the list scrim itself blurs the list area');
+      expect(
+        find.descendant(of: find.byType(TrainerLockScrim), matching: find.byType(BackdropFilter)),
+        findsNWidgets(allBlurs),
+        reason: 'every BackdropFilter lives inside the list scrim — no route-level blur barrier',
+      );
     });
 
     testWidgets('Not now pops the sheet and the Free list is intact', (tester) async {

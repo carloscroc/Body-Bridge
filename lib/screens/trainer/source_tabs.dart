@@ -54,7 +54,7 @@ class PremiumSourceTabs extends StatelessWidget {
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 200),
         curve: Curves.easeOut,
-        padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 8),
+        padding: const EdgeInsets.symmetric(horizontal: 2, vertical: 8),
         decoration: BoxDecoration(
           color: selected ? gc.ember : Colors.transparent,
           borderRadius: BorderRadius.circular(100),
@@ -76,9 +76,9 @@ class PremiumSourceTabs extends StatelessWidget {
               ),
             ),
             if (badge != null) ...[
-              const SizedBox(width: 2),
+              const SizedBox(width: 1),
               Container(
-                padding: const EdgeInsets.symmetric(horizontal: 3, vertical: 2),
+                padding: const EdgeInsets.symmetric(horizontal: 2, vertical: 2),
                 decoration: BoxDecoration(
                   color: (selected ? gc.onEmber : gc.textTertiary).withValues(alpha: 0.16),
                   borderRadius: BorderRadius.circular(100),
