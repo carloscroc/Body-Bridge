@@ -12,12 +12,10 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:gymmane/constants/billing.dart';
 import 'package:gymmane/l10n/l10n.dart';
 import 'package:gymmane/screens/trainer_chat_screen.dart';
 import 'package:gymmane/screens/trainer_home_screen.dart';
 import 'package:gymmane/screens/trainer_workout_detail_screen.dart';
-import 'package:gymmane/services/trainer_data.dart';
 import 'package:gymmane/state/account_gate.dart';
 import 'package:gymmane/state/fit_state.dart';
 import 'package:gymmane/state/trainer_state.dart';

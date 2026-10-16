@@ -20,6 +20,10 @@ Color trainerPrimaryFg(GymColors gc, bool dark) => dark ? gc.pageBg : gc.onEmber
 bool trainerIsDark(BuildContext context) =>
     Theme.of(context).brightness == Brightness.dark;
 
+/// "Marcus Reyes" -> "Marcus" (the mockups sign notes and banners with the
+/// trainer's first name).
+String trainerFirstName(String displayName) => displayName.split(' ').first;
+
 class TrainerAvatarDisc extends StatelessWidget {
   const TrainerAvatarDisc({super.key, required this.initials, this.size = 46});
 

@@ -14,6 +14,7 @@ import '../state/trainer_state.dart';
 import '../theme/app_colors.dart';
 import '../theme/app_theme.dart';
 import '../widgets/liquid_notch.dart';
+import '../widgets/svg_icon.dart';
 import '../widgets/trainer_kit.dart';
 import '../widgets/ui_kit.dart';
 
@@ -96,7 +97,22 @@ class _TrainerWorkoutDetailScreenState extends State<TrainerWorkoutDetailScreen>
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  ScreenHeader(title: a.title, onBack: () => fit.popRoute(), titleSize: 19),
+                  Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    RoundBtn(icon: Ic.chevronLeft, onTap: () => fit.popRoute()),
+                    const SizedBox(width: 12),
+                    Expanded(
+                      child: Text(
+                        a.title,
+                        maxLines: 2,
+                        overflow: TextOverflow.ellipsis,
+                        style: AppTheme.f(19,
+                            weight: FontWeight.w800, color: gc.text),
+                      ),
+                    ),
+                  ],
+                ),
                   const SizedBox(height: 16),
                   Row(
                     children: [
@@ -128,7 +144,8 @@ class _TrainerWorkoutDetailScreenState extends State<TrainerWorkoutDetailScreen>
                     const SizedBox(height: 16),
                     TrainerCoachNote(
                         note: a.trainerNote!,
-                        trainerName: _profile?.displayName ?? ''),
+                        trainerName:
+                            trainerFirstName(_profile?.displayName ?? '')),
                   ],
                   const SizedBox(height: 18),
                   for (final ex in a.exercises) ...[
@@ -137,7 +154,8 @@ class _TrainerWorkoutDetailScreenState extends State<TrainerWorkoutDetailScreen>
                       const SizedBox(height: 8),
                       TrainerCoachNote(
                           note: ex.notes!,
-                          trainerName: _profile?.displayName ?? ''),
+                          trainerName:
+                              trainerFirstName(_profile?.displayName ?? '')),
                     ],
                     const SizedBox(height: 14),
                   ],
@@ -181,7 +199,7 @@ class _TrainerWorkoutDetailScreenState extends State<TrainerWorkoutDetailScreen>
                 TextButton(
                   onPressed: _openChat,
                   child: Text(
-                    t.askAboutThis(_profile?.displayName ?? ''),
+                    t.askAboutThis(trainerFirstName(_profile?.displayName ?? '')),
                     style: AppTheme.f(12.5,
                         weight: FontWeight.w700, color: gc.textSecondary),
                   ),

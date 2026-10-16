@@ -188,7 +188,8 @@ class _TrainerChatScreenState extends State<TrainerChatScreen> {
                       onSubmitted: (_) => _send(),
                       style: AppTheme.s(13.5, color: gc.text),
                       decoration: InputDecoration(
-                        hintText: t.messageHint(profile?.displayName ?? ''),
+                        hintText: t.messageHint(
+                            trainerFirstName(profile?.displayName ?? '')),
                         hintStyle:
                             AppTheme.f(13, weight: FontWeight.w500, color: gc.textTertiary),
                         filled: true,

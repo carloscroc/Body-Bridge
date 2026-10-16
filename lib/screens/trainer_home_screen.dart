@@ -78,7 +78,10 @@ class _TrainerHomeScreenState extends State<TrainerHomeScreen> {
           bottom: false,
           child: SingleChildScrollView(
             clipBehavior: Clip.none,
-            padding: const EdgeInsets.fromLTRB(20, 14, 20, 116),
+            // The in-app banner slides in UNDER the status bar over the tab;
+            // when it is up, the page content starts below it (mockup:
+            // notifications.png right frame — banner above "My Trainer").
+            padding: EdgeInsets.fromLTRB(20, banner == null ? 14 : 84, 20, 116),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
@@ -161,33 +164,36 @@ class _TrainerHomeScreenState extends State<TrainerHomeScreen> {
             ],
           ),
           const SizedBox(height: 14),
-          Pressable(
-            onTap: unlocked ? _openChat : () => showTrainerGate(context),
-            child: Container(
-              height: 40,
-              padding: const EdgeInsets.symmetric(horizontal: 16),
-              alignment: Alignment.center,
-              decoration: BoxDecoration(
-                color: trainerPrimaryBg(gc, trainerIsDark(context)),
-                borderRadius: BorderRadius.circular(100),
-              ),
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Text(
-                    t.messageTrainer,
-                    style: AppTheme.f(13,
-                        weight: FontWeight.w800,
-                        color: trainerPrimaryFg(gc, trainerIsDark(context))),
-                  ),
-                  if (unlocked && unread > 0) ...[
-                    const SizedBox(width: 8),
-                    TrainerCountPill(
-                        count: unread,
-                        size: 17,
-                        key: const ValueKey('message-pill')),
+          Align(
+            alignment: Alignment.centerLeft,
+            child: Pressable(
+              onTap: unlocked ? _openChat : () => showTrainerGate(context),
+              child: Container(
+                height: 40,
+                padding: const EdgeInsets.symmetric(horizontal: 18),
+                decoration: BoxDecoration(
+                  color: trainerPrimaryBg(gc, trainerIsDark(context)),
+                  borderRadius: BorderRadius.circular(100),
+                ),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Text(
+                      t.messageTrainer,
+                      style: AppTheme.f(13,
+                          weight: FontWeight.w800,
+                          color: trainerPrimaryFg(gc, trainerIsDark(context))),
+                    ),
+                    if (unlocked && unread > 0) ...[
+                      const SizedBox(width: 8),
+                      TrainerCountPill(
+                          count: unread,
+                          size: 17,
+                          key: const ValueKey('message-pill')),
+                    ],
                   ],
-                ],
+                ),
               ),
             ),
           ),
@@ -333,8 +339,10 @@ class _TrainerHomeScreenState extends State<TrainerHomeScreen> {
                     children: [
                       Text(
                         isNewWorkout
-                            ? t.bannerNewWorkout(trainer.profile?.displayName ?? '')
-                            : t.bannerNewMessage(trainer.profile?.displayName ?? ''),
+                            ? t.bannerNewWorkout(trainerFirstName(
+                                trainer.profile?.displayName ?? ''))
+                            : t.bannerNewMessage(trainerFirstName(
+                                trainer.profile?.displayName ?? '')),
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
                         style: AppTheme.f(12.5,
