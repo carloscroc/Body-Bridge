@@ -16,6 +16,7 @@ import '../state/trainer_state.dart';
 import '../theme/app_colors.dart';
 import '../theme/app_theme.dart';
 import '../widgets/premium_gate.dart';
+import '../widgets/svg_icon.dart';
 import '../widgets/trainer_gate_sheet.dart';
 import '../widgets/trainer_kit.dart';
 import '../widgets/ui_kit.dart';
@@ -33,9 +34,11 @@ class _TrainerHomeScreenState extends State<TrainerHomeScreen> {
   @override
   void initState() {
     super.initState();
-    unawaited(trainer.ensureLoaded().then((_) {
-      if (mounted && context.can(kCapCustomExercises)) trainer.markListSeen();
-    }));
+    unawaited(
+      trainer.ensureLoaded().then((_) {
+        if (mounted && context.can(kCapCustomExercises)) trainer.markListSeen();
+      }),
+    );
   }
 
   void _openWorkout(TrainerAssignment a) {
@@ -87,9 +90,9 @@ class _TrainerHomeScreenState extends State<TrainerHomeScreen> {
               children: [
                 Row(
                   children: [
-                    Expanded(
-                      child: ScreenTitle(t.myTrainer, size: 24),
-                    ),
+                    RoundBtn(icon: Ic.chevronLeft, onTap: () => fit.popRoute()),
+                    const SizedBox(width: 12),
+                    Expanded(child: ScreenTitle(t.myTrainer, size: 24)),
                     if (unlocked && unread > 0) TrainerCountPill(count: unread),
                   ],
                 ),
@@ -113,24 +116,20 @@ class _TrainerHomeScreenState extends State<TrainerHomeScreen> {
         // trainer surface — blur the intro surface but keep the Message
         // button tappable (the mockup's chat-entry gate opens from it).
         if (!unlocked) {
-          content = ImageFiltered(
-            imageFilter: ImageFilter.blur(sigmaX: 12, sigmaY: 12),
-            child: content,
-          );
+          content = ImageFiltered(imageFilter: ImageFilter.blur(sigmaX: 12, sigmaY: 12), child: content);
         }
 
         return Stack(
           children: [
             Positioned.fill(child: content),
-            if (banner != null) _banner(context, gc, banner),
+            if (banner != null) _banner(context, banner),
           ],
         );
       },
     );
   }
 
-  Widget _introCard(
-      BuildContext context, GymColors gc, TrainerProfile? profile, int unread, bool unlocked) {
+  Widget _introCard(BuildContext context, GymColors gc, TrainerProfile? profile, int unread, bool unlocked) {
     final name = profile?.displayName ?? '—';
     return SoftCard(
       radius: 20,
@@ -146,17 +145,19 @@ class _TrainerHomeScreenState extends State<TrainerHomeScreen> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(name,
-                        style: AppTheme.f(15, weight: FontWeight.w800, color: gc.text)),
+                    Text(
+                      name,
+                      style: AppTheme.f(15, weight: FontWeight.w800, color: gc.text),
+                    ),
                     const SizedBox(height: 2),
-                    Text(profile?.credential ?? '',
-                        style: AppTheme.f(11.5,
-                            weight: FontWeight.w500, color: gc.textSecondary)),
+                    Text(
+                      profile?.credential ?? '',
+                      style: AppTheme.f(11.5, weight: FontWeight.w500, color: gc.textSecondary),
+                    ),
                     if (profile != null)
                       Text(
                         t.trainerSince(t.monthYear(profile.memberSince)),
-                        style: AppTheme.f(10.5,
-                            weight: FontWeight.w500, color: gc.textTertiary),
+                        style: AppTheme.f(10.5, weight: FontWeight.w500, color: gc.textTertiary),
                       ),
                   ],
                 ),
@@ -181,16 +182,15 @@ class _TrainerHomeScreenState extends State<TrainerHomeScreen> {
                   children: [
                     Text(
                       t.messageTrainer,
-                      style: AppTheme.f(13,
-                          weight: FontWeight.w800,
-                          color: trainerPrimaryFg(gc, trainerIsDark(context))),
+                      style: AppTheme.f(
+                        13,
+                        weight: FontWeight.w800,
+                        color: trainerPrimaryFg(gc, trainerIsDark(context)),
+                      ),
                     ),
                     if (unlocked && unread > 0) ...[
                       const SizedBox(width: 8),
-                      TrainerCountPill(
-                          count: unread,
-                          size: 17,
-                          key: const ValueKey('message-pill')),
+                      TrainerCountPill(count: unread, size: 17, key: const ValueKey('message-pill')),
                     ],
                   ],
                 ),
@@ -207,8 +207,8 @@ class _TrainerHomeScreenState extends State<TrainerHomeScreen> {
     final kind = progress >= 1
         ? TrainerChipKind.completed
         : (progress > 0 || trainer.openedThreads.contains(a.threadId)
-            ? TrainerChipKind.inProgress
-            : TrainerChipKind.isNew);
+              ? TrainerChipKind.inProgress
+              : TrainerChipKind.isNew);
     return Pressable(
       onTap: () => _openWorkout(a),
       child: SoftCard(
@@ -220,20 +220,26 @@ class _TrainerHomeScreenState extends State<TrainerHomeScreen> {
             Row(
               children: [
                 Expanded(
-                  child: Text(a.kicker,
-                      overflow: TextOverflow.ellipsis,
-                      style: AppTheme.f(9.5,
-                          weight: FontWeight.w800,
-                          color: gc.textTertiary,
-                          letterSpacing: 1.6)),
+                  child: Text(
+                    a.kicker,
+                    overflow: TextOverflow.ellipsis,
+                    style: AppTheme.f(
+                      9.5,
+                      weight: FontWeight.w800,
+                      color: gc.textTertiary,
+                      letterSpacing: 1.6,
+                    ),
+                  ),
                 ),
                 const SizedBox(width: 8),
                 TrainerStateChip(kind: kind),
               ],
             ),
             const SizedBox(height: 8),
-            Text(a.title,
-                style: AppTheme.f(14.5, weight: FontWeight.w800, color: gc.text)),
+            Text(
+              a.title,
+              style: AppTheme.f(14.5, weight: FontWeight.w800, color: gc.text),
+            ),
             const SizedBox(height: 4),
             Text(
               t.sentCardMeta(
@@ -241,8 +247,7 @@ class _TrainerHomeScreenState extends State<TrainerHomeScreen> {
                 a.exercises.length,
                 a.estimatedMinutes ?? 0,
               ),
-              style: AppTheme.f(11.5,
-                  weight: FontWeight.w500, color: gc.textSecondary),
+              style: AppTheme.f(11.5, weight: FontWeight.w500, color: gc.textSecondary),
             ),
             const SizedBox(height: 12),
             Row(
@@ -254,9 +259,10 @@ class _TrainerHomeScreenState extends State<TrainerHomeScreen> {
                   ),
                 ),
                 const SizedBox(width: 10),
-                Text(t.progressPct((progress * 100).round()),
-                    style: AppTheme.f(10,
-                        weight: FontWeight.w700, color: gc.textTertiary)),
+                Text(
+                  t.progressPct((progress * 100).round()),
+                  style: AppTheme.f(10, weight: FontWeight.w700, color: gc.textTertiary),
+                ),
               ],
             ),
           ],
@@ -266,98 +272,28 @@ class _TrainerHomeScreenState extends State<TrainerHomeScreen> {
   }
 
   /// In-app top banner (notifications.png right frame): slides in under the
-  /// status bar over My Trainer while the app is awake.
-  Widget _banner(BuildContext context, GymColors gc, TrainerBanner banner) {
-    final dark = trainerIsDark(context);
+  /// status bar over My Trainer while the app is awake. Visuals live in the
+  /// shared [TrainerBannerCard]; the hub keeps both banner kinds.
+  Widget _banner(BuildContext context, TrainerBanner banner) {
     final isNewWorkout = banner.kind == TrainerBannerKind.newWorkout;
-    void open() {
-      trainer.dismissBanner(banner.key);
-      if (isNewWorkout) {
-        final a = trainer.assignments.firstWhere(
-          (x) => trainer.isNewAssignment(x),
-          orElse: () => trainer.assignments.first,
-        );
-        _openWorkout(a);
-      } else {
-        _openChat();
-      }
-    }
-
     return Positioned(
       left: 14,
       right: 14,
       top: 8,
-      child: AnimatedSwitcher(
-        duration: const Duration(milliseconds: 320),
-        switchInCurve: Curves.easeOutCubic,
-        switchOutCurve: Curves.easeInCubic,
-        transitionBuilder: (child, anim) => SlideTransition(
-          position: Tween(begin: const Offset(0, -1.2), end: Offset.zero)
-              .animate(anim),
-          child: child,
-        ),
-        child: Pressable(
-          key: ValueKey(banner.key),
-          onTap: open,
-          child: Container(
-            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
-            decoration: BoxDecoration(
-              color: gc.bgRaised,
-              borderRadius: BorderRadius.circular(16),
-              border: Border.all(color: gc.border),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.black.withValues(alpha: dark ? 0.4 : 0.12),
-                  blurRadius: 18,
-                  offset: const Offset(0, 8),
-                ),
-              ],
-            ),
-            child: Row(
-              children: [
-                Container(
-                  width: 34,
-                  height: 34,
-                  alignment: Alignment.center,
-                  decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                      begin: Alignment.topLeft,
-                      end: Alignment.bottomRight,
-                      colors: [gc.accent, gc.brass],
-                    ),
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: Text('B',
-                      style: AppTheme.f(14,
-                          weight: FontWeight.w900,
-                          color: trainerPrimaryFg(gc, dark))),
-                ),
-                const SizedBox(width: 11),
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        isNewWorkout
-                            ? t.bannerNewWorkout(trainerFirstName(
-                                trainer.profile?.displayName ?? ''))
-                            : t.bannerNewMessage(trainerFirstName(
-                                trainer.profile?.displayName ?? '')),
-                        maxLines: 1,
-                        overflow: TextOverflow.ellipsis,
-                        style: AppTheme.f(12.5,
-                            weight: FontWeight.w800, color: gc.text),
-                      ),
-                      Text(t.bannerTapToView,
-                          style: AppTheme.f(10.5,
-                              weight: FontWeight.w500, color: gc.textSecondary)),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ),
+      child: TrainerBannerCard(
+        banner: banner,
+        onTap: () {
+          trainer.dismissBanner(banner.key);
+          if (isNewWorkout) {
+            final a = trainer.assignments.firstWhere(
+              (x) => trainer.isNewAssignment(x),
+              orElse: () => trainer.assignments.first,
+            );
+            _openWorkout(a);
+          } else {
+            _openChat();
+          }
+        },
       ),
     );
   }
