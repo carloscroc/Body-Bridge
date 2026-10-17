@@ -110,7 +110,7 @@ void main() {
     await tester.pump();
 
     final home = tester.getCenter(find.text(t.home));
-    final profile = tester.getCenter(find.text(t.profile));
+    final profile = tester.getCenter(find.text(t.communityTab));
     final gesture = await tester.startGesture(home);
     await tester.pump(const Duration(milliseconds: 700));
     for (var i = 1; i <= 10; i++) {
@@ -120,7 +120,7 @@ void main() {
     expect(fit.route, 'home');
     await gesture.up();
     await tester.pump();
-    expect(fit.route, 'settings');
+    expect(fit.route, 'community');
     await tester.pump(const Duration(seconds: 1));
   });
 }

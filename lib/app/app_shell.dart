@@ -427,7 +427,7 @@ class _NavBar extends StatefulWidget {
 class _NavBarState extends State<_NavBar> {
   static const _iw = 58.0;
   static const _fabW = 54.0;
-  static const _routes = ['home', 'progress', 'exercises', 'settings', 'community'];
+  static const _routes = ['home', 'progress', 'exercises', 'community'];
 
   double? _dragX;
   int? _hover;
@@ -447,7 +447,7 @@ class _NavBarState extends State<_NavBar> {
         _ => 3 * _iw + 4 * _gap + _fabW,
       };
 
-  void _go(int i) => [fit.goHome, fit.goProgress, fit.goExercises, fit.goSettings, fit.goCommunity][i]();
+  void _go(int i) => [fit.goHome, fit.goProgress, fit.goExercises, fit.goCommunity][i]();
 
   int _nearest(double x) {
     var best = 0;
@@ -544,8 +544,8 @@ class _NavBarState extends State<_NavBar> {
                       _fab(context),
                       _item(context, 2, PhosphorIconsRegular.barbell, PhosphorIconsFill.barbell, t.exercises,
                           fit.goExercises),
-                      _item(context, 3, PhosphorIconsRegular.userCircle, PhosphorIconsFill.userCircle, t.profile,
-                          fit.goSettings),
+                      _item(context, 3, PhosphorIconsRegular.chatCircle, PhosphorIconsFill.chatCircle,
+                          t.communityTab, fit.goCommunity),
                     ],
                   ),
                 ),
