@@ -1,0 +1,4 @@
+TASK: Repair R1-R4 (t_568974d3): D5 free-tier "Not now" black screen (use goHome, not Navigator.pop); remove unused fit_state import in community_gate.dart; D3 keyboard-down submit bar visible; photo Add visibly disabled with reason chip, note picker dependency needed; D6 single-source truth (comments.length = all counts) + scrollable thread; R4 route created posts through same persistence.
+WORKSPACE: C:/Users/thebe/.aa.StudioProjects/Body-Bridge/.worktrees/t_798cdc2d (branch wt/community @ 8f607d6d)
+NON-GOALS: D1/D2/D4/D7/D8 untouched (except import removal), no new user-visible strings (if any -> check 16 ARBs + gen-l10n + i18n test), analysis_options.yaml untouched, no backend/DB changes.
+ACCEPTANCE: widget tests reproduce RED then GREEN per item; flutter analyze 0; full flutter test >= +594; commit per checkpoint.
