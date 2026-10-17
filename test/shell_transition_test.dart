@@ -8,8 +8,10 @@ import 'package:gymmane/services/local_store.dart';
 import 'package:gymmane/services/progress_reminder.dart';
 import 'package:gymmane/state/fit_state.dart';
 import 'package:gymmane/widgets/award_celebration.dart';
+import 'package:gymmane/state/account_gate.dart';
 import 'package:gymmane/state/account_state.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'community_gate_test.dart';
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
@@ -122,5 +124,32 @@ void main() {
     await tester.pump();
     expect(fit.route, 'community');
     await tester.pump(const Duration(seconds: 1));
+  });
+
+  testWidgets('nav persists on the community tab', (tester) async {
+    await tester.pumpWidget(const GymManeApp());
+    await tester.pump();
+
+    fit.goCommunity();
+    await tester.pump();
+
+    expect(fit.showNav, isTrue);
+    // El título de la pantalla también dice communityTab; el label del nav
+    // es el único dentro de un FittedBox.
+    expect(find.descendant(of: find.byType(FittedBox), matching: find.text(t.communityTab)), findsOneWidget);
+  });
+
+  testWidgets('community tab badge: padlock on free tier, none on basic', (tester) async {
+    await tester.pumpWidget(const GymManeApp());
+    await tester.pump();
+    expect(find.byKey(const Key('communityLockBadge')), findsOneWidget);
+
+    addTearDown(() => AccountGate.install(SignedOutGate()));
+    AccountGate.install(FakeTierGate(AccountTier.basic));
+    // pumpWidget con el mismo widget const no reconstruye (identity short-circuit);
+    // una key distinta fuerza el rebuild que lee el gate en build time.
+    await tester.pumpWidget(GymManeApp(key: const ValueKey('basic')));
+    await tester.pump();
+    expect(find.byKey(const Key('communityLockBadge')), findsNothing);
   });
 }

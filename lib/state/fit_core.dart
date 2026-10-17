@@ -153,7 +153,7 @@ abstract class FitCore extends ChangeNotifier {
 
   int get routeDepth => _routeStack.length;
 
-  bool get showNav => const ['home', 'progress', 'exercises', 'settings'].contains(route);
+  bool get showNav => const ['home', 'progress', 'exercises', 'settings', 'community'].contains(route);
 
   void setUnits(String u) {
     units = u;
