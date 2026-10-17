@@ -69,6 +69,7 @@ Future<void> _render(
   await tester.pumpWidget(RepaintBoundary(key: key, child: const GymManeApp()));
   await tester.pump(const Duration(milliseconds: 600));
   fit.goCommunity();
+  await tester.pump();
   await tester.pump(const Duration(milliseconds: 600));
   await _capture(tester, key, name);
 }
