@@ -148,7 +148,7 @@ class HomeScreen extends StatelessWidget {
         ),
         GestureDetector(
           behavior: HitTestBehavior.opaque,
-          onTap: fit.goSettings,
+          onTap: fit.goPreferences,
           child: Icon(PhosphorIconsRegular.userCircle, size: 26, color: gc.text),
         ),
       ],
