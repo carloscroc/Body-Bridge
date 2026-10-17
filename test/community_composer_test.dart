@@ -94,4 +94,35 @@ void main() {
     expect(repo.posts.first.workout, isNotNull);
     expect(find.byType(CommunityComposerScreen), findsNothing);
   });
+
+  testWidgets('submit bar clears the system bottom inset with the keyboard down', (tester) async {
+    tester.view.physicalSize = const Size(390, 844);
+    tester.view.devicePixelRatio = 1.0;
+    tester.view.viewPadding = const FakeViewPadding(bottom: 48);
+    tester.view.padding = const FakeViewPadding(bottom: 48);
+    addTearDown(tester.view.reset);
+    await pumpHostAndOpen(tester);
+
+    final barBottom = tester.getBottomRight(find.text(t.postToCommunity)).dy;
+    expect(
+      barBottom,
+      lessThanOrEqualTo(844 - 48),
+      reason: 'keyboard down: CTA must sit above the system nav inset, not inside it',
+    );
+  });
+
+  testWidgets('submit bar stays above the keyboard when it is up', (tester) async {
+    tester.view.physicalSize = const Size(390, 844);
+    tester.view.devicePixelRatio = 1.0;
+    tester.view.viewPadding = const FakeViewPadding(bottom: 48);
+    tester.view.padding = FakeViewPadding.zero;
+    addTearDown(tester.view.reset);
+    await pumpHostAndOpen(tester);
+
+    tester.view.viewInsets = const FakeViewPadding(bottom: 300);
+    await tester.pump();
+
+    final barBottom = tester.getBottomRight(find.text(t.postToCommunity)).dy;
+    expect(barBottom, lessThanOrEqualTo(844 - 300));
+  });
 }

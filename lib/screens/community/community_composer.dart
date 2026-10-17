@@ -277,7 +277,7 @@ class _CommunityComposerScreenState extends State<CommunityComposerScreen> {
             Positioned(
               left: 20,
               right: 20,
-              bottom: 12,
+              bottom: 12 + MediaQuery.paddingOf(context).bottom,
               child: AnimatedBuilder(
                 animation: Listenable.merge([_caption, _context]),
                 builder: (context, _) {
