@@ -279,7 +279,7 @@ List<CommunityPost> _seed() => [
             'is finally compounding.',
         media: const [MediaPlaceholder()],
         likeCount: 24,
-        commentCount: 8,
+        commentCount: 0,
         shareCount: 3,
         slug: 'wk8-pullup',
         comments: [
@@ -314,7 +314,7 @@ List<CommunityPost> _seed() => [
         caption: '',
         workout: _pushDayA(),
         likeCount: 42,
-        commentCount: 15,
+        commentCount: 0,
         shareCount: 7,
         slug: 'push-day-a',
         comments: [
@@ -361,7 +361,7 @@ List<CommunityPost> _seed() => [
           MediaPlaceholder(sage: true),
         ],
         likeCount: 17,
-        commentCount: 4,
+        commentCount: 0,
         shareCount: 1,
         slug: 'hip-hinge-pair',
       ),
