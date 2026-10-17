@@ -25,7 +25,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:gymmane/app/app_shell.dart';
 import 'package:gymmane/l10n/l10n.dart';
+import 'package:gymmane/screens/exercises_screen.dart';
 import 'package:gymmane/screens/trainer_chat_screen.dart';
 import 'package:gymmane/screens/trainer_home_screen.dart';
 import 'package:gymmane/screens/trainer_workout_detail_screen.dart';
@@ -44,9 +46,8 @@ class _FakeGate extends AccountGate {
   final AccountTier tier;
 
   @override
-  AccountSnapshot get snapshot => AccountSnapshot(
-      tier: tier,
-      email: tier == AccountTier.signedOut ? null : 'dev@bodybridge.local');
+  AccountSnapshot get snapshot =>
+      AccountSnapshot(tier: tier, email: tier == AccountTier.signedOut ? null : 'dev@bodybridge.local');
 
   @override
   bool canAccess(String feature) => tierCan(tier, feature);
@@ -72,8 +73,7 @@ Future<void>? _fontsFuture;
 Future<void> _loadFontFamily(String path, List<String> names) async {
   final bytes = File(path).readAsBytesSync();
   for (final name in names) {
-    final loader = FontLoader(name)
-      ..addFont(Future.value(ByteData.view(bytes.buffer)));
+    final loader = FontLoader(name)..addFont(Future.value(ByteData.view(bytes.buffer)));
     await loader.load();
   }
 }
@@ -82,8 +82,7 @@ Future<void> _loadRealFonts() {
   return _fontsFuture ??= () async {
     final root = Directory.current.path;
     final local = Platform.environment['LOCALAPPDATA'] ?? '';
-    final phosphorFonts =
-        '$local/Pub/Cache/hosted/pub.dev/phosphoricons_flutter-1.0.0/lib/fonts';
+    final phosphorFonts = '$local/Pub/Cache/hosted/pub.dev/phosphoricons_flutter-1.0.0/lib/fonts';
 
     for (final f in [
       'Nunito-Regular.ttf',
@@ -126,6 +125,7 @@ void main() {
     required Size size,
     required bool dark,
     required AccountTier tier,
+    void Function()? setup,
     required Widget body,
   }) async {
     // Real engine work (font registration, rasterization) must escape the
@@ -135,6 +135,7 @@ void main() {
     trainer.resetForTest();
     AccountGate.install(_FakeGate(tier));
     fit.resetRoute('home');
+    setup?.call();
     tester.view.devicePixelRatio = 1.0;
     tester.view.platformDispatcher.textScaleFactorTestValue = 1.0;
     tester.view.physicalSize = size;
@@ -144,8 +145,7 @@ void main() {
         theme: dark ? AppTheme.dark : AppTheme.light,
         localizationsDelegates: AppLocalizations.localizationsDelegates,
         supportedLocales: AppLocalizations.supportedLocales,
-        builder: (context, child) =>
-            RepaintBoundary(key: captureKey, child: child),
+        builder: (context, child) => RepaintBoundary(key: captureKey, child: child),
         home: PremiumGate(
           gate: AccountGate.instance,
           child: AnimatedBuilder(
@@ -158,13 +158,10 @@ void main() {
     await tester.pump(const Duration(milliseconds: 120));
     await tester.pumpAndSettle(const Duration(milliseconds: 100));
 
-    final boundary =
-        captureKey.currentContext?.findRenderObject() as RenderRepaintBoundary?;
+    final boundary = captureKey.currentContext?.findRenderObject() as RenderRepaintBoundary?;
     if (boundary == null) throw StateError('capture boundary missing: $name');
-    final image =
-        await tester.runAsync<dart_ui.Image>(() => boundary.toImage(pixelRatio: 2));
-    final data = await tester
-        .runAsync<ByteData?>(() => image!.toByteData(format: ImageByteFormat.png));
+    final image = await tester.runAsync<dart_ui.Image>(() => boundary.toImage(pixelRatio: 2));
+    final data = await tester.runAsync<ByteData?>(() => image!.toByteData(format: ImageByteFormat.png));
     final out = '$bbCaptureDir/$name.png';
     File(out)
       ..createSync(recursive: true)
@@ -180,75 +177,162 @@ void main() {
     final size = entry.value;
 
     testWidgets('home dark $tag', (tester) async {
-      await capture(tester,
-          name: 'trainer-home-dark-$tag',
-          size: size,
-          dark: true,
-          tier: AccountTier.advanced,
-          body: const TrainerHomeScreen());
+      await capture(
+        tester,
+        name: 'trainer-home-dark-$tag',
+        size: size,
+        dark: true,
+        tier: AccountTier.advanced,
+        body: const TrainerHomeScreen(),
+      );
     });
     testWidgets('home light $tag', (tester) async {
-      await capture(tester,
-          name: 'trainer-home-light-$tag',
-          size: size,
-          dark: false,
-          tier: AccountTier.advanced,
-          body: const TrainerHomeScreen());
+      await capture(
+        tester,
+        name: 'trainer-home-light-$tag',
+        size: size,
+        dark: false,
+        tier: AccountTier.advanced,
+        body: const TrainerHomeScreen(),
+      );
     });
 
     testWidgets('detail dark $tag', (tester) async {
       trainer.openAssignmentId = 'asg_lower';
-      await capture(tester,
-          name: 'workout-detail-dark-$tag',
-          size: size,
-          dark: true,
-          tier: AccountTier.advanced,
-          body: const TrainerWorkoutDetailScreen());
+      await capture(
+        tester,
+        name: 'workout-detail-dark-$tag',
+        size: size,
+        dark: true,
+        tier: AccountTier.advanced,
+        body: const TrainerWorkoutDetailScreen(),
+      );
     });
     testWidgets('detail light $tag', (tester) async {
       trainer.openAssignmentId = 'asg_lower';
-      await capture(tester,
-          name: 'workout-detail-light-$tag',
-          size: size,
-          dark: false,
-          tier: AccountTier.advanced,
-          body: const TrainerWorkoutDetailScreen());
+      await capture(
+        tester,
+        name: 'workout-detail-light-$tag',
+        size: size,
+        dark: false,
+        tier: AccountTier.advanced,
+        body: const TrainerWorkoutDetailScreen(),
+      );
     });
 
     testWidgets('chat dark $tag', (tester) async {
       trainer.openThreadId = 'thr_chat_marcus';
-      await capture(tester,
-          name: 'trainer-chat-dark-$tag',
-          size: size,
-          dark: true,
-          tier: AccountTier.advanced,
-          body: const TrainerChatScreen());
+      await capture(
+        tester,
+        name: 'trainer-chat-dark-$tag',
+        size: size,
+        dark: true,
+        tier: AccountTier.advanced,
+        body: const TrainerChatScreen(),
+      );
     });
     testWidgets('chat light $tag', (tester) async {
       trainer.openThreadId = 'thr_chat_marcus';
-      await capture(tester,
-          name: 'trainer-chat-light-$tag',
-          size: size,
-          dark: false,
-          tier: AccountTier.advanced,
-          body: const TrainerChatScreen());
+      await capture(
+        tester,
+        name: 'trainer-chat-light-$tag',
+        size: size,
+        dark: false,
+        tier: AccountTier.advanced,
+        body: const TrainerChatScreen(),
+      );
     });
 
     testWidgets('gate dark $tag', (tester) async {
-      await capture(tester,
-          name: 'advanced-gate-dark-$tag',
-          size: size,
-          dark: true,
-          tier: AccountTier.free,
-          body: const TrainerHomeScreen());
+      await capture(
+        tester,
+        name: 'advanced-gate-dark-$tag',
+        size: size,
+        dark: true,
+        tier: AccountTier.free,
+        body: const TrainerHomeScreen(),
+      );
     });
     testWidgets('gate light $tag', (tester) async {
-      await capture(tester,
-          name: 'advanced-gate-light-$tag',
-          size: size,
-          dark: false,
-          tier: AccountTier.free,
-          body: const TrainerHomeScreen());
+      await capture(
+        tester,
+        name: 'advanced-gate-light-$tag',
+        size: size,
+        dark: false,
+        tier: AccountTier.free,
+        body: const TrainerHomeScreen(),
+      );
+    });
+
+    testWidgets('exercises advanced dark $tag', (tester) async {
+      await capture(
+        tester,
+        name: 'exercises-advanced-dark-$tag',
+        size: size,
+        dark: true,
+        tier: AccountTier.advanced,
+        setup: () {
+          trainer.dismissedBanners.add('workout:thr_lower');
+        },
+        body: ExercisesScreen(),
+      );
+    });
+    testWidgets('exercises advanced light $tag', (tester) async {
+      await capture(
+        tester,
+        name: 'exercises-advanced-light-$tag',
+        size: size,
+        dark: false,
+        tier: AccountTier.advanced,
+        setup: () {
+          trainer.dismissedBanners.add('workout:thr_lower');
+        },
+        body: ExercisesScreen(),
+      );
+    });
+
+    testWidgets('exercises free dark $tag', (tester) async {
+      await capture(
+        tester,
+        name: 'exercises-free-dark-$tag',
+        size: size,
+        dark: true,
+        tier: AccountTier.free,
+        body: ExercisesScreen(),
+      );
+    });
+    testWidgets('exercises free light $tag', (tester) async {
+      await capture(
+        tester,
+        name: 'exercises-free-light-$tag',
+        size: size,
+        dark: false,
+        tier: AccountTier.free,
+        body: ExercisesScreen(),
+      );
+    });
+
+    testWidgets('nav 4tabs dark $tag', (tester) async {
+      await capture(
+        tester,
+        name: 'nav-4tabs-dark-$tag',
+        size: size,
+        dark: true,
+        tier: AccountTier.advanced,
+        setup: () => fit.onboarded = true,
+        body: const AppShell(),
+      );
+    });
+    testWidgets('nav 4tabs light $tag', (tester) async {
+      await capture(
+        tester,
+        name: 'nav-4tabs-light-$tag',
+        size: size,
+        dark: false,
+        tier: AccountTier.advanced,
+        setup: () => fit.onboarded = true,
+        body: const AppShell(),
+      );
     });
   }
 }
