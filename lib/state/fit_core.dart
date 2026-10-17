@@ -105,8 +105,6 @@ abstract class FitCore extends ChangeNotifier {
 
   void goExercises() => _setRoute('exercises', reset: true);
 
-  void goTrainer() => _setRoute('trainer', reset: true);
-
   void goSettings() => _setRoute('settings', reset: true);
 
   void goPreferences() => pushRoute('preferences');
@@ -153,7 +151,7 @@ abstract class FitCore extends ChangeNotifier {
 
   int get routeDepth => _routeStack.length;
 
-  bool get showNav => const ['home', 'progress', 'exercises', 'trainer', 'settings'].contains(route);
+  bool get showNav => const ['home', 'progress', 'exercises', 'settings'].contains(route);
 
   void setUnits(String u) {
     units = u;

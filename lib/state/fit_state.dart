@@ -1010,9 +1010,10 @@ class FitState extends FitCore
         backFromAwards();
       case 'ai-plan':
         backFromAiPlan();
+      case 'trainer':
+        popRoute(fallback: 'exercises');
       case 'progress':
       case 'exercises':
-      case 'trainer':
       case 'settings':
         goHome();
       case 'home':

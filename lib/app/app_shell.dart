@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:phosphoricons_flutter/phosphoricons_flutter.dart';
 
-import '../constants/billing.dart';
 import '../l10n/l10n.dart';
 import '../screens/account_screen.dart';
 import '../screens/about_screen.dart';
@@ -47,7 +46,6 @@ import '../widgets/award_celebration.dart';
 import '../widgets/dialogs.dart';
 import '../widgets/glass.dart';
 import '../widgets/liquid_notch.dart';
-import '../widgets/premium_gate.dart';
 import '../widgets/start_countdown.dart';
 
 class AppShell extends StatefulWidget {
@@ -261,12 +259,9 @@ class _AppShellState extends State<AppShell> with WidgetsBindingObserver {
                     left: 18,
                     right: 18,
                     bottom: 18 + MediaQuery.viewPaddingOf(context).bottom,
-                    child: AnimatedBuilder(
-                      animation: trainer,
-                      builder: (context, _) => Directionality(
-                        textDirection: TextDirection.ltr,
-                        child: _NavBar(),
-                      ),
+                    child: Directionality(
+                      textDirection: TextDirection.ltr,
+                      child: _NavBar(),
                     ),
                   ),
                 if (fit.countdownUntil != null && fit.session != null)
@@ -444,9 +439,9 @@ class _NavBarState extends State<_NavBar> {
   static const _iw = 58.0;
   static const _fabW = 54.0;
 
-  // 5 content slots around the central FAB (mockup order: Today · Workouts ·
-  // My Trainer · Progress · Profile). My Trainer carries the 8px unseen dot.
-  static const _routes = ['home', 'exercises', 'trainer', 'progress', 'settings'];
+  // 4 content slots around the central FAB (Today · Workouts · Progress ·
+  // Profile). My Trainer is a pushed page, not a tab (card t_fcd4945b).
+  static const _routes = ['home', 'exercises', 'progress', 'settings'];
 
   double? _dragX;
   int? _hover;
@@ -459,19 +454,14 @@ class _NavBarState extends State<_NavBar> {
     return i < 0 ? 0 : i;
   }
 
-  double _slotX(int i) {
-    var x = 0.0;
-    for (var j = 0; j < i; j++) {
-      x += _iw + _gap;
-      if (j == 1) x += _gap + _fabW; // FAB sits after the second slot
-    }
-    return x;
-  }
+  double _slotX(int i) => switch (i) {
+        2 => 2 * _iw + 3 * _gap + _fabW,
+        _ => i * _iw + (i + 1) * _gap,
+      };
 
   void _go(int i) => [
         fit.goHome,
         fit.goExercises,
-        fit.goTrainer,
         fit.goProgress,
         fit.goSettings,
       ][i]();
@@ -511,7 +501,7 @@ class _NavBarState extends State<_NavBar> {
       child: LayoutBuilder(
         builder: (context, c) {
           _slotW = c.maxWidth - 16;
-          _gap = ((_slotW - 5 * _iw - _fabW) / 5).clamp(0.0, 40.0);
+          _gap = ((_slotW - 4 * _iw - _fabW) / 4).clamp(0.0, 40.0);
           final drag = _dragX;
 
           return Stack(
@@ -569,14 +559,9 @@ class _NavBarState extends State<_NavBar> {
                       _item(context, 1, PhosphorIconsRegular.barbell, PhosphorIconsFill.barbell, t.exercises,
                           fit.goExercises),
                       _fab(context),
-                      _item(context, 2, PhosphorIconsRegular.users, PhosphorIconsFill.users, t.myTrainer,
-                          fit.goTrainer,
-                          dot: trainer.loaded &&
-                              trainer.showTabDot &&
-                              context.can(kCapCustomExercises)),
-                      _item(context, 3, PhosphorIconsRegular.chartLineUp, PhosphorIconsFill.chartLineUp, t.progress,
+                      _item(context, 2, PhosphorIconsRegular.chartLineUp, PhosphorIconsFill.chartLineUp, t.progress,
                           fit.goProgress),
-                      _item(context, 4, PhosphorIconsRegular.userCircle, PhosphorIconsFill.userCircle, t.profile,
+                      _item(context, 3, PhosphorIconsRegular.userCircle, PhosphorIconsFill.userCircle, t.profile,
                           fit.goSettings),
                     ],
                   ),
@@ -589,8 +574,7 @@ class _NavBarState extends State<_NavBar> {
     );
   }
 
-  Widget _item(BuildContext context, int index, IconData icon, IconData iconFill, String label, VoidCallback onTap,
-      {bool dot = false}) {
+  Widget _item(BuildContext context, int index, IconData icon, IconData iconFill, String label, VoidCallback onTap) {
     final gc = context.gc;
     final selected = _selectedIndex == index;
     final lifted = selected && _dragX != null;
@@ -632,17 +616,6 @@ class _NavBarState extends State<_NavBar> {
                     color: Color.lerp(gc.textTertiary, gc.text, t),
                   ),
                 ),
-                if (dot)
-                  Positioned(
-                    right: -2,
-                    top: -1,
-                    child: Container(
-                      width: 8,
-                      height: 8,
-                      decoration:
-                          BoxDecoration(color: gc.accent, shape: BoxShape.circle),
-                    ),
-                  ),
               ],
             ),
             const SizedBox(height: 3),
