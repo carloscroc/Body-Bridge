@@ -27,85 +27,88 @@ class HomeScreen extends StatelessWidget {
     return RiseScope(
       id: 'home',
       child: SafeArea(
-        bottom: false,
-        child: TrainerBannerOverlay(
-          child: SingleChildScrollView(
-            clipBehavior: Clip.none,
-            padding: const EdgeInsets.fromLTRB(20, 14, 20, 116),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: riseAll([
-                _topBar(gc),
-                const SizedBox(height: 20),
-                _hero(context, gc),
+      bottom: false,
+      child: TrainerBannerOverlay(
+        child: SingleChildScrollView(
+          clipBehavior: Clip.none,
+          padding: const EdgeInsets.fromLTRB(20, 14, 20, 116),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: riseAll([
+              _topBar(gc),
+              const SizedBox(height: 20),
+              _hero(context, gc),
+              const SizedBox(height: 14),
+              _weekCard(context, gc),
+              if (fit.photoDue) ...[
                 const SizedBox(height: 14),
-                _weekCard(context, gc),
-                if (fit.photoDue) ...[const SizedBox(height: 14), _photoNudge(gc)],
+                _photoNudge(gc),
+              ],
+              const SizedBox(height: 30),
+              _heading(gc, t.thisWeek),
+              const SizedBox(height: 14),
+              _weekStats(context, gc),
+              const SizedBox(height: 30),
+              _heading(gc, t.activityLabel, onMore: fit.goProgress),
+              const SizedBox(height: 14),
+              SoftCard(
+                radius: 22,
+                padding: const EdgeInsets.fromLTRB(18, 18, 18, 16),
+                child: Heatmap(
+                  levels: fit.heatmapLevels,
+                  onTapDay: (i) => showDaySheet(context, fit.heatmapDate(i)),
+                ),
+              ),
+              if (recommended.isNotEmpty) ...[
                 const SizedBox(height: 30),
-                _heading(gc, t.thisWeek),
+                _heading(gc, t.recommended, onMore: fit.goExercises),
                 const SizedBox(height: 14),
-                _weekStats(context, gc),
-                const SizedBox(height: 30),
-                _heading(gc, t.activityLabel, onMore: fit.goProgress),
-                const SizedBox(height: 14),
-                SoftCard(
-                  radius: 22,
-                  padding: const EdgeInsets.fromLTRB(18, 18, 18, 16),
-                  child: Heatmap(
-                    levels: fit.heatmapLevels,
-                    onTapDay: (i) => showDaySheet(context, fit.heatmapDate(i)),
+                SizedBox(
+                  height: 158,
+                  child: ListView.separated(
+                    scrollDirection: Axis.horizontal,
+                    itemCount: recommended.length,
+                    separatorBuilder: (_, _) => const SizedBox(width: 12),
+                    itemBuilder: (_, i) => _recCard(gc, recommended[i]),
                   ),
                 ),
-                if (recommended.isNotEmpty) ...[
-                  const SizedBox(height: 30),
-                  _heading(gc, t.recommended, onMore: fit.goExercises),
-                  const SizedBox(height: 14),
-                  SizedBox(
-                    height: 158,
-                    child: ListView.separated(
-                      scrollDirection: Axis.horizontal,
-                      itemCount: recommended.length,
-                      separatorBuilder: (_, _) => const SizedBox(width: 12),
-                      itemBuilder: (_, i) => _recCard(gc, recommended[i]),
+              ],
+              const SizedBox(height: 30),
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  Expanded(
+                    child: HomeFolder(
+                      title: _tc(t.routines),
+                      detail: t.routineCount(fit.routines.length),
+                      peek: const RoutinesPeek(),
+                      onTap: fit.goRoutines,
+                    ),
+                  ),
+                  const SizedBox(width: 10),
+                  Expanded(
+                    child: HomeFolder(
+                      title: _tc(t.tools),
+                      detail: t.calculatorsInside,
+                      peek: const ToolsPeek(),
+                      onTap: fit.goTools,
+                    ),
+                  ),
+                  const SizedBox(width: 10),
+                  Expanded(
+                    child: HomeFolder(
+                      title: _tc(t.journal),
+                      detail: t.noteCount(fit.notes.length),
+                      peek: const NotesPeek(),
+                      onTap: fit.goNotes,
                     ),
                   ),
                 ],
-                const SizedBox(height: 30),
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  children: [
-                    Expanded(
-                      child: HomeFolder(
-                        title: _tc(t.routines),
-                        detail: t.routineCount(fit.routines.length),
-                        peek: const RoutinesPeek(),
-                        onTap: fit.goRoutines,
-                      ),
-                    ),
-                    const SizedBox(width: 10),
-                    Expanded(
-                      child: HomeFolder(
-                        title: _tc(t.tools),
-                        detail: t.calculatorsInside,
-                        peek: const ToolsPeek(),
-                        onTap: fit.goTools,
-                      ),
-                    ),
-                    const SizedBox(width: 10),
-                    Expanded(
-                      child: HomeFolder(
-                        title: _tc(t.journal),
-                        detail: t.noteCount(fit.notes.length),
-                        peek: const NotesPeek(),
-                        onTap: fit.goNotes,
-                      ),
-                    ),
-                  ],
-                ),
-              ]),
-            ),
+              ),
+            ]),
           ),
         ),
+      ),
       ),
     );
   }
@@ -118,17 +121,14 @@ class HomeScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                t.today.toUpperCase(),
-                style: AppTheme.f(10.5, weight: FontWeight.w700, color: gc.textTertiary, letterSpacing: 1.4),
-              ),
+              Text(t.today.toUpperCase(),
+                  style: AppTheme.f(10.5,
+                      weight: FontWeight.w700, color: gc.textTertiary, letterSpacing: 1.4)),
               const SizedBox(height: 3),
-              Text(
-                t.longDate(DateTime.now()),
-                maxLines: 1,
-                overflow: TextOverflow.ellipsis,
-                style: AppTheme.f(21, color: gc.text),
-              ),
+              Text(t.longDate(DateTime.now()),
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                  style: AppTheme.f(21, color: gc.text)),
             ],
           ),
         ),
@@ -143,10 +143,8 @@ class HomeScreen extends StatelessWidget {
               children: [
                 SvgPathIcon(Ic.flame, size: 15, color: gc.accent),
                 const SizedBox(width: 6),
-                Text(
-                  '${fit.currentStreak}',
-                  style: AppTheme.f(14, weight: FontWeight.w800, color: gc.text),
-                ),
+                Text('${fit.currentStreak}',
+                    style: AppTheme.f(14, weight: FontWeight.w800, color: gc.text)),
               ],
             ),
           ),
@@ -165,7 +163,8 @@ class HomeScreen extends StatelessWidget {
         children: [
           Text(_tc(title), style: AppTheme.f(19, color: gc.text)),
           const Spacer(),
-          if (onMore != null) Icon(PhosphorIconsBold.caretRight, size: 14, color: gc.textTertiary),
+          if (onMore != null)
+            Icon(PhosphorIconsBold.caretRight, size: 14, color: gc.textTertiary),
         ],
       ),
     );
@@ -180,13 +179,16 @@ class HomeScreen extends StatelessWidget {
     final subtitle = isRoutine
         ? t.exerciseCount(routine.exerciseIds.length)
         : (fit.hasData
-              ? '${focus.subtitle} · ${t.exerciseCount(fit.getFilteredExercises(focus.muscles).length)}'
-              : t.firstSessionHint);
+            ? '${focus.subtitle} · ${t.exerciseCount(fit.getFilteredExercises(focus.muscles).length)}'
+            : t.firstSessionHint);
 
     return ClipRRect(
       borderRadius: BorderRadius.circular(26),
       child: Container(
-        decoration: BoxDecoration(color: gc.bgRaised, borderRadius: BorderRadius.circular(26)),
+        decoration: BoxDecoration(
+          color: gc.bgRaised,
+          borderRadius: BorderRadius.circular(26),
+        ),
         child: Stack(
           children: [
             Positioned(
@@ -221,32 +223,23 @@ class HomeScreen extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    label.toUpperCase(),
-                    style: AppTheme.f(
-                      10.5,
-                      weight: FontWeight.w700,
-                      color: gc.textTertiary,
-                      letterSpacing: 1.4,
-                    ),
-                  ),
+                  Text(label.toUpperCase(),
+                      style: AppTheme.f(10.5,
+                          weight: FontWeight.w700, color: gc.textTertiary, letterSpacing: 1.4)),
                   const SizedBox(height: 9),
                   Padding(
                     padding: const EdgeInsets.only(right: 96),
-                    child: Text(
-                      title,
-                      maxLines: 2,
-                      overflow: TextOverflow.ellipsis,
-                      style: AppTheme.f(30, weight: FontWeight.w800, color: gc.text, height: 1.1),
-                    ),
+                    child: Text(title,
+                        maxLines: 2,
+                        overflow: TextOverflow.ellipsis,
+                        style: AppTheme.f(30,
+                            weight: FontWeight.w800, color: gc.text, height: 1.1)),
                   ),
                   const SizedBox(height: 7),
-                  Text(
-                    subtitle,
-                    maxLines: 2,
-                    overflow: TextOverflow.ellipsis,
-                    style: AppTheme.f(13, weight: FontWeight.w500, color: gc.textSecondary),
-                  ),
+                  Text(subtitle,
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                      style: AppTheme.f(13, weight: FontWeight.w500, color: gc.textSecondary)),
                   const SizedBox(height: 20),
                   PrimaryButton(
                     label: t.startWorkout,
@@ -284,21 +277,17 @@ class HomeScreen extends StatelessWidget {
       onTap: isFuture
           ? null
           : fit.isSessionDay(i)
-          ? () => showDaySheet(context, fit.dateForWeekday(i))
-          : () => fit.toggleCheckin(i),
+              ? () => showDaySheet(context, fit.dateForWeekday(i))
+              : () => fit.toggleCheckin(i),
       child: Opacity(
         opacity: isFuture ? 0.5 : 1,
         child: Column(
           children: [
-            Text(
-              t.weekdayInitial(i + 1),
-              style: AppTheme.f(
-                10,
-                weight: FontWeight.w700,
-                color: isToday ? gc.text : gc.textTertiary,
-                letterSpacing: 0.5,
-              ),
-            ),
+            Text(t.weekdayInitial(i + 1),
+                style: AppTheme.f(10,
+                    weight: FontWeight.w700,
+                    color: isToday ? gc.text : gc.textTertiary,
+                    letterSpacing: 0.5)),
             const SizedBox(height: 9),
             AnimatedContainer(
               duration: const Duration(milliseconds: 220),
@@ -310,7 +299,8 @@ class HomeScreen extends StatelessWidget {
                 shape: BoxShape.circle,
                 border: isToday && !done ? Border.all(color: gc.ember, width: 2) : null,
               ),
-              child: done ? Center(child: SvgPathIcon(Ic.checkBold, size: 13, color: gc.onEmber)) : null,
+              child:
+                  done ? Center(child: SvgPathIcon(Ic.checkBold, size: 13, color: gc.onEmber)) : null,
             ),
           ],
         ),
@@ -329,7 +319,8 @@ class HomeScreen extends StatelessWidget {
             child: Row(
               children: [
                 Expanded(
-                  child: _stat(gc, t.volume, fit.volumeValue(fit.volumeThisWeekKg), unit: fit.volumeUnit),
+                  child: _stat(gc, t.volume, fit.volumeValue(fit.volumeThisWeekKg),
+                      unit: fit.volumeUnit),
                 ),
                 Expanded(child: _stat(gc, t.setsToday, '${fit.setsToday}')),
                 Expanded(child: _stat(gc, t.prs, '${fit.prsThisWeek}')),
@@ -343,10 +334,8 @@ class HomeScreen extends StatelessWidget {
               children: [
                 GoalRing(pct: fit.goalPct.toDouble(), size: 44),
                 const SizedBox(height: 7),
-                Text(
-                  '${fit.sessionsThisWeek}/${fit.weeklyTarget}',
-                  style: AppTheme.f(11, weight: FontWeight.w700, color: gc.textSecondary),
-                ),
+                Text('${fit.sessionsThisWeek}/${fit.weeklyTarget}',
+                    style: AppTheme.f(11, weight: FontWeight.w700, color: gc.textSecondary)),
               ],
             ),
           ),
@@ -359,12 +348,11 @@ class HomeScreen extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          label.toUpperCase(),
-          maxLines: 1,
-          overflow: TextOverflow.ellipsis,
-          style: AppTheme.f(9.5, weight: FontWeight.w600, color: gc.textTertiary, letterSpacing: 0.9),
-        ),
+        Text(label.toUpperCase(),
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
+            style: AppTheme.f(9.5,
+                weight: FontWeight.w600, color: gc.textTertiary, letterSpacing: 0.9)),
         const SizedBox(height: 6),
         Row(
           crossAxisAlignment: CrossAxisAlignment.baseline,
@@ -374,18 +362,13 @@ class HomeScreen extends StatelessWidget {
               child: FittedBox(
                 fit: BoxFit.scaleDown,
                 alignment: Alignment.centerLeft,
-                child: RollIn(
-                  value,
-                  style: AppTheme.f(23, weight: FontWeight.w800, color: gc.text),
-                ),
+                child: RollIn(value, style: AppTheme.f(23, weight: FontWeight.w800, color: gc.text)),
               ),
             ),
             if (unit.isNotEmpty) ...[
               const SizedBox(width: 3),
-              Text(
-                unit,
-                style: AppTheme.f(11, weight: FontWeight.w600, color: gc.textSecondary),
-              ),
+              Text(unit,
+                  style: AppTheme.f(11, weight: FontWeight.w600, color: gc.textSecondary)),
             ],
           ],
         ),
@@ -410,10 +393,8 @@ class HomeScreen extends StatelessWidget {
                 children: [
                   Text(t.photoDueNow, style: AppTheme.f(14.5, color: gc.text)),
                   const SizedBox(height: 2),
-                  Text(
-                    t.photoInterval(fit.photoIntervalDays),
-                    style: AppTheme.f(12, weight: FontWeight.w500, color: gc.textSecondary),
-                  ),
+                  Text(t.photoInterval(fit.photoIntervalDays),
+                      style: AppTheme.f(12, weight: FontWeight.w500, color: gc.textSecondary)),
                 ],
               ),
             ),
@@ -431,19 +412,20 @@ class HomeScreen extends StatelessWidget {
       child: Container(
         width: 132,
         padding: const EdgeInsets.all(9),
-        decoration: BoxDecoration(color: gc.bgRaised, borderRadius: BorderRadius.circular(18)),
+        decoration: BoxDecoration(
+          color: gc.bgRaised,
+          borderRadius: BorderRadius.circular(18),
+        ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             ExerciseMedia(ex: ex, height: 88, radius: 12),
             const SizedBox(height: 9),
             Expanded(
-              child: Text(
-                exerciseName(ex),
-                maxLines: 2,
-                overflow: TextOverflow.ellipsis,
-                style: AppTheme.f(12, weight: FontWeight.w600, color: gc.text, height: 1.25),
-              ),
+              child: Text(exerciseName(ex),
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                  style: AppTheme.f(12, weight: FontWeight.w600, color: gc.text, height: 1.25)),
             ),
           ],
         ),
@@ -470,17 +452,13 @@ void showWeeklyGoalSheet(BuildContext context) {
           children: [
             const SheetHandle(),
             const SizedBox(height: 20),
-            Text(
-              t.weeklyGoal,
-              textAlign: TextAlign.center,
-              style: AppTheme.f(19, color: gc.text),
-            ),
+            Text(t.weeklyGoal,
+                textAlign: TextAlign.center,
+                style: AppTheme.f(19, color: gc.text)),
             const SizedBox(height: 6),
-            Text(
-              t.sessionsLogged(fit.sessionsThisWeek),
-              textAlign: TextAlign.center,
-              style: AppTheme.f(12.5, weight: FontWeight.w500, color: gc.textSecondary),
-            ),
+            Text(t.sessionsLogged(fit.sessionsThisWeek),
+                textAlign: TextAlign.center,
+                style: AppTheme.f(12.5, weight: FontWeight.w500, color: gc.textSecondary)),
             const SizedBox(height: 20),
             Center(
               child: StepperControl(
@@ -491,11 +469,9 @@ void showWeeklyGoalSheet(BuildContext context) {
               ),
             ),
             const SizedBox(height: 16),
-            Text(
-              t.onbGoalWhy,
-              textAlign: TextAlign.center,
-              style: AppTheme.f(12, weight: FontWeight.w500, color: gc.textSecondary, height: 1.45),
-            ),
+            Text(t.onbGoalWhy,
+                textAlign: TextAlign.center,
+                style: AppTheme.f(12, weight: FontWeight.w500, color: gc.textSecondary, height: 1.45)),
             const SizedBox(height: 22),
             PrimaryButton(label: t.done, onTap: () => Navigator.of(sheet).pop()),
           ],
