@@ -335,4 +335,33 @@ void main() {
       );
     });
   }
+
+  testWidgets('nav 4tabs exercises dark', (tester) async {
+    await capture(
+      tester,
+      name: 'nav-4tabs-exercises-dark-411x823',
+      size: const Size(411, 823),
+      dark: true,
+      tier: AccountTier.advanced,
+      setup: () {
+        fit.onboarded = true;
+        fit.resetRoute('exercises');
+      },
+      body: const AppShell(),
+    );
+  });
+  testWidgets('nav 4tabs exercises light', (tester) async {
+    await capture(
+      tester,
+      name: 'nav-4tabs-exercises-light-411x823',
+      size: const Size(411, 823),
+      dark: false,
+      tier: AccountTier.advanced,
+      setup: () {
+        fit.onboarded = true;
+        fit.resetRoute('exercises');
+      },
+      body: const AppShell(),
+    );
+  });
 }

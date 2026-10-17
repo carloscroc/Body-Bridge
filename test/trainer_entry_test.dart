@@ -130,6 +130,64 @@ void main() {
     await tester.pump(const Duration(seconds: 1));
   });
 
+  testWidgets('nav selection pill sits on the selected tab', (tester) async {
+    await Store.instance.init();
+    ProgressReminder.instance.enabled = false;
+    fit.onboarded = true;
+    fit.session = null;
+    fit.sessions.clear();
+    fit.awards.clear();
+    fit.awardsSeen.clear();
+    fit.pendingAwards.clear();
+    account.debugSetWarmedUp();
+    account.debugSetPhase(AccountPhase.signedInFree);
+
+    // Phone-width surface: below ~462px the _gap clamp(0, 40) never kicks
+    // in, so _slotX and the Row's spaceBetween share the same gap math.
+    tester.view.physicalSize = const Size(411, 823);
+    tester.view.devicePixelRatio = 1.0;
+    addTearDown(tester.view.resetPhysicalSize);
+    addTearDown(tester.view.resetDevicePixelRatio);
+
+    // The nav bar is the SizedBox(height: 74); the liquid pill is its only
+    // DecoratedBox with BorderRadius.circular(24) (54 tall at rest), and the
+    // selected tab is the only place the filled icon renders.
+    final navFinder = find.byWidgetPredicate((w) => w is SizedBox && w.height == 74);
+    double centerX(Finder finder) {
+      expect(finder, findsOneWidget);
+      return tester.getCenter(finder).dx;
+    }
+
+    await tester.pumpWidget(const GymManeApp());
+    await tester.pump();
+    await tester.pump(const Duration(milliseconds: 50));
+
+    for (final (go, icon) in [
+      (fit.goHome, PhosphorIconsFill.house),
+      (fit.goExercises, PhosphorIconsFill.barbell),
+      (fit.goProgress, PhosphorIconsFill.chartLineUp),
+      (fit.goSettings, PhosphorIconsFill.userCircle),
+    ]) {
+      go();
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 500)); // pill move = 460ms
+      final pillX = centerX(find.descendant(
+          of: navFinder,
+          matching: find.byWidgetPredicate((w) =>
+              w is DecoratedBox &&
+              (w.decoration as BoxDecoration).borderRadius == BorderRadius.circular(24))));
+      final iconX = centerX(find.descendant(of: navFinder, matching: find.byIcon(icon)));
+      expect(
+        (pillX - iconX).abs(),
+        lessThanOrEqualTo(4),
+        reason: 'pill must sit under the selected tab ($icon)',
+      );
+    }
+
+    fit.goHome();
+    await tester.pump(const Duration(seconds: 1));
+  });
+
   testWidgets('advanced: strip shows trainer + pill; pushes hub; back returns', (tester) async {
     fit.resetRoute('exercises');
     await pumpSurface(tester, AccountTier.advanced);

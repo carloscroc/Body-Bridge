@@ -455,8 +455,10 @@ class _NavBarState extends State<_NavBar> {
   }
 
   double _slotX(int i) => switch (i) {
+        0 => 0,
+        1 => _iw + _gap,
         2 => 2 * _iw + 3 * _gap + _fabW,
-        _ => i * _iw + (i + 1) * _gap,
+        _ => 3 * _iw + 4 * _gap + _fabW,
       };
 
   void _go(int i) => [
