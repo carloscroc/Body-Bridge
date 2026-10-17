@@ -3190,4 +3190,221 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get billingComingSoon => 'Billing is coming soon.';
+
+  @override
+  String get communityTab => 'Community';
+
+  @override
+  String get feedTab => 'Feed';
+
+  @override
+  String get membersTab => 'Members';
+
+  @override
+  String get gateTitle => 'Community is part of Basic';
+
+  @override
+  String get gateBody => 'Progress pics, workout logs, and people who get it.';
+
+  @override
+  String get gateCta => 'Unlock Community';
+
+  @override
+  String get gateLinkOut => 'Continue on bodybridge.net';
+
+  @override
+  String get gateNotNow => 'Not now';
+
+  @override
+  String get optionsTitle => 'Post options';
+
+  @override
+  String get sharePost => 'Share post';
+
+  @override
+  String get savePost => 'Save post';
+
+  @override
+  String get savedPost => 'Saved';
+
+  @override
+  String get copyPostLink => 'Copy post link';
+
+  @override
+  String get hidePost => 'Hide post';
+
+  @override
+  String get reportPost => 'Report post';
+
+  @override
+  String get editPost => 'Edit post';
+
+  @override
+  String get deletePost => 'Delete post…';
+
+  @override
+  String get deleteConfirmTitle => 'Delete this post?';
+
+  @override
+  String get deleteConfirmBody =>
+      'This removes the post, its photo, and its comments from Community. This can\'t be undone.';
+
+  @override
+  String get keepPost => 'Keep post';
+
+  @override
+  String get deleteAction => 'Delete';
+
+  @override
+  String get postHiddenSnackbar => 'Post hidden · Undo';
+
+  @override
+  String get reportSheetTitle => 'Report post';
+
+  @override
+  String get reportAnonymous => 'Your report is anonymous.';
+
+  @override
+  String get reportSpam => 'Spam or scam';
+
+  @override
+  String get reportHarassment => 'Harassment or hate';
+
+  @override
+  String get reportInappropriate => 'Inappropriate photos';
+
+  @override
+  String get reportSubmit => 'Report';
+
+  @override
+  String get reportSent => 'Report sent';
+
+  @override
+  String get shareSheetTitle => 'Share post';
+
+  @override
+  String get copyLink => 'Copy link';
+
+  @override
+  String get linkCopied => 'Link copied';
+
+  @override
+  String get shareMessages => 'Messages';
+
+  @override
+  String get shareMail => 'Mail';
+
+  @override
+  String get shareInstagram => 'Instagram';
+
+  @override
+  String get shareMore => 'More';
+
+  @override
+  String get newPostTitle => 'New post';
+
+  @override
+  String get modeProgress => 'Progress';
+
+  @override
+  String get modeWorkout => 'Workout';
+
+  @override
+  String progressPhotosCount(int n) {
+    return 'PROGRESS PHOTOS · $n OF 4';
+  }
+
+  @override
+  String get addPhotoTile => 'Add';
+
+  @override
+  String get captionHint => 'Share your week — what changed, what you learned...';
+
+  @override
+  String get photosPrivate => 'Photos stay private until you post.';
+
+  @override
+  String get sessionPreview => 'SESSION PREVIEW';
+
+  @override
+  String get autoFilled => 'Auto-filled from today\'s session';
+
+  @override
+  String get contextHint => 'Add context — how did it feel?';
+
+  @override
+  String get postToCommunity => 'Post to Community';
+
+  @override
+  String get commentsTitle => 'Comments';
+
+  @override
+  String commentCount(int n) {
+    String _temp0 = intl.Intl.pluralLogic(n, locale: localeName, other: '$n comments', one: '$n comment');
+    return '$_temp0';
+  }
+
+  @override
+  String get addCommentHint => 'Add a comment...';
+
+  @override
+  String replyingTo(String name) {
+    return 'Replying to $name';
+  }
+
+  @override
+  String get opChip => 'OP';
+
+  @override
+  String get noPostsTitle => 'No posts yet';
+
+  @override
+  String get noPostsBody => 'Be the first to share your week.';
+
+  @override
+  String get createFirstPost => 'Create first post';
+
+  @override
+  String get progressPhotoLabel => 'PROGRESS PHOTO';
+
+  @override
+  String get progressChip => 'PROGRESS';
+
+  @override
+  String get workoutChip => 'WORKOUT';
+
+  @override
+  String get prChip => 'PR';
+
+  @override
+  String workoutStats(int min, int sets, String volume) {
+    return '$min min · $sets sets · $volume kg volume';
+  }
+
+  @override
+  String get composeDisabledHint => 'Unlock Community to post';
+
+  @override
+  String get inboxComingSoon => 'Inbox is coming soon';
+
+  @override
+  String get timeAgoNow => 'now';
+
+  @override
+  String timeAgoMinutes(int n) {
+    return '${n}m';
+  }
+
+  @override
+  String timeAgoHours(int n) {
+    return '${n}h';
+  }
+
+  @override
+  String timeAgoDays(int n) {
+    return '${n}d';
+  }
+
+  @override
+  String get trainerChip => 'TRAINER';
 }

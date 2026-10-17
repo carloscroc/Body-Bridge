@@ -3198,4 +3198,221 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get billingComingSoon => 'Betalen komt binnenkort.';
+
+  @override
+  String get communityTab => 'Community';
+
+  @override
+  String get feedTab => 'Feed';
+
+  @override
+  String get membersTab => 'Leden';
+
+  @override
+  String get gateTitle => 'Community zit in Basic';
+
+  @override
+  String get gateBody => 'Voortgangsfoto’s, trainingslogboeken en mensen die je begrijpen.';
+
+  @override
+  String get gateCta => 'Community ontgrendelen';
+
+  @override
+  String get gateLinkOut => 'Ga verder op bodybridge.net';
+
+  @override
+  String get gateNotNow => 'Niet nu';
+
+  @override
+  String get optionsTitle => 'Berichtopties';
+
+  @override
+  String get sharePost => 'Bericht delen';
+
+  @override
+  String get savePost => 'Bericht opslaan';
+
+  @override
+  String get savedPost => 'Opgeslagen';
+
+  @override
+  String get copyPostLink => 'Berichtlink kopiëren';
+
+  @override
+  String get hidePost => 'Bericht verbergen';
+
+  @override
+  String get reportPost => 'Bericht melden';
+
+  @override
+  String get editPost => 'Bericht bewerken';
+
+  @override
+  String get deletePost => 'Bericht verwijderen…';
+
+  @override
+  String get deleteConfirmTitle => 'Dit bericht verwijderen?';
+
+  @override
+  String get deleteConfirmBody =>
+      'Hiermee worden het bericht, de foto en de reacties uit de Community verwijderd. Dit kan niet ongedaan worden gemaakt.';
+
+  @override
+  String get keepPost => 'Bericht bewaren';
+
+  @override
+  String get deleteAction => 'Verwijderen';
+
+  @override
+  String get postHiddenSnackbar => 'Bericht verborgen · Ongedaan maken';
+
+  @override
+  String get reportSheetTitle => 'Bericht melden';
+
+  @override
+  String get reportAnonymous => 'Je melding is anoniem.';
+
+  @override
+  String get reportSpam => 'Spam of oplichting';
+
+  @override
+  String get reportHarassment => 'Intimidatie of haat';
+
+  @override
+  String get reportInappropriate => 'Ongepaste foto’s';
+
+  @override
+  String get reportSubmit => 'Melden';
+
+  @override
+  String get reportSent => 'Melding verzonden';
+
+  @override
+  String get shareSheetTitle => 'Bericht delen';
+
+  @override
+  String get copyLink => 'Link kopiëren';
+
+  @override
+  String get linkCopied => 'Link gekopieerd';
+
+  @override
+  String get shareMessages => 'Berichten';
+
+  @override
+  String get shareMail => 'Mail';
+
+  @override
+  String get shareInstagram => 'Instagram';
+
+  @override
+  String get shareMore => 'Meer';
+
+  @override
+  String get newPostTitle => 'Nieuw bericht';
+
+  @override
+  String get modeProgress => 'Voortgang';
+
+  @override
+  String get modeWorkout => 'Training';
+
+  @override
+  String progressPhotosCount(int n) {
+    return 'VOORTGANGSFOTO’S · $n VAN 4';
+  }
+
+  @override
+  String get addPhotoTile => 'Toevoegen';
+
+  @override
+  String get captionHint => 'Deel je week: wat is er veranderd, wat heb je geleerd...';
+
+  @override
+  String get photosPrivate => 'Foto’s blijven privé tot je plaatst.';
+
+  @override
+  String get sessionPreview => 'TRAININGSVOORBEELD';
+
+  @override
+  String get autoFilled => 'Automatisch ingevuld vanuit de training van vandaag';
+
+  @override
+  String get contextHint => 'Voeg context toe — hoe voelde het?';
+
+  @override
+  String get postToCommunity => 'Plaatsen in Community';
+
+  @override
+  String get commentsTitle => 'Reacties';
+
+  @override
+  String commentCount(int n) {
+    String _temp0 = intl.Intl.pluralLogic(n, locale: localeName, other: '$n reacties', one: '$n reactie');
+    return '$_temp0';
+  }
+
+  @override
+  String get addCommentHint => 'Voeg een reactie toe...';
+
+  @override
+  String replyingTo(String name) {
+    return 'Reageren op $name';
+  }
+
+  @override
+  String get opChip => 'OP';
+
+  @override
+  String get noPostsTitle => 'Nog geen berichten';
+
+  @override
+  String get noPostsBody => 'Wees de eerste die zijn week deelt.';
+
+  @override
+  String get createFirstPost => 'Eerste bericht plaatsen';
+
+  @override
+  String get progressPhotoLabel => 'VOORTGANGSFOTO';
+
+  @override
+  String get progressChip => 'VOORTGANG';
+
+  @override
+  String get workoutChip => 'TRAINING';
+
+  @override
+  String get prChip => 'PR';
+
+  @override
+  String workoutStats(int min, int sets, String volume) {
+    return '$min min · $sets sets · $volume kg volume';
+  }
+
+  @override
+  String get composeDisabledHint => 'Ontgrendel Community om te plaatsen';
+
+  @override
+  String get inboxComingSoon => 'De inbox komt binnenkort';
+
+  @override
+  String get timeAgoNow => 'nu';
+
+  @override
+  String timeAgoMinutes(int n) {
+    return '$n min';
+  }
+
+  @override
+  String timeAgoHours(int n) {
+    return '$n u';
+  }
+
+  @override
+  String timeAgoDays(int n) {
+    return '$n d';
+  }
+
+  @override
+  String get trainerChip => 'TRAINER';
 }

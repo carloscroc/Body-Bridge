@@ -3109,4 +3109,220 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get billingComingSoon => '결제 기능이 곧 제공될 예정입니다.';
+
+  @override
+  String get communityTab => '커뮤니티';
+
+  @override
+  String get feedTab => '피드';
+
+  @override
+  String get membersTab => '멤버';
+
+  @override
+  String get gateTitle => '커뮤니티는 Basic에 포함되어 있습니다';
+
+  @override
+  String get gateBody => '진행 사진, 운동 기록, 그리고 서로를 이해하는 사람들.';
+
+  @override
+  String get gateCta => '커뮤니티 잠금 해제';
+
+  @override
+  String get gateLinkOut => 'bodybridge.net에서 계속';
+
+  @override
+  String get gateNotNow => '나중에';
+
+  @override
+  String get optionsTitle => '게시물 옵션';
+
+  @override
+  String get sharePost => '게시물 공유';
+
+  @override
+  String get savePost => '게시물 저장';
+
+  @override
+  String get savedPost => '저장됨';
+
+  @override
+  String get copyPostLink => '게시물 링크 복사';
+
+  @override
+  String get hidePost => '게시물 숨기기';
+
+  @override
+  String get reportPost => '게시물 신고';
+
+  @override
+  String get editPost => '게시물 수정';
+
+  @override
+  String get deletePost => '게시물 삭제…';
+
+  @override
+  String get deleteConfirmTitle => '이 게시물을 삭제할까요?';
+
+  @override
+  String get deleteConfirmBody => '게시물, 사진, 댓글이 커뮤니티에서 삭제됩니다. 되돌릴 수 없습니다.';
+
+  @override
+  String get keepPost => '유지';
+
+  @override
+  String get deleteAction => '삭제';
+
+  @override
+  String get postHiddenSnackbar => '게시물 숨김 · 실행 취소';
+
+  @override
+  String get reportSheetTitle => '게시물 신고';
+
+  @override
+  String get reportAnonymous => '신고는 익명으로 전송됩니다.';
+
+  @override
+  String get reportSpam => '스팸 또는 사기';
+
+  @override
+  String get reportHarassment => '괴롭힘 또는 혐오';
+
+  @override
+  String get reportInappropriate => '부적절한 사진';
+
+  @override
+  String get reportSubmit => '신고';
+
+  @override
+  String get reportSent => '신고가 전송되었습니다';
+
+  @override
+  String get shareSheetTitle => '게시물 공유';
+
+  @override
+  String get copyLink => '링크 복사';
+
+  @override
+  String get linkCopied => '링크가 복사되었습니다';
+
+  @override
+  String get shareMessages => '메시지';
+
+  @override
+  String get shareMail => '메일';
+
+  @override
+  String get shareInstagram => 'Instagram';
+
+  @override
+  String get shareMore => '더보기';
+
+  @override
+  String get newPostTitle => '새 게시물';
+
+  @override
+  String get modeProgress => '진행';
+
+  @override
+  String get modeWorkout => '운동';
+
+  @override
+  String progressPhotosCount(int n) {
+    return '진행 사진 · $n / 4';
+  }
+
+  @override
+  String get addPhotoTile => '추가';
+
+  @override
+  String get captionHint => '이번 주의 변화와 배운 점을 공유해 보세요...';
+
+  @override
+  String get photosPrivate => '사진은 게시할 때까지 비공개입니다.';
+
+  @override
+  String get sessionPreview => '세션 미리보기';
+
+  @override
+  String get autoFilled => '오늘 세션에서 자동 입력됨';
+
+  @override
+  String get contextHint => '컨디션이나 느낌을 추가해 보세요';
+
+  @override
+  String get postToCommunity => '커뮤니티에 게시';
+
+  @override
+  String get commentsTitle => '댓글';
+
+  @override
+  String commentCount(int n) {
+    String _temp0 = intl.Intl.pluralLogic(n, locale: localeName, other: '댓글 $n개');
+    return '$_temp0';
+  }
+
+  @override
+  String get addCommentHint => '댓글 추가...';
+
+  @override
+  String replyingTo(String name) {
+    return '$name님에게 답장 중';
+  }
+
+  @override
+  String get opChip => '작성자';
+
+  @override
+  String get noPostsTitle => '아직 게시물이 없습니다';
+
+  @override
+  String get noPostsBody => '먼저 이번 주를 공유해 보세요.';
+
+  @override
+  String get createFirstPost => '첫 게시물 작성';
+
+  @override
+  String get progressPhotoLabel => '진행 사진';
+
+  @override
+  String get progressChip => '진행';
+
+  @override
+  String get workoutChip => '운동';
+
+  @override
+  String get prChip => 'PR';
+
+  @override
+  String workoutStats(int min, int sets, String volume) {
+    return '$min분 · $sets세트 · 볼륨 $volume kg';
+  }
+
+  @override
+  String get composeDisabledHint => '게시하려면 커뮤니티를 잠금 해제하세요';
+
+  @override
+  String get inboxComingSoon => '받은편지함이 곧 제공됩니다';
+
+  @override
+  String get timeAgoNow => '방금';
+
+  @override
+  String timeAgoMinutes(int n) {
+    return '$n분';
+  }
+
+  @override
+  String timeAgoHours(int n) {
+    return '$n시간';
+  }
+
+  @override
+  String timeAgoDays(int n) {
+    return '$n일';
+  }
+
+  @override
+  String get trainerChip => '트레이너';
 }

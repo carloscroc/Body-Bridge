@@ -5731,6 +5731,408 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Billing is coming soon.'**
   String get billingComingSoon;
+
+  /// Bottom navigation label for the community tab.
+  ///
+  /// In en, this message translates to:
+  /// **'Community'**
+  String get communityTab;
+
+  /// Community feed tab label.
+  ///
+  /// In en, this message translates to:
+  /// **'Feed'**
+  String get feedTab;
+
+  /// Community members tab label.
+  ///
+  /// In en, this message translates to:
+  /// **'Members'**
+  String get membersTab;
+
+  /// Gate card title shown when community is locked.
+  ///
+  /// In en, this message translates to:
+  /// **'Community is part of Basic'**
+  String get gateTitle;
+
+  /// Gate card supporting body copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Progress pics, workout logs, and people who get it.'**
+  String get gateBody;
+
+  /// Gate unlock button label.
+  ///
+  /// In en, this message translates to:
+  /// **'Unlock Community'**
+  String get gateCta;
+
+  /// Gate continue-on-web button label.
+  ///
+  /// In en, this message translates to:
+  /// **'Continue on bodybridge.net'**
+  String get gateLinkOut;
+
+  /// Gate dismiss button label.
+  ///
+  /// In en, this message translates to:
+  /// **'Not now'**
+  String get gateNotNow;
+
+  /// Post options sheet title.
+  ///
+  /// In en, this message translates to:
+  /// **'Post options'**
+  String get optionsTitle;
+
+  /// Share post option label.
+  ///
+  /// In en, this message translates to:
+  /// **'Share post'**
+  String get sharePost;
+
+  /// Save post option label.
+  ///
+  /// In en, this message translates to:
+  /// **'Save post'**
+  String get savePost;
+
+  /// Confirmation snackbar after saving a post.
+  ///
+  /// In en, this message translates to:
+  /// **'Saved'**
+  String get savedPost;
+
+  /// Copy post link option label.
+  ///
+  /// In en, this message translates to:
+  /// **'Copy post link'**
+  String get copyPostLink;
+
+  /// Hide post option label.
+  ///
+  /// In en, this message translates to:
+  /// **'Hide post'**
+  String get hidePost;
+
+  /// Report post option label.
+  ///
+  /// In en, this message translates to:
+  /// **'Report post'**
+  String get reportPost;
+
+  /// Edit own post option label.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit post'**
+  String get editPost;
+
+  /// Delete own post option label.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete post…'**
+  String get deletePost;
+
+  /// Delete confirmation dialog title.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete this post?'**
+  String get deleteConfirmTitle;
+
+  /// Delete confirmation dialog body.
+  ///
+  /// In en, this message translates to:
+  /// **'This removes the post, its photo, and its comments from Community. This can\'t be undone.'**
+  String get deleteConfirmBody;
+
+  /// Keep post dialog action label.
+  ///
+  /// In en, this message translates to:
+  /// **'Keep post'**
+  String get keepPost;
+
+  /// Confirm delete dialog action label.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete'**
+  String get deleteAction;
+
+  /// Snackbar shown after hiding a post, with undo.
+  ///
+  /// In en, this message translates to:
+  /// **'Post hidden · Undo'**
+  String get postHiddenSnackbar;
+
+  /// Report sheet title.
+  ///
+  /// In en, this message translates to:
+  /// **'Report post'**
+  String get reportSheetTitle;
+
+  /// Note that reports are anonymous.
+  ///
+  /// In en, this message translates to:
+  /// **'Your report is anonymous.'**
+  String get reportAnonymous;
+
+  /// Report reason: spam or scam.
+  ///
+  /// In en, this message translates to:
+  /// **'Spam or scam'**
+  String get reportSpam;
+
+  /// Report reason: harassment or hate.
+  ///
+  /// In en, this message translates to:
+  /// **'Harassment or hate'**
+  String get reportHarassment;
+
+  /// Report reason: inappropriate photos.
+  ///
+  /// In en, this message translates to:
+  /// **'Inappropriate photos'**
+  String get reportInappropriate;
+
+  /// Report sheet submit button label.
+  ///
+  /// In en, this message translates to:
+  /// **'Report'**
+  String get reportSubmit;
+
+  /// Snackbar shown after a report is sent.
+  ///
+  /// In en, this message translates to:
+  /// **'Report sent'**
+  String get reportSent;
+
+  /// Share sheet title.
+  ///
+  /// In en, this message translates to:
+  /// **'Share post'**
+  String get shareSheetTitle;
+
+  /// Copy link option label.
+  ///
+  /// In en, this message translates to:
+  /// **'Copy link'**
+  String get copyLink;
+
+  /// Snackbar shown after copying a link.
+  ///
+  /// In en, this message translates to:
+  /// **'Link copied'**
+  String get linkCopied;
+
+  /// Share target: Messages.
+  ///
+  /// In en, this message translates to:
+  /// **'Messages'**
+  String get shareMessages;
+
+  /// Share target: Mail.
+  ///
+  /// In en, this message translates to:
+  /// **'Mail'**
+  String get shareMail;
+
+  /// Share target: Instagram.
+  ///
+  /// In en, this message translates to:
+  /// **'Instagram'**
+  String get shareInstagram;
+
+  /// Share target: More.
+  ///
+  /// In en, this message translates to:
+  /// **'More'**
+  String get shareMore;
+
+  /// Composer screen title.
+  ///
+  /// In en, this message translates to:
+  /// **'New post'**
+  String get newPostTitle;
+
+  /// Progress mode segment label.
+  ///
+  /// In en, this message translates to:
+  /// **'Progress'**
+  String get modeProgress;
+
+  /// Workout mode segment label.
+  ///
+  /// In en, this message translates to:
+  /// **'Workout'**
+  String get modeWorkout;
+
+  /// Progress photo counter label.
+  ///
+  /// In en, this message translates to:
+  /// **'PROGRESS PHOTOS · {n} OF 4'**
+  String progressPhotosCount(int n);
+
+  /// Add photo tile label.
+  ///
+  /// In en, this message translates to:
+  /// **'Add'**
+  String get addPhotoTile;
+
+  /// Caption text field hint.
+  ///
+  /// In en, this message translates to:
+  /// **'Share your week — what changed, what you learned...'**
+  String get captionHint;
+
+  /// Privacy note about staged photos.
+  ///
+  /// In en, this message translates to:
+  /// **'Photos stay private until you post.'**
+  String get photosPrivate;
+
+  /// Workout preview header label.
+  ///
+  /// In en, this message translates to:
+  /// **'SESSION PREVIEW'**
+  String get sessionPreview;
+
+  /// Note that the session preview is auto-filled.
+  ///
+  /// In en, this message translates to:
+  /// **'Auto-filled from today\'s session'**
+  String get autoFilled;
+
+  /// Context text field hint.
+  ///
+  /// In en, this message translates to:
+  /// **'Add context — how did it feel?'**
+  String get contextHint;
+
+  /// Composer submit button label.
+  ///
+  /// In en, this message translates to:
+  /// **'Post to Community'**
+  String get postToCommunity;
+
+  /// Comments section title.
+  ///
+  /// In en, this message translates to:
+  /// **'Comments'**
+  String get commentsTitle;
+
+  /// Pluralized comment count.
+  ///
+  /// In en, this message translates to:
+  /// **'{n, plural, =1{{n} comment} other{{n} comments}}'**
+  String commentCount(int n);
+
+  /// Comment input hint.
+  ///
+  /// In en, this message translates to:
+  /// **'Add a comment...'**
+  String get addCommentHint;
+
+  /// Reply indicator above the composer.
+  ///
+  /// In en, this message translates to:
+  /// **'Replying to {name}'**
+  String replyingTo(String name);
+
+  /// Chip marking the original poster.
+  ///
+  /// In en, this message translates to:
+  /// **'OP'**
+  String get opChip;
+
+  /// Empty feed title.
+  ///
+  /// In en, this message translates to:
+  /// **'No posts yet'**
+  String get noPostsTitle;
+
+  /// Empty feed body copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Be the first to share your week.'**
+  String get noPostsBody;
+
+  /// Empty feed call to action.
+  ///
+  /// In en, this message translates to:
+  /// **'Create first post'**
+  String get createFirstPost;
+
+  /// Label on a progress photo tile.
+  ///
+  /// In en, this message translates to:
+  /// **'PROGRESS PHOTO'**
+  String get progressPhotoLabel;
+
+  /// Kind chip for progress posts.
+  ///
+  /// In en, this message translates to:
+  /// **'PROGRESS'**
+  String get progressChip;
+
+  /// Kind chip for workout posts.
+  ///
+  /// In en, this message translates to:
+  /// **'WORKOUT'**
+  String get workoutChip;
+
+  /// Personal record chip.
+  ///
+  /// In en, this message translates to:
+  /// **'PR'**
+  String get prChip;
+
+  /// Workout stats line with minutes, sets and volume.
+  ///
+  /// In en, this message translates to:
+  /// **'{min} min · {sets} sets · {volume} kg volume'**
+  String workoutStats(int min, int sets, String volume);
+
+  /// Tooltip on the composer entry when community is locked.
+  ///
+  /// In en, this message translates to:
+  /// **'Unlock Community to post'**
+  String get composeDisabledHint;
+
+  /// Snackbar stub for the inbox action.
+  ///
+  /// In en, this message translates to:
+  /// **'Inbox is coming soon'**
+  String get inboxComingSoon;
+
+  /// Time-ago label for under a minute.
+  ///
+  /// In en, this message translates to:
+  /// **'now'**
+  String get timeAgoNow;
+
+  /// Time-ago label in minutes.
+  ///
+  /// In en, this message translates to:
+  /// **'{n}m'**
+  String timeAgoMinutes(int n);
+
+  /// Time-ago label in hours.
+  ///
+  /// In en, this message translates to:
+  /// **'{n}h'**
+  String timeAgoHours(int n);
+
+  /// Time-ago label in days.
+  ///
+  /// In en, this message translates to:
+  /// **'{n}d'**
+  String timeAgoDays(int n);
+
+  /// Badge chip for certified trainers.
+  ///
+  /// In en, this message translates to:
+  /// **'TRAINER'**
+  String get trainerChip;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

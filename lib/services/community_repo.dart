@@ -1,78 +1,386 @@
-/// Local, in-memory Community repository (no backend dependency).
-/// Seeded with realistic sample content. Hides future cloud wiring
-/// behind this interface so backend wiring later is a zero-UI-change edit.
-class CommunityRepo {
-  static final _posts = <CommunityPost>[
-    CommunityPost(
-      id: 'c1',
-      authorName: 'Mara K.',
-      authorInitials: 'MK',
-      timeAgo: '2h',
-      type: 'Progress',
-      caption: 'Week 8, down 6 kg — first strict pull-up this cycle. Slow and steady.',
-      stats: [
-        PostStat(label: 'Duration', value: '—'),
-        PostStat(label: 'Sets', value: '—'),
-        PostStat(label: 'Volume', value: '—'),
-      ],
-      likeCount: 24,
-      commentCount: 8,
-      shareCount: 3,
-    ),
-    CommunityPost(
-      id: 'c2',
-      authorName: 'Deion',
-      authorInitials: 'DE',
-      timeAgo: '4h',
-      type: 'Workout',
-      caption: 'Push Day A — 47 min · 16 sets · PR bench 82.5 kg × 5.',
-      stats: [
-        PostStat(label: 'Duration', value: '47 min'),
-        PostStat(label: 'Sets', value: '16'),
-        PostStat(label: 'Volume', value: '1,240 kg'),
-      ],
-      likeCount: 42,
-      commentCount: 15,
-      shareCount: 7,
-    ),
-  ];
+import 'package:flutter/foundation.dart';
 
-  List<CommunityPost> get posts => List.unmodifiable(_posts);
+/// Kind of a community post.
+enum PostKind { progress, workout }
 
-  CommunityPost postById(String id) =>
-      _posts.firstWhere((p) => p.id == id, orElse: () => throw StateError('Post $id not found'));
+/// Placeholder media tile (community media ships without real images).
+class MediaPlaceholder {
+  const MediaPlaceholder({this.sage = false});
 
-  void addPost(CommunityPost post) => _posts.insert(0, post);
+  /// Sage-gradient variant; the default is the terracotta gradient.
+  final bool sage;
 }
 
-class CommunityPost {
-  CommunityPost({
+/// One exercise line inside a workout summary tile.
+class ExerciseRow {
+  const ExerciseRow({
+    required this.name,
+    required this.scheme,
+    required this.weight,
+    this.pr = false,
+  });
+
+  final String name;
+  final String scheme;
+  final String weight;
+  final bool pr;
+}
+
+/// Workout summary attached to a post or the composer preview.
+class WorkoutSummary {
+  const WorkoutSummary({
+    required this.title,
+    required this.minutes,
+    required this.sets,
+    required this.volumeKg,
+    required this.rows,
+  });
+
+  final String title;
+  final int minutes;
+  final int sets;
+  final int volumeKg;
+  final List<ExerciseRow> rows;
+}
+
+/// A comment on a community post. Replies carry [replyToName].
+class CommunityComment {
+  const CommunityComment({
     required this.id,
     required this.authorName,
     required this.authorInitials,
-    required this.timeAgo,
-    required this.type,
-    required this.caption,
-    required this.stats,
-    required this.likeCount,
-    required this.commentCount,
-    required this.shareCount,
+    required this.authorLevel,
+    required this.minutesAgo,
+    required this.text,
+    this.replyToName,
   });
 
   final String id;
   final String authorName;
   final String authorInitials;
-  final String timeAgo;
-  final String type;
-  final String caption;
-  final List<PostStat> stats;
-  final int likeCount;
-  final int commentCount;
-  final int shareCount;
+  final int authorLevel;
+  final int minutesAgo;
+  final String text;
+  final String? replyToName;
+
+  bool get isReply => replyToName != null;
 }
 
-class PostStat {
-  PostStat({required this.label, required this.value});
-  final String label;
-  final String value;
+/// A community post. Mutable fields back the local-only actions.
+class CommunityPost {
+  CommunityPost({
+    required this.id,
+    required this.authorName,
+    required this.authorInitials,
+    this.authorLevel = 0,
+    this.authorTrainer = false,
+    required this.minutesAgo,
+    required this.kind,
+    required this.caption,
+    this.media = const [],
+    this.workout,
+    this.slug = '',
+    this.likeCount = 0,
+    this.commentCount = 0,
+    this.shareCount = 0,
+    this.isOwn = false,
+    List<CommunityComment>? comments,
+  }) : comments = comments ?? <CommunityComment>[];
+
+  final String id;
+  final String authorName;
+  final String authorInitials;
+  final int authorLevel;
+  final bool authorTrainer;
+  final int minutesAgo;
+  final PostKind kind;
+  String caption;
+  final List<MediaPlaceholder> media;
+  final WorkoutSummary? workout;
+  final String slug;
+  int likeCount;
+  int commentCount;
+  int shareCount;
+  bool liked = false;
+  bool saved = false;
+  bool hidden = false;
+  bool reported = false;
+  final bool isOwn;
+  final List<CommunityComment> comments;
 }
+
+/// A member shown on the Members tab.
+class CommunityMember {
+  const CommunityMember({
+    required this.name,
+    required this.initials,
+    required this.level,
+    this.trainer = false,
+    required this.bio,
+  });
+
+  final String name;
+  final String initials;
+  final int level;
+  final bool trainer;
+  final String bio;
+}
+
+/// Display name derived from the account email (local-only community).
+String communityDisplayName(String? email) {
+  if (email == null || email.isEmpty) return 'B.B.';
+  final local = email.split('@').first;
+  final clean = local.replaceAll(RegExp(r'[._\-+0-9]+'), ' ').trim();
+  if (clean.isEmpty) return 'B.B.';
+  return clean
+      .split(RegExp(r'\s+'))
+      .map((w) => w.isEmpty ? w : '${w[0].toUpperCase()}${w.substring(1)}')
+      .join(' ');
+}
+
+/// Initials derived from the account email (local-only community).
+String communityInitials(String? email) {
+  final name = communityDisplayName(email);
+  if (name == 'B.B.') return 'BB';
+  final parts = name.split(RegExp(r'\s+'));
+  if (parts.length == 1) {
+    final w = parts.first;
+    return w.length < 2 ? w.toUpperCase() : w.substring(0, 2).toUpperCase();
+  }
+  return (parts.first[0] + parts.last[0]).toUpperCase();
+}
+
+/// Local community state: seeded posts, members and today's session.
+/// Every mutation stays in memory — no network, no persistence.
+class CommunityRepo extends ChangeNotifier {
+  CommunityRepo._();
+
+  static final CommunityRepo instance = CommunityRepo._();
+
+  factory CommunityRepo() => instance;
+
+  final List<CommunityPost> _posts = _seed();
+  final List<CommunityMember> members = _seedMembers();
+  WorkoutSummary todaysSession = _pushDayA();
+
+  /// Visible posts, newest first, hidden ones removed.
+  List<CommunityPost> get posts =>
+      List.unmodifiable(_posts.where((p) => !p.hidden));
+
+  CommunityPost? postById(String id) {
+    for (final p in _posts) {
+      if (p.id == id) return p;
+    }
+    return null;
+  }
+
+  void addPost(CommunityPost post) {
+    _posts.insert(0, post);
+    notifyListeners();
+  }
+
+  void editPost(String id, String caption) {
+    postById(id)?.caption = caption;
+    notifyListeners();
+  }
+
+  void removePost(String id) {
+    _posts.removeWhere((p) => p.id == id);
+    notifyListeners();
+  }
+
+  void toggleLike(String id) {
+    final p = postById(id);
+    if (p == null) return;
+    p.liked = !p.liked;
+    p.likeCount += p.liked ? 1 : -1;
+    notifyListeners();
+  }
+
+  void toggleSave(String id) {
+    final p = postById(id);
+    if (p == null) return;
+    p.saved = !p.saved;
+    notifyListeners();
+  }
+
+  void hidePost(String id) {
+    final p = postById(id);
+    if (p == null) return;
+    p.hidden = true;
+    notifyListeners();
+  }
+
+  void unhidePost(String id) {
+    final p = postById(id);
+    if (p == null) return;
+    p.hidden = false;
+    notifyListeners();
+  }
+
+  void reportPost(String id) {
+    final p = postById(id);
+    if (p == null) return;
+    p.reported = true;
+    notifyListeners();
+  }
+
+  void addComment(
+    String postId, {
+    required String authorName,
+    required String authorInitials,
+    required int authorLevel,
+    required String text,
+    String? replyToName,
+  }) {
+    final p = postById(postId);
+    final trimmed = text.trim();
+    if (p == null || trimmed.isEmpty) return;
+    p.comments.add(CommunityComment(
+      id: 'c${p.comments.length + 1}-$postId',
+      authorName: authorName,
+      authorInitials: authorInitials,
+      authorLevel: authorLevel,
+      minutesAgo: 0,
+      text: trimmed,
+      replyToName: replyToName,
+    ));
+    p.commentCount++;
+    notifyListeners();
+  }
+
+  /// Test hook: restore the seeded feed.
+  void reset() {
+    _posts
+      ..clear()
+      ..addAll(_seed());
+    notifyListeners();
+  }
+
+  /// Test hook: empty the feed to exercise the empty state.
+  void clear() {
+    _posts.clear();
+    notifyListeners();
+  }
+
+  }
+
+List<CommunityPost> _seed() => [
+      CommunityPost(
+        id: 'wk8-pullup',
+        authorName: 'Mara K.',
+        authorInitials: 'MK',
+        authorLevel: 6,
+        minutesAgo: 120,
+        kind: PostKind.progress,
+        caption:
+            'Week 8: down 6 kg and my first strict pull-up. Slow negatives, '
+            'three easy singles a day, no hero sets. Six months of showing up '
+            'is finally compounding.',
+        media: const [MediaPlaceholder()],
+        likeCount: 24,
+        commentCount: 8,
+        shareCount: 3,
+        slug: 'wk8-pullup',
+        comments: [
+          const CommunityComment(
+            id: 'c1-wk8-pullup',
+            authorName: 'Priya S.',
+            authorInitials: 'PS',
+            authorLevel: 3,
+            minutesAgo: 60,
+            text: 'Eight weeks out and a strict pull-up is fast. '
+                'What actually changed?',
+          ),
+          const CommunityComment(
+            id: 'c2-wk8-pullup',
+            authorName: 'Mara K.',
+            authorInitials: 'MK',
+            authorLevel: 6,
+            minutesAgo: 58,
+            text: 'Grease the groove. Three easy singles a day, '
+                'none to failure.',
+            replyToName: 'Priya S.',
+          ),
+        ],
+      ),
+      CommunityPost(
+        id: 'push-day-a',
+        authorName: 'Deion',
+        authorInitials: 'DE',
+        authorLevel: 4,
+        minutesAgo: 240,
+        kind: PostKind.workout,
+        caption: '',
+        workout: _pushDayA(),
+        likeCount: 42,
+        commentCount: 15,
+        shareCount: 7,
+        slug: 'push-day-a',
+      ),
+      CommunityPost(
+        id: 'hip-hinge-pair',
+        authorName: 'Priya S.',
+        authorInitials: 'PS',
+        authorLevel: 3,
+        minutesAgo: 1500,
+        kind: PostKind.progress,
+        caption:
+            'Hip hinge day. Both pairs on film — the bar path finally stays '
+            'one clean line.',
+        media: const [
+          MediaPlaceholder(sage: true),
+          MediaPlaceholder(sage: true),
+        ],
+        likeCount: 17,
+        commentCount: 4,
+        shareCount: 1,
+        slug: 'hip-hinge-pair',
+      ),
+    ];
+
+List<CommunityMember> _seedMembers() => const [
+      CommunityMember(
+        name: 'Nadia R.',
+        initials: 'NR',
+        level: 9,
+        trainer: true,
+        bio: 'Head coach · strength and conditioning',
+      ),
+      CommunityMember(
+        name: 'Mara K.',
+        initials: 'MK',
+        level: 6,
+        bio: 'Pull-up project, week 8',
+      ),
+      CommunityMember(
+        name: 'Deion',
+        initials: 'DE',
+        level: 4,
+        bio: 'Push/pull split, chasing a 100 kg bench',
+      ),
+      CommunityMember(
+        name: 'Priya S.',
+        initials: 'PS',
+        level: 3,
+        bio: 'Hinge mechanics and photo check-ins',
+      ),
+      CommunityMember(
+        name: 'Tomás L.',
+        initials: 'TL',
+        level: 2,
+        bio: 'Back after a two-year break',
+      ),
+    ];
+
+WorkoutSummary _pushDayA() => const WorkoutSummary(
+      title: 'Push Day A',
+      minutes: 47,
+      sets: 16,
+      volumeKg: 6140,
+      rows: [
+        ExerciseRow(name: 'Bench press', scheme: '5×5', weight: '82.5 kg', pr: true),
+        ExerciseRow(name: 'Incline DB press', scheme: '3×10', weight: '28 kg'),
+        ExerciseRow(name: 'Cable fly', scheme: '3×12', weight: '15 kg'),
+      ],
+    );

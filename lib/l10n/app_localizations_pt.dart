@@ -3192,4 +3192,226 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get billingComingSoon => 'O pagamento chega em breve.';
+
+  @override
+  String get communityTab => 'Comunidade';
+
+  @override
+  String get feedTab => 'Feed';
+
+  @override
+  String get membersTab => 'Membros';
+
+  @override
+  String get gateTitle => 'A Comunidade está incluída no Basic';
+
+  @override
+  String get gateBody => 'Fotos de progresso, registos de treino e pessoas que percebem.';
+
+  @override
+  String get gateCta => 'Desbloquear a Comunidade';
+
+  @override
+  String get gateLinkOut => 'Continuar em bodybridge.net';
+
+  @override
+  String get gateNotNow => 'Agora não';
+
+  @override
+  String get optionsTitle => 'Opções da publicação';
+
+  @override
+  String get sharePost => 'Partilhar publicação';
+
+  @override
+  String get savePost => 'Guardar publicação';
+
+  @override
+  String get savedPost => 'Guardado';
+
+  @override
+  String get copyPostLink => 'Copiar link da publicação';
+
+  @override
+  String get hidePost => 'Ocultar publicação';
+
+  @override
+  String get reportPost => 'Denunciar publicação';
+
+  @override
+  String get editPost => 'Editar publicação';
+
+  @override
+  String get deletePost => 'Eliminar publicação…';
+
+  @override
+  String get deleteConfirmTitle => 'Eliminar esta publicação?';
+
+  @override
+  String get deleteConfirmBody =>
+      'Isto remove a publicação, a foto e os comentários da Comunidade. Não pode ser anulado.';
+
+  @override
+  String get keepPost => 'Manter publicação';
+
+  @override
+  String get deleteAction => 'Eliminar';
+
+  @override
+  String get postHiddenSnackbar => 'Publicação oculta · Anular';
+
+  @override
+  String get reportSheetTitle => 'Denunciar publicação';
+
+  @override
+  String get reportAnonymous => 'A sua denúncia é anónima.';
+
+  @override
+  String get reportSpam => 'Spam ou burla';
+
+  @override
+  String get reportHarassment => 'Assédio ou ódio';
+
+  @override
+  String get reportInappropriate => 'Fotos impróprias';
+
+  @override
+  String get reportSubmit => 'Denunciar';
+
+  @override
+  String get reportSent => 'Denúncia enviada';
+
+  @override
+  String get shareSheetTitle => 'Partilhar publicação';
+
+  @override
+  String get copyLink => 'Copiar link';
+
+  @override
+  String get linkCopied => 'Link copiado';
+
+  @override
+  String get shareMessages => 'Mensagens';
+
+  @override
+  String get shareMail => 'Mail';
+
+  @override
+  String get shareInstagram => 'Instagram';
+
+  @override
+  String get shareMore => 'Mais';
+
+  @override
+  String get newPostTitle => 'Nova publicação';
+
+  @override
+  String get modeProgress => 'Progresso';
+
+  @override
+  String get modeWorkout => 'Treino';
+
+  @override
+  String progressPhotosCount(int n) {
+    return 'FOTOS DE PROGRESSO · $n DE 4';
+  }
+
+  @override
+  String get addPhotoTile => 'Adicionar';
+
+  @override
+  String get captionHint => 'Partilhe a sua semana: o que mudou, o que aprendeu...';
+
+  @override
+  String get photosPrivate => 'As fotos ficam privadas até publicar.';
+
+  @override
+  String get sessionPreview => 'PRÉ-VISUALIZAÇÃO DO TREINO';
+
+  @override
+  String get autoFilled => 'Preenchido automaticamente com o treino de hoje';
+
+  @override
+  String get contextHint => 'Adicione contexto — como se sentiu?';
+
+  @override
+  String get postToCommunity => 'Publicar na Comunidade';
+
+  @override
+  String get commentsTitle => 'Comentários';
+
+  @override
+  String commentCount(int n) {
+    String _temp0 = intl.Intl.pluralLogic(
+      n,
+      locale: localeName,
+      other: '$n comentários',
+      one: '$n comentário',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get addCommentHint => 'Adicione um comentário...';
+
+  @override
+  String replyingTo(String name) {
+    return 'A responder a $name';
+  }
+
+  @override
+  String get opChip => 'OP';
+
+  @override
+  String get noPostsTitle => 'Ainda sem publicações';
+
+  @override
+  String get noPostsBody => 'Seja o primeiro a partilhar a sua semana.';
+
+  @override
+  String get createFirstPost => 'Criar a primeira publicação';
+
+  @override
+  String get progressPhotoLabel => 'FOTO DE PROGRESSO';
+
+  @override
+  String get progressChip => 'PROGRESSO';
+
+  @override
+  String get workoutChip => 'TREINO';
+
+  @override
+  String get prChip => 'REC';
+
+  @override
+  String workoutStats(int min, int sets, String volume) {
+    return '$min min · $sets séries · $volume kg de volume';
+  }
+
+  @override
+  String get composeDisabledHint => 'Desbloqueie a Comunidade para publicar';
+
+  @override
+  String get inboxComingSoon => 'A caixa de entrada chega em breve';
+
+  @override
+  String get timeAgoNow => 'agora';
+
+  @override
+  String timeAgoMinutes(int n) {
+    return '$n min';
+  }
+
+  @override
+  String timeAgoHours(int n) {
+    return '$n h';
+  }
+
+  @override
+  String timeAgoDays(int n) {
+    return '$n d';
+  }
+
+  @override
+  String get trainerChip => 'TREINADOR';
 }

@@ -3094,4 +3094,220 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get billingComingSoon => '課金機能はまもなく提供予定です。';
+
+  @override
+  String get communityTab => 'コミュニティ';
+
+  @override
+  String get feedTab => 'フィード';
+
+  @override
+  String get membersTab => 'メンバー';
+
+  @override
+  String get gateTitle => 'コミュニティはBasicに含まれます';
+
+  @override
+  String get gateBody => '進捗写真、トレーニング記録、そして分かり合える仲間。';
+
+  @override
+  String get gateCta => 'コミュニティを解錠';
+
+  @override
+  String get gateLinkOut => 'bodybridge.net で続ける';
+
+  @override
+  String get gateNotNow => '後で';
+
+  @override
+  String get optionsTitle => '投稿の操作';
+
+  @override
+  String get sharePost => '投稿をシェア';
+
+  @override
+  String get savePost => '投稿を保存';
+
+  @override
+  String get savedPost => '保存しました';
+
+  @override
+  String get copyPostLink => '投稿リンクをコピー';
+
+  @override
+  String get hidePost => '投稿を非表示';
+
+  @override
+  String get reportPost => '投稿を報告';
+
+  @override
+  String get editPost => '投稿を編集';
+
+  @override
+  String get deletePost => '投稿を削除…';
+
+  @override
+  String get deleteConfirmTitle => 'この投稿を削除しますか？';
+
+  @override
+  String get deleteConfirmBody => '投稿・写真・コメントがコミュニティから削除されます。この操作は元に戻せません。';
+
+  @override
+  String get keepPost => '保持する';
+
+  @override
+  String get deleteAction => '削除';
+
+  @override
+  String get postHiddenSnackbar => '投稿を非表示にしました · 元に戻す';
+
+  @override
+  String get reportSheetTitle => '投稿を報告';
+
+  @override
+  String get reportAnonymous => '報告は匿名で送信されます。';
+
+  @override
+  String get reportSpam => 'スパムまたは詐欺';
+
+  @override
+  String get reportHarassment => '嫌がらせまたはヘイト';
+
+  @override
+  String get reportInappropriate => '不適切な写真';
+
+  @override
+  String get reportSubmit => '報告';
+
+  @override
+  String get reportSent => '報告を送信しました';
+
+  @override
+  String get shareSheetTitle => '投稿をシェア';
+
+  @override
+  String get copyLink => 'リンクをコピー';
+
+  @override
+  String get linkCopied => 'リンクをコピーしました';
+
+  @override
+  String get shareMessages => 'メッセージ';
+
+  @override
+  String get shareMail => 'メール';
+
+  @override
+  String get shareInstagram => 'Instagram';
+
+  @override
+  String get shareMore => 'その他';
+
+  @override
+  String get newPostTitle => '新規投稿';
+
+  @override
+  String get modeProgress => '進捗';
+
+  @override
+  String get modeWorkout => 'トレーニング';
+
+  @override
+  String progressPhotosCount(int n) {
+    return '進捗写真 · $n / 4';
+  }
+
+  @override
+  String get addPhotoTile => '追加';
+
+  @override
+  String get captionHint => '今週の変化や学んだことをシェアしましょう...';
+
+  @override
+  String get photosPrivate => '写真は投稿するまで非公開です。';
+
+  @override
+  String get sessionPreview => 'セッションプレビュー';
+
+  @override
+  String get autoFilled => '今日のセッションから自動入力';
+
+  @override
+  String get contextHint => 'コンディションや感想を追加';
+
+  @override
+  String get postToCommunity => 'コミュニティに投稿';
+
+  @override
+  String get commentsTitle => 'コメント';
+
+  @override
+  String commentCount(int n) {
+    String _temp0 = intl.Intl.pluralLogic(n, locale: localeName, other: '$n件のコメント');
+    return '$_temp0';
+  }
+
+  @override
+  String get addCommentHint => 'コメントを追加...';
+
+  @override
+  String replyingTo(String name) {
+    return '$name に返信中';
+  }
+
+  @override
+  String get opChip => '投稿者';
+
+  @override
+  String get noPostsTitle => '投稿はまだありません';
+
+  @override
+  String get noPostsBody => '最初に今週をシェアしましょう。';
+
+  @override
+  String get createFirstPost => '最初の投稿を作成';
+
+  @override
+  String get progressPhotoLabel => '進捗写真';
+
+  @override
+  String get progressChip => '進捗';
+
+  @override
+  String get workoutChip => 'トレーニング';
+
+  @override
+  String get prChip => 'PR';
+
+  @override
+  String workoutStats(int min, int sets, String volume) {
+    return '$min分 · $setsセット · ボリューム $volume kg';
+  }
+
+  @override
+  String get composeDisabledHint => '投稿するにはコミュニティを解錠';
+
+  @override
+  String get inboxComingSoon => '受信トレイは近日公開';
+
+  @override
+  String get timeAgoNow => 'たった今';
+
+  @override
+  String timeAgoMinutes(int n) {
+    return '$n分';
+  }
+
+  @override
+  String timeAgoHours(int n) {
+    return '$n時間';
+  }
+
+  @override
+  String timeAgoDays(int n) {
+    return '$n日';
+  }
+
+  @override
+  String get trainerChip => 'トレーナー';
 }

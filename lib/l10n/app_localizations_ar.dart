@@ -3184,4 +3184,229 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get billingComingSoon => 'الفوترة قريبًا.';
+
+  @override
+  String get communityTab => 'المجتمع';
+
+  @override
+  String get feedTab => 'الخلاصة';
+
+  @override
+  String get membersTab => 'الأعضاء';
+
+  @override
+  String get gateTitle => 'المجتمع مشمول في خطة Basic';
+
+  @override
+  String get gateBody => 'صور التقدم وسجلات التمارين وأشخاص يفهمونك.';
+
+  @override
+  String get gateCta => 'افتح المجتمع';
+
+  @override
+  String get gateLinkOut => 'تابع على bodybridge.net';
+
+  @override
+  String get gateNotNow => 'ليس الآن';
+
+  @override
+  String get optionsTitle => 'خيارات المنشور';
+
+  @override
+  String get sharePost => 'مشاركة المنشور';
+
+  @override
+  String get savePost => 'حفظ المنشور';
+
+  @override
+  String get savedPost => 'تم الحفظ';
+
+  @override
+  String get copyPostLink => 'نسخ رابط المنشور';
+
+  @override
+  String get hidePost => 'إخفاء المنشور';
+
+  @override
+  String get reportPost => 'الإبلاغ عن المنشور';
+
+  @override
+  String get editPost => 'تعديل المنشور';
+
+  @override
+  String get deletePost => 'حذف المنشور…';
+
+  @override
+  String get deleteConfirmTitle => 'حذف هذا المنشور؟';
+
+  @override
+  String get deleteConfirmBody => 'سيُحذف المنشور وصورته وتعليقاته من المجتمع. لا يمكن التراجع عن ذلك.';
+
+  @override
+  String get keepPost => 'الاحتفاظ بالمنشور';
+
+  @override
+  String get deleteAction => 'حذف';
+
+  @override
+  String get postHiddenSnackbar => 'تم إخفاء المنشور · تراجع';
+
+  @override
+  String get reportSheetTitle => 'الإبلاغ عن المنشور';
+
+  @override
+  String get reportAnonymous => 'بلاغك مجهول الهوية.';
+
+  @override
+  String get reportSpam => 'رسائل مزعجة أو احتيال';
+
+  @override
+  String get reportHarassment => 'تحرش أو كراهية';
+
+  @override
+  String get reportInappropriate => 'صور غير لائقة';
+
+  @override
+  String get reportSubmit => 'إبلاغ';
+
+  @override
+  String get reportSent => 'تم إرسال البلاغ';
+
+  @override
+  String get shareSheetTitle => 'مشاركة المنشور';
+
+  @override
+  String get copyLink => 'نسخ الرابط';
+
+  @override
+  String get linkCopied => 'تم نسخ الرابط';
+
+  @override
+  String get shareMessages => 'الرسائل';
+
+  @override
+  String get shareMail => 'البريد';
+
+  @override
+  String get shareInstagram => 'Instagram';
+
+  @override
+  String get shareMore => 'المزيد';
+
+  @override
+  String get newPostTitle => 'منشور جديد';
+
+  @override
+  String get modeProgress => 'تقدم';
+
+  @override
+  String get modeWorkout => 'تمرين';
+
+  @override
+  String progressPhotosCount(int n) {
+    return 'صور التقدم · $n من 4';
+  }
+
+  @override
+  String get addPhotoTile => 'إضافة';
+
+  @override
+  String get captionHint => 'شارك أسبوعك: ما الذي تغيّر وما تعلمته...';
+
+  @override
+  String get photosPrivate => 'تبقى الصور خاصة حتى تنشرها.';
+
+  @override
+  String get sessionPreview => 'معاينة الجلسة';
+
+  @override
+  String get autoFilled => 'مُعبأ تلقائيًا من جلسة اليوم';
+
+  @override
+  String get contextHint => 'أضف سياقًا — كيف شعرت؟';
+
+  @override
+  String get postToCommunity => 'انشر في المجتمع';
+
+  @override
+  String get commentsTitle => 'التعليقات';
+
+  @override
+  String commentCount(int n) {
+    String _temp0 = intl.Intl.pluralLogic(
+      n,
+      locale: localeName,
+      other: '$n تعليق',
+      many: '$n تعليقًا',
+      few: '$n تعليقات',
+      two: 'تعليقان',
+      one: 'تعليق واحد',
+      zero: 'لا تعليقات',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get addCommentHint => 'أضف تعليقًا...';
+
+  @override
+  String replyingTo(String name) {
+    return 'ردًا على $name';
+  }
+
+  @override
+  String get opChip => 'الكاتب';
+
+  @override
+  String get noPostsTitle => 'لا منشورات بعد';
+
+  @override
+  String get noPostsBody => 'كن أول من يشارك أسبوعه.';
+
+  @override
+  String get createFirstPost => 'أنشئ أول منشور';
+
+  @override
+  String get progressPhotoLabel => 'صورة التقدم';
+
+  @override
+  String get progressChip => 'تقدم';
+
+  @override
+  String get workoutChip => 'تمرين';
+
+  @override
+  String get prChip => 'رقم قياسي';
+
+  @override
+  String workoutStats(int min, int sets, String volume) {
+    return '$min د · $sets مجموعات · حجم $volume كغ';
+  }
+
+  @override
+  String get composeDisabledHint => 'افتح المجتمع للنشر';
+
+  @override
+  String get inboxComingSoon => 'صندوق الوارد قادم قريبًا';
+
+  @override
+  String get timeAgoNow => 'الآن';
+
+  @override
+  String timeAgoMinutes(int n) {
+    return '$n د';
+  }
+
+  @override
+  String timeAgoHours(int n) {
+    return '$n س';
+  }
+
+  @override
+  String timeAgoDays(int n) {
+    return '$n ي';
+  }
+
+  @override
+  String get trainerChip => 'مدرب';
 }
