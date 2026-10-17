@@ -83,7 +83,6 @@ class CommunityPost {
     this.workout,
     this.slug = '',
     this.likeCount = 0,
-    this.commentCount = 0,
     this.shareCount = 0,
     this.isOwn = false,
     List<CommunityComment>? comments,
@@ -101,7 +100,7 @@ class CommunityPost {
   final WorkoutSummary? workout;
   final String slug;
   int likeCount;
-  int commentCount;
+  int get commentCount => comments.length;
   int shareCount;
   bool liked = false;
   bool saved = false;
@@ -255,33 +254,61 @@ class CommunityRepo extends ChangeNotifier {
       text: trimmed,
       replyToName: replyToName,
     ));
-    p.commentCount++;
     _persist();
     notifyListeners();
   }
 
+  /// Single creation path for new posts: owns the identity, timestamp and
+  /// share slug, so composer posts get exactly the same treatment as seeds.
+  CommunityPost createPost({
+    required PostKind kind,
+    required String caption,
+    required String authorName,
+    required String authorInitials,
+    WorkoutSummary? workout,
+    List<MediaPlaceholder> media = const [],
+  }) {
+    final post = CommunityPost(
+      id: 'local-${DateTime.now().microsecondsSinceEpoch}',
+      authorName: authorName,
+      authorInitials: authorInitials,
+      minutesAgo: 0,
+      kind: kind,
+      caption: caption,
+      media: List.of(media),
+      workout: workout,
+      slug: communitySlug(caption),
+      isOwn: true,
+    );
+    addPost(post);
+    return post;
+  }
+
   /// Persist community posts through the app's Store (local-only, no network).
+  /// Store.save replaces the whole store, so this reads the current map and
+  /// updates only the 'posts' key — routines, settings and notes stay intact.
   void _persist() {
-    // Route created posts through the same local persistence used by routines/settings.
-    Store.instance.save({
-      'posts': _posts.map((p) => {
-        'id': p.id,
-        'caption': p.caption,
-        'kind': p.kind.index,
-        'likeCount': p.likeCount,
-        'commentCount': p.comments.length,
-        'hidden': p.hidden,
-        'isOwn': p.isOwn,
-        'authorName': p.authorName,
-        'authorInitials': p.authorInitials,
-        'authorLevel': p.authorLevel,
-        'authorTrainer': p.authorTrainer,
-        'minutesAgo': p.minutesAgo,
-        'media': p.media.map((m) => m.sage).toList(),
-        'shareCount': p.shareCount,
-        'slug': p.slug,
-      }).toList(),
-    });
+    final data = Store.instance.load();
+    data['posts'] = _posts
+        .map((p) => {
+              'id': p.id,
+              'caption': p.caption,
+              'kind': p.kind.index,
+              'likeCount': p.likeCount,
+              'commentCount': p.comments.length,
+              'hidden': p.hidden,
+              'isOwn': p.isOwn,
+              'authorName': p.authorName,
+              'authorInitials': p.authorInitials,
+              'authorLevel': p.authorLevel,
+              'authorTrainer': p.authorTrainer,
+              'minutesAgo': p.minutesAgo,
+              'media': p.media.map((m) => m.sage).toList(),
+              'shareCount': p.shareCount,
+              'slug': p.slug,
+            })
+        .toList();
+    Store.instance.save(data);
   }
 
   /// Test hook: restore the seeded feed.
@@ -301,6 +328,13 @@ class CommunityRepo extends ChangeNotifier {
   }
 
   }
+
+/// URL-ish share slug derived from a caption; mirrors the plan-import slugify.
+String communitySlug(String text) {
+  final dashed = text.toLowerCase().replaceAll(RegExp(r'[^a-z0-9]+'), '-');
+  final trimmed = dashed.replaceAll(RegExp(r'^-+|-+$'), '');
+  return trimmed.isEmpty ? 'post' : trimmed;
+}
 
 List<CommunityPost> _seed() => [
       CommunityPost(

@@ -52,29 +52,21 @@ class _CommunityComposerScreenState extends State<CommunityComposerScreen> {
     if (widget.editing != null) {
       repo.editPost(widget.editing!.id, _caption.text.trim());
     } else if (_mode == PostKind.workout) {
-      repo.addPost(CommunityPost(
-        id: 'local-${DateTime.now().microsecondsSinceEpoch}',
-        authorName: communityDisplayName(snapshot.email),
-        authorInitials: communityInitials(snapshot.email),
-        authorLevel: 0,
-        minutesAgo: 0,
+      repo.createPost(
         kind: PostKind.workout,
         caption: _context.text.trim(),
-        workout: repo.todaysSession,
-        isOwn: true,
-      ));
-    } else {
-      repo.addPost(CommunityPost(
-        id: 'local-${DateTime.now().microsecondsSinceEpoch}',
         authorName: communityDisplayName(snapshot.email),
         authorInitials: communityInitials(snapshot.email),
-        authorLevel: 0,
-        minutesAgo: 0,
+        workout: repo.todaysSession,
+      );
+    } else {
+      repo.createPost(
         kind: PostKind.progress,
         caption: _caption.text.trim(),
+        authorName: communityDisplayName(snapshot.email),
+        authorInitials: communityInitials(snapshot.email),
         media: List.of(_staged),
-        isOwn: true,
-      ));
+      );
     }
     Navigator.of(context).pop();
   }
