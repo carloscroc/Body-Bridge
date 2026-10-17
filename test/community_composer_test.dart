@@ -62,7 +62,8 @@ void main() {
     await tester.pump(const Duration(milliseconds: 300));
 
     await tester.tap(find.text(t.postToCommunity));
-    await tester.pump(const Duration(milliseconds: 600));
+    await tester.pump(); // first frame starts the pop-transition ticker
+    await tester.pump(const Duration(seconds: 1)); // runs the 450ms reverse transition to completion
 
     final repo = CommunityRepo();
     expect(repo.posts.length, 4);
@@ -83,7 +84,8 @@ void main() {
     await tester.pump(const Duration(milliseconds: 300));
 
     await tester.tap(find.text(t.postToCommunity));
-    await tester.pump(const Duration(milliseconds: 600));
+    await tester.pump(); // first frame starts the pop-transition ticker
+    await tester.pump(const Duration(seconds: 1)); // runs the 450ms reverse transition to completion
 
     final repo = CommunityRepo();
     expect(repo.posts.length, 4);

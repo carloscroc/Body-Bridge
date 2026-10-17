@@ -46,6 +46,8 @@ void main() {
     await pumpFeed(tester);
 
     expect(find.text('24'), findsOneWidget);
+    await tester.ensureVisible(find.text('24')); // post is built but below the fold; bring it into the viewport
+    await tester.pump(const Duration(milliseconds: 300)); // flush the scroll jump into layout before computing the tap point
     await tester.tap(find.text('24'));
     await tester.pump(const Duration(milliseconds: 300));
 
