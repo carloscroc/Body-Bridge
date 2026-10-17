@@ -231,58 +231,58 @@ class _CommunityComposerScreenState extends State<CommunityComposerScreen> {
       backgroundColor: gc.pageBg,
       body: SafeArea(
         bottom: false,
-        child: Column(
+        child: Stack(
           children: [
-            SizedBox(
-              height: 44,
-              child: Stack(
-                alignment: Alignment.center,
+            Positioned.fill(
+              child: ListView(
+                padding: EdgeInsets.fromLTRB(20, 14, 20, 100),
                 children: [
-                  Positioned(
-                    left: 12,
-                    child: RoundAction(
-                      onTap: () => Navigator.of(context).maybePop(),
-                      child: Icon(PhosphorIconsRegular.x, size: 16, color: gc.text),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      RoundAction(
+                        onTap: () => Navigator.of(context).maybePop(),
+                        child: Icon(PhosphorIconsRegular.x, size: 16, color: gc.text),
+                      ),
+                      Text(
+                        t.newPostTitle,
+                        style: AppTheme.f(17, weight: FontWeight.w800, color: gc.text),
+                      ),
+                      const SizedBox(width: 44),
+                    ],
+                  ),
+                  const SizedBox(height: 14),
+                  if (!editing)
+                    Center(
+                      child: CommunitySeg(
+                        options: [
+                          SegOption(
+                            t.modeProgress,
+                            _mode == PostKind.progress,
+                            () => setState(() => _mode = PostKind.progress),
+                          ),
+                          SegOption(
+                            t.modeWorkout,
+                            _mode == PostKind.workout,
+                            () => setState(() => _mode = PostKind.workout),
+                          ),
+                        ],
+                      ),
                     ),
-                  ),
-                  Text(
-                    t.newPostTitle,
-                    style: AppTheme.f(17, weight: FontWeight.w800, color: gc.text),
-                  ),
+                  const SizedBox(height: 14),
+                  if (editing || _mode == PostKind.progress) ..._progressBody else ..._workoutBody,
                 ],
               ),
             ),
-            const SizedBox(height: 14),
-            if (!editing)
-              Center(
-                child: CommunitySeg(
-                  options: [
-                    SegOption(
-                      t.modeProgress,
-                      _mode == PostKind.progress,
-                      () => setState(() => _mode = PostKind.progress),
-                    ),
-                    SegOption(
-                      t.modeWorkout,
-                      _mode == PostKind.workout,
-                      () => setState(() => _mode = PostKind.workout),
-                    ),
-                  ],
-                ),
-              ),
-            Expanded(
-              child: ListView(
-                padding: const EdgeInsets.fromLTRB(20, 20, 20, 16),
-                children: editing || _mode == PostKind.progress ? _progressBody : _workoutBody,
-              ),
-            ),
-            AnimatedBuilder(
-              animation: Listenable.merge([_caption, _context]),
-              builder: (context, _) {
-                final enabled = _canPost;
-                return Padding(
-                  padding: const EdgeInsets.fromLTRB(20, 8, 20, 12),
-                  child: Pressable(
+            Positioned(
+              left: 20,
+              right: 20,
+              bottom: 12,
+              child: AnimatedBuilder(
+                animation: Listenable.merge([_caption, _context]),
+                builder: (context, _) {
+                  final enabled = _canPost;
+                  return Pressable(
                     onTap: enabled ? _submit : null,
                     child: Container(
                       height: 54,
@@ -300,9 +300,9 @@ class _CommunityComposerScreenState extends State<CommunityComposerScreen> {
                         ),
                       ),
                     ),
-                  ),
-                );
-              },
+                  );
+                },
+              ),
             ),
           ],
         ),

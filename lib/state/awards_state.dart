@@ -88,6 +88,7 @@ mixin AwardsState on FitCore, StatsState, SettingsState {
   void refreshAwards({bool silent = false}) {
     var won = false;
     for (final id in AwardId.values) {
+      if (awardsSeen.contains(id.name)) continue;
       if (hasAward(id) || awardValue(id) < awardGoal(id)) continue;
       awards[id.name] = DateTime.now();
       if (!gamification) {

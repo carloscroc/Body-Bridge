@@ -567,10 +567,12 @@ class _NavBarState extends State<_NavBar> {
     final color = selected ? gc.text : gc.textTertiary;
     const dur = Duration(milliseconds: 300);
 
-    return GestureDetector(
-      behavior: HitTestBehavior.opaque,
-      onTap: onTap,
-      onLongPressStart: (d) {
+    return Semantics(
+      selected: selected,
+      child: GestureDetector(
+        behavior: HitTestBehavior.opaque,
+        onTap: onTap,
+        onLongPressStart: (d) {
         HapticFeedback.mediumImpact();
         _dragTo(_slotX(index) + d.localPosition.dx);
       },
@@ -625,7 +627,7 @@ class _NavBarState extends State<_NavBar> {
         ),
       ),
       ),
-    );
+    ));
   }
 
   Widget? _communityBadge(BuildContext context) {
