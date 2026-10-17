@@ -3318,6 +3318,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get addPhotoTile => 'Add';
 
   @override
+  String get photoPickerPending => 'Add photo needs an image picker — coming soon';
+
+  @override
   String get captionHint => 'Share your week — what changed, what you learned...';
 
   @override

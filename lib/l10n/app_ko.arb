@@ -1267,6 +1267,7 @@
   "modeWorkout": "운동",
   "progressPhotosCount": "진행 사진 · {n} / 4",
   "addPhotoTile": "추가",
+  "photoPickerPending": "사진 추가에는 이미지 피커가 필요합니다 — 곧 제공",
   "captionHint": "이번 주의 변화와 배운 점을 공유해 보세요...",
   "photosPrivate": "사진은 게시할 때까지 비공개입니다.",
   "sessionPreview": "세션 미리보기",

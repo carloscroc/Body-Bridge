@@ -1027,6 +1027,7 @@
   "modeWorkout": "训练",
   "progressPhotosCount": "进度照片 · {n} / 4",
   "addPhotoTile": "添加",
+  "photoPickerPending": "添加照片需要图片选择器 — 即将支持",
   "captionHint": "分享这一周的变化和心得...",
   "photosPrivate": "照片在发布前保持私密。",
   "sessionPreview": "训练概览",

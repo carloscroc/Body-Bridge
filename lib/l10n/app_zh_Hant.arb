@@ -1267,6 +1267,7 @@
   "modeWorkout": "訓練",
   "progressPhotosCount": "進度照片 · {n} / 4",
   "addPhotoTile": "新增",
+  "photoPickerPending": "新增照片需要圖片選擇器 — 即將支援",
   "captionHint": "分享這一週的變化與心得...",
   "photosPrivate": "照片在發佈前保持私密。",
   "sessionPreview": "訓練概覽",

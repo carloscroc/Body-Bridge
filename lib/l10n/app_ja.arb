@@ -1267,6 +1267,7 @@
   "modeWorkout": "トレーニング",
   "progressPhotosCount": "進捗写真 · {n} / 4",
   "addPhotoTile": "追加",
+  "photoPickerPending": "写真の追加には画像ピッカーが必要です — 近日対応",
   "captionHint": "今週の変化や学んだことをシェアしましょう...",
   "photosPrivate": "写真は投稿するまで非公開です。",
   "sessionPreview": "セッションプレビュー",

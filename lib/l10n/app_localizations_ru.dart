@@ -3409,6 +3409,9 @@ class AppLocalizationsRu extends AppLocalizations {
   String get addPhotoTile => 'Добавить';
 
   @override
+  String get photoPickerPending => 'Добавление фото нуждается в выборе изображений — скоро';
+
+  @override
   String get captionHint => 'Расскажите о своей неделе: что изменилось, чему вы научились...';
 
   @override

@@ -3321,6 +3321,9 @@ class AppLocalizationsTr extends AppLocalizations {
   String get addPhotoTile => 'Ekle';
 
   @override
+  String get photoPickerPending => 'Fotoğraf eklemek bir resim seçici gerektiriyor — yakında';
+
+  @override
   String get captionHint => 'Haftanı paylaş: ne değişti, ne öğrendin...';
 
   @override

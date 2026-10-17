@@ -3311,6 +3311,9 @@ class AppLocalizationsAr extends AppLocalizations {
   String get addPhotoTile => 'إضافة';
 
   @override
+  String get photoPickerPending => 'إضافة صورة تحتاج إلى منتقي صور — قادم قريبًا';
+
+  @override
   String get captionHint => 'شارك أسبوعك: ما الذي تغيّر وما تعلمته...';
 
   @override

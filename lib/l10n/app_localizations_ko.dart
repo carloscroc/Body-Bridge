@@ -3236,6 +3236,9 @@ class AppLocalizationsKo extends AppLocalizations {
   String get addPhotoTile => '추가';
 
   @override
+  String get photoPickerPending => '사진 추가에는 이미지 피커가 필요합니다 — 곧 제공';
+
+  @override
   String get captionHint => '이번 주의 변화와 배운 점을 공유해 보세요...';
 
   @override

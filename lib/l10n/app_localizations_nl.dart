@@ -3326,6 +3326,9 @@ class AppLocalizationsNl extends AppLocalizations {
   String get addPhotoTile => 'Toevoegen';
 
   @override
+  String get photoPickerPending => 'Foto toevoegen heeft een afbeeldingskiezer nodig — komt binnenkort';
+
+  @override
   String get captionHint => 'Deel je week: wat is er veranderd, wat heb je geleerd...';
 
   @override

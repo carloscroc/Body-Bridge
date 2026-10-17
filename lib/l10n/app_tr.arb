@@ -1267,6 +1267,7 @@
   "modeWorkout": "Antrenman",
   "progressPhotosCount": "İLERLEME FOTOĞRAFLARI · {n} / 4",
   "addPhotoTile": "Ekle",
+  "photoPickerPending": "Fotoğraf eklemek bir resim seçici gerektiriyor — yakında",
   "captionHint": "Haftanı paylaş: ne değişti, ne öğrendin...",
   "photosPrivate": "Fotoğraflar paylaşana kadar gizli kalır.",
   "sessionPreview": "ANTRENMAN ÖNİZLEMESİ",

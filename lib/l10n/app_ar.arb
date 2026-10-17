@@ -1267,6 +1267,7 @@
   "modeWorkout": "تمرين",
   "progressPhotosCount": "صور التقدم · {n} من 4",
   "addPhotoTile": "إضافة",
+  "photoPickerPending": "إضافة صورة تحتاج إلى منتقي صور — قادم قريبًا",
   "captionHint": "شارك أسبوعك: ما الذي تغيّر وما تعلمته...",
   "photosPrivate": "تبقى الصور خاصة حتى تنشرها.",
   "sessionPreview": "معاينة الجلسة",

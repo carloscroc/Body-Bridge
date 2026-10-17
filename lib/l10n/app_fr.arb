@@ -1267,6 +1267,7 @@
   "modeWorkout": "Séance",
   "progressPhotosCount": "PHOTOS DE PROGRÈS · {n} SUR 4",
   "addPhotoTile": "Ajouter",
+  "photoPickerPending": "Ajouter une photo nécessite un sélecteur d'images — bientôt",
   "captionHint": "Partage ta semaine : ce qui a changé, ce que tu as appris...",
   "photosPrivate": "Les photos restent privées jusqu’à la publication.",
   "sessionPreview": "APERÇU DE LA SÉANCE",

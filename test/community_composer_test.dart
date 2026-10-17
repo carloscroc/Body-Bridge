@@ -125,4 +125,16 @@ void main() {
     final barBottom = tester.getBottomRight(find.text(t.postToCommunity)).dy;
     expect(barBottom, lessThanOrEqualTo(844 - 300));
   });
+
+  testWidgets('Add photo is visibly disabled with a picker-dependency reason chip', (tester) async {
+    await pumpHostAndOpen(tester);
+
+    expect(find.text(t.photoPickerPending), findsOneWidget);
+
+    await tester.tap(find.text(t.addPhotoTile), warnIfMissed: false);
+    await tester.pump(const Duration(milliseconds: 300));
+
+    expect(find.text(t.progressPhotosCount(2)), findsOneWidget); // nothing was staged
+    expect(find.text(t.progressPhotosCount(3)), findsNothing);
+  });
 }

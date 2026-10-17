@@ -45,11 +45,6 @@ class _CommunityComposerScreenState extends State<CommunityComposerScreen> {
     return text.isNotEmpty && _staged.isNotEmpty;
   }
 
-  void _addPhoto() {
-    if (_staged.length >= 4) return;
-    setState(() => _staged.add(MediaPlaceholder(sage: _staged.length.isOdd)));
-  }
-
   void _submit() {
     if (!_canPost) return;
     final repo = CommunityRepo();
@@ -154,11 +149,36 @@ class _CommunityComposerScreenState extends State<CommunityComposerScreen> {
             Expanded(
               child: AspectRatio(
                 aspectRatio: 1,
-                child: Pressable(onTap: _addPhoto, child: _addTile(gc)),
+                child: Opacity(opacity: 0.4, child: _addTile(gc)),
               ),
             ),
           ],
         ],
+      ),
+      const SizedBox(height: 10),
+      Align(
+        alignment: Alignment.centerLeft,
+        child: Container(
+          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+          decoration: BoxDecoration(
+            color: gc.bgRaised2,
+            borderRadius: BorderRadius.circular(100),
+            border: Border.all(color: gc.border),
+          ),
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Icon(PhosphorIconsRegular.info, size: 12, color: gc.textTertiary),
+              const SizedBox(width: 6),
+              Flexible(
+                child: Text(
+                  t.photoPickerPending,
+                  style: AppTheme.f(10.5, weight: FontWeight.w700, color: gc.textTertiary),
+                ),
+              ),
+            ],
+          ),
+        ),
       ),
       const SizedBox(height: 16),
       _field(controller: _caption, hint: t.captionHint),

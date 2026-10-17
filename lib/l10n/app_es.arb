@@ -1075,6 +1075,7 @@
   "modeWorkout": "Entrenamiento",
   "progressPhotosCount": "FOTOS DE PROGRESO · {n} DE 4",
   "addPhotoTile": "Añadir",
+  "photoPickerPending": "Añadir foto necesita un selector de imágenes — próximamente",
   "captionHint": "Comparte tu semana: qué cambió, qué aprendiste...",
   "photosPrivate": "Las fotos se mantienen privadas hasta que publiques.",
   "sessionPreview": "VISTA PREVIA DE LA SESIÓN",

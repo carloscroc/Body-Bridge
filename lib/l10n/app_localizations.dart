@@ -5978,6 +5978,12 @@ abstract class AppLocalizations {
   /// **'Add'**
   String get addPhotoTile;
 
+  /// Why the Add photo tile is disabled: the image picker dependency is not available yet.
+  ///
+  /// In en, this message translates to:
+  /// **'Add photo needs an image picker — coming soon'**
+  String get photoPickerPending;
+
   /// Caption text field hint.
   ///
   /// In en, this message translates to:

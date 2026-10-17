@@ -3331,6 +3331,9 @@ class AppLocalizationsFr extends AppLocalizations {
   String get addPhotoTile => 'Ajouter';
 
   @override
+  String get photoPickerPending => 'Ajouter une photo nécessite un sélecteur d\'images — bientôt';
+
+  @override
   String get captionHint => 'Partage ta semaine : ce qui a changé, ce que tu as appris...';
 
   @override

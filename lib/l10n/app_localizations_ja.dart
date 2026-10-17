@@ -3221,6 +3221,9 @@ class AppLocalizationsJa extends AppLocalizations {
   String get addPhotoTile => '追加';
 
   @override
+  String get photoPickerPending => '写真の追加には画像ピッカーが必要です — 近日対応';
+
+  @override
   String get captionHint => '今週の変化や学んだことをシェアしましょう...';
 
   @override

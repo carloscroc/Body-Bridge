@@ -1267,6 +1267,7 @@
   "modeWorkout": "Training",
   "progressPhotosCount": "VOORTGANGSFOTO’S · {n} VAN 4",
   "addPhotoTile": "Toevoegen",
+  "photoPickerPending": "Foto toevoegen heeft een afbeeldingskiezer nodig — komt binnenkort",
   "captionHint": "Deel je week: wat is er veranderd, wat heb je geleerd...",
   "photosPrivate": "Foto’s blijven privé tot je plaatst.",
   "sessionPreview": "TRAININGSVOORBEELD",

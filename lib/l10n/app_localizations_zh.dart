@@ -3181,6 +3181,9 @@ class AppLocalizationsZh extends AppLocalizations {
   String get addPhotoTile => '添加';
 
   @override
+  String get photoPickerPending => '添加照片需要图片选择器 — 即将支持';
+
+  @override
   String get captionHint => '分享这一周的变化和心得...';
 
   @override
@@ -6471,6 +6474,9 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
 
   @override
   String get addPhotoTile => '新增';
+
+  @override
+  String get photoPickerPending => '新增照片需要圖片選擇器 — 即將支援';
 
   @override
   String get captionHint => '分享這一週的變化與心得...';

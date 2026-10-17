@@ -3324,6 +3324,9 @@ class AppLocalizationsUk extends AppLocalizations {
   String get addPhotoTile => 'Додати';
 
   @override
+  String get photoPickerPending => 'Додавання фото потребує вибору зображень — незабаром';
+
+  @override
   String get captionHint => 'Розкажіть про свій тиждень: що змінилося, чому ви навчилися...';
 
   @override
