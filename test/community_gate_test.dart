@@ -6,6 +6,7 @@ import 'package:gymmane/l10n/l10n.dart';
 import 'package:gymmane/screens/community/community_gate.dart';
 import 'package:gymmane/services/community_repo.dart';
 import 'package:gymmane/state/account_gate.dart';
+import 'package:gymmane/state/fit_state.dart';
 import 'package:gymmane/theme/app_theme.dart';
 
 class FakeTierGate extends AccountGate {
@@ -93,5 +94,24 @@ void main() {
     await tester.pump(const Duration(milliseconds: 400));
 
     expect(find.text(t.gateTitle), findsOneWidget);
+  });
+
+  testWidgets('locked "Not now" goes home through the fit route, never a route pop', (tester) async {
+    AccountGate.install(FakeTierGate(AccountTier.free, email: 'mara@bodybridge.app'));
+    fit.goCommunity();
+    await tester.pumpWidget(MaterialApp(
+      theme: AppTheme.dark,
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      supportedLocales: AppLocalizations.supportedLocales,
+      home: const CommunityGate(child: SizedBox.expand()),
+    ));
+    await tester.pump(const Duration(milliseconds: 400));
+
+    expect(fit.route, 'community');
+    await tester.tap(find.text(t.gateNotNow));
+    await tester.pump();
+
+    expect(fit.route, 'home');
+    expect(find.text(t.gateTitle), findsOneWidget); // the veil is in-place UI: there is no pushed route to pop
   });
 }
