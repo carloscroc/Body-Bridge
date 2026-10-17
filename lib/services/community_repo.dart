@@ -317,6 +317,34 @@ List<CommunityPost> _seed() => [
         commentCount: 15,
         shareCount: 7,
         slug: 'push-day-a',
+        comments: [
+          const CommunityComment(
+            id: 'c1-push-day-a',
+            authorName: 'Tomás L.',
+            authorInitials: 'TL',
+            authorLevel: 2,
+            minutesAgo: 200,
+            text: 'First time running this scheme. The 5×5 is heavy but the '
+                'rest timer is doing its job.',
+          ),
+          const CommunityComment(
+            id: 'c2-push-day-a',
+            authorName: 'Deion',
+            authorInitials: 'DE',
+            authorLevel: 4,
+            minutesAgo: 195,
+            text: 'Keep the incline DB at 28 — it owns the upper chest.',
+            replyToName: 'Tomás L.',
+          ),
+          const CommunityComment(
+            id: 'c3-push-day-a',
+            authorName: 'Nadia R.',
+            authorInitials: 'NR',
+            authorLevel: 9,
+            minutesAgo: 190,
+            text: 'Watch the bar path on the bench. Stay over the pad.',
+          ),
+        ],
       ),
       CommunityPost(
         id: 'hip-hinge-pair',
