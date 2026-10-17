@@ -6,7 +6,7 @@ import 'package:url_launcher/url_launcher.dart';
 
 import '../../l10n/l10n.dart';
 import '../../state/account_gate.dart';
-import '../../state/fit_state.dart';
+
 import '../../theme/app_colors.dart';
 import '../../theme/app_theme.dart';
 import '../../widgets/ui_kit.dart';
@@ -129,7 +129,7 @@ class GateCard extends StatelessWidget {
           ),
           const SizedBox(height: 6),
           Pressable(
-            onTap: () => Navigator.of(context).pop(),
+            onTap: () => await AccountGate.instance.snapshot(),
             child: Container(
               height: 46,
               alignment: Alignment.center,
