@@ -3229,4 +3229,13 @@ class AppLocalizationsKo extends AppLocalizations {
   String exercisesMeta(int count, int minutes) {
     return '$count개 운동 · ~$minutes분';
   }
+
+  @override
+  String get talkToTrainer => '트레이너와 대화하기';
+
+  @override
+  String get talkToTrainerSub => '맞춤 운동과 1:1 채팅';
+
+  @override
+  String get notifications => '알림';
 }

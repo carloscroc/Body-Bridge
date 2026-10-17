@@ -1258,5 +1258,8 @@
   "startSoonTitle": "맞춤 세션이 곧 제공됩니다",
   "startSoonBody": "가이드 세션은 트레이너 영상과 함께 제공됩니다. 그동안 트레이너에게 이 플랜에 대해 문의하세요.",
   "exercisesMeta": "{count}개 운동 · ~{minutes}분",
-  "@exercisesMeta": { "placeholders": { "count": { "type": "int" }, "minutes": { "type": "int" } } }
+  "@exercisesMeta": { "placeholders": { "count": { "type": "int" }, "minutes": { "type": "int" } } },
+  "talkToTrainer": "트레이너와 대화하기",
+  "talkToTrainerSub": "맞춤 운동과 1:1 채팅",
+  "notifications": "알림"
 }

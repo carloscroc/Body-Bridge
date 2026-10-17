@@ -3,13 +3,21 @@
 // note callout, chat attachment cards. Self-contained: no external images,
 // no video-player dependency (static thumbs per brief).
 
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:phosphoricons_flutter/phosphoricons_flutter.dart';
 
+import '../constants/billing.dart';
 import '../l10n/l10n.dart';
+import '../state/fit_state.dart';
+import '../state/trainer_state.dart';
 import '../theme/app_colors.dart';
 import '../theme/app_theme.dart';
-import 'ui_kit.dart' show Pressable;
+import 'premium_gate.dart';
+import 'svg_icon.dart';
+import 'trainer_gate_sheet.dart';
+import 'ui_kit.dart' show Pressable, SoftCard;
 
 /// Trainer primary pill: terracotta in dark, deep green in light (mockup).
 Color trainerPrimaryBg(GymColors gc, bool dark) => dark ? gc.accent : gc.ember;
@@ -344,3 +352,289 @@ class TrainerAttachmentCard extends StatelessWidget {
 /// Meta line builder: "6 exercises · ~35 min" (mockup meta line).
 String trainerExercisesMeta(AppLocalizations t, int count, int minutes) =>
     t.exercisesMeta(count, minutes);
+
+/// Tier-aware entry into My Trainer, shown in the Exercises header between
+/// the title row and the search field (card t_fcd4945b). Advanced tiers get
+/// the identity card — avatar, name + credential, Message pill with the
+/// unread count; free tiers get the suggestion card that opens the
+/// Advanced gate.
+class TrainerEntryStrip extends StatelessWidget {
+  const TrainerEntryStrip({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    final unlocked = context.can(kCapCustomExercises);
+    return AnimatedBuilder(
+      animation: trainer,
+      builder: (context, _) => unlocked ? _advanced(context) : _suggestion(context),
+    );
+  }
+
+  Widget _advanced(BuildContext context) {
+    final gc = context.gc;
+    final profile = trainer.profile;
+    return Pressable(
+      onTap: () => fit.pushRoute('trainer'),
+      child: SoftCard(
+        radius: 18,
+        padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
+        child: Row(
+          children: [
+            TrainerAvatarDisc(initials: profile?.initials ?? '—', size: 42),
+            const SizedBox(width: 12),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    profile?.displayName ?? '—',
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: AppTheme.f(14.5, weight: FontWeight.w800, color: gc.text),
+                  ),
+                  const SizedBox(height: 2),
+                  if (profile != null)
+                    Text(
+                      profile.credential,
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      style: AppTheme.f(11.5,
+                          weight: FontWeight.w500, color: gc.textSecondary),
+                    ),
+                ],
+              ),
+            ),
+            const SizedBox(width: 10),
+            Container(
+              height: 34,
+              padding: const EdgeInsets.symmetric(horizontal: 13),
+              decoration: BoxDecoration(
+                color: trainerPrimaryBg(gc, trainerIsDark(context)),
+                borderRadius: BorderRadius.circular(100),
+              ),
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Icon(PhosphorIconsFill.chatCircleDots,
+                      size: 15, color: trainerPrimaryFg(gc, trainerIsDark(context))),
+                  if (trainer.unreadTotal > 0) ...[
+                    const SizedBox(width: 6),
+                    TrainerCountPill(
+                      count: trainer.unreadTotal,
+                      size: 17,
+                      key: const ValueKey('strip-unread'),
+                    ),
+                  ],
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _suggestion(BuildContext context) {
+    final gc = context.gc;
+    final dark = trainerIsDark(context);
+    return Pressable(
+      onTap: () => showTrainerGate(context),
+      child: SoftCard(
+        radius: 18,
+        padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
+        child: Row(
+          children: [
+            Container(
+              width: 42,
+              height: 42,
+              alignment: Alignment.center,
+              decoration: BoxDecoration(
+                color: gc.accent.withValues(alpha: dark ? 0.16 : 0.10),
+                shape: BoxShape.circle,
+              ),
+              child: Icon(PhosphorIconsRegular.userFocus, size: 20, color: gc.accent),
+            ),
+            const SizedBox(width: 12),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    t.talkToTrainer,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: AppTheme.f(14.5, weight: FontWeight.w800, color: gc.text),
+                  ),
+                  const SizedBox(height: 2),
+                  Text(
+                    t.talkToTrainerSub,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: AppTheme.f(11.5,
+                        weight: FontWeight.w500, color: gc.textSecondary),
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(width: 10),
+            SvgPathIcon(Ic.chevronRight, size: 16, color: gc.textTertiary),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+/// Shared in-app banner card (notifications.png right frame) — slides in
+/// under the top edge and floats over hub / home / exercises (t_fcd4945b).
+class TrainerBannerCard extends StatelessWidget {
+  const TrainerBannerCard({super.key, required this.banner, required this.onTap});
+
+  final TrainerBanner banner;
+  final VoidCallback onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    final gc = context.gc;
+    final dark = trainerIsDark(context);
+    final isNewWorkout = banner.kind == TrainerBannerKind.newWorkout;
+    return AnimatedSwitcher(
+      duration: const Duration(milliseconds: 320),
+      switchInCurve: Curves.easeOutCubic,
+      switchOutCurve: Curves.easeInCubic,
+      transitionBuilder: (child, anim) => SlideTransition(
+        position: Tween(begin: const Offset(0, -1.2), end: Offset.zero)
+            .animate(anim),
+        child: child,
+      ),
+      child: Pressable(
+        key: ValueKey(banner.key),
+        onTap: onTap,
+        child: Container(
+          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
+          decoration: BoxDecoration(
+            color: gc.bgRaised,
+            borderRadius: BorderRadius.circular(16),
+            border: Border.all(color: gc.border),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withValues(alpha: dark ? 0.4 : 0.12),
+                blurRadius: 18,
+                offset: const Offset(0, 8),
+              ),
+            ],
+          ),
+          child: Row(
+            children: [
+              Container(
+                width: 34,
+                height: 34,
+                alignment: Alignment.center,
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                    colors: [gc.accent, gc.brass],
+                  ),
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: Text('B',
+                    style: AppTheme.f(14,
+                        weight: FontWeight.w900,
+                        color: trainerPrimaryFg(gc, dark))),
+              ),
+              const SizedBox(width: 11),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      isNewWorkout
+                          ? t.bannerNewWorkout(trainerFirstName(
+                              trainer.profile?.displayName ?? ''))
+                          : t.bannerNewMessage(trainerFirstName(
+                              trainer.profile?.displayName ?? '')),
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      style: AppTheme.f(12.5,
+                          weight: FontWeight.w800, color: gc.text),
+                    ),
+                    Text(t.bannerTapToView,
+                        style: AppTheme.f(10.5,
+                            weight: FontWeight.w500, color: gc.textSecondary)),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+/// Single hook that floats the NEW-WORKOUT banner over a tab body (home +
+/// exercises, card t_fcd4945b). Advanced tier only and restricted to the
+/// workout kind — chat nudges stay hub-only.
+class TrainerBannerOverlay extends StatefulWidget {
+  const TrainerBannerOverlay({super.key, required this.child});
+
+  final Widget child;
+
+  @override
+  State<TrainerBannerOverlay> createState() => _TrainerBannerOverlayState();
+}
+
+class _TrainerBannerOverlayState extends State<TrainerBannerOverlay> {
+  @override
+  void initState() {
+    super.initState();
+    unawaited(trainer.ensureLoaded());
+  }
+
+  /// Like trainer.activeBanner but NEW-WORKOUT only.
+  TrainerBanner? _bannerFor(BuildContext context) {
+    if (!context.can(kCapCustomExercises)) return null;
+    final newWorkout = trainer.assignments.where(trainer.isNewAssignment).toList();
+    if (newWorkout.isEmpty) return null;
+    final key = 'workout:${newWorkout.first.threadId}';
+    if (trainer.dismissedBanners.contains(key)) return null;
+    return TrainerBanner(kind: TrainerBannerKind.newWorkout, key: key);
+  }
+
+  void _open(TrainerBanner banner) {
+    trainer.dismissBanner(banner.key);
+    final a = trainer.assignments.firstWhere(
+      (x) => trainer.isNewAssignment(x),
+      orElse: () => trainer.assignments.first,
+    );
+    trainer.markAssignmentOpened(a);
+    trainer.openAssignmentId = a.id;
+    fit.pushRoute('trainer-workout');
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return AnimatedBuilder(
+      animation: trainer,
+      builder: (context, _) {
+        final banner = _bannerFor(context);
+        return Stack(
+          children: [
+            Positioned.fill(child: widget.child),
+            if (banner != null)
+              Positioned(
+                left: 14,
+                right: 14,
+                top: 8,
+                child: TrainerBannerCard(
+                  banner: banner,
+                  onTap: () => _open(banner),
+                ),
+              ),
+          ],
+        );
+      },
+    );
+  }
+}

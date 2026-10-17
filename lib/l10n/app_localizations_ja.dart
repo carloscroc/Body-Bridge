@@ -3214,4 +3214,13 @@ class AppLocalizationsJa extends AppLocalizations {
   String exercisesMeta(int count, int minutes) {
     return '$count種目 · 約$minutes分';
   }
+
+  @override
+  String get talkToTrainer => 'トレーナーに相談する';
+
+  @override
+  String get talkToTrainerSub => 'カスタムワークアウトと1対1のチャット';
+
+  @override
+  String get notifications => '通知';
 }

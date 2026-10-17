@@ -1126,5 +1126,8 @@
   "startSoonTitle": "Individuelle Einheiten kommen bald",
   "startSoonBody": "Geführte Einheiten kommen mit dem Trainervideo. Frag bis dahin deinen Trainer zu diesem Plan.",
   "exercisesMeta": "{count} Übungen · ~{minutes} Min.",
-  "@exercisesMeta": { "placeholders": { "count": { "type": "int" }, "minutes": { "type": "int" } } }
+  "@exercisesMeta": { "placeholders": { "count": { "type": "int" }, "minutes": { "type": "int" } } },
+  "talkToTrainer": "Sprich mit deinem Trainer",
+  "talkToTrainerSub": "Individuelle Workouts und 1:1-Chat",
+  "notifications": "Benachrichtigungen"
 }

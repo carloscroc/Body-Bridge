@@ -3329,4 +3329,13 @@ class AppLocalizationsDe extends AppLocalizations {
   String exercisesMeta(int count, int minutes) {
     return '$count Übungen · ~$minutes Min.';
   }
+
+  @override
+  String get talkToTrainer => 'Sprich mit deinem Trainer';
+
+  @override
+  String get talkToTrainerSub => 'Individuelle Workouts und 1:1-Chat';
+
+  @override
+  String get notifications => 'Benachrichtigungen';
 }

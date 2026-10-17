@@ -5923,6 +5923,24 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'{count} exercises · ~{minutes} min'**
   String exercisesMeta(int count, int minutes);
+
+  /// Trainer entry rework (card t_fcd4945b)
+  ///
+  /// In en, this message translates to:
+  /// **'Talk to your trainer'**
+  String get talkToTrainer;
+
+  /// Trainer entry rework (card t_fcd4945b)
+  ///
+  /// In en, this message translates to:
+  /// **'Custom workouts and 1:1 chat'**
+  String get talkToTrainerSub;
+
+  /// Trainer entry rework (card t_fcd4945b)
+  ///
+  /// In en, this message translates to:
+  /// **'Notifications'**
+  String get notifications;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

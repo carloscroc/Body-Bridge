@@ -1258,5 +1258,8 @@
   "startSoonTitle": "الجلسات المخصصة قريبًا",
   "startSoonBody": "تصل الجلسات الموجهة مع فيديو المدرب. في هذه الأثناء، اسأل مدربك عن هذا البرنامج.",
   "exercisesMeta": "{count} تمارين · ~{minutes} د",
-  "@exercisesMeta": { "placeholders": { "count": { "type": "int" }, "minutes": { "type": "int" } } }
+  "@exercisesMeta": { "placeholders": { "count": { "type": "int" }, "minutes": { "type": "int" } } },
+  "talkToTrainer": "تحدث مع مدربك",
+  "talkToTrainerSub": "تمارين مخصصة ودردشة فردية",
+  "notifications": "الإشعارات"
 }

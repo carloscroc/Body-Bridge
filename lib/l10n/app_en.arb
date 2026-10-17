@@ -1170,5 +1170,11 @@
   "startSoonBody": "Guided sessions arrive with trainer video. Meanwhile, ask your trainer about this plan.",
   "@startSoonBody": { "description": "Trainer feature (card t_d788f36e)" },
   "exercisesMeta": "{count} exercises · ~{minutes} min",
-  "@exercisesMeta": { "placeholders": { "count": { "type": "int" }, "minutes": { "type": "int" } } }
+  "@exercisesMeta": { "placeholders": { "count": { "type": "int" }, "minutes": { "type": "int" } } },
+  "talkToTrainer": "Talk to your trainer",
+  "talkToTrainerSub": "Custom workouts and 1:1 chat",
+  "notifications": "Notifications",
+  "@talkToTrainer": { "description": "Trainer entry rework (card t_fcd4945b)" },
+  "@talkToTrainerSub": { "description": "Trainer entry rework (card t_fcd4945b)" },
+  "@notifications": { "description": "Trainer entry rework (card t_fcd4945b)" }
 }

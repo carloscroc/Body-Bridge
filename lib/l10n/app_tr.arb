@@ -1258,5 +1258,8 @@
   "startSoonTitle": "Özel seanslar yakında",
   "startSoonBody": "Rehberli seanslar antrenör videosuyla geliyor. Bu arada bu planı antrenörünüze sorun.",
   "exercisesMeta": "{count} egzersiz · ~{minutes} dk",
-  "@exercisesMeta": { "placeholders": { "count": { "type": "int" }, "minutes": { "type": "int" } } }
+  "@exercisesMeta": { "placeholders": { "count": { "type": "int" }, "minutes": { "type": "int" } } },
+  "talkToTrainer": "Antrenörünüzle konuşun",
+  "talkToTrainerSub": "Özel antrenmanlar ve birebir sohbet",
+  "notifications": "Bildirimler"
 }

@@ -1258,5 +1258,8 @@
   "startSoonTitle": "カスタムセッションはもうすぐ登場",
   "startSoonBody": "ガイド付きセッションはトレーナー動画と共に提供されます。それまではトレーナーにこのプランについて質問してください。",
   "exercisesMeta": "{count}種目 · 約{minutes}分",
-  "@exercisesMeta": { "placeholders": { "count": { "type": "int" }, "minutes": { "type": "int" } } }
+  "@exercisesMeta": { "placeholders": { "count": { "type": "int" }, "minutes": { "type": "int" } } },
+  "talkToTrainer": "トレーナーに相談する",
+  "talkToTrainerSub": "カスタムワークアウトと1対1のチャット",
+  "notifications": "通知"
 }

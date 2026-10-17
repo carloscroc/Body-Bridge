@@ -3174,6 +3174,15 @@ class AppLocalizationsZh extends AppLocalizations {
   String exercisesMeta(int count, int minutes) {
     return '$count个动作 · 约$minutes分钟';
   }
+
+  @override
+  String get talkToTrainer => '与你的教练交流';
+
+  @override
+  String get talkToTrainerSub => '自定义训练和一对一聊天';
+
+  @override
+  String get notifications => '通知';
 }
 
 /// The translations for Chinese, using the Han script (`zh_Hant`).
@@ -6370,4 +6379,13 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
   String exercisesMeta(int count, int minutes) {
     return '$count個動作 · 約$minutes分鐘';
   }
+
+  @override
+  String get talkToTrainer => '與你的教練交流';
+
+  @override
+  String get talkToTrainerSub => '自訂訓練與一對一聊天';
+
+  @override
+  String get notifications => '通知';
 }

@@ -1066,5 +1066,8 @@
   "startSoonTitle": "Las sesiones personalizadas llegan pronto",
   "startSoonBody": "Las sesiones guiadas llegan con el video del entrenador. Mientras tanto, pregunta a tu entrenador sobre este plan.",
   "exercisesMeta": "{count} ejercicios · ~{minutes} min",
-  "@exercisesMeta": { "placeholders": { "count": { "type": "int" }, "minutes": { "type": "int" } } }
+  "@exercisesMeta": { "placeholders": { "count": { "type": "int" }, "minutes": { "type": "int" } } },
+  "talkToTrainer": "Habla con tu entrenador",
+  "talkToTrainerSub": "Entrenamientos personalizados y chat 1:1",
+  "notifications": "Notificaciones"
 }

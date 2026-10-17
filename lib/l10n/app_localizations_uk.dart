@@ -3317,4 +3317,13 @@ class AppLocalizationsUk extends AppLocalizations {
   String exercisesMeta(int count, int minutes) {
     return '$count вправ · ~$minutes хв';
   }
+
+  @override
+  String get talkToTrainer => 'Зверніться до тренера';
+
+  @override
+  String get talkToTrainerSub => 'Індивідуальні тренування та особистий чат';
+
+  @override
+  String get notifications => 'Сповіщення';
 }

@@ -1047,5 +1047,8 @@
   "startSoonTitle": "Персональные сессии скоро появятся",
   "startSoonBody": "Гид по сессиям появится вместе с видео тренера. А пока спросите тренера об этой программе.",
   "exercisesMeta": "{count} упражнений · ~{minutes} мин",
-  "@exercisesMeta": { "placeholders": { "count": { "type": "int" }, "minutes": { "type": "int" } } }
+  "@exercisesMeta": { "placeholders": { "count": { "type": "int" }, "minutes": { "type": "int" } } },
+  "talkToTrainer": "Общайтесь с тренером",
+  "talkToTrainerSub": "Пользовательские тренировки и личный чат",
+  "notifications": "Уведомления"
 }

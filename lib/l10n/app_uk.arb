@@ -1258,5 +1258,8 @@
   "startSoonTitle": "Індивідуальні сесії скоро з'являться",
   "startSoonBody": "Керовані сесії з'являться разом із відео тренера. А тим часом запитайте тренера про цю програму.",
   "exercisesMeta": "{count} вправ · ~{minutes} хв",
-  "@exercisesMeta": { "placeholders": { "count": { "type": "int" }, "minutes": { "type": "int" } } }
+  "@exercisesMeta": { "placeholders": { "count": { "type": "int" }, "minutes": { "type": "int" } } },
+  "talkToTrainer": "Зверніться до тренера",
+  "talkToTrainerSub": "Індивідуальні тренування та особистий чат",
+  "notifications": "Сповіщення"
 }

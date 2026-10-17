@@ -1258,5 +1258,8 @@
   "startSoonTitle": "Sesje spersonalizowane wkrótce",
   "startSoonBody": "Sesje z prowadzeniem pojawią się razem z wideo trenera. W międzyczasie zapytaj trenera o ten plan.",
   "exercisesMeta": "{count} ćwiczeń · ~{minutes} min",
-  "@exercisesMeta": { "placeholders": { "count": { "type": "int" }, "minutes": { "type": "int" } } }
+  "@exercisesMeta": { "placeholders": { "count": { "type": "int" }, "minutes": { "type": "int" } } },
+  "talkToTrainer": "Porozmawiaj ze swoim trenerem",
+  "talkToTrainerSub": "Spersonalizowane treningi i czat 1:1",
+  "notifications": "Powiadomienia"
 }
