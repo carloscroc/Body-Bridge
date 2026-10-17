@@ -210,6 +210,9 @@ class TrainerState extends ChangeNotifier {
   /// singleton cannot leak between tests.
   @visibleForTesting
   void resetForTest() {
+    final r = repo;
+    // ignore: invalid_use_of_visible_for_testing_member
+    if (r is LocalTrainerRepository) r.resetForTest();
     _loading = false;
     loaded = false;
     profile = null;

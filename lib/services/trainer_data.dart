@@ -256,6 +256,23 @@ class LocalTrainerRepository implements TrainerRepository {
   final List<TrainerChatMessage> _messages = _seedMessages();
   int _msgSeq = _seedMessages().length + 1;
 
+  /// Test/diagnostic reset: restore the offline seed state. The repo is a
+  /// process-lifetime in-memory store; without this, a chat mark-read in one
+  /// test leaks into every later test in the same process.
+  @visibleForTesting
+  void resetForTest() {
+    _assignments
+      ..clear()
+      ..addAll(_seedAssignments());
+    _threads
+      ..clear()
+      ..addAll([_seedThread()]);
+    _messages
+      ..clear()
+      ..addAll(_seedMessages());
+    _msgSeq = _seedMessages().length + 1;
+  }
+
   @override
   Future<List<TrainerAssignment>> assignmentsListForMe() async {
     // Fold to the LATEST version per thread, newest thread first.
