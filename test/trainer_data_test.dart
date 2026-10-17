@@ -39,8 +39,7 @@ void main() {
 
     test('get returns the exact version doc or null', () async {
       final repo = LocalTrainerRepository();
-      expect((await repo.assignmentsGet('asg_lower'))?.title,
-          'Lower Body — Knee-Safe Progression');
+      expect((await repo.assignmentsGet('asg_lower'))?.title, 'Lower Body — Knee-Safe Progression');
       expect(await repo.assignmentsGet('missing_id'), isNull);
     });
 
@@ -53,10 +52,7 @@ void main() {
       expect(a.exercises[0].reps, '6-8');
       expect(a.exercises[0].notes, isNotNull);
       expect(a.exercises.map((e) => e.order), everyElement(isNonNegative));
-      expect(
-        a.exercises.map((e) => e.order).toList(),
-        List.generate(6, (i) => i),
-      );
+      expect(a.exercises.map((e) => e.order).toList(), List.generate(6, (i) => i));
     });
   });
 
@@ -91,10 +87,7 @@ void main() {
       final before = (await repo.chatListThreads()).single;
       expect(before.clientUnreadCount, 2);
 
-      await repo.chatSendMessage(
-        type: TrainerMessageType.text,
-        body: 'Sounds good — starting tomorrow.',
-      );
+      await repo.chatSendMessage(type: TrainerMessageType.text, body: 'Sounds good — starting tomorrow.');
 
       final thread = (await repo.chatListThreads()).single;
       expect(thread.trainerUnreadCount, before.trainerUnreadCount + 1);
@@ -120,22 +113,16 @@ void main() {
   });
 
   group('badge logic (TrainerState)', () {
-    testWidgets('seeded state drives pill / dot / NEW chip / banner',
-        (tester) async {
+    testWidgets('seeded state drives pill / NEW chip / banner', (tester) async {
       final state = TrainerState.forTest(LocalTrainerRepository());
       await state.ensureLoaded();
 
       // count pill = chat unread
       expect(state.unreadTotal, 2);
-      // tab dot = unseen list
-      expect(state.showTabDot, isTrue);
       // NEW chip = unopened 0% assignment
       expect(state.newAssignmentCount, 1); // lower body; mobility 40%, posture 100%
       // banner priority: new workout before message
       expect(state.activeBanner?.kind, TrainerBannerKind.newWorkout);
-
-      state.markListSeen();
-      expect(state.showTabDot, isFalse); // dot clears with the list
 
       final lower = state.assignments.firstWhere((a) => a.id == 'asg_lower');
       state.markAssignmentOpened(lower);
@@ -152,11 +139,9 @@ void main() {
       final state = TrainerState.forTest(LocalTrainerRepository());
       await state.ensureLoaded();
       expect(state.progressOf(state.assignments.first), 0.0); // lower NEW
-      final mobility =
-          state.assignments.firstWhere((a) => a.id == 'asg_mobility');
+      final mobility = state.assignments.firstWhere((a) => a.id == 'asg_mobility');
       expect(state.progressOf(mobility), closeTo(0.4, 0.001)); // IN PROGRESS
-      final posture =
-          state.assignments.firstWhere((a) => a.id == 'asg_posture_w2');
+      final posture = state.assignments.firstWhere((a) => a.id == 'asg_posture_w2');
       expect(state.progressOf(posture), 1.0); // COMPLETED
     });
   });

@@ -50,7 +50,7 @@ class TrainerState extends ChangeNotifier {
   // Seen-state (persisted under its own prefs key — separate from fit's blob
   // so shared shell files stay untouched).
   final Set<String> openedThreads = {}; // NEW chip cleared
-  final Set<String> seenInList = {}; // tab dot cleared
+  final Set<String> seenInList = {}; // hub list seen
   final Set<String> dismissedBanners = {};
 
   // Client-side progress (0..1) per assignment thread, seeded to the mockup.
@@ -100,9 +100,12 @@ class TrainerState extends ChangeNotifier {
       dismissedBanners
         ..clear()
         ..addAll((data['dismissedBanners'] as List<dynamic>? ?? []).cast<String>());
-      final stored = (data['progress'] as Map<String, dynamic>? ?? {})
-          .map((k, v) => MapEntry(k, (v as num).toDouble()));
-      progress..clear()..addAll(stored.isEmpty ? _seedProgress : stored);
+      final stored = (data['progress'] as Map<String, dynamic>? ?? {}).map(
+        (k, v) => MapEntry(k, (v as num).toDouble()),
+      );
+      progress
+        ..clear()
+        ..addAll(stored.isEmpty ? _seedProgress : stored);
     } catch (_) {
       // Corrupt blob -> fall back to seed state.
     }
@@ -111,12 +114,15 @@ class TrainerState extends ChangeNotifier {
   Future<void> _persistSeen() async {
     try {
       final prefs = await SharedPreferences.getInstance();
-      await prefs.setString(_prefsKey, jsonEncode({
-        'openedThreads': openedThreads.toList(),
-        'seenInList': seenInList.toList(),
-        'dismissedBanners': dismissedBanners.toList(),
-        'progress': progress,
-      }));
+      await prefs.setString(
+        _prefsKey,
+        jsonEncode({
+          'openedThreads': openedThreads.toList(),
+          'seenInList': seenInList.toList(),
+          'dismissedBanners': dismissedBanners.toList(),
+          'progress': progress,
+        }),
+      );
     } catch (_) {}
   }
 
@@ -124,16 +130,10 @@ class TrainerState extends ChangeNotifier {
 
   double progressOf(TrainerAssignment a) => progress[a.threadId] ?? 0;
 
-  bool isNewAssignment(TrainerAssignment a) =>
-      progressOf(a) <= 0 && !openedThreads.contains(a.threadId);
+  bool isNewAssignment(TrainerAssignment a) => progressOf(a) <= 0 && !openedThreads.contains(a.threadId);
 
   /// NEW chip assignment count (0% and never opened).
-  int get newAssignmentCount =>
-      assignments.where(isNewAssignment).length;
-
-  /// 8px nav dot: unseen list activity. Clears with the list.
-  bool get showTabDot =>
-      assignments.isNotEmpty && assignments.any((a) => !seenInList.contains(a.threadId));
+  int get newAssignmentCount => assignments.where(isNewAssignment).length;
 
   TrainerBanner? get activeBanner {
     final newWorkout = assignments.where(isNewAssignment).toList();
