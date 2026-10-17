@@ -129,7 +129,7 @@ class GateCard extends StatelessWidget {
           ),
           const SizedBox(height: 6),
           Pressable(
-            onTap: fit.goHome,
+            onTap: () => Navigator.of(context).pop(),
             child: Container(
               height: 46,
               alignment: Alignment.center,
