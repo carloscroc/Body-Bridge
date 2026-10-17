@@ -278,7 +278,6 @@ class CommunityRepo extends ChangeNotifier {
         'authorTrainer': p.authorTrainer,
         'minutesAgo': p.minutesAgo,
         'media': p.media.map((m) => m.sage).toList(),
-        'likeCount': p.likeCount,
         'shareCount': p.shareCount,
         'slug': p.slug,
       }).toList(),
@@ -317,7 +316,6 @@ List<CommunityPost> _seed() => [
             'is finally compounding.',
         media: const [MediaPlaceholder()],
         likeCount: 24,
-        commentCount: 0,
         shareCount: 3,
         slug: 'wk8-pullup',
         comments: [
@@ -340,6 +338,14 @@ List<CommunityPost> _seed() => [
                 'none to failure.',
             replyToName: 'Priya S.',
           ),
+          const CommunityComment(
+            id: 'c3-wk8-pullup',
+            authorName: 'Leo V.',
+            authorInitials: 'LV',
+            authorLevel: 2,
+            minutesAgo: 50,
+            text: 'Consistency beats intensity. Small steps every day.',
+          ),
         ],
       ),
       CommunityPost(
@@ -352,7 +358,6 @@ List<CommunityPost> _seed() => [
         caption: '',
         workout: _pushDayA(),
         likeCount: 42,
-        commentCount: 0,
         shareCount: 7,
         slug: 'push-day-a',
         comments: [
@@ -399,9 +404,34 @@ List<CommunityPost> _seed() => [
           MediaPlaceholder(sage: true),
         ],
         likeCount: 17,
-        commentCount: 0,
         shareCount: 1,
         slug: 'hip-hinge-pair',
+        comments: [
+          const CommunityComment(
+            id: 'c1-hip-hinge-pair',
+            authorName: 'Mara K.',
+            authorInitials: 'MK',
+            authorLevel: 6,
+            minutesAgo: 1440,
+            text: 'That single-leg RDL is looking sharp. Keep the spine long.',
+          ),
+          const CommunityComment(
+            id: 'c2-hip-hinge-pair',
+            authorName: 'Priya S.',
+            authorInitials: 'PS',
+            authorLevel: 3,
+            minutesAgo: 1410,
+            text: 'The cue that clicked for me: hips hinge before the knees.',
+          ),
+          const CommunityComment(
+            id: 'c3-hip-hinge-pair',
+            authorName: 'Nadia R.',
+            authorInitials: 'NR',
+            authorLevel: 9,
+            minutesAgo: 1390,
+            text: 'Bar path stays one clean line — that’s the hinge groove.',
+          ),
+        ],
       ),
     ];
 
