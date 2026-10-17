@@ -1,4 +1,6 @@
-import 'package:flutter/foundation.dart';
+import 'package:flutter/foundation.dart' show ChangeNotifier;
+
+import 'package:gymmane/services/local_store.dart';
 
 /// Kind of a community post.
 enum PostKind { progress, workout }
@@ -176,16 +178,19 @@ class CommunityRepo extends ChangeNotifier {
 
   void addPost(CommunityPost post) {
     _posts.insert(0, post);
+    _persist();
     notifyListeners();
   }
 
   void editPost(String id, String caption) {
     postById(id)?.caption = caption;
+    _persist();
     notifyListeners();
   }
 
   void removePost(String id) {
     _posts.removeWhere((p) => p.id == id);
+    _persist();
     notifyListeners();
   }
 
@@ -194,6 +199,7 @@ class CommunityRepo extends ChangeNotifier {
     if (p == null) return;
     p.liked = !p.liked;
     p.likeCount += p.liked ? 1 : -1;
+    _persist();
     notifyListeners();
   }
 
@@ -201,6 +207,7 @@ class CommunityRepo extends ChangeNotifier {
     final p = postById(id);
     if (p == null) return;
     p.saved = !p.saved;
+    _persist();
     notifyListeners();
   }
 
@@ -208,6 +215,7 @@ class CommunityRepo extends ChangeNotifier {
     final p = postById(id);
     if (p == null) return;
     p.hidden = true;
+    _persist();
     notifyListeners();
   }
 
@@ -215,6 +223,7 @@ class CommunityRepo extends ChangeNotifier {
     final p = postById(id);
     if (p == null) return;
     p.hidden = false;
+    _persist();
     notifyListeners();
   }
 
@@ -222,6 +231,7 @@ class CommunityRepo extends ChangeNotifier {
     final p = postById(id);
     if (p == null) return;
     p.reported = true;
+    _persist();
     notifyListeners();
   }
 
@@ -246,7 +256,33 @@ class CommunityRepo extends ChangeNotifier {
       replyToName: replyToName,
     ));
     p.commentCount++;
+    _persist();
     notifyListeners();
+  }
+
+  /// Persist community posts through the app's Store (local-only, no network).
+  void _persist() {
+    // Route created posts through the same local persistence used by routines/settings.
+    Store.instance.save({
+      'posts': _posts.map((p) => {
+        'id': p.id,
+        'caption': p.caption,
+        'kind': p.kind.index,
+        'likeCount': p.likeCount,
+        'commentCount': p.comments.length,
+        'hidden': p.hidden,
+        'isOwn': p.isOwn,
+        'authorName': p.authorName,
+        'authorInitials': p.authorInitials,
+        'authorLevel': p.authorLevel,
+        'authorTrainer': p.authorTrainer,
+        'minutesAgo': p.minutesAgo,
+        'media': p.media.map((m) => m.sage).toList(),
+        'likeCount': p.likeCount,
+        'shareCount': p.shareCount,
+        'slug': p.slug,
+      }).toList(),
+    });
   }
 
   /// Test hook: restore the seeded feed.
@@ -254,12 +290,14 @@ class CommunityRepo extends ChangeNotifier {
     _posts
       ..clear()
       ..addAll(_seed());
+    _persist();
     notifyListeners();
   }
 
   /// Test hook: empty the feed to exercise the empty state.
   void clear() {
     _posts.clear();
+    _persist();
     notifyListeners();
   }
 
