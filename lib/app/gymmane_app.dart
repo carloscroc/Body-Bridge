@@ -5,6 +5,7 @@ import '../l10n/l10n.dart';
 import '../screens/auth_wall_screen.dart';
 import '../state/account_gate.dart';
 import '../state/account_gate_impl.dart';
+import '../dev/bypass_auth.dart';
 import '../state/account_state.dart';
 import '../state/fit_state.dart';
 import '../theme/app_colors.dart';
@@ -18,7 +19,7 @@ class GymManeApp extends StatelessWidget {
 
   /// The single production gate, created once at composition time and provided
   /// to the whole tree through [PremiumGate].
-  static final AccountGate gate = RealAccountGate();
+  static final AccountGate gate = kBypassAuth ? BypassAccountGate() : RealAccountGate();
 
   @override
   Widget build(BuildContext context) {
