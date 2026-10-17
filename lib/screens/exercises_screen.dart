@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:io';
 
 import 'package:file_picker/file_picker.dart';
@@ -10,12 +11,14 @@ import '../models/exercise.dart';
 import '../services/media_store.dart';
 import '../constants/billing.dart';
 import '../state/fit_state.dart';
+import '../state/trainer_state.dart';
 import '../theme/app_colors.dart';
 import '../theme/app_theme.dart';
 import '../widgets/exercise_media.dart';
 import '../widgets/glass.dart';
 import '../widgets/premium_gate.dart';
 import '../widgets/svg_icon.dart';
+import '../widgets/trainer_kit.dart';
 import '../widgets/ui_kit.dart';
 
 class ExercisesScreen extends StatefulWidget {
@@ -26,6 +29,12 @@ class ExercisesScreen extends StatefulWidget {
 
 class _ExercisesScreenState extends State<ExercisesScreen> {
   late final TextEditingController _c = TextEditingController(text: fit.exSearch);
+
+  @override
+  void initState() {
+    super.initState();
+    unawaited(trainer.ensureLoaded());
+  }
 
   @override
   void dispose() {
@@ -40,47 +49,49 @@ class _ExercisesScreenState extends State<ExercisesScreen> {
 
     return SafeArea(
       bottom: false,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Padding(
-            padding: const EdgeInsets.fromLTRB(20, 12, 20, 12),
-            child: _header(context, gc, list.length),
-          ),
-          Expanded(
-            child: ListView.builder(
-              padding: const EdgeInsets.fromLTRB(20, 0, 20, 110),
-              itemCount: list.isEmpty ? 1 : list.length,
-              itemBuilder: (context, i) {
-                if (list.isEmpty) return _empty(gc);
-                final ex = list[i];
-                final first = i == 0 || list[i - 1].primary != ex.primary;
-                final last = i == list.length - 1 || list[i + 1].primary != ex.primary;
-                return Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [
-                    if (first) ...[
-                      SizedBox(height: i == 0 ? 2 : 22),
-                      Padding(
-                        padding: const EdgeInsets.fromLTRB(4, 0, 0, 8),
-                        child: Text(
-                          muscleLabel(ex.primary).toUpperCase(),
-                          style: AppTheme.f(
-                            10.5,
-                            weight: FontWeight.w700,
-                            color: gc.textTertiary,
-                            letterSpacing: 1.3,
+      child: TrainerBannerOverlay(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Padding(
+              padding: const EdgeInsets.fromLTRB(20, 12, 20, 12),
+              child: _header(context, gc, list.length),
+            ),
+            Expanded(
+              child: ListView.builder(
+                padding: const EdgeInsets.fromLTRB(20, 0, 20, 110),
+                itemCount: list.isEmpty ? 1 : list.length,
+                itemBuilder: (context, i) {
+                  if (list.isEmpty) return _empty(gc);
+                  final ex = list[i];
+                  final first = i == 0 || list[i - 1].primary != ex.primary;
+                  final last = i == list.length - 1 || list[i + 1].primary != ex.primary;
+                  return Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      if (first) ...[
+                        SizedBox(height: i == 0 ? 2 : 22),
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(4, 0, 0, 8),
+                          child: Text(
+                            muscleLabel(ex.primary).toUpperCase(),
+                            style: AppTheme.f(
+                              10.5,
+                              weight: FontWeight.w700,
+                              color: gc.textTertiary,
+                              letterSpacing: 1.3,
+                            ),
                           ),
                         ),
-                      ),
+                      ],
+                      _row(gc, ex, first: first, last: last),
                     ],
-                    _row(gc, ex, first: first, last: last),
-                  ],
-                );
-              },
+                  );
+                },
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
@@ -115,6 +126,32 @@ class _ExercisesScreenState extends State<ExercisesScreen> {
                 ],
               ),
             ),
+            if (context.can(kCapCustomExercises)) ...[
+              AnimatedBuilder(
+                animation: trainer,
+                builder: (context, _) {
+                  final unread = trainer.unreadTotal;
+                  return SizedBox(
+                    width: 40,
+                    height: 40,
+                    child: Stack(
+                      clipBehavior: Clip.none,
+                      children: [
+                        RoundAction(
+                          size: 40,
+                          label: t.notifications,
+                          onTap: () => fit.pushRoute('trainer'),
+                          child: Icon(PhosphorIconsRegular.bell, size: 17, color: gc.text),
+                        ),
+                        if (unread > 0)
+                          Positioned(right: -2, top: -2, child: TrainerCountPill(count: unread, size: 17)),
+                      ],
+                    ),
+                  );
+                },
+              ),
+              const SizedBox(width: 10),
+            ],
             // FREE limit: custom exercises (trainer_features) are hidden
             // entirely for tiers without the capability.
             if (context.can(kCapCustomExercises))
@@ -128,7 +165,9 @@ class _ExercisesScreenState extends State<ExercisesScreen> {
               const SizedBox.shrink(),
           ],
         ),
-        const SizedBox(height: 14),
+        const SizedBox(height: 12),
+        const TrainerEntryStrip(),
+        const SizedBox(height: 12),
         SearchField(controller: _c, hint: t.searchExercises, onChanged: fit.setExSearch),
         const SizedBox(height: 10),
         _quickChips(context, gc),
