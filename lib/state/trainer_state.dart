@@ -205,13 +205,23 @@ class TrainerState extends ChangeNotifier {
   }
 
   /// Test/diagnostic reset.
+  ///
+  /// Restores the full instance state (not just the seen-sets) so the test
+  /// singleton cannot leak between tests.
   @visibleForTesting
   void resetForTest() {
+    _loading = false;
+    loaded = false;
+    profile = null;
+    assignments = [];
+    threads = [];
+    unreadTotal = 0;
+    openAssignmentId = null;
+    openThreadId = null;
     openedThreads.clear();
     seenInList.clear();
     dismissedBanners.clear();
     progress = Map.of(_seedProgress);
-    loaded = false;
   }
 }
 
