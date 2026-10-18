@@ -1016,7 +1016,6 @@
   "logWorkoutAction": "تسجيل تمرين",
   "logging": "جارٍ التسجيل",
   "placesLabel": "أماكني",
-
   "keepScreenOn": "إبقاء الشاشة مضاءة أثناء التمرين",
   "lockWorkout": "قفل الشاشة",
   "unlockWorkout": "فتح القفل",
@@ -1138,31 +1137,25 @@
   "stickerSaved": "حُفظت في معرض الصور",
   "stickerWeek": "هذا الأسبوع",
   "getReady": "استعد",
-
   "stickerGallery": "المعرض",
   "stickerCamera": "الكاميرا",
   "shareIntroTitle": "شارك هذا الروتين",
   "shareIntroBody": "أرسله إلى شريكك أو صديق أو عائلتك. سيصلهم ملف صغير يُفتح في Body Bridge ويضيف الروتين بلمسة واحدة، مع مجموعاته وأوزانه.",
   "removedFromRoutine": "أُزيل من الروتين",
-
   "radarTitle": "هذا الشهر",
   "radarHint": "اعرف أي المناطق تحتاج إلى تمرين أكثر",
   "radarEmpty": "تمرّن هذا الشهر لترى توازنك",
   "radarBalanced": "توازن جيد حتى الآن",
   "radarFocus": "يحتاج إلى المزيد: {list}",
-
   "countdownReady": "استعد",
   "countdownSkip": "اضغط للبدء الآن",
   "countdownSetting": "عدّ تنازلي قبل البدء",
-
   "effortSetting": "سجّل الجهد",
   "effortHint": "RPE: ‏10 يعني أنك لا تستطيع تكرارًا آخر، و8 يعني أنه بقي لديك تكراران. RIR يعدّ التكرارات المتبقية. إذا كانت المجموعة تحتوي عليه، يستخدم الحد الأقصى المقدَّر جدول RPE.",
   "rirTitle": "الاحتياط (RIR)",
   "rirHint": "0 يعني أنك لا تستطيع تكرارًا آخر، و2 يعني أنه بقي لديك تكراران.",
   "addWeekWidget": "إضافة أداة الأسبوع",
-
   "gamificationSetting": "الميداليات والمستويات",
-
   "authErrorInvalidEmail": "يبدو البريد الإلكتروني غير صحيح.",
   "authErrorWrongPassword": "البريد الإلكتروني أو كلمة المرور غير صحيحة.",
   "authErrorUserNotFound": "لا يوجد حساب بهذا البريد الإلكتروني.",
@@ -1179,9 +1172,6 @@
   "resetSentTitle": "تحقق من بريدك الإلكتروني",
   "resetSentBody": "أرسلنا رابط استعادة إلى {email}.",
   "backToSignIn": "العودة لتسجيل الدخول",
-  "gamificationSetting": "الميداليات والمستويات"
-,
-
   "accountTitle": "الحساب",
   "accountSection": "الحساب",
   "accountRowGuest": "سجّل الدخول أو أنشئ حسابًا",
@@ -1258,8 +1248,28 @@
   "startSoonTitle": "الجلسات المخصصة قريبًا",
   "startSoonBody": "تصل الجلسات الموجهة مع فيديو المدرب. في هذه الأثناء، اسأل مدربك عن هذا البرنامج.",
   "exercisesMeta": "{count} تمارين · ~{minutes} د",
-  "@exercisesMeta": { "placeholders": { "count": { "type": "int" }, "minutes": { "type": "int" } } },
+  "@exercisesMeta": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
   "talkToTrainer": "تحدث مع مدربك",
   "talkToTrainerSub": "تمارين مخصصة ودردشة فردية",
-  "notifications": "الإشعارات"
+  "notifications": "الإشعارات",
+  "consultation_request_title": "Consultation request",
+  "consultation_request_subtitle": "Short by design",
+  "consultation_request_intro": "Five fields, most of them prefilled from the verified account. The only required input is picking a goal.",
+  "consultation_confirmation_title": "Consultation request received",
+  "consultation_confirmation_body": "A coach reads this before following up - it doesn't subscribe you to anything.",
+  "coaching_welcome_title": "Welcome to Personal Coaching",
+  "coaching_welcome_subtitle": "Your personal trainer will reach out within 24-48 hours. Only present this if the coaching team can reliably meet it.",
+  "coaching_welcome_placeholder": "Pending assignment",
+  "coaching_welcome_note": "No fabricated trainer, avatar or chat history.",
+  "consultation_confirmation_status": "Consultation request received",
+  "consultation_confirmation_description": "A coach reads this before following up - nothing is booked or billed until you choose a plan."
 }

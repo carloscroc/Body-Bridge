@@ -11,7 +11,10 @@
 // and the app is fully functional offline. v0 has no push (contract §7.4);
 // new-assignment / new-message signals surface as in-app banners + badges.
 
+import 'dart:convert';
+
 import 'package:flutter/foundation.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 // --- Wire-shape types (contract §4.1 / §5.1) ---
 
@@ -206,6 +209,26 @@ class TrainerProfile {
   }
 }
 
+/// One consultation request (client coaching funnel, card t_aaa15e0d).
+/// Choice fields hold stable ids — the UI maps ids to localized labels,
+/// so the stored record stays locale-independent.
+@immutable
+class TrainerConsultationRequest {
+  const TrainerConsultationRequest({
+    required this.goal,
+    required this.experience,
+    required this.timeWindow,
+    required this.notes,
+    required this.createdAt,
+  });
+
+  final String goal; // strength | fat_loss | mobility | consistency
+  final String experience; // new | returning | seasoned
+  final String timeWindow; // morning | afternoon | evening
+  final String notes; // free-form, may be empty
+  final int createdAt; // epoch millis
+}
+
 // --- Repository seam (contract-named operations) ---
 
 abstract class TrainerRepository {
@@ -240,6 +263,19 @@ abstract class TrainerRepository {
 
   /// Trainer directory entry for the intro card.
   Future<TrainerProfile> trainerProfile();
+
+  /// consultations:getMine — the caller's consultation request, or null.
+  Future<TrainerConsultationRequest?> consultationGetMine();
+
+  /// consultations:request — file the caller's request. ONE per client:
+  /// when a request already exists it is returned unchanged, so double
+  /// taps / re-entry can never create a second record (dup-protection).
+  Future<TrainerConsultationRequest> consultationRequest({
+    required String goal,
+    required String experience,
+    required String timeWindow,
+    String notes = '',
+  });
 }
 
 // --- Local seed implementation (offline, no backend) ---
@@ -256,6 +292,12 @@ class LocalTrainerRepository implements TrainerRepository {
   final List<TrainerChatMessage> _messages = _seedMessages();
   int _msgSeq = _seedMessages().length + 1;
 
+  /// The caller's consultation request — null until filed. Persisted under
+  /// its own prefs key so the SUBMITTED card survives restarts (the repo is
+  /// otherwise a process-lifetime in-memory store).
+  TrainerConsultationRequest? _consultation;
+  static const _consultPrefsKey = 'gymmane_consultation_v1';
+
   /// Test/diagnostic reset: restore the offline seed state. The repo is a
   /// process-lifetime in-memory store; without this, a chat mark-read in one
   /// test leaks into every later test in the same process.
@@ -271,6 +313,7 @@ class LocalTrainerRepository implements TrainerRepository {
       ..clear()
       ..addAll(_seedMessages());
     _msgSeq = _seedMessages().length + 1;
+    _consultation = null;
   }
 
   @override
@@ -297,6 +340,68 @@ class LocalTrainerRepository implements TrainerRepository {
       if (a.id == assignmentId) return a;
     }
     return null;
+  }
+
+  /// consultations:getMine — memory first, then the persisted record.
+  @override
+  Future<TrainerConsultationRequest?> consultationGetMine() async {
+    if (_consultation != null) return _consultation;
+    try {
+      final prefs = await SharedPreferences.getInstance();
+      final blob = prefs.getString(_consultPrefsKey);
+      if (blob == null) return null;
+      final d = jsonDecode(blob) as Map<String, dynamic>;
+      return _consultation = TrainerConsultationRequest(
+        goal: d['goal'] as String? ?? '',
+        experience: d['experience'] as String? ?? '',
+        timeWindow: d['timeWindow'] as String? ?? '',
+        notes: d['notes'] as String? ?? '',
+        createdAt: (d['createdAt'] as num?)?.toInt() ?? 0,
+      );
+    } catch (_) {
+      return null; // corrupt blob -> no request
+    }
+  }
+
+  /// consultations:request — duplicate-safe: the FIRST request wins and is
+  /// returned unchanged on every later call.
+  @override
+  Future<TrainerConsultationRequest> consultationRequest({
+    required String goal,
+    required String experience,
+    required String timeWindow,
+    String notes = '',
+  }) async {
+    final existing = await consultationGetMine();
+    if (existing != null) return existing;
+    final r = TrainerConsultationRequest(
+      goal: goal,
+      experience: experience,
+      timeWindow: timeWindow,
+      notes: notes.trim(),
+      createdAt: DateTime.now().millisecondsSinceEpoch,
+    );
+    return _consultation = await _persistThen(r);
+  }
+
+  Future<TrainerConsultationRequest> _persistThen(
+      TrainerConsultationRequest r) async {
+    try {
+      final prefs = await SharedPreferences.getInstance();
+      await prefs.setString(
+        _consultPrefsKey,
+        jsonEncode({
+          'goal': r.goal,
+          'experience': r.experience,
+          'timeWindow': r.timeWindow,
+          'notes': r.notes,
+          'createdAt': r.createdAt,
+        }),
+      );
+    } catch (_) {
+      // Persistence is best-effort: the in-memory record still wins.
+    }
+    return r;
   }
 
   @override

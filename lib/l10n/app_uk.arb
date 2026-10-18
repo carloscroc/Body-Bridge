@@ -1016,7 +1016,6 @@
   "logWorkoutAction": "ЗАПИСАТИ ТРЕНУВАННЯ",
   "logging": "ЗАПИС",
   "placesLabel": "Мої місця",
-
   "keepScreenOn": "Не вимикати екран під час тренування",
   "lockWorkout": "Заблокувати екран",
   "unlockWorkout": "Розблокувати",
@@ -1138,31 +1137,25 @@
   "stickerSaved": "Збережено в галерею",
   "stickerWeek": "Цей тиждень",
   "getReady": "Приготуйтеся",
-
   "stickerGallery": "Галерея",
   "stickerCamera": "Камера",
   "shareIntroTitle": "Поділіться цією програмою",
   "shareIntroBody": "Надішліть її партнеру, другу чи родині. Вони отримають невеликий файл, який відкривається в Body Bridge і додає програму одним дотиком, разом із підходами та вагами.",
   "removedFromRoutine": "Прибрано з програми",
-
   "radarTitle": "Цей місяць",
   "radarHint": "Подивіться, яким зонам потрібно більше роботи",
   "radarEmpty": "Тренуйтеся цього місяця, щоб побачити баланс",
   "radarBalanced": "Поки що все збалансовано",
   "radarFocus": "Потрібно більше: {list}",
-
   "countdownReady": "Приготуйтеся",
   "countdownSkip": "Торкніться, щоб почати одразу",
   "countdownSetting": "Зворотний відлік перед стартом",
-
   "effortSetting": "Відмічати зусилля",
   "effortHint": "RPE: 10 — більше жодного повторення, 8 — залишалося два. RIR — скільки повторень залишалося в запасі. Якщо підхід має оцінку, 1ПМ рахується за таблицею RPE.",
   "rirTitle": "ЗАПАС (RIR)",
   "rirHint": "0 — більше жодного повторення, 2 — залишалося два.",
   "addWeekWidget": "Додати віджет тижня",
-
   "gamificationSetting": "Медалі та рівні",
-
   "authErrorInvalidEmail": "Адреса електронної пошти виглядає неправильною.",
   "authErrorWrongPassword": "Неправильна пошта або пароль.",
   "authErrorUserNotFound": "Акаунт з такою поштою не знайдено.",
@@ -1179,9 +1172,6 @@
   "resetSentTitle": "Перевірте пошту",
   "resetSentBody": "Ми надіслали посилання для скидання на {email}.",
   "backToSignIn": "Повернутися до входу",
-  "gamificationSetting": "Медалі та рівні"
-,
-
   "accountTitle": "Акаунт",
   "accountSection": "Акаунт",
   "accountRowGuest": "Увійдіть або створіть акаунт",
@@ -1258,8 +1248,28 @@
   "startSoonTitle": "Індивідуальні сесії скоро з'являться",
   "startSoonBody": "Керовані сесії з'являться разом із відео тренера. А тим часом запитайте тренера про цю програму.",
   "exercisesMeta": "{count} вправ · ~{minutes} хв",
-  "@exercisesMeta": { "placeholders": { "count": { "type": "int" }, "minutes": { "type": "int" } } },
+  "@exercisesMeta": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
   "talkToTrainer": "Зверніться до тренера",
   "talkToTrainerSub": "Індивідуальні тренування та особистий чат",
-  "notifications": "Сповіщення"
+  "notifications": "Сповіщення",
+  "consultation_request_title": "Consultation request",
+  "consultation_request_subtitle": "Short by design",
+  "consultation_request_intro": "Five fields, most of them prefilled from the verified account. The only required input is picking a goal.",
+  "consultation_confirmation_title": "Consultation request received",
+  "consultation_confirmation_body": "A coach reads this before following up - it doesn't subscribe you to anything.",
+  "coaching_welcome_title": "Welcome to Personal Coaching",
+  "coaching_welcome_subtitle": "Your personal trainer will reach out within 24-48 hours. Only present this if the coaching team can reliably meet it.",
+  "coaching_welcome_placeholder": "Pending assignment",
+  "coaching_welcome_note": "No fabricated trainer, avatar or chat history.",
+  "consultation_confirmation_status": "Consultation request received",
+  "consultation_confirmation_description": "A coach reads this before following up - nothing is booked or billed until you choose a plan."
 }

@@ -1016,7 +1016,6 @@
   "logWorkoutAction": "ANTRENMANI KAYDET",
   "logging": "KAYIT",
   "placesLabel": "Yerlerim",
-
   "keepScreenOn": "Antrenman sırasında ekranı açık tut",
   "lockWorkout": "Ekranı kilitle",
   "unlockWorkout": "Kilidi aç",
@@ -1138,31 +1137,25 @@
   "stickerSaved": "Galerine kaydedildi",
   "stickerWeek": "Bu hafta",
   "getReady": "Hazırlan",
-
   "stickerGallery": "Galeri",
   "stickerCamera": "Kamera",
   "shareIntroTitle": "Bu rutini paylaş",
   "shareIntroBody": "Partnerine, bir arkadaşına ya da ailene gönder. Body Bridge ile açılan küçük bir dosya alırlar; setleri ve ağırlıklarıyla tek dokunuşta eklenir.",
   "removedFromRoutine": "Rutinden çıkarıldı",
-
   "radarTitle": "Bu ay",
   "radarHint": "Hangi bölgelerin daha fazla çalışmaya ihtiyacı olduğunu gör",
   "radarEmpty": "Dengeni görmek için bu ay antrenman yap",
   "radarBalanced": "Şimdilik dengeli",
   "radarFocus": "Daha fazlası gerek: {list}",
-
   "countdownReady": "Hazırlan",
   "countdownSkip": "Hemen başlamak için dokun",
   "countdownSetting": "Başlamadan önce geri sayım",
-
   "effortSetting": "Eforu kaydet",
   "effortHint": "RPE: 10 bir tekrar daha yapamamak, 8 iki tekrar daha yapabilmek demek. RIR kalan tekrarları sayar. Sette varsa tahmini 1RM, RPE tablosunu kullanır.",
   "rirTitle": "YEDEK (RIR)",
   "rirHint": "0 bir tekrar daha yapamamak, 2 iki tekrar daha yapabilmek demek.",
   "addWeekWidget": "Hafta widget’ı ekle",
-
   "gamificationSetting": "Madalyalar ve seviyeler",
-
   "authErrorInvalidEmail": "E-posta adresi yanlış görünüyor.",
   "authErrorWrongPassword": "E-posta veya şifre hatalı.",
   "authErrorUserNotFound": "Bu e-posta ile hesap bulunamadı.",
@@ -1179,9 +1172,6 @@
   "resetSentTitle": "E-postanı kontrol et",
   "resetSentBody": "{email} adresine sıfırlama bağlantısı gönderdik.",
   "backToSignIn": "Oturum açmaya dön",
-  "gamificationSetting": "Madalyalar ve seviyeler"
-,
-
   "accountTitle": "Hesap",
   "accountSection": "Hesap",
   "accountRowGuest": "Giriş yap veya hesap oluştur",
@@ -1258,8 +1248,28 @@
   "startSoonTitle": "Özel seanslar yakında",
   "startSoonBody": "Rehberli seanslar antrenör videosuyla geliyor. Bu arada bu planı antrenörünüze sorun.",
   "exercisesMeta": "{count} egzersiz · ~{minutes} dk",
-  "@exercisesMeta": { "placeholders": { "count": { "type": "int" }, "minutes": { "type": "int" } } },
+  "@exercisesMeta": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
   "talkToTrainer": "Antrenörünüzle konuşun",
   "talkToTrainerSub": "Özel antrenmanlar ve birebir sohbet",
-  "notifications": "Bildirimler"
+  "notifications": "Bildirimler",
+  "consultation_request_title": "Consultation request",
+  "consultation_request_subtitle": "Short by design",
+  "consultation_request_intro": "Five fields, most of them prefilled from the verified account. The only required input is picking a goal.",
+  "consultation_confirmation_title": "Consultation request received",
+  "consultation_confirmation_body": "A coach reads this before following up - it doesn't subscribe you to anything.",
+  "coaching_welcome_title": "Welcome to Personal Coaching",
+  "coaching_welcome_subtitle": "Your personal trainer will reach out within 24-48 hours. Only present this if the coaching team can reliably meet it.",
+  "coaching_welcome_placeholder": "Pending assignment",
+  "coaching_welcome_note": "No fabricated trainer, avatar or chat history.",
+  "consultation_confirmation_status": "Consultation request received",
+  "consultation_confirmation_description": "A coach reads this before following up - nothing is booked or billed until you choose a plan."
 }

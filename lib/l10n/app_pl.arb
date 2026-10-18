@@ -1016,7 +1016,6 @@
   "logWorkoutAction": "ZAPISZ TRENING",
   "logging": "ZAPISYWANIE",
   "placesLabel": "Moje miejsca",
-
   "keepScreenOn": "Nie wygaszaj ekranu podczas treningu",
   "lockWorkout": "Zablokuj ekran",
   "unlockWorkout": "Odblokuj",
@@ -1138,31 +1137,25 @@
   "stickerSaved": "Zapisano w galerii",
   "stickerWeek": "Ten tydzień",
   "getReady": "Przygotuj się",
-
   "stickerGallery": "Galeria",
   "stickerCamera": "Aparat",
   "shareIntroTitle": "Udostępnij tę rutynę",
   "shareIntroBody": "Wyślij ją partnerowi, znajomemu lub rodzinie. Dostaną mały plik, który otwiera się w Body Bridge i dodaje rutynę jednym dotknięciem, z seriami i ciężarami.",
   "removedFromRoutine": "Usunięto z rutyny",
-
   "radarTitle": "Ten miesiąc",
   "radarHint": "Zobacz, które partie potrzebują więcej pracy",
   "radarEmpty": "Trenuj w tym miesiącu, aby zobaczyć swoją równowagę",
   "radarBalanced": "Na razie dobra równowaga",
   "radarFocus": "Potrzeba więcej: {list}",
-
   "countdownReady": "Przygotuj się",
   "countdownSkip": "Dotknij, aby zacząć od razu",
   "countdownSetting": "Odliczanie przed startem",
-
   "effortSetting": "Zapisuj wysiłek",
   "effortHint": "RPE: 10 to brak sił na kolejne powtórzenie, 8 to jeszcze dwa w zapasie. RIR liczy powtórzenia, które zostały. Jeśli seria go ma, szacowany 1RM korzysta z tabeli RPE.",
   "rirTitle": "ZAPAS (RIR)",
   "rirHint": "0 to brak sił na kolejne powtórzenie, 2 to jeszcze dwa w zapasie.",
   "addWeekWidget": "Dodaj widżet tygodnia",
-
   "gamificationSetting": "Medale i poziomy",
-
   "authErrorInvalidEmail": "Adres e-mail wygląda na nieprawidłowy.",
   "authErrorWrongPassword": "Nieprawidłowy e-mail lub hasło.",
   "authErrorUserNotFound": "Nie znaleziono konta dla tego adresu e-mail.",
@@ -1179,9 +1172,6 @@
   "resetSentTitle": "Sprawdź e-mail",
   "resetSentBody": "Wysłaliśmy link do resetowania na {email}.",
   "backToSignIn": "Wróć do logowania",
-  "gamificationSetting": "Medale i poziomy"
-,
-
   "accountTitle": "Konto",
   "accountSection": "Konto",
   "accountRowGuest": "Zaloguj się lub utwórz konto",
@@ -1258,8 +1248,28 @@
   "startSoonTitle": "Sesje spersonalizowane wkrótce",
   "startSoonBody": "Sesje z prowadzeniem pojawią się razem z wideo trenera. W międzyczasie zapytaj trenera o ten plan.",
   "exercisesMeta": "{count} ćwiczeń · ~{minutes} min",
-  "@exercisesMeta": { "placeholders": { "count": { "type": "int" }, "minutes": { "type": "int" } } },
+  "@exercisesMeta": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
   "talkToTrainer": "Porozmawiaj ze swoim trenerem",
   "talkToTrainerSub": "Spersonalizowane treningi i czat 1:1",
-  "notifications": "Powiadomienia"
+  "notifications": "Powiadomienia",
+  "consultation_request_title": "Consultation request",
+  "consultation_request_subtitle": "Short by design",
+  "consultation_request_intro": "Five fields, most of them prefilled from the verified account. The only required input is picking a goal.",
+  "consultation_confirmation_title": "Consultation request received",
+  "consultation_confirmation_body": "A coach reads this before following up - it doesn't subscribe you to anything.",
+  "coaching_welcome_title": "Welcome to Personal Coaching",
+  "coaching_welcome_subtitle": "Your personal trainer will reach out within 24-48 hours. Only present this if the coaching team can reliably meet it.",
+  "coaching_welcome_placeholder": "Pending assignment",
+  "coaching_welcome_note": "No fabricated trainer, avatar or chat history.",
+  "consultation_confirmation_status": "Consultation request received",
+  "consultation_confirmation_description": "A coach reads this before following up - nothing is booked or billed until you choose a plan."
 }

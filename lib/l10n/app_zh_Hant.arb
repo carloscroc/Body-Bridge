@@ -1016,7 +1016,6 @@
   "logWorkoutAction": "記錄訓練",
   "logging": "記錄中",
   "placesLabel": "我的地點",
-
   "keepScreenOn": "訓練時保持螢幕開啟",
   "lockWorkout": "鎖定螢幕",
   "unlockWorkout": "解鎖",
@@ -1138,31 +1137,25 @@
   "stickerSaved": "已儲存到相簿",
   "stickerWeek": "本週",
   "getReady": "準備",
-
   "stickerGallery": "相簿",
   "stickerCamera": "相機",
   "shareIntroTitle": "分享這個課表",
   "shareIntroBody": "傳給你的伴侶、朋友或家人。他們會收到一個小檔案，用 Body Bridge 開啟，一點就能加入，組數和重量都在。",
   "removedFromRoutine": "已從課表移除",
-
   "radarTitle": "本月",
   "radarHint": "看看哪些部位需要多練",
   "radarEmpty": "本月訓練後就能看到你的均衡度",
   "radarBalanced": "目前很均衡",
   "radarFocus": "需要多練：{list}",
-
   "countdownReady": "準備",
   "countdownSkip": "點一下立即開始",
   "countdownSetting": "開始前倒數",
-
   "effortSetting": "記錄每組強度",
   "effortHint": "RPE：10 表示一次都做不動了，8 表示還能再做兩次。RIR 表示還剩幾次。記錄後，估算 1RM 會使用 RPE 表。",
   "rirTitle": "餘力 (RIR)",
   "rirHint": "0 表示一次都做不動了，2 表示還能再做兩次。",
   "addWeekWidget": "新增本週小工具",
-
   "gamificationSetting": "獎牌和等級",
-
   "authErrorInvalidEmail": "電子郵件地址好像不正確。",
   "authErrorWrongPassword": "電子郵件或密碼錯誤。",
   "authErrorUserNotFound": "找不到該電子郵件的帳號。",
@@ -1179,9 +1172,6 @@
   "resetSentTitle": "請查看郵件",
   "resetSentBody": "我們已將重設連結寄至 {email}。",
   "backToSignIn": "返回登入",
-  "gamificationSetting": "獎牌和等級"
-,
-
   "accountTitle": "帳號",
   "accountSection": "帳號",
   "accountRowGuest": "登入或建立帳號",
@@ -1258,8 +1248,28 @@
   "startSoonTitle": "自訂課程即將上線",
   "startSoonBody": "引導式課程將隨教練影片一起推出。在此期間，請向教練諮詢這個計畫。",
   "exercisesMeta": "{count}個動作 · 約{minutes}分鐘",
-  "@exercisesMeta": { "placeholders": { "count": { "type": "int" }, "minutes": { "type": "int" } } },
+  "@exercisesMeta": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
   "talkToTrainer": "與你的教練交流",
   "talkToTrainerSub": "自訂訓練與一對一聊天",
-  "notifications": "通知"
+  "notifications": "通知",
+  "consultation_request_title": "Consultation request",
+  "consultation_request_subtitle": "Short by design",
+  "consultation_request_intro": "Five fields, most of them prefilled from the verified account. The only required input is picking a goal.",
+  "consultation_confirmation_title": "Consultation request received",
+  "consultation_confirmation_body": "A coach reads this before following up - it doesn't subscribe you to anything.",
+  "coaching_welcome_title": "Welcome to Personal Coaching",
+  "coaching_welcome_subtitle": "Your personal trainer will reach out within 24-48 hours. Only present this if the coaching team can reliably meet it.",
+  "coaching_welcome_placeholder": "Pending assignment",
+  "coaching_welcome_note": "No fabricated trainer, avatar or chat history.",
+  "consultation_confirmation_status": "Consultation request received",
+  "consultation_confirmation_description": "A coach reads this before following up - nothing is booked or billed until you choose a plan."
 }
