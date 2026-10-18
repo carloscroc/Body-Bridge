@@ -275,6 +275,10 @@ class _ExercisesScreenState extends State<ExercisesScreen> {
 
   Widget _row(GymColors gc, Exercise ex, {required bool first, required bool last}) {
     final fav = fit.favorites[ex.id] ?? false;
+    // Trainer/Custom source rows carry a lock chip until entitlement
+    // (exercises-trainer.html; Trainer-source exercises only exist as
+    // assignment videos today, so Custom rows are the lockable surface).
+    final locked = !context.can(kCapCustomExercises) && fit.isCustom(ex.id);
     return Container(
       decoration: BoxDecoration(
         color: gc.bgRaised,
@@ -314,6 +318,10 @@ class _ExercisesScreenState extends State<ExercisesScreen> {
                       ],
                     ),
                   ),
+                  if (locked) ...[
+                    _lockChip(gc),
+                    const SizedBox(width: 4),
+                  ],
                   GestureDetector(
                     behavior: HitTestBehavior.opaque,
                     onTap: () => fit.toggleFavorite(ex.id),
@@ -329,6 +337,31 @@ class _ExercisesScreenState extends State<ExercisesScreen> {
               height: 1,
               color: gc.border.withValues(alpha: 0.55),
             ),
+        ],
+      ),
+    );
+  }
+
+  /// LOCKED pill for gated source rows (exercises-trainer.html): brass tint,
+  /// padlock glyph + uppercase label, 22px tall.
+  Widget _lockChip(GymColors gc) {
+    return Container(
+      height: 22,
+      padding: const EdgeInsets.symmetric(horizontal: 9),
+      decoration: BoxDecoration(
+        color: gc.brass.withValues(alpha: 0.18),
+        borderRadius: BorderRadius.circular(100),
+      ),
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Icon(PhosphorIconsRegular.lockSimple, size: 11, color: gc.brass),
+          const SizedBox(width: 5),
+          Text(
+            t.srcLocked,
+            style: AppTheme.f(9,
+                weight: FontWeight.w800, color: gc.brass, letterSpacing: 1),
+          ),
         ],
       ),
     );
