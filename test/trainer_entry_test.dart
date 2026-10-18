@@ -95,7 +95,7 @@ void main() {
     await tester.pump(const Duration(milliseconds: 400));
   }
 
-  testWidgets('nav renders exactly 4 tabs; tapping exercises lands there', (tester) async {
+  testWidgets('nav renders the 5-slot shape (4 tabs + center FAB); tapping exercises lands there', (tester) async {
     await Store.instance.init();
     ProgressReminder.instance.enabled = false;
     setAppLanguage('es');
@@ -117,6 +117,9 @@ void main() {
     expect(find.byIcon(PhosphorIconsFill.house), findsOneWidget);
     expect(find.byIcon(PhosphorIconsRegular.barbell), findsOneWidget);
     expect(find.byIcon(PhosphorIconsRegular.chartLineUp), findsOneWidget);
+    expect(find.byIcon(PhosphorIconsRegular.chatCircle), findsOneWidget);
+    // Profile/Settings live in Home's top bar (main's 5-slot design), so the
+    // userCircle glyph is still present — but as top-bar chrome, not a tab.
     expect(find.byIcon(PhosphorIconsRegular.userCircle), findsOneWidget);
     // The old MY TRAINER tab icon is gone in both weights.
     expect(find.byIcon(PhosphorIconsRegular.users), findsNothing);
@@ -164,9 +167,9 @@ void main() {
 
     for (final (go, icon) in [
       (fit.goHome, PhosphorIconsFill.house),
-      (fit.goExercises, PhosphorIconsFill.barbell),
       (fit.goProgress, PhosphorIconsFill.chartLineUp),
-      (fit.goSettings, PhosphorIconsFill.userCircle),
+      (fit.goExercises, PhosphorIconsFill.barbell),
+      (fit.goCommunity, PhosphorIconsFill.chatCircle),
     ]) {
       go();
       await tester.pump();
