@@ -364,4 +364,49 @@ void main() {
       body: const AppShell(),
     );
   });
+
+  // Integration t_9287b468: community tab reachable on the union (advanced)
+  // and gated for free tier (community gate veil).
+  testWidgets('community advanced dark', (tester) async {
+    await capture(
+      tester,
+      name: 'community-advanced-dark-411x823',
+      size: const Size(411, 823),
+      dark: true,
+      tier: AccountTier.advanced,
+      setup: () {
+        fit.onboarded = true;
+        fit.resetRoute('community');
+      },
+      body: const AppShell(),
+    );
+  });
+  testWidgets('community advanced light', (tester) async {
+    await capture(
+      tester,
+      name: 'community-advanced-light-411x823',
+      size: const Size(411, 823),
+      dark: false,
+      tier: AccountTier.advanced,
+      setup: () {
+        fit.onboarded = true;
+        fit.resetRoute('community');
+      },
+      body: const AppShell(),
+    );
+  });
+  testWidgets('community free light', (tester) async {
+    await capture(
+      tester,
+      name: 'community-free-light-411x823',
+      size: const Size(411, 823),
+      dark: false,
+      tier: AccountTier.free,
+      setup: () {
+        fit.onboarded = true;
+        fit.resetRoute('community');
+      },
+      body: const AppShell(),
+    );
+  });
 }
