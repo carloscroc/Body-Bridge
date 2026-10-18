@@ -1016,6 +1016,7 @@
   "logWorkoutAction": "ZAPISZ TRENING",
   "logging": "ZAPISYWANIE",
   "placesLabel": "Moje miejsca",
+
   "keepScreenOn": "Nie wygaszaj ekranu podczas treningu",
   "lockWorkout": "Zablokuj ekran",
   "unlockWorkout": "Odblokuj",
@@ -1137,25 +1138,31 @@
   "stickerSaved": "Zapisano w galerii",
   "stickerWeek": "Ten tydzień",
   "getReady": "Przygotuj się",
+
   "stickerGallery": "Galeria",
   "stickerCamera": "Aparat",
   "shareIntroTitle": "Udostępnij tę rutynę",
   "shareIntroBody": "Wyślij ją partnerowi, znajomemu lub rodzinie. Dostaną mały plik, który otwiera się w Body Bridge i dodaje rutynę jednym dotknięciem, z seriami i ciężarami.",
   "removedFromRoutine": "Usunięto z rutyny",
+
   "radarTitle": "Ten miesiąc",
   "radarHint": "Zobacz, które partie potrzebują więcej pracy",
   "radarEmpty": "Trenuj w tym miesiącu, aby zobaczyć swoją równowagę",
   "radarBalanced": "Na razie dobra równowaga",
   "radarFocus": "Potrzeba więcej: {list}",
+
   "countdownReady": "Przygotuj się",
   "countdownSkip": "Dotknij, aby zacząć od razu",
   "countdownSetting": "Odliczanie przed startem",
+
   "effortSetting": "Zapisuj wysiłek",
   "effortHint": "RPE: 10 to brak sił na kolejne powtórzenie, 8 to jeszcze dwa w zapasie. RIR liczy powtórzenia, które zostały. Jeśli seria go ma, szacowany 1RM korzysta z tabeli RPE.",
   "rirTitle": "ZAPAS (RIR)",
   "rirHint": "0 to brak sił na kolejne powtórzenie, 2 to jeszcze dwa w zapasie.",
   "addWeekWidget": "Dodaj widżet tygodnia",
+
   "gamificationSetting": "Medale i poziomy",
+
   "authErrorInvalidEmail": "Adres e-mail wygląda na nieprawidłowy.",
   "authErrorWrongPassword": "Nieprawidłowy e-mail lub hasło.",
   "authErrorUserNotFound": "Nie znaleziono konta dla tego adresu e-mail.",
@@ -1172,6 +1179,9 @@
   "resetSentTitle": "Sprawdź e-mail",
   "resetSentBody": "Wysłaliśmy link do resetowania na {email}.",
   "backToSignIn": "Wróć do logowania",
+  "gamificationSetting": "Medale i poziomy"
+,
+
   "accountTitle": "Konto",
   "accountSection": "Konto",
   "accountRowGuest": "Zaloguj się lub utwórz konto",
@@ -1248,66 +1258,8 @@
   "startSoonTitle": "Sesje spersonalizowane wkrótce",
   "startSoonBody": "Sesje z prowadzeniem pojawią się razem z wideo trenera. W międzyczasie zapytaj trenera o ten plan.",
   "exercisesMeta": "{count} ćwiczeń · ~{minutes} min",
-  "@exercisesMeta": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      },
-      "minutes": {
-        "type": "int"
-      }
-    }
-  },
+  "@exercisesMeta": { "placeholders": { "count": { "type": "int" }, "minutes": { "type": "int" } } },
   "talkToTrainer": "Porozmawiaj ze swoim trenerem",
   "talkToTrainerSub": "Spersonalizowane treningi i czat 1:1",
-  "notifications": "Powiadomienia",
-  "consultCardKicker": "KONSULTACJA 1:1",
-  "consultCardTitle": "Umów konsultację",
-  "consultCardSub": "Krótkie 1:1, które wyznaczy kierunek",
-  "consultCardSubDone": "Zgłoszenie wysłane — zobacz",
-  "consultSheetTitle": "Zacznij od konsultacji",
-  "consultSheetBody": "Dwoje drzwi, jeden cel: plan zbudowany wokół Twojego ciała.",
-  "consultDoorHow": "Jak to działa",
-  "consultDoorHowSub": "Co obejmuje 1:1",
-  "consultDoorRequest": "Poproś o konsultację",
-  "consultDoorRequestSub": "Dwie minuty, zero zobowiązań",
-  "consultDoorView": "Zobacz swoje zgłoszenie",
-  "consultDoorViewSub": "Już wysłane — bez duplikatów",
-  "introTitle": "Trening skrojony pod Ciebie",
-  "introP1": "Konsultacja to krótkie 1:1 z trenerem. Przynosz cele, historię i kontuzje — trener zamienia je w plan dopasowany do Twojego ciała.",
-  "introP2": "Żadnych szablonów. Twój plan jest pisany dla Ciebie i zmienia się razem z Tobą.",
-  "introPoint1": "Najpierw słuchamy: cele, historia, kontuzje",
-  "introPoint2": "Własne treningi prosto w aplikacji",
-  "introPoint3": "Feedback, który zmienia Twój plan",
-  "introCta": "Poproś o konsultację",
-  "requestTitle": "Poproś o konsultację",
-  "requestSub": "Kilka szybkich odpowiedzi, żeby 1:1 zaczęło się dobrze.",
-  "requestGoalKicker": "GŁÓWNY CEL",
-  "goalStrength": "Zbudować siłę",
-  "goalFatLoss": "Zbić tłuszcz",
-  "goalMobility": "Ruszać się lepiej",
-  "goalConsistency": "Trwać w postanowieniu",
-  "requestExpKicker": "DOŚWIADCZENIE",
-  "expNew": "Zaczynam przygodę",
-  "expReturning": "Wracam po przerwie",
-  "expSeasoned": "Trenuję od lat",
-  "requestTimeKicker": "NAJLEPSZY CZAS NA ROZMOWĘ",
-  "timeMorning": "Rano",
-  "timeAfternoon": "Po południu",
-  "timeEvening": "Wieczorem",
-  "requestNotesKicker": "COŚ JESZCZE? OPCJONALNIE",
-  "requestNotesHint": "Kontuzje, harmonogram, sprzęt…",
-  "requestSubmit": "Wyślij zgłoszenie",
-  "requestPickBoth": "Najpierw wybierz cel i doświadczenie",
-  "sentChip": "WYSŁANE",
-  "sentTitle": "Zgłoszenie przyjęte",
-  "sentBody": "Zgłoszenie trafiło do Twojego trenera. Zostaje takie, jakie jest — dalszy ciąg na czacie.",
-  "sentSummaryKicker": "TWOJE ZGŁOSZENIE",
-  "sentContinue": "Dalej",
-  "welcomeTitle": "Wszystko gotowe",
-  "welcomeFlag": "Trener odpowiada w ciągu 24–48 godzin",
-  "welcomeStep1": "Trener sprawdza zgłoszenie i odpowiada na czacie",
-  "welcomeStep2": "Umawiacie termin 1:1",
-  "welcomeStep3": "Po rozmowie dostajesz pierwszy własny plan",
-  "welcomeDone": "Wróć do Mojego trenera"
+  "notifications": "Powiadomienia"
 }

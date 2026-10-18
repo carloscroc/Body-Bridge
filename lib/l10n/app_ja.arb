@@ -1016,6 +1016,7 @@
   "logWorkoutAction": "ワークアウトを記録",
   "logging": "記録中",
   "placesLabel": "マイ場所",
+
   "keepScreenOn": "トレーニング中は画面をつけたままにする",
   "lockWorkout": "画面をロック",
   "unlockWorkout": "ロック解除",
@@ -1137,25 +1138,31 @@
   "stickerSaved": "ギャラリーに保存しました",
   "stickerWeek": "今週",
   "getReady": "準備して",
+
   "stickerGallery": "ギャラリー",
   "stickerCamera": "カメラ",
   "shareIntroTitle": "このルーティンを共有",
   "shareIntroBody": "パートナーや友だち、家族に送りましょう。Body Bridge で開ける小さなファイルが届き、セットや重量ごとワンタップで追加できます。",
   "removedFromRoutine": "ルーティンから外しました",
+
   "radarTitle": "今月",
   "radarHint": "もっと鍛えたい部位をチェック",
   "radarEmpty": "今月トレーニングするとバランスが見られます",
   "radarBalanced": "今のところバランス良好",
   "radarFocus": "もっと必要：{list}",
+
   "countdownReady": "準備して",
   "countdownSkip": "タップですぐ開始",
   "countdownSetting": "開始前のカウントダウン",
+
   "effortSetting": "セットごとの強度を記録",
   "effortHint": "RPE：10 はもう 1 回もできない、8 はあと 2 回できた状態。RIR は残っていた回数。記録したセットは、推定 1RM に RPE 表を使います。",
   "rirTitle": "余力 (RIR)",
   "rirHint": "0 はもう 1 回もできない、2 はあと 2 回できた状態。",
   "addWeekWidget": "今週のウィジェットを追加",
+
   "gamificationSetting": "メダルとレベル",
+
   "authErrorInvalidEmail": "メールアドレスが正しくないようです。",
   "authErrorWrongPassword": "メールアドレスまたはパスワードが違います。",
   "authErrorUserNotFound": "そのメールアドレスのアカウントが見つかりません。",
@@ -1172,6 +1179,9 @@
   "resetSentTitle": "メールを確認してください",
   "resetSentBody": "{email} に再設定リンクを送信しました。",
   "backToSignIn": "サインインに戻る",
+  "gamificationSetting": "メダルとレベル"
+,
+
   "accountTitle": "アカウント",
   "accountSection": "アカウント",
   "accountRowGuest": "サインインまたはアカウント作成",
@@ -1248,66 +1258,8 @@
   "startSoonTitle": "カスタムセッションはもうすぐ登場",
   "startSoonBody": "ガイド付きセッションはトレーナー動画と共に提供されます。それまではトレーナーにこのプランについて質問してください。",
   "exercisesMeta": "{count}種目 · 約{minutes}分",
-  "@exercisesMeta": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      },
-      "minutes": {
-        "type": "int"
-      }
-    }
-  },
+  "@exercisesMeta": { "placeholders": { "count": { "type": "int" }, "minutes": { "type": "int" } } },
   "talkToTrainer": "トレーナーに相談する",
   "talkToTrainerSub": "カスタムワークアウトと1対1のチャット",
-  "notifications": "通知",
-  "consultCardKicker": "1:1相談",
-  "consultCardTitle": "相談を予約",
-  "consultCardSub": "方向性を決める短い1:1",
-  "consultCardSubDone": "リクエスト送信済み — 見る",
-  "consultSheetTitle": "相談から始めよう",
-  "consultSheetBody": "ふたつの扉、ひとつの目標。あなたの体に合わせたプランを。",
-  "consultDoorHow": "仕組み",
-  "consultDoorHowSub": "1:1でわかること",
-  "consultDoorRequest": "相談をリクエスト",
-  "consultDoorRequestSub": "2分、義務はなし",
-  "consultDoorView": "リクエストを見る",
-  "consultDoorViewSub": "送信済み — 重複なし",
-  "introTitle": "あなたのために作るコーチング",
-  "introP1": "相談はトレーナーとの短い1:1です。目標やケガの履歴を伝えると、トレーナーがあなたの体に合うプランに変えます。",
-  "introP2": "テンプレートはありません。プランはあなたのために書かれ、あなたと一緒に進化します。",
-  "introPoint1": "目標・履歴・ケガを最初にヒアリング",
-  "introPoint2": "アプリにカスタムメニューをお届け",
-  "introPoint3": "フィードバックでプランを再構築",
-  "introCta": "相談をリクエスト",
-  "requestTitle": "相談をリクエスト",
-  "requestSub": "いくつかの簡単な質問で、1:1をスムーズに始められます。",
-  "requestGoalKicker": "主な目標",
-  "goalStrength": "筋力をつける",
-  "goalFatLoss": "体脂肪を落とす",
-  "goalMobility": "動きを良くする",
-  "goalConsistency": "習慣を続ける",
-  "requestExpKicker": "経験",
-  "expNew": "はじめて",
-  "expReturning": "ブランクあり",
-  "expSeasoned": "長年の経験あり",
-  "requestTimeKicker": "連絡の取れる時間帯",
-  "timeMorning": "午前",
-  "timeAfternoon": "午後",
-  "timeEvening": "夜",
-  "requestNotesKicker": "その他（任意）",
-  "requestNotesHint": "ケガ、スケジュール、器具など…",
-  "requestSubmit": "リクエストを送信",
-  "requestPickBoth": "目標と経験を先に選んでください",
-  "sentChip": "送信済み",
-  "sentTitle": "リクエストを受け付けました",
-  "sentBody": "リクエストはトレーナーに届いています。内容は送信時のまま — 続きはチャットで。",
-  "sentSummaryKicker": "あなたのリクエスト",
-  "sentContinue": "次へ",
-  "welcomeTitle": "準備完了",
-  "welcomeFlag": "トレーナーは24〜48時間以内に返信します",
-  "welcomeStep1": "トレーナーがリクエストを確認し、チャットで返信します",
-  "welcomeStep2": "1:1の日時を決めます",
-  "welcomeStep3": "通話後に最初のカスタムプランをお届けします",
-  "welcomeDone": "マイトレーナーへ戻る"
+  "notifications": "通知"
 }
