@@ -22,6 +22,17 @@ void main() {
   });
 
   Future<void> pumpHostAndOpen(WidgetTester tester) async {
+    // flutter test's default surface is 800x600 logical; in the reworked
+    // composer the caption field and photo chip sit below the 600px fold, so
+    // the lazy ListView never builds them and the finders come up empty.
+    // Phone-sized surface fixes that — but only when the caller hasn't
+    // already pinned a surface (the keyboard-inset tests set 390x844 first).
+    if (tester.view.physicalSize == const Size(2400, 1800)) {
+      tester.view.physicalSize = const Size(411, 914);
+      tester.view.devicePixelRatio = 1.0;
+      addTearDown(tester.view.reset);
+    }
+
     await tester.pumpWidget(MaterialApp(
       theme: AppTheme.dark,
       localizationsDelegates: AppLocalizations.localizationsDelegates,
