@@ -173,8 +173,7 @@ class _TrainerChatScreenState extends State<TrainerChatScreen> {
               ),
             ),
             Container(
-              padding: EdgeInsets.fromLTRB(
-                  16, 10, 16, 10 + MediaQuery.paddingOf(context).bottom),
+              padding: const EdgeInsets.fromLTRB(16, 10, 16, 10),
               decoration: BoxDecoration(
                 color: gc.bg,
                 border: Border(top: BorderSide(color: gc.border)),
