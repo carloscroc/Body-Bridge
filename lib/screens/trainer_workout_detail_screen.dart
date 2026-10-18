@@ -165,8 +165,7 @@ class _TrainerWorkoutDetailScreenState extends State<TrainerWorkoutDetailScreen>
           ),
           // Anchored bottom actions (mockup: pill + link above home indicator).
           Container(
-            padding: EdgeInsets.fromLTRB(
-                20, 10, 20, 10 + MediaQuery.paddingOf(context).bottom),
+            padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
             decoration: BoxDecoration(
               gradient: LinearGradient(
                 begin: Alignment.topCenter,
