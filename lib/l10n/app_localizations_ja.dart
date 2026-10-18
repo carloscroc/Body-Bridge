@@ -3223,4 +3223,151 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get notifications => '通知';
+
+  @override
+  String get consultCardKicker => '1:1相談';
+
+  @override
+  String get consultCardTitle => '相談を予約';
+
+  @override
+  String get consultCardSub => '方向性を決める短い1:1';
+
+  @override
+  String get consultCardSubDone => 'リクエスト送信済み — 見る';
+
+  @override
+  String get consultSheetTitle => '相談から始めよう';
+
+  @override
+  String get consultSheetBody => 'ふたつの扉、ひとつの目標。あなたの体に合わせたプランを。';
+
+  @override
+  String get consultDoorHow => '仕組み';
+
+  @override
+  String get consultDoorHowSub => '1:1でわかること';
+
+  @override
+  String get consultDoorRequest => '相談をリクエスト';
+
+  @override
+  String get consultDoorRequestSub => '2分、義務はなし';
+
+  @override
+  String get consultDoorView => 'リクエストを見る';
+
+  @override
+  String get consultDoorViewSub => '送信済み — 重複なし';
+
+  @override
+  String get introTitle => 'あなたのために作るコーチング';
+
+  @override
+  String get introP1 => '相談はトレーナーとの短い1:1です。目標やケガの履歴を伝えると、トレーナーがあなたの体に合うプランに変えます。';
+
+  @override
+  String get introP2 => 'テンプレートはありません。プランはあなたのために書かれ、あなたと一緒に進化します。';
+
+  @override
+  String get introPoint1 => '目標・履歴・ケガを最初にヒアリング';
+
+  @override
+  String get introPoint2 => 'アプリにカスタムメニューをお届け';
+
+  @override
+  String get introPoint3 => 'フィードバックでプランを再構築';
+
+  @override
+  String get introCta => '相談をリクエスト';
+
+  @override
+  String get requestTitle => '相談をリクエスト';
+
+  @override
+  String get requestSub => 'いくつかの簡単な質問で、1:1をスムーズに始められます。';
+
+  @override
+  String get requestGoalKicker => '主な目標';
+
+  @override
+  String get goalStrength => '筋力をつける';
+
+  @override
+  String get goalFatLoss => '体脂肪を落とす';
+
+  @override
+  String get goalMobility => '動きを良くする';
+
+  @override
+  String get goalConsistency => '習慣を続ける';
+
+  @override
+  String get requestExpKicker => '経験';
+
+  @override
+  String get expNew => 'はじめて';
+
+  @override
+  String get expReturning => 'ブランクあり';
+
+  @override
+  String get expSeasoned => '長年の経験あり';
+
+  @override
+  String get requestTimeKicker => '連絡の取れる時間帯';
+
+  @override
+  String get timeMorning => '午前';
+
+  @override
+  String get timeAfternoon => '午後';
+
+  @override
+  String get timeEvening => '夜';
+
+  @override
+  String get requestNotesKicker => 'その他（任意）';
+
+  @override
+  String get requestNotesHint => 'ケガ、スケジュール、器具など…';
+
+  @override
+  String get requestSubmit => 'リクエストを送信';
+
+  @override
+  String get requestPickBoth => '目標と経験を先に選んでください';
+
+  @override
+  String get sentChip => '送信済み';
+
+  @override
+  String get sentTitle => 'リクエストを受け付けました';
+
+  @override
+  String get sentBody => 'リクエストはトレーナーに届いています。内容は送信時のまま — 続きはチャットで。';
+
+  @override
+  String get sentSummaryKicker => 'あなたのリクエスト';
+
+  @override
+  String get sentContinue => '次へ';
+
+  @override
+  String get welcomeTitle => '準備完了';
+
+  @override
+  String get welcomeFlag => 'トレーナーは24〜48時間以内に返信します';
+
+  @override
+  String get welcomeStep1 => 'トレーナーがリクエストを確認し、チャットで返信します';
+
+  @override
+  String get welcomeStep2 => '1:1の日時を決めます';
+
+  @override
+  String get welcomeStep3 => '通話後に最初のカスタムプランをお届けします';
+
+  @override
+  String get welcomeDone => 'マイトレーナーへ戻る';
 }

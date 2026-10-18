@@ -3338,4 +3338,153 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get notifications => 'Benachrichtigungen';
+
+  @override
+  String get consultCardKicker => '1:1-BERATUNG';
+
+  @override
+  String get consultCardTitle => 'Beratung buchen';
+
+  @override
+  String get consultCardSub => 'Ein kurzes 1:1 für deine Richtung';
+
+  @override
+  String get consultCardSubDone => 'Deine Anfrage ist raus — ansehen';
+
+  @override
+  String get consultSheetTitle => 'Starte mit einer Beratung';
+
+  @override
+  String get consultSheetBody => 'Zwei Türen, ein Ziel: ein Plan, der um deinen Körper gebaut ist.';
+
+  @override
+  String get consultDoorHow => 'So funktioniert es';
+
+  @override
+  String get consultDoorHowSub => 'Was das 1:1 abdeckt';
+
+  @override
+  String get consultDoorRequest => 'Beratung anfragen';
+
+  @override
+  String get consultDoorRequestSub => 'Zwei Minuten, ohne Verpflichtung';
+
+  @override
+  String get consultDoorView => 'Deine Anfrage ansehen';
+
+  @override
+  String get consultDoorViewSub => 'Schon gesendet — keine Duplikate';
+
+  @override
+  String get introTitle => 'Coaching, um dich gebaut';
+
+  @override
+  String get introP1 =>
+      'Eine Beratung ist ein kurzes 1:1 mit deinem Trainer. Du bringst Ziele, Vorgeschichte und Verletzungen mit — dein Trainer macht daraus einen Plan, der zu deinem Körper passt.';
+
+  @override
+  String get introP2 => 'Keine Vorlagen. Dein Plan wird für dich geschrieben und bewegt sich mit dir.';
+
+  @override
+  String get introPoint1 => 'Ziele, Vorgeschichte und Verletzungen zuerst gehört';
+
+  @override
+  String get introPoint2 => 'Individuelle Workouts direkt in der App';
+
+  @override
+  String get introPoint3 => 'Feedback, das deinen Plan umformt';
+
+  @override
+  String get introCta => 'Beratung anfragen';
+
+  @override
+  String get requestTitle => 'Beratung anfragen';
+
+  @override
+  String get requestSub => 'Ein paar schnelle Antworten, damit das 1:1 warm startet.';
+
+  @override
+  String get requestGoalKicker => 'HAUPTZIEL';
+
+  @override
+  String get goalStrength => 'Kraft aufbauen';
+
+  @override
+  String get goalFatLoss => 'Fett verlieren';
+
+  @override
+  String get goalMobility => 'Besser bewegen';
+
+  @override
+  String get goalConsistency => 'Dranbleiben';
+
+  @override
+  String get requestExpKicker => 'ERFAHRUNG';
+
+  @override
+  String get expNew => 'Neu im Krafttraining';
+
+  @override
+  String get expReturning => 'Wieder nach einer Pause';
+
+  @override
+  String get expSeasoned => 'Trainiert seit Jahren';
+
+  @override
+  String get requestTimeKicker => 'BESTE ZEIT FÜR DAS GESPRÄCH';
+
+  @override
+  String get timeMorning => 'Vormittag';
+
+  @override
+  String get timeAfternoon => 'Nachmittag';
+
+  @override
+  String get timeEvening => 'Abend';
+
+  @override
+  String get requestNotesKicker => 'SONST NOCH ETWAS? OPTIONAL';
+
+  @override
+  String get requestNotesHint => 'Verletzungen, Zeitplan, Ausrüstung …';
+
+  @override
+  String get requestSubmit => 'Anfrage senden';
+
+  @override
+  String get requestPickBoth => 'Wähle zuerst ein Ziel und deine Erfahrung';
+
+  @override
+  String get sentChip => 'GESENDET';
+
+  @override
+  String get sentTitle => 'Deine Anfrage ist raus';
+
+  @override
+  String get sentBody =>
+      'Deine Anfrage ist bei deinem Trainer. Sie bleibt wie gesendet — Weiteres läuft im Chat.';
+
+  @override
+  String get sentSummaryKicker => 'DEINE ANFRAGE';
+
+  @override
+  String get sentContinue => 'Weiter';
+
+  @override
+  String get welcomeTitle => 'Alles bereit';
+
+  @override
+  String get welcomeFlag => 'Dein Trainer antwortet innerhalb von 24–48 Stunden';
+
+  @override
+  String get welcomeStep1 => 'Dein Trainer prüft deine Anfrage und antwortet im Chat';
+
+  @override
+  String get welcomeStep2 => 'Vereinbart einen Zeitpunkt für das 1:1';
+
+  @override
+  String get welcomeStep3 => 'Dein erster individueller Plan folgt nach dem Gespräch';
+
+  @override
+  String get welcomeDone => 'Zurück zu Mein Trainer';
 }

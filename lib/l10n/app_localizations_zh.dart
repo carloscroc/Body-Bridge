@@ -3183,6 +3183,153 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get notifications => '通知';
+
+  @override
+  String get consultCardKicker => '1:1 咨询';
+
+  @override
+  String get consultCardTitle => '预约咨询';
+
+  @override
+  String get consultCardSub => '一次简短的 1:1，定下方向';
+
+  @override
+  String get consultCardSubDone => '请求已提交 — 查看';
+
+  @override
+  String get consultSheetTitle => '从咨询开始';
+
+  @override
+  String get consultSheetBody => '两扇门，一个目标：围绕你的身体打造的计划。';
+
+  @override
+  String get consultDoorHow => '如何进行';
+
+  @override
+  String get consultDoorHowSub => '1:1 都聊什么';
+
+  @override
+  String get consultDoorRequest => '申请咨询';
+
+  @override
+  String get consultDoorRequestSub => '两分钟，毫无负担';
+
+  @override
+  String get consultDoorView => '查看我的请求';
+
+  @override
+  String get consultDoorViewSub => '已提交 — 不会重复';
+
+  @override
+  String get introTitle => '为你而建的训练';
+
+  @override
+  String get introP1 => '咨询是与教练的一次简短 1:1。你带来目标、训练历史和伤病，教练把它们变成适合你身体的计划。';
+
+  @override
+  String get introP2 => '没有模板。你的计划专为你书写，并随你一起调整。';
+
+  @override
+  String get introPoint1 => '先听你说：目标、历史、伤病';
+
+  @override
+  String get introPoint2 => '定制训练直达应用内';
+
+  @override
+  String get introPoint3 => '反馈会持续重塑你的计划';
+
+  @override
+  String get introCta => '申请咨询';
+
+  @override
+  String get requestTitle => '申请咨询';
+
+  @override
+  String get requestSub => '几个快速回答，让 1:1 有个好的开始。';
+
+  @override
+  String get requestGoalKicker => '主要目标';
+
+  @override
+  String get goalStrength => '增肌变强';
+
+  @override
+  String get goalFatLoss => '减脂';
+
+  @override
+  String get goalMobility => '改善活动度';
+
+  @override
+  String get goalConsistency => '保持规律';
+
+  @override
+  String get requestExpKicker => '经验';
+
+  @override
+  String get expNew => '刚开始训练';
+
+  @override
+  String get expReturning => '休息后回归';
+
+  @override
+  String get expSeasoned => '多年训练经验';
+
+  @override
+  String get requestTimeKicker => '方便交流的时间';
+
+  @override
+  String get timeMorning => '上午';
+
+  @override
+  String get timeAfternoon => '下午';
+
+  @override
+  String get timeEvening => '晚上';
+
+  @override
+  String get requestNotesKicker => '还有想说的？（可选）';
+
+  @override
+  String get requestNotesHint => '伤病、日程、器械…';
+
+  @override
+  String get requestSubmit => '发送请求';
+
+  @override
+  String get requestPickBoth => '请先选择目标和经验';
+
+  @override
+  String get sentChip => '已提交';
+
+  @override
+  String get sentTitle => '请求已收到';
+
+  @override
+  String get sentBody => '请求已交给教练，内容保持原样 — 后续在聊天里进行。';
+
+  @override
+  String get sentSummaryKicker => '我的请求';
+
+  @override
+  String get sentContinue => '继续';
+
+  @override
+  String get welcomeTitle => '一切就绪';
+
+  @override
+  String get welcomeFlag => '教练会在 24–48 小时内回复';
+
+  @override
+  String get welcomeStep1 => '教练会查看你的请求并在聊天中回复';
+
+  @override
+  String get welcomeStep2 => '一起确定 1:1 的时间';
+
+  @override
+  String get welcomeStep3 => '通话后你会收到第一份定制计划';
+
+  @override
+  String get welcomeDone => '回到我的教练';
 }
 
 /// The translations for Chinese, using the Han script (`zh_Hant`).
@@ -6388,4 +6535,151 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
 
   @override
   String get notifications => '通知';
+
+  @override
+  String get consultCardKicker => '1:1 諮詢';
+
+  @override
+  String get consultCardTitle => '預約諮詢';
+
+  @override
+  String get consultCardSub => '一次簡短的 1:1，定下方向';
+
+  @override
+  String get consultCardSubDone => '請求已送出 — 查看';
+
+  @override
+  String get consultSheetTitle => '從諮詢開始';
+
+  @override
+  String get consultSheetBody => '兩扇門，一個目標：圍繞你的身體打造的計畫。';
+
+  @override
+  String get consultDoorHow => '如何進行';
+
+  @override
+  String get consultDoorHowSub => '1:1 都聊什麼';
+
+  @override
+  String get consultDoorRequest => '申請諮詢';
+
+  @override
+  String get consultDoorRequestSub => '兩分鐘，毫無負擔';
+
+  @override
+  String get consultDoorView => '查看我的請求';
+
+  @override
+  String get consultDoorViewSub => '已送出 — 不會重複';
+
+  @override
+  String get introTitle => '為你而建的訓練';
+
+  @override
+  String get introP1 => '諮詢是與教練的一次簡短 1:1。你帶來目標、訓練歷史與傷病，教練把它們變成適合你身體的計畫。';
+
+  @override
+  String get introP2 => '沒有範本。你的計畫專為你書寫，並隨你一起調整。';
+
+  @override
+  String get introPoint1 => '先聽你說：目標、歷史、傷病';
+
+  @override
+  String get introPoint2 => '客製訓練直達應用程式內';
+
+  @override
+  String get introPoint3 => '回饋會持續重塑你的計畫';
+
+  @override
+  String get introCta => '申請諮詢';
+
+  @override
+  String get requestTitle => '申請諮詢';
+
+  @override
+  String get requestSub => '幾個快速回答，讓 1:1 有個好的開始。';
+
+  @override
+  String get requestGoalKicker => '主要目標';
+
+  @override
+  String get goalStrength => '增肌變強';
+
+  @override
+  String get goalFatLoss => '減脂';
+
+  @override
+  String get goalMobility => '改善活動度';
+
+  @override
+  String get goalConsistency => '保持規律';
+
+  @override
+  String get requestExpKicker => '經驗';
+
+  @override
+  String get expNew => '剛開始訓練';
+
+  @override
+  String get expReturning => '休息後回歸';
+
+  @override
+  String get expSeasoned => '多年訓練經驗';
+
+  @override
+  String get requestTimeKicker => '方便聯絡的時間';
+
+  @override
+  String get timeMorning => '上午';
+
+  @override
+  String get timeAfternoon => '下午';
+
+  @override
+  String get timeEvening => '晚上';
+
+  @override
+  String get requestNotesKicker => '還想補充什麼？（選填）';
+
+  @override
+  String get requestNotesHint => '傷病、行程、器材…';
+
+  @override
+  String get requestSubmit => '送出請求';
+
+  @override
+  String get requestPickBoth => '請先選擇目標與經驗';
+
+  @override
+  String get sentChip => '已送出';
+
+  @override
+  String get sentTitle => '請求已收到';
+
+  @override
+  String get sentBody => '請求已交給教練，內容保持原樣 — 後續在聊天中進行。';
+
+  @override
+  String get sentSummaryKicker => '我的請求';
+
+  @override
+  String get sentContinue => '繼續';
+
+  @override
+  String get welcomeTitle => '一切就緒';
+
+  @override
+  String get welcomeFlag => '教練會在 24–48 小時內回覆';
+
+  @override
+  String get welcomeStep1 => '教練會查看你的請求並在聊天中回覆';
+
+  @override
+  String get welcomeStep2 => '一起確定 1:1 的時間';
+
+  @override
+  String get welcomeStep3 => '通話後你會收到第一份客製計畫';
+
+  @override
+  String get welcomeDone => '回到我的教練';
 }
