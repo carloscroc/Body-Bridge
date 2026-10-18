@@ -11,6 +11,8 @@
 // and the app is fully functional offline. v0 has no push (contract §7.4);
 // new-assignment / new-message signals surface as in-app banners + badges.
 
+import 'dart:async';
+
 import 'dart:convert';
 
 import 'package:flutter/foundation.dart';
@@ -314,6 +316,13 @@ class LocalTrainerRepository implements TrainerRepository {
       ..addAll(_seedMessages());
     _msgSeq = _seedMessages().length + 1;
     _consultation = null;
+    // Purge the persisted blob too — a fresh instance must start clean.
+    unawaited(
+      SharedPreferences.getInstance().then<void>(
+        (p) => p.remove(_consultPrefsKey),
+        onError: (Object _, StackTrace __) {},
+      ),
+    );
   }
 
   @override

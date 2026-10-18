@@ -1,14 +1,14 @@
 import 'package:flutter_test/flutter_test.dart';
+import 'package:gymmane/services/trainer_data.dart';
+import 'package:gymmane/state/trainer_state.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:flutter/foundation.dart';
-import '../lib/services/trainer_data.dart';
-import '../lib/state/trainer_state.dart';
 
 void main() {
   group('Consultation funnel seam (trainer_data.dart)', () {
     TestWidgetsFlutterBinding.ensureInitialized();
 
     setUp(() async {
+      SharedPreferences.setMockInitialValues({});
       final prefs = await SharedPreferences.getInstance();
       await prefs.remove('gymmane_consultation_v1');
       // Ensure the trainer state singleton resets for each test
@@ -45,8 +45,8 @@ void main() {
         timeWindow: 'evening',
         notes: 'Different notes',
       );
-      expect(second, isNotNull);
-      expect(second!.id, first.id);
+      // First-wins: the duplicate call returns the identical first record.
+      expect(second, same(first));
       expect(second.goal, 'strength'); // unchanged, still first request
       expect(second.experience, 'new');
       expect(second.timeWindow, 'morning');
@@ -87,9 +87,12 @@ void main() {
 
       // Reset the test seam (as provided by trainer_state).
       TrainerState.instance.resetForTest();
+      // Flush the best-effort prefs purge fired by resetForTest.
+      await Future<void>.delayed(Duration.zero);
 
-      // New repository instance should have no consultation.
-      final afterReset = await repo.consultationGetMine();
+      // A fresh repository instance (what a restart would see) has none.
+      final fresh = LocalTrainerRepository();
+      final afterReset = await fresh.consultationGetMine();
       expect(afterReset, isNull);
     });
 
