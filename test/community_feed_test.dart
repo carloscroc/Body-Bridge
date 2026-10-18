@@ -7,6 +7,7 @@ import 'package:gymmane/l10n/l10n.dart';
 import 'package:gymmane/screens/community/community_feed.dart';
 import 'package:gymmane/services/community_repo.dart';
 import 'package:gymmane/state/account_gate.dart';
+import 'package:gymmane/theme/app_colors.dart';
 import 'package:gymmane/theme/app_theme.dart';
 
 import 'community_gate_test.dart';
@@ -83,5 +84,72 @@ void main() {
     expect(find.text(t.noPostsTitle), findsOneWidget);
     expect(find.text(t.noPostsBody), findsOneWidget);
     expect(find.text(t.createFirstPost), findsOneWidget);
+  });
+
+  testWidgets('report sheet CTA turns danger-red once a reason is picked', (tester) async {
+    await pumpFeed(tester);
+
+    await tester.tap(find.byIcon(PhosphorIconsRegular.dotsThree).first);
+    await tester.pump(const Duration(milliseconds: 300));
+    await tester.pump(const Duration(milliseconds: 300));
+
+    await tester.tap(find.text(t.reportPost));
+    await tester.pump(const Duration(milliseconds: 300));
+    await tester.pump(const Duration(milliseconds: 300));
+
+    Color ctaColor() {
+      final container = tester.widget<Container>(
+        find.ancestor(of: find.text(t.reportSubmit), matching: find.byType(Container)).first,
+      );
+      return (container.decoration! as BoxDecoration).color!;
+    }
+
+    final gc = tester.element(find.text(t.reportSubmit)).gc;
+    expect(ctaColor(), gc.bgRaised2, reason: 'neutral until a reason is picked');
+
+    await tester.tap(find.text(t.reportSpam));
+    await tester.pump(const Duration(milliseconds: 300));
+
+    expect(ctaColor(), gc.danger, reason: 'the selected-reason CTA must be the danger red');
+  });
+
+  testWidgets('last feed card clears the floating nav bar with the system inset', (tester) async {
+    tester.view.physicalSize = const Size(390, 844);
+    tester.view.devicePixelRatio = 1.0;
+    tester.view.viewPadding = const FakeViewPadding(bottom: 48);
+    tester.view.padding = const FakeViewPadding(bottom: 48);
+    addTearDown(tester.view.reset);
+    await pumpFeed(tester);
+
+    final position = tester.state<ScrollableState>(find.byType(Scrollable).first).position;
+    position.jumpTo(position.maxScrollExtent);
+    await tester.pump();
+
+    final lastCardBottom = tester.getBottomRight(find.byType(PostCard).last).dy;
+    expect(
+      lastCardBottom,
+      lessThanOrEqualTo(844 - 48 - 92),
+      reason: 'nav bar: 18 gap + 74 bar + 48 inset = top edge at 704',
+    );
+  });
+
+  testWidgets('a caption-only post shows no empty photo slots', (tester) async {
+    await pumpFeed(tester);
+    expect(find.byType(PlaceholderTile), findsWidgets);
+
+    CommunityRepo().createPost(
+      kind: PostKind.progress,
+      caption: 'Caption only for now.',
+      authorName: 'Mara K.',
+      authorInitials: 'MK',
+    );
+    await tester.pump(const Duration(milliseconds: 300));
+
+    expect(find.text('Caption only for now.'), findsOneWidget);
+    expect(
+      find.descendant(of: find.byType(PostCard).first, matching: find.byType(PlaceholderTile)),
+      findsNothing,
+      reason: 'no attached photos means no placeholder tiles',
+    );
   });
 }

@@ -15,6 +15,10 @@ import 'community_sheets.dart';
 const List<Color> kTerracottaPlaceholder = [Color(0xFFD9A184), Color(0xFFB98F72)];
 const List<Color> kSagePlaceholder = [Color(0xFF8FA377), Color(0xFF56634A)];
 
+/// Bottom clearance so the last card clears the floating nav bar:
+/// 74 bar + 18 float gap, stacked on top of the system bottom inset.
+const double kCommunityBottomClearance = 92.0;
+
 String communityTimeAgo(int minutes) {
   if (minutes < 1) return t.timeAgoNow;
   if (minutes < 60) return t.timeAgoMinutes(minutes);
@@ -671,7 +675,12 @@ class FeedList extends StatelessWidget {
       );
     }
     return ListView.separated(
-      padding: const EdgeInsets.fromLTRB(20, 0, 20, 32),
+      padding: EdgeInsets.fromLTRB(
+        20,
+        0,
+        20,
+        MediaQuery.paddingOf(context).bottom + kCommunityBottomClearance,
+      ),
       itemCount: posts.length,
       separatorBuilder: (_, _) => const SizedBox(height: 12),
       itemBuilder: (context, i) {

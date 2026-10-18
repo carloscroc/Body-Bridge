@@ -152,4 +152,16 @@ void main() {
     await tester.pump();
     expect(find.byKey(const Key('communityLockBadge')), findsNothing);
   });
+
+  testWidgets('community tab badge: padlock renders in dark and light at FREE', (tester) async {
+    fit.dark = true;
+    await tester.pumpWidget(GymManeApp(key: const ValueKey('badge-dark')));
+    await tester.pump();
+    expect(find.byKey(const Key('communityLockBadge')), findsOneWidget);
+
+    fit.dark = false;
+    await tester.pumpWidget(GymManeApp(key: const ValueKey('badge-light')));
+    await tester.pump();
+    expect(find.byKey(const Key('communityLockBadge')), findsOneWidget);
+  });
 }

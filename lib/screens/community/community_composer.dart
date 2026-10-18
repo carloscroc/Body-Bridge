@@ -25,7 +25,7 @@ class _CommunityComposerScreenState extends State<CommunityComposerScreen> {
   final TextEditingController _context = TextEditingController();
   final FocusNode _focus = FocusNode();
   late final List<MediaPlaceholder> _staged = widget.editing == null
-      ? [const MediaPlaceholder(), const MediaPlaceholder(sage: true)]
+      ? <MediaPlaceholder>[]
       : List.of(widget.editing!.media);
 
   @override
@@ -42,7 +42,7 @@ class _CommunityComposerScreenState extends State<CommunityComposerScreen> {
     if (widget.editing != null) return _caption.text.trim().isNotEmpty;
     final text = _text;
     if (_mode == PostKind.workout) return text.isNotEmpty;
-    return text.isNotEmpty && _staged.isNotEmpty;
+    return text.isNotEmpty;
   }
 
   void _submit() {

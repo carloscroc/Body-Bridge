@@ -143,7 +143,7 @@ void main() {
     tester.view.devicePixelRatio = 3.0;
     await _render(tester, const CommunityFeedScreen(), AppTheme.dark, compact, 'gate_dark_360');
 
-    // Composer — basic tier, progress mode with staged placeholders.
+    // Composer — basic tier, progress mode with no empty photo slots.
     AccountGate.install(FakeTierGate(AccountTier.basic, email: 'mara@bodybridge.app'));
     tester.view.physicalSize = phys;
     tester.view.devicePixelRatio = 3.0;

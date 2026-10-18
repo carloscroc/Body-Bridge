@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:gymmane/l10n/l10n.dart';
 import 'package:gymmane/screens/community/community_composer.dart';
+import 'package:gymmane/screens/community/community_feed.dart';
 import 'package:gymmane/services/community_repo.dart';
 import 'package:gymmane/state/account_gate.dart';
 import 'package:gymmane/theme/app_theme.dart';
@@ -134,7 +135,29 @@ void main() {
     await tester.tap(find.text(t.addPhotoTile), warnIfMissed: false);
     await tester.pump(const Duration(milliseconds: 300));
 
-    expect(find.text(t.progressPhotosCount(2)), findsOneWidget); // nothing was staged
-    expect(find.text(t.progressPhotosCount(3)), findsNothing);
+    expect(find.text(t.progressPhotosCount(0)), findsOneWidget); // nothing was staged
+    expect(find.text(t.progressPhotosCount(1)), findsNothing);
+  });
+
+  testWidgets('new post starts with no empty photo placeholders', (tester) async {
+    await pumpHostAndOpen(tester);
+
+    expect(find.text(t.progressPhotosCount(0)), findsOneWidget);
+    expect(find.byType(PlaceholderTile), findsNothing);
+  });
+
+  testWidgets('caption-only progress post lands without photo slots', (tester) async {
+    await pumpHostAndOpen(tester);
+
+    await tester.enterText(find.byType(TextField), 'Week one back!');
+    await tester.pump(const Duration(milliseconds: 300));
+
+    await tester.tap(find.text(t.postToCommunity));
+    await tester.pump(); // first frame starts the pop-transition ticker
+    await tester.pump(const Duration(seconds: 1)); // runs the reverse transition to completion
+
+    final post = CommunityRepo().posts.first;
+    expect(post.caption, 'Week one back!');
+    expect(post.media, isEmpty);
   });
 }
