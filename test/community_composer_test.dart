@@ -59,7 +59,7 @@ void main() {
   testWidgets('progress post: caption enables CTA, submit lands and pops', (tester) async {
     await pumpHostAndOpen(tester);
 
-    await tester.enterText(find.byType(TextField), 'Feeling stronger!');
+    await tester.enterText(find.byType(EditableText), 'Feeling stronger!');
     await tester.pump(const Duration(milliseconds: 300));
 
     await tester.tap(find.text(t.postToCommunity));
@@ -81,7 +81,7 @@ void main() {
     await tester.tap(find.text(t.modeWorkout));
     await tester.pump(const Duration(milliseconds: 300));
 
-    await tester.enterText(find.byType(TextField), 'Crushed push day');
+    await tester.enterText(find.byType(EditableText), 'Crushed push day');
     await tester.pump(const Duration(milliseconds: 300));
 
     await tester.tap(find.text(t.postToCommunity));
@@ -149,7 +149,7 @@ void main() {
   testWidgets('caption-only progress post lands without photo slots', (tester) async {
     await pumpHostAndOpen(tester);
 
-    await tester.enterText(find.byType(TextField), 'Week one back!');
+    await tester.enterText(find.byType(EditableText), 'Week one back!');
     await tester.pump(const Duration(milliseconds: 300));
 
     await tester.tap(find.text(t.postToCommunity));

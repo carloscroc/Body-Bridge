@@ -95,7 +95,7 @@ void main() {
     await tester.pump();
     await tester.pump(const Duration(milliseconds: 400));
 
-    await tester.enterText(find.byType(TextField), 'Back at it, week one!');
+    await tester.enterText(find.byType(EditableText), 'Back at it, week one!');
     await tester.pump(const Duration(milliseconds: 300));
 
     await tester.tap(find.text(t.postToCommunity));
