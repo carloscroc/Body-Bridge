@@ -2241,5 +2241,23 @@
     },
     "@trainerGateCta": {
         "description": "Trainer feature (card t_d788f36e)"
-    }
+    },
+    "sourceFree": "Free",
+    "sourceTrainer": "Trainer",
+    "sourceCustom": "Custom",
+    "advancedBadge": "ADVANCED",
+    "unlockAdvancedTitle": "Unlock Advanced",
+    "benefitTrainerLibrary": "Full trainer video library",
+    "benefitCoachAssignments": "Exercises assigned personally by your coach",
+    "benefitMonthlySessions": "New trainer sessions monthly",
+    "continueOnSite": "Continue on bodybridge.net",
+    "notNow": "Not now",
+    "lockAdvancedMessage": "Trainer-recorded exercises are part of Advanced",
+    "setsLabel": "Sets",
+    "repsLabel": "Reps",
+    "trainerCatStrength": "Strength",
+    "trainerCatMobility": "Mobility",
+    "trainerCatCore": "Core",
+    "trainerCatCorrective": "Corrective",
+    "trainerCatWarmup": "Warm-up"
 }

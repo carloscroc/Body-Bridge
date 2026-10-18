@@ -158,8 +158,8 @@ mixin PlacesState on FitCore, LibraryState {
   }
 
   @override
-  List<Exercise> exercisesMatching(String query) => super
-      .exercisesMatching(query)
+  List<Exercise> exercisesMatching(String query, {String? source}) => super
+      .exercisesMatching(query, source: source)
       .where((ex) => (!exNoGearOnly || ex.equipment == 'Bodyweight') && fitsHere(ex))
       .toList();
 

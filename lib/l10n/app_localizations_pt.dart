@@ -3790,4 +3790,58 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get trainerGateCta => 'Ver Advanced';
+
+  @override
+  String get sourceFree => 'Grátis';
+
+  @override
+  String get sourceTrainer => 'Treinador';
+
+  @override
+  String get sourceCustom => 'Personalizado';
+
+  @override
+  String get advancedBadge => 'ADVANCED';
+
+  @override
+  String get unlockAdvancedTitle => 'Desbloquear ADVANCED';
+
+  @override
+  String get benefitTrainerLibrary => 'Biblioteca completa de vídeos do treinador';
+
+  @override
+  String get benefitCoachAssignments => 'Exercícios atribuídos pessoalmente pelo seu treinador';
+
+  @override
+  String get benefitMonthlySessions => 'Novas sessões do treinador todos os meses';
+
+  @override
+  String get continueOnSite => 'Continuar em bodybridge.net';
+
+  @override
+  String get notNow => 'Agora não';
+
+  @override
+  String get lockAdvancedMessage => 'Os exercícios gravados pelo treinador fazem parte do ADVANCED';
+
+  @override
+  String get setsLabel => 'Séries';
+
+  @override
+  String get repsLabel => 'Reps';
+
+  @override
+  String get trainerCatStrength => 'Força';
+
+  @override
+  String get trainerCatMobility => 'Mobilidade';
+
+  @override
+  String get trainerCatCore => 'Core';
+
+  @override
+  String get trainerCatCorrective => 'Corretivo';
+
+  @override
+  String get trainerCatWarmup => 'Aquecimento';
 }

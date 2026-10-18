@@ -7,10 +7,14 @@ mixin LibraryState on FitCore {
   String? exEquipmentFilter;
   String? activeExerciseId;
   int _customSeq = 0;
+  String exSource = 'free';
   List<Exercise> get allExercises => [...kExercises, ...customExercises];
 
   Exercise? exerciseById(String id) {
     for (final e in allExercises) {
+      if (e.id == id) return e;
+    }
+    for (final e in [...trainerExercises, ...assignedExercises]) {
       if (e.id == id) return e;
     }
     return null;
@@ -31,6 +35,11 @@ mixin LibraryState on FitCore {
 
   void setExSearch(String v) {
     exSearch = v;
+    notifyListeners();
+  }
+
+  void setExSource(String s) {
+    exSource = s;
     notifyListeners();
   }
 
@@ -69,9 +78,15 @@ mixin LibraryState on FitCore {
 
   List<Exercise> get exercisesFiltered => exercisesMatching(exSearch);
 
-  List<Exercise> exercisesMatching(String query) {
+  List<Exercise> exercisesMatching(String query, {String? source}) {
+    final src = source ?? exSource;
+    final pool = switch (src) {
+      'trainer' => trainerExercises,
+      'custom' => assignedExercises,
+      _ => allExercises,
+    };
     final matchesSearch = exerciseSearch(query);
-    final list = allExercises.where((ex) {
+    final list = pool.where((ex) {
       if (exFavouritesOnly && favorites[ex.id] != true) return false;
       if (!matchesSearch(ex)) return false;
       if (exMuscleFilter != null &&
@@ -83,11 +98,24 @@ mixin LibraryState on FitCore {
       if (exEquipmentFilter != null && ex.equipment != exEquipmentFilter) return false;
       return true;
     }).toList();
+    if (src == 'trainer' || src == 'custom') return _groupedByCategory(list);
     final muscle = exMuscleFilter;
     if (muscle == null) return _groupedByMuscle(list);
     final primary = list.where((ex) => ex.primary == muscle);
     final secondary = _groupedByMuscle(list.where((ex) => ex.primary != muscle).toList());
     return [...primary, ...secondary];
+  }
+
+  List<Exercise> _groupedByCategory(List<Exercise> list) {
+    final order = {
+      for (var i = 0; i < kTrainerCategories.length; i++) kTrainerCategories[i]: i,
+    };
+    final seats = [
+      for (var i = 0; i < list.length; i++)
+        (ex: list[i], cat: order[list[i].primary] ?? kTrainerCategories.length, seat: i),
+    ]..sort((a, b) =>
+        a.cat == b.cat ? a.seat.compareTo(b.seat) : a.cat.compareTo(b.cat));
+    return [for (final s in seats) s.ex];
   }
 
   List<Exercise> _groupedByMuscle(List<Exercise> list) {
@@ -105,10 +133,11 @@ mixin LibraryState on FitCore {
 
   List<String> activeExerciseSteps(Exercise ex) => exerciseSteps(ex);
 
-  List<Exercise> similarExercises(Exercise ex, int n) => allExercises
-      .where((e) => e.id != ex.id && e.primary == ex.primary)
-      .take(n)
-      .toList();
+  List<Exercise> similarExercises(Exercise ex, int n) => [
+        ...allExercises,
+        ...trainerExercises,
+        ...assignedExercises,
+      ].where((e) => e.id != ex.id && e.primary == ex.primary).take(n).toList();
 
   String addCustomExercise({
     required String name,
@@ -255,4 +284,6 @@ mixin LibraryState on FitCore {
   }
 
   bool isCustom(String id) => customExercises.any((e) => e.id == id);
+
+  bool isTrainerSourced(String id) => isTrainerSourcedId(id);
 }

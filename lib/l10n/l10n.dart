@@ -206,6 +206,15 @@ extension GymL10n on AppLocalizations {
         _ => diffIntermediate,
       };
 
+  String trainerCategory(String id) => switch (id) {
+        'strength' => trainerCatStrength,
+        'mobility' => trainerCatMobility,
+        'core' => trainerCatCore,
+        'corrective' => trainerCatCorrective,
+        'warmup' => trainerCatWarmup,
+        _ => id,
+      };
+
   String weekday(int w) =>
       _capitalize(_dates(DateFormat.EEEE).format(DateTime(2024, 1, w)));
 

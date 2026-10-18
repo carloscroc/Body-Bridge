@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:phosphoricons_flutter/phosphoricons_flutter.dart';
 
 import '../catalog/exercise_catalog.dart';
+import '../catalog/trainer_exercises.dart';
 import '../l10n/l10n.dart';
 import '../models/exercise.dart';
 import '../services/media_store.dart';
@@ -18,8 +19,11 @@ import '../widgets/exercise_media.dart';
 import '../widgets/glass.dart';
 import '../widgets/premium_gate.dart';
 import '../widgets/svg_icon.dart';
+import '../widgets/trainer_exercise_media.dart';
 import '../widgets/trainer_kit.dart';
 import '../widgets/ui_kit.dart';
+import 'trainer/lock_overlay.dart';
+import 'trainer/source_tabs.dart';
 
 class ExercisesScreen extends StatefulWidget {
   const ExercisesScreen({super.key});
@@ -29,6 +33,7 @@ class ExercisesScreen extends StatefulWidget {
 
 class _ExercisesScreenState extends State<ExercisesScreen> {
   late final TextEditingController _c = TextEditingController(text: fit.exSearch);
+  bool _lockShown = false;
 
   @override
   void initState() {
@@ -50,46 +55,56 @@ class _ExercisesScreenState extends State<ExercisesScreen> {
     return SafeArea(
       bottom: false,
       child: TrainerBannerOverlay(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
+        child: Stack(
           children: [
-            Padding(
-              padding: const EdgeInsets.fromLTRB(20, 12, 20, 12),
-              child: _header(context, gc, list.length),
-            ),
-            Expanded(
-              child: ListView.builder(
-                padding: const EdgeInsets.fromLTRB(20, 0, 20, 110),
-                itemCount: list.isEmpty ? 1 : list.length,
-                itemBuilder: (context, i) {
-                  if (list.isEmpty) return _empty(gc);
-                  final ex = list[i];
-                  final first = i == 0 || list[i - 1].primary != ex.primary;
-                  final last = i == list.length - 1 || list[i + 1].primary != ex.primary;
-                  return Column(
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(20, 12, 20, 12),
+                  child: _header(context, gc, list.length),
+                ),
+                Expanded(
+                  child: Stack(
                     children: [
-                      if (first) ...[
-                        SizedBox(height: i == 0 ? 2 : 22),
-                        Padding(
-                          padding: const EdgeInsets.fromLTRB(4, 0, 0, 8),
-                          child: Text(
-                            muscleLabel(ex.primary).toUpperCase(),
-                            style: AppTheme.f(
-                              10.5,
-                              weight: FontWeight.w700,
-                              color: gc.textTertiary,
-                              letterSpacing: 1.3,
-                            ),
-                          ),
-                        ),
-                      ],
-                      _row(gc, ex, first: first, last: last),
+                      ListView.builder(
+                        padding: const EdgeInsets.fromLTRB(20, 0, 20, 110),
+                        itemCount: list.isEmpty ? 1 : list.length,
+                        itemBuilder: (context, i) {
+                          if (list.isEmpty) return _empty(gc);
+                          final ex = list[i];
+                          final first = i == 0 || list[i - 1].primary != ex.primary;
+                          final last = i == list.length - 1 || list[i + 1].primary != ex.primary;
+                          return Column(
+                            crossAxisAlignment: CrossAxisAlignment.stretch,
+                            children: [
+                              if (first) ...[
+                                SizedBox(height: i == 0 ? 2 : 22),
+                                Padding(
+                                  padding: const EdgeInsets.fromLTRB(4, 0, 0, 8),
+                                  child: Text(
+                                    _sectionLabel(ex).toUpperCase(),
+                                    style: AppTheme.f(
+                                      10.5,
+                                      weight: FontWeight.w700,
+                                      color: gc.textTertiary,
+                                      letterSpacing: 1.3,
+                                    ),
+                                  ),
+                                ),
+                              ],
+                              _row(gc, ex, first: first, last: last),
+                            ],
+                          );
+                        },
+                      ),
+                      TrainerLockScrim(visible: _lockShown),
                     ],
-                  );
-                },
-              ),
+                  ),
+                ),
+              ],
             ),
+            TrainerLockOverlay(visible: _lockShown, onDismiss: () => setState(() => _lockShown = false)),
           ],
         ),
       ),
@@ -106,6 +121,24 @@ class _ExercisesScreenState extends State<ExercisesScreen> {
     _c.clear();
     fit.clearExFilters();
   }
+
+  void _onSourceTap(SourceTab tab) {
+    if (tab == SourceTab.free) {
+      setState(() => fit.setExSource('free'));
+      return;
+    }
+    if (!context.can(kCapCustomExercises)) {
+      setState(() => _lockShown = true);
+      showTrainerUpsellSheet(context).whenComplete(() {
+        if (mounted) setState(() => _lockShown = false);
+      });
+      return;
+    }
+    setState(() => fit.setExSource(tab.name));
+  }
+
+  String _sectionLabel(Exercise ex) =>
+      fit.exSource == 'free' ? muscleLabel(ex.primary) : exerciseSectionLabel(ex);
 
   Widget _header(BuildContext context, GymColors gc, int count) {
     return Column(
@@ -169,6 +202,13 @@ class _ExercisesScreenState extends State<ExercisesScreen> {
         const TrainerEntryStrip(),
         const SizedBox(height: 12),
         SearchField(controller: _c, hint: t.searchExercises, onChanged: fit.setExSearch),
+        const SizedBox(height: 10),
+        PremiumSourceTabs(
+          active: SourceTab.values.firstWhere((s) => s.name == fit.exSource, orElse: () => SourceTab.free),
+          trainerLocked: !context.can(kCapCustomExercises),
+          customLocked: !context.can(kCapCustomExercises),
+          onSelected: _onSourceTap,
+        ),
         const SizedBox(height: 10),
         _quickChips(context, gc),
       ],
@@ -296,17 +336,47 @@ class _ExercisesScreenState extends State<ExercisesScreen> {
               padding: const EdgeInsets.fromLTRB(12, 9, 6, 9),
               child: Row(
                 children: [
-                  SizedBox(width: 52, child: ExerciseMedia(ex: ex, height: 52, radius: 15, bordered: false)),
+                  SizedBox(
+                    width: 52,
+                    child: fit.isTrainerSourced(ex.id)
+                        ? TrainerExerciseMedia(ex: ex, height: 52, radius: 15)
+                        : ExerciseMedia(ex: ex, height: 52, radius: 15, bordered: false),
+                  ),
                   const SizedBox(width: 13),
                   Expanded(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
-                          exerciseName(ex),
-                          maxLines: 1,
-                          overflow: TextOverflow.ellipsis,
-                          style: AppTheme.f(14.5, weight: FontWeight.w600, color: gc.text),
+                        Row(
+                          children: [
+                            Expanded(
+                              child: Text(
+                                exerciseName(ex),
+                                maxLines: 1,
+                                overflow: TextOverflow.ellipsis,
+                                style: AppTheme.f(14.5, weight: FontWeight.w600, color: gc.text),
+                              ),
+                            ),
+                            if (fit.isTrainerSourced(ex.id)) ...[
+                              const SizedBox(width: 5),
+                              Container(
+                                padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 2),
+                                decoration: BoxDecoration(
+                                  color: gc.textTertiary.withValues(alpha: 0.16),
+                                  borderRadius: BorderRadius.circular(100),
+                                ),
+                                child: Text(
+                                  t.advancedBadge,
+                                  style: AppTheme.f(
+                                    7.5,
+                                    weight: FontWeight.w800,
+                                    color: gc.textSecondary,
+                                    letterSpacing: 0.2,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ],
                         ),
                         const SizedBox(height: 4),
                         Text(

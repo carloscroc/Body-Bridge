@@ -3694,4 +3694,58 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get trainerGateCta => 'Advanced 보기';
+
+  @override
+  String get sourceFree => '무료';
+
+  @override
+  String get sourceTrainer => '트레이너';
+
+  @override
+  String get sourceCustom => '커스텀';
+
+  @override
+  String get advancedBadge => 'ADVANCED';
+
+  @override
+  String get unlockAdvancedTitle => 'ADVANCED 잠금 해제';
+
+  @override
+  String get benefitTrainerLibrary => '전체 트레이너 영상 라이브러리';
+
+  @override
+  String get benefitCoachAssignments => '코치가 직접 할당한 운동';
+
+  @override
+  String get benefitMonthlySessions => '매달 새로운 트레이너 세션';
+
+  @override
+  String get continueOnSite => 'bodybridge.net에서 계속하기';
+
+  @override
+  String get notNow => '나중에';
+
+  @override
+  String get lockAdvancedMessage => '트레이너 촬영 운동은 ADVANCED에 포함됩니다';
+
+  @override
+  String get setsLabel => '세트';
+
+  @override
+  String get repsLabel => '횟수';
+
+  @override
+  String get trainerCatStrength => '근력';
+
+  @override
+  String get trainerCatMobility => '모빌리티';
+
+  @override
+  String get trainerCatCore => '코어';
+
+  @override
+  String get trainerCatCorrective => '교정';
+
+  @override
+  String get trainerCatWarmup => '웜업';
 }

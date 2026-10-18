@@ -3,6 +3,8 @@ import 'package:flutter/services.dart';
 import 'package:phosphoricons_flutter/phosphoricons_flutter.dart';
 
 import '../catalog/exercise_catalog.dart';
+import '../catalog/trainer_exercises.dart';
+import '../constants/billing.dart';
 import '../l10n/l10n.dart';
 import '../models/exercise.dart';
 import '../models/workout.dart';
@@ -19,10 +21,13 @@ import '../widgets/routine_folder.dart';
 import '../widgets/liquid_notch.dart';
 import '../widgets/set_kind.dart';
 import '../widgets/svg_icon.dart';
+import '../widgets/trainer_exercise_media.dart';
 import '../widgets/timer_panel.dart';
 import '../widgets/ui_kit.dart';
 import 'exercises_screen.dart';
 import 'plan_import_sheet.dart';
+import 'trainer/lock_overlay.dart';
+import 'trainer/source_tabs.dart';
 
 class RoutineEditScreen extends StatefulWidget {
   const RoutineEditScreen({super.key});
@@ -37,6 +42,7 @@ class _RoutineEditScreenState extends State<RoutineEditScreen> {
       TextEditingController(text: fit.activeRoutine?.name ?? '');
   final TextEditingController _search = TextEditingController();
   String _q = '';
+  String _source = 'free';
 
   @override
   void dispose() {
@@ -45,7 +51,7 @@ class _RoutineEditScreenState extends State<RoutineEditScreen> {
     super.dispose();
   }
 
-  List<Exercise> get _filtered => fit.exercisesMatching(_q);
+  List<Exercise> get _filtered => fit.exercisesMatching(_q, source: _source);
 
   void _clearSearch() {
     _search.clear();
@@ -273,6 +279,23 @@ class _RoutineEditScreenState extends State<RoutineEditScreen> {
           controller: _search,
           hint: t.addExercises,
           onChanged: (v) => setState(() => _q = v),
+        ),
+        const SizedBox(height: 10),
+        PremiumSourceTabs(
+          active: SourceTab.values.firstWhere((s) => s.name == _source, orElse: () => SourceTab.free),
+          trainerLocked: !context.can(kCapCustomExercises),
+          customLocked: !context.can(kCapCustomExercises),
+          onSelected: (tab) {
+            if (tab == SourceTab.free) {
+              setState(() => _source = 'free');
+              return;
+            }
+            if (!context.can(kCapCustomExercises)) {
+              showTrainerUpsellSheet(context);
+              return;
+            }
+            setState(() => _source = tab.name);
+          },
         ),
         const SizedBox(height: 10),
         _filterChips(gc),
@@ -669,15 +692,55 @@ class _RoutineEditScreenState extends State<RoutineEditScreen> {
           borderRadius: BorderRadius.circular(14),
         ),
         child: Row(children: [
-          SizedBox(width: 44, child: ExerciseMedia(ex: ex, height: 44, radius: 10)),
+          SizedBox(
+            width: 44,
+            child: fit.isTrainerSourced(ex.id)
+                ? TrainerExerciseMedia(ex: ex, height: 44, radius: 10)
+                : ExerciseMedia(ex: ex, height: 44, radius: 10),
+          ),
           const SizedBox(width: 12),
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(exerciseName(ex), style: AppTheme.f(14, weight: FontWeight.w600, color: gc.text)),
+                Row(
+                  children: [
+                    Expanded(
+                      child: Text(
+                        exerciseName(ex),
+                        style: AppTheme.f(14, weight: FontWeight.w600, color: gc.text),
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                    ),
+                    if (fit.isTrainerSourced(ex.id)) ...[
+                      const SizedBox(width: 5),
+                      Container(
+                        padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 2),
+                        decoration: BoxDecoration(
+                          color: gc.textTertiary.withValues(alpha: 0.16),
+                          borderRadius: BorderRadius.circular(100),
+                        ),
+                        child: Text(
+                          t.advancedBadge,
+                          style: AppTheme.f(
+                            7.5,
+                            weight: FontWeight.w800,
+                            color: gc.textSecondary,
+                            letterSpacing: 0.2,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ],
+                ),
                 const SizedBox(height: 2),
-                Text('${muscleLabel(ex.primary)} · ${t.equipment(ex.equipment)}', style: AppTheme.f(12, weight: FontWeight.w500, color: gc.textSecondary)),
+                Text(
+                  fit.isTrainerSourced(ex.id)
+                      ? '${exerciseSectionLabel(ex)} · ${t.equipment(ex.equipment)}'
+                      : '${muscleLabel(ex.primary)} · ${t.equipment(ex.equipment)}',
+                  style: AppTheme.f(12, weight: FontWeight.w500, color: gc.textSecondary),
+                ),
               ],
             ),
           ),

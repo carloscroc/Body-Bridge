@@ -312,10 +312,10 @@ void main() {
       );
     });
 
-    testWidgets('nav 4tabs dark $tag', (tester) async {
+    testWidgets('nav 5tabs dark $tag', (tester) async {
       await capture(
         tester,
-        name: 'nav-4tabs-dark-$tag',
+        name: 'nav-5tabs-dark-$tag',
         size: size,
         dark: true,
         tier: AccountTier.advanced,
@@ -323,10 +323,10 @@ void main() {
         body: const AppShell(),
       );
     });
-    testWidgets('nav 4tabs light $tag', (tester) async {
+    testWidgets('nav 5tabs light $tag', (tester) async {
       await capture(
         tester,
-        name: 'nav-4tabs-light-$tag',
+        name: 'nav-5tabs-light-$tag',
         size: size,
         dark: false,
         tier: AccountTier.advanced,
@@ -336,10 +336,10 @@ void main() {
     });
   }
 
-  testWidgets('nav 4tabs exercises dark', (tester) async {
+  testWidgets('nav 5tabs exercises dark', (tester) async {
     await capture(
       tester,
-      name: 'nav-4tabs-exercises-dark-411x823',
+      name: 'nav-5tabs-exercises-dark-411x823',
       size: const Size(411, 823),
       dark: true,
       tier: AccountTier.advanced,
@@ -350,10 +350,10 @@ void main() {
       body: const AppShell(),
     );
   });
-  testWidgets('nav 4tabs exercises light', (tester) async {
+  testWidgets('nav 5tabs exercises light', (tester) async {
     await capture(
       tester,
-      name: 'nav-4tabs-exercises-light-411x823',
+      name: 'nav-5tabs-exercises-light-411x823',
       size: const Size(411, 823),
       dark: false,
       tier: AccountTier.advanced,

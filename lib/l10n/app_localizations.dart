@@ -6823,6 +6823,114 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'See Advanced'**
   String get trainerGateCta;
+
+  /// No description provided for @sourceFree.
+  ///
+  /// In en, this message translates to:
+  /// **'Free'**
+  String get sourceFree;
+
+  /// No description provided for @sourceTrainer.
+  ///
+  /// In en, this message translates to:
+  /// **'Trainer'**
+  String get sourceTrainer;
+
+  /// No description provided for @sourceCustom.
+  ///
+  /// In en, this message translates to:
+  /// **'Custom'**
+  String get sourceCustom;
+
+  /// No description provided for @advancedBadge.
+  ///
+  /// In en, this message translates to:
+  /// **'ADVANCED'**
+  String get advancedBadge;
+
+  /// No description provided for @unlockAdvancedTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Unlock Advanced'**
+  String get unlockAdvancedTitle;
+
+  /// No description provided for @benefitTrainerLibrary.
+  ///
+  /// In en, this message translates to:
+  /// **'Full trainer video library'**
+  String get benefitTrainerLibrary;
+
+  /// No description provided for @benefitCoachAssignments.
+  ///
+  /// In en, this message translates to:
+  /// **'Exercises assigned personally by your coach'**
+  String get benefitCoachAssignments;
+
+  /// No description provided for @benefitMonthlySessions.
+  ///
+  /// In en, this message translates to:
+  /// **'New trainer sessions monthly'**
+  String get benefitMonthlySessions;
+
+  /// No description provided for @continueOnSite.
+  ///
+  /// In en, this message translates to:
+  /// **'Continue on bodybridge.net'**
+  String get continueOnSite;
+
+  /// No description provided for @notNow.
+  ///
+  /// In en, this message translates to:
+  /// **'Not now'**
+  String get notNow;
+
+  /// No description provided for @lockAdvancedMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Trainer-recorded exercises are part of Advanced'**
+  String get lockAdvancedMessage;
+
+  /// No description provided for @setsLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Sets'**
+  String get setsLabel;
+
+  /// No description provided for @repsLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Reps'**
+  String get repsLabel;
+
+  /// No description provided for @trainerCatStrength.
+  ///
+  /// In en, this message translates to:
+  /// **'Strength'**
+  String get trainerCatStrength;
+
+  /// No description provided for @trainerCatMobility.
+  ///
+  /// In en, this message translates to:
+  /// **'Mobility'**
+  String get trainerCatMobility;
+
+  /// No description provided for @trainerCatCore.
+  ///
+  /// In en, this message translates to:
+  /// **'Core'**
+  String get trainerCatCore;
+
+  /// No description provided for @trainerCatCorrective.
+  ///
+  /// In en, this message translates to:
+  /// **'Corrective'**
+  String get trainerCatCorrective;
+
+  /// No description provided for @trainerCatWarmup.
+  ///
+  /// In en, this message translates to:
+  /// **'Warm-up'**
+  String get trainerCatWarmup;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

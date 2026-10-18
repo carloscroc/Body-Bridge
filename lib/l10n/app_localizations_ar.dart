@@ -3781,4 +3781,58 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get trainerGateCta => 'اكتشف Advanced';
+
+  @override
+  String get sourceFree => 'مجاني';
+
+  @override
+  String get sourceTrainer => 'المدرب';
+
+  @override
+  String get sourceCustom => 'مخصص';
+
+  @override
+  String get advancedBadge => 'ADVANCED';
+
+  @override
+  String get unlockAdvancedTitle => 'افتح ADVANCED';
+
+  @override
+  String get benefitTrainerLibrary => 'مكتبة فيديو المدرب كاملة';
+
+  @override
+  String get benefitCoachAssignments => 'تمارين يعينها مدربك شخصياً';
+
+  @override
+  String get benefitMonthlySessions => 'جلسات مدرب جديدة كل شهر';
+
+  @override
+  String get continueOnSite => 'تابع على bodybridge.net';
+
+  @override
+  String get notNow => 'ليس الآن';
+
+  @override
+  String get lockAdvancedMessage => 'التمارين المسجلة من المدرب جزء من ADVANCED';
+
+  @override
+  String get setsLabel => 'مجموعات';
+
+  @override
+  String get repsLabel => 'عدد';
+
+  @override
+  String get trainerCatStrength => 'قوة';
+
+  @override
+  String get trainerCatMobility => 'مرونة';
+
+  @override
+  String get trainerCatCore => 'كور';
+
+  @override
+  String get trainerCatCorrective => 'تصحيحي';
+
+  @override
+  String get trainerCatWarmup => 'إحماء';
 }

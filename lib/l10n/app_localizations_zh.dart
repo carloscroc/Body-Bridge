@@ -3639,6 +3639,60 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get trainerGateCta => '了解 Advanced';
+
+  @override
+  String get sourceFree => '免费';
+
+  @override
+  String get sourceTrainer => '教练';
+
+  @override
+  String get sourceCustom => '自定义';
+
+  @override
+  String get advancedBadge => 'ADVANCED';
+
+  @override
+  String get unlockAdvancedTitle => '解锁 ADVANCED';
+
+  @override
+  String get benefitTrainerLibrary => '完整教练视频库';
+
+  @override
+  String get benefitCoachAssignments => '教练亲自布置的动作';
+
+  @override
+  String get benefitMonthlySessions => '每月更新教练课程';
+
+  @override
+  String get continueOnSite => '前往 bodybridge.net';
+
+  @override
+  String get notNow => '暂不';
+
+  @override
+  String get lockAdvancedMessage => '教练示范的动作属于 ADVANCED';
+
+  @override
+  String get setsLabel => '组';
+
+  @override
+  String get repsLabel => '次';
+
+  @override
+  String get trainerCatStrength => '力量';
+
+  @override
+  String get trainerCatMobility => '灵活性';
+
+  @override
+  String get trainerCatCore => '核心';
+
+  @override
+  String get trainerCatCorrective => '矫正';
+
+  @override
+  String get trainerCatWarmup => '热身';
 }
 
 /// The translations for Chinese, using the Han script (`zh_Hant`).
@@ -7300,4 +7354,58 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
 
   @override
   String get trainerGateCta => '了解 Advanced';
+
+  @override
+  String get sourceFree => '免費';
+
+  @override
+  String get sourceTrainer => '教練';
+
+  @override
+  String get sourceCustom => '自訂';
+
+  @override
+  String get advancedBadge => 'ADVANCED';
+
+  @override
+  String get unlockAdvancedTitle => '解鎖 ADVANCED';
+
+  @override
+  String get benefitTrainerLibrary => '完整教練影片庫';
+
+  @override
+  String get benefitCoachAssignments => '教練親自指派的動作';
+
+  @override
+  String get benefitMonthlySessions => '每月更新教練課程';
+
+  @override
+  String get continueOnSite => '前往 bodybridge.net';
+
+  @override
+  String get notNow => '暫不';
+
+  @override
+  String get lockAdvancedMessage => '教練示範的動作屬於 ADVANCED';
+
+  @override
+  String get setsLabel => '組';
+
+  @override
+  String get repsLabel => '次';
+
+  @override
+  String get trainerCatStrength => '力量';
+
+  @override
+  String get trainerCatMobility => '靈活度';
+
+  @override
+  String get trainerCatCore => '核心';
+
+  @override
+  String get trainerCatCorrective => '矯正';
+
+  @override
+  String get trainerCatWarmup => '熱身';
 }

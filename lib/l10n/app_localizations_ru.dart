@@ -3880,4 +3880,58 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get trainerGateCta => 'Подробнее об Advanced';
+
+  @override
+  String get sourceFree => 'Бесплатно';
+
+  @override
+  String get sourceTrainer => 'Тренер';
+
+  @override
+  String get sourceCustom => 'Свои';
+
+  @override
+  String get advancedBadge => 'ADVANCED';
+
+  @override
+  String get unlockAdvancedTitle => 'Откройте ADVANCED';
+
+  @override
+  String get benefitTrainerLibrary => 'Полная видеобиблиотека тренера';
+
+  @override
+  String get benefitCoachAssignments => 'Упражнения, подобранные лично вашим тренером';
+
+  @override
+  String get benefitMonthlySessions => 'Новые занятия каждый месяц';
+
+  @override
+  String get continueOnSite => 'Продолжить на bodybridge.net';
+
+  @override
+  String get notNow => 'Не сейчас';
+
+  @override
+  String get lockAdvancedMessage => 'Упражнения в записи тренера входят в ADVANCED';
+
+  @override
+  String get setsLabel => 'Подходы';
+
+  @override
+  String get repsLabel => 'Повт.';
+
+  @override
+  String get trainerCatStrength => 'Сила';
+
+  @override
+  String get trainerCatMobility => 'Мобильность';
+
+  @override
+  String get trainerCatCore => 'Кор';
+
+  @override
+  String get trainerCatCorrective => 'Коррекция';
+
+  @override
+  String get trainerCatWarmup => 'Разминка';
 }
