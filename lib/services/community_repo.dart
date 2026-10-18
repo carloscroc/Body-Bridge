@@ -1,4 +1,4 @@
-import 'package:flutter/foundation.dart' show ChangeNotifier;
+import 'package:flutter/foundation.dart' show ChangeNotifier, visibleForTesting;
 
 import 'package:gymmane/services/local_store.dart';
 
@@ -152,9 +152,18 @@ String communityInitials(String? email) {
 }
 
 /// Local community state: seeded posts, members and today's session.
-/// Every mutation stays in memory — no network, no persistence.
+/// Created posts and their likes, saves and comment threads persist through
+/// the app's Store and load back at construction — the same mechanism the
+/// settings state uses. No network.
 class CommunityRepo extends ChangeNotifier {
-  CommunityRepo._();
+  CommunityRepo._() {
+    _load();
+  }
+
+  /// Test hook: a repo the way a fresh app start builds one — seeds, then
+  /// whatever the Store holds.
+  @visibleForTesting
+  factory CommunityRepo.fresh() => CommunityRepo._();
 
   static final CommunityRepo instance = CommunityRepo._();
 
@@ -287,28 +296,24 @@ class CommunityRepo extends ChangeNotifier {
   /// Persist community posts through the app's Store (local-only, no network).
   /// Store.save replaces the whole store, so this reads the current map and
   /// updates only the 'posts' key — routines, settings and notes stay intact.
+  /// The payload keeps everything a restart needs: caption, kind, counts,
+  /// flags, the comment thread and the workout tile.
   void _persist() {
     final data = Store.instance.load();
-    data['posts'] = _posts
-        .map((p) => {
-              'id': p.id,
-              'caption': p.caption,
-              'kind': p.kind.index,
-              'likeCount': p.likeCount,
-              'commentCount': p.comments.length,
-              'hidden': p.hidden,
-              'isOwn': p.isOwn,
-              'authorName': p.authorName,
-              'authorInitials': p.authorInitials,
-              'authorLevel': p.authorLevel,
-              'authorTrainer': p.authorTrainer,
-              'minutesAgo': p.minutesAgo,
-              'media': p.media.map((m) => m.sage).toList(),
-              'shareCount': p.shareCount,
-              'slug': p.slug,
-            })
-        .toList();
+    data['posts'] = _posts.map(_postJson).toList();
     Store.instance.save(data);
+  }
+
+  /// Restore persisted posts from prefs at construction — the load half of
+  /// the settings persistence mechanism. No stored key (first run) keeps the
+  /// seeded feed; an empty stored list is an explicitly cleared feed.
+  void _load() {
+    final raw = Store.instance.load()['posts'];
+    if (raw is! List) return;
+    final posts = raw.map(_postFrom).whereType<CommunityPost>().toList();
+    _posts
+      ..clear()
+      ..addAll(posts);
   }
 
   /// Test hook: restore the seeded feed.
@@ -334,6 +339,134 @@ String communitySlug(String text) {
   final dashed = text.toLowerCase().replaceAll(RegExp(r'[^a-z0-9]+'), '-');
   final trimmed = dashed.replaceAll(RegExp(r'^-+|-+$'), '');
   return trimmed.isEmpty ? 'post' : trimmed;
+}
+
+Map<String, dynamic> _postJson(CommunityPost p) => {
+      'id': p.id,
+      'caption': p.caption,
+      'kind': p.kind.index,
+      'likeCount': p.likeCount,
+      'liked': p.liked,
+      'saved': p.saved,
+      'hidden': p.hidden,
+      'reported': p.reported,
+      'isOwn': p.isOwn,
+      'authorName': p.authorName,
+      'authorInitials': p.authorInitials,
+      'authorLevel': p.authorLevel,
+      'authorTrainer': p.authorTrainer,
+      'minutesAgo': p.minutesAgo,
+      'media': p.media.map((m) => m.sage).toList(),
+      'shareCount': p.shareCount,
+      'slug': p.slug,
+      'workout': _workoutJson(p.workout),
+      'comments': p.comments.map(_commentJson).toList(),
+    };
+
+CommunityPost? _postFrom(dynamic raw) {
+  if (raw is! Map) return null;
+  try {
+    final j = raw.cast<String, dynamic>();
+    final kindIdx = (j['kind'] as num?)?.toInt() ?? PostKind.progress.index;
+    final post = CommunityPost(
+      id: j['id'] as String? ?? '',
+      authorName: j['authorName'] as String? ?? '',
+      authorInitials: j['authorInitials'] as String? ?? '',
+      authorLevel: (j['authorLevel'] as num?)?.toInt() ?? 0,
+      authorTrainer: j['authorTrainer'] as bool? ?? false,
+      minutesAgo: (j['minutesAgo'] as num?)?.toInt() ?? 0,
+      kind: kindIdx >= 0 && kindIdx < PostKind.values.length
+          ? PostKind.values[kindIdx]
+          : PostKind.progress,
+      caption: j['caption'] as String? ?? '',
+      media: ((j['media'] as List?) ?? const [])
+          .whereType<bool>()
+          .map((sage) => MediaPlaceholder(sage: sage))
+          .toList(),
+      workout: j['workout'] is Map
+          ? _workoutFrom((j['workout'] as Map).cast<String, dynamic>())
+          : null,
+      slug: j['slug'] as String? ?? '',
+      likeCount: (j['likeCount'] as num?)?.toInt() ?? 0,
+      shareCount: (j['shareCount'] as num?)?.toInt() ?? 0,
+      isOwn: j['isOwn'] as bool? ?? false,
+      comments: ((j['comments'] as List?) ?? const [])
+          .whereType<Map>()
+          .map((c) => _commentFrom(c.cast<String, dynamic>()))
+          .toList(),
+    );
+    post
+      ..liked = j['liked'] as bool? ?? false
+      ..saved = j['saved'] as bool? ?? false
+      ..hidden = j['hidden'] as bool? ?? false
+      ..reported = j['reported'] as bool? ?? false;
+    return post;
+  } catch (_) {
+    return null;
+  }
+}
+
+Map<String, dynamic> _commentJson(CommunityComment c) => {
+      'id': c.id,
+      'authorName': c.authorName,
+      'authorInitials': c.authorInitials,
+      'authorLevel': c.authorLevel,
+      'minutesAgo': c.minutesAgo,
+      'text': c.text,
+      if (c.replyToName != null) 'replyToName': c.replyToName,
+    };
+
+CommunityComment _commentFrom(Map<String, dynamic> j) => CommunityComment(
+      id: j['id'] as String? ?? '',
+      authorName: j['authorName'] as String? ?? '',
+      authorInitials: j['authorInitials'] as String? ?? '',
+      authorLevel: (j['authorLevel'] as num?)?.toInt() ?? 0,
+      minutesAgo: (j['minutesAgo'] as num?)?.toInt() ?? 0,
+      text: j['text'] as String? ?? '',
+      replyToName: j['replyToName'] as String?,
+    );
+
+Map<String, dynamic>? _workoutJson(WorkoutSummary? w) => w == null
+    ? null
+    : {
+        'title': w.title,
+        'minutes': w.minutes,
+        'sets': w.sets,
+        'volumeKg': w.volumeKg,
+        'rows': [
+          for (final r in w.rows)
+            {
+              'name': r.name,
+              'scheme': r.scheme,
+              'weight': r.weight,
+              'pr': r.pr,
+            },
+        ],
+      };
+
+WorkoutSummary? _workoutFrom(Map<String, dynamic> j) {
+  try {
+    return WorkoutSummary(
+      title: j['title'] as String? ?? '',
+      minutes: (j['minutes'] as num?)?.toInt() ?? 0,
+      sets: (j['sets'] as num?)?.toInt() ?? 0,
+      volumeKg: (j['volumeKg'] as num?)?.toInt() ?? 0,
+      rows: ((j['rows'] as List?) ?? const [])
+          .whereType<Map>()
+          .map((r) {
+            final m = r.cast<String, dynamic>();
+            return ExerciseRow(
+              name: m['name'] as String? ?? '',
+              scheme: m['scheme'] as String? ?? '',
+              weight: m['weight'] as String? ?? '',
+              pr: m['pr'] as bool? ?? false,
+            );
+          })
+          .toList(),
+    );
+  } catch (_) {
+    return null;
+  }
 }
 
 List<CommunityPost> _seed() => [
