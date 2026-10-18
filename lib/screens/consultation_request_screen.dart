@@ -1,16 +1,20 @@
-// Consultation request form (card t_aaa15e0d) — main goal, experience level
-// and best time to talk as choice chips plus optional notes. Submit is
+// Consultation request form (card t_aaa15e0d, repair t_db30a5d3 R4) —
+// consultation-request.html mockup-verbatim: name and email arrive prefilled
+// from the account (AccountGate snapshot + profile), the goal chip set is the
+// ONLY required input, message and best-time chips stay optional. Submit is
 // duplicate-safe (consultations:request first-wins), so a double tap or
 // re-entry can never create a second record.
 
 import 'package:flutter/material.dart';
 
 import '../l10n/l10n.dart';
+import '../state/account_gate.dart';
 import '../state/fit_state.dart';
 import '../state/trainer_state.dart';
 import '../theme/app_colors.dart';
 import '../theme/app_theme.dart';
 import '../widgets/entrance.dart';
+import '../widgets/svg_icon.dart';
 import '../widgets/trainer_kit.dart';
 import '../widgets/ui_kit.dart';
 
@@ -24,7 +28,6 @@ class ConsultationRequestScreen extends StatefulWidget {
 
 class _ConsultationRequestScreenState extends State<ConsultationRequestScreen> {
   String? _goal;
-  String? _experience;
   String? _timeWindow;
   String? _error;
   bool _sending = false;
@@ -35,11 +38,10 @@ class _ConsultationRequestScreenState extends State<ConsultationRequestScreen> {
     super.initState();
     final r = trainer.consultation;
     _notes = TextEditingController(text: r?.notes ?? '');
-    if (r != null) {
-      _goal = r.goal;
-      _experience = r.experience;
-      _timeWindow = r.timeWindow;
-    }
+    // Defensive re-seed for the new chip ids; with a request on file the
+    // sheet routes to the confirmation door, so this rarely shows state.
+    const knownGoals = {'recover', 'strength', 'mobility', 'unsure'};
+    if (r != null && knownGoals.contains(r.goal)) _goal = r.goal;
   }
 
   @override
@@ -49,7 +51,7 @@ class _ConsultationRequestScreenState extends State<ConsultationRequestScreen> {
   }
 
   Future<void> _submit() async {
-    if (_goal == null || _experience == null || _timeWindow == null) {
+    if (_goal == null) {
       setState(() => _error = t.requestPickBoth);
       return;
     }
@@ -59,8 +61,8 @@ class _ConsultationRequestScreenState extends State<ConsultationRequestScreen> {
     });
     await trainer.requestConsultation(
       goal: _goal!,
-      experience: _experience!,
-      timeWindow: _timeWindow!,
+      experience: trainer.consultation?.experience ?? '',
+      timeWindow: _timeWindow ?? '',
       notes: _notes.text.trim(),
     );
     if (mounted) fit.pushRoute('consultation-confirmation');
@@ -70,6 +72,8 @@ class _ConsultationRequestScreenState extends State<ConsultationRequestScreen> {
   Widget build(BuildContext context) {
     final gc = context.gc;
     final dark = trainerIsDark(context);
+    final email = AccountGate.instance.snapshot.email;
+    final name = fit.profile.name.trim();
     return Scaffold(
       backgroundColor: Colors.transparent,
       body: SafeArea(
@@ -83,30 +87,34 @@ class _ConsultationRequestScreenState extends State<ConsultationRequestScreen> {
               onBack: () => fit.popRoute(),
             ),
             const SizedBox(height: 24),
+            _sectionLabel(context, t.requestNameKicker),
+            const SizedBox(height: 8),
+            _readonlyField(context, name.isEmpty ? '—' : name),
+            const SizedBox(height: 18),
+            _sectionLabel(context, t.requestEmailKicker),
+            const SizedBox(height: 8),
+            _readonlyField(context, (email == null || email.isEmpty) ? '—' : email),
+            const SizedBox(height: 6),
+            Row(
+              children: [
+                SvgPathIcon(Ic.checkBold, size: 10, color: gc.sage),
+                const SizedBox(width: 5),
+                Text(
+                  t.requestVerified,
+                  style:
+                      AppTheme.f(10, weight: FontWeight.w700, color: gc.textTertiary),
+                ),
+              ],
+            ),
+            const SizedBox(height: 22),
             _sectionLabel(context, t.requestGoalKicker),
             const SizedBox(height: 10),
             _chips(context, [
+              ('recover', t.goalRecover),
               ('strength', t.goalStrength),
-              ('fat_loss', t.goalFatLoss),
               ('mobility', t.goalMobility),
-              ('consistency', t.goalConsistency),
+              ('unsure', t.goalUnsure),
             ], _goal, (v) => _goal = v),
-            const SizedBox(height: 22),
-            _sectionLabel(context, t.requestExpKicker),
-            const SizedBox(height: 10),
-            _chips(context, [
-              ('new', t.expNew),
-              ('returning', t.expReturning),
-              ('seasoned', t.expSeasoned),
-            ], _experience, (v) => _experience = v),
-            const SizedBox(height: 22),
-            _sectionLabel(context, t.requestTimeKicker),
-            const SizedBox(height: 10),
-            _chips(context, [
-              ('morning', t.timeMorning),
-              ('afternoon', t.timeAfternoon),
-              ('evening', t.timeEvening),
-            ], _timeWindow, (v) => _timeWindow = v),
             const SizedBox(height: 22),
             _sectionLabel(context, t.requestNotesKicker),
             const SizedBox(height: 10),
@@ -138,6 +146,14 @@ class _ConsultationRequestScreenState extends State<ConsultationRequestScreen> {
                 ),
               ),
             ),
+            const SizedBox(height: 22),
+            _sectionLabel(context, t.requestTimeKicker),
+            const SizedBox(height: 10),
+            _chips(context, [
+              ('wk_morning', t.timeWeekdayMornings),
+              ('wk_evening', t.timeWeekdayEvenings),
+              ('weekend', t.timeWeekends),
+            ], _timeWindow, (v) => _timeWindow = v),
             if (_error != null) ...[
               const SizedBox(height: 12),
               Text(
@@ -155,6 +171,26 @@ class _ConsultationRequestScreenState extends State<ConsultationRequestScreen> {
             ),
           ]),
         ),
+      ),
+    );
+  }
+
+  Widget _readonlyField(BuildContext context, String value) {
+    final gc = context.gc;
+    return Container(
+      height: 46,
+      padding: const EdgeInsets.symmetric(horizontal: 14),
+      alignment: Alignment.centerLeft,
+      decoration: BoxDecoration(
+        color: gc.bgRaised,
+        borderRadius: BorderRadius.circular(14),
+        border: Border.all(color: gc.border),
+      ),
+      child: Text(
+        value,
+        maxLines: 1,
+        overflow: TextOverflow.ellipsis,
+        style: AppTheme.f(14, weight: FontWeight.w600, color: gc.text),
       ),
     );
   }
