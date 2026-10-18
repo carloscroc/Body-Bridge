@@ -9,7 +9,11 @@ import '../l10n/l10n.dart';
 import '../screens/account_screen.dart';
 import '../screens/about_screen.dart';
 import '../screens/ai_plan_screen.dart';
+import '../screens/coaching_intro_screen.dart';
+import '../screens/coaching_welcome_screen.dart';
 import '../screens/compare_screen.dart';
+import '../screens/consultation_confirmation_screen.dart';
+import '../screens/consultation_request_screen.dart';
 import '../screens/exercise_detail_screen.dart';
 import '../screens/exercises_screen.dart';
 import '../screens/home_screen.dart';
@@ -72,6 +76,10 @@ class _AppShellState extends State<AppShell> with WidgetsBindingObserver {
     'tools',
     'tools-detail',
     'trainer',
+    'coaching-intro',
+    'consultation-request',
+    'consultation-confirmation',
+    'coaching-welcome',
   };
 
   static const _firstAwardWait = Duration(milliseconds: 4000);
@@ -363,6 +371,14 @@ class _AppShellState extends State<AppShell> with WidgetsBindingObserver {
         return TrainerWorkoutDetailScreen(key: ValueKey(trainer.openAssignmentId));
       case 'trainer-chat':
         return TrainerChatScreen();
+      case 'coaching-intro':
+        return CoachingIntroScreen();
+      case 'consultation-request':
+        return ConsultationRequestScreen();
+      case 'consultation-confirmation':
+        return ConsultationConfirmationScreen();
+      case 'coaching-welcome':
+        return CoachingWelcomeScreen();
       case 'exercise-detail':
         return ExerciseDetailScreen();
       case 'tools':

@@ -15,6 +15,7 @@ import '../state/fit_state.dart';
 import '../state/trainer_state.dart';
 import '../theme/app_colors.dart';
 import '../theme/app_theme.dart';
+import '../widgets/consultation_sheet.dart';
 import '../widgets/premium_gate.dart';
 import '../widgets/svg_icon.dart';
 import '../widgets/trainer_gate_sheet.dart';
@@ -99,6 +100,8 @@ class _TrainerHomeScreenState extends State<TrainerHomeScreen> {
                 const SizedBox(height: 16),
                 _introCard(context, gc, profile, unread, unlocked),
                 if (unlocked) ...[
+                  const SizedBox(height: 12),
+                  _consultCard(context, gc),
                   const SizedBox(height: 26),
                   Kicker(t.assignedWorkouts, color: gc.textTertiary, size: 10.5),
                   const SizedBox(height: 12),
@@ -198,6 +201,54 @@ class _TrainerHomeScreenState extends State<TrainerHomeScreen> {
             ),
           ),
         ],
+      ),
+    );
+  }
+
+  /// Consultation funnel entry (card t_aaa15e0d) — opens the two-door sheet;
+  /// the one-liner flips to the done state once a request is on file.
+  Widget _consultCard(BuildContext context, GymColors gc) {
+    return Pressable(
+      onTap: () => showConsultationSheet(context),
+      child: SoftCard(
+        radius: 18,
+        padding: const EdgeInsets.fromLTRB(16, 14, 16, 16),
+        child: Row(
+          children: [
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    t.consultCardKicker,
+                    style: AppTheme.f(9.5,
+                        weight: FontWeight.w800,
+                        color: gc.textTertiary,
+                        letterSpacing: 1.6),
+                  ),
+                  const SizedBox(height: 8),
+                  Text(
+                    t.consultCardTitle,
+                    style: AppTheme.f(14.5, weight: FontWeight.w800, color: gc.text),
+                  ),
+                  const SizedBox(height: 4),
+                  AnimatedBuilder(
+                    animation: trainer,
+                    builder: (context, _) => Text(
+                      trainer.consultation != null
+                          ? t.consultCardSubDone
+                          : t.consultCardSub,
+                      style: AppTheme.f(
+                          11.5, weight: FontWeight.w500, color: gc.textSecondary),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(width: 10),
+            SvgPathIcon(Ic.chevronRight, size: 16, color: gc.textTertiary),
+          ],
+        ),
       ),
     );
   }

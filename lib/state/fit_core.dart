@@ -119,6 +119,8 @@ abstract class FitCore extends ChangeNotifier {
 
   void backFromPaywall() => popRoute();
 
+  void goTrainer() => _setRoute('trainer', reset: true);
+
   void _setRoute(String r, {bool reset = false}) {
     if (reset) _routeStack.clear();
     route = r;

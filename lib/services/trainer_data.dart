@@ -320,7 +320,7 @@ class LocalTrainerRepository implements TrainerRepository {
     unawaited(
       SharedPreferences.getInstance().then<void>(
         (p) => p.remove(_consultPrefsKey),
-        onError: (Object _, StackTrace __) {},
+        onError: (Object _, StackTrace _) {},
       ),
     );
   }
