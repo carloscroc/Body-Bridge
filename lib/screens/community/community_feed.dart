@@ -6,6 +6,7 @@ import '../../services/community_repo.dart';
 import '../../state/account_gate.dart';
 import '../../theme/app_colors.dart';
 import '../../theme/app_theme.dart';
+import '../../widgets/liquid_notch.dart';
 import '../../widgets/ui_kit.dart';
 import 'community_composer.dart';
 import 'community_gate.dart';
@@ -561,9 +562,12 @@ class _CommunityFeedScreenState extends State<CommunityFeedScreen> {
                     ),
                     RoundAction(
                       onTap: () {
-                        ScaffoldMessenger.of(context)
-                          ..hideCurrentSnackBar()
-                          ..showSnackBar(SnackBar(content: Text(t.inboxComingSoon)));
+                        showNotchToast(
+                          context,
+                          t.inboxComingSoon,
+                          icon: PhosphorIconsRegular.chatCircle,
+                          accent: context.gc.sage,
+                        );
                       },
                       child: Stack(
                         clipBehavior: Clip.none,
