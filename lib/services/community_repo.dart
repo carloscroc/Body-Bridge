@@ -299,16 +299,16 @@ class CommunityRepo extends ChangeNotifier {
   /// The payload keeps everything a restart needs: caption, kind, counts,
   /// flags, the comment thread and the workout tile.
   void _persist() {
-    final data = Store.instance.load();
-    data['posts'] = _posts.map(_postJson).toList();
-    Store.instance.save(data);
+    Store.instance.saveJson('community_v1', {'posts': _posts.map(_postJson).toList()});
   }
 
   /// Restore persisted posts from prefs at construction — the load half of
   /// the settings persistence mechanism. No stored key (first run) keeps the
   /// seeded feed; an empty stored list is an explicitly cleared feed.
   void _load() {
-    final raw = Store.instance.load()['posts'];
+    final loaded = Store.instance.loadJson('community_v1');
+    if (loaded == null) return;
+    final raw = loaded['posts'];
     if (raw is! List) return;
     final posts = raw.map(_postFrom).whereType<CommunityPost>().toList();
     _posts

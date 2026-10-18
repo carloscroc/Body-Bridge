@@ -76,4 +76,59 @@ void main() {
       containsAll(['wk8-pullup', 'push-day-a', 'hip-hinge-pair']),
     );
   });
+
+  test('clobber simulation: community data survives stale full-store writer', () {
+    final repo = CommunityRepo();
+
+    // 1. Capture stale store state BEFORE any mutations.
+    final staleStoreState = Store.instance.load();
+
+    // 2. Create a post and mutate a seed post.
+    final newPost = repo.createPost(
+      kind: PostKind.progress,
+      caption: 'Test post for clobber simulation',
+      authorName: 'Test User',
+      authorInitials: 'TU',
+    );
+    repo.toggleLike(newPost.id);
+    repo.addComment(
+      newPost.id,
+      authorName: 'Test User',
+      authorInitials: 'TU',
+      authorLevel: 1,
+      text: 'Test comment',
+    );
+    repo.toggleLike('wk8-pullup');
+    repo.addComment(
+      'wk8-pullup',
+      authorName: 'Test User',
+      authorInitials: 'TU',
+      authorLevel: 1,
+      text: 'Test comment on seed',
+    );
+
+    // 3. Simulate stale writer saving old map (shared-store clobber).
+    Store.instance.save(staleStoreState);
+
+    // 4. Fresh reload reads only the dedicated community_v1 key.
+    final fresh = CommunityRepo.fresh();
+
+    // 5. Assert mutations SURVIVE despite stale shared-store writer.
+    final restoredNewPost = fresh.postById(newPost.id);
+    expect(restoredNewPost, isNotNull, reason: 'created post must survive clobber');
+    expect(restoredNewPost!.liked, isTrue, reason: 'like must survive');
+    expect(restoredNewPost.likeCount, 1);
+    expect(restoredNewPost.comments.length, 1);
+    expect(restoredNewPost.comments.first.text, 'Test comment');
+
+    final restoredSeedPost = fresh.postById('wk8-pullup');
+    expect(restoredSeedPost, isNotNull, reason: 'seed post must exist');
+    expect(restoredSeedPost.liked, isTrue, reason: 'seed like must survive');
+    expect(restoredSeedPost.likeCount, 25); // 24 + 1
+    expect(restoredSeedPost.comments.length, 4); // 3 + 1
+    expect(
+      restoredSeedPost.comments.map((c) => c.text),
+      contains('Test comment on seed'),
+    );
+  });
 }
