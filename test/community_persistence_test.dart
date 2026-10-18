@@ -123,7 +123,7 @@ void main() {
 
     final restoredSeedPost = fresh.postById('wk8-pullup');
     expect(restoredSeedPost, isNotNull, reason: 'seed post must exist');
-    expect(restoredSeedPost.liked, isTrue, reason: 'seed like must survive');
+    expect(restoredSeedPost!.liked, isTrue, reason: 'seed like must survive');
     expect(restoredSeedPost.likeCount, 25); // 24 + 1
     expect(restoredSeedPost.comments.length, 4); // 3 + 1
     expect(
