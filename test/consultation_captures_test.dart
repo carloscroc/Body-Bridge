@@ -1,4 +1,5 @@
-// Capture harness for the coaching funnel surfaces (card t_aaa15e0d).
+// Capture harness for the coaching funnel surfaces (card t_aaa15e0d,
+// repair t_db30a5d3 R8 — full acceptance matrix).
 //
 // Env-gated: runs ONLY with --dart-define=BB_CAPTURE=true and a capture dir
 // (early return keeps the normal `flutter test` run unaffected — the
@@ -8,15 +9,18 @@
 //     --dart-define=BB_CAPTURE=true \
 //     --dart-define=BB_CAPTURE_DIR=C:/path/to/captures
 //
+// Matrix: 5 surfaces (sheet, intro, request, confirmation, welcome)
+// x dark/light x {360x800, 411x800} = 20 PNGs. 411dp is the QA device
+// (RFCN201Q6BZ) logical width — content wider than 411dp overflows there.
+//
 // Font rule (lesson from t_dbd7d0d1 F6): real TTFs must be registered — the
 // app Nunito faces AND Phosphor, each under BOTH the bare family name and
 // the `packages/phosphoricons_flutter/<Family>` name — otherwise glyphs
 // render as tofu and text overflows ~2x under the default Ahem font.
 //
 // One capture per testWidgets: re-pumping a second MaterialApp inside a
-// single test hung on this host (Windows), so every surface×theme is its
-// own test that pumps exactly once. All surfaces at 360×800 per the card
-// acceptance matrix.
+// single test hung on this host (Windows), so every surface×theme×size is
+// its own test that pumps exactly once.
 
 import 'dart:io';
 import 'dart:ui' as dart_ui show Image;
@@ -36,6 +40,7 @@ import 'package:gymmane/state/account_gate.dart';
 import 'package:gymmane/state/fit_state.dart';
 import 'package:gymmane/state/trainer_state.dart';
 import 'package:gymmane/theme/app_theme.dart';
+import 'package:gymmane/widgets/consultation_sheet.dart';
 import 'package:gymmane/widgets/premium_gate.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -124,6 +129,7 @@ void main() {
     WidgetTester tester, {
     required String name,
     required bool dark,
+    required Size size,
     void Function()? setup,
     required Widget body,
   }) async {
@@ -137,7 +143,7 @@ void main() {
     setup?.call();
     tester.view.devicePixelRatio = 1.0;
     tester.view.platformDispatcher.textScaleFactorTestValue = 1.0;
-    tester.view.physicalSize = const Size(360, 800);
+    tester.view.physicalSize = size;
 
     await tester.pumpWidget(
       MaterialApp(
@@ -173,8 +179,8 @@ void main() {
   // the summary rows exercise all label mappings, notes non-empty.
   const onFile = TrainerConsultationRequest(
     goal: 'strength',
-    experience: 'returning',
-    timeWindow: 'morning',
+    experience: '',
+    timeWindow: 'wk_morning',
     notes: 'Knees complain on deep squats.',
     createdAt: 1760000000000,
   );
@@ -182,42 +188,59 @@ void main() {
   for (final dark in [true, false]) {
     final theme = dark ? 'dark' : 'light';
 
-    testWidgets('consult intro $theme', (tester) async {
-      await capture(
-        tester,
-        name: 'consult-intro-$theme-360x800',
-        dark: dark,
-        body: const CoachingIntroScreen(),
-      );
-    });
+    for (final size in const [Size(360, 800), Size(411, 800)]) {
+      final dim = '${size.width.toInt()}x${size.height.toInt()}';
 
-    testWidgets('consult request $theme', (tester) async {
-      await capture(
-        tester,
-        name: 'consult-request-$theme-360x800',
-        dark: dark,
-        body: const ConsultationRequestScreen(),
-      );
-    });
+      testWidgets('consult sheet $theme $dim', (tester) async {
+        await capture(
+          tester,
+          name: 'consult-sheet-$theme-$dim',
+          dark: dark,
+          size: size,
+          body: const ConsultationSheet(),
+        );
+      });
 
-    testWidgets('consult confirmation $theme', (tester) async {
-      await capture(
-        tester,
-        name: 'consult-confirmation-$theme-360x800',
-        dark: dark,
-        setup: () => trainer.consultation = onFile,
-        body: const ConsultationConfirmationScreen(),
-      );
-    });
+      testWidgets('consult intro $theme $dim', (tester) async {
+        await capture(
+          tester,
+          name: 'consult-intro-$theme-$dim',
+          dark: dark,
+          size: size,
+          body: const CoachingIntroScreen(),
+        );
+      });
 
-    testWidgets('consult welcome $theme', (tester) async {
-      await capture(
-        tester,
-        name: 'consult-welcome-$theme-360x800',
-        dark: dark,
-        setup: () => trainer.consultation = onFile,
-        body: const CoachingWelcomeScreen(),
-      );
-    });
+      testWidgets('consult request $theme $dim', (tester) async {
+        await capture(
+          tester,
+          name: 'consult-request-$theme-$dim',
+          dark: dark,
+          size: size,
+          body: const ConsultationRequestScreen(),
+        );
+      });
+
+      testWidgets('consult confirmation $theme $dim', (tester) async {
+        await capture(
+          tester,
+          name: 'consult-confirmation-$theme-$dim',
+          dark: dark,
+          size: size,
+          setup: () => trainer.consultation = onFile,
+          body: const ConsultationConfirmationScreen(),
+        );
+      });
+
+      testWidgets('consult welcome $theme $dim', (tester) async {
+        await capture(
+          tester,
+          name: 'consult-welcome-$theme-$dim',
+          dark: dark,
+          size: size,
+          body: const CoachingWelcomeScreen(),
+        );
+      });
+    }
   }
 }
