@@ -1176,5 +1176,17 @@
   "notifications": "Notifications",
   "@talkToTrainer": { "description": "Trainer entry rework (card t_fcd4945b)" },
   "@talkToTrainerSub": { "description": "Trainer entry rework (card t_fcd4945b)" },
-  "@notifications": { "description": "Trainer entry rework (card t_fcd4945b)" }
-}
+  "@notifications": { "description": "Trainer feature (card t_fcd4945b)" },
+
+    "consultation_request_title": "Consultation request",
+    "consultation_request_subtitle": "Short by design",
+    "consultation_request_intro": "Five fields, most of them prefilled from the verified account. The only required input is picking a goal.",
+    "consultation_confirmation_title": "Consultation request received",
+    "consultation_confirmation_body": "A coach reads this before following up — it doesn't subscribe you to anything.",
+    "coaching_welcome_title": "Welcome to Personal Coaching",
+    "coaching_welcome_subtitle": "Your personal trainer will reach out within 24–48 hours. Only present this if the coaching team can reliably meet it.",
+    "coaching_welcome_placeholder": "Pending assignment",
+    "coaching_welcome_note": "No fabricated trainer, avatar or chat history.",
+    "consultation_confirmation_status": "Consultation request received",
+    "consultation_confirmation_description": "A coach reads this before following up — nothing is booked or billed until you choose a plan."
+  }

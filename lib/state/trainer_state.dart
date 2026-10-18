@@ -43,6 +43,9 @@ class TrainerState extends ChangeNotifier {
   List<TrainerChatThread> threads = [];
   int unreadTotal = 0;
 
+  /// The caller's consultation request — null until filed (client coaching
+  /// funnel, t_aaa15e0d). Mirrors the repo record for UI reactivity.
+  TrainerConsultationRequest? consultation;
   // Open selections for the parameterized sub-routes (app_shell reads these).
   String? openAssignmentId;
   String? openThreadId;
@@ -73,11 +76,13 @@ class TrainerState extends ChangeNotifier {
         repo.chatListThreads(),
         repo.chatListUnreadCountsTotal(),
         _loadSeen(),
+        repo.consultationGetMine(),
       ]);
       profile = results[0] as TrainerProfile;
       assignments = results[1] as List<TrainerAssignment>;
       threads = results[2] as List<TrainerChatThread>;
       unreadTotal = results[3] as int;
+      consultation = results[5] as TrainerConsultationRequest?;
       loaded = true;
       notifyListeners();
     } finally {
@@ -204,6 +209,26 @@ class TrainerState extends ChangeNotifier {
     notifyListeners();
   }
 
+  /// consultations:request + local refresh. The repository is duplicate-safe
+  /// (first request wins and is returned unchanged), so a double tap or
+  /// re-entry can never create a second record.
+  Future<TrainerConsultationRequest> requestConsultation({
+    required String goal,
+    required String experience,
+    required String timeWindow,
+    String notes = '',
+  }) async {
+    final r = await repo.consultationRequest(
+      goal: goal,
+      experience: experience,
+      timeWindow: timeWindow,
+      notes: notes,
+    );
+    consultation = r;
+    notifyListeners();
+    return r;
+  }
+
   /// Test/diagnostic reset.
   ///
   /// Restores the full instance state (not just the seen-sets) so the test
@@ -219,6 +244,7 @@ class TrainerState extends ChangeNotifier {
     assignments = [];
     threads = [];
     unreadTotal = 0;
+    consultation = null;
     openAssignmentId = null;
     openThreadId = null;
     openedThreads.clear();
