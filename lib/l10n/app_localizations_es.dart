@@ -3323,10 +3323,10 @@ class AppLocalizationsEs extends AppLocalizations {
   String get notifications => 'Notificaciones';
 
   @override
-  String get consultCardKicker => 'CONSULTA 1:1';
+  String get consultCardKicker => 'COACHING PERSONAL';
 
   @override
-  String get consultCardTitle => 'Reserva una consulta';
+  String get consultCardTitle => 'Solicita una consulta';
 
   @override
   String get consultCardSub => 'Un 1:1 corto para marcar tu rumbo';
@@ -3335,10 +3335,11 @@ class AppLocalizationsEs extends AppLocalizations {
   String get consultCardSubDone => 'Tu solicitud está enviada — verla';
 
   @override
-  String get consultSheetTitle => 'Empieza con una consulta';
+  String get consultSheetTitle => 'Entrena uno a uno con un coach';
 
   @override
-  String get consultSheetBody => 'Dos puertas, un objetivo: un plan construido alrededor de tu cuerpo.';
+  String get consultSheetBody =>
+      'Un entrenador certificado diseña tu programación y te acompaña en todo momento.';
 
   @override
   String get consultDoorHow => 'Cómo funciona';
@@ -3384,7 +3385,7 @@ class AppLocalizationsEs extends AppLocalizations {
   String get requestTitle => 'Solicitar una consulta';
 
   @override
-  String get requestSub => 'Unas respuestas rápidas para que el 1:1 empiece con buen pie.';
+  String get requestSub => 'Un coach lo lee antes de contactarte — no te suscribe a nada.';
 
   @override
   String get requestGoalKicker => 'OBJETIVO PRINCIPAL';
@@ -3396,7 +3397,7 @@ class AppLocalizationsEs extends AppLocalizations {
   String get goalFatLoss => 'Perder grasa';
 
   @override
-  String get goalMobility => 'Moverte mejor';
+  String get goalMobility => 'Mejorar la movilidad';
 
   @override
   String get goalConsistency => 'Mantener la constancia';
@@ -3414,7 +3415,7 @@ class AppLocalizationsEs extends AppLocalizations {
   String get expSeasoned => 'Años entrenando';
 
   @override
-  String get requestTimeKicker => 'MEJOR MOMENTO PARA HABLAR';
+  String get requestTimeKicker => 'MEJOR MOMENTO PARA CONTACTARTE · OPCIONAL';
 
   @override
   String get timeMorning => 'Mañana';
@@ -3426,7 +3427,7 @@ class AppLocalizationsEs extends AppLocalizations {
   String get timeEvening => 'Noche';
 
   @override
-  String get requestNotesKicker => '¿ALGO MÁS? OPCIONAL';
+  String get requestNotesKicker => 'MENSAJE · OPCIONAL';
 
   @override
   String get requestNotesHint => 'Lesiones, horario, equipo…';
@@ -3435,26 +3436,26 @@ class AppLocalizationsEs extends AppLocalizations {
   String get requestSubmit => 'Enviar solicitud';
 
   @override
-  String get requestPickBoth => 'Elige primero un objetivo y tu experiencia';
+  String get requestPickBoth => 'Elige primero un objetivo';
 
   @override
   String get sentChip => 'ENVIADA';
 
   @override
-  String get sentTitle => 'Tu solicitud está enviada';
+  String get sentTitle => 'Solicitud de consulta recibida';
 
   @override
   String get sentBody =>
-      'Tu solicitud está con tu entrenador. Se queda como la enviaste — lo demás, en el chat.';
+      'Alguien de nuestro equipo de coaching te contactará para hablar de tus objetivos y de las opciones de coaching disponibles.';
 
   @override
-  String get sentSummaryKicker => 'TU SOLICITUD';
+  String get sentSummaryKicker => 'ESTADO DE LA SOLICITUD';
 
   @override
-  String get sentContinue => 'Continuar';
+  String get sentContinue => 'Volver a Ejercicios';
 
   @override
-  String get welcomeTitle => 'Todo listo';
+  String get welcomeTitle => 'Bienvenido al coaching personal';
 
   @override
   String get welcomeFlag => 'Tu entrenador responde en 24–48 horas';
@@ -3470,4 +3471,98 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get welcomeDone => 'Volver a Mi entrenador';
+
+  @override
+  String get consultPrimary => 'Solicitar consulta';
+
+  @override
+  String get exploreCoachingPlans => 'Explorar planes de coaching';
+
+  @override
+  String get consultBenefit1 => 'Entrenamientos personalizados según tu historial';
+
+  @override
+  String get consultBenefit2 => 'Escríbele a tu entrenador entre sesiones';
+
+  @override
+  String get consultBenefit3 => 'Video y claves de técnica en cada ejercicio';
+
+  @override
+  String get consultFootnote =>
+      'Un coach te contactará para hablar de tus objetivos — no se reserva ni se cobra nada hasta que elijas un plan.';
+
+  @override
+  String get goalRecover => 'Recuperarme de una lesión';
+
+  @override
+  String get goalUnsure => 'Aún no lo sé';
+
+  @override
+  String get timeWeekdayMornings => 'Entre semana por la mañana';
+
+  @override
+  String get timeWeekdayEvenings => 'Entre semana por la tarde';
+
+  @override
+  String get timeWeekends => 'Los fines de semana';
+
+  @override
+  String get requestNameKicker => 'NOMBRE · DE TU CUENTA';
+
+  @override
+  String get requestEmailKicker => 'EMAIL · DE TU CUENTA';
+
+  @override
+  String get requestVerified => 'Verificado en tu cuenta';
+
+  @override
+  String get srcLocked => 'BLOQUEADO';
+
+  @override
+  String get sentRequestedLabel => 'Solicitado';
+
+  @override
+  String get sentContactLabel => 'Contacto';
+
+  @override
+  String get sentGoalLabel => 'Objetivo';
+
+  @override
+  String get sentNote =>
+      'Puedes seguir entrenando como siempre — nada cambia en la app hasta que decidas suscribirte.';
+
+  @override
+  String get welcomeBody =>
+      'Tu suscripción está activa. Tu entrenador personal te contactará en 24–48 horas.';
+
+  @override
+  String get welcomeStepsLabel => 'QUÉ PASA AHORA';
+
+  @override
+  String get welcomeStep1T => 'Suscripción activa';
+
+  @override
+  String get welcomeStep1S => 'Advanced está activo en esta cuenta';
+
+  @override
+  String get welcomeStep2T => 'Asignación de entrenador en curso';
+
+  @override
+  String get welcomeStep2S => 'Estamos buscándote el coach adecuado';
+
+  @override
+  String get welcomeStep3T => 'Primer contacto en 24–48 horas';
+
+  @override
+  String get welcomeStep3S => 'Tu entrenador te saluda aquí mismo en el chat';
+
+  @override
+  String get welcomePendingT => 'Tu entrenador aparecerá aquí';
+
+  @override
+  String get welcomePendingS => 'Cuando te asignen uno, su perfil y chat se abren desde esta pantalla.';
+
+  @override
+  String get welcomeFootnote =>
+      'Mientras tanto, la biblioteca del entrenador está abierta — échale un vistazo.';
 }

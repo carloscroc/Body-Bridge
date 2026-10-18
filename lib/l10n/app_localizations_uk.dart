@@ -3328,10 +3328,10 @@ class AppLocalizationsUk extends AppLocalizations {
   String get notifications => 'Сповіщення';
 
   @override
-  String get consultCardKicker => 'КОНСУЛЬТАЦІЯ 1:1';
+  String get consultCardKicker => 'ПЕРСОНАЛЬНИЙ КОУЧИНГ';
 
   @override
-  String get consultCardTitle => 'Записатися на консультацію';
+  String get consultCardTitle => 'Запросити консультацію';
 
   @override
   String get consultCardSub => 'Коротке 1:1, щоб окреслити напрямок';
@@ -3340,10 +3340,10 @@ class AppLocalizationsUk extends AppLocalizations {
   String get consultCardSubDone => 'Запит надіслано — переглянути';
 
   @override
-  String get consultSheetTitle => 'Почніть із консультації';
+  String get consultSheetTitle => 'Займайтеся один на один із коучем';
 
   @override
-  String get consultSheetBody => 'Дві двері, одна ціль: план, побудований навколо твого тіла.';
+  String get consultSheetBody => 'Сертифікований тренер складе вашу програму та буде поруч.';
 
   @override
   String get consultDoorHow => 'Як це працює';
@@ -3389,10 +3389,10 @@ class AppLocalizationsUk extends AppLocalizations {
   String get requestTitle => 'Запросити консультацію';
 
   @override
-  String get requestSub => 'Кілька швидких відповідей, щоб 1:1 почалося легко.';
+  String get requestSub => 'Коуч прочитає це, перш ніж зв\'язатися — нічого не підписує.';
 
   @override
-  String get requestGoalKicker => 'ГОЛОВНА ЦІЛЬ';
+  String get requestGoalKicker => 'ОСНОВНА МЕТА';
 
   @override
   String get goalStrength => 'Набрати силу';
@@ -3401,7 +3401,7 @@ class AppLocalizationsUk extends AppLocalizations {
   String get goalFatLoss => 'Прибрати жир';
 
   @override
-  String get goalMobility => 'Краще рухатися';
+  String get goalMobility => 'Покращити рухливість';
 
   @override
   String get goalConsistency => 'Тримати ритм';
@@ -3419,7 +3419,7 @@ class AppLocalizationsUk extends AppLocalizations {
   String get expSeasoned => 'Роки тренувань';
 
   @override
-  String get requestTimeKicker => 'ЗРУЧНИЙ ЧАС ДЛЯ РОЗМОВИ';
+  String get requestTimeKicker => 'ЗРУЧНИЙ ЧАС ДЛЯ ЗВ\'ЯЗКУ · ЗА БАЖАННЯМ';
 
   @override
   String get timeMorning => 'Ранок';
@@ -3431,7 +3431,7 @@ class AppLocalizationsUk extends AppLocalizations {
   String get timeEvening => 'Вечір';
 
   @override
-  String get requestNotesKicker => 'ЩОСЬ ІЩЕ? НЕОБОВ\'ЯЗКОВО';
+  String get requestNotesKicker => 'ПОВІДОМЛЕННЯ · ЗА БАЖАННЯМ';
 
   @override
   String get requestNotesHint => 'Травми, розклад, інвентар…';
@@ -3440,25 +3440,26 @@ class AppLocalizationsUk extends AppLocalizations {
   String get requestSubmit => 'Надіслати запит';
 
   @override
-  String get requestPickBoth => 'Спочатку оберіть ціль і досвід';
+  String get requestPickBoth => 'Спочатку виберіть мету';
 
   @override
   String get sentChip => 'НАДІСЛАНО';
 
   @override
-  String get sentTitle => 'Запит прийнято';
+  String get sentTitle => 'Запит на консультацію отримано';
 
   @override
-  String get sentBody => 'Запит у тренера. Він залишається як є — решта в чаті.';
+  String get sentBody =>
+      'Учасник нашої коучингової команди зв\'яжеться з вами, щоб обговорити ваші цілі та доступні варіанти коучингу.';
 
   @override
-  String get sentSummaryKicker => 'ТВІЙ ЗАПИТ';
+  String get sentSummaryKicker => 'СТАТУС ЗАПИТУ';
 
   @override
-  String get sentContinue => 'Далі';
+  String get sentContinue => 'Повернутися до вправ';
 
   @override
-  String get welcomeTitle => 'Усе готово';
+  String get welcomeTitle => 'Ласкаво просимо до персонального коучингу';
 
   @override
   String get welcomeFlag => 'Тренер відповість протягом 24–48 годин';
@@ -3474,4 +3475,97 @@ class AppLocalizationsUk extends AppLocalizations {
 
   @override
   String get welcomeDone => 'Повернутися до Мого тренера';
+
+  @override
+  String get consultPrimary => 'Запросити консультацію';
+
+  @override
+  String get exploreCoachingPlans => 'Переглянути плани коучингу';
+
+  @override
+  String get consultBenefit1 => 'Індивідуальні тренування з урахуванням вашої історії';
+
+  @override
+  String get consultBenefit2 => 'Пишіть тренеру між заняттями';
+
+  @override
+  String get consultBenefit3 => 'Відео та підказки щодо техніки до кожної вправи';
+
+  @override
+  String get consultFootnote =>
+      'Коуч зв\'яжеться з вами, щоб обговорити ваші цілі — нічого не бронюється і не списується, доки ви не оберете план.';
+
+  @override
+  String get goalRecover => 'Відновитися після травми';
+
+  @override
+  String get goalUnsure => 'Ще не знаю';
+
+  @override
+  String get timeWeekdayMornings => 'У будні вранці';
+
+  @override
+  String get timeWeekdayEvenings => 'У будні ввечері';
+
+  @override
+  String get timeWeekends => 'У вихідні';
+
+  @override
+  String get requestNameKicker => 'ІМ\'Я · З ВАШОГО АККАУНТА';
+
+  @override
+  String get requestEmailKicker => 'EMAIL · З ВАШОГО АККАУНТА';
+
+  @override
+  String get requestVerified => 'Підтверджено у вашому акаунті';
+
+  @override
+  String get srcLocked => 'ЗАКРИТО';
+
+  @override
+  String get sentRequestedLabel => 'Надіслано';
+
+  @override
+  String get sentContactLabel => 'Контакт';
+
+  @override
+  String get sentGoalLabel => 'Мета';
+
+  @override
+  String get sentNote =>
+      'Ви можете тренуватися як зазвичай — у застосунку нічого не зміниться, доки ви не вирішите оформити підписку.';
+
+  @override
+  String get welcomeBody =>
+      'Ваша підписка активна. Ваш персональний тренер зв\'яжеться протягом 24–48 годин.';
+
+  @override
+  String get welcomeStepsLabel => 'ЩО ДАЛІ';
+
+  @override
+  String get welcomeStep1T => 'Підписка активна';
+
+  @override
+  String get welcomeStep1S => 'Advanced активний на цьому акаунті';
+
+  @override
+  String get welcomeStep2T => 'Призначення тренера триває';
+
+  @override
+  String get welcomeStep2S => 'Ми підбираємо для вас відповідного коуча';
+
+  @override
+  String get welcomeStep3T => 'Перше повідомлення протягом 24–48 годин';
+
+  @override
+  String get welcomeStep3S => 'Ваш тренер привітається прямо в чаті';
+
+  @override
+  String get welcomePendingT => 'Ваш тренер з\'явиться тут';
+
+  @override
+  String get welcomePendingS => 'Після призначення профіль і чат відкриються з цього екрана.';
+
+  @override
+  String get welcomeFootnote => 'А поки бібліотека тренера відкрита — погляньте, що там є.';
 }

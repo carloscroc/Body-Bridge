@@ -3185,10 +3185,10 @@ class AppLocalizationsZh extends AppLocalizations {
   String get notifications => '通知';
 
   @override
-  String get consultCardKicker => '1:1 咨询';
+  String get consultCardKicker => '私人教练';
 
   @override
-  String get consultCardTitle => '预约咨询';
+  String get consultCardTitle => '申请咨询';
 
   @override
   String get consultCardSub => '一次简短的 1:1，定下方向';
@@ -3197,10 +3197,10 @@ class AppLocalizationsZh extends AppLocalizations {
   String get consultCardSubDone => '请求已提交 — 查看';
 
   @override
-  String get consultSheetTitle => '从咨询开始';
+  String get consultSheetTitle => '与教练一对一训练';
 
   @override
-  String get consultSheetBody => '两扇门，一个目标：围绕你的身体打造的计划。';
+  String get consultSheetBody => '认证教练为你定制训练计划，并始终伴你左右。';
 
   @override
   String get consultDoorHow => '如何进行';
@@ -3245,7 +3245,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get requestTitle => '申请咨询';
 
   @override
-  String get requestSub => '几个快速回答，让 1:1 有个好的开始。';
+  String get requestSub => '教练会在跟进前阅读这段话——不会为你订阅任何东西。';
 
   @override
   String get requestGoalKicker => '主要目标';
@@ -3275,7 +3275,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get expSeasoned => '多年训练经验';
 
   @override
-  String get requestTimeKicker => '方便交流的时间';
+  String get requestTimeKicker => '方便联系的时间 · 可选';
 
   @override
   String get timeMorning => '上午';
@@ -3287,7 +3287,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get timeEvening => '晚上';
 
   @override
-  String get requestNotesKicker => '还有想说的？（可选）';
+  String get requestNotesKicker => '留言 · 可选';
 
   @override
   String get requestNotesHint => '伤病、日程、器械…';
@@ -3296,25 +3296,25 @@ class AppLocalizationsZh extends AppLocalizations {
   String get requestSubmit => '发送请求';
 
   @override
-  String get requestPickBoth => '请先选择目标和经验';
+  String get requestPickBoth => '请先选择一个目标';
 
   @override
   String get sentChip => '已提交';
 
   @override
-  String get sentTitle => '请求已收到';
+  String get sentTitle => '已收到咨询申请';
 
   @override
-  String get sentBody => '请求已交给教练，内容保持原样 — 后续在聊天里进行。';
+  String get sentBody => '我们的教练团队会与你跟进，讨论你的目标和可选的教练方案。';
 
   @override
-  String get sentSummaryKicker => '我的请求';
+  String get sentSummaryKicker => '申请状态';
 
   @override
-  String get sentContinue => '继续';
+  String get sentContinue => '返回练习';
 
   @override
-  String get welcomeTitle => '一切就绪';
+  String get welcomeTitle => '欢迎来到私人教练服务';
 
   @override
   String get welcomeFlag => '教练会在 24–48 小时内回复';
@@ -3330,6 +3330,96 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get welcomeDone => '回到我的教练';
+
+  @override
+  String get consultPrimary => '申请咨询';
+
+  @override
+  String get exploreCoachingPlans => '浏览教练方案';
+
+  @override
+  String get consultBenefit1 => '根据你的训练史定制训练';
+
+  @override
+  String get consultBenefit2 => '课间随时与教练私信';
+
+  @override
+  String get consultBenefit3 => '每个练习都有视频与动作提示';
+
+  @override
+  String get consultFootnote => '教练会跟进并与你讨论目标——在你选择方案之前，不会预订任何服务，也不会产生任何费用。';
+
+  @override
+  String get goalRecover => '从伤病中恢复';
+
+  @override
+  String get goalUnsure => '还没想好';
+
+  @override
+  String get timeWeekdayMornings => '工作日上午';
+
+  @override
+  String get timeWeekdayEvenings => '工作日晚上';
+
+  @override
+  String get timeWeekends => '周末';
+
+  @override
+  String get requestNameKicker => '姓名 · 来自你的账户';
+
+  @override
+  String get requestEmailKicker => '邮箱 · 来自你的账户';
+
+  @override
+  String get requestVerified => '已在你的账户中验证';
+
+  @override
+  String get srcLocked => '已锁定';
+
+  @override
+  String get sentRequestedLabel => '申请时间';
+
+  @override
+  String get sentContactLabel => '联系方式';
+
+  @override
+  String get sentGoalLabel => '目标';
+
+  @override
+  String get sentNote => '你可以照常训练——在你选择订阅之前，应用内不会有任何变化。';
+
+  @override
+  String get welcomeBody => '订阅已生效。你的私人教练将在 24–48 小时内与你联系。';
+
+  @override
+  String get welcomeStepsLabel => '接下来会发生什么';
+
+  @override
+  String get welcomeStep1T => '订阅已生效';
+
+  @override
+  String get welcomeStep1S => '此账户已启用 Advanced';
+
+  @override
+  String get welcomeStep2T => '正在为你分配教练';
+
+  @override
+  String get welcomeStep2S => '我们正在为你匹配合适的教练';
+
+  @override
+  String get welcomeStep3T => '24–48 小时内首次联系';
+
+  @override
+  String get welcomeStep3S => '教练会直接在这里的聊天中向你问好';
+
+  @override
+  String get welcomePendingT => '你的教练将出现在这里';
+
+  @override
+  String get welcomePendingS => '分配完成后，即可在此页面打开教练的资料和聊天。';
+
+  @override
+  String get welcomeFootnote => '在此期间，教练库已开放——欢迎先去逛逛。';
 }
 
 /// The translations for Chinese, using the Han script (`zh_Hant`).
@@ -6537,10 +6627,10 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
   String get notifications => '通知';
 
   @override
-  String get consultCardKicker => '1:1 諮詢';
+  String get consultCardKicker => '私人教練';
 
   @override
-  String get consultCardTitle => '預約諮詢';
+  String get consultCardTitle => '申請諮詢';
 
   @override
   String get consultCardSub => '一次簡短的 1:1，定下方向';
@@ -6549,10 +6639,10 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
   String get consultCardSubDone => '請求已送出 — 查看';
 
   @override
-  String get consultSheetTitle => '從諮詢開始';
+  String get consultSheetTitle => '與教練一對一訓練';
 
   @override
-  String get consultSheetBody => '兩扇門，一個目標：圍繞你的身體打造的計畫。';
+  String get consultSheetBody => '認證教練為你打造訓練計畫，並始終在你身邊。';
 
   @override
   String get consultDoorHow => '如何進行';
@@ -6597,7 +6687,7 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
   String get requestTitle => '申請諮詢';
 
   @override
-  String get requestSub => '幾個快速回答，讓 1:1 有個好的開始。';
+  String get requestSub => '教練會在跟進前閱讀這段話——不會為你訂閱任何東西。';
 
   @override
   String get requestGoalKicker => '主要目標';
@@ -6627,7 +6717,7 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
   String get expSeasoned => '多年訓練經驗';
 
   @override
-  String get requestTimeKicker => '方便聯絡的時間';
+  String get requestTimeKicker => '方便聯絡的時間 · 可選';
 
   @override
   String get timeMorning => '上午';
@@ -6639,7 +6729,7 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
   String get timeEvening => '晚上';
 
   @override
-  String get requestNotesKicker => '還想補充什麼？（選填）';
+  String get requestNotesKicker => '留言 · 可選';
 
   @override
   String get requestNotesHint => '傷病、行程、器材…';
@@ -6648,25 +6738,25 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
   String get requestSubmit => '送出請求';
 
   @override
-  String get requestPickBoth => '請先選擇目標與經驗';
+  String get requestPickBoth => '請先選擇一個目標';
 
   @override
   String get sentChip => '已送出';
 
   @override
-  String get sentTitle => '請求已收到';
+  String get sentTitle => '已收到諮詢申請';
 
   @override
-  String get sentBody => '請求已交給教練，內容保持原樣 — 後續在聊天中進行。';
+  String get sentBody => '我們的教練團隊會與你跟進，討論你的目標和可選的教練方案。';
 
   @override
-  String get sentSummaryKicker => '我的請求';
+  String get sentSummaryKicker => '申請狀態';
 
   @override
-  String get sentContinue => '繼續';
+  String get sentContinue => '返回練習';
 
   @override
-  String get welcomeTitle => '一切就緒';
+  String get welcomeTitle => '歡迎來到私人教練服務';
 
   @override
   String get welcomeFlag => '教練會在 24–48 小時內回覆';
@@ -6682,4 +6772,94 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
 
   @override
   String get welcomeDone => '回到我的教練';
+
+  @override
+  String get consultPrimary => '申請諮詢';
+
+  @override
+  String get exploreCoachingPlans => '瀏覽教練方案';
+
+  @override
+  String get consultBenefit1 => '根據你的訓練史量身打造訓練';
+
+  @override
+  String get consultBenefit2 => '課間隨時與教練私訊';
+
+  @override
+  String get consultBenefit3 => '每個練習都有影片與動作提示';
+
+  @override
+  String get consultFootnote => '教練會跟進並與你討論目標——在你選擇方案之前，不會預訂任何服務，也不會產生任何費用。';
+
+  @override
+  String get goalRecover => '從傷痛中恢復';
+
+  @override
+  String get goalUnsure => '還沒想好';
+
+  @override
+  String get timeWeekdayMornings => '工作日上午';
+
+  @override
+  String get timeWeekdayEvenings => '工作日晚上';
+
+  @override
+  String get timeWeekends => '週末';
+
+  @override
+  String get requestNameKicker => '姓名 · 來自你的帳戶';
+
+  @override
+  String get requestEmailKicker => '信箱 · 來自你的帳戶';
+
+  @override
+  String get requestVerified => '已在你的帳戶中驗證';
+
+  @override
+  String get srcLocked => '已鎖定';
+
+  @override
+  String get sentRequestedLabel => '申請時間';
+
+  @override
+  String get sentContactLabel => '聯絡方式';
+
+  @override
+  String get sentGoalLabel => '目標';
+
+  @override
+  String get sentNote => '你可以照常訓練——在你選擇訂閱之前，應用程式內不會有任何變化。';
+
+  @override
+  String get welcomeBody => '訂閱已生效。你的私人教練將在 24–48 小時內與你聯繫。';
+
+  @override
+  String get welcomeStepsLabel => '接下來會發生什麼';
+
+  @override
+  String get welcomeStep1T => '訂閱已生效';
+
+  @override
+  String get welcomeStep1S => '此帳戶已啟用 Advanced';
+
+  @override
+  String get welcomeStep2T => '正在為你分配教練';
+
+  @override
+  String get welcomeStep2S => '我們正在為你配對合適的教練';
+
+  @override
+  String get welcomeStep3T => '24–48 小時內首次聯繫';
+
+  @override
+  String get welcomeStep3S => '教練會直接在這裡的聊天中向你問好';
+
+  @override
+  String get welcomePendingT => '你的教練將出現在這裡';
+
+  @override
+  String get welcomePendingS => '分配完成後，即可在此頁面開啟教練的資料和聊天。';
+
+  @override
+  String get welcomeFootnote => '在此期間，教練庫已開放——歡迎先去逛逛。';
 }

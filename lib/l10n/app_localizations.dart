@@ -5945,13 +5945,13 @@ abstract class AppLocalizations {
   /// No description provided for @consultCardKicker.
   ///
   /// In en, this message translates to:
-  /// **'1:1 CONSULTATION'**
+  /// **'PERSONAL COACHING'**
   String get consultCardKicker;
 
   /// No description provided for @consultCardTitle.
   ///
   /// In en, this message translates to:
-  /// **'Book a consultation'**
+  /// **'Request a consultation'**
   String get consultCardTitle;
 
   /// No description provided for @consultCardSub.
@@ -5969,13 +5969,13 @@ abstract class AppLocalizations {
   /// No description provided for @consultSheetTitle.
   ///
   /// In en, this message translates to:
-  /// **'Start with a consultation'**
+  /// **'Work one-on-one with a coach'**
   String get consultSheetTitle;
 
   /// No description provided for @consultSheetBody.
   ///
   /// In en, this message translates to:
-  /// **'Two doors, one goal: a plan built around your body.'**
+  /// **'A certified trainer builds your programming and stays in your corner.'**
   String get consultSheetBody;
 
   /// No description provided for @consultDoorHow.
@@ -6065,13 +6065,13 @@ abstract class AppLocalizations {
   /// No description provided for @requestSub.
   ///
   /// In en, this message translates to:
-  /// **'A few quick answers so the 1:1 starts warm.'**
+  /// **'A coach reads this before following up — it doesn\'t subscribe you to anything.'**
   String get requestSub;
 
   /// No description provided for @requestGoalKicker.
   ///
   /// In en, this message translates to:
-  /// **'MAIN GOAL'**
+  /// **'PRIMARY GOAL'**
   String get requestGoalKicker;
 
   /// No description provided for @goalStrength.
@@ -6089,7 +6089,7 @@ abstract class AppLocalizations {
   /// No description provided for @goalMobility.
   ///
   /// In en, this message translates to:
-  /// **'Move better'**
+  /// **'Improve mobility'**
   String get goalMobility;
 
   /// No description provided for @goalConsistency.
@@ -6125,7 +6125,7 @@ abstract class AppLocalizations {
   /// No description provided for @requestTimeKicker.
   ///
   /// In en, this message translates to:
-  /// **'BEST TIME TO TALK'**
+  /// **'BEST TIME TO REACH YOU · OPTIONAL'**
   String get requestTimeKicker;
 
   /// No description provided for @timeMorning.
@@ -6149,7 +6149,7 @@ abstract class AppLocalizations {
   /// No description provided for @requestNotesKicker.
   ///
   /// In en, this message translates to:
-  /// **'ANYTHING ELSE? OPTIONAL'**
+  /// **'MESSAGE · OPTIONAL'**
   String get requestNotesKicker;
 
   /// No description provided for @requestNotesHint.
@@ -6167,7 +6167,7 @@ abstract class AppLocalizations {
   /// No description provided for @requestPickBoth.
   ///
   /// In en, this message translates to:
-  /// **'Pick a goal and your experience first'**
+  /// **'Pick a goal first'**
   String get requestPickBoth;
 
   /// No description provided for @sentChip.
@@ -6179,31 +6179,31 @@ abstract class AppLocalizations {
   /// No description provided for @sentTitle.
   ///
   /// In en, this message translates to:
-  /// **'Your request is in'**
+  /// **'Consultation request received'**
   String get sentTitle;
 
   /// No description provided for @sentBody.
   ///
   /// In en, this message translates to:
-  /// **'Your request is with your trainer. It stays as sent — follow-ups happen in chat.'**
+  /// **'A member of our coaching team will follow up to discuss your goals and available coaching options.'**
   String get sentBody;
 
   /// No description provided for @sentSummaryKicker.
   ///
   /// In en, this message translates to:
-  /// **'YOUR REQUEST'**
+  /// **'REQUEST STATUS'**
   String get sentSummaryKicker;
 
   /// No description provided for @sentContinue.
   ///
   /// In en, this message translates to:
-  /// **'Continue'**
+  /// **'Back to Exercises'**
   String get sentContinue;
 
   /// No description provided for @welcomeTitle.
   ///
   /// In en, this message translates to:
-  /// **'You\'re all set'**
+  /// **'Welcome to Personal Coaching'**
   String get welcomeTitle;
 
   /// No description provided for @welcomeFlag.
@@ -6235,6 +6235,186 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Back to My Trainer'**
   String get welcomeDone;
+
+  /// No description provided for @consultPrimary.
+  ///
+  /// In en, this message translates to:
+  /// **'Request Consultation'**
+  String get consultPrimary;
+
+  /// No description provided for @exploreCoachingPlans.
+  ///
+  /// In en, this message translates to:
+  /// **'Explore Coaching Plans'**
+  String get exploreCoachingPlans;
+
+  /// No description provided for @consultBenefit1.
+  ///
+  /// In en, this message translates to:
+  /// **'Custom workouts built around your history'**
+  String get consultBenefit1;
+
+  /// No description provided for @consultBenefit2.
+  ///
+  /// In en, this message translates to:
+  /// **'Message your trainer between sessions'**
+  String get consultBenefit2;
+
+  /// No description provided for @consultBenefit3.
+  ///
+  /// In en, this message translates to:
+  /// **'Video and form cues on every exercise'**
+  String get consultBenefit3;
+
+  /// No description provided for @consultFootnote.
+  ///
+  /// In en, this message translates to:
+  /// **'A coach follows up to discuss your goals — nothing is booked or billed until you choose a plan.'**
+  String get consultFootnote;
+
+  /// No description provided for @goalRecover.
+  ///
+  /// In en, this message translates to:
+  /// **'Recover from an injury'**
+  String get goalRecover;
+
+  /// No description provided for @goalUnsure.
+  ///
+  /// In en, this message translates to:
+  /// **'Not sure yet'**
+  String get goalUnsure;
+
+  /// No description provided for @timeWeekdayMornings.
+  ///
+  /// In en, this message translates to:
+  /// **'Weekday mornings'**
+  String get timeWeekdayMornings;
+
+  /// No description provided for @timeWeekdayEvenings.
+  ///
+  /// In en, this message translates to:
+  /// **'Weekday evenings'**
+  String get timeWeekdayEvenings;
+
+  /// No description provided for @timeWeekends.
+  ///
+  /// In en, this message translates to:
+  /// **'Weekends'**
+  String get timeWeekends;
+
+  /// No description provided for @requestNameKicker.
+  ///
+  /// In en, this message translates to:
+  /// **'NAME · FROM YOUR ACCOUNT'**
+  String get requestNameKicker;
+
+  /// No description provided for @requestEmailKicker.
+  ///
+  /// In en, this message translates to:
+  /// **'EMAIL · FROM YOUR ACCOUNT'**
+  String get requestEmailKicker;
+
+  /// No description provided for @requestVerified.
+  ///
+  /// In en, this message translates to:
+  /// **'Verified on your account'**
+  String get requestVerified;
+
+  /// No description provided for @srcLocked.
+  ///
+  /// In en, this message translates to:
+  /// **'LOCKED'**
+  String get srcLocked;
+
+  /// No description provided for @sentRequestedLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Requested'**
+  String get sentRequestedLabel;
+
+  /// No description provided for @sentContactLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Contact'**
+  String get sentContactLabel;
+
+  /// No description provided for @sentGoalLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Goal'**
+  String get sentGoalLabel;
+
+  /// No description provided for @sentNote.
+  ///
+  /// In en, this message translates to:
+  /// **'You can keep training as usual — nothing changes in the app until you choose to subscribe.'**
+  String get sentNote;
+
+  /// No description provided for @welcomeBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Your subscription is active. Your personal trainer will reach out within 24–48 hours.'**
+  String get welcomeBody;
+
+  /// No description provided for @welcomeStepsLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'WHAT HAPPENS NEXT'**
+  String get welcomeStepsLabel;
+
+  /// No description provided for @welcomeStep1T.
+  ///
+  /// In en, this message translates to:
+  /// **'Subscription active'**
+  String get welcomeStep1T;
+
+  /// No description provided for @welcomeStep1S.
+  ///
+  /// In en, this message translates to:
+  /// **'Advanced is live on this account'**
+  String get welcomeStep1S;
+
+  /// No description provided for @welcomeStep2T.
+  ///
+  /// In en, this message translates to:
+  /// **'Trainer assignment in progress'**
+  String get welcomeStep2T;
+
+  /// No description provided for @welcomeStep2S.
+  ///
+  /// In en, this message translates to:
+  /// **'We\'re matching you with the right coach'**
+  String get welcomeStep2S;
+
+  /// No description provided for @welcomeStep3T.
+  ///
+  /// In en, this message translates to:
+  /// **'First outreach within 24–48 hours'**
+  String get welcomeStep3T;
+
+  /// No description provided for @welcomeStep3S.
+  ///
+  /// In en, this message translates to:
+  /// **'Your trainer says hello right here in chat'**
+  String get welcomeStep3S;
+
+  /// No description provided for @welcomePendingT.
+  ///
+  /// In en, this message translates to:
+  /// **'Your trainer will appear here'**
+  String get welcomePendingT;
+
+  /// No description provided for @welcomePendingS.
+  ///
+  /// In en, this message translates to:
+  /// **'Once assigned, their profile and chat open from this screen.'**
+  String get welcomePendingS;
+
+  /// No description provided for @welcomeFootnote.
+  ///
+  /// In en, this message translates to:
+  /// **'Meanwhile, the Trainer Library is open — take a look around.'**
+  String get welcomeFootnote;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

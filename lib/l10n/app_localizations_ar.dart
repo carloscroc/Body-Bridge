@@ -3316,10 +3316,10 @@ class AppLocalizationsAr extends AppLocalizations {
   String get notifications => 'الإشعارات';
 
   @override
-  String get consultCardKicker => 'استشارة 1:1';
+  String get consultCardKicker => 'كوتشينغ شخصي';
 
   @override
-  String get consultCardTitle => 'احجز استشارة';
+  String get consultCardTitle => 'اطلب استشارة';
 
   @override
   String get consultCardSub => 'لقاء قصير 1:1 يحدد اتجاهك';
@@ -3328,10 +3328,10 @@ class AppLocalizationsAr extends AppLocalizations {
   String get consultCardSubDone => 'طلبك مُرسل — اطّلع عليه';
 
   @override
-  String get consultSheetTitle => 'ابدأ باستشارة';
+  String get consultSheetTitle => 'تدرّب فردًا لفرد مع مدرب';
 
   @override
-  String get consultSheetBody => 'بابان وهدف واحد: خطة مبنية حول جسمك.';
+  String get consultSheetBody => 'يبني مدرب معتمد برنامجك ويبقى بجانبك.';
 
   @override
   String get consultDoorHow => 'كيف يعمل';
@@ -3377,7 +3377,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get requestTitle => 'اطلب استشارة';
 
   @override
-  String get requestSub => 'بعض الإجابات السريعة ليبدأ اللقاء على خير.';
+  String get requestSub => 'يقرأ المدرب هذا قبل المتابعة — لا يشترك بك في أي شيء.';
 
   @override
   String get requestGoalKicker => 'الهدف الرئيسي';
@@ -3389,7 +3389,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get goalFatLoss => 'خسارة الدهون';
 
   @override
-  String get goalMobility => 'حركة أفضل';
+  String get goalMobility => 'تحسين الحركة';
 
   @override
   String get goalConsistency => 'الاستمرارية';
@@ -3407,7 +3407,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get expSeasoned => 'سنوات من التدريب';
 
   @override
-  String get requestTimeKicker => 'أفضل وقت للمحادثة';
+  String get requestTimeKicker => 'أفضل وقت للتواصل · اختياري';
 
   @override
   String get timeMorning => 'صباحًا';
@@ -3419,7 +3419,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get timeEvening => 'مساءً';
 
   @override
-  String get requestNotesKicker => 'شيء آخر؟ (اختياري)';
+  String get requestNotesKicker => 'رسالة · اختياري';
 
   @override
   String get requestNotesHint => 'إصابات، جدول، معدات…';
@@ -3428,25 +3428,25 @@ class AppLocalizationsAr extends AppLocalizations {
   String get requestSubmit => 'أرسل الطلب';
 
   @override
-  String get requestPickBoth => 'اختر هدفًا ومستوى خبرتك أولًا';
+  String get requestPickBoth => 'اختر هدفًا أولاً';
 
   @override
   String get sentChip => 'مُرسل';
 
   @override
-  String get sentTitle => 'تم استلام طلبك';
+  String get sentTitle => 'تم استلام طلب الاستشارة';
 
   @override
-  String get sentBody => 'طلبك مع مدربك. يبقى كما أُرسل — وما بعده في المحادثة.';
+  String get sentBody => 'سيتواصل معك أحد أعضاء فريق الكوتشينغ لمناقشة أهدافك وخيارات الكوتشينغ المتاحة.';
 
   @override
-  String get sentSummaryKicker => 'طلبك';
+  String get sentSummaryKicker => 'حالة الطلب';
 
   @override
-  String get sentContinue => 'متابعة';
+  String get sentContinue => 'العودة إلى التمارين';
 
   @override
-  String get welcomeTitle => 'كل شيء جاهز';
+  String get welcomeTitle => 'مرحبًا بك في الكوتشينغ الشخصي';
 
   @override
   String get welcomeFlag => 'يرد مدربك خلال 24–48 ساعة';
@@ -3462,4 +3462,95 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get welcomeDone => 'العودة إلى مدربي';
+
+  @override
+  String get consultPrimary => 'اطلب استشارة';
+
+  @override
+  String get exploreCoachingPlans => 'استكشف خطط الكوتشينغ';
+
+  @override
+  String get consultBenefit1 => 'تمارين مخصصة مبنية على سجلك';
+
+  @override
+  String get consultBenefit2 => 'راسل مدربك بين الجلسات';
+
+  @override
+  String get consultBenefit3 => 'فيديو وإرشادات أداء لكل تمرين';
+
+  @override
+  String get consultFootnote =>
+      'سيتابع المدرب معك لمناقشة أهدافك — لا يُحجز أو يُحصَّل أي مبلغ حتى تختار خطة.';
+
+  @override
+  String get goalRecover => 'التعافي من إصابة';
+
+  @override
+  String get goalUnsure => 'لست متأكدًا بعد';
+
+  @override
+  String get timeWeekdayMornings => 'صباح أيام الأسبوع';
+
+  @override
+  String get timeWeekdayEvenings => 'مساء أيام الأسبوع';
+
+  @override
+  String get timeWeekends => 'في عطلة نهاية الأسبوع';
+
+  @override
+  String get requestNameKicker => 'الاسم · من حسابك';
+
+  @override
+  String get requestEmailKicker => 'البريد الإلكتروني · من حسابك';
+
+  @override
+  String get requestVerified => 'تم التحقق منه في حسابك';
+
+  @override
+  String get srcLocked => 'مقفل';
+
+  @override
+  String get sentRequestedLabel => 'تاريخ الطلب';
+
+  @override
+  String get sentContactLabel => 'وسيلة التواصل';
+
+  @override
+  String get sentGoalLabel => 'الهدف';
+
+  @override
+  String get sentNote => 'يمكنك مواصلة التدريب كالمعتاد — لن يتغير أي شيء في التطبيق حتى تختار الاشتراك.';
+
+  @override
+  String get welcomeBody => 'اشتراكك نشط. سيتواصل معك مدربك الشخصي خلال 24–48 ساعة.';
+
+  @override
+  String get welcomeStepsLabel => 'ماذا بعد';
+
+  @override
+  String get welcomeStep1T => 'الاشتراك نشط';
+
+  @override
+  String get welcomeStep1S => 'Advanced مُفعّل على هذا الحساب';
+
+  @override
+  String get welcomeStep2T => 'جارٍ تعيين المدرب';
+
+  @override
+  String get welcomeStep2S => 'نختار لك المدرب الأنسب';
+
+  @override
+  String get welcomeStep3T => 'أول تواصل خلال 24–48 ساعة';
+
+  @override
+  String get welcomeStep3S => 'سيرحب بك مدربك هنا في الدردشة';
+
+  @override
+  String get welcomePendingT => 'سيظهر مدربك هنا';
+
+  @override
+  String get welcomePendingS => 'بعد التعيين، سيُفتح ملفه والدردشة من هذه الشاشة.';
+
+  @override
+  String get welcomeFootnote => 'وفي هذه الأثناء، مكتبة المدرب مفتوحة — ألقِ نظرة.';
 }

@@ -3325,10 +3325,10 @@ class AppLocalizationsTr extends AppLocalizations {
   String get notifications => 'Bildirimler';
 
   @override
-  String get consultCardKicker => '1:1 DANIŞMA';
+  String get consultCardKicker => 'KİŞİSEL KOACHING';
 
   @override
-  String get consultCardTitle => 'Danışma ayarla';
+  String get consultCardTitle => 'Danışmanlık isteyin';
 
   @override
   String get consultCardSub => 'Yönünü belirleyecek kısa bir 1:1';
@@ -3337,10 +3337,10 @@ class AppLocalizationsTr extends AppLocalizations {
   String get consultCardSubDone => 'Talebin gönderildi — görüntüle';
 
   @override
-  String get consultSheetTitle => 'Bir danışmayla başla';
+  String get consultSheetTitle => 'Bir koçla birebir çalışın';
 
   @override
-  String get consultSheetBody => 'İki kapı, tek hedef: bedeninin etrafına kurulmuş bir plan.';
+  String get consultSheetBody => 'Sertifikalı bir antrenör programınızı hazırlar ve yanınızda kalır.';
 
   @override
   String get consultDoorHow => 'Nasıl çalışır';
@@ -3386,7 +3386,7 @@ class AppLocalizationsTr extends AppLocalizations {
   String get requestTitle => 'Danışma talep et';
 
   @override
-  String get requestSub => '1:1\'in iyi başlaması için birkaç kısa cevap.';
+  String get requestSub => 'Koç dönüş yapmadan önce bunu okur — hiçbir şeye abone olmazsınız.';
 
   @override
   String get requestGoalKicker => 'ANA HEDEF';
@@ -3398,7 +3398,7 @@ class AppLocalizationsTr extends AppLocalizations {
   String get goalFatLoss => 'Yağ yakmak';
 
   @override
-  String get goalMobility => 'Daha iyi hareket';
+  String get goalMobility => 'Hareketliliği geliştir';
 
   @override
   String get goalConsistency => 'Düzenli kalmak';
@@ -3416,7 +3416,7 @@ class AppLocalizationsTr extends AppLocalizations {
   String get expSeasoned => 'Yılların tecrübesi';
 
   @override
-  String get requestTimeKicker => 'KONUŞMAK İÇİN EN İYİ ZAMAN';
+  String get requestTimeKicker => 'SİZE ULAŞMAK İÇİN EN İYİ ZAMAN · İSTEĞE BAĞLI';
 
   @override
   String get timeMorning => 'Sabah';
@@ -3428,7 +3428,7 @@ class AppLocalizationsTr extends AppLocalizations {
   String get timeEvening => 'Akşam';
 
   @override
-  String get requestNotesKicker => 'BAŞKA BİR ŞEY? İSTEĞE BAĞLI';
+  String get requestNotesKicker => 'MESAJ · İSTEĞE BAĞLI';
 
   @override
   String get requestNotesHint => 'Sakatlıklar, program, ekipman…';
@@ -3437,25 +3437,26 @@ class AppLocalizationsTr extends AppLocalizations {
   String get requestSubmit => 'Talebi gönder';
 
   @override
-  String get requestPickBoth => 'Önce bir hedef ve deneyim seç';
+  String get requestPickBoth => 'Önce bir hedef seçin';
 
   @override
   String get sentChip => 'GÖNDERİLDİ';
 
   @override
-  String get sentTitle => 'Talebin alındı';
+  String get sentTitle => 'Danışmanlık talebi alındı';
 
   @override
-  String get sentBody => 'Talebin antrenöründe. Gönderildiği gibi kalır — gerisi sohbette.';
+  String get sentBody =>
+      'Koçluk ekibimizden biri hedeflerinizi ve mevcut koçluk seçeneklerinizi görüşmek üzere size dönecek.';
 
   @override
-  String get sentSummaryKicker => 'TALEBİN';
+  String get sentSummaryKicker => 'TALEP DURUMU';
 
   @override
-  String get sentContinue => 'Devam';
+  String get sentContinue => 'Egzersizlere Dön';
 
   @override
-  String get welcomeTitle => 'Her şey hazır';
+  String get welcomeTitle => 'Kişisel Koaching\'e Hoş Geldiniz';
 
   @override
   String get welcomeFlag => 'Antrenörün 24–48 saat içinde yanıtlar';
@@ -3471,4 +3472,97 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get welcomeDone => 'Antrenörüme dön';
+
+  @override
+  String get consultPrimary => 'Danışmanlık İsteyin';
+
+  @override
+  String get exploreCoachingPlans => 'Koçluk Planlarını Keşfet';
+
+  @override
+  String get consultBenefit1 => 'Geçmişinize göre özel antrenmanlar';
+
+  @override
+  String get consultBenefit2 => 'Antrenmanlar arasında antrenörünüze yazın';
+
+  @override
+  String get consultBenefit3 => 'Her egzersizde video ve form ipuçları';
+
+  @override
+  String get consultFootnote =>
+      'Bir koç hedeflerinizi görüşmek üzere size dönecek — plan seçene kadar hiçbir rezervasyon veya ücretlendirme yapılmaz.';
+
+  @override
+  String get goalRecover => 'Sakatlıktan toparlanmak';
+
+  @override
+  String get goalUnsure => 'Henüz emin değilim';
+
+  @override
+  String get timeWeekdayMornings => 'Hafta içi sabahları';
+
+  @override
+  String get timeWeekdayEvenings => 'Hafta içi akşamları';
+
+  @override
+  String get timeWeekends => 'Hafta sonları';
+
+  @override
+  String get requestNameKicker => 'İSİM · HESABINIZDAN';
+
+  @override
+  String get requestEmailKicker => 'E-POSTA · HESABINIZDAN';
+
+  @override
+  String get requestVerified => 'Hesabınızda doğrulandı';
+
+  @override
+  String get srcLocked => 'KİLİTLİ';
+
+  @override
+  String get sentRequestedLabel => 'Talep edildi';
+
+  @override
+  String get sentContactLabel => 'İletişim';
+
+  @override
+  String get sentGoalLabel => 'Hedef';
+
+  @override
+  String get sentNote =>
+      'Her zamanki gibi antrenmana devam edebilirsiniz — abone olmaya karar verene kadar uygulamada hiçbir şey değişmez.';
+
+  @override
+  String get welcomeBody =>
+      'Aboneliğiniz aktif. Kişisel antrenörünüz 24-48 saat içinde sizinle iletişime geçecek.';
+
+  @override
+  String get welcomeStepsLabel => 'SONRAKİ ADIMLAR';
+
+  @override
+  String get welcomeStep1T => 'Abonelik aktif';
+
+  @override
+  String get welcomeStep1S => 'Advanced bu hesapta etkin';
+
+  @override
+  String get welcomeStep2T => 'Antrenör ataması sürüyor';
+
+  @override
+  String get welcomeStep2S => 'Size en uygun koçu eşleştiriyoruz';
+
+  @override
+  String get welcomeStep3T => 'İlk iletişim 24-48 saat içinde';
+
+  @override
+  String get welcomeStep3S => 'Antrenörünüz doğrudan burada, sohbette selam verecek';
+
+  @override
+  String get welcomePendingT => 'Antrenörünüz burada görünecek';
+
+  @override
+  String get welcomePendingS => 'Atandığında profili ve sohbet bu ekrandan açılacak.';
+
+  @override
+  String get welcomeFootnote => 'Bu arada Antrenör Kütüphanesi açık — göz atın.';
 }

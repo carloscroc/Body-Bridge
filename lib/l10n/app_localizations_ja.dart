@@ -3225,10 +3225,10 @@ class AppLocalizationsJa extends AppLocalizations {
   String get notifications => '通知';
 
   @override
-  String get consultCardKicker => '1:1相談';
+  String get consultCardKicker => 'パーソナルコーチング';
 
   @override
-  String get consultCardTitle => '相談を予約';
+  String get consultCardTitle => '相談をリクエスト';
 
   @override
   String get consultCardSub => '方向性を決める短い1:1';
@@ -3237,10 +3237,10 @@ class AppLocalizationsJa extends AppLocalizations {
   String get consultCardSubDone => 'リクエスト送信済み — 見る';
 
   @override
-  String get consultSheetTitle => '相談から始めよう';
+  String get consultSheetTitle => 'コーチとマンツーマンで取り組む';
 
   @override
-  String get consultSheetBody => 'ふたつの扉、ひとつの目標。あなたの体に合わせたプランを。';
+  String get consultSheetBody => '資格を持つトレーナーがあなたのプログラムを作り、ずっとそばで支えます。';
 
   @override
   String get consultDoorHow => '仕組み';
@@ -3285,7 +3285,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get requestTitle => '相談をリクエスト';
 
   @override
-  String get requestSub => 'いくつかの簡単な質問で、1:1をスムーズに始められます。';
+  String get requestSub => 'コーチがフォローアップの前に読みます — 何も登録されません。';
 
   @override
   String get requestGoalKicker => '主な目標';
@@ -3297,7 +3297,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get goalFatLoss => '体脂肪を落とす';
 
   @override
-  String get goalMobility => '動きを良くする';
+  String get goalMobility => '可動域を改善';
 
   @override
   String get goalConsistency => '習慣を続ける';
@@ -3315,7 +3315,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get expSeasoned => '長年の経験あり';
 
   @override
-  String get requestTimeKicker => '連絡の取れる時間帯';
+  String get requestTimeKicker => '連絡のとりやすい時間帯 · 任意';
 
   @override
   String get timeMorning => '午前';
@@ -3327,7 +3327,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get timeEvening => '夜';
 
   @override
-  String get requestNotesKicker => 'その他（任意）';
+  String get requestNotesKicker => 'メッセージ · 任意';
 
   @override
   String get requestNotesHint => 'ケガ、スケジュール、器具など…';
@@ -3336,25 +3336,25 @@ class AppLocalizationsJa extends AppLocalizations {
   String get requestSubmit => 'リクエストを送信';
 
   @override
-  String get requestPickBoth => '目標と経験を先に選んでください';
+  String get requestPickBoth => 'まず目標を選んでください';
 
   @override
   String get sentChip => '送信済み';
 
   @override
-  String get sentTitle => 'リクエストを受け付けました';
+  String get sentTitle => '相談リクエストを受け付けました';
 
   @override
-  String get sentBody => 'リクエストはトレーナーに届いています。内容は送信時のまま — 続きはチャットで。';
+  String get sentBody => 'コーチングチームのメンバーが、目標やご利用できるコーチング選択肢についてご連絡します。';
 
   @override
-  String get sentSummaryKicker => 'あなたのリクエスト';
+  String get sentSummaryKicker => 'リクエスト状況';
 
   @override
-  String get sentContinue => '次へ';
+  String get sentContinue => 'エクササイズに戻る';
 
   @override
-  String get welcomeTitle => '準備完了';
+  String get welcomeTitle => 'パーソナルコーチングへようこそ';
 
   @override
   String get welcomeFlag => 'トレーナーは24〜48時間以内に返信します';
@@ -3370,4 +3370,94 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get welcomeDone => 'マイトレーナーへ戻る';
+
+  @override
+  String get consultPrimary => '相談をリクエスト';
+
+  @override
+  String get exploreCoachingPlans => 'コーチングプランを見る';
+
+  @override
+  String get consultBenefit1 => 'あなたの履歴に合わせたカスタムワークアウト';
+
+  @override
+  String get consultBenefit2 => 'セッションの合間にトレーナーとメッセージ';
+
+  @override
+  String get consultBenefit3 => 'すべてのエクササイズに動画とフォームのヒント';
+
+  @override
+  String get consultFootnote => 'コーチが目標について相談のためにフォローアップします。プランを選ぶまで、予約も請求も一切ありません。';
+
+  @override
+  String get goalRecover => 'ケガからの回復';
+
+  @override
+  String get goalUnsure => 'まだわからない';
+
+  @override
+  String get timeWeekdayMornings => '平日の午前';
+
+  @override
+  String get timeWeekdayEvenings => '平日の夜';
+
+  @override
+  String get timeWeekends => '週末';
+
+  @override
+  String get requestNameKicker => '名前 · アカウントから';
+
+  @override
+  String get requestEmailKicker => 'メールアドレス · アカウントから';
+
+  @override
+  String get requestVerified => 'アカウントで確認済み';
+
+  @override
+  String get srcLocked => 'ロック';
+
+  @override
+  String get sentRequestedLabel => 'リクエスト日時';
+
+  @override
+  String get sentContactLabel => '連絡先';
+
+  @override
+  String get sentGoalLabel => '目標';
+
+  @override
+  String get sentNote => 'これまでどおりトレーニングを続けられます。登録を選択するまで、アプリ内では何も変わりません。';
+
+  @override
+  String get welcomeBody => 'サブスクリプションが有効です。担当トレーナーが24〜48時間以内にご連絡します。';
+
+  @override
+  String get welcomeStepsLabel => 'このあとの流れ';
+
+  @override
+  String get welcomeStep1T => 'サブスクリプション有効';
+
+  @override
+  String get welcomeStep1S => 'このアカウントでAdvancedが利用可能です';
+
+  @override
+  String get welcomeStep2T => 'トレーナーの割り当てを進行中';
+
+  @override
+  String get welcomeStep2S => 'あなたに合ったコーチを選定しています';
+
+  @override
+  String get welcomeStep3T => '24〜48時間以内に最初の連絡';
+
+  @override
+  String get welcomeStep3S => 'トレーナーがこのチャットでご挨拶します';
+
+  @override
+  String get welcomePendingT => '担当トレーナーはここに表示されます';
+
+  @override
+  String get welcomePendingS => '割り当てが完了すると、この画面からプロフィールとチャットを開けます。';
+
+  @override
+  String get welcomeFootnote => 'その間もトレーナーライブラリは開放されています。ぜひご覧ください。';
 }

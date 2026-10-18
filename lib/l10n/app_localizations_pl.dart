@@ -3331,10 +3331,10 @@ class AppLocalizationsPl extends AppLocalizations {
   String get notifications => 'Powiadomienia';
 
   @override
-  String get consultCardKicker => 'KONSULTACJA 1:1';
+  String get consultCardKicker => 'COACHING OSOBISTY';
 
   @override
-  String get consultCardTitle => 'Umów konsultację';
+  String get consultCardTitle => 'Poproś o konsultację';
 
   @override
   String get consultCardSub => 'Krótkie 1:1, które wyznaczy kierunek';
@@ -3343,10 +3343,10 @@ class AppLocalizationsPl extends AppLocalizations {
   String get consultCardSubDone => 'Zgłoszenie wysłane — zobacz';
 
   @override
-  String get consultSheetTitle => 'Zacznij od konsultacji';
+  String get consultSheetTitle => 'Trenuj jeden na jednego z trenerem';
 
   @override
-  String get consultSheetBody => 'Dwoje drzwi, jeden cel: plan zbudowany wokół Twojego ciała.';
+  String get consultSheetBody => 'Certyfikowany trener ułoży Twój plan i zostanie przy Tobie.';
 
   @override
   String get consultDoorHow => 'Jak to działa';
@@ -3392,7 +3392,7 @@ class AppLocalizationsPl extends AppLocalizations {
   String get requestTitle => 'Poproś o konsultację';
 
   @override
-  String get requestSub => 'Kilka szybkich odpowiedzi, żeby 1:1 zaczęło się dobrze.';
+  String get requestSub => 'Trener przeczyta to, zanim się odezwie — niczego to nie subskrybuje.';
 
   @override
   String get requestGoalKicker => 'GŁÓWNY CEL';
@@ -3404,7 +3404,7 @@ class AppLocalizationsPl extends AppLocalizations {
   String get goalFatLoss => 'Zbić tłuszcz';
 
   @override
-  String get goalMobility => 'Ruszać się lepiej';
+  String get goalMobility => 'Popraw mobilność';
 
   @override
   String get goalConsistency => 'Trwać w postanowieniu';
@@ -3422,7 +3422,7 @@ class AppLocalizationsPl extends AppLocalizations {
   String get expSeasoned => 'Trenuję od lat';
 
   @override
-  String get requestTimeKicker => 'NAJLEPSZY CZAS NA ROZMOWĘ';
+  String get requestTimeKicker => 'KIEDY NAJLEPIEJ SIĘ Z TOBĄ SKONTAKTOWAĆ · OPCJONALNIE';
 
   @override
   String get timeMorning => 'Rano';
@@ -3434,7 +3434,7 @@ class AppLocalizationsPl extends AppLocalizations {
   String get timeEvening => 'Wieczorem';
 
   @override
-  String get requestNotesKicker => 'COŚ JESZCZE? OPCJONALNIE';
+  String get requestNotesKicker => 'WIADOMOŚĆ · OPCJONALNIE';
 
   @override
   String get requestNotesHint => 'Kontuzje, harmonogram, sprzęt…';
@@ -3443,26 +3443,26 @@ class AppLocalizationsPl extends AppLocalizations {
   String get requestSubmit => 'Wyślij zgłoszenie';
 
   @override
-  String get requestPickBoth => 'Najpierw wybierz cel i doświadczenie';
+  String get requestPickBoth => 'Najpierw wybierz cel';
 
   @override
   String get sentChip => 'WYSŁANE';
 
   @override
-  String get sentTitle => 'Zgłoszenie przyjęte';
+  String get sentTitle => 'Otrzymano prośbę o konsultację';
 
   @override
   String get sentBody =>
-      'Zgłoszenie trafiło do Twojego trenera. Zostaje takie, jakie jest — dalszy ciąg na czacie.';
+      'Ktoś z naszego zespołu coachingowego odezwie się, aby porozmawiać o Twoich celach i dostępnych opcjach coachingu.';
 
   @override
-  String get sentSummaryKicker => 'TWOJE ZGŁOSZENIE';
+  String get sentSummaryKicker => 'STATUS PROŚBY';
 
   @override
-  String get sentContinue => 'Dalej';
+  String get sentContinue => 'Wróć do ćwiczeń';
 
   @override
-  String get welcomeTitle => 'Wszystko gotowe';
+  String get welcomeTitle => 'Witamy w coachingu osobistym';
 
   @override
   String get welcomeFlag => 'Trener odpowiada w ciągu 24–48 godzin';
@@ -3478,4 +3478,97 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String get welcomeDone => 'Wróć do Mojego trenera';
+
+  @override
+  String get consultPrimary => 'Poproś o konsultację';
+
+  @override
+  String get exploreCoachingPlans => 'Zobacz plany coachingu';
+
+  @override
+  String get consultBenefit1 => 'Treningi na miarę, oparte na Twojej historii';
+
+  @override
+  String get consultBenefit2 => 'Pisz do trenera między sesjami';
+
+  @override
+  String get consultBenefit3 => 'Wideo i wskazówki techniczne do każdego ćwiczenia';
+
+  @override
+  String get consultFootnote =>
+      'Trener odezwie się, aby porozmawiać o Twoich celach — nic nie jest rezerwowane ani rozliczane, dopóki nie wybierzesz planu.';
+
+  @override
+  String get goalRecover => 'Wróć do formy po kontuzji';
+
+  @override
+  String get goalUnsure => 'Jeszcze nie wiem';
+
+  @override
+  String get timeWeekdayMornings => 'W dni robocze rano';
+
+  @override
+  String get timeWeekdayEvenings => 'W dni robocze wieczorem';
+
+  @override
+  String get timeWeekends => 'W weekendy';
+
+  @override
+  String get requestNameKicker => 'IMIĘ · Z TWOJEGO KONTA';
+
+  @override
+  String get requestEmailKicker => 'E-MAIL · Z TWOJEGO KONTA';
+
+  @override
+  String get requestVerified => 'Zweryfikowano na Twoim koncie';
+
+  @override
+  String get srcLocked => 'ZABLOKOWANE';
+
+  @override
+  String get sentRequestedLabel => 'Wysłano';
+
+  @override
+  String get sentContactLabel => 'Kontakt';
+
+  @override
+  String get sentGoalLabel => 'Cel';
+
+  @override
+  String get sentNote =>
+      'Możesz trenować jak zwykle — nic się w aplikacji nie zmieni, dopóki nie zdecydujesz się na subskrypcję.';
+
+  @override
+  String get welcomeBody =>
+      'Twoja subskrypcja jest aktywna. Twój osobisty trener odezwie się w ciągu 24–48 godzin.';
+
+  @override
+  String get welcomeStepsLabel => 'CO DALEJ';
+
+  @override
+  String get welcomeStep1T => 'Subskrypcja aktywna';
+
+  @override
+  String get welcomeStep1S => 'Advanced jest aktywne na tym koncie';
+
+  @override
+  String get welcomeStep2T => 'Przypisywanie trenera w toku';
+
+  @override
+  String get welcomeStep2S => 'Szukamy dla Ciebie odpowiedniego trenera';
+
+  @override
+  String get welcomeStep3T => 'Pierwszy kontakt w ciągu 24–48 godzin';
+
+  @override
+  String get welcomeStep3S => 'Twój trener przywita Cię tutaj, na czacie';
+
+  @override
+  String get welcomePendingT => 'Twój trener pojawi się tutaj';
+
+  @override
+  String get welcomePendingS => 'Po przypisaniu profil i czat otworzysz z tego ekranu.';
+
+  @override
+  String get welcomeFootnote => 'W międzyczasie biblioteka trenera jest otwarta — zajrzyj do środka.';
 }
