@@ -15,8 +15,8 @@ import '../state/trainer_state.dart';
 import '../theme/app_colors.dart';
 import '../theme/app_theme.dart';
 import 'premium_gate.dart';
+import 'consultation_sheet.dart';
 import 'svg_icon.dart';
-import 'trainer_gate_sheet.dart';
 import 'ui_kit.dart' show Pressable, SoftCard;
 
 /// Trainer primary pill: terracotta in dark, deep green in light (mockup).
@@ -438,7 +438,7 @@ class TrainerEntryStrip extends StatelessWidget {
     final gc = context.gc;
     final dark = trainerIsDark(context);
     return Pressable(
-      onTap: () => showTrainerGate(context),
+      onTap: () => showConsultationSheet(context),
       child: SoftCard(
         radius: 18,
         padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
