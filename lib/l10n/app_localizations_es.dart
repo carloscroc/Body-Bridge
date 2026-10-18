@@ -3415,4 +3415,379 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get trainerChip => 'ENTRENADOR';
+
+  @override
+  String get myTrainer => 'MI ENTRENADOR';
+
+  @override
+  String get assignedWorkouts => 'ENTRENAMIENTOS ASIGNADOS';
+
+  @override
+  String get messageTrainer => 'Mensaje';
+
+  @override
+  String trainerSince(String date) {
+    return 'Tu entrenador desde $date';
+  }
+
+  @override
+  String replyWindow(int hours) {
+    return 'Suele responder en $hours h';
+  }
+
+  @override
+  String get chipNew => 'NUEVO';
+
+  @override
+  String get chipInProgress => 'EN CURSO';
+
+  @override
+  String get chipCompleted => 'COMPLETADO';
+
+  @override
+  String sentCardMeta(String date, int count, int minutes) {
+    return 'Enviado $date · $count ejercicios · ~$minutes min';
+  }
+
+  @override
+  String sentByTrainerOn(String date) {
+    return 'Enviado por tu entrenador el $date';
+  }
+
+  @override
+  String progressPct(int pct) {
+    return '$pct%';
+  }
+
+  @override
+  String get coachNote => 'NOTA DEL COACH';
+
+  @override
+  String restLabel(String duration) {
+    return 'Descanso $duration';
+  }
+
+  @override
+  String askAboutThis(String name) {
+    return 'Pregúntale a $name sobre esto';
+  }
+
+  @override
+  String messageHint(String name) {
+    return 'Mensaje para $name...';
+  }
+
+  @override
+  String get tapToOpen => 'Toca para abrir';
+
+  @override
+  String get todayDivider => 'HOY';
+
+  @override
+  String trainerVideoMeta(String duration) {
+    return 'Video del entrenador · $duration';
+  }
+
+  @override
+  String get gateBenefitWorkouts => 'Entrenamientos hechos para tu cuerpo y tus lesiones';
+
+  @override
+  String get gateBenefitChat => 'Mensajería directa con tu entrenador';
+
+  @override
+  String get gateBenefitVideo => 'Feedback por video sobre tu técnica';
+
+  @override
+  String get gateDismiss => 'Ahora no';
+
+  @override
+  String get gateFootnote => 'Las mejoras se hacen en bodybridge.net — tu plan sigue en la app.';
+
+  @override
+  String bannerNewWorkout(String name) {
+    return 'Nuevo entrenamiento de $name';
+  }
+
+  @override
+  String bannerNewMessage(String name) {
+    return 'Nuevo mensaje de $name';
+  }
+
+  @override
+  String get bannerTapToView => 'Toca para ver';
+
+  @override
+  String get startSoonTitle => 'Las sesiones personalizadas llegan pronto';
+
+  @override
+  String get startSoonBody =>
+      'Las sesiones guiadas llegan con el video del entrenador. Mientras tanto, pregunta a tu entrenador sobre este plan.';
+
+  @override
+  String exercisesMeta(int count, int minutes) {
+    return '$count ejercicios · ~$minutes min';
+  }
+
+  @override
+  String get talkToTrainer => 'Habla con tu entrenador';
+
+  @override
+  String get talkToTrainerSub => 'Entrenamientos personalizados y chat 1:1';
+
+  @override
+  String get notifications => 'Notificaciones';
+
+  @override
+  String get consultCardKicker => 'COACHING PERSONAL';
+
+  @override
+  String get consultCardTitle => 'Solicita una consulta';
+
+  @override
+  String get consultCardSub => 'Un 1:1 corto para marcar tu rumbo';
+
+  @override
+  String get consultCardSubDone => 'Tu solicitud está enviada — verla';
+
+  @override
+  String get consultSheetTitle => 'Entrena uno a uno con un coach';
+
+  @override
+  String get consultSheetBody =>
+      'Un entrenador certificado diseña tu programación y te acompaña en todo momento.';
+
+  @override
+  String get consultDoorHow => 'Cómo funciona';
+
+  @override
+  String get consultDoorHowSub => 'Qué cubre el 1:1';
+
+  @override
+  String get consultDoorRequest => 'Solicitar una consulta';
+
+  @override
+  String get consultDoorRequestSub => 'Dos minutos, sin compromiso';
+
+  @override
+  String get consultDoorView => 'Ver tu solicitud';
+
+  @override
+  String get consultDoorViewSub => 'Ya enviada — sin duplicados';
+
+  @override
+  String get introTitle => 'Coaching, construido a tu alrededor';
+
+  @override
+  String get introP1 =>
+      'Una consulta es un 1:1 corto con tu entrenador. Traes objetivos, historial y lesiones — tu entrenador los convierte en un plan que encaja con tu cuerpo.';
+
+  @override
+  String get introP2 => 'Sin plantillas. Tu plan se escribe para ti y se mueve contigo.';
+
+  @override
+  String get introPoint1 => 'Objetivos, historial y lesiones escuchados primero';
+
+  @override
+  String get introPoint2 => 'Entrenamientos personalizados dentro de la app';
+
+  @override
+  String get introPoint3 => 'Feedback que remodela tu plan';
+
+  @override
+  String get introCta => 'Solicitar una consulta';
+
+  @override
+  String get requestTitle => 'Solicitar una consulta';
+
+  @override
+  String get requestSub => 'Un coach lo lee antes de contactarte — no te suscribe a nada.';
+
+  @override
+  String get requestGoalKicker => 'OBJETIVO PRINCIPAL';
+
+  @override
+  String get goalStrength => 'Ganar fuerza';
+
+  @override
+  String get goalFatLoss => 'Perder grasa';
+
+  @override
+  String get goalMobility => 'Mejorar la movilidad';
+
+  @override
+  String get goalConsistency => 'Mantener la constancia';
+
+  @override
+  String get requestExpKicker => 'EXPERIENCIA';
+
+  @override
+  String get expNew => 'Nuevo en el gimnasio';
+
+  @override
+  String get expReturning => 'De vuelta tras una pausa';
+
+  @override
+  String get expSeasoned => 'Años entrenando';
+
+  @override
+  String get requestTimeKicker => 'MEJOR MOMENTO PARA CONTACTARTE · OPCIONAL';
+
+  @override
+  String get timeMorning => 'Mañana';
+
+  @override
+  String get timeAfternoon => 'Tarde';
+
+  @override
+  String get timeEvening => 'Noche';
+
+  @override
+  String get requestNotesKicker => 'MENSAJE · OPCIONAL';
+
+  @override
+  String get requestNotesHint => 'Lesiones, horario, equipo…';
+
+  @override
+  String get requestSubmit => 'Enviar solicitud';
+
+  @override
+  String get requestPickBoth => 'Elige primero un objetivo';
+
+  @override
+  String get sentChip => 'ENVIADA';
+
+  @override
+  String get sentTitle => 'Solicitud de consulta recibida';
+
+  @override
+  String get sentBody =>
+      'Alguien de nuestro equipo de coaching te contactará para hablar de tus objetivos y de las opciones de coaching disponibles.';
+
+  @override
+  String get sentSummaryKicker => 'ESTADO DE LA SOLICITUD';
+
+  @override
+  String get sentContinue => 'Volver a Ejercicios';
+
+  @override
+  String get welcomeTitle => 'Bienvenido al coaching personal';
+
+  @override
+  String get welcomeFlag => 'Tu entrenador responde en 24–48 horas';
+
+  @override
+  String get welcomeStep1 => 'Tu entrenador revisa tu solicitud y responde en el chat';
+
+  @override
+  String get welcomeStep2 => 'Acordáis un momento para el 1:1';
+
+  @override
+  String get welcomeStep3 => 'Tu primer plan personalizado llega tras la llamada';
+
+  @override
+  String get welcomeDone => 'Volver a Mi entrenador';
+
+  @override
+  String get consultPrimary => 'Solicitar consulta';
+
+  @override
+  String get exploreCoachingPlans => 'Explorar planes de coaching';
+
+  @override
+  String get consultBenefit1 => 'Entrenamientos personalizados según tu historial';
+
+  @override
+  String get consultBenefit2 => 'Escríbele a tu entrenador entre sesiones';
+
+  @override
+  String get consultBenefit3 => 'Video y claves de técnica en cada ejercicio';
+
+  @override
+  String get consultFootnote =>
+      'Un coach te contactará para hablar de tus objetivos — no se reserva ni se cobra nada hasta que elijas un plan.';
+
+  @override
+  String get goalRecover => 'Recuperarme de una lesión';
+
+  @override
+  String get goalUnsure => 'Aún no lo sé';
+
+  @override
+  String get timeWeekdayMornings => 'Entre semana por la mañana';
+
+  @override
+  String get timeWeekdayEvenings => 'Entre semana por la tarde';
+
+  @override
+  String get timeWeekends => 'Los fines de semana';
+
+  @override
+  String get requestNameKicker => 'NOMBRE · DE TU CUENTA';
+
+  @override
+  String get requestEmailKicker => 'EMAIL · DE TU CUENTA';
+
+  @override
+  String get requestVerified => 'Verificado en tu cuenta';
+
+  @override
+  String get srcLocked => 'BLOQUEADO';
+
+  @override
+  String get sentRequestedLabel => 'Solicitado';
+
+  @override
+  String get sentContactLabel => 'Contacto';
+
+  @override
+  String get sentGoalLabel => 'Objetivo';
+
+  @override
+  String get sentNote =>
+      'Puedes seguir entrenando como siempre — nada cambia en la app hasta que decidas suscribirte.';
+
+  @override
+  String get welcomeBody =>
+      'Tu suscripción está activa. Tu entrenador personal te contactará en 24–48 horas.';
+
+  @override
+  String get welcomeStepsLabel => 'QUÉ PASA AHORA';
+
+  @override
+  String get welcomeStep1T => 'Suscripción activa';
+
+  @override
+  String get welcomeStep1S => 'Advanced está activo en esta cuenta';
+
+  @override
+  String get welcomeStep2T => 'Asignación de entrenador en curso';
+
+  @override
+  String get welcomeStep2S => 'Estamos buscándote el coach adecuado';
+
+  @override
+  String get welcomeStep3T => 'Primer contacto en 24–48 horas';
+
+  @override
+  String get welcomeStep3S => 'Tu entrenador te saluda aquí mismo en el chat';
+
+  @override
+  String get welcomePendingT => 'Tu entrenador aparecerá aquí';
+
+  @override
+  String get welcomePendingS => 'Cuando te asignen uno, su perfil y chat se abren desde esta pantalla.';
+
+  @override
+  String get welcomeFootnote =>
+      'Mientras tanto, la biblioteca del entrenador está abierta — échale un vistazo.';
+
+  @override
+  String get trainerGateTitle => 'Guía 1:1 de tu entrenador';
+
+  @override
+  String get trainerGateBody =>
+      'Los entrenamientos personalizados y el chat directo con tu entrenador son parte de Advanced.';
+
+  @override
+  String get trainerGateCta => 'Ver Advanced';
 }

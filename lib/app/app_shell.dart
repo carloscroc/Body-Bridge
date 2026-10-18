@@ -9,7 +9,11 @@ import '../l10n/l10n.dart';
 import '../screens/account_screen.dart';
 import '../screens/about_screen.dart';
 import '../screens/ai_plan_screen.dart';
+import '../screens/coaching_intro_screen.dart';
+import '../screens/coaching_welcome_screen.dart';
 import '../screens/compare_screen.dart';
+import '../screens/consultation_confirmation_screen.dart';
+import '../screens/consultation_request_screen.dart';
 import '../screens/exercise_detail_screen.dart';
 import '../screens/exercises_screen.dart';
 import '../screens/home_screen.dart';
@@ -35,9 +39,13 @@ import '../screens/timeline_screen.dart';
 import '../screens/tool_detail_screen.dart';
 import '../screens/tools_screen.dart';
 import '../screens/train_screen.dart';
+import '../screens/trainer_chat_screen.dart';
+import '../screens/trainer_home_screen.dart';
+import '../screens/trainer_workout_detail_screen.dart';
 import '../services/incoming_share.dart';
 import '../state/account_gate.dart';
 import '../state/fit_state.dart';
+import '../state/trainer_state.dart';
 import '../theme/app_colors.dart';
 import '../theme/app_theme.dart';
 import '../widgets/app_background.dart';
@@ -70,6 +78,11 @@ class _AppShellState extends State<AppShell> with WidgetsBindingObserver {
     'preferences',
     'tools',
     'tools-detail',
+    'trainer',
+    'coaching-intro',
+    'consultation-request',
+    'consultation-confirmation',
+    'coaching-welcome',
   };
 
   static const _firstAwardWait = Duration(milliseconds: 4000);
@@ -257,7 +270,10 @@ class _AppShellState extends State<AppShell> with WidgetsBindingObserver {
                     left: 18,
                     right: 18,
                     bottom: 18 + MediaQuery.viewPaddingOf(context).bottom,
-                    child: Directionality(textDirection: TextDirection.ltr, child: _NavBar()),
+                    child: Directionality(
+                      textDirection: TextDirection.ltr,
+                      child: _NavBar(),
+                    ),
                   ),
                 if (fit.countdownUntil != null && fit.session != null)
                   Positioned.fill(
@@ -352,6 +368,20 @@ class _AppShellState extends State<AppShell> with WidgetsBindingObserver {
         return SessionScreen();
       case 'exercises':
         return ExercisesScreen();
+      case 'trainer':
+        return TrainerHomeScreen();
+      case 'trainer-workout':
+        return TrainerWorkoutDetailScreen(key: ValueKey(trainer.openAssignmentId));
+      case 'trainer-chat':
+        return TrainerChatScreen();
+      case 'coaching-intro':
+        return CoachingIntroScreen();
+      case 'consultation-request':
+        return ConsultationRequestScreen();
+      case 'consultation-confirmation':
+        return ConsultationConfirmationScreen();
+      case 'coaching-welcome':
+        return CoachingWelcomeScreen();
       case 'exercise-detail':
         return ExerciseDetailScreen();
       case 'tools':

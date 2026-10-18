@@ -12,6 +12,7 @@ import '../widgets/exercise_media.dart';
 import '../widgets/glass.dart';
 import '../widgets/home_folder.dart';
 import '../widgets/svg_icon.dart';
+import '../widgets/trainer_kit.dart';
 import '../widgets/ui_kit.dart';
 import 'progress_screen.dart';
 
@@ -27,83 +28,85 @@ class HomeScreen extends StatelessWidget {
       id: 'home',
       child: SafeArea(
       bottom: false,
-      child: SingleChildScrollView(
-        clipBehavior: Clip.none,
-        padding: const EdgeInsets.fromLTRB(20, 14, 20, 116),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: riseAll([
-            _topBar(gc),
-            const SizedBox(height: 20),
-            _hero(context, gc),
-            const SizedBox(height: 14),
-            _weekCard(context, gc),
-            if (fit.photoDue) ...[
+      child: TrainerBannerOverlay(
+        child: SingleChildScrollView(
+          clipBehavior: Clip.none,
+          padding: const EdgeInsets.fromLTRB(20, 14, 20, 116),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: riseAll([
+              _topBar(gc),
+              const SizedBox(height: 20),
+              _hero(context, gc),
               const SizedBox(height: 14),
-              _photoNudge(gc),
-            ],
-            const SizedBox(height: 30),
-            _heading(gc, t.thisWeek),
-            const SizedBox(height: 14),
-            _weekStats(context, gc),
-            const SizedBox(height: 30),
-            _heading(gc, t.activityLabel, onMore: fit.goProgress),
-            const SizedBox(height: 14),
-            SoftCard(
-              radius: 22,
-              padding: const EdgeInsets.fromLTRB(18, 18, 18, 16),
-              child: Heatmap(
-                levels: fit.heatmapLevels,
-                onTapDay: (i) => showDaySheet(context, fit.heatmapDate(i)),
-              ),
-            ),
-            if (recommended.isNotEmpty) ...[
+              _weekCard(context, gc),
+              if (fit.photoDue) ...[
+                const SizedBox(height: 14),
+                _photoNudge(gc),
+              ],
               const SizedBox(height: 30),
-              _heading(gc, t.recommended, onMore: fit.goExercises),
+              _heading(gc, t.thisWeek),
               const SizedBox(height: 14),
-              SizedBox(
-                height: 158,
-                child: ListView.separated(
-                  scrollDirection: Axis.horizontal,
-                  itemCount: recommended.length,
-                  separatorBuilder: (_, _) => const SizedBox(width: 12),
-                  itemBuilder: (_, i) => _recCard(gc, recommended[i]),
+              _weekStats(context, gc),
+              const SizedBox(height: 30),
+              _heading(gc, t.activityLabel, onMore: fit.goProgress),
+              const SizedBox(height: 14),
+              SoftCard(
+                radius: 22,
+                padding: const EdgeInsets.fromLTRB(18, 18, 18, 16),
+                child: Heatmap(
+                  levels: fit.heatmapLevels,
+                  onTapDay: (i) => showDaySheet(context, fit.heatmapDate(i)),
                 ),
               ),
-            ],
-            const SizedBox(height: 30),
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.end,
-              children: [
-                Expanded(
-                  child: HomeFolder(
-                    title: _tc(t.routines),
-                    detail: t.routineCount(fit.routines.length),
-                    peek: const RoutinesPeek(),
-                    onTap: fit.goRoutines,
-                  ),
-                ),
-                const SizedBox(width: 10),
-                Expanded(
-                  child: HomeFolder(
-                    title: _tc(t.tools),
-                    detail: t.calculatorsInside,
-                    peek: const ToolsPeek(),
-                    onTap: fit.goTools,
-                  ),
-                ),
-                const SizedBox(width: 10),
-                Expanded(
-                  child: HomeFolder(
-                    title: _tc(t.journal),
-                    detail: t.noteCount(fit.notes.length),
-                    peek: const NotesPeek(),
-                    onTap: fit.goNotes,
+              if (recommended.isNotEmpty) ...[
+                const SizedBox(height: 30),
+                _heading(gc, t.recommended, onMore: fit.goExercises),
+                const SizedBox(height: 14),
+                SizedBox(
+                  height: 158,
+                  child: ListView.separated(
+                    scrollDirection: Axis.horizontal,
+                    itemCount: recommended.length,
+                    separatorBuilder: (_, _) => const SizedBox(width: 12),
+                    itemBuilder: (_, i) => _recCard(gc, recommended[i]),
                   ),
                 ),
               ],
-            ),
-          ]),
+              const SizedBox(height: 30),
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  Expanded(
+                    child: HomeFolder(
+                      title: _tc(t.routines),
+                      detail: t.routineCount(fit.routines.length),
+                      peek: const RoutinesPeek(),
+                      onTap: fit.goRoutines,
+                    ),
+                  ),
+                  const SizedBox(width: 10),
+                  Expanded(
+                    child: HomeFolder(
+                      title: _tc(t.tools),
+                      detail: t.calculatorsInside,
+                      peek: const ToolsPeek(),
+                      onTap: fit.goTools,
+                    ),
+                  ),
+                  const SizedBox(width: 10),
+                  Expanded(
+                    child: HomeFolder(
+                      title: _tc(t.journal),
+                      detail: t.noteCount(fit.notes.length),
+                      peek: const NotesPeek(),
+                      onTap: fit.goNotes,
+                    ),
+                  ),
+                ],
+              ),
+            ]),
+          ),
         ),
       ),
       ),

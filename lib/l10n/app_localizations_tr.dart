@@ -3413,4 +3413,376 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get trainerChip => 'ANTRENÖR';
+
+  @override
+  String get myTrainer => 'ANTRENÖRÜM';
+
+  @override
+  String get assignedWorkouts => 'ATANAN ANTRENMANLAR';
+
+  @override
+  String get messageTrainer => 'Mesaj';
+
+  @override
+  String trainerSince(String date) {
+    return 'Antrenörünüz: $date tarihinden beri';
+  }
+
+  @override
+  String replyWindow(int hours) {
+    return 'Genellikle $hours sa içinde yanıtlar';
+  }
+
+  @override
+  String get chipNew => 'YENİ';
+
+  @override
+  String get chipInProgress => 'DEVAM EDİYOR';
+
+  @override
+  String get chipCompleted => 'TAMAMLANDI';
+
+  @override
+  String sentCardMeta(String date, int count, int minutes) {
+    return '$date gönderildi · $count egzersiz · ~$minutes dk';
+  }
+
+  @override
+  String sentByTrainerOn(String date) {
+    return 'Antrenörün $date tarihinde gönderdi';
+  }
+
+  @override
+  String progressPct(int pct) {
+    return '%$pct';
+  }
+
+  @override
+  String get coachNote => 'ANTRENÖR NOTU';
+
+  @override
+  String restLabel(String duration) {
+    return 'Dinlenme $duration';
+  }
+
+  @override
+  String askAboutThis(String name) {
+    return 'Bunun hakkında $name\'e sor';
+  }
+
+  @override
+  String messageHint(String name) {
+    return '$name adına mesaj...';
+  }
+
+  @override
+  String get tapToOpen => 'Açmak için dokun';
+
+  @override
+  String get todayDivider => 'BUGÜN';
+
+  @override
+  String trainerVideoMeta(String duration) {
+    return 'Antrenör videosu · $duration';
+  }
+
+  @override
+  String get gateBenefitWorkouts => 'Vücudunuza ve sakatlıklarınıza özel antrenmanlar';
+
+  @override
+  String get gateBenefitChat => 'Antrenörünle doğrudan mesajlaşma';
+
+  @override
+  String get gateBenefitVideo => 'Formunuz için video geri bildirimi';
+
+  @override
+  String get gateDismiss => 'Şimdi değil';
+
+  @override
+  String get gateFootnote => 'Yükseltmeler bodybridge.net üzerinden yapılır — planınız uygulamada kalır.';
+
+  @override
+  String bannerNewWorkout(String name) {
+    return '$name\'den yeni antrenman';
+  }
+
+  @override
+  String bannerNewMessage(String name) {
+    return '$name\'den yeni mesaj';
+  }
+
+  @override
+  String get bannerTapToView => 'Görüntülemek için dokun';
+
+  @override
+  String get startSoonTitle => 'Özel seanslar yakında';
+
+  @override
+  String get startSoonBody =>
+      'Rehberli seanslar antrenör videosuyla geliyor. Bu arada bu planı antrenörünüze sorun.';
+
+  @override
+  String exercisesMeta(int count, int minutes) {
+    return '$count egzersiz · ~$minutes dk';
+  }
+
+  @override
+  String get talkToTrainer => 'Antrenörünüzle konuşun';
+
+  @override
+  String get talkToTrainerSub => 'Özel antrenmanlar ve birebir sohbet';
+
+  @override
+  String get notifications => 'Bildirimler';
+
+  @override
+  String get consultCardKicker => 'KİŞİSEL KOACHING';
+
+  @override
+  String get consultCardTitle => 'Danışmanlık isteyin';
+
+  @override
+  String get consultCardSub => 'Yönünü belirleyecek kısa bir 1:1';
+
+  @override
+  String get consultCardSubDone => 'Talebin gönderildi — görüntüle';
+
+  @override
+  String get consultSheetTitle => 'Bir koçla birebir çalışın';
+
+  @override
+  String get consultSheetBody => 'Sertifikalı bir antrenör programınızı hazırlar ve yanınızda kalır.';
+
+  @override
+  String get consultDoorHow => 'Nasıl çalışır';
+
+  @override
+  String get consultDoorHowSub => '1:1\'de neler var';
+
+  @override
+  String get consultDoorRequest => 'Danışma talep et';
+
+  @override
+  String get consultDoorRequestSub => 'İki dakika, taahhüt yok';
+
+  @override
+  String get consultDoorView => 'Talebini görüntüle';
+
+  @override
+  String get consultDoorViewSub => 'Zaten gönderildi — kopya yok';
+
+  @override
+  String get introTitle => 'Sana göre kurgulanan koçluk';
+
+  @override
+  String get introP1 =>
+      'Danışma, antrenörünle kısa bir 1:1\'dir. Hedeflerini, geçmişini ve sakatlıklarını anlatırsın — antrenör bunları bedenine uyan bir plana çevirir.';
+
+  @override
+  String get introP2 => 'Hazır şablon yok. Planın senin için yazılır ve seninle birlikte değişir.';
+
+  @override
+  String get introPoint1 => 'Önce dinlenir: hedefler, geçmiş, sakatlıklar';
+
+  @override
+  String get introPoint2 => 'Kendi antrenmanları doğrudan uygulamada';
+
+  @override
+  String get introPoint3 => 'Planını yeniden şekillendiren geri bildirim';
+
+  @override
+  String get introCta => 'Danışma talep et';
+
+  @override
+  String get requestTitle => 'Danışma talep et';
+
+  @override
+  String get requestSub => 'Koç dönüş yapmadan önce bunu okur — hiçbir şeye abone olmazsınız.';
+
+  @override
+  String get requestGoalKicker => 'ANA HEDEF';
+
+  @override
+  String get goalStrength => 'Güç kazanmak';
+
+  @override
+  String get goalFatLoss => 'Yağ yakmak';
+
+  @override
+  String get goalMobility => 'Hareketliliği geliştir';
+
+  @override
+  String get goalConsistency => 'Düzenli kalmak';
+
+  @override
+  String get requestExpKicker => 'DENEYİM';
+
+  @override
+  String get expNew => 'Yeni başlıyorum';
+
+  @override
+  String get expReturning => 'Aradan sonra dönüyorum';
+
+  @override
+  String get expSeasoned => 'Yılların tecrübesi';
+
+  @override
+  String get requestTimeKicker => 'SİZE ULAŞMAK İÇİN EN İYİ ZAMAN · İSTEĞE BAĞLI';
+
+  @override
+  String get timeMorning => 'Sabah';
+
+  @override
+  String get timeAfternoon => 'Öğleden sonra';
+
+  @override
+  String get timeEvening => 'Akşam';
+
+  @override
+  String get requestNotesKicker => 'MESAJ · İSTEĞE BAĞLI';
+
+  @override
+  String get requestNotesHint => 'Sakatlıklar, program, ekipman…';
+
+  @override
+  String get requestSubmit => 'Talebi gönder';
+
+  @override
+  String get requestPickBoth => 'Önce bir hedef seçin';
+
+  @override
+  String get sentChip => 'GÖNDERİLDİ';
+
+  @override
+  String get sentTitle => 'Danışmanlık talebi alındı';
+
+  @override
+  String get sentBody =>
+      'Koçluk ekibimizden biri hedeflerinizi ve mevcut koçluk seçeneklerinizi görüşmek üzere size dönecek.';
+
+  @override
+  String get sentSummaryKicker => 'TALEP DURUMU';
+
+  @override
+  String get sentContinue => 'Egzersizlere Dön';
+
+  @override
+  String get welcomeTitle => 'Kişisel Koaching\'e Hoş Geldiniz';
+
+  @override
+  String get welcomeFlag => 'Antrenörün 24–48 saat içinde yanıtlar';
+
+  @override
+  String get welcomeStep1 => 'Antrenör talebini inceler ve sohbette yanıt verir';
+
+  @override
+  String get welcomeStep2 => '1:1 için bir zaman belirlersiniz';
+
+  @override
+  String get welcomeStep3 => 'Görüşmenin ardından ilk özel planın gelir';
+
+  @override
+  String get welcomeDone => 'Antrenörüme dön';
+
+  @override
+  String get consultPrimary => 'Danışmanlık İsteyin';
+
+  @override
+  String get exploreCoachingPlans => 'Koçluk Planlarını Keşfet';
+
+  @override
+  String get consultBenefit1 => 'Geçmişinize göre özel antrenmanlar';
+
+  @override
+  String get consultBenefit2 => 'Antrenmanlar arasında antrenörünüze yazın';
+
+  @override
+  String get consultBenefit3 => 'Her egzersizde video ve form ipuçları';
+
+  @override
+  String get consultFootnote =>
+      'Bir koç hedeflerinizi görüşmek üzere size dönecek — plan seçene kadar hiçbir rezervasyon veya ücretlendirme yapılmaz.';
+
+  @override
+  String get goalRecover => 'Sakatlıktan toparlanmak';
+
+  @override
+  String get goalUnsure => 'Henüz emin değilim';
+
+  @override
+  String get timeWeekdayMornings => 'Hafta içi sabahları';
+
+  @override
+  String get timeWeekdayEvenings => 'Hafta içi akşamları';
+
+  @override
+  String get timeWeekends => 'Hafta sonları';
+
+  @override
+  String get requestNameKicker => 'İSİM · HESABINIZDAN';
+
+  @override
+  String get requestEmailKicker => 'E-POSTA · HESABINIZDAN';
+
+  @override
+  String get requestVerified => 'Hesabınızda doğrulandı';
+
+  @override
+  String get srcLocked => 'KİLİTLİ';
+
+  @override
+  String get sentRequestedLabel => 'Talep edildi';
+
+  @override
+  String get sentContactLabel => 'İletişim';
+
+  @override
+  String get sentGoalLabel => 'Hedef';
+
+  @override
+  String get sentNote =>
+      'Her zamanki gibi antrenmana devam edebilirsiniz — abone olmaya karar verene kadar uygulamada hiçbir şey değişmez.';
+
+  @override
+  String get welcomeBody =>
+      'Aboneliğiniz aktif. Kişisel antrenörünüz 24-48 saat içinde sizinle iletişime geçecek.';
+
+  @override
+  String get welcomeStepsLabel => 'SONRAKİ ADIMLAR';
+
+  @override
+  String get welcomeStep1T => 'Abonelik aktif';
+
+  @override
+  String get welcomeStep1S => 'Advanced bu hesapta etkin';
+
+  @override
+  String get welcomeStep2T => 'Antrenör ataması sürüyor';
+
+  @override
+  String get welcomeStep2S => 'Size en uygun koçu eşleştiriyoruz';
+
+  @override
+  String get welcomeStep3T => 'İlk iletişim 24-48 saat içinde';
+
+  @override
+  String get welcomeStep3S => 'Antrenörünüz doğrudan burada, sohbette selam verecek';
+
+  @override
+  String get welcomePendingT => 'Antrenörünüz burada görünecek';
+
+  @override
+  String get welcomePendingS => 'Atandığında profili ve sohbet bu ekrandan açılacak.';
+
+  @override
+  String get welcomeFootnote => 'Bu arada Antrenör Kütüphanesi açık — göz atın.';
+
+  @override
+  String get trainerGateTitle => '1:1 antrenör desteği';
+
+  @override
+  String get trainerGateBody => 'Özel antrenmanlar ve doğrudan antrenör sohbeti Advanced kapsamındadır.';
+
+  @override
+  String get trainerGateCta => 'Advanced\'ı gör';
 }

@@ -3328,4 +3328,370 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get trainerChip => '트레이너';
+
+  @override
+  String get myTrainer => '내 트레이너';
+
+  @override
+  String get assignedWorkouts => '할당된 운동';
+
+  @override
+  String get messageTrainer => '메시지';
+
+  @override
+  String trainerSince(String date) {
+    return '$date부터 당신의 트레이너';
+  }
+
+  @override
+  String replyWindow(int hours) {
+    return '보통 $hours시간 안에 답장';
+  }
+
+  @override
+  String get chipNew => 'NEW';
+
+  @override
+  String get chipInProgress => '진행 중';
+
+  @override
+  String get chipCompleted => '완료';
+
+  @override
+  String sentCardMeta(String date, int count, int minutes) {
+    return '$date 전송 · $count개 운동 · ~$minutes분';
+  }
+
+  @override
+  String sentByTrainerOn(String date) {
+    return '트레이너가 $date에 전송';
+  }
+
+  @override
+  String progressPct(int pct) {
+    return '$pct%';
+  }
+
+  @override
+  String get coachNote => '코치 노트';
+
+  @override
+  String restLabel(String duration) {
+    return '휴식 $duration';
+  }
+
+  @override
+  String askAboutThis(String name) {
+    return '$name에게 이에 대해 물어보기';
+  }
+
+  @override
+  String messageHint(String name) {
+    return '$name에게 메시지...';
+  }
+
+  @override
+  String get tapToOpen => '탭하여 열기';
+
+  @override
+  String get todayDivider => '오늘';
+
+  @override
+  String trainerVideoMeta(String duration) {
+    return '트레이너 영상 · $duration';
+  }
+
+  @override
+  String get gateBenefitWorkouts => '당신의 몸과 부상에 맞춘 운동';
+
+  @override
+  String get gateBenefitChat => '트레이너와 직접 메시지';
+
+  @override
+  String get gateBenefitVideo => '자세 비디오 피드백';
+
+  @override
+  String get gateDismiss => '나중에';
+
+  @override
+  String get gateFootnote => '업그레이드는 bodybridge.net에서 진행됩니다 — 플랜 관리는 앱에서 계속됩니다.';
+
+  @override
+  String bannerNewWorkout(String name) {
+    return '$name의 새 운동';
+  }
+
+  @override
+  String bannerNewMessage(String name) {
+    return '$name의 새 메시지';
+  }
+
+  @override
+  String get bannerTapToView => '탭하여 보기';
+
+  @override
+  String get startSoonTitle => '맞춤 세션이 곧 제공됩니다';
+
+  @override
+  String get startSoonBody => '가이드 세션은 트레이너 영상과 함께 제공됩니다. 그동안 트레이너에게 이 플랜에 대해 문의하세요.';
+
+  @override
+  String exercisesMeta(int count, int minutes) {
+    return '$count개 운동 · ~$minutes분';
+  }
+
+  @override
+  String get talkToTrainer => '트레이너와 대화하기';
+
+  @override
+  String get talkToTrainerSub => '맞춤 운동과 1:1 채팅';
+
+  @override
+  String get notifications => '알림';
+
+  @override
+  String get consultCardKicker => '퍼스널 코칭';
+
+  @override
+  String get consultCardTitle => '상담 요청하기';
+
+  @override
+  String get consultCardSub => '방향을 정하는 짧은 1:1';
+
+  @override
+  String get consultCardSubDone => '요청 완료 — 보기';
+
+  @override
+  String get consultSheetTitle => '코치와 1:1로 함께하세요';
+
+  @override
+  String get consultSheetBody => '공인 트레이너가 프로그램을 설계하고 늘 곁에서 응원합니다.';
+
+  @override
+  String get consultDoorHow => '진행 방식';
+
+  @override
+  String get consultDoorHowSub => '1:1에서 다루는 내용';
+
+  @override
+  String get consultDoorRequest => '상담 요청하기';
+
+  @override
+  String get consultDoorRequestSub => '2분이면 충분, 부담 없음';
+
+  @override
+  String get consultDoorView => '내 요청 보기';
+
+  @override
+  String get consultDoorViewSub => '이미 전송됨 — 중복 없음';
+
+  @override
+  String get introTitle => '당신을 위해 만든 코칭';
+
+  @override
+  String get introP1 => '상담은 트레이너와의 짧은 1:1입니다. 목표, 운동 이력, 부상을 이야기하면 트레이너가 당신의 몸에 맞는 플랜으로 만들어 줍니다.';
+
+  @override
+  String get introP2 => '밀리지 않는 템플릿 따위 없습니다. 플랜은 당신만을 위해 작성되고 당신과 함께 변합니다.';
+
+  @override
+  String get introPoint1 => '목표·이력·부상을 먼저 듣습니다';
+
+  @override
+  String get introPoint2 => '앱 안에서 커스텀 운동을 전달합니다';
+
+  @override
+  String get introPoint3 => '피드백으로 플랜을 다듬습니다';
+
+  @override
+  String get introCta => '상담 요청하기';
+
+  @override
+  String get requestTitle => '상담 요청';
+
+  @override
+  String get requestSub => '코치가 연락 전에 읽습니다 — 어떤 구독도 생기지 않아요.';
+
+  @override
+  String get requestGoalKicker => '주요 목표';
+
+  @override
+  String get goalStrength => '근력 키우기';
+
+  @override
+  String get goalFatLoss => '체지방 줄이기';
+
+  @override
+  String get goalMobility => '가동성 개선';
+
+  @override
+  String get goalConsistency => '꾸준함 유지';
+
+  @override
+  String get requestExpKicker => '경험';
+
+  @override
+  String get expNew => '이제 시작';
+
+  @override
+  String get expReturning => '잠깐 쉬었다 옴';
+
+  @override
+  String get expSeasoned => '오랜 경험자';
+
+  @override
+  String get requestTimeKicker => '연락받기 좋은 시간 · 선택';
+
+  @override
+  String get timeMorning => '오전';
+
+  @override
+  String get timeAfternoon => '오후';
+
+  @override
+  String get timeEvening => '저녁';
+
+  @override
+  String get requestNotesKicker => '메시지 · 선택';
+
+  @override
+  String get requestNotesHint => '부상, 일정, 장비…';
+
+  @override
+  String get requestSubmit => '요청 보내기';
+
+  @override
+  String get requestPickBoth => '먼저 목표를 선택해 주세요';
+
+  @override
+  String get sentChip => '전송됨';
+
+  @override
+  String get sentTitle => '상담 요청이 접수되었습니다';
+
+  @override
+  String get sentBody => '코칭 팀의 한 명이 연락드려 목표와 이용 가능한 코칭 옵션을 함께 이야기합니다.';
+
+  @override
+  String get sentSummaryKicker => '요청 상태';
+
+  @override
+  String get sentContinue => '운동으로 돌아가기';
+
+  @override
+  String get welcomeTitle => '퍼스널 코칭에 오신 것을 환영합니다';
+
+  @override
+  String get welcomeFlag => '트레이너가 24~48시간 안에 답장합니다';
+
+  @override
+  String get welcomeStep1 => '트레이너가 요청을 확인하고 채팅으로 답장합니다';
+
+  @override
+  String get welcomeStep2 => '1:1 시간을 정합니다';
+
+  @override
+  String get welcomeStep3 => '통화 후 첫 커스텀 플랜을 전달합니다';
+
+  @override
+  String get welcomeDone => '내 트레이너로 돌아가기';
+
+  @override
+  String get consultPrimary => '상담 요청하기';
+
+  @override
+  String get exploreCoachingPlans => '코칭 플랜 살펴보기';
+
+  @override
+  String get consultBenefit1 => '내 기록에 맞춘 맞춤 운동';
+
+  @override
+  String get consultBenefit2 => '세션 사이에 트레이너와 메시지';
+
+  @override
+  String get consultBenefit3 => '모든 운동에 동영상과 자세 팁';
+
+  @override
+  String get consultFootnote => '코치가 목표를 논의하기 위해 연락드립니다. 플랜을 선택하기 전까지 예약이나 결제는 없습니다.';
+
+  @override
+  String get goalRecover => '부상에서 회복';
+
+  @override
+  String get goalUnsure => '아직 잘 모르겠어요';
+
+  @override
+  String get timeWeekdayMornings => '평일 오전';
+
+  @override
+  String get timeWeekdayEvenings => '평일 저녁';
+
+  @override
+  String get timeWeekends => '주말';
+
+  @override
+  String get requestNameKicker => '이름 · 계정에서 가져옴';
+
+  @override
+  String get requestEmailKicker => '이메일 · 계정에서 가져옴';
+
+  @override
+  String get requestVerified => '계정에서 인증됨';
+
+  @override
+  String get srcLocked => '잠김';
+
+  @override
+  String get sentRequestedLabel => '요청 일시';
+
+  @override
+  String get sentContactLabel => '연락처';
+
+  @override
+  String get sentGoalLabel => '목표';
+
+  @override
+  String get sentNote => '평소처럼 운동을 계속할 수 있어요. 구독을 선택하기 전까지 앱은 그대로입니다.';
+
+  @override
+  String get welcomeBody => '구독이 활성화되었습니다. 담당 트레이너가 24~48시간 안에 연락드립니다.';
+
+  @override
+  String get welcomeStepsLabel => '앞으로의 단계';
+
+  @override
+  String get welcomeStep1T => '구독 활성화됨';
+
+  @override
+  String get welcomeStep1S => '이 계정에서 Advanced를 이용할 수 있어요';
+
+  @override
+  String get welcomeStep2T => '트레이너 배정 진행 중';
+
+  @override
+  String get welcomeStep2S => '당신에게 맞는 코치를 매칭하고 있어요';
+
+  @override
+  String get welcomeStep3T => '24~48시간 안에 첫 연락';
+
+  @override
+  String get welcomeStep3S => '트레이너가 바로 이 채팅에서 인사드려요';
+
+  @override
+  String get welcomePendingT => '담당 트레이너가 여기에 표시돼요';
+
+  @override
+  String get welcomePendingS => '배정되면 이 화면에서 프로필과 채팅을 열 수 있어요.';
+
+  @override
+  String get welcomeFootnote => '그동안 트레이너 라이브러리는 열려 있어요. 한번 둘러보세요.';
+
+  @override
+  String get trainerGateTitle => '1:1 트레이너 코칭';
+
+  @override
+  String get trainerGateBody => '맞춤 운동과 트레이너 직접 채팅은 Advanced에 포함됩니다.';
+
+  @override
+  String get trainerGateCta => 'Advanced 보기';
 }

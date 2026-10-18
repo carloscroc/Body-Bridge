@@ -3412,4 +3412,373 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get trainerChip => 'مدرب';
+
+  @override
+  String get myTrainer => 'مدربي';
+
+  @override
+  String get assignedWorkouts => 'تمارين مخصصة';
+
+  @override
+  String get messageTrainer => 'مراسلة';
+
+  @override
+  String trainerSince(String date) {
+    return 'مدربك منذ $date';
+  }
+
+  @override
+  String replyWindow(int hours) {
+    return 'يرد عادةً خلال $hours ساعات';
+  }
+
+  @override
+  String get chipNew => 'جديد';
+
+  @override
+  String get chipInProgress => 'قيد التقدم';
+
+  @override
+  String get chipCompleted => 'مكتمل';
+
+  @override
+  String sentCardMeta(String date, int count, int minutes) {
+    return 'أُرسل $date · $count تمارين · ~$minutes د';
+  }
+
+  @override
+  String sentByTrainerOn(String date) {
+    return 'أرسله مدربك في $date';
+  }
+
+  @override
+  String progressPct(int pct) {
+    return '$pct%';
+  }
+
+  @override
+  String get coachNote => 'ملاحظة المدرب';
+
+  @override
+  String restLabel(String duration) {
+    return 'راحة $duration';
+  }
+
+  @override
+  String askAboutThis(String name) {
+    return 'اسأل $name عن هذا';
+  }
+
+  @override
+  String messageHint(String name) {
+    return 'رسالة إلى $name...';
+  }
+
+  @override
+  String get tapToOpen => 'انقر للفتح';
+
+  @override
+  String get todayDivider => 'اليوم';
+
+  @override
+  String trainerVideoMeta(String duration) {
+    return 'فيديو المدرب · $duration';
+  }
+
+  @override
+  String get gateBenefitWorkouts => 'تمارين مصممة لجسمك وإصاباتك';
+
+  @override
+  String get gateBenefitChat => 'مراسلة مباشرة مع مدربك';
+
+  @override
+  String get gateBenefitVideo => 'ملاحظات بالفيديو على أدائك';
+
+  @override
+  String get gateDismiss => 'ليس الآن';
+
+  @override
+  String get gateFootnote => 'تتم الترقيات على bodybridge.net — تبقى خطتك داخل التطبيق.';
+
+  @override
+  String bannerNewWorkout(String name) {
+    return 'تمرين جديد من $name';
+  }
+
+  @override
+  String bannerNewMessage(String name) {
+    return 'رسالة جديدة من $name';
+  }
+
+  @override
+  String get bannerTapToView => 'انقر للعرض';
+
+  @override
+  String get startSoonTitle => 'الجلسات المخصصة قريبًا';
+
+  @override
+  String get startSoonBody =>
+      'تصل الجلسات الموجهة مع فيديو المدرب. في هذه الأثناء، اسأل مدربك عن هذا البرنامج.';
+
+  @override
+  String exercisesMeta(int count, int minutes) {
+    return '$count تمارين · ~$minutes د';
+  }
+
+  @override
+  String get talkToTrainer => 'تحدث مع مدربك';
+
+  @override
+  String get talkToTrainerSub => 'تمارين مخصصة ودردشة فردية';
+
+  @override
+  String get notifications => 'الإشعارات';
+
+  @override
+  String get consultCardKicker => 'كوتشينغ شخصي';
+
+  @override
+  String get consultCardTitle => 'اطلب استشارة';
+
+  @override
+  String get consultCardSub => 'لقاء قصير 1:1 يحدد اتجاهك';
+
+  @override
+  String get consultCardSubDone => 'طلبك مُرسل — اطّلع عليه';
+
+  @override
+  String get consultSheetTitle => 'تدرّب فردًا لفرد مع مدرب';
+
+  @override
+  String get consultSheetBody => 'يبني مدرب معتمد برنامجك ويبقى بجانبك.';
+
+  @override
+  String get consultDoorHow => 'كيف يعمل';
+
+  @override
+  String get consultDoorHowSub => 'ما يغطيه اللقاء';
+
+  @override
+  String get consultDoorRequest => 'اطلب استشارة';
+
+  @override
+  String get consultDoorRequestSub => 'دقيقتان، بلا التزام';
+
+  @override
+  String get consultDoorView => 'اعرض طلبك';
+
+  @override
+  String get consultDoorViewSub => 'مُرسل بالفعل — بلا تكرار';
+
+  @override
+  String get introTitle => 'تدريب مصمم من أجلك';
+
+  @override
+  String get introP1 =>
+      'الاستشارة لقاء قصير 1:1 مع مدربك. تشاركنا أهدافك وتاريخك وإصاباتك — ويحوّلها المدرب إلى خطة تناسب جسمك.';
+
+  @override
+  String get introP2 => 'لا قوالب جاهزة. خطتك تُكتب لك وتتطور معك.';
+
+  @override
+  String get introPoint1 => 'نستمع أولًا: الأهداف والتاريخ والإصابات';
+
+  @override
+  String get introPoint2 => 'تمارين مخصصة داخل التطبيق';
+
+  @override
+  String get introPoint3 => 'ملاحظات تعيد تشكيل خطتك';
+
+  @override
+  String get introCta => 'اطلب استشارة';
+
+  @override
+  String get requestTitle => 'اطلب استشارة';
+
+  @override
+  String get requestSub => 'يقرأ المدرب هذا قبل المتابعة — لا يشترك بك في أي شيء.';
+
+  @override
+  String get requestGoalKicker => 'الهدف الرئيسي';
+
+  @override
+  String get goalStrength => 'بناء القوة';
+
+  @override
+  String get goalFatLoss => 'خسارة الدهون';
+
+  @override
+  String get goalMobility => 'تحسين الحركة';
+
+  @override
+  String get goalConsistency => 'الاستمرارية';
+
+  @override
+  String get requestExpKicker => 'الخبرة';
+
+  @override
+  String get expNew => 'مبتدئ تمامًا';
+
+  @override
+  String get expReturning => 'عائد بعد توقف';
+
+  @override
+  String get expSeasoned => 'سنوات من التدريب';
+
+  @override
+  String get requestTimeKicker => 'أفضل وقت للتواصل · اختياري';
+
+  @override
+  String get timeMorning => 'صباحًا';
+
+  @override
+  String get timeAfternoon => 'ظهرًا';
+
+  @override
+  String get timeEvening => 'مساءً';
+
+  @override
+  String get requestNotesKicker => 'رسالة · اختياري';
+
+  @override
+  String get requestNotesHint => 'إصابات، جدول، معدات…';
+
+  @override
+  String get requestSubmit => 'أرسل الطلب';
+
+  @override
+  String get requestPickBoth => 'اختر هدفًا أولاً';
+
+  @override
+  String get sentChip => 'مُرسل';
+
+  @override
+  String get sentTitle => 'تم استلام طلب الاستشارة';
+
+  @override
+  String get sentBody => 'سيتواصل معك أحد أعضاء فريق الكوتشينغ لمناقشة أهدافك وخيارات الكوتشينغ المتاحة.';
+
+  @override
+  String get sentSummaryKicker => 'حالة الطلب';
+
+  @override
+  String get sentContinue => 'العودة إلى التمارين';
+
+  @override
+  String get welcomeTitle => 'مرحبًا بك في الكوتشينغ الشخصي';
+
+  @override
+  String get welcomeFlag => 'يرد مدربك خلال 24–48 ساعة';
+
+  @override
+  String get welcomeStep1 => 'يراجع مدربك طلبك ويرد في المحادثة';
+
+  @override
+  String get welcomeStep2 => 'تتفقان على موعد اللقاء';
+
+  @override
+  String get welcomeStep3 => 'تصل خطتك المخصصة الأولى بعد المكالمة';
+
+  @override
+  String get welcomeDone => 'العودة إلى مدربي';
+
+  @override
+  String get consultPrimary => 'اطلب استشارة';
+
+  @override
+  String get exploreCoachingPlans => 'استكشف خطط الكوتشينغ';
+
+  @override
+  String get consultBenefit1 => 'تمارين مخصصة مبنية على سجلك';
+
+  @override
+  String get consultBenefit2 => 'راسل مدربك بين الجلسات';
+
+  @override
+  String get consultBenefit3 => 'فيديو وإرشادات أداء لكل تمرين';
+
+  @override
+  String get consultFootnote =>
+      'سيتابع المدرب معك لمناقشة أهدافك — لا يُحجز أو يُحصَّل أي مبلغ حتى تختار خطة.';
+
+  @override
+  String get goalRecover => 'التعافي من إصابة';
+
+  @override
+  String get goalUnsure => 'لست متأكدًا بعد';
+
+  @override
+  String get timeWeekdayMornings => 'صباح أيام الأسبوع';
+
+  @override
+  String get timeWeekdayEvenings => 'مساء أيام الأسبوع';
+
+  @override
+  String get timeWeekends => 'في عطلة نهاية الأسبوع';
+
+  @override
+  String get requestNameKicker => 'الاسم · من حسابك';
+
+  @override
+  String get requestEmailKicker => 'البريد الإلكتروني · من حسابك';
+
+  @override
+  String get requestVerified => 'تم التحقق منه في حسابك';
+
+  @override
+  String get srcLocked => 'مقفل';
+
+  @override
+  String get sentRequestedLabel => 'تاريخ الطلب';
+
+  @override
+  String get sentContactLabel => 'وسيلة التواصل';
+
+  @override
+  String get sentGoalLabel => 'الهدف';
+
+  @override
+  String get sentNote => 'يمكنك مواصلة التدريب كالمعتاد — لن يتغير أي شيء في التطبيق حتى تختار الاشتراك.';
+
+  @override
+  String get welcomeBody => 'اشتراكك نشط. سيتواصل معك مدربك الشخصي خلال 24–48 ساعة.';
+
+  @override
+  String get welcomeStepsLabel => 'ماذا بعد';
+
+  @override
+  String get welcomeStep1T => 'الاشتراك نشط';
+
+  @override
+  String get welcomeStep1S => 'Advanced مُفعّل على هذا الحساب';
+
+  @override
+  String get welcomeStep2T => 'جارٍ تعيين المدرب';
+
+  @override
+  String get welcomeStep2S => 'نختار لك المدرب الأنسب';
+
+  @override
+  String get welcomeStep3T => 'أول تواصل خلال 24–48 ساعة';
+
+  @override
+  String get welcomeStep3S => 'سيرحب بك مدربك هنا في الدردشة';
+
+  @override
+  String get welcomePendingT => 'سيظهر مدربك هنا';
+
+  @override
+  String get welcomePendingS => 'بعد التعيين، سيُفتح ملفه والدردشة من هذه الشاشة.';
+
+  @override
+  String get welcomeFootnote => 'وفي هذه الأثناء، مكتبة المدرب مفتوحة — ألقِ نظرة.';
+
+  @override
+  String get trainerGateTitle => 'إرشاد شخصي من مدربك';
+
+  @override
+  String get trainerGateBody => 'التمارين المخصصة والدردشة المباشرة مع المدرب جزء من باقة Advanced.';
+
+  @override
+  String get trainerGateCta => 'اكتشف Advanced';
 }
