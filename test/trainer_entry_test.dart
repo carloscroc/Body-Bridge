@@ -208,7 +208,7 @@ void main() {
     expect(fit.route, 'exercises');
   });
 
-  testWidgets('free: upsell strip opens the gate; no trainer surfaces', (tester) async {
+  testWidgets('free: upsell strip opens the consultation sheet; no trainer surfaces', (tester) async {
     fit.resetRoute('exercises');
     await pumpSurface(tester, AccountTier.free);
 
@@ -219,8 +219,11 @@ void main() {
 
     await tester.tap(find.text(t.talkToTrainer));
     await tester.pumpAndSettle();
-    expect(find.text(t.gateTitle), findsOneWidget);
-    expect(find.textContaining(RegExp(r'\$\d')), findsNothing, reason: 'the gate must not show prices');
+    // t_db30a5d3 R2/B4: the free-tier strip opens the two-door consultation
+    // sheet — NOT the Advanced gate.
+    expect(find.text(t.consultSheetTitle), findsOneWidget);
+    expect(find.text(t.gateTitle), findsNothing);
+    expect(find.textContaining(RegExp(r'\$\d')), findsNothing, reason: 'the sheet must not show prices');
   });
 
   testWidgets('bell badge follows unreadTotal', (tester) async {
