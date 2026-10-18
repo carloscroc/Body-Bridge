@@ -73,6 +73,14 @@ void main() {
   });
 
   testWidgets('composer posts land through the repo path with a share slug', (tester) async {
+    // Same fold fix as community_composer_test.dart pumpHostAndOpen: default
+    // 800x600 logical surface leaves the caption field below the lazy
+    // ListView's fold. Phone-sized surface builds it.
+    if (tester.view.physicalSize == const Size(2400, 1800)) {
+      tester.view.physicalSize = const Size(411, 914);
+      tester.view.devicePixelRatio = 1.0;
+      addTearDown(tester.view.reset);
+    }
     await tester.pumpWidget(MaterialApp(
       theme: AppTheme.dark,
       localizationsDelegates: AppLocalizations.localizationsDelegates,
