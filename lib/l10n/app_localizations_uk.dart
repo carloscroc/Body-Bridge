@@ -3196,4 +3196,231 @@ class AppLocalizationsUk extends AppLocalizations {
 
   @override
   String get billingComingSoon => 'Оплата скоро з\'явиться.';
+
+  @override
+  String get communityTab => 'Спільнота';
+
+  @override
+  String get feedTab => 'Стрічка';
+
+  @override
+  String get membersTab => 'Учасники';
+
+  @override
+  String get gateTitle => 'Спільнота входить до тарифу Basic';
+
+  @override
+  String get gateBody => 'Фото прогресу, щоденники тренувань і люди, які розуміють.';
+
+  @override
+  String get gateCta => 'Відкрити спільноту';
+
+  @override
+  String get gateLinkOut => 'Продовжити на bodybridge.net';
+
+  @override
+  String get gateNotNow => 'Не зараз';
+
+  @override
+  String get optionsTitle => 'Дії з публікацією';
+
+  @override
+  String get sharePost => 'Поділитися публікацією';
+
+  @override
+  String get savePost => 'Зберегти публікацію';
+
+  @override
+  String get savedPost => 'Збережено';
+
+  @override
+  String get copyPostLink => 'Копіювати посилання на публікацію';
+
+  @override
+  String get hidePost => 'Приховати публікацію';
+
+  @override
+  String get reportPost => 'Поскаржитися на публікацію';
+
+  @override
+  String get editPost => 'Змінити публікацію';
+
+  @override
+  String get deletePost => 'Видалити публікацію…';
+
+  @override
+  String get deleteConfirmTitle => 'Видалити цю публікацію?';
+
+  @override
+  String get deleteConfirmBody =>
+      'Публікацію, її фото та коментарі буде видалено зі Спільноти. Цю дію не можна скасувати.';
+
+  @override
+  String get keepPost => 'Залишити публікацію';
+
+  @override
+  String get deleteAction => 'Видалити';
+
+  @override
+  String get postHiddenSnackbar => 'Публікацію приховано · Скасувати';
+
+  @override
+  String get reportSheetTitle => 'Скарга на публікацію';
+
+  @override
+  String get reportAnonymous => 'Ваша скарга анонімна.';
+
+  @override
+  String get reportSpam => 'Спам або шахрайство';
+
+  @override
+  String get reportHarassment => 'Цькування або ненависть';
+
+  @override
+  String get reportInappropriate => 'Неприпустимі фото';
+
+  @override
+  String get reportSubmit => 'Поскаржитися';
+
+  @override
+  String get reportSent => 'Скаргу надіслано';
+
+  @override
+  String get shareSheetTitle => 'Поділитися публікацією';
+
+  @override
+  String get copyLink => 'Копіювати посилання';
+
+  @override
+  String get linkCopied => 'Посилання скопійовано';
+
+  @override
+  String get shareMessages => 'Повідомлення';
+
+  @override
+  String get shareMail => 'Пошта';
+
+  @override
+  String get shareInstagram => 'Instagram';
+
+  @override
+  String get shareMore => 'Більше';
+
+  @override
+  String get newPostTitle => 'Нова публікація';
+
+  @override
+  String get modeProgress => 'Прогрес';
+
+  @override
+  String get modeWorkout => 'Тренування';
+
+  @override
+  String progressPhotosCount(int n) {
+    return 'ФОТО ПРОГРЕСУ · $n З 4';
+  }
+
+  @override
+  String get addPhotoTile => 'Додати';
+
+  @override
+  String get photoPickerPending => 'Додавання фото потребує вибору зображень — незабаром';
+
+  @override
+  String get captionHint => 'Розкажіть про свій тиждень: що змінилося, чому ви навчилися...';
+
+  @override
+  String get photosPrivate => 'Фото залишаються приватними, доки ви їх не опублікуєте.';
+
+  @override
+  String get sessionPreview => 'ОГЛЯД ТРЕНУВАННЯ';
+
+  @override
+  String get autoFilled => 'Заповнено автоматично з сьогоднішнього тренування';
+
+  @override
+  String get contextHint => 'Додайте контекст — які відчуття?';
+
+  @override
+  String get postToCommunity => 'Опублікувати у спільноті';
+
+  @override
+  String get commentsTitle => 'Коментарі';
+
+  @override
+  String commentCount(int n) {
+    String _temp0 = intl.Intl.pluralLogic(
+      n,
+      locale: localeName,
+      other: '$n коментаря',
+      many: '$n коментарів',
+      few: '$n коментарі',
+      one: '$n коментар',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get addCommentHint => 'Додайте коментар...';
+
+  @override
+  String replyingTo(String name) {
+    return 'У відповідь $name';
+  }
+
+  @override
+  String get opChip => 'АВТОР';
+
+  @override
+  String get noPostsTitle => 'Публікацій ще немає';
+
+  @override
+  String get noPostsBody => 'Будьте першим, хто розповість про свій тиждень.';
+
+  @override
+  String get createFirstPost => 'Створити першу публікацію';
+
+  @override
+  String get progressPhotoLabel => 'ФОТО ПРОГРЕСУ';
+
+  @override
+  String get progressChip => 'ПРОГРЕС';
+
+  @override
+  String get workoutChip => 'ТРЕНУВАННЯ';
+
+  @override
+  String get prChip => 'РЕКОРД';
+
+  @override
+  String workoutStats(int min, int sets, String volume) {
+    return '$min хв · $sets підходів · $volume кг об’єму';
+  }
+
+  @override
+  String get composeDisabledHint => 'Відкрийте спільноту, щоб публікувати';
+
+  @override
+  String get inboxComingSoon => 'Вхідні з’являться незабаром';
+
+  @override
+  String get timeAgoNow => 'зараз';
+
+  @override
+  String timeAgoMinutes(int n) {
+    return '$n хв';
+  }
+
+  @override
+  String timeAgoHours(int n) {
+    return '$n год';
+  }
+
+  @override
+  String timeAgoDays(int n) {
+    return '$n д';
+  }
+
+  @override
+  String get trainerChip => 'ТРЕНЕР';
 }

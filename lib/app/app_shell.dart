@@ -26,6 +26,8 @@ import '../screens/routines_screen.dart';
 import '../screens/session_screen.dart';
 import '../screens/start_sheet.dart';
 import '../screens/awards_screen.dart';
+import '../screens/community/community_feed.dart';
+import '../screens/community/community_gate.dart';
 import '../screens/moments_screen.dart';
 import '../screens/profile_screen.dart';
 import '../screens/settings_screen.dart';
@@ -34,6 +36,7 @@ import '../screens/tool_detail_screen.dart';
 import '../screens/tools_screen.dart';
 import '../screens/train_screen.dart';
 import '../services/incoming_share.dart';
+import '../state/account_gate.dart';
 import '../state/fit_state.dart';
 import '../theme/app_colors.dart';
 import '../theme/app_theme.dart';
@@ -363,6 +366,8 @@ class _AppShellState extends State<AppShell> with WidgetsBindingObserver {
         return AccountScreen();
       case 'paywall':
         return PaywallScreen();
+      case 'community':
+        return CommunityFeedScreen();
       case 'moments':
         return MomentsScreen();
       case 'awards':
@@ -424,7 +429,7 @@ class _NavBar extends StatefulWidget {
 class _NavBarState extends State<_NavBar> {
   static const _iw = 58.0;
   static const _fabW = 54.0;
-  static const _routes = ['home', 'progress', 'exercises', 'settings'];
+  static const _routes = ['home', 'progress', 'exercises', 'community'];
 
   double? _dragX;
   int? _hover;
@@ -444,7 +449,7 @@ class _NavBarState extends State<_NavBar> {
         _ => 3 * _iw + 4 * _gap + _fabW,
       };
 
-  void _go(int i) => [fit.goHome, fit.goProgress, fit.goExercises, fit.goSettings][i]();
+  void _go(int i) => [fit.goHome, fit.goProgress, fit.goExercises, fit.goCommunity][i]();
 
   int _nearest(double x) {
     var best = 0;
@@ -541,8 +546,8 @@ class _NavBarState extends State<_NavBar> {
                       _fab(context),
                       _item(context, 2, PhosphorIconsRegular.barbell, PhosphorIconsFill.barbell, t.exercises,
                           fit.goExercises),
-                      _item(context, 3, PhosphorIconsRegular.userCircle, PhosphorIconsFill.userCircle, t.profile,
-                          fit.goSettings),
+                      _item(context, 3, PhosphorIconsRegular.chatCircle, PhosphorIconsFill.chatCircle,
+                          t.communityTab, fit.goCommunity, badge: _communityBadge(context)),
                     ],
                   ),
                 ),
@@ -554,17 +559,20 @@ class _NavBarState extends State<_NavBar> {
     );
   }
 
-  Widget _item(BuildContext context, int index, IconData icon, IconData iconFill, String label, VoidCallback onTap) {
+  Widget _item(BuildContext context, int index, IconData icon, IconData iconFill, String label, VoidCallback onTap,
+      {Widget? badge}) {
     final gc = context.gc;
     final selected = _selectedIndex == index;
     final lifted = selected && _dragX != null;
     final color = selected ? gc.text : gc.textTertiary;
     const dur = Duration(milliseconds: 300);
 
-    return GestureDetector(
-      behavior: HitTestBehavior.opaque,
-      onTap: onTap,
-      onLongPressStart: (d) {
+    return Semantics(
+      selected: selected,
+      child: GestureDetector(
+        behavior: HitTestBehavior.opaque,
+        onTap: onTap,
+        onLongPressStart: (d) {
         HapticFeedback.mediumImpact();
         _dragTo(_slotX(index) + d.localPosition.dx);
       },
@@ -586,11 +594,21 @@ class _NavBarState extends State<_NavBar> {
               tween: Tween(begin: selected ? 1 : 0, end: selected ? 1 : 0),
               duration: dur,
               curve: Curves.easeOut,
-              builder: (context, t, _) => Icon(
-                selected ? iconFill : icon,
-                size: 22,
-                color: Color.lerp(gc.textTertiary, gc.text, t),
-              ),
+              builder: (context, t, _) {
+                final iconWidget = Icon(
+                  selected ? iconFill : icon,
+                  size: 22,
+                  color: Color.lerp(gc.textTertiary, gc.text, t),
+                );
+                if (badge == null) return iconWidget;
+                return Stack(
+                  clipBehavior: Clip.none,
+                  children: [
+                    iconWidget,
+                    Positioned(top: -2, right: -5, child: badge),
+                  ],
+                );
+              },
             ),
             const SizedBox(height: 3),
             Padding(
@@ -609,6 +627,22 @@ class _NavBarState extends State<_NavBar> {
         ),
       ),
       ),
+    ));
+  }
+
+  Widget? _communityBadge(BuildContext context) {
+    final gate = AccountGate.instance;
+    if (communityUnlocked(gate.snapshot)) return null;
+    return AnimatedBuilder(
+      animation: gate,
+      builder: (context, _) => communityUnlocked(AccountGate.instance.snapshot)
+          ? const SizedBox.shrink()
+          : Icon(
+              PhosphorIconsFill.lockKey,
+              key: const Key('communityLockBadge'),
+              size: 11,
+              color: context.gc.ember,
+            ),
     );
   }
 

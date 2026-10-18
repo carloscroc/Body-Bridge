@@ -3281,4 +3281,231 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get billingComingSoon => 'Оплата скоро появится.';
+
+  @override
+  String get communityTab => 'Сообщество';
+
+  @override
+  String get feedTab => 'Лента';
+
+  @override
+  String get membersTab => 'Участники';
+
+  @override
+  String get gateTitle => 'Сообщество входит в тариф Basic';
+
+  @override
+  String get gateBody => 'Фото прогресса, дневники тренировок и люди, которые понимают.';
+
+  @override
+  String get gateCta => 'Открыть сообщество';
+
+  @override
+  String get gateLinkOut => 'Продолжить на bodybridge.net';
+
+  @override
+  String get gateNotNow => 'Не сейчас';
+
+  @override
+  String get optionsTitle => 'Действия с публикацией';
+
+  @override
+  String get sharePost => 'Поделиться публикацией';
+
+  @override
+  String get savePost => 'Сохранить публикацию';
+
+  @override
+  String get savedPost => 'Сохранено';
+
+  @override
+  String get copyPostLink => 'Скопировать ссылку на публикацию';
+
+  @override
+  String get hidePost => 'Скрыть публикацию';
+
+  @override
+  String get reportPost => 'Пожаловаться на публикацию';
+
+  @override
+  String get editPost => 'Изменить публикацию';
+
+  @override
+  String get deletePost => 'Удалить публикацию…';
+
+  @override
+  String get deleteConfirmTitle => 'Удалить эту публикацию?';
+
+  @override
+  String get deleteConfirmBody =>
+      'Публикация, её фото и комментарии будут удалены из Сообщества. Это действие нельзя отменить.';
+
+  @override
+  String get keepPost => 'Оставить публикацию';
+
+  @override
+  String get deleteAction => 'Удалить';
+
+  @override
+  String get postHiddenSnackbar => 'Публикация скрыта · Отменить';
+
+  @override
+  String get reportSheetTitle => 'Жалоба на публикацию';
+
+  @override
+  String get reportAnonymous => 'Ваша жалоба анонимна.';
+
+  @override
+  String get reportSpam => 'Спам или мошенничество';
+
+  @override
+  String get reportHarassment => 'Травля или ненависть';
+
+  @override
+  String get reportInappropriate => 'Неприемлемые фото';
+
+  @override
+  String get reportSubmit => 'Пожаловаться';
+
+  @override
+  String get reportSent => 'Жалоба отправлена';
+
+  @override
+  String get shareSheetTitle => 'Поделиться публикацией';
+
+  @override
+  String get copyLink => 'Скопировать ссылку';
+
+  @override
+  String get linkCopied => 'Ссылка скопирована';
+
+  @override
+  String get shareMessages => 'Сообщения';
+
+  @override
+  String get shareMail => 'Почта';
+
+  @override
+  String get shareInstagram => 'Instagram';
+
+  @override
+  String get shareMore => 'Ещё';
+
+  @override
+  String get newPostTitle => 'Новая публикация';
+
+  @override
+  String get modeProgress => 'Прогресс';
+
+  @override
+  String get modeWorkout => 'Тренировка';
+
+  @override
+  String progressPhotosCount(int n) {
+    return 'ФОТО ПРОГРЕССА · $n ИЗ 4';
+  }
+
+  @override
+  String get addPhotoTile => 'Добавить';
+
+  @override
+  String get photoPickerPending => 'Добавление фото нуждается в выборе изображений — скоро';
+
+  @override
+  String get captionHint => 'Расскажите о своей неделе: что изменилось, чему вы научились...';
+
+  @override
+  String get photosPrivate => 'Фото остаются приватными, пока вы их не опубликуете.';
+
+  @override
+  String get sessionPreview => 'ОБЗОР ТРЕНИРОВКИ';
+
+  @override
+  String get autoFilled => 'Заполнено автоматически из сегодняшней тренировки';
+
+  @override
+  String get contextHint => 'Добавьте контекст — какие ощущения?';
+
+  @override
+  String get postToCommunity => 'Опубликовать в сообществе';
+
+  @override
+  String get commentsTitle => 'Комментарии';
+
+  @override
+  String commentCount(int n) {
+    String _temp0 = intl.Intl.pluralLogic(
+      n,
+      locale: localeName,
+      other: '$n комментария',
+      many: '$n комментариев',
+      few: '$n комментария',
+      one: '$n комментарий',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get addCommentHint => 'Добавьте комментарий...';
+
+  @override
+  String replyingTo(String name) {
+    return 'В ответ $name';
+  }
+
+  @override
+  String get opChip => 'АВТОР';
+
+  @override
+  String get noPostsTitle => 'Пока нет публикаций';
+
+  @override
+  String get noPostsBody => 'Будьте первым, кто расскажет о своей неделе.';
+
+  @override
+  String get createFirstPost => 'Создать первую публикацию';
+
+  @override
+  String get progressPhotoLabel => 'ФОТО ПРОГРЕССА';
+
+  @override
+  String get progressChip => 'ПРОГРЕСС';
+
+  @override
+  String get workoutChip => 'ТРЕНИРОВКА';
+
+  @override
+  String get prChip => 'РЕКОРД';
+
+  @override
+  String workoutStats(int min, int sets, String volume) {
+    return '$min мин · $sets подходов · $volume кг объёма';
+  }
+
+  @override
+  String get composeDisabledHint => 'Откройте сообщество, чтобы публиковать';
+
+  @override
+  String get inboxComingSoon => 'Входящие появятся скоро';
+
+  @override
+  String get timeAgoNow => 'сейчас';
+
+  @override
+  String timeAgoMinutes(int n) {
+    return '$n мин';
+  }
+
+  @override
+  String timeAgoHours(int n) {
+    return '$n ч';
+  }
+
+  @override
+  String timeAgoDays(int n) {
+    return '$n д';
+  }
+
+  @override
+  String get trainerChip => 'ТРЕНЕР';
 }

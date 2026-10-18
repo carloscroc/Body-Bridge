@@ -30,6 +30,23 @@ class Store {
 
   void setNote(String key, String value) => _prefs?.setString('gm_$key', value);
 
+  /// Dedicated JSON namespace for community persistence (key `gm_community_v1`).
+  /// Independent of the shared `gymmane_v1` map, so a stale full-store writer
+  /// can never clobber community's snapshot.
+  void saveJson(String key, Map<String, dynamic> value) =>
+      _prefs?.setString('gm_$key', jsonEncode(value));
+
+  Map<String, dynamic>? loadJson(String key) {
+    final raw = _prefs?.getString('gm_$key');
+    if (raw == null || raw.isEmpty) return null;
+    try {
+      final decoded = jsonDecode(raw);
+      return decoded is Map<String, dynamic> ? decoded : null;
+    } catch (_) {
+      return null;
+    }
+  }
+
   Future<void> save(Map<String, dynamic> data) async {
     try {
       await _prefs?.setString(_key, jsonEncode(data));

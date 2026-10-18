@@ -1,0 +1,649 @@
+import 'package:flutter/foundation.dart' show ChangeNotifier, visibleForTesting;
+
+import 'package:gymmane/services/local_store.dart';
+
+/// Kind of a community post.
+enum PostKind { progress, workout }
+
+/// Placeholder media tile (community media ships without real images).
+class MediaPlaceholder {
+  const MediaPlaceholder({this.sage = false});
+
+  /// Sage-gradient variant; the default is the terracotta gradient.
+  final bool sage;
+}
+
+/// One exercise line inside a workout summary tile.
+class ExerciseRow {
+  const ExerciseRow({
+    required this.name,
+    required this.scheme,
+    required this.weight,
+    this.pr = false,
+  });
+
+  final String name;
+  final String scheme;
+  final String weight;
+  final bool pr;
+}
+
+/// Workout summary attached to a post or the composer preview.
+class WorkoutSummary {
+  const WorkoutSummary({
+    required this.title,
+    required this.minutes,
+    required this.sets,
+    required this.volumeKg,
+    required this.rows,
+  });
+
+  final String title;
+  final int minutes;
+  final int sets;
+  final int volumeKg;
+  final List<ExerciseRow> rows;
+}
+
+/// A comment on a community post. Replies carry [replyToName].
+class CommunityComment {
+  const CommunityComment({
+    required this.id,
+    required this.authorName,
+    required this.authorInitials,
+    required this.authorLevel,
+    required this.minutesAgo,
+    required this.text,
+    this.replyToName,
+  });
+
+  final String id;
+  final String authorName;
+  final String authorInitials;
+  final int authorLevel;
+  final int minutesAgo;
+  final String text;
+  final String? replyToName;
+
+  bool get isReply => replyToName != null;
+}
+
+/// A community post. Mutable fields back the local-only actions.
+class CommunityPost {
+  CommunityPost({
+    required this.id,
+    required this.authorName,
+    required this.authorInitials,
+    this.authorLevel = 0,
+    this.authorTrainer = false,
+    required this.minutesAgo,
+    required this.kind,
+    required this.caption,
+    this.media = const [],
+    this.workout,
+    this.slug = '',
+    this.likeCount = 0,
+    this.shareCount = 0,
+    this.isOwn = false,
+    List<CommunityComment>? comments,
+  }) : comments = comments ?? <CommunityComment>[];
+
+  final String id;
+  final String authorName;
+  final String authorInitials;
+  final int authorLevel;
+  final bool authorTrainer;
+  final int minutesAgo;
+  final PostKind kind;
+  String caption;
+  final List<MediaPlaceholder> media;
+  final WorkoutSummary? workout;
+  final String slug;
+  int likeCount;
+  int get commentCount => comments.length;
+  int shareCount;
+  bool liked = false;
+  bool saved = false;
+  bool hidden = false;
+  bool reported = false;
+  final bool isOwn;
+  final List<CommunityComment> comments;
+}
+
+/// A member shown on the Members tab.
+class CommunityMember {
+  const CommunityMember({
+    required this.name,
+    required this.initials,
+    required this.level,
+    this.trainer = false,
+    required this.bio,
+  });
+
+  final String name;
+  final String initials;
+  final int level;
+  final bool trainer;
+  final String bio;
+}
+
+/// Display name derived from the account email (local-only community).
+String communityDisplayName(String? email) {
+  if (email == null || email.isEmpty) return 'B.B.';
+  final local = email.split('@').first;
+  final clean = local.replaceAll(RegExp(r'[._\-+0-9]+'), ' ').trim();
+  if (clean.isEmpty) return 'B.B.';
+  return clean
+      .split(RegExp(r'\s+'))
+      .map((w) => w.isEmpty ? w : '${w[0].toUpperCase()}${w.substring(1)}')
+      .join(' ');
+}
+
+/// Initials derived from the account email (local-only community).
+String communityInitials(String? email) {
+  final name = communityDisplayName(email);
+  if (name == 'B.B.') return 'BB';
+  final parts = name.split(RegExp(r'\s+'));
+  if (parts.length == 1) {
+    final w = parts.first;
+    return w.length < 2 ? w.toUpperCase() : w.substring(0, 2).toUpperCase();
+  }
+  return (parts.first[0] + parts.last[0]).toUpperCase();
+}
+
+/// Local community state: seeded posts, members and today's session.
+/// Created posts and their likes, saves and comment threads persist through
+/// the app's Store and load back at construction — the same mechanism the
+/// settings state uses. No network.
+class CommunityRepo extends ChangeNotifier {
+  CommunityRepo._() {
+    _load();
+  }
+
+  /// Test hook: a repo the way a fresh app start builds one — seeds, then
+  /// whatever the Store holds.
+  @visibleForTesting
+  factory CommunityRepo.fresh() => CommunityRepo._();
+
+  static final CommunityRepo instance = CommunityRepo._();
+
+  factory CommunityRepo() => instance;
+
+  final List<CommunityPost> _posts = _seed();
+  final List<CommunityMember> members = _seedMembers();
+  WorkoutSummary todaysSession = _pushDayA();
+
+  /// Visible posts, newest first, hidden ones removed.
+  List<CommunityPost> get posts =>
+      List.unmodifiable(_posts.where((p) => !p.hidden));
+
+  CommunityPost? postById(String id) {
+    for (final p in _posts) {
+      if (p.id == id) return p;
+    }
+    return null;
+  }
+
+  void addPost(CommunityPost post) {
+    _posts.insert(0, post);
+    _persist();
+    notifyListeners();
+  }
+
+  void editPost(String id, String caption) {
+    postById(id)?.caption = caption;
+    _persist();
+    notifyListeners();
+  }
+
+  void removePost(String id) {
+    _posts.removeWhere((p) => p.id == id);
+    _persist();
+    notifyListeners();
+  }
+
+  void toggleLike(String id) {
+    final p = postById(id);
+    if (p == null) return;
+    p.liked = !p.liked;
+    p.likeCount += p.liked ? 1 : -1;
+    _persist();
+    notifyListeners();
+  }
+
+  void toggleSave(String id) {
+    final p = postById(id);
+    if (p == null) return;
+    p.saved = !p.saved;
+    _persist();
+    notifyListeners();
+  }
+
+  void hidePost(String id) {
+    final p = postById(id);
+    if (p == null) return;
+    p.hidden = true;
+    _persist();
+    notifyListeners();
+  }
+
+  void unhidePost(String id) {
+    final p = postById(id);
+    if (p == null) return;
+    p.hidden = false;
+    _persist();
+    notifyListeners();
+  }
+
+  void reportPost(String id) {
+    final p = postById(id);
+    if (p == null) return;
+    p.reported = true;
+    _persist();
+    notifyListeners();
+  }
+
+  void addComment(
+    String postId, {
+    required String authorName,
+    required String authorInitials,
+    required int authorLevel,
+    required String text,
+    String? replyToName,
+  }) {
+    final p = postById(postId);
+    final trimmed = text.trim();
+    if (p == null || trimmed.isEmpty) return;
+    p.comments.add(CommunityComment(
+      id: 'c${p.comments.length + 1}-$postId',
+      authorName: authorName,
+      authorInitials: authorInitials,
+      authorLevel: authorLevel,
+      minutesAgo: 0,
+      text: trimmed,
+      replyToName: replyToName,
+    ));
+    _persist();
+    notifyListeners();
+  }
+
+  /// Single creation path for new posts: owns the identity, timestamp and
+  /// share slug, so composer posts get exactly the same treatment as seeds.
+  CommunityPost createPost({
+    required PostKind kind,
+    required String caption,
+    required String authorName,
+    required String authorInitials,
+    WorkoutSummary? workout,
+    List<MediaPlaceholder> media = const [],
+  }) {
+    final post = CommunityPost(
+      id: 'local-${DateTime.now().microsecondsSinceEpoch}',
+      authorName: authorName,
+      authorInitials: authorInitials,
+      minutesAgo: 0,
+      kind: kind,
+      caption: caption,
+      media: List.of(media),
+      workout: workout,
+      slug: communitySlug(caption),
+      isOwn: true,
+    );
+    addPost(post);
+    return post;
+  }
+
+  /// Persist community posts through the app's Store (local-only, no network).
+  /// Store.save replaces the whole store, so this reads the current map and
+  /// updates only the 'posts' key — routines, settings and notes stay intact.
+  /// The payload keeps everything a restart needs: caption, kind, counts,
+  /// flags, the comment thread and the workout tile.
+  void _persist() {
+    Store.instance.saveJson('community_v1', {'posts': _posts.map(_postJson).toList()});
+  }
+
+  /// Restore persisted posts from prefs at construction — the load half of
+  /// the settings persistence mechanism. No stored key (first run) keeps the
+  /// seeded feed; an empty stored list is an explicitly cleared feed.
+  void _load() {
+    final loaded = Store.instance.loadJson('community_v1');
+    if (loaded == null) return;
+    final raw = loaded['posts'];
+    if (raw is! List) return;
+    final posts = raw.map(_postFrom).whereType<CommunityPost>().toList();
+    _posts
+      ..clear()
+      ..addAll(posts);
+  }
+
+  /// Test hook: restore the seeded feed.
+  void reset() {
+    _posts
+      ..clear()
+      ..addAll(_seed());
+    _persist();
+    notifyListeners();
+  }
+
+  /// Test hook: empty the feed to exercise the empty state.
+  void clear() {
+    _posts.clear();
+    _persist();
+    notifyListeners();
+  }
+
+  }
+
+/// URL-ish share slug derived from a caption; mirrors the plan-import slugify.
+String communitySlug(String text) {
+  final dashed = text.toLowerCase().replaceAll(RegExp(r'[^a-z0-9]+'), '-');
+  final trimmed = dashed.replaceAll(RegExp(r'^-+|-+$'), '');
+  return trimmed.isEmpty ? 'post' : trimmed;
+}
+
+Map<String, dynamic> _postJson(CommunityPost p) => {
+      'id': p.id,
+      'caption': p.caption,
+      'kind': p.kind.index,
+      'likeCount': p.likeCount,
+      'liked': p.liked,
+      'saved': p.saved,
+      'hidden': p.hidden,
+      'reported': p.reported,
+      'isOwn': p.isOwn,
+      'authorName': p.authorName,
+      'authorInitials': p.authorInitials,
+      'authorLevel': p.authorLevel,
+      'authorTrainer': p.authorTrainer,
+      'minutesAgo': p.minutesAgo,
+      'media': p.media.map((m) => m.sage).toList(),
+      'shareCount': p.shareCount,
+      'slug': p.slug,
+      'workout': _workoutJson(p.workout),
+      'comments': p.comments.map(_commentJson).toList(),
+    };
+
+CommunityPost? _postFrom(dynamic raw) {
+  if (raw is! Map) return null;
+  try {
+    final j = raw.cast<String, dynamic>();
+    final kindIdx = (j['kind'] as num?)?.toInt() ?? PostKind.progress.index;
+    final post = CommunityPost(
+      id: j['id'] as String? ?? '',
+      authorName: j['authorName'] as String? ?? '',
+      authorInitials: j['authorInitials'] as String? ?? '',
+      authorLevel: (j['authorLevel'] as num?)?.toInt() ?? 0,
+      authorTrainer: j['authorTrainer'] as bool? ?? false,
+      minutesAgo: (j['minutesAgo'] as num?)?.toInt() ?? 0,
+      kind: kindIdx >= 0 && kindIdx < PostKind.values.length
+          ? PostKind.values[kindIdx]
+          : PostKind.progress,
+      caption: j['caption'] as String? ?? '',
+      media: ((j['media'] as List?) ?? const [])
+          .whereType<bool>()
+          .map((sage) => MediaPlaceholder(sage: sage))
+          .toList(),
+      workout: j['workout'] is Map
+          ? _workoutFrom((j['workout'] as Map).cast<String, dynamic>())
+          : null,
+      slug: j['slug'] as String? ?? '',
+      likeCount: (j['likeCount'] as num?)?.toInt() ?? 0,
+      shareCount: (j['shareCount'] as num?)?.toInt() ?? 0,
+      isOwn: j['isOwn'] as bool? ?? false,
+      comments: ((j['comments'] as List?) ?? const [])
+          .whereType<Map>()
+          .map((c) => _commentFrom(c.cast<String, dynamic>()))
+          .toList(),
+    );
+    post
+      ..liked = j['liked'] as bool? ?? false
+      ..saved = j['saved'] as bool? ?? false
+      ..hidden = j['hidden'] as bool? ?? false
+      ..reported = j['reported'] as bool? ?? false;
+    return post;
+  } catch (_) {
+    return null;
+  }
+}
+
+Map<String, dynamic> _commentJson(CommunityComment c) => {
+      'id': c.id,
+      'authorName': c.authorName,
+      'authorInitials': c.authorInitials,
+      'authorLevel': c.authorLevel,
+      'minutesAgo': c.minutesAgo,
+      'text': c.text,
+      if (c.replyToName != null) 'replyToName': c.replyToName,
+    };
+
+CommunityComment _commentFrom(Map<String, dynamic> j) => CommunityComment(
+      id: j['id'] as String? ?? '',
+      authorName: j['authorName'] as String? ?? '',
+      authorInitials: j['authorInitials'] as String? ?? '',
+      authorLevel: (j['authorLevel'] as num?)?.toInt() ?? 0,
+      minutesAgo: (j['minutesAgo'] as num?)?.toInt() ?? 0,
+      text: j['text'] as String? ?? '',
+      replyToName: j['replyToName'] as String?,
+    );
+
+Map<String, dynamic>? _workoutJson(WorkoutSummary? w) => w == null
+    ? null
+    : {
+        'title': w.title,
+        'minutes': w.minutes,
+        'sets': w.sets,
+        'volumeKg': w.volumeKg,
+        'rows': [
+          for (final r in w.rows)
+            {
+              'name': r.name,
+              'scheme': r.scheme,
+              'weight': r.weight,
+              'pr': r.pr,
+            },
+        ],
+      };
+
+WorkoutSummary? _workoutFrom(Map<String, dynamic> j) {
+  try {
+    return WorkoutSummary(
+      title: j['title'] as String? ?? '',
+      minutes: (j['minutes'] as num?)?.toInt() ?? 0,
+      sets: (j['sets'] as num?)?.toInt() ?? 0,
+      volumeKg: (j['volumeKg'] as num?)?.toInt() ?? 0,
+      rows: ((j['rows'] as List?) ?? const [])
+          .whereType<Map>()
+          .map((r) {
+            final m = r.cast<String, dynamic>();
+            return ExerciseRow(
+              name: m['name'] as String? ?? '',
+              scheme: m['scheme'] as String? ?? '',
+              weight: m['weight'] as String? ?? '',
+              pr: m['pr'] as bool? ?? false,
+            );
+          })
+          .toList(),
+    );
+  } catch (_) {
+    return null;
+  }
+}
+
+List<CommunityPost> _seed() => [
+      CommunityPost(
+        id: 'wk8-pullup',
+        authorName: 'Mara K.',
+        authorInitials: 'MK',
+        authorLevel: 6,
+        minutesAgo: 120,
+        kind: PostKind.progress,
+        caption:
+            'Week 8: down 6 kg and my first strict pull-up. Slow negatives, '
+            'three easy singles a day, no hero sets. Six months of showing up '
+            'is finally compounding.',
+        media: const [MediaPlaceholder()],
+        likeCount: 24,
+        shareCount: 3,
+        slug: 'wk8-pullup',
+        comments: [
+          const CommunityComment(
+            id: 'c1-wk8-pullup',
+            authorName: 'Priya S.',
+            authorInitials: 'PS',
+            authorLevel: 3,
+            minutesAgo: 60,
+            text: 'Eight weeks out and a strict pull-up is fast. '
+                'What actually changed?',
+          ),
+          const CommunityComment(
+            id: 'c2-wk8-pullup',
+            authorName: 'Mara K.',
+            authorInitials: 'MK',
+            authorLevel: 6,
+            minutesAgo: 58,
+            text: 'Grease the groove. Three easy singles a day, '
+                'none to failure.',
+            replyToName: 'Priya S.',
+          ),
+          const CommunityComment(
+            id: 'c3-wk8-pullup',
+            authorName: 'Leo V.',
+            authorInitials: 'LV',
+            authorLevel: 2,
+            minutesAgo: 50,
+            text: 'Consistency beats intensity. Small steps every day.',
+          ),
+        ],
+      ),
+      CommunityPost(
+        id: 'push-day-a',
+        authorName: 'Deion',
+        authorInitials: 'DE',
+        authorLevel: 4,
+        minutesAgo: 240,
+        kind: PostKind.workout,
+        caption: '',
+        workout: _pushDayA(),
+        likeCount: 42,
+        shareCount: 7,
+        slug: 'push-day-a',
+        comments: [
+          const CommunityComment(
+            id: 'c1-push-day-a',
+            authorName: 'Tomás L.',
+            authorInitials: 'TL',
+            authorLevel: 2,
+            minutesAgo: 200,
+            text: 'First time running this scheme. The 5×5 is heavy but the '
+                'rest timer is doing its job.',
+          ),
+          const CommunityComment(
+            id: 'c2-push-day-a',
+            authorName: 'Deion',
+            authorInitials: 'DE',
+            authorLevel: 4,
+            minutesAgo: 195,
+            text: 'Keep the incline DB at 28 — it owns the upper chest.',
+            replyToName: 'Tomás L.',
+          ),
+          const CommunityComment(
+            id: 'c3-push-day-a',
+            authorName: 'Nadia R.',
+            authorInitials: 'NR',
+            authorLevel: 9,
+            minutesAgo: 190,
+            text: 'Watch the bar path on the bench. Stay over the pad.',
+          ),
+        ],
+      ),
+      CommunityPost(
+        id: 'hip-hinge-pair',
+        authorName: 'Priya S.',
+        authorInitials: 'PS',
+        authorLevel: 3,
+        minutesAgo: 1500,
+        kind: PostKind.progress,
+        caption:
+            'Hip hinge day. Both pairs on film — the bar path finally stays '
+            'one clean line.',
+        media: const [
+          MediaPlaceholder(sage: true),
+          MediaPlaceholder(sage: true),
+        ],
+        likeCount: 17,
+        shareCount: 1,
+        slug: 'hip-hinge-pair',
+        comments: [
+          const CommunityComment(
+            id: 'c1-hip-hinge-pair',
+            authorName: 'Mara K.',
+            authorInitials: 'MK',
+            authorLevel: 6,
+            minutesAgo: 1440,
+            text: 'That single-leg RDL is looking sharp. Keep the spine long.',
+          ),
+          const CommunityComment(
+            id: 'c2-hip-hinge-pair',
+            authorName: 'Priya S.',
+            authorInitials: 'PS',
+            authorLevel: 3,
+            minutesAgo: 1410,
+            text: 'The cue that clicked for me: hips hinge before the knees.',
+          ),
+          const CommunityComment(
+            id: 'c3-hip-hinge-pair',
+            authorName: 'Nadia R.',
+            authorInitials: 'NR',
+            authorLevel: 9,
+            minutesAgo: 1390,
+            text: 'Bar path stays one clean line — that’s the hinge groove.',
+          ),
+        ],
+      ),
+    ];
+
+List<CommunityMember> _seedMembers() => const [
+      CommunityMember(
+        name: 'Nadia R.',
+        initials: 'NR',
+        level: 9,
+        trainer: true,
+        bio: 'Head coach · strength and conditioning',
+      ),
+      CommunityMember(
+        name: 'Mara K.',
+        initials: 'MK',
+        level: 6,
+        bio: 'Pull-up project, week 8',
+      ),
+      CommunityMember(
+        name: 'Deion',
+        initials: 'DE',
+        level: 4,
+        bio: 'Push/pull split, chasing a 100 kg bench',
+      ),
+      CommunityMember(
+        name: 'Priya S.',
+        initials: 'PS',
+        level: 3,
+        bio: 'Hinge mechanics and photo check-ins',
+      ),
+      CommunityMember(
+        name: 'Tomás L.',
+        initials: 'TL',
+        level: 2,
+        bio: 'Back after a two-year break',
+      ),
+    ];
+
+WorkoutSummary _pushDayA() => const WorkoutSummary(
+      title: 'Push Day A',
+      minutes: 47,
+      sets: 16,
+      volumeKg: 6140,
+      rows: [
+        ExerciseRow(name: 'Bench press', scheme: '5×5', weight: '82.5 kg', pr: true),
+        ExerciseRow(name: 'Incline DB press', scheme: '3×10', weight: '28 kg'),
+        ExerciseRow(name: 'Cable fly', scheme: '3×12', weight: '15 kg'),
+      ],
+    );

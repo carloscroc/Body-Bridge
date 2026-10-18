@@ -3054,6 +3054,225 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get billingComingSoon => '付费功能即将上线。';
+
+  @override
+  String get communityTab => '社区';
+
+  @override
+  String get feedTab => '动态';
+
+  @override
+  String get membersTab => '成员';
+
+  @override
+  String get gateTitle => '社区包含在 Basic 中';
+
+  @override
+  String get gateBody => '进度照片、训练记录，还有懂你的人。';
+
+  @override
+  String get gateCta => '解锁社区';
+
+  @override
+  String get gateLinkOut => '前往 bodybridge.net';
+
+  @override
+  String get gateNotNow => '暂不';
+
+  @override
+  String get optionsTitle => '帖子选项';
+
+  @override
+  String get sharePost => '分享帖子';
+
+  @override
+  String get savePost => '保存帖子';
+
+  @override
+  String get savedPost => '已保存';
+
+  @override
+  String get copyPostLink => '复制帖子链接';
+
+  @override
+  String get hidePost => '隐藏帖子';
+
+  @override
+  String get reportPost => '举报帖子';
+
+  @override
+  String get editPost => '编辑帖子';
+
+  @override
+  String get deletePost => '删除帖子…';
+
+  @override
+  String get deleteConfirmTitle => '删除这条帖子？';
+
+  @override
+  String get deleteConfirmBody => '帖子、照片和评论将从社区中移除，且无法撤销。';
+
+  @override
+  String get keepPost => '保留帖子';
+
+  @override
+  String get deleteAction => '删除';
+
+  @override
+  String get postHiddenSnackbar => '帖子已隐藏 · 撤销';
+
+  @override
+  String get reportSheetTitle => '举报帖子';
+
+  @override
+  String get reportAnonymous => '举报是匿名的。';
+
+  @override
+  String get reportSpam => '垃圾信息或诈骗';
+
+  @override
+  String get reportHarassment => '骚扰或仇恨';
+
+  @override
+  String get reportInappropriate => '不当照片';
+
+  @override
+  String get reportSubmit => '举报';
+
+  @override
+  String get reportSent => '举报已发送';
+
+  @override
+  String get shareSheetTitle => '分享帖子';
+
+  @override
+  String get copyLink => '复制链接';
+
+  @override
+  String get linkCopied => '链接已复制';
+
+  @override
+  String get shareMessages => '信息';
+
+  @override
+  String get shareMail => '邮件';
+
+  @override
+  String get shareInstagram => 'Instagram';
+
+  @override
+  String get shareMore => '更多';
+
+  @override
+  String get newPostTitle => '新帖子';
+
+  @override
+  String get modeProgress => '进度';
+
+  @override
+  String get modeWorkout => '训练';
+
+  @override
+  String progressPhotosCount(int n) {
+    return '进度照片 · $n / 4';
+  }
+
+  @override
+  String get addPhotoTile => '添加';
+
+  @override
+  String get photoPickerPending => '添加照片需要图片选择器 — 即将支持';
+
+  @override
+  String get captionHint => '分享这一周的变化和心得...';
+
+  @override
+  String get photosPrivate => '照片在发布前保持私密。';
+
+  @override
+  String get sessionPreview => '训练概览';
+
+  @override
+  String get autoFilled => '已自动填入今天的训练';
+
+  @override
+  String get contextHint => '补充状态或感受';
+
+  @override
+  String get postToCommunity => '发布到社区';
+
+  @override
+  String get commentsTitle => '评论';
+
+  @override
+  String commentCount(int n) {
+    String _temp0 = intl.Intl.pluralLogic(n, locale: localeName, other: '$n条评论');
+    return '$_temp0';
+  }
+
+  @override
+  String get addCommentHint => '添加评论...';
+
+  @override
+  String replyingTo(String name) {
+    return '回复 $name';
+  }
+
+  @override
+  String get opChip => '楼主';
+
+  @override
+  String get noPostsTitle => '暂无帖子';
+
+  @override
+  String get noPostsBody => '来做第一个分享这一周的人。';
+
+  @override
+  String get createFirstPost => '发布第一个帖子';
+
+  @override
+  String get progressPhotoLabel => '进度照片';
+
+  @override
+  String get progressChip => '进度';
+
+  @override
+  String get workoutChip => '训练';
+
+  @override
+  String get prChip => '纪录';
+
+  @override
+  String workoutStats(int min, int sets, String volume) {
+    return '$min 分钟 · $sets 组 · 总量 $volume kg';
+  }
+
+  @override
+  String get composeDisabledHint => '解锁社区后即可发帖';
+
+  @override
+  String get inboxComingSoon => '收件箱即将推出';
+
+  @override
+  String get timeAgoNow => '刚刚';
+
+  @override
+  String timeAgoMinutes(int n) {
+    return '$n分钟';
+  }
+
+  @override
+  String timeAgoHours(int n) {
+    return '$n小时';
+  }
+
+  @override
+  String timeAgoDays(int n) {
+    return '$n天';
+  }
+
+  @override
+  String get trainerChip => '教练';
 }
 
 /// The translations for Chinese, using the Han script (`zh_Hant`).
@@ -6130,4 +6349,223 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
 
   @override
   String get billingComingSoon => '付費功能即將上線。';
+
+  @override
+  String get communityTab => '社群';
+
+  @override
+  String get feedTab => '動態';
+
+  @override
+  String get membersTab => '成員';
+
+  @override
+  String get gateTitle => '社群包含於 Basic 方案';
+
+  @override
+  String get gateBody => '進度照片、訓練記錄，還有懂你的人。';
+
+  @override
+  String get gateCta => '解鎖社群';
+
+  @override
+  String get gateLinkOut => '前往 bodybridge.net';
+
+  @override
+  String get gateNotNow => '暫不';
+
+  @override
+  String get optionsTitle => '貼文選項';
+
+  @override
+  String get sharePost => '分享貼文';
+
+  @override
+  String get savePost => '儲存貼文';
+
+  @override
+  String get savedPost => '已儲存';
+
+  @override
+  String get copyPostLink => '複製貼文連結';
+
+  @override
+  String get hidePost => '隱藏貼文';
+
+  @override
+  String get reportPost => '檢舉貼文';
+
+  @override
+  String get editPost => '編輯貼文';
+
+  @override
+  String get deletePost => '刪除貼文…';
+
+  @override
+  String get deleteConfirmTitle => '刪除這則貼文？';
+
+  @override
+  String get deleteConfirmBody => '貼文、照片與留言將從社群中移除，且無法復原。';
+
+  @override
+  String get keepPost => '保留貼文';
+
+  @override
+  String get deleteAction => '刪除';
+
+  @override
+  String get postHiddenSnackbar => '貼文已隱藏 · 復原';
+
+  @override
+  String get reportSheetTitle => '檢舉貼文';
+
+  @override
+  String get reportAnonymous => '檢舉為匿名提交。';
+
+  @override
+  String get reportSpam => '垃圾訊息或詐騙';
+
+  @override
+  String get reportHarassment => '騷擾或仇恨';
+
+  @override
+  String get reportInappropriate => '不當照片';
+
+  @override
+  String get reportSubmit => '檢舉';
+
+  @override
+  String get reportSent => '檢舉已送出';
+
+  @override
+  String get shareSheetTitle => '分享貼文';
+
+  @override
+  String get copyLink => '複製連結';
+
+  @override
+  String get linkCopied => '連結已複製';
+
+  @override
+  String get shareMessages => '訊息';
+
+  @override
+  String get shareMail => '郵件';
+
+  @override
+  String get shareInstagram => 'Instagram';
+
+  @override
+  String get shareMore => '更多';
+
+  @override
+  String get newPostTitle => '新貼文';
+
+  @override
+  String get modeProgress => '進度';
+
+  @override
+  String get modeWorkout => '訓練';
+
+  @override
+  String progressPhotosCount(int n) {
+    return '進度照片 · $n / 4';
+  }
+
+  @override
+  String get addPhotoTile => '新增';
+
+  @override
+  String get photoPickerPending => '新增照片需要圖片選擇器 — 即將支援';
+
+  @override
+  String get captionHint => '分享這一週的變化與心得...';
+
+  @override
+  String get photosPrivate => '照片在發佈前保持私密。';
+
+  @override
+  String get sessionPreview => '訓練概覽';
+
+  @override
+  String get autoFilled => '已自動填入今天的訓練';
+
+  @override
+  String get contextHint => '補充狀態或感受';
+
+  @override
+  String get postToCommunity => '發佈到社群';
+
+  @override
+  String get commentsTitle => '留言';
+
+  @override
+  String commentCount(int n) {
+    String _temp0 = intl.Intl.pluralLogic(n, locale: localeName, other: '$n則留言');
+    return '$_temp0';
+  }
+
+  @override
+  String get addCommentHint => '新增留言...';
+
+  @override
+  String replyingTo(String name) {
+    return '回覆 $name';
+  }
+
+  @override
+  String get opChip => '樓主';
+
+  @override
+  String get noPostsTitle => '目前沒有貼文';
+
+  @override
+  String get noPostsBody => '成為第一個分享這一週的人。';
+
+  @override
+  String get createFirstPost => '發佈第一則貼文';
+
+  @override
+  String get progressPhotoLabel => '進度照片';
+
+  @override
+  String get progressChip => '進度';
+
+  @override
+  String get workoutChip => '訓練';
+
+  @override
+  String get prChip => '紀錄';
+
+  @override
+  String workoutStats(int min, int sets, String volume) {
+    return '$min 分鐘 · $sets 組 · 總量 $volume kg';
+  }
+
+  @override
+  String get composeDisabledHint => '解鎖社群後即可發文';
+
+  @override
+  String get inboxComingSoon => '收件匣即將推出';
+
+  @override
+  String get timeAgoNow => '剛剛';
+
+  @override
+  String timeAgoMinutes(int n) {
+    return '$n分鐘';
+  }
+
+  @override
+  String timeAgoHours(int n) {
+    return '$n小時';
+  }
+
+  @override
+  String timeAgoDays(int n) {
+    return '$n天';
+  }
+
+  @override
+  String get trainerChip => '教練';
 }

@@ -50,10 +50,15 @@ class ShareCard extends StatelessWidget {
                     decoration: BoxDecoration(color: gc.accent, shape: BoxShape.circle),
                   ),
                   const SizedBox(width: 8),
-                  Text('Body Bridge',
-                      style: AppTheme.f(13,
-                          weight: FontWeight.w800, color: gc.text, letterSpacing: 0.4)),
-                  const Spacer(),
+                  Expanded(
+                    child: FittedBox(
+                      fit: BoxFit.scaleDown,
+                      alignment: Alignment.centerLeft,
+                      child: Text('Body Bridge',
+                          style: AppTheme.f(13,
+                              weight: FontWeight.w800, color: gc.text, letterSpacing: 0.4)),
+                    ),
+                  ),
                   Text(t.shortDateYear(DateTime.now()),
                       style: AppTheme.f(11, weight: FontWeight.w500, color: gc.textTertiary)),
                 ],
@@ -120,12 +125,17 @@ class ShareCard extends StatelessWidget {
             Text('${fit.currentStreak}',
                 style: AppTheme.f(66, weight: FontWeight.w700, color: gc.text, height: 0.95)),
             const SizedBox(width: 8),
-            Padding(
-              padding: const EdgeInsets.only(bottom: 8),
-              child: Text(t.shareStreakLabel.toLowerCase(),
-                  style: AppTheme.f(12, weight: FontWeight.w600, color: gc.textSecondary)),
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.only(bottom: 8),
+                child: FittedBox(
+                  fit: BoxFit.scaleDown,
+                  alignment: Alignment.centerLeft,
+                  child: Text(t.shareStreakLabel.toLowerCase(),
+                      style: AppTheme.f(12, weight: FontWeight.w600, color: gc.textSecondary)),
+                ),
+              ),
             ),
-            const Spacer(),
             SvgPathIcon(Ic.flame, size: 76, color: gc.accent),
           ],
         ),

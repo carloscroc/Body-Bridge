@@ -3193,4 +3193,224 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get billingComingSoon => 'Ödeme çok yakında.';
+
+  @override
+  String get communityTab => 'Topluluk';
+
+  @override
+  String get feedTab => 'Akış';
+
+  @override
+  String get membersTab => 'Üyeler';
+
+  @override
+  String get gateTitle => 'Topluluk, Basic’in bir parçasıdır';
+
+  @override
+  String get gateBody => 'İlerleme fotoğrafları, antrenman kayıtları ve seni anlayan insanlar.';
+
+  @override
+  String get gateCta => 'Topluluğun kilidini aç';
+
+  @override
+  String get gateLinkOut => 'bodybridge.net’te devam et';
+
+  @override
+  String get gateNotNow => 'Şimdi değil';
+
+  @override
+  String get optionsTitle => 'Gönderi seçenekleri';
+
+  @override
+  String get sharePost => 'Gönderiyi paylaş';
+
+  @override
+  String get savePost => 'Gönderiyi kaydet';
+
+  @override
+  String get savedPost => 'Kaydedildi';
+
+  @override
+  String get copyPostLink => 'Gönderi bağlantısını kopyala';
+
+  @override
+  String get hidePost => 'Gönderiyi gizle';
+
+  @override
+  String get reportPost => 'Gönderiyi bildir';
+
+  @override
+  String get editPost => 'Gönderiyi düzenle';
+
+  @override
+  String get deletePost => 'Gönderiyi sil…';
+
+  @override
+  String get deleteConfirmTitle => 'Bu gönderi silinsin mi?';
+
+  @override
+  String get deleteConfirmBody =>
+      'Gönderi, fotoğrafı ve yorumları Topluluk’tan kaldırılır. Bu işlem geri alınamaz.';
+
+  @override
+  String get keepPost => 'Gönderiyi koru';
+
+  @override
+  String get deleteAction => 'Sil';
+
+  @override
+  String get postHiddenSnackbar => 'Gönderi gizlendi · Geri al';
+
+  @override
+  String get reportSheetTitle => 'Gönderiyi bildir';
+
+  @override
+  String get reportAnonymous => 'Bildiriminiz anonimdir.';
+
+  @override
+  String get reportSpam => 'Spam veya dolandırıcılık';
+
+  @override
+  String get reportHarassment => 'Taciz veya nefret';
+
+  @override
+  String get reportInappropriate => 'Uygunsuz fotoğraflar';
+
+  @override
+  String get reportSubmit => 'Bildir';
+
+  @override
+  String get reportSent => 'Bildirim gönderildi';
+
+  @override
+  String get shareSheetTitle => 'Gönderiyi paylaş';
+
+  @override
+  String get copyLink => 'Bağlantıyı kopyala';
+
+  @override
+  String get linkCopied => 'Bağlantı kopyalandı';
+
+  @override
+  String get shareMessages => 'Mesajlar';
+
+  @override
+  String get shareMail => 'Posta';
+
+  @override
+  String get shareInstagram => 'Instagram';
+
+  @override
+  String get shareMore => 'Daha fazla';
+
+  @override
+  String get newPostTitle => 'Yeni gönderi';
+
+  @override
+  String get modeProgress => 'İlerleme';
+
+  @override
+  String get modeWorkout => 'Antrenman';
+
+  @override
+  String progressPhotosCount(int n) {
+    return 'İLERLEME FOTOĞRAFLARI · $n / 4';
+  }
+
+  @override
+  String get addPhotoTile => 'Ekle';
+
+  @override
+  String get photoPickerPending => 'Fotoğraf eklemek bir resim seçici gerektiriyor — yakında';
+
+  @override
+  String get captionHint => 'Haftanı paylaş: ne değişti, ne öğrendin...';
+
+  @override
+  String get photosPrivate => 'Fotoğraflar paylaşana kadar gizli kalır.';
+
+  @override
+  String get sessionPreview => 'ANTRENMAN ÖNİZLEMESİ';
+
+  @override
+  String get autoFilled => 'Bugünün antrenmanından otomatik dolduruldu';
+
+  @override
+  String get contextHint => 'Bağlam ekle — nasıl hissettirdi?';
+
+  @override
+  String get postToCommunity => 'Topluluğa gönder';
+
+  @override
+  String get commentsTitle => 'Yorumlar';
+
+  @override
+  String commentCount(int n) {
+    String _temp0 = intl.Intl.pluralLogic(n, locale: localeName, other: '$n yorum', one: '$n yorum');
+    return '$_temp0';
+  }
+
+  @override
+  String get addCommentHint => 'Yorum ekle...';
+
+  @override
+  String replyingTo(String name) {
+    return '$name kişisine yanıt';
+  }
+
+  @override
+  String get opChip => 'OP';
+
+  @override
+  String get noPostsTitle => 'Henüz gönderi yok';
+
+  @override
+  String get noPostsBody => 'Haftanı paylaşan ilk kişi ol.';
+
+  @override
+  String get createFirstPost => 'İlk gönderiyi oluştur';
+
+  @override
+  String get progressPhotoLabel => 'İLERLEME FOTOĞRAFI';
+
+  @override
+  String get progressChip => 'İLERLEME';
+
+  @override
+  String get workoutChip => 'ANTRENMAN';
+
+  @override
+  String get prChip => 'REKOR';
+
+  @override
+  String workoutStats(int min, int sets, String volume) {
+    return '$min dk · $sets set · $volume kg hacim';
+  }
+
+  @override
+  String get composeDisabledHint => 'Gönderi yapmak için Topluluğun kilidini aç';
+
+  @override
+  String get inboxComingSoon => 'Gelen kutusu çok yakında';
+
+  @override
+  String get timeAgoNow => 'şimdi';
+
+  @override
+  String timeAgoMinutes(int n) {
+    return '$n dk';
+  }
+
+  @override
+  String timeAgoHours(int n) {
+    return '$n sa';
+  }
+
+  @override
+  String timeAgoDays(int n) {
+    return '$n g';
+  }
+
+  @override
+  String get trainerChip => 'ANTRENÖR';
 }
