@@ -1016,7 +1016,6 @@
   "logWorkoutAction": "ENREGISTRER UNE SÉANCE",
   "logging": "ENREGISTREMENT",
   "placesLabel": "Mes lieux",
-
   "keepScreenOn": "Garder l'écran allumé pendant l'entraînement",
   "lockWorkout": "Verrouiller l'écran",
   "unlockWorkout": "Déverrouiller",
@@ -1138,31 +1137,25 @@
   "stickerSaved": "Enregistrée dans ta galerie",
   "stickerWeek": "Cette semaine",
   "getReady": "Prépare-toi",
-
   "stickerGallery": "Galerie",
   "stickerCamera": "Appareil photo",
   "shareIntroTitle": "Partage cette routine",
   "shareIntroBody": "Envoie-la à ton ou ta partenaire, à un ami ou à ta famille. Ils reçoivent un petit fichier qui s'ouvre avec Body Bridge et l'ajoute en un geste, avec ses séries et ses poids.",
   "removedFromRoutine": "Retiré de la routine",
-
   "radarTitle": "Ce mois-ci",
   "radarHint": "Vois quelles zones ont besoin de plus de travail",
   "radarEmpty": "Entraîne-toi ce mois-ci pour voir ton équilibre",
   "radarBalanced": "Bon équilibre pour l'instant",
   "radarFocus": "À travailler : {list}",
-
   "countdownReady": "Prépare-toi",
   "countdownSkip": "Touche pour commencer tout de suite",
   "countdownSetting": "Compte à rebours avant de commencer",
-
   "effortSetting": "Noter l'effort",
   "effortHint": "RPE : 10, c'est ne plus pouvoir en faire une ; 8, qu'il en restait deux. Le RIR compte les répétitions qu'il te restait. Si la série en a un, le 1RM estimé utilise la table RPE.",
   "rirTitle": "RÉSERVE (RIR)",
   "rirHint": "0, c'est ne plus pouvoir en faire une ; 2, qu'il en restait deux.",
   "addWeekWidget": "Ajouter le widget de la semaine",
-
   "gamificationSetting": "Médailles et niveaux",
-
   "authErrorInvalidEmail": "Cette adresse e-mail semble incorrecte.",
   "authErrorWrongPassword": "E-mail ou mot de passe incorrect.",
   "authErrorUserNotFound": "Aucun compte trouvé pour cet e-mail.",
@@ -1179,9 +1172,6 @@
   "resetSentTitle": "Vérifiez votre boîte mail",
   "resetSentBody": "Nous avons envoyé un lien de réinitialisation à {email}.",
   "backToSignIn": "Retour à la connexion",
-  "gamificationSetting": "Médailles et niveaux"
-,
-
   "accountTitle": "Compte",
   "accountSection": "Compte",
   "accountRowGuest": "Connectez-vous ou créez un compte",
@@ -1258,8 +1248,66 @@
   "startSoonTitle": "Les séances personnalisées arrivent bientôt",
   "startSoonBody": "Les séances guidées arriveront avec la vidéo du coach. En attendant, parlez-en avec votre coach.",
   "exercisesMeta": "{count} exercices · ~{minutes} min",
-  "@exercisesMeta": { "placeholders": { "count": { "type": "int" }, "minutes": { "type": "int" } } },
+  "@exercisesMeta": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
   "talkToTrainer": "Parlez à votre coach",
   "talkToTrainerSub": "Séances personnalisées et chat 1:1",
-  "notifications": "Notifications"
+  "notifications": "Notifications",
+  "consultCardKicker": "CONSULTATION 1:1",
+  "consultCardTitle": "Réserver une consultation",
+  "consultCardSub": "Un 1:1 court pour définir ta direction",
+  "consultCardSubDone": "Ta demande est envoyée — la voir",
+  "consultSheetTitle": "Commence par une consultation",
+  "consultSheetBody": "Deux portes, un objectif : un programme construit autour de ton corps.",
+  "consultDoorHow": "Comment ça marche",
+  "consultDoorHowSub": "Ce que le 1:1 couvre",
+  "consultDoorRequest": "Demander une consultation",
+  "consultDoorRequestSub": "Deux minutes, sans engagement",
+  "consultDoorView": "Voir ta demande",
+  "consultDoorViewSub": "Déjà envoyée — pas de doublon",
+  "introTitle": "Du coaching, construit pour toi",
+  "introP1": "Une consultation, c'est un 1:1 court avec ton coach. Tu apportes objectifs, historique et blessures — ton coach en fait un programme qui colle à ton corps.",
+  "introP2": "Pas de modèle tout fait. Ton programme est écrit pour toi et évolue avec toi.",
+  "introPoint1": "Objectifs, historique et blessures écoutés d'abord",
+  "introPoint2": "Des séances personnalisées dans l'app",
+  "introPoint3": "Un feedback qui remodèle ton programme",
+  "introCta": "Demander une consultation",
+  "requestTitle": "Demander une consultation",
+  "requestSub": "Quelques réponses rapides pour que le 1:1 démarre bien.",
+  "requestGoalKicker": "OBJECTIF PRINCIPAL",
+  "goalStrength": "Gagner en force",
+  "goalFatLoss": "Perdre du gras",
+  "goalMobility": "Bouger mieux",
+  "goalConsistency": "Rester régulier",
+  "requestExpKicker": "EXPÉRIENCE",
+  "expNew": "Débutant en musculation",
+  "expReturning": "De retour après une pause",
+  "expSeasoned": "Des années d'entraînement",
+  "requestTimeKicker": "MEILLEUR MOMENT POUR ÉCHANGER",
+  "timeMorning": "Matin",
+  "timeAfternoon": "Après-midi",
+  "timeEvening": "Soir",
+  "requestNotesKicker": "AUTRE CHOSE ? FACULTATIF",
+  "requestNotesHint": "Blessures, emploi du temps, matériel…",
+  "requestSubmit": "Envoyer la demande",
+  "requestPickBoth": "Choisis d'abord un objectif et ton expérience",
+  "sentChip": "ENVOYÉE",
+  "sentTitle": "Ta demande est envoyée",
+  "sentBody": "Ta demande est entre les mains de ton coach. Elle reste telle quelle — la suite se passe dans le chat.",
+  "sentSummaryKicker": "TA DEMANDE",
+  "sentContinue": "Continuer",
+  "welcomeTitle": "Tout est prêt",
+  "welcomeFlag": "Ton coach répond sous 24 à 48 heures",
+  "welcomeStep1": "Ton coach examine ta demande et répond dans le chat",
+  "welcomeStep2": "Vous convenez d'un moment pour le 1:1",
+  "welcomeStep3": "Ton premier programme personnalisé suit l'appel",
+  "welcomeDone": "Retour à Mon coach"
 }

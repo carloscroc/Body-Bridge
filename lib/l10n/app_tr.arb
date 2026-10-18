@@ -1016,7 +1016,6 @@
   "logWorkoutAction": "ANTRENMANI KAYDET",
   "logging": "KAYIT",
   "placesLabel": "Yerlerim",
-
   "keepScreenOn": "Antrenman sırasında ekranı açık tut",
   "lockWorkout": "Ekranı kilitle",
   "unlockWorkout": "Kilidi aç",
@@ -1138,31 +1137,25 @@
   "stickerSaved": "Galerine kaydedildi",
   "stickerWeek": "Bu hafta",
   "getReady": "Hazırlan",
-
   "stickerGallery": "Galeri",
   "stickerCamera": "Kamera",
   "shareIntroTitle": "Bu rutini paylaş",
   "shareIntroBody": "Partnerine, bir arkadaşına ya da ailene gönder. Body Bridge ile açılan küçük bir dosya alırlar; setleri ve ağırlıklarıyla tek dokunuşta eklenir.",
   "removedFromRoutine": "Rutinden çıkarıldı",
-
   "radarTitle": "Bu ay",
   "radarHint": "Hangi bölgelerin daha fazla çalışmaya ihtiyacı olduğunu gör",
   "radarEmpty": "Dengeni görmek için bu ay antrenman yap",
   "radarBalanced": "Şimdilik dengeli",
   "radarFocus": "Daha fazlası gerek: {list}",
-
   "countdownReady": "Hazırlan",
   "countdownSkip": "Hemen başlamak için dokun",
   "countdownSetting": "Başlamadan önce geri sayım",
-
   "effortSetting": "Eforu kaydet",
   "effortHint": "RPE: 10 bir tekrar daha yapamamak, 8 iki tekrar daha yapabilmek demek. RIR kalan tekrarları sayar. Sette varsa tahmini 1RM, RPE tablosunu kullanır.",
   "rirTitle": "YEDEK (RIR)",
   "rirHint": "0 bir tekrar daha yapamamak, 2 iki tekrar daha yapabilmek demek.",
   "addWeekWidget": "Hafta widget’ı ekle",
-
   "gamificationSetting": "Madalyalar ve seviyeler",
-
   "authErrorInvalidEmail": "E-posta adresi yanlış görünüyor.",
   "authErrorWrongPassword": "E-posta veya şifre hatalı.",
   "authErrorUserNotFound": "Bu e-posta ile hesap bulunamadı.",
@@ -1179,9 +1172,6 @@
   "resetSentTitle": "E-postanı kontrol et",
   "resetSentBody": "{email} adresine sıfırlama bağlantısı gönderdik.",
   "backToSignIn": "Oturum açmaya dön",
-  "gamificationSetting": "Madalyalar ve seviyeler"
-,
-
   "accountTitle": "Hesap",
   "accountSection": "Hesap",
   "accountRowGuest": "Giriş yap veya hesap oluştur",
@@ -1258,8 +1248,66 @@
   "startSoonTitle": "Özel seanslar yakında",
   "startSoonBody": "Rehberli seanslar antrenör videosuyla geliyor. Bu arada bu planı antrenörünüze sorun.",
   "exercisesMeta": "{count} egzersiz · ~{minutes} dk",
-  "@exercisesMeta": { "placeholders": { "count": { "type": "int" }, "minutes": { "type": "int" } } },
+  "@exercisesMeta": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
   "talkToTrainer": "Antrenörünüzle konuşun",
   "talkToTrainerSub": "Özel antrenmanlar ve birebir sohbet",
-  "notifications": "Bildirimler"
+  "notifications": "Bildirimler",
+  "consultCardKicker": "1:1 DANIŞMA",
+  "consultCardTitle": "Danışma ayarla",
+  "consultCardSub": "Yönünü belirleyecek kısa bir 1:1",
+  "consultCardSubDone": "Talebin gönderildi — görüntüle",
+  "consultSheetTitle": "Bir danışmayla başla",
+  "consultSheetBody": "İki kapı, tek hedef: bedeninin etrafına kurulmuş bir plan.",
+  "consultDoorHow": "Nasıl çalışır",
+  "consultDoorHowSub": "1:1'de neler var",
+  "consultDoorRequest": "Danışma talep et",
+  "consultDoorRequestSub": "İki dakika, taahhüt yok",
+  "consultDoorView": "Talebini görüntüle",
+  "consultDoorViewSub": "Zaten gönderildi — kopya yok",
+  "introTitle": "Sana göre kurgulanan koçluk",
+  "introP1": "Danışma, antrenörünle kısa bir 1:1'dir. Hedeflerini, geçmişini ve sakatlıklarını anlatırsın — antrenör bunları bedenine uyan bir plana çevirir.",
+  "introP2": "Hazır şablon yok. Planın senin için yazılır ve seninle birlikte değişir.",
+  "introPoint1": "Önce dinlenir: hedefler, geçmiş, sakatlıklar",
+  "introPoint2": "Kendi antrenmanları doğrudan uygulamada",
+  "introPoint3": "Planını yeniden şekillendiren geri bildirim",
+  "introCta": "Danışma talep et",
+  "requestTitle": "Danışma talep et",
+  "requestSub": "1:1'in iyi başlaması için birkaç kısa cevap.",
+  "requestGoalKicker": "ANA HEDEF",
+  "goalStrength": "Güç kazanmak",
+  "goalFatLoss": "Yağ yakmak",
+  "goalMobility": "Daha iyi hareket",
+  "goalConsistency": "Düzenli kalmak",
+  "requestExpKicker": "DENEYİM",
+  "expNew": "Yeni başlıyorum",
+  "expReturning": "Aradan sonra dönüyorum",
+  "expSeasoned": "Yılların tecrübesi",
+  "requestTimeKicker": "KONUŞMAK İÇİN EN İYİ ZAMAN",
+  "timeMorning": "Sabah",
+  "timeAfternoon": "Öğleden sonra",
+  "timeEvening": "Akşam",
+  "requestNotesKicker": "BAŞKA BİR ŞEY? İSTEĞE BAĞLI",
+  "requestNotesHint": "Sakatlıklar, program, ekipman…",
+  "requestSubmit": "Talebi gönder",
+  "requestPickBoth": "Önce bir hedef ve deneyim seç",
+  "sentChip": "GÖNDERİLDİ",
+  "sentTitle": "Talebin alındı",
+  "sentBody": "Talebin antrenöründe. Gönderildiği gibi kalır — gerisi sohbette.",
+  "sentSummaryKicker": "TALEBİN",
+  "sentContinue": "Devam",
+  "welcomeTitle": "Her şey hazır",
+  "welcomeFlag": "Antrenörün 24–48 saat içinde yanıtlar",
+  "welcomeStep1": "Antrenör talebini inceler ve sohbette yanıt verir",
+  "welcomeStep2": "1:1 için bir zaman belirlersiniz",
+  "welcomeStep3": "Görüşmenin ardından ilk özel planın gelir",
+  "welcomeDone": "Antrenörüme dön"
 }

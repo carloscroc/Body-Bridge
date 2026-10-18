@@ -3411,4 +3411,152 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get notifications => 'Уведомления';
+
+  @override
+  String get consultCardKicker => 'КОНСУЛЬТАЦИЯ 1:1';
+
+  @override
+  String get consultCardTitle => 'Записаться на консультацию';
+
+  @override
+  String get consultCardSub => 'Короткое 1:1, чтобы задать направление';
+
+  @override
+  String get consultCardSubDone => 'Заявка отправлена — посмотреть';
+
+  @override
+  String get consultSheetTitle => 'Начните с консультации';
+
+  @override
+  String get consultSheetBody => 'Две двери, одна цель: план, построенный вокруг твоего тела.';
+
+  @override
+  String get consultDoorHow => 'Как это работает';
+
+  @override
+  String get consultDoorHowSub => 'Что входит в 1:1';
+
+  @override
+  String get consultDoorRequest => 'Запросить консультацию';
+
+  @override
+  String get consultDoorRequestSub => 'Две минуты, без обязательств';
+
+  @override
+  String get consultDoorView => 'Посмотреть заявку';
+
+  @override
+  String get consultDoorViewSub => 'Уже отправлена — без дубликатов';
+
+  @override
+  String get introTitle => 'Тренинг, собранный под тебя';
+
+  @override
+  String get introP1 =>
+      'Консультация — короткое 1:1 с тренером. Ты рассказываешь о целях, прошлом и травмах — тренер превращает это в план, который подходит твоему телу.';
+
+  @override
+  String get introP2 => 'Никаких шаблонов. Твой план написан для тебя и меняется вместе с тобой.';
+
+  @override
+  String get introPoint1 => 'Сначала слушаем: цели, история, травмы';
+
+  @override
+  String get introPoint2 => 'Свои тренировки прямо в приложении';
+
+  @override
+  String get introPoint3 => 'Обратная связь, которая меняет план';
+
+  @override
+  String get introCta => 'Запросить консультацию';
+
+  @override
+  String get requestTitle => 'Запросить консультацию';
+
+  @override
+  String get requestSub => 'Пара быстрых ответов, чтобы 1:1 началось легко.';
+
+  @override
+  String get requestGoalKicker => 'ГЛАВНАЯ ЦЕЛЬ';
+
+  @override
+  String get goalStrength => 'Набрать силу';
+
+  @override
+  String get goalFatLoss => 'Убрать жир';
+
+  @override
+  String get goalMobility => 'Двигаться лучше';
+
+  @override
+  String get goalConsistency => 'Держать ритм';
+
+  @override
+  String get requestExpKicker => 'ОПЫТ';
+
+  @override
+  String get expNew => 'Только начинаю';
+
+  @override
+  String get expReturning => 'Возвращаюсь после перерыва';
+
+  @override
+  String get expSeasoned => 'Годы тренировок';
+
+  @override
+  String get requestTimeKicker => 'УДОБНОЕ ВРЕМЯ ДЛЯ РАЗГОВОРА';
+
+  @override
+  String get timeMorning => 'Утро';
+
+  @override
+  String get timeAfternoon => 'День';
+
+  @override
+  String get timeEvening => 'Вечер';
+
+  @override
+  String get requestNotesKicker => 'ЧТО-ТО ЕЩЁ? НЕОБЯЗАТЕЛЬНО';
+
+  @override
+  String get requestNotesHint => 'Травмы, расписание, инвентарь…';
+
+  @override
+  String get requestSubmit => 'Отправить заявку';
+
+  @override
+  String get requestPickBoth => 'Сначала выбери цель и опыт';
+
+  @override
+  String get sentChip => 'ОТПРАВЛЕНО';
+
+  @override
+  String get sentTitle => 'Заявка принята';
+
+  @override
+  String get sentBody => 'Заявка у тренера. Она остаётся как есть — всё остальное в чате.';
+
+  @override
+  String get sentSummaryKicker => 'ТВОЯ ЗАЯВКА';
+
+  @override
+  String get sentContinue => 'Далее';
+
+  @override
+  String get welcomeTitle => 'Всё готово';
+
+  @override
+  String get welcomeFlag => 'Тренер ответит в течение 24–48 часов';
+
+  @override
+  String get welcomeStep1 => 'Тренер изучит заявку и ответит в чате';
+
+  @override
+  String get welcomeStep2 => 'Вы договоритесь о времени 1:1';
+
+  @override
+  String get welcomeStep3 => 'После звонка придёт первая личная программа';
+
+  @override
+  String get welcomeDone => 'Вернуться к Моему тренеру';
 }

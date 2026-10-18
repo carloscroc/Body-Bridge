@@ -1016,7 +1016,6 @@
   "logWorkoutAction": "ЗАПИСАТИ ТРЕНУВАННЯ",
   "logging": "ЗАПИС",
   "placesLabel": "Мої місця",
-
   "keepScreenOn": "Не вимикати екран під час тренування",
   "lockWorkout": "Заблокувати екран",
   "unlockWorkout": "Розблокувати",
@@ -1138,31 +1137,25 @@
   "stickerSaved": "Збережено в галерею",
   "stickerWeek": "Цей тиждень",
   "getReady": "Приготуйтеся",
-
   "stickerGallery": "Галерея",
   "stickerCamera": "Камера",
   "shareIntroTitle": "Поділіться цією програмою",
   "shareIntroBody": "Надішліть її партнеру, другу чи родині. Вони отримають невеликий файл, який відкривається в Body Bridge і додає програму одним дотиком, разом із підходами та вагами.",
   "removedFromRoutine": "Прибрано з програми",
-
   "radarTitle": "Цей місяць",
   "radarHint": "Подивіться, яким зонам потрібно більше роботи",
   "radarEmpty": "Тренуйтеся цього місяця, щоб побачити баланс",
   "radarBalanced": "Поки що все збалансовано",
   "radarFocus": "Потрібно більше: {list}",
-
   "countdownReady": "Приготуйтеся",
   "countdownSkip": "Торкніться, щоб почати одразу",
   "countdownSetting": "Зворотний відлік перед стартом",
-
   "effortSetting": "Відмічати зусилля",
   "effortHint": "RPE: 10 — більше жодного повторення, 8 — залишалося два. RIR — скільки повторень залишалося в запасі. Якщо підхід має оцінку, 1ПМ рахується за таблицею RPE.",
   "rirTitle": "ЗАПАС (RIR)",
   "rirHint": "0 — більше жодного повторення, 2 — залишалося два.",
   "addWeekWidget": "Додати віджет тижня",
-
   "gamificationSetting": "Медалі та рівні",
-
   "authErrorInvalidEmail": "Адреса електронної пошти виглядає неправильною.",
   "authErrorWrongPassword": "Неправильна пошта або пароль.",
   "authErrorUserNotFound": "Акаунт з такою поштою не знайдено.",
@@ -1179,9 +1172,6 @@
   "resetSentTitle": "Перевірте пошту",
   "resetSentBody": "Ми надіслали посилання для скидання на {email}.",
   "backToSignIn": "Повернутися до входу",
-  "gamificationSetting": "Медалі та рівні"
-,
-
   "accountTitle": "Акаунт",
   "accountSection": "Акаунт",
   "accountRowGuest": "Увійдіть або створіть акаунт",
@@ -1258,8 +1248,66 @@
   "startSoonTitle": "Індивідуальні сесії скоро з'являться",
   "startSoonBody": "Керовані сесії з'являться разом із відео тренера. А тим часом запитайте тренера про цю програму.",
   "exercisesMeta": "{count} вправ · ~{minutes} хв",
-  "@exercisesMeta": { "placeholders": { "count": { "type": "int" }, "minutes": { "type": "int" } } },
+  "@exercisesMeta": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
   "talkToTrainer": "Зверніться до тренера",
   "talkToTrainerSub": "Індивідуальні тренування та особистий чат",
-  "notifications": "Сповіщення"
+  "notifications": "Сповіщення",
+  "consultCardKicker": "КОНСУЛЬТАЦІЯ 1:1",
+  "consultCardTitle": "Записатися на консультацію",
+  "consultCardSub": "Коротке 1:1, щоб окреслити напрямок",
+  "consultCardSubDone": "Запит надіслано — переглянути",
+  "consultSheetTitle": "Почніть із консультації",
+  "consultSheetBody": "Дві двері, одна ціль: план, побудований навколо твого тіла.",
+  "consultDoorHow": "Як це працює",
+  "consultDoorHowSub": "Що охоплює 1:1",
+  "consultDoorRequest": "Запросити консультацію",
+  "consultDoorRequestSub": "Дві хвилини, без зобов'язань",
+  "consultDoorView": "Переглянути запит",
+  "consultDoorViewSub": "Вже надіслано — без дублікатів",
+  "introTitle": "Тренінг, зібраний під тебе",
+  "introP1": "Консультація — коротке 1:1 з тренером. Ти розповідаєш про цілі, минуле та травми — тренер перетворює це на план, який пасує твоєму тілу.",
+  "introP2": "Жодних шаблонів. Твій план написаний для тебе і змінюється разом із тобою.",
+  "introPoint1": "Спочатку слухаємо: цілі, історія, травми",
+  "introPoint2": "Власні тренування просто в застосунку",
+  "introPoint3": "Зворотний зв'язок, що змінює план",
+  "introCta": "Запросити консультацію",
+  "requestTitle": "Запросити консультацію",
+  "requestSub": "Кілька швидких відповідей, щоб 1:1 почалося легко.",
+  "requestGoalKicker": "ГОЛОВНА ЦІЛЬ",
+  "goalStrength": "Набрати силу",
+  "goalFatLoss": "Прибрати жир",
+  "goalMobility": "Краще рухатися",
+  "goalConsistency": "Тримати ритм",
+  "requestExpKicker": "ДОСВІД",
+  "expNew": "Тільки починаю",
+  "expReturning": "Повертаюся після перерви",
+  "expSeasoned": "Роки тренувань",
+  "requestTimeKicker": "ЗРУЧНИЙ ЧАС ДЛЯ РОЗМОВИ",
+  "timeMorning": "Ранок",
+  "timeAfternoon": "День",
+  "timeEvening": "Вечір",
+  "requestNotesKicker": "ЩОСЬ ІЩЕ? НЕОБОВ'ЯЗКОВО",
+  "requestNotesHint": "Травми, розклад, інвентар…",
+  "requestSubmit": "Надіслати запит",
+  "requestPickBoth": "Спочатку оберіть ціль і досвід",
+  "sentChip": "НАДІСЛАНО",
+  "sentTitle": "Запит прийнято",
+  "sentBody": "Запит у тренера. Він залишається як є — решта в чаті.",
+  "sentSummaryKicker": "ТВІЙ ЗАПИТ",
+  "sentContinue": "Далі",
+  "welcomeTitle": "Усе готово",
+  "welcomeFlag": "Тренер відповість протягом 24–48 годин",
+  "welcomeStep1": "Тренер перегляне запит і відповість у чаті",
+  "welcomeStep2": "Ви домовитеся про час 1:1",
+  "welcomeStep3": "Після дзвінка прийде перша особиста програма",
+  "welcomeDone": "Повернутися до Мого тренера"
 }

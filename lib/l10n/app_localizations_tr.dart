@@ -3323,4 +3323,152 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get notifications => 'Bildirimler';
+
+  @override
+  String get consultCardKicker => '1:1 DANIŞMA';
+
+  @override
+  String get consultCardTitle => 'Danışma ayarla';
+
+  @override
+  String get consultCardSub => 'Yönünü belirleyecek kısa bir 1:1';
+
+  @override
+  String get consultCardSubDone => 'Talebin gönderildi — görüntüle';
+
+  @override
+  String get consultSheetTitle => 'Bir danışmayla başla';
+
+  @override
+  String get consultSheetBody => 'İki kapı, tek hedef: bedeninin etrafına kurulmuş bir plan.';
+
+  @override
+  String get consultDoorHow => 'Nasıl çalışır';
+
+  @override
+  String get consultDoorHowSub => '1:1\'de neler var';
+
+  @override
+  String get consultDoorRequest => 'Danışma talep et';
+
+  @override
+  String get consultDoorRequestSub => 'İki dakika, taahhüt yok';
+
+  @override
+  String get consultDoorView => 'Talebini görüntüle';
+
+  @override
+  String get consultDoorViewSub => 'Zaten gönderildi — kopya yok';
+
+  @override
+  String get introTitle => 'Sana göre kurgulanan koçluk';
+
+  @override
+  String get introP1 =>
+      'Danışma, antrenörünle kısa bir 1:1\'dir. Hedeflerini, geçmişini ve sakatlıklarını anlatırsın — antrenör bunları bedenine uyan bir plana çevirir.';
+
+  @override
+  String get introP2 => 'Hazır şablon yok. Planın senin için yazılır ve seninle birlikte değişir.';
+
+  @override
+  String get introPoint1 => 'Önce dinlenir: hedefler, geçmiş, sakatlıklar';
+
+  @override
+  String get introPoint2 => 'Kendi antrenmanları doğrudan uygulamada';
+
+  @override
+  String get introPoint3 => 'Planını yeniden şekillendiren geri bildirim';
+
+  @override
+  String get introCta => 'Danışma talep et';
+
+  @override
+  String get requestTitle => 'Danışma talep et';
+
+  @override
+  String get requestSub => '1:1\'in iyi başlaması için birkaç kısa cevap.';
+
+  @override
+  String get requestGoalKicker => 'ANA HEDEF';
+
+  @override
+  String get goalStrength => 'Güç kazanmak';
+
+  @override
+  String get goalFatLoss => 'Yağ yakmak';
+
+  @override
+  String get goalMobility => 'Daha iyi hareket';
+
+  @override
+  String get goalConsistency => 'Düzenli kalmak';
+
+  @override
+  String get requestExpKicker => 'DENEYİM';
+
+  @override
+  String get expNew => 'Yeni başlıyorum';
+
+  @override
+  String get expReturning => 'Aradan sonra dönüyorum';
+
+  @override
+  String get expSeasoned => 'Yılların tecrübesi';
+
+  @override
+  String get requestTimeKicker => 'KONUŞMAK İÇİN EN İYİ ZAMAN';
+
+  @override
+  String get timeMorning => 'Sabah';
+
+  @override
+  String get timeAfternoon => 'Öğleden sonra';
+
+  @override
+  String get timeEvening => 'Akşam';
+
+  @override
+  String get requestNotesKicker => 'BAŞKA BİR ŞEY? İSTEĞE BAĞLI';
+
+  @override
+  String get requestNotesHint => 'Sakatlıklar, program, ekipman…';
+
+  @override
+  String get requestSubmit => 'Talebi gönder';
+
+  @override
+  String get requestPickBoth => 'Önce bir hedef ve deneyim seç';
+
+  @override
+  String get sentChip => 'GÖNDERİLDİ';
+
+  @override
+  String get sentTitle => 'Talebin alındı';
+
+  @override
+  String get sentBody => 'Talebin antrenöründe. Gönderildiği gibi kalır — gerisi sohbette.';
+
+  @override
+  String get sentSummaryKicker => 'TALEBİN';
+
+  @override
+  String get sentContinue => 'Devam';
+
+  @override
+  String get welcomeTitle => 'Her şey hazır';
+
+  @override
+  String get welcomeFlag => 'Antrenörün 24–48 saat içinde yanıtlar';
+
+  @override
+  String get welcomeStep1 => 'Antrenör talebini inceler ve sohbette yanıt verir';
+
+  @override
+  String get welcomeStep2 => '1:1 için bir zaman belirlersiniz';
+
+  @override
+  String get welcomeStep3 => 'Görüşmenin ardından ilk özel planın gelir';
+
+  @override
+  String get welcomeDone => 'Antrenörüme dön';
 }

@@ -1016,7 +1016,6 @@
   "logWorkoutAction": "운동 기록",
   "logging": "기록 중",
   "placesLabel": "내 장소",
-
   "keepScreenOn": "운동 중에는 화면 켜 두기",
   "lockWorkout": "화면 잠금",
   "unlockWorkout": "잠금 해제",
@@ -1138,31 +1137,25 @@
   "stickerSaved": "갤러리에 저장했어요",
   "stickerWeek": "이번 주",
   "getReady": "준비",
-
   "stickerGallery": "갤러리",
   "stickerCamera": "카메라",
   "shareIntroTitle": "이 루틴 공유하기",
   "shareIntroBody": "연인, 친구, 가족에게 보내 보세요. Body Bridge으로 열리는 작은 파일이 가고, 세트와 무게까지 한 번에 추가돼요.",
   "removedFromRoutine": "루틴에서 뺐어요",
-
   "radarTitle": "이번 달",
   "radarHint": "더 운동이 필요한 부위를 확인하세요",
   "radarEmpty": "이번 달 운동하면 균형을 볼 수 있어요",
   "radarBalanced": "지금까지 균형이 좋아요",
   "radarFocus": "더 필요해요: {list}",
-
   "countdownReady": "준비하세요",
   "countdownSkip": "탭하면 바로 시작해요",
   "countdownSetting": "시작 전 카운트다운",
-
   "effortSetting": "세트별 강도 기록",
   "effortHint": "RPE: 10은 한 번도 더 못 하는 상태, 8은 두 번 더 할 수 있던 상태예요. RIR은 남아 있던 반복 수예요. 기록된 세트는 예상 1RM에 RPE 표를 사용해요.",
   "rirTitle": "여력 (RIR)",
   "rirHint": "0은 한 번도 더 못 하는 상태, 2는 두 번 더 할 수 있던 상태예요.",
   "addWeekWidget": "이번 주 위젯 추가",
-
   "gamificationSetting": "메달과 레벨",
-
   "authErrorInvalidEmail": "이메일 주소가 올바르지 않은 것 같습니다.",
   "authErrorWrongPassword": "이메일 또는 비밀번호가 틀셨습니다.",
   "authErrorUserNotFound": "해당 이메일로 등록된 계정이 없습니다.",
@@ -1179,9 +1172,6 @@
   "resetSentTitle": "이메일을 확인하세요",
   "resetSentBody": "{email}로 재설정 링크를 보냈습니다.",
   "backToSignIn": "로그인으로 돌아가기",
-  "gamificationSetting": "메달과 레벨"
-,
-
   "accountTitle": "계정",
   "accountSection": "계정",
   "accountRowGuest": "로그인 또는 계정 만들기",
@@ -1258,8 +1248,66 @@
   "startSoonTitle": "맞춤 세션이 곧 제공됩니다",
   "startSoonBody": "가이드 세션은 트레이너 영상과 함께 제공됩니다. 그동안 트레이너에게 이 플랜에 대해 문의하세요.",
   "exercisesMeta": "{count}개 운동 · ~{minutes}분",
-  "@exercisesMeta": { "placeholders": { "count": { "type": "int" }, "minutes": { "type": "int" } } },
+  "@exercisesMeta": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
   "talkToTrainer": "트레이너와 대화하기",
   "talkToTrainerSub": "맞춤 운동과 1:1 채팅",
-  "notifications": "알림"
+  "notifications": "알림",
+  "consultCardKicker": "1:1 상담",
+  "consultCardTitle": "상담 예약하기",
+  "consultCardSub": "방향을 정하는 짧은 1:1",
+  "consultCardSubDone": "요청 완료 — 보기",
+  "consultSheetTitle": "상담으로 시작하세요",
+  "consultSheetBody": "두 개의 문, 하나의 목표: 당신의 몸에 맞춘 플랜.",
+  "consultDoorHow": "진행 방식",
+  "consultDoorHowSub": "1:1에서 다루는 내용",
+  "consultDoorRequest": "상담 요청하기",
+  "consultDoorRequestSub": "2분이면 충분, 부담 없음",
+  "consultDoorView": "내 요청 보기",
+  "consultDoorViewSub": "이미 전송됨 — 중복 없음",
+  "introTitle": "당신을 위해 만든 코칭",
+  "introP1": "상담은 트레이너와의 짧은 1:1입니다. 목표, 운동 이력, 부상을 이야기하면 트레이너가 당신의 몸에 맞는 플랜으로 만들어 줍니다.",
+  "introP2": "밀리지 않는 템플릿 따위 없습니다. 플랜은 당신만을 위해 작성되고 당신과 함께 변합니다.",
+  "introPoint1": "목표·이력·부상을 먼저 듣습니다",
+  "introPoint2": "앱 안에서 커스텀 운동을 전달합니다",
+  "introPoint3": "피드백으로 플랜을 다듬습니다",
+  "introCta": "상담 요청하기",
+  "requestTitle": "상담 요청",
+  "requestSub": "간단한 몇 가지만 답하면 1:1이 한결 수월해집니다.",
+  "requestGoalKicker": "주요 목표",
+  "goalStrength": "근력 키우기",
+  "goalFatLoss": "체지방 줄이기",
+  "goalMobility": "움직임 개선",
+  "goalConsistency": "꾸준함 유지",
+  "requestExpKicker": "경험",
+  "expNew": "이제 시작",
+  "expReturning": "잠깐 쉬었다 옴",
+  "expSeasoned": "오랜 경험자",
+  "requestTimeKicker": "통화하기 좋은 시간",
+  "timeMorning": "오전",
+  "timeAfternoon": "오후",
+  "timeEvening": "저녁",
+  "requestNotesKicker": "더 할 이야기? (선택)",
+  "requestNotesHint": "부상, 일정, 장비…",
+  "requestSubmit": "요청 보내기",
+  "requestPickBoth": "목표와 경험을 먼저 선택해 주세요",
+  "sentChip": "전송됨",
+  "sentTitle": "요청이 접수되었습니다",
+  "sentBody": "요청이 트레이너에게 전달되었습니다. 내용은 그대로 — 이후 대화는 채팅에서.",
+  "sentSummaryKicker": "내 요청",
+  "sentContinue": "계속",
+  "welcomeTitle": "준비 완료",
+  "welcomeFlag": "트레이너가 24~48시간 안에 답장합니다",
+  "welcomeStep1": "트레이너가 요청을 확인하고 채팅으로 답장합니다",
+  "welcomeStep2": "1:1 시간을 정합니다",
+  "welcomeStep3": "통화 후 첫 커스텀 플랜을 전달합니다",
+  "welcomeDone": "내 트레이너로 돌아가기"
 }
