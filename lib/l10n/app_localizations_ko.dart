@@ -3422,11 +3422,6 @@ class AppLocalizationsKo extends AppLocalizations {
   }
 
   @override
-  String bannerNewMessage(String name) {
-    return '$name의 새 메시지';
-  }
-
-  @override
   String get bannerTapToView => '탭하여 보기';
 
   @override

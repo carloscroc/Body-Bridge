@@ -324,9 +324,8 @@ class _TrainerHomeScreenState extends State<TrainerHomeScreen> {
 
   /// In-app top banner (notifications.png right frame): slides in under the
   /// status bar over My Trainer while the app is awake. Visuals live in the
-  /// shared [TrainerBannerCard]; the hub keeps both banner kinds.
+  /// shared [TrainerBannerCard]; the banner is new-workout-only (repair D2).
   Widget _banner(BuildContext context, TrainerBanner banner) {
-    final isNewWorkout = banner.kind == TrainerBannerKind.newWorkout;
     return Positioned(
       left: 14,
       right: 14,
@@ -335,15 +334,11 @@ class _TrainerHomeScreenState extends State<TrainerHomeScreen> {
         banner: banner,
         onTap: () {
           trainer.dismissBanner(banner.key);
-          if (isNewWorkout) {
-            final a = trainer.assignments.firstWhere(
-              (x) => trainer.isNewAssignment(x),
-              orElse: () => trainer.assignments.first,
-            );
-            _openWorkout(a);
-          } else {
-            _openChat();
-          }
+          final a = trainer.assignments.firstWhere(
+            (x) => trainer.isNewAssignment(x),
+            orElse: () => trainer.assignments.first,
+          );
+          _openWorkout(a);
         },
       ),
     );

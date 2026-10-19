@@ -121,17 +121,14 @@ void main() {
       expect(state.unreadTotal, 2);
       // NEW chip = unopened 0% assignment
       expect(state.newAssignmentCount, 1); // lower body; mobility 40%, posture 100%
-      // banner priority: new workout before message
+      // banner: new-workout only (repair D2) — chat unread never surfaces one
       expect(state.activeBanner?.kind, TrainerBannerKind.newWorkout);
 
       final lower = state.assignments.firstWhere((a) => a.id == 'asg_lower');
       state.markAssignmentOpened(lower);
       expect(state.newAssignmentCount, 0); // chip clears on open
-      // With no workout signal left, the message banner surfaces (chat
-      // unread > 0 and its key was never dismissed):
-      expect(state.activeBanner?.kind, TrainerBannerKind.newMessage);
-
-      state.dismissBanner('chat');
+      // With no workout signal left there is NO banner, even though chat
+      // unread is still 2 (repair D2 regression):
       expect(state.activeBanner, isNull);
     });
 

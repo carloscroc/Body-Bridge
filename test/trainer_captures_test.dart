@@ -336,6 +336,35 @@ void main() {
     });
   }
 
+  // Repair D2: clean hub-entry frames — workout banner dismissed so the hub
+  // shows the tighter top padding; no message banner can ever appear there.
+  testWidgets('hub clean dark 411x823', (tester) async {
+    await capture(
+      tester,
+      name: 'trainer-hub-clean-dark-411x823',
+      size: const Size(411, 823),
+      dark: true,
+      tier: AccountTier.advanced,
+      setup: () {
+        trainer.dismissedBanners.add('workout:thr_lower');
+      },
+      body: const TrainerHomeScreen(),
+    );
+  });
+  testWidgets('hub clean light 411x823', (tester) async {
+    await capture(
+      tester,
+      name: 'trainer-hub-clean-light-411x823',
+      size: const Size(411, 823),
+      dark: false,
+      tier: AccountTier.advanced,
+      setup: () {
+        trainer.dismissedBanners.add('workout:thr_lower');
+      },
+      body: const TrainerHomeScreen(),
+    );
+  });
+
   testWidgets('nav 5tabs exercises dark', (tester) async {
     await capture(
       tester,

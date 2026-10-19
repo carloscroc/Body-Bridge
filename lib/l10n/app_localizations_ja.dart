@@ -3407,11 +3407,6 @@ class AppLocalizationsJa extends AppLocalizations {
   }
 
   @override
-  String bannerNewMessage(String name) {
-    return '$nameからの新着メッセージ';
-  }
-
-  @override
   String get bannerTapToView => 'タップして表示';
 
   @override

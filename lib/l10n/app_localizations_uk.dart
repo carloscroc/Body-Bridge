@@ -3517,11 +3517,6 @@ class AppLocalizationsUk extends AppLocalizations {
   }
 
   @override
-  String bannerNewMessage(String name) {
-    return 'Нове повідомлення від $name';
-  }
-
-  @override
   String get bannerTapToView => 'Торкніться, щоб переглянути';
 
   @override

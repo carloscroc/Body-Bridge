@@ -446,7 +446,6 @@ class TrainerBannerCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final gc = context.gc;
     final dark = trainerIsDark(context);
-    final isNewWorkout = banner.kind == TrainerBannerKind.newWorkout;
     return AnimatedSwitcher(
       duration: const Duration(milliseconds: 320),
       switchInCurve: Curves.easeOutCubic,
@@ -498,11 +497,8 @@ class TrainerBannerCard extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      isNewWorkout
-                          ? t.bannerNewWorkout(trainerFirstName(
-                              trainer.profile?.displayName ?? ''))
-                          : t.bannerNewMessage(trainerFirstName(
-                              trainer.profile?.displayName ?? '')),
+                      t.bannerNewWorkout(
+                          trainerFirstName(trainer.profile?.displayName ?? '')),
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
                       style: AppTheme.f(12.5,

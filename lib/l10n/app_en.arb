@@ -2108,14 +2108,6 @@
             }
         }
     },
-    "bannerNewMessage": "New message from {name}",
-    "@bannerNewMessage": {
-        "placeholders": {
-            "name": {
-                "type": "String"
-            }
-        }
-    },
     "bannerTapToView": "Tap to view",
     "@bannerTapToView": {
         "description": "Trainer feature (card t_d788f36e)"

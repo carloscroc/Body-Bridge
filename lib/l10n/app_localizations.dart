@@ -6284,12 +6284,6 @@ abstract class AppLocalizations {
   /// **'New workout from {name}'**
   String bannerNewWorkout(String name);
 
-  /// No description provided for @bannerNewMessage.
-  ///
-  /// In en, this message translates to:
-  /// **'New message from {name}'**
-  String bannerNewMessage(String name);
-
   /// Trainer feature (card t_d788f36e)
   ///
   /// In en, this message translates to:

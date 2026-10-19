@@ -14,7 +14,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import '../services/trainer_data.dart';
 
-enum TrainerBannerKind { newWorkout, newMessage }
+enum TrainerBannerKind { newWorkout }
 
 @immutable
 class TrainerBanner {
@@ -140,21 +140,15 @@ class TrainerState extends ChangeNotifier {
   /// NEW chip assignment count (0% and never opened).
   int get newAssignmentCount => assignments.where(isNewAssignment).length;
 
+  /// The floating banner is new-workout-only (repair D2): unread messages
+  /// stay on the count pill + Message button badge — chat unread alone must
+  /// never produce a banner.
   TrainerBanner? get activeBanner {
     final newWorkout = assignments.where(isNewAssignment).toList();
-    if (newWorkout.isNotEmpty) {
-      final key = 'workout:${newWorkout.first.threadId}';
-      if (!dismissedBanners.contains(key)) {
-        return TrainerBanner(kind: TrainerBannerKind.newWorkout, key: key);
-      }
-    }
-    if (unreadTotal > 0) {
-      const key = 'chat';
-      if (!dismissedBanners.contains(key)) {
-        return const TrainerBanner(kind: TrainerBannerKind.newMessage, key: key);
-      }
-    }
-    return null;
+    if (newWorkout.isEmpty) return null;
+    final key = 'workout:${newWorkout.first.threadId}';
+    if (dismissedBanners.contains(key)) return null;
+    return TrainerBanner(kind: TrainerBannerKind.newWorkout, key: key);
   }
 
   // --- Mutations ---

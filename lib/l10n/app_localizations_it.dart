@@ -3508,11 +3508,6 @@ class AppLocalizationsIt extends AppLocalizations {
   }
 
   @override
-  String bannerNewMessage(String name) {
-    return 'Nuovo messaggio da $name';
-  }
-
-  @override
   String get bannerTapToView => 'Tocca per vedere';
 
   @override

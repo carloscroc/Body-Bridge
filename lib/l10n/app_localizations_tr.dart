@@ -3507,11 +3507,6 @@ class AppLocalizationsTr extends AppLocalizations {
   }
 
   @override
-  String bannerNewMessage(String name) {
-    return '$name\'den yeni mesaj';
-  }
-
-  @override
   String get bannerTapToView => 'Görüntülemek için dokun';
 
   @override

@@ -3367,11 +3367,6 @@ class AppLocalizationsZh extends AppLocalizations {
   }
 
   @override
-  String bannerNewMessage(String name) {
-    return '$name发来了新消息';
-  }
-
-  @override
   String get bannerTapToView => '点按查看';
 
   @override
@@ -7088,11 +7083,6 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
   @override
   String bannerNewWorkout(String name) {
     return '$name傳來了新訓練';
-  }
-
-  @override
-  String bannerNewMessage(String name) {
-    return '$name傳來了新訊息';
   }
 
   @override

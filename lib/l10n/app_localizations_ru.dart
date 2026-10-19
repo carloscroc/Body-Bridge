@@ -3602,11 +3602,6 @@ class AppLocalizationsRu extends AppLocalizations {
   }
 
   @override
-  String bannerNewMessage(String name) {
-    return 'Новое сообщение от $name';
-  }
-
-  @override
   String get bannerTapToView => 'Нажмите, чтобы посмотреть';
 
   @override
