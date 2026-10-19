@@ -23,7 +23,6 @@ import '../widgets/trainer_exercise_media.dart';
 import '../widgets/trainer_kit.dart';
 import '../widgets/ui_kit.dart';
 import 'trainer/lock_overlay.dart';
-import 'trainer/source_tabs.dart';
 
 class ExercisesScreen extends StatefulWidget {
   const ExercisesScreen({super.key});
@@ -34,6 +33,7 @@ class ExercisesScreen extends StatefulWidget {
 class _ExercisesScreenState extends State<ExercisesScreen> {
   late final TextEditingController _c = TextEditingController(text: fit.exSearch);
   bool _lockShown = false;
+  final ScrollController _scroll = ScrollController();
 
   @override
   void initState() {
@@ -44,6 +44,7 @@ class _ExercisesScreenState extends State<ExercisesScreen> {
   @override
   void dispose() {
     _c.dispose();
+    _scroll.dispose();
     super.dispose();
   }
 
@@ -57,29 +58,40 @@ class _ExercisesScreenState extends State<ExercisesScreen> {
       child: TrainerBannerOverlay(
         child: Stack(
           children: [
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(20, 12, 20, 12),
-                  child: _header(context, gc, list.length),
+            CustomScrollView(
+              controller: _scroll,
+              slivers: [
+                SliverPersistentHeader(
+                  pinned: true,
+                  delegate: _ExercisesHeaderDelegate(this, gc),
                 ),
-                Expanded(
-                  child: Stack(
-                    children: [
-                      ListView.builder(
-                        padding: const EdgeInsets.fromLTRB(20, 0, 20, 110),
-                        itemCount: list.isEmpty ? 1 : list.length,
-                        itemBuilder: (context, i) {
-                          if (list.isEmpty) return _empty(gc);
-                          final ex = list[i];
-                          final first = i == 0 || list[i - 1].primary != ex.primary;
-                          final last = i == list.length - 1 || list[i + 1].primary != ex.primary;
-                          return Column(
-                            crossAxisAlignment: CrossAxisAlignment.stretch,
-                            children: [
-                              if (first) ...[
-                                SizedBox(height: i == 0 ? 2 : 22),
+                SliverPadding(
+                  padding: const EdgeInsets.fromLTRB(20, 0, 20, 110),
+                  sliver: SliverList(
+                    delegate: SliverChildBuilderDelegate(
+                      (context, i) {
+                        if (list.isEmpty) return _empty(gc);
+                        final ex = list[i];
+                        final first = i == 0 || list[i - 1].primary != ex.primary;
+                        final last = i == list.length - 1 || list[i + 1].primary != ex.primary;
+                        final all = fit.exSource == 'all';
+                        String? banner;
+                        if (all) {
+                          if (i == 0) {
+                            banner = fit.isTrainerSourced(ex.id)
+                                ? t.sectionTrainerLibrary
+                                : t.sectionFreeLibrary;
+                          } else if (!fit.isTrainerSourced(ex.id) &&
+                              fit.isTrainerSourced(list[i - 1].id)) {
+                            banner = t.sectionFreeLibrary;
+                          }
+                        }
+                        return Column(
+                          crossAxisAlignment: CrossAxisAlignment.stretch,
+                          children: [
+                            if (first) ...[
+                              SizedBox(height: i == 0 ? 2 : 22),
+                              if (!all)
                                 Padding(
                                   padding: const EdgeInsets.fromLTRB(4, 0, 0, 8),
                                   child: Text(
@@ -91,15 +103,27 @@ class _ExercisesScreenState extends State<ExercisesScreen> {
                                       letterSpacing: 1.3,
                                     ),
                                   ),
+                                )
+                              else if (banner != null)
+                                Padding(
+                                  padding: const EdgeInsets.fromLTRB(4, 0, 0, 8),
+                                  child: Text(
+                                    banner.toUpperCase(),
+                                    style: AppTheme.f(
+                                      10.5,
+                                      weight: FontWeight.w700,
+                                      color: gc.textSecondary,
+                                      letterSpacing: 1.3,
+                                    ),
+                                  ),
                                 ),
-                              ],
-                              _row(gc, ex, first: first, last: last),
                             ],
-                          );
-                        },
-                      ),
-                      TrainerLockScrim(visible: _lockShown),
-                    ],
+                            _row(gc, ex, first: first, last: last),
+                          ],
+                        );
+                      },
+                      childCount: list.isEmpty ? 1 : list.length,
+                    ),
                   ),
                 ),
               ],
@@ -122,9 +146,9 @@ class _ExercisesScreenState extends State<ExercisesScreen> {
     fit.clearExFilters();
   }
 
-  void _onSourceTap(SourceTab tab) {
-    if (tab == SourceTab.free) {
-      setState(() => fit.setExSource('free'));
+  void _onSourceChipTap(String id) {
+    if (id == 'all' || id == 'free') {
+      setState(() => fit.setExSource(id));
       return;
     }
     if (!context.can(kCapCustomExercises)) {
@@ -134,84 +158,110 @@ class _ExercisesScreenState extends State<ExercisesScreen> {
       });
       return;
     }
-    setState(() => fit.setExSource(tab.name));
+    setState(() => fit.setExSource(id));
   }
 
   String _sectionLabel(Exercise ex) =>
       fit.exSource == 'free' ? muscleLabel(ex.primary) : exerciseSectionLabel(ex);
 
-  Widget _header(BuildContext context, GymColors gc, int count) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: [
-        Row(
-          children: [
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  ScreenTitle(t.exercises),
-                  const SizedBox(height: 4),
-                  Text(
-                    t.libraryCount(count),
-                    style: AppTheme.f(13, weight: FontWeight.w500, color: gc.textSecondary),
-                  ),
-                ],
+  // Dockable pinned-header metrics (contract t_a9afb1b7): the delegate
+  // extents cover the whole header at progress 0 and everything but the
+  // title row once docked.
+  static const double _headerMaxExtent = 210;
+  static const double _headerMinExtent = 160;
+
+  Widget _headerContent(BuildContext context, GymColors gc, double progress) {
+    final advanced = context.can(kCapCustomExercises);
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(20, 12, 20, 12),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          // Title row collapses and fades as the header docks.
+          ClipRect(
+            child: Align(
+              alignment: Alignment.topCenter,
+              heightFactor: 1 - progress,
+              child: Opacity(
+                opacity: 1 - progress,
+                child: Row(
+                  children: [
+                    Expanded(child: ScreenTitle(t.exercises)),
+                    // FREE limit: custom exercises (trainer_features) are hidden
+                    // entirely for tiers without the capability.
+                    if (advanced) ...[
+                      RoundAction(
+                        size: 38,
+                        label: t.newExercise,
+                        onTap: () => showCreateExerciseSheet(context),
+                        child: Icon(PhosphorIconsRegular.plus, size: 17, color: gc.text),
+                      ),
+                      const SizedBox(width: 10),
+                    ],
+                    const ExercisesCoachDisc(),
+                  ],
+                ),
               ),
             ),
-            if (context.can(kCapCustomExercises)) ...[
-              AnimatedBuilder(
-                animation: trainer,
-                builder: (context, _) {
-                  final unread = trainer.unreadTotal;
-                  return SizedBox(
-                    width: 40,
-                    height: 40,
-                    child: Stack(
-                      clipBehavior: Clip.none,
-                      children: [
-                        RoundAction(
-                          size: 40,
-                          label: t.notifications,
-                          onTap: () => fit.pushRoute('trainer'),
-                          child: Icon(PhosphorIconsRegular.bell, size: 17, color: gc.text),
-                        ),
-                        if (unread > 0)
-                          Positioned(right: -2, top: -2, child: TrainerCountPill(count: unread, size: 17)),
-                      ],
-                    ),
-                  );
-                },
+          ),
+          const SizedBox(height: 12),
+          SearchField(controller: _c, hint: t.searchExercises, onChanged: fit.setExSearch),
+          const SizedBox(height: 10),
+          _sourceChips(context, gc),
+          const SizedBox(height: 10),
+          _quickChips(context, gc),
+        ],
+      ),
+    );
+  }
+
+  /// Quiet source chips (contract t_a9afb1b7): All/Free/Trainer/Custom with
+  /// true per-tier counts; gated taps open the lock UX and keep the source.
+  Widget _sourceChips(BuildContext context, GymColors gc) {
+    final source = fit.exSource;
+    final dark = Theme.of(context).brightness == Brightness.dark;
+    final counts = {
+      'all': fit.allExercises.length + trainerExercises.length + assignedExercises.length,
+      'free': fit.allExercises.length,
+      'trainer': trainerExercises.length,
+      'custom': assignedExercises.length,
+    };
+    final chips = [
+      ('all', t.sourceAll, 'chip-all'),
+      ('free', t.sourceFree, 'chip-free'),
+      ('trainer', t.sourceTrainer, 'chip-trainer'),
+      ('custom', t.sourceCustom, 'chip-custom'),
+    ];
+    return SingleChildScrollView(
+      scrollDirection: Axis.horizontal,
+      child: Row(
+        children: [
+          for (final (id, label, chipKey) in chips) ...[
+            GestureDetector(
+              key: ValueKey(chipKey),
+              behavior: HitTestBehavior.opaque,
+              onTap: () => _onSourceChipTap(id),
+              child: AnimatedContainer(
+                duration: const Duration(milliseconds: 200),
+                padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 7),
+                decoration: BoxDecoration(
+                  color: source == id ? gc.accent : Colors.transparent,
+                  borderRadius: BorderRadius.circular(100),
+                ),
+                child: Text(
+                  '$label ${counts[id] ?? 0}',
+                  style: AppTheme.f(
+                    12.5,
+                    weight: source == id ? FontWeight.w700 : FontWeight.w500,
+                    color: source == id ? (dark ? gc.pageBg : gc.onEmber) : gc.textSecondary,
+                  ),
+                ),
               ),
-              const SizedBox(width: 10),
-            ],
-            // FREE limit: custom exercises (trainer_features) are hidden
-            // entirely for tiers without the capability.
-            if (context.can(kCapCustomExercises))
-              RoundAction(
-                size: 40,
-                label: t.newExercise,
-                onTap: () => showCreateExerciseSheet(context),
-                child: Icon(PhosphorIconsRegular.plus, size: 17, color: gc.text),
-              )
-            else
-              const SizedBox.shrink(),
+            ),
+            if (id != 'custom') const SizedBox(width: 8),
           ],
-        ),
-        const SizedBox(height: 12),
-        const TrainerEntryStrip(),
-        const SizedBox(height: 12),
-        SearchField(controller: _c, hint: t.searchExercises, onChanged: fit.setExSearch),
-        const SizedBox(height: 10),
-        PremiumSourceTabs(
-          active: SourceTab.values.firstWhere((s) => s.name == fit.exSource, orElse: () => SourceTab.free),
-          trainerLocked: !context.can(kCapCustomExercises),
-          customLocked: !context.can(kCapCustomExercises),
-          onSelected: _onSourceTap,
-        ),
-        const SizedBox(height: 10),
-        _quickChips(context, gc),
-      ],
+        ],
+      ),
     );
   }
 
@@ -315,10 +365,9 @@ class _ExercisesScreenState extends State<ExercisesScreen> {
 
   Widget _row(GymColors gc, Exercise ex, {required bool first, required bool last}) {
     final fav = fit.favorites[ex.id] ?? false;
-    // Trainer/Custom source rows carry a lock chip until entitlement
-    // (exercises-trainer.html; Trainer-source exercises only exist as
-    // assignment videos today, so Custom rows are the lockable surface).
-    final locked = !context.can(kCapCustomExercises) && fit.isCustom(ex.id);
+    // Trainer-sourced rows (tr-/as-) stay locked until entitlement
+    // (exercises-trainer.html); user customs (c…) are never locked.
+    final locked = !context.can(kCapCustomExercises) && fit.isTrainerSourced(ex.id);
     return Container(
       decoration: BoxDecoration(
         color: gc.bgRaised,
@@ -331,7 +380,16 @@ class _ExercisesScreenState extends State<ExercisesScreen> {
         children: [
           GestureDetector(
             behavior: HitTestBehavior.opaque,
-            onTap: () => fit.openExercise(ex.id),
+            onTap: () {
+              if (locked) {
+                setState(() => _lockShown = true);
+                showTrainerUpsellSheet(context).whenComplete(() {
+                  if (mounted) setState(() => _lockShown = false);
+                });
+                return;
+              }
+              fit.openExercise(ex.id);
+            },
             child: Padding(
               padding: const EdgeInsets.fromLTRB(12, 9, 6, 9),
               child: Row(
@@ -359,22 +417,27 @@ class _ExercisesScreenState extends State<ExercisesScreen> {
                             ),
                             if (fit.isTrainerSourced(ex.id)) ...[
                               const SizedBox(width: 5),
-                              Container(
-                                padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 2),
-                                decoration: BoxDecoration(
-                                  color: gc.textTertiary.withValues(alpha: 0.16),
-                                  borderRadius: BorderRadius.circular(100),
-                                ),
-                                child: Text(
-                                  t.advancedBadge,
-                                  style: AppTheme.f(
-                                    7.5,
-                                    weight: FontWeight.w800,
-                                    color: gc.textSecondary,
-                                    letterSpacing: 0.2,
+                              // Locked rows carry the brass LOCKED chip instead
+                              // of the ADVANCED badge (exercises-trainer.html).
+                              if (locked)
+                                _lockChip(gc)
+                              else
+                                Container(
+                                  padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 2),
+                                  decoration: BoxDecoration(
+                                    color: gc.textTertiary.withValues(alpha: 0.16),
+                                    borderRadius: BorderRadius.circular(100),
+                                  ),
+                                  child: Text(
+                                    t.advancedBadge,
+                                    style: AppTheme.f(
+                                      7.5,
+                                      weight: FontWeight.w800,
+                                      color: gc.textSecondary,
+                                      letterSpacing: 0.2,
+                                    ),
                                   ),
                                 ),
-                              ),
                             ],
                           ],
                         ),
@@ -388,10 +451,6 @@ class _ExercisesScreenState extends State<ExercisesScreen> {
                       ],
                     ),
                   ),
-                  if (locked) ...[
-                    _lockChip(gc),
-                    const SizedBox(width: 4),
-                  ],
                   GestureDetector(
                     behavior: HitTestBehavior.opaque,
                     onTap: () => fit.toggleFavorite(ex.id),
@@ -459,6 +518,49 @@ class _ExercisesScreenState extends State<ExercisesScreen> {
       ),
     );
   }
+}
+
+/// Dockable pinned header (contract t_a9afb1b7): opaque bg, title row
+/// collapses/fades with shrinkOffset, lock scrim hangs below the header's
+/// current bottom edge while the lock UX is up.
+class _ExercisesHeaderDelegate extends SliverPersistentHeaderDelegate {
+  _ExercisesHeaderDelegate(this.state, this.gc);
+
+  final _ExercisesScreenState state;
+  final GymColors gc;
+
+  @override
+  double get maxExtent => _ExercisesScreenState._headerMaxExtent;
+
+  @override
+  double get minExtent => _ExercisesScreenState._headerMinExtent;
+
+  @override
+  Widget build(BuildContext context, double shrinkOffset, bool overlapsContent) {
+    final range = maxExtent - minExtent;
+    final progress = range <= 0 ? 0.0 : (shrinkOffset / range).clamp(0.0, 1.0).toDouble();
+    return Stack(
+      clipBehavior: Clip.none,
+      children: [
+        ColoredBox(
+          color: gc.bg,
+          child: state._headerContent(context, gc, progress),
+        ),
+        // Scrim starts at the header's current bottom edge and runs past the
+        // list (Clip.none lets it overflow the header box).
+        Positioned(
+          top: maxExtent - shrinkOffset,
+          left: 0,
+          right: 0,
+          height: 4000,
+          child: TrainerLockScrim(visible: state._lockShown),
+        ),
+      ],
+    );
+  }
+
+  @override
+  bool shouldRebuild(covariant _ExercisesHeaderDelegate oldDelegate) => true;
 }
 
 class _FilterChipData {
