@@ -3410,6 +3410,35 @@ class AppLocalizationsJa extends AppLocalizations {
   String get bannerTapToView => 'タップして表示';
 
   @override
+  String get callKicker => 'パーソナルトレーニング';
+
+  @override
+  String get callSheetTitle => '1対1の通話を予約';
+
+  @override
+  String get callNotesHint => '特に話したいことはありますか？（任意）';
+
+  @override
+  String get callPickDayTime => '曜日と時間帯を選んでください';
+
+  @override
+  String get callSubmit => 'リクエストを送信';
+
+  @override
+  String get callSentTitle => 'リクエストを送信しました';
+
+  @override
+  String callSentBody(String name) {
+    return '$nameが時間を確認します';
+  }
+
+  @override
+  String get callDone => '完了';
+
+  @override
+  String get bookCallA11y => '1対1の通話を予約';
+
+  @override
   String get startSoonTitle => 'カスタムセッションはもうすぐ登場';
 
   @override

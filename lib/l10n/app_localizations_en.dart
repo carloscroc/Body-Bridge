@@ -3507,6 +3507,35 @@ class AppLocalizationsEn extends AppLocalizations {
   String get bannerTapToView => 'Tap to view';
 
   @override
+  String get callKicker => 'PERSONAL TRAINING';
+
+  @override
+  String get callSheetTitle => 'Book a 1-1 call';
+
+  @override
+  String get callNotesHint => 'Anything specific to cover? (optional)';
+
+  @override
+  String get callPickDayTime => 'Pick a day and a time window';
+
+  @override
+  String get callSubmit => 'Send request';
+
+  @override
+  String get callSentTitle => 'Request sent';
+
+  @override
+  String callSentBody(String name) {
+    return '$name will confirm your time';
+  }
+
+  @override
+  String get callDone => 'Done';
+
+  @override
+  String get bookCallA11y => 'Book a 1-1 call';
+
+  @override
   String get startSoonTitle => 'Custom sessions land soon';
 
   @override

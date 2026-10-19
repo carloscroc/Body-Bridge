@@ -3510,6 +3510,35 @@ class AppLocalizationsTr extends AppLocalizations {
   String get bannerTapToView => 'Görüntülemek için dokun';
 
   @override
+  String get callKicker => 'PERSONEL ANTRENMANI';
+
+  @override
+  String get callSheetTitle => 'Birebir görüşme ayarla';
+
+  @override
+  String get callNotesHint => 'Özel olarak ele alınacak bir konu var mı? (isteğe bağlı)';
+
+  @override
+  String get callPickDayTime => 'Bir gün ve bir zaman aralığı seçin';
+
+  @override
+  String get callSubmit => 'Talep gönder';
+
+  @override
+  String get callSentTitle => 'Talep gönderildi';
+
+  @override
+  String callSentBody(String name) {
+    return '$name zamanı onaylayacak';
+  }
+
+  @override
+  String get callDone => 'Tamam';
+
+  @override
+  String get bookCallA11y => 'Birebir görüşme ayarla';
+
+  @override
   String get startSoonTitle => 'Özel seanslar yakında';
 
   @override

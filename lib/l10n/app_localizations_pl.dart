@@ -3523,6 +3523,35 @@ class AppLocalizationsPl extends AppLocalizations {
   String get bannerTapToView => 'Dotknij, aby zobaczyć';
 
   @override
+  String get callKicker => 'TRENING PERSONALNY';
+
+  @override
+  String get callSheetTitle => 'Umów rozmowę 1 na 1';
+
+  @override
+  String get callNotesHint => 'Coś konkretnego do omówienia? (opcjonalnie)';
+
+  @override
+  String get callPickDayTime => 'Wybierz dzień i przedział czasu';
+
+  @override
+  String get callSubmit => 'Wyślij prośbę';
+
+  @override
+  String get callSentTitle => 'Prośba wysłana';
+
+  @override
+  String callSentBody(String name) {
+    return '$name potwierdzi termin';
+  }
+
+  @override
+  String get callDone => 'Gotowe';
+
+  @override
+  String get bookCallA11y => 'Umów rozmowę 1 na 1';
+
+  @override
   String get startSoonTitle => 'Sesje spersonalizowane wkrótce';
 
   @override

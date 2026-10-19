@@ -36,6 +36,7 @@ import 'package:gymmane/state/fit_state.dart';
 import 'package:gymmane/state/trainer_state.dart';
 import 'package:gymmane/theme/app_theme.dart';
 import 'package:gymmane/widgets/premium_gate.dart';
+import 'package:phosphoricons_flutter/phosphoricons_flutter.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 const bool bbCapture = bool.fromEnvironment('BB_CAPTURE');
@@ -126,6 +127,7 @@ void main() {
     required bool dark,
     required AccountTier tier,
     void Function()? setup,
+    Future<void> Function(WidgetTester)? interact,
     required Widget body,
   }) async {
     // Real engine work (font registration, rasterization) must escape the
@@ -157,6 +159,7 @@ void main() {
     );
     await tester.pump(const Duration(milliseconds: 120));
     await tester.pumpAndSettle(const Duration(milliseconds: 100));
+    await interact?.call(tester);
 
     final boundary = captureKey.currentContext?.findRenderObject() as RenderRepaintBoundary?;
     if (boundary == null) throw StateError('capture boundary missing: $name');
@@ -362,6 +365,75 @@ void main() {
         trainer.dismissedBanners.add('workout:thr_lower');
       },
       body: const TrainerHomeScreen(),
+    );
+  });
+
+  // Repair D3: book-a-call sheet frames — the form (fresh) and the
+  // confirmation (request on file, seeded through the persisted record so
+  // ensureLoaded's prefs fallback picks it up), both themes.
+  Future<void> openCallSheet(WidgetTester tester) async {
+    await tester.tap(find.byIcon(PhosphorIconsRegular.calendarBlank));
+    await tester.pumpAndSettle(const Duration(milliseconds: 300));
+  }
+
+  testWidgets('book-call form dark 411x823', (tester) async {
+    trainer.openThreadId = 'thr_chat_marcus';
+    await capture(
+      tester,
+      name: 'book-call-form-dark-411x823',
+      size: const Size(411, 823),
+      dark: true,
+      tier: AccountTier.advanced,
+      body: const TrainerChatScreen(),
+      interact: openCallSheet,
+    );
+  });
+  testWidgets('book-call form light 411x823', (tester) async {
+    trainer.openThreadId = 'thr_chat_marcus';
+    await capture(
+      tester,
+      name: 'book-call-form-light-411x823',
+      size: const Size(411, 823),
+      dark: false,
+      tier: AccountTier.advanced,
+      body: const TrainerChatScreen(),
+      interact: openCallSheet,
+    );
+  });
+  testWidgets('book-call confirmation dark 411x823', (tester) async {
+    trainer.openThreadId = 'thr_chat_marcus';
+    await capture(
+      tester,
+      name: 'book-call-confirmation-dark-411x823',
+      size: const Size(411, 823),
+      dark: true,
+      tier: AccountTier.advanced,
+      setup: () {
+        SharedPreferences.setMockInitialValues({
+          'gymmane_call_v1':
+              '{"day":2,"timeWindow":"morning","notes":"Prefer mornings before work","createdAt":1760000000000}',
+        });
+      },
+      body: const TrainerChatScreen(),
+      interact: openCallSheet,
+    );
+  });
+  testWidgets('book-call confirmation light 411x823', (tester) async {
+    trainer.openThreadId = 'thr_chat_marcus';
+    await capture(
+      tester,
+      name: 'book-call-confirmation-light-411x823',
+      size: const Size(411, 823),
+      dark: false,
+      tier: AccountTier.advanced,
+      setup: () {
+        SharedPreferences.setMockInitialValues({
+          'gymmane_call_v1':
+              '{"day":2,"timeWindow":"morning","notes":"Prefer mornings before work","createdAt":1760000000000}',
+        });
+      },
+      body: const TrainerChatScreen(),
+      interact: openCallSheet,
     );
   });
 

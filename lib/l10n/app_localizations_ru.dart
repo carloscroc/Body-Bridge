@@ -3605,6 +3605,35 @@ class AppLocalizationsRu extends AppLocalizations {
   String get bannerTapToView => 'Нажмите, чтобы посмотреть';
 
   @override
+  String get callKicker => 'ПЕРСОНАЛЬНЫЙ ТРЕНИНГ';
+
+  @override
+  String get callSheetTitle => 'Записаться на звонок 1 на 1';
+
+  @override
+  String get callNotesHint => 'Что-то конкретное обсудить? (необязательно)';
+
+  @override
+  String get callPickDayTime => 'Выберите день и промежуток времени';
+
+  @override
+  String get callSubmit => 'Отправить запрос';
+
+  @override
+  String get callSentTitle => 'Запрос отправлен';
+
+  @override
+  String callSentBody(String name) {
+    return '$name подтвердит время';
+  }
+
+  @override
+  String get callDone => 'Готово';
+
+  @override
+  String get bookCallA11y => 'Записаться на звонок 1 на 1';
+
+  @override
   String get startSoonTitle => 'Персональные сессии скоро появятся';
 
   @override

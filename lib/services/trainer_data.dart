@@ -231,6 +231,23 @@ class TrainerConsultationRequest {
   final int createdAt; // epoch millis
 }
 
+/// One 1-1 call booking request (v0 LOCAL STUB — no backend counterpart
+/// yet; card t_9d175854 D3). `day` is 1..7 (locale-aware Monday..Sunday
+/// via l10n `weekdayShort`), so the stored record stays locale-independent.
+@immutable
+class TrainerCallRequest {
+  const TrainerCallRequest({
+    required this.day,
+    required this.timeWindow,
+    this.notes = '',
+    required this.createdAt,
+  });
+
+  final int day; // 1..7 — weekdayShort(1..7)
+  final String timeWindow; // morning | afternoon | evening
+  final String notes; // free-form, may be empty
+  final int createdAt; // epoch millis
+}
 // --- Repository seam (contract-named operations) ---
 
 abstract class TrainerRepository {
@@ -278,6 +295,17 @@ abstract class TrainerRepository {
     required String timeWindow,
     String notes = '',
   });
+  /// calls:getMine — the caller's 1-1 call request, or null (v0 local
+  /// stub — no backend counterpart yet).
+  Future<TrainerCallRequest?> callGetMine();
+
+  /// calls:request — file the caller's call request. Latest-wins: a new
+  /// request overwrites any previous one.
+  Future<TrainerCallRequest> callRequest({
+    required int day,
+    required String timeWindow,
+    String notes = '',
+  });
 }
 
 // --- Local seed implementation (offline, no backend) ---
@@ -300,6 +328,11 @@ class LocalTrainerRepository implements TrainerRepository {
   TrainerConsultationRequest? _consultation;
   static const _consultPrefsKey = 'gymmane_consultation_v1';
 
+  /// The caller's 1-1 call request (v0 local stub, card t_9d175854 D3) —
+  /// null until filed. Persisted under its own prefs key; LATEST wins.
+  TrainerCallRequest? _call;
+  static const _callPrefsKey = 'gymmane_call_v1';
+
   /// Test/diagnostic reset: restore the offline seed state. The repo is a
   /// process-lifetime in-memory store; without this, a chat mark-read in one
   /// test leaks into every later test in the same process.
@@ -316,10 +349,14 @@ class LocalTrainerRepository implements TrainerRepository {
       ..addAll(_seedMessages());
     _msgSeq = _seedMessages().length + 1;
     _consultation = null;
+    _call = null;
     // Purge the persisted blob too — a fresh instance must start clean.
     unawaited(
       SharedPreferences.getInstance().then<void>(
-        (p) => p.remove(_consultPrefsKey),
+        (p) async {
+          await p.remove(_consultPrefsKey);
+          await p.remove(_callPrefsKey);
+        },
         onError: (Object _, StackTrace _) {},
       ),
     );
@@ -402,6 +439,57 @@ class LocalTrainerRepository implements TrainerRepository {
         jsonEncode({
           'goal': r.goal,
           'experience': r.experience,
+          'timeWindow': r.timeWindow,
+          'notes': r.notes,
+          'createdAt': r.createdAt,
+        }),
+      );
+    } catch (_) {
+      // Persistence is best-effort: the in-memory record still wins.
+    }
+    return r;
+  }
+
+  /// calls:getMine — memory first, then the persisted record (v0 stub).
+  @override
+  Future<TrainerCallRequest?> callGetMine() async {
+    if (_call != null) return _call;
+    try {
+      final prefs = await SharedPreferences.getInstance();
+      final blob = prefs.getString(_callPrefsKey);
+      if (blob == null) return null;
+      final d = jsonDecode(blob) as Map<String, dynamic>;
+      return _call = TrainerCallRequest(
+        day: (d['day'] as num?)?.toInt() ?? 0,
+        timeWindow: d['timeWindow'] as String? ?? '',
+        notes: d['notes'] as String? ?? '',
+        createdAt: (d['createdAt'] as num?)?.toInt() ?? 0,
+      );
+    } catch (_) {
+      return null; // corrupt blob -> no request
+    }
+  }
+
+  /// calls:request — latest-wins: each submit overwrites the stored record.
+  @override
+  Future<TrainerCallRequest> callRequest({
+    required int day,
+    required String timeWindow,
+    String notes = '',
+  }) async {
+    final r = TrainerCallRequest(
+      day: day,
+      timeWindow: timeWindow,
+      notes: notes.trim(),
+      createdAt: DateTime.now().millisecondsSinceEpoch,
+    );
+    _call = r;
+    try {
+      final prefs = await SharedPreferences.getInstance();
+      await prefs.setString(
+        _callPrefsKey,
+        jsonEncode({
+          'day': r.day,
           'timeWindow': r.timeWindow,
           'notes': r.notes,
           'createdAt': r.createdAt,

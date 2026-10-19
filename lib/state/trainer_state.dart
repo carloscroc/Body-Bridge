@@ -46,6 +46,10 @@ class TrainerState extends ChangeNotifier {
   /// The caller's consultation request — null until filed (client coaching
   /// funnel, t_aaa15e0d). Mirrors the repo record for UI reactivity.
   TrainerConsultationRequest? consultation;
+
+  /// The caller's 1-1 call request (v0 local stub, card t_9d175854 D3).
+  /// Mirrors the repo record for UI reactivity. Latest-wins.
+  TrainerCallRequest? call;
   // Open selections for the parameterized sub-routes (app_shell reads these).
   String? openAssignmentId;
   String? openThreadId;
@@ -77,12 +81,14 @@ class TrainerState extends ChangeNotifier {
         repo.chatListUnreadCountsTotal(),
         _loadSeen(),
         repo.consultationGetMine(),
+        repo.callGetMine(),
       ]);
       profile = results[0] as TrainerProfile;
       assignments = results[1] as List<TrainerAssignment>;
       threads = results[2] as List<TrainerChatThread>;
       unreadTotal = results[3] as int;
       consultation = results[5] as TrainerConsultationRequest?;
+      call = results[6] as TrainerCallRequest?;
       loaded = true;
       notifyListeners();
     } finally {
@@ -223,6 +229,23 @@ class TrainerState extends ChangeNotifier {
     return r;
   }
 
+  /// calls:request (v0 local stub, card t_9d175854 D3) + local refresh.
+  /// Latest-wins: each submit overwrites the stored request.
+  Future<TrainerCallRequest> requestCall({
+    required int day,
+    required String timeWindow,
+    String notes = '',
+  }) async {
+    final r = await repo.callRequest(
+      day: day,
+      timeWindow: timeWindow,
+      notes: notes,
+    );
+    call = r;
+    notifyListeners();
+    return r;
+  }
+
   /// Test/diagnostic reset.
   ///
   /// Restores the full instance state (not just the seen-sets) so the test
@@ -239,6 +262,7 @@ class TrainerState extends ChangeNotifier {
     threads = [];
     unreadTotal = 0;
     consultation = null;
+    call = null;
     openAssignmentId = null;
     openThreadId = null;
     openedThreads.clear();

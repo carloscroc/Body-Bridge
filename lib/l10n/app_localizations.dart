@@ -6290,6 +6290,60 @@ abstract class AppLocalizations {
   /// **'Tap to view'**
   String get bannerTapToView;
 
+  /// Trainer feature (card t_9d175854 D3)
+  ///
+  /// In en, this message translates to:
+  /// **'PERSONAL TRAINING'**
+  String get callKicker;
+
+  /// Trainer feature (card t_9d175854 D3)
+  ///
+  /// In en, this message translates to:
+  /// **'Book a 1-1 call'**
+  String get callSheetTitle;
+
+  /// Trainer feature (card t_9d175854 D3)
+  ///
+  /// In en, this message translates to:
+  /// **'Anything specific to cover? (optional)'**
+  String get callNotesHint;
+
+  /// Trainer feature (card t_9d175854 D3)
+  ///
+  /// In en, this message translates to:
+  /// **'Pick a day and a time window'**
+  String get callPickDayTime;
+
+  /// Trainer feature (card t_9d175854 D3)
+  ///
+  /// In en, this message translates to:
+  /// **'Send request'**
+  String get callSubmit;
+
+  /// Trainer feature (card t_9d175854 D3)
+  ///
+  /// In en, this message translates to:
+  /// **'Request sent'**
+  String get callSentTitle;
+
+  /// Trainer feature (card t_9d175854 D3)
+  ///
+  /// In en, this message translates to:
+  /// **'{name} will confirm your time'**
+  String callSentBody(String name);
+
+  /// Trainer feature (card t_9d175854 D3)
+  ///
+  /// In en, this message translates to:
+  /// **'Done'**
+  String get callDone;
+
+  /// Trainer feature (card t_9d175854 D3)
+  ///
+  /// In en, this message translates to:
+  /// **'Book a 1-1 call'**
+  String get bookCallA11y;
+
   /// Trainer feature (card t_d788f36e)
   ///
   /// In en, this message translates to:

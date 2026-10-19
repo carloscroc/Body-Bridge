@@ -3511,6 +3511,35 @@ class AppLocalizationsIt extends AppLocalizations {
   String get bannerTapToView => 'Tocca per vedere';
 
   @override
+  String get callKicker => 'ALLENAMENTO PERSONALE';
+
+  @override
+  String get callSheetTitle => 'Prenota una chiamata 1a1';
+
+  @override
+  String get callNotesHint => 'Qualcosa in particolare da trattare? (facoltativo)';
+
+  @override
+  String get callPickDayTime => 'Scegli un giorno e una fascia oraria';
+
+  @override
+  String get callSubmit => 'Invia richiesta';
+
+  @override
+  String get callSentTitle => 'Richiesta inviata';
+
+  @override
+  String callSentBody(String name) {
+    return '$name confermerà l\'orario';
+  }
+
+  @override
+  String get callDone => 'Fatto';
+
+  @override
+  String get bookCallA11y => 'Prenotare una chiamata 1a1';
+
+  @override
   String get startSoonTitle => 'Le sessioni personalizzate arrivano presto';
 
   @override

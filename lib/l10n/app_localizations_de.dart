@@ -3525,6 +3525,35 @@ class AppLocalizationsDe extends AppLocalizations {
   String get bannerTapToView => 'Zum Ansehen tippen';
 
   @override
+  String get callKicker => 'PERSONAL TRAINING';
+
+  @override
+  String get callSheetTitle => '1:1-Anruf buchen';
+
+  @override
+  String get callNotesHint => 'Gibt es etwas Bestimmtes zu besprechen? (optional)';
+
+  @override
+  String get callPickDayTime => 'Wähle einen Tag und ein Zeitfenster';
+
+  @override
+  String get callSubmit => 'Anfrage senden';
+
+  @override
+  String get callSentTitle => 'Anfrage gesendet';
+
+  @override
+  String callSentBody(String name) {
+    return '$name bestätigt dir die Zeit';
+  }
+
+  @override
+  String get callDone => 'Fertig';
+
+  @override
+  String get bookCallA11y => '1:1-Anruf buchen';
+
+  @override
   String get startSoonTitle => 'Individuelle Einheiten kommen bald';
 
   @override

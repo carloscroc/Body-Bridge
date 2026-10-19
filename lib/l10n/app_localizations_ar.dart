@@ -3509,6 +3509,35 @@ class AppLocalizationsAr extends AppLocalizations {
   String get bannerTapToView => 'انقر للعرض';
 
   @override
+  String get callKicker => 'تدريب شخصي';
+
+  @override
+  String get callSheetTitle => 'احجز مكالمة فردية';
+
+  @override
+  String get callNotesHint => 'أي شيء محدد للتغطية؟ (اختياري)';
+
+  @override
+  String get callPickDayTime => 'اختر يوماً وفترة زمنية';
+
+  @override
+  String get callSubmit => 'إرسال الطلب';
+
+  @override
+  String get callSentTitle => 'تم إرسال الطلب';
+
+  @override
+  String callSentBody(String name) {
+    return 'سيؤكد $name الوقت';
+  }
+
+  @override
+  String get callDone => 'تم';
+
+  @override
+  String get bookCallA11y => 'احجز مكالمة فردية';
+
+  @override
   String get startSoonTitle => 'الجلسات المخصصة قريبًا';
 
   @override

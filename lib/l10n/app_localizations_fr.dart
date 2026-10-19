@@ -3525,6 +3525,35 @@ class AppLocalizationsFr extends AppLocalizations {
   String get bannerTapToView => 'Touchez pour afficher';
 
   @override
+  String get callKicker => 'COACHING PERSONNEL';
+
+  @override
+  String get callSheetTitle => 'Réserver un appel en tête-à-tête';
+
+  @override
+  String get callNotesHint => 'Un point particulier à aborder ? (facultatif)';
+
+  @override
+  String get callPickDayTime => 'Choisissez un jour et un créneau horaire';
+
+  @override
+  String get callSubmit => 'Envoyer la demande';
+
+  @override
+  String get callSentTitle => 'Demande envoyée';
+
+  @override
+  String callSentBody(String name) {
+    return '$name confirmera votre créneau';
+  }
+
+  @override
+  String get callDone => 'Terminé';
+
+  @override
+  String get bookCallA11y => 'Réserver un appel 1:1';
+
+  @override
   String get startSoonTitle => 'Les séances personnalisées arrivent bientôt';
 
   @override

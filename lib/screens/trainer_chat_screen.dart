@@ -15,6 +15,7 @@ import '../state/fit_state.dart';
 import '../state/trainer_state.dart';
 import '../theme/app_colors.dart';
 import '../theme/app_theme.dart';
+import '../widgets/book_call_sheet.dart';
 import '../widgets/svg_icon.dart';
 import '../widgets/trainer_kit.dart';
 import '../widgets/ui_kit.dart';
@@ -144,8 +145,13 @@ class _TrainerChatScreenState extends State<TrainerChatScreen> {
                       ],
                     ),
                   ),
-                  Icon(PhosphorIconsRegular.phone,
-                      size: 20, color: gc.textTertiary),
+                  RoundAction(
+                    size: 36,
+                    label: t.bookCallA11y,
+                    onTap: () => showBookCallSheet(context),
+                    child: Icon(PhosphorIconsRegular.calendarBlank,
+                        size: 17, color: gc.text),
+                  ),
                 ],
               ),
             ),

@@ -3370,6 +3370,35 @@ class AppLocalizationsZh extends AppLocalizations {
   String get bannerTapToView => '点按查看';
 
   @override
+  String get callKicker => '私人教练';
+
+  @override
+  String get callSheetTitle => '预约一对一通话';
+
+  @override
+  String get callNotesHint => '有什么特别想聊的吗？（可选）';
+
+  @override
+  String get callPickDayTime => '请选择日期和时间段';
+
+  @override
+  String get callSubmit => '发送请求';
+
+  @override
+  String get callSentTitle => '请求已发送';
+
+  @override
+  String callSentBody(String name) {
+    return '$name会与你确认时间';
+  }
+
+  @override
+  String get callDone => '完成';
+
+  @override
+  String get bookCallA11y => '预约一对一通话';
+
+  @override
   String get startSoonTitle => '自定义课程即将上线';
 
   @override
@@ -7087,6 +7116,35 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
 
   @override
   String get bannerTapToView => '點按查看';
+
+  @override
+  String get callKicker => '私人教練';
+
+  @override
+  String get callSheetTitle => '預約一對一通話';
+
+  @override
+  String get callNotesHint => '有什麼特別想聊的嗎？（可選）';
+
+  @override
+  String get callPickDayTime => '請選擇日期和時段';
+
+  @override
+  String get callSubmit => '傳送請求';
+
+  @override
+  String get callSentTitle => '請求已傳送';
+
+  @override
+  String callSentBody(String name) {
+    return '$name會與你確認時間';
+  }
+
+  @override
+  String get callDone => '完成';
+
+  @override
+  String get bookCallA11y => '預約一對一通話';
 
   @override
   String get startSoonTitle => '自訂課程即將上線';

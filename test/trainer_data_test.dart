@@ -157,4 +157,35 @@ void main() {
       expect(routineCreationAllowed(AccountTier.basic, 99), isTrue);
     });
   });
+
+  group('call requests (repair D3)', () {
+    test('callGetMine is null until a request is filed', () async {
+      final repo = LocalTrainerRepository();
+      expect(await repo.callGetMine(), isNull);
+    });
+
+    test('callRequest keeps the LATEST request, trims notes, persists', () async {
+      final repo = LocalTrainerRepository();
+      await repo.callRequest(day: 2, timeWindow: 'morning', notes: 'before work');
+      await repo.callRequest(day: 5, timeWindow: 'evening', notes: '  late start  ');
+
+      final latest = await repo.callGetMine();
+      expect(latest!.day, 5);
+      expect(latest.timeWindow, 'evening');
+      expect(latest.notes, 'late start');
+
+      // Fresh repo instance (new "app launch") reads the persisted record.
+      final fresh = LocalTrainerRepository();
+      expect((await fresh.callGetMine())!.day, 5);
+    });
+
+    test('resetForTest clears the filed request and its prefs entry', () async {
+      final repo = LocalTrainerRepository();
+      await repo.callRequest(day: 1, timeWindow: 'morning');
+      repo.resetForTest();
+      final prefs = await SharedPreferences.getInstance();
+      expect(prefs.getString('gymmane_call_v1'), isNull);
+      expect(await LocalTrainerRepository().callGetMine(), isNull);
+    });
+  });
 }

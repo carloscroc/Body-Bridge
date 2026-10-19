@@ -3520,6 +3520,35 @@ class AppLocalizationsUk extends AppLocalizations {
   String get bannerTapToView => 'Торкніться, щоб переглянути';
 
   @override
+  String get callKicker => 'ПЕРСОНАЛЬНИЙ ТРЕНІНГ';
+
+  @override
+  String get callSheetTitle => 'Записатися на дзвінок 1 на 1';
+
+  @override
+  String get callNotesHint => 'Щось конкретне обговорити? (необов\'язково)';
+
+  @override
+  String get callPickDayTime => 'Виберіть день і проміжок часу';
+
+  @override
+  String get callSubmit => 'Надіслати запит';
+
+  @override
+  String get callSentTitle => 'Запит надіслано';
+
+  @override
+  String callSentBody(String name) {
+    return '$name підтвердить час';
+  }
+
+  @override
+  String get callDone => 'Готово';
+
+  @override
+  String get bookCallA11y => 'Записатися на дзвінок 1 на 1';
+
+  @override
   String get startSoonTitle => 'Індивідуальні сесії скоро з\'являться';
 
   @override

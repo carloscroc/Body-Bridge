@@ -2112,6 +2112,47 @@
     "@bannerTapToView": {
         "description": "Trainer feature (card t_d788f36e)"
     },
+    "callKicker": "PERSONAL TRAINING",
+    "@callKicker": {
+        "description": "Trainer feature (card t_9d175854 D3)"
+    },
+    "callSheetTitle": "Book a 1-1 call",
+    "@callSheetTitle": {
+        "description": "Trainer feature (card t_9d175854 D3)"
+    },
+    "callNotesHint": "Anything specific to cover? (optional)",
+    "@callNotesHint": {
+        "description": "Trainer feature (card t_9d175854 D3)"
+    },
+    "callPickDayTime": "Pick a day and a time window",
+    "@callPickDayTime": {
+        "description": "Trainer feature (card t_9d175854 D3)"
+    },
+    "callSubmit": "Send request",
+    "@callSubmit": {
+        "description": "Trainer feature (card t_9d175854 D3)"
+    },
+    "callSentTitle": "Request sent",
+    "@callSentTitle": {
+        "description": "Trainer feature (card t_9d175854 D3)"
+    },
+    "callSentBody": "{name} will confirm your time",
+    "@callSentBody": {
+        "description": "Trainer feature (card t_9d175854 D3)",
+        "placeholders": {
+            "name": {
+                "type": "String"
+            }
+        }
+    },
+    "callDone": "Done",
+    "@callDone": {
+        "description": "Trainer feature (card t_9d175854 D3)"
+    },
+    "bookCallA11y": "Book a 1-1 call",
+    "@bookCallA11y": {
+        "description": "Trainer feature (card t_9d175854 D3)"
+    },
     "startSoonTitle": "Custom sessions land soon",
     "@startSoonTitle": {
         "description": "Trainer feature (card t_d788f36e)"

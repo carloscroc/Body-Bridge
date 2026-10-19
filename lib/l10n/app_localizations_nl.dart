@@ -3515,6 +3515,35 @@ class AppLocalizationsNl extends AppLocalizations {
   String get bannerTapToView => 'Tik om te bekijken';
 
   @override
+  String get callKicker => 'PERSONAL TRAINING';
+
+  @override
+  String get callSheetTitle => 'Plan een 1-op-1 gesprek';
+
+  @override
+  String get callNotesHint => 'Iets specifieks om te bespreken? (optioneel)';
+
+  @override
+  String get callPickDayTime => 'Kies een dag en een tijdsvenster';
+
+  @override
+  String get callSubmit => 'Verzoek versturen';
+
+  @override
+  String get callSentTitle => 'Verzoek verzonden';
+
+  @override
+  String callSentBody(String name) {
+    return '$name bevestigt je tijd';
+  }
+
+  @override
+  String get callDone => 'Klaar';
+
+  @override
+  String get bookCallA11y => 'Een 1-op-1 gesprek plannen';
+
+  @override
   String get startSoonTitle => 'Persoonlijke sessies komen snel';
 
   @override

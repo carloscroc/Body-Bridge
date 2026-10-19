@@ -3425,6 +3425,35 @@ class AppLocalizationsKo extends AppLocalizations {
   String get bannerTapToView => '탭하여 보기';
 
   @override
+  String get callKicker => '퍼스널 트레이닝';
+
+  @override
+  String get callSheetTitle => '1:1 통화 예약하기';
+
+  @override
+  String get callNotesHint => '특별히 다룰 주제가 있나요? (선택)';
+
+  @override
+  String get callPickDayTime => '요일과 시간대를 선택해 주세요';
+
+  @override
+  String get callSubmit => '요청 보내기';
+
+  @override
+  String get callSentTitle => '요청이 전송되었습니다';
+
+  @override
+  String callSentBody(String name) {
+    return '$name님이 시간을 확정해 드립니다';
+  }
+
+  @override
+  String get callDone => '완료';
+
+  @override
+  String get bookCallA11y => '1:1 통화 예약';
+
+  @override
   String get startSoonTitle => '맞춤 세션이 곧 제공됩니다';
 
   @override
