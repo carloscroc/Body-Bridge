@@ -63,7 +63,7 @@ class _ExercisesScreenState extends State<ExercisesScreen> {
               slivers: [
                 SliverPersistentHeader(
                   pinned: true,
-                  delegate: _ExercisesHeaderDelegate(this, gc),
+                  delegate: _ExercisesHeaderDelegate(this, gc, MediaQuery.textScalerOf(context)),
                 ),
                 SliverPadding(
                   padding: const EdgeInsets.fromLTRB(20, 0, 20, 110),
@@ -164,11 +164,36 @@ class _ExercisesScreenState extends State<ExercisesScreen> {
   String _sectionLabel(Exercise ex) =>
       fit.exSource == 'free' ? muscleLabel(ex.primary) : exerciseSectionLabel(ex);
 
-  // Dockable pinned-header metrics (contract t_a9afb1b7): the delegate
-  // extents cover the whole header at progress 0 and everything but the
-  // title row once docked.
-  static const double _headerMaxExtent = 210;
-  static const double _headerMinExtent = 160;
+  // Dockable pinned-header metrics (contract t_a9afb1b7, repair D1): the
+  // delegate extents cover the whole header at progress 0 and everything but
+  // the title row once docked. The chip rows scale with the ambient text
+  // scaler, so the extents are measured per scaler with TextPainter on the
+  // exact chip label styles instead of hand-tuned constants.
+  static const double _titleRow = 38;
+  static const double _searchRow = 48;
+
+  static double headerMaxExtent(TextScaler scaler) =>
+      12 + _titleRow + 12 + _searchRow + 10 + _chipRowExtent(scaler, FontWeight.w700) + 10 + _chipRowExtent(scaler, FontWeight.w600) + 12 + 2;
+
+  static double headerMinExtent(TextScaler scaler) => headerMaxExtent(scaler) - _titleRow;
+
+  /// Chip row height: chip label line height + 14 (vertical padding 7 x 2).
+  /// Cached per scaler — the delegate getters are hot during scroll.
+  static final Map<TextScaler, double> _chipRowCache = {};
+
+  static double _chipRowExtent(TextScaler scaler, FontWeight weight) {
+    final cached = _chipRowCache[scaler];
+    if (cached != null) return cached;
+    final tp = TextPainter(
+      text: TextSpan(text: 'Ag', style: AppTheme.f(12.5, weight: weight)),
+      textScaler: scaler,
+      textDirection: TextDirection.ltr,
+    )..layout();
+    final height = tp.height + 14;
+    tp.dispose();
+    _chipRowCache[scaler] = height;
+    return height;
+  }
 
   Widget _headerContent(BuildContext context, GymColors gc, double progress) {
     final advanced = context.can(kCapCustomExercises);
@@ -184,22 +209,30 @@ class _ExercisesScreenState extends State<ExercisesScreen> {
               heightFactor: 1 - progress,
               child: Opacity(
                 opacity: 1 - progress,
-                child: Row(
-                  children: [
-                    Expanded(child: ScreenTitle(t.exercises)),
-                    // FREE limit: custom exercises (trainer_features) are hidden
-                    // entirely for tiers without the capability.
-                    if (advanced) ...[
-                      RoundAction(
-                        size: 38,
-                        label: t.newExercise,
-                        onTap: () => showCreateExerciseSheet(context),
-                        child: Icon(PhosphorIconsRegular.plus, size: 17, color: gc.text),
+                child: SizedBox(
+                  height: _titleRow,
+                  child: Center(
+                    child: MediaQuery.withClampedTextScaling(
+                      maxScaleFactor: 1.3,
+                      child: Row(
+                        children: [
+                          Expanded(child: ScreenTitle(t.exercises)),
+                          // FREE limit: custom exercises (trainer_features) are hidden
+                          // entirely for tiers without the capability.
+                          if (advanced) ...[
+                            RoundAction(
+                              size: 38,
+                              label: t.newExercise,
+                              onTap: () => showCreateExerciseSheet(context),
+                              child: Icon(PhosphorIconsRegular.plus, size: 17, color: gc.text),
+                            ),
+                            const SizedBox(width: 10),
+                          ],
+                          const ExercisesCoachDisc(),
+                        ],
                       ),
-                      const SizedBox(width: 10),
-                    ],
-                    const ExercisesCoachDisc(),
-                  ],
+                    ),
+                  ),
                 ),
               ),
             ),
@@ -524,16 +557,17 @@ class _ExercisesScreenState extends State<ExercisesScreen> {
 /// collapses/fades with shrinkOffset, lock scrim hangs below the header's
 /// current bottom edge while the lock UX is up.
 class _ExercisesHeaderDelegate extends SliverPersistentHeaderDelegate {
-  _ExercisesHeaderDelegate(this.state, this.gc);
+  _ExercisesHeaderDelegate(this.state, this.gc, this.scaler);
 
   final _ExercisesScreenState state;
   final GymColors gc;
+  final TextScaler scaler;
 
   @override
-  double get maxExtent => _ExercisesScreenState._headerMaxExtent;
+  double get maxExtent => _ExercisesScreenState.headerMaxExtent(scaler);
 
   @override
-  double get minExtent => _ExercisesScreenState._headerMinExtent;
+  double get minExtent => _ExercisesScreenState.headerMinExtent(scaler);
 
   @override
   Widget build(BuildContext context, double shrinkOffset, bool overlapsContent) {

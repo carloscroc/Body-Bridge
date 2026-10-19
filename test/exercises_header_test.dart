@@ -133,6 +133,30 @@ void main() {
     await tester.pumpAndSettle();
   }
 
+  // Scaled surface (repair D1): explicit logical width + ambient text scale
+  // so the header-extent matrix can exercise the owner's font-scale setup.
+  Future<void> pumpScaled(WidgetTester tester, double width, double scale) async {
+    final gate = FakeGate(AccountTier.advanced);
+    AccountGate.install(gate);
+    tester.view.physicalSize = Size(width, 850);
+    tester.view.devicePixelRatio = 1.0;
+    tester.platformDispatcher.textScaleFactorTestValue = scale;
+    addTearDown(tester.view.reset);
+    addTearDown(tester.platformDispatcher.clearTextScaleFactorTestValue);
+    await tester.pumpWidget(
+      MaterialApp(
+        theme: AppTheme.dark,
+        localizationsDelegates: AppLocalizations.localizationsDelegates,
+        supportedLocales: AppLocalizations.supportedLocales,
+        home: PremiumGate(
+          gate: gate,
+          child: const Scaffold(body: ExercisesScreen()),
+        ),
+      ),
+    );
+    await tester.pumpAndSettle();
+  }
+
   Finder ctaFinder() => find.byWidgetPredicate(
       (w) => w is Text && (w.data ?? '').toLowerCase().contains('bodybridge.net'));
 
@@ -371,5 +395,39 @@ void main() {
 
       expect(titleOpacity(tester), 1.0, reason: 'the title row returns when the header undocks');
     });
+  });
+
+  group('scroll-dock: scale-aware extents (repair D1)', () {
+    // The owner device runs a system font scale (~1.1): the header extents
+    // must grow with the ambient TextScaler instead of clipping the docked
+    // column (the old hand-tuned 210/160 overflowed by ~6px at scale 1.15).
+    for (final (width, scale) in const [(411.4, 1.15), (411.0, 1.15), (360.0, 1.15), (411.4, 1.0)]) {
+      testWidgets('${width}dp x ${scale}x: docks and undocks without exceptions', (tester) async {
+        await pumpScaled(tester, width, scale);
+
+        expect(tester.takeException(), isNull, reason: 'zero exceptions at rest');
+
+        await tester.drag(find.byType(CustomScrollView), const Offset(0, -40)); // partial dock
+        await tester.pumpAndSettle();
+        expect(tester.takeException(), isNull, reason: 'partial dock must not throw');
+        final firstRow = find.text(t.sectionTrainerLibrary.toUpperCase());
+        expect(firstRow, findsOneWidget);
+        final rect = tester.getRect(firstRow);
+        expect(rect.top, greaterThanOrEqualTo(0), reason: 'the first row starts inside the viewport');
+        expect(rect.bottom, lessThan(850), reason: 'the first row stays fully inside the viewport');
+
+        await tester.drag(find.byType(CustomScrollView), const Offset(0, -80)); // full dock
+        await tester.pumpAndSettle();
+        expect(tester.takeException(), isNull, reason: 'full dock must not throw');
+        final search = find.byType(SearchField);
+        expect(search, findsOneWidget, reason: 'the search pill stays pinned');
+        expect(tester.getTopLeft(search).dy, lessThan(100), reason: 'pinned near the top');
+
+        await tester.drag(find.byType(CustomScrollView), const Offset(0, 120)); // undock
+        await tester.pumpAndSettle();
+        expect(tester.takeException(), isNull, reason: 'undock must not throw');
+        expect(titleOpacity(tester), 1.0, reason: 'the title row returns when the header undocks');
+      });
+    }
   });
 }

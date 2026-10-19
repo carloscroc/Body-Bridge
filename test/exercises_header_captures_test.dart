@@ -9,7 +9,8 @@
 //
 // Matrix: {advanced, free} x {dark, light} x {411x800, 390x844, 411x914,
 // 360x800} = 16 base captures, + advanced unread-pill 411 x {dark, light}
-// = 2, + docked header (advanced-dark-411, free-light-411) = 2 → 20 PNGs.
+// = 2, + docked header (advanced-dark-411, free-light-411) = 2, + repair D1
+// docked header at 411.4dp x 1.15x text scale (advanced, dark) = 1 → 21 PNGs.
 //
 // Harness mechanics copied EXACTLY from consultation_captures_test.dart
 // (env gate, real Nunito + Phosphor fonts under both family names,
@@ -121,6 +122,7 @@ void main() {
     required bool dark,
     required AccountTier tier,
     required Size size,
+    double scale = 1.0,
     Future<void> Function()? setup,
     Future<void> Function(WidgetTester)? beforeShot,
   }) async {
@@ -134,7 +136,7 @@ void main() {
     await Store.instance.init(); // the exercises surface reads the store
     if (setup != null) await setup();
     tester.view.devicePixelRatio = 1.0;
-    tester.view.platformDispatcher.textScaleFactorTestValue = 1.0;
+    tester.view.platformDispatcher.textScaleFactorTestValue = scale;
     tester.view.physicalSize = size;
 
     await tester.pumpWidget(
@@ -178,7 +180,8 @@ void main() {
     if (tier == AccountTier.advanced) await trainer.markThreadRead('thr_chat_marcus');
   }
 
-  // Drag the list up past the header delta (210 − 160 = 50) to dock it.
+  // Drag the list up past the header delta to dock it (the delta is now
+  // scale-aware: maxExtent − 38 per repair D1; −120 always clears it).
   Future<void> dockHeader(WidgetTester tester) async {
     await tester.drag(find.byType(CustomScrollView), const Offset(0, -120));
     await tester.pumpAndSettle();
@@ -227,6 +230,18 @@ void main() {
           dark: dark,
           tier: AccountTier.advanced,
           size: const Size(411, 800),
+          setup: () => baseSetup(AccountTier.advanced),
+          beforeShot: dockHeader,
+        );
+      });
+      testWidgets('exercises header advanced docked dark 411.4 x1.15 (repair D1)', (tester) async {
+        await capture(
+          tester,
+          name: 'exercises-header-advanced-docked-dark-411-scale1.15',
+          dark: dark,
+          tier: AccountTier.advanced,
+          size: const Size(411.4, 850),
+          scale: 1.15,
           setup: () => baseSetup(AccountTier.advanced),
           beforeShot: dockHeader,
         );
