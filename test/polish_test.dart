@@ -17,6 +17,9 @@ void main() {
     SharedPreferences.setMockInitialValues({});
     await Store.instance.init();
     fit.resetAllData();
+    // t_a9afb1b7: 'all' is the new default ex source; pin the free pool so
+    // these library-filter tests keep their exact catalog-only lists.
+    fit.setExSource('free');
     fit.onboarded = true;
     setAppLanguage('en');
   });

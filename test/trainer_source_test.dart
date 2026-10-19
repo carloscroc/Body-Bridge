@@ -115,28 +115,28 @@ void main() {
   );
 
   void resetSource() {
-    fit.setExSource('free');
+    fit.setExSource('all'); // t_a9afb1b7: 'all' is the new default source
     fit.activeRoutineId = null;
   }
 
   group('free tier: Exercises screen stays free + locks the gated tabs', () {
-    testWidgets('3 tabs render, Trainer and Custom carry padlocks, list unchanged', (tester) async {
+    testWidgets('4 quiet chips render, All stays the free pool (strip→chips t_a9afb1b7)', (tester) async {
       final gate = FakeGate(AccountTier.free);
       AccountGate.install(gate);
       await pumpExercises(tester, gate);
 
-      expect(find.text(t.sourceFree), findsOneWidget);
-      expect(find.text(t.sourceTrainer), findsOneWidget);
-      expect(find.text(t.sourceCustom), findsOneWidget);
-      expect(tabPadlocks(), findsNWidgets(2));
-
-      // The Free list renders exactly as before: the count header still
-      // reports the untouched catalog size for the active filters.
-      expect(
-        find.text(t.libraryCount(fit.exercisesFiltered.length)),
-        findsOneWidget,
-        reason: 'the free list is untouched behind the Free tab',
-      );
+      // t_a9afb1b7: the tab strip became quiet count chips, keyed per source.
+      for (final key in ['chip-all', 'chip-free', 'chip-trainer', 'chip-custom']) {
+        expect(find.byKey(ValueKey(key)), findsOneWidget, reason: '$key chip renders');
+      }
+      expect(find.byType(PremiumSourceTabs), findsNothing,
+          reason: 'the tab strip survives only in the routine picker');
+      // t_a9afb1b7: the per-list libraryCount subtitle is gone — counts live
+      // inside the chips, so the old subtitle assertion is dropped. And 'all'
+      // now merges the libraries: free users see trainer rows LOCKED in the
+      // All view — the lock UX replaces absence.
+      expect(find.text('Pallof Press — setup'), findsOneWidget,
+          reason: 'the All view lists trainer rows locked for free users');
     });
 
     testWidgets('tab labels fit without ellipsis at 360x800 and 411x914', (tester) async {
@@ -159,7 +159,12 @@ void main() {
         );
         await tester.pump(const Duration(milliseconds: 300));
 
-        final label = find.text(t.sourceTrainer);
+        // t_a9afb1b7: chips label the sources now ("Trainer N") — measure the
+        // chip's Text, not a bare source label.
+        final label = find.descendant(
+          of: find.byKey(const ValueKey('chip-trainer')),
+          matching: find.byType(Text),
+        );
         expect(label, findsOneWidget, reason: 'full Trainer label renders at ${size.width}dp');
         final paragraph = tester.renderObject<RenderParagraph>(label);
         debugPrint(
@@ -169,18 +174,19 @@ void main() {
       }
     });
 
-    testWidgets('tapping Trainer does NOT navigate: lock overlay + upsell sheet rise instead', (
+    testWidgets('tapping the Trainer chip does NOT navigate: lock overlay + upsell sheet rise instead (t_a9afb1b7)', (
       tester,
     ) async {
       final gate = FakeGate(AccountTier.free);
       AccountGate.install(gate);
       await pumpExercises(tester, gate);
+      final sourceBefore = fit.exSource;
 
-      await tester.tap(find.text(t.sourceTrainer));
+      await tester.tap(find.byKey(const ValueKey('chip-trainer')));
       await tester.pumpAndSettle();
 
       expect(fit.route, 'home', reason: 'gated tabs never push a route');
-      expect(fit.exSource, 'free', reason: 'gated taps never change the active source');
+      expect(fit.exSource, sourceBefore, reason: 'gated taps never change the active source');
       expect(find.text(t.lockAdvancedMessage), findsOneWidget, reason: 'the dim overlay explains the lock');
       final overlayOpacity = tester.widget<AnimatedOpacity>(
         find.descendant(of: find.byType(TrainerLockOverlay), matching: find.byType(AnimatedOpacity)),
@@ -217,10 +223,12 @@ void main() {
           expect(node.opacity.value, 1.0, reason: 'no mid-fade RenderAnimatedOpacity above the lock message');
         }
       }
+      // t_a9afb1b7: two scrims exist while locked (pinned-header scrim +
+      // overlay scrim); the header one comes first in traversal order.
       expect(
-        tester.getTopLeft(find.byType(TrainerLockScrim)).dy,
-        greaterThanOrEqualTo(tester.getBottomRight(find.byType(PremiumSourceTabs)).dy),
-        reason: 'the scrim starts at/below the tab strip — header and tabs are never under it',
+        tester.getTopLeft(find.byType(TrainerLockScrim).first).dy,
+        greaterThanOrEqualTo(tester.getBottomRight(find.byKey(const ValueKey('chip-trainer'))).dy),
+        reason: 'the scrim starts at/below the pinned header chips — they are never under it',
       );
       final allBlurs = tester.widgetList(find.byType(BackdropFilter)).length;
       expect(allBlurs, greaterThan(0), reason: 'the list scrim itself blurs the list area');
@@ -236,18 +244,15 @@ void main() {
       AccountGate.install(gate);
       await pumpExercises(tester, gate);
 
-      await tester.tap(find.text(t.sourceTrainer));
+      await tester.tap(find.byKey(const ValueKey('chip-trainer')));
       await tester.pumpAndSettle();
       await tester.tap(find.text(t.notNow));
       await tester.pumpAndSettle();
 
       expect(find.text(titleCase(t.unlockAdvancedTitle)), findsNothing);
       expect(fit.route, 'home');
-      expect(
-        find.text(t.libraryCount(fit.exercisesFiltered.length)),
-        findsOneWidget,
-        reason: 'the free list is untouched behind the Free tab',
-      );
+      // t_a9afb1b7: the per-list libraryCount subtitle is gone — counts live
+      // in the chips; free-list intactness is covered by the pool tests below.
     });
 
     test('no free path reaches trainer exercises: allExercises and the free list exclude tr-/as- ids', () {
@@ -257,10 +262,12 @@ void main() {
         isEmpty,
         reason: 'allExercises stays catalog + customs',
       );
+      // t_a9afb1b7: 'all' merges the libraries by design — exercisesFiltered
+      // follows the active source, so the invariant lives on the free pool.
       expect(
-        fit.exercisesFiltered.where((e) => isTrainerSourcedId(e.id)),
+        fit.exercisesMatching('', source: 'free').where((e) => isTrainerSourcedId(e.id)),
         isEmpty,
-        reason: 'the free list never surfaces trainer items',
+        reason: 'the free pool never surfaces trainer items',
       );
       expect(fit.exercisesFiltered, isNotEmpty, reason: 'the free pool itself is intact');
     });
@@ -288,18 +295,32 @@ void main() {
   });
 
   group('basic tier: same locked behavior (trainer_features is advanced-only)', () {
-    testWidgets('locked tabs + lock UX, no navigation', (tester) async {
+    testWidgets('All view locks trainer rows + lock UX, no navigation (t_a9afb1b7)', (tester) async {
       final gate = FakeGate(AccountTier.basic);
       AccountGate.install(gate);
-      await pumpExercises(tester, gate);
+      // t_a9afb1b7: 'all' is the new default and gated users see the trainer
+      // pool locked in place — use the tall surface so the sections build.
+      await pumpTall(tester, const ExercisesScreen(), gate);
+      final sourceBefore = fit.exSource;
 
-      expect(tabPadlocks(), findsNWidgets(2));
-      await tester.tap(find.text(t.sourceTrainer));
+      expect(find.byType(PremiumSourceTabs), findsNothing,
+          reason: 'quiet chips on Exercises — the tab strip lives only in the picker');
+      expect(find.text(t.sectionTrainerLibrary.toUpperCase()), findsOneWidget,
+          reason: 'the All view opens on the trainer section');
+      expect(find.text(t.sectionFreeLibrary.toUpperCase()), findsOneWidget);
+      expect(find.text(t.srcLocked), findsNWidgets(10),
+          reason: '6 sessions + 4 assignments render LOCKED in the All pool');
+
+      await tester.tap(find.byKey(const ValueKey('chip-trainer')));
       await tester.pumpAndSettle();
 
       expect(fit.route, 'home', reason: 'basic cannot enter the trainer library either');
-      expect(fit.exSource, 'free', reason: 'gated taps never change the active source');
-      expect(find.byType(TrainerExerciseMedia), findsNothing, reason: 'no trainer content leaks in');
+      expect(fit.exSource, sourceBefore, reason: 'gated taps never change the active source');
+      // t_a9afb1b7: locked rows render their thumbnail behind the LOCKED chip
+      // by design — the leak guard is behavioral: the blocked tap leaves every
+      // trainer row locked instead of removing the art.
+      expect(find.text(t.srcLocked), findsNWidgets(10),
+          reason: 'the blocked tap leaves every trainer row locked');
       expect(find.text(t.lockAdvancedMessage), findsOneWidget);
       expect(ctaFinder(), findsOneWidget);
     });
@@ -314,7 +335,7 @@ void main() {
 
       expect(tabPadlocks(), findsNothing, reason: 'advanced is unlocked');
       final before = fit.route;
-      await tester.tap(find.text(t.sourceTrainer));
+      await tester.tap(find.byKey(const ValueKey('chip-trainer')));
       await tester.pumpAndSettle();
 
       expect(fit.exSource, 'trainer', reason: 'sources switch in place');
@@ -328,7 +349,7 @@ void main() {
       AccountGate.install(gate);
       addTearDown(resetSource);
       await pumpTall(tester, const ExercisesScreen(), gate);
-      await tester.tap(find.text(t.sourceTrainer));
+      await tester.tap(find.byKey(const ValueKey('chip-trainer')));
       await tester.pumpAndSettle();
 
       for (final s in kTrainerSessions) {
@@ -356,7 +377,7 @@ void main() {
       AccountGate.install(gate);
       addTearDown(resetSource);
       await pumpTall(tester, const ExercisesScreen(), gate);
-      await tester.tap(find.text(t.sourceCustom));
+      await tester.tap(find.byKey(const ValueKey('chip-custom')));
       await tester.pumpAndSettle();
 
       expect(fit.exSource, 'custom', reason: 'sources switch in place');
@@ -374,7 +395,7 @@ void main() {
       AccountGate.install(gate);
       addTearDown(resetSource);
       await pumpTall(tester, const ExercisesScreen(), gate);
-      await tester.tap(find.text(t.sourceTrainer));
+      await tester.tap(find.byKey(const ValueKey('chip-trainer')));
       await tester.pumpAndSettle();
 
       await tester.tap(find.text('Pallof Press — setup'));

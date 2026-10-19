@@ -179,7 +179,9 @@ void main() {
           gate: FakeGate(AccountTier.advanced),
           screen: const ExercisesScreen(),
           beforeShot: (wt) async {
-            await wt.tap(find.text(t.sourceTrainer));
+            // t_a9afb1b7: the Exercises surface taps the keyed Trainer chip;
+            // the picker capture below keeps the PremiumSourceTabs label.
+            await wt.tap(find.byKey(const ValueKey('chip-trainer')));
             await wt.pumpAndSettle();
           },
         );

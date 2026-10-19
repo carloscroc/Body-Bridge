@@ -20,6 +20,9 @@ void main() {
     fit.repsOnlyOff.clear();
     fit.exEquipmentFilter = null;
     fit.clearExFilters();
+    // t_a9afb1b7: 'all' is the new default ex source; pin the free pool so
+    // these reps-only tests keep their exact catalog-only lists.
+    fit.setExSource('free');
   });
 
   void log(String id, double kg) => fit.sessions.add(LoggedSession(DateTime.now(), 600, [

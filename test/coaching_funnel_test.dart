@@ -168,7 +168,7 @@ void main() {
                 body: switch (fit.route) {
                   'consultation-request' => ConsultationRequestScreen(),
                   'consultation-confirmation' => const ConsultationConfirmationScreen(),
-                  _ => const TrainerEntryStrip(),
+                  _ => const ExercisesCoachDisc(),
                 },
               ),
             ),
@@ -182,7 +182,9 @@ void main() {
     testWidgets('free: strip tap opens the two-door consultation sheet, not the gate', (tester) async {
       await pumpFunnel(tester, AccountTier.free);
 
-      await tester.tap(find.text(t.talkToTrainer));
+      // t_a9afb1b7: the free door is the disc (talkToTrainer Semantics),
+      // mounted by pumpFunnel — tap it by key, not by strip text.
+      await tester.tap(find.byKey(const ValueKey('exercises-coach-disc')));
       await tester.pumpAndSettle();
 
       expect(find.text(t.consultSheetTitle), findsOneWidget);
@@ -198,7 +200,7 @@ void main() {
     testWidgets('upgrade door routes to the plans flow, never the request form', (tester) async {
       await pumpFunnel(tester, AccountTier.free);
 
-      await tester.tap(find.text(t.talkToTrainer));
+      await tester.tap(find.byKey(const ValueKey('exercises-coach-disc')));
       await tester.pumpAndSettle();
 
       await tester.tap(find.text(t.exploreCoachingPlans));
@@ -220,7 +222,7 @@ void main() {
       );
       await pumpFunnel(tester, AccountTier.free);
 
-      await tester.tap(find.text(t.talkToTrainer));
+      await tester.tap(find.byKey(const ValueKey('exercises-coach-disc')));
       await tester.pumpAndSettle();
 
       expect(find.text(t.consultDoorView), findsOneWidget);

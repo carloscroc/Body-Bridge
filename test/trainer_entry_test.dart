@@ -1,5 +1,6 @@
 // Trainer entry rework widget tests (card t_fcd4945b): 4-slot nav, Exercises
-// strip + bell tier gating, NEW-workout banner overlay, hub back affordance.
+// coach disc + unread pill tier gating (t_a9afb1b7 replaced the strip + bell),
+// NEW-workout banner overlay, hub back affordance.
 //
 // Harness mirrors trainer_tier_test (FakeGate + mock SharedPreferences +
 // fit.resetRoute); the nav test mirrors shell_transition_test (the real
@@ -191,16 +192,24 @@ void main() {
     await tester.pump(const Duration(seconds: 1));
   });
 
-  testWidgets('advanced: strip shows trainer + pill; pushes hub; back returns', (tester) async {
+  testWidgets('advanced: disc shows trainer + pill; pushes hub; back returns (strip→disc t_a9afb1b7)', (tester) async {
     fit.resetRoute('exercises');
+    // t_a9afb1b7: dismiss the floating workout banner card — it slides in
+    // over the top edge and covers the disc's tap target on this surface.
+    trainer.dismissedBanners.add('workout:thr_lower');
     await pumpSurface(tester, AccountTier.advanced);
 
-    expect(find.text('Marcus Reyes'), findsOneWidget);
-    expect(find.byIcon(PhosphorIconsFill.chatCircleDots), findsOneWidget);
-    expect(find.text('2'), findsWidgets);
-    expect(find.byIcon(PhosphorIconsRegular.bell), findsOneWidget);
+    // t_a9afb1b7: the entry strip is replaced by the 38dp coach disc; the
+    // header bell is gone — the disc pill carries the unread count now.
+    expect(find.byKey(const ValueKey('exercises-coach-disc')), findsOneWidget);
+    expect(find.byIcon(PhosphorIconsFill.chatCircleDots), findsNothing,
+        reason: 'the strip Message pill is gone with the strip');
+    expect(find.byKey(const ValueKey('disc-unread')), findsOneWidget,
+        reason: 'unread count moved from the bell badge to the disc pill');
+    expect(find.byIcon(PhosphorIconsRegular.bell), findsNothing,
+        reason: 'the Exercises header no longer renders a bell');
 
-    await tester.tap(find.text('Marcus Reyes'));
+    await tester.tap(find.byKey(const ValueKey('exercises-coach-disc')));
     await tester.pump();
     expect(fit.route, 'trainer');
     await tester.pump(const Duration(milliseconds: 50));
@@ -211,16 +220,17 @@ void main() {
     expect(fit.route, 'exercises');
   });
 
-  testWidgets('free: upsell strip opens the consultation sheet; no trainer surfaces', (tester) async {
+  testWidgets('free: disc opens the consultation sheet; no trainer surfaces (strip→disc t_a9afb1b7)', (tester) async {
     fit.resetRoute('exercises');
     await pumpSurface(tester, AccountTier.free);
 
-    expect(find.text(t.talkToTrainer), findsOneWidget);
+    expect(find.byKey(const ValueKey('exercises-coach-disc')), findsOneWidget,
+        reason: 'the free door is the Semantics-labelled disc, not a strip card');
     expect(find.text('Marcus Reyes'), findsNothing);
     expect(find.byType(TrainerHomeScreen), findsNothing);
     expect(find.byIcon(PhosphorIconsRegular.bell), findsNothing);
 
-    await tester.tap(find.text(t.talkToTrainer));
+    await tester.tap(find.byKey(const ValueKey('exercises-coach-disc')));
     await tester.pumpAndSettle();
     // t_db30a5d3 R2/B4: the free-tier strip opens the two-door consultation
     // sheet — NOT the Advanced gate.
@@ -229,16 +239,16 @@ void main() {
     expect(find.textContaining(RegExp(r'\$\d')), findsNothing, reason: 'the sheet must not show prices');
   });
 
-  testWidgets('bell badge follows unreadTotal', (tester) async {
+  testWidgets('disc pill follows unreadTotal (bell→pill t_a9afb1b7)', (tester) async {
     fit.resetRoute('exercises');
     await pumpSurface(tester, AccountTier.advanced);
 
-    expect(find.text('2'), findsWidgets);
+    expect(find.byKey(const ValueKey('disc-unread')), findsOneWidget,
+        reason: 'the unread count lives on the disc pill now');
     await trainer.markThreadRead('thr_chat_marcus');
     await tester.pumpAndSettle();
     expect(trainer.unreadTotal, 0);
-    expect(find.text('2'), findsNothing);
-    expect(find.byIcon(PhosphorIconsRegular.bell), findsOneWidget);
+    expect(find.byKey(const ValueKey('disc-unread')), findsNothing);
   });
 
   testWidgets('free: bell absent', (tester) async {

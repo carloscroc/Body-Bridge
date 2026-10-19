@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:gymmane/app/gymmane_app.dart';
+import 'package:gymmane/catalog/trainer_exercises.dart';
 import 'package:gymmane/l10n/l10n.dart';
 import 'package:gymmane/screens/places_screen.dart';
 import 'package:gymmane/services/local_store.dart';
@@ -129,7 +130,13 @@ void main() {
 
     expect(fit.places, isEmpty);
     expect(fit.activePlaceId, '');
-    expect(fit.exercisesFiltered.length, fit.allExercises.length);
+    // t_a9afb1b7: 'all' is the default source — the everywhere pool merges the
+    // trainer library, so the filter being gone means every free exercise is
+    // back AND the locked trainer rows ride along.
+    expect(fit.exercisesFiltered.toSet(), containsAll(fit.allExercises.toSet()),
+        reason: 'deleting the active place offers every exercise again');
+    expect(fit.exercisesFiltered.where((e) => isTrainerSourcedId(e.id)).length, 10,
+        reason: '6 trainer sessions + 4 assigned rows ride along in the everywhere pool');
   });
 
   test('an exercise you cannot do here offers what you can', () {
