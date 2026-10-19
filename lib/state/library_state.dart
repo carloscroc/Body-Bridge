@@ -7,7 +7,7 @@ mixin LibraryState on FitCore {
   String? exEquipmentFilter;
   String? activeExerciseId;
   int _customSeq = 0;
-  String exSource = 'free';
+  String exSource = 'all';
   List<Exercise> get allExercises => [...kExercises, ...customExercises];
 
   Exercise? exerciseById(String id) {
@@ -81,6 +81,7 @@ mixin LibraryState on FitCore {
   List<Exercise> exercisesMatching(String query, {String? source}) {
     final src = source ?? exSource;
     final pool = switch (src) {
+      'all' => [...allExercises, ...trainerExercises, ...assignedExercises],
       'trainer' => trainerExercises,
       'custom' => assignedExercises,
       _ => allExercises,
@@ -98,6 +99,11 @@ mixin LibraryState on FitCore {
       if (exEquipmentFilter != null && ex.equipment != exEquipmentFilter) return false;
       return true;
     }).toList();
+    if (src == 'all') {
+      final gated = _groupedByCategory(list.where((ex) => isTrainerSourcedId(ex.id)).toList());
+      final free = _groupedByMuscle(list.where((ex) => !isTrainerSourcedId(ex.id)).toList());
+      return [...gated, ...free];
+    }
     if (src == 'trainer' || src == 'custom') return _groupedByCategory(list);
     final muscle = exMuscleFilter;
     if (muscle == null) return _groupedByMuscle(list);
