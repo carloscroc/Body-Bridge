@@ -3813,6 +3813,15 @@ class AppLocalizationsFr extends AppLocalizations {
   String get sourceCustom => 'Perso';
 
   @override
+  String get sourceAll => 'Tous';
+
+  @override
+  String get sectionTrainerLibrary => 'Bibliothèque du coach';
+
+  @override
+  String get sectionFreeLibrary => 'Bibliothèque gratuite';
+
+  @override
   String get advancedBadge => 'ADVANCED';
 
   @override

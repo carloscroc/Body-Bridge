@@ -3650,6 +3650,15 @@ class AppLocalizationsZh extends AppLocalizations {
   String get sourceCustom => '自定义';
 
   @override
+  String get sourceAll => '全部';
+
+  @override
+  String get sectionTrainerLibrary => '教练库';
+
+  @override
+  String get sectionFreeLibrary => '免费库';
+
+  @override
   String get advancedBadge => 'ADVANCED';
 
   @override
@@ -7363,6 +7372,15 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
 
   @override
   String get sourceCustom => '自訂';
+
+  @override
+  String get sourceAll => '全部';
+
+  @override
+  String get sectionTrainerLibrary => '教練庫';
+
+  @override
+  String get sectionFreeLibrary => '免費庫';
 
   @override
   String get advancedBadge => 'ADVANCED';

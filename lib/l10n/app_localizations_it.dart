@@ -3798,6 +3798,15 @@ class AppLocalizationsIt extends AppLocalizations {
   String get sourceCustom => 'Personali';
 
   @override
+  String get sourceAll => 'Tutti';
+
+  @override
+  String get sectionTrainerLibrary => 'Libreria del trainer';
+
+  @override
+  String get sectionFreeLibrary => 'Libreria gratuita';
+
+  @override
   String get advancedBadge => 'ADVANCED';
 
   @override

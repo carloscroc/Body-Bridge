@@ -3690,6 +3690,15 @@ class AppLocalizationsJa extends AppLocalizations {
   String get sourceCustom => 'カスタム';
 
   @override
+  String get sourceAll => 'すべて';
+
+  @override
+  String get sectionTrainerLibrary => 'トレーナーライブラリ';
+
+  @override
+  String get sectionFreeLibrary => '無料ライブラリ';
+
+  @override
   String get advancedBadge => 'ADVANCED';
 
   @override

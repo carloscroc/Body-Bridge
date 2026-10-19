@@ -3792,6 +3792,15 @@ class AppLocalizationsAr extends AppLocalizations {
   String get sourceCustom => 'مخصص';
 
   @override
+  String get sourceAll => 'الكل';
+
+  @override
+  String get sectionTrainerLibrary => 'مكتبة المدرب';
+
+  @override
+  String get sectionFreeLibrary => 'المكتبة المجانية';
+
+  @override
   String get advancedBadge => 'ADVANCED';
 
   @override

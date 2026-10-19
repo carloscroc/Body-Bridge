@@ -3796,6 +3796,15 @@ class AppLocalizationsTr extends AppLocalizations {
   String get sourceCustom => 'Özel';
 
   @override
+  String get sourceAll => 'Tümü';
+
+  @override
+  String get sectionTrainerLibrary => 'Antrenör kütüphanesi';
+
+  @override
+  String get sectionFreeLibrary => 'Ücretsiz kütüphane';
+
+  @override
   String get advancedBadge => 'ADVANCED';
 
   @override

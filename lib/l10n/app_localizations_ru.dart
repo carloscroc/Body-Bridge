@@ -3891,6 +3891,15 @@ class AppLocalizationsRu extends AppLocalizations {
   String get sourceCustom => 'Свои';
 
   @override
+  String get sourceAll => 'Все';
+
+  @override
+  String get sectionTrainerLibrary => 'Библиотека тренера';
+
+  @override
+  String get sectionFreeLibrary => 'Бесплатная библиотека';
+
+  @override
   String get advancedBadge => 'ADVANCED';
 
   @override

@@ -3801,6 +3801,15 @@ class AppLocalizationsPt extends AppLocalizations {
   String get sourceCustom => 'Personalizado';
 
   @override
+  String get sourceAll => 'Todos';
+
+  @override
+  String get sectionTrainerLibrary => 'Biblioteca do treinador';
+
+  @override
+  String get sectionFreeLibrary => 'Biblioteca gratuita';
+
+  @override
   String get advancedBadge => 'ADVANCED';
 
   @override

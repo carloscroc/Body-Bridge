@@ -3810,6 +3810,15 @@ class AppLocalizationsPl extends AppLocalizations {
   String get sourceCustom => 'Własne';
 
   @override
+  String get sourceAll => 'Wszystkie';
+
+  @override
+  String get sectionTrainerLibrary => 'Biblioteka trenera';
+
+  @override
+  String get sectionFreeLibrary => 'Darmowa biblioteka';
+
+  @override
   String get advancedBadge => 'ADVANCED';
 
   @override

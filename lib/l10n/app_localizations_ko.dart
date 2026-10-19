@@ -3705,6 +3705,15 @@ class AppLocalizationsKo extends AppLocalizations {
   String get sourceCustom => '커스텀';
 
   @override
+  String get sourceAll => '전체';
+
+  @override
+  String get sectionTrainerLibrary => '트레이너 라이브러리';
+
+  @override
+  String get sectionFreeLibrary => '무료 라이브러리';
+
+  @override
   String get advancedBadge => 'ADVANCED';
 
   @override

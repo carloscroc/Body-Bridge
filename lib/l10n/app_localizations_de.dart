@@ -3811,6 +3811,15 @@ class AppLocalizationsDe extends AppLocalizations {
   String get sourceCustom => 'Eigene';
 
   @override
+  String get sourceAll => 'Alle';
+
+  @override
+  String get sectionTrainerLibrary => 'Trainer-Bibliothek';
+
+  @override
+  String get sectionFreeLibrary => 'Kostenlose Bibliothek';
+
+  @override
   String get advancedBadge => 'ADVANCED';
 
   @override

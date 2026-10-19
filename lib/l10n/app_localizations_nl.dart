@@ -3802,6 +3802,15 @@ class AppLocalizationsNl extends AppLocalizations {
   String get sourceCustom => 'Eigen';
 
   @override
+  String get sourceAll => 'Alles';
+
+  @override
+  String get sectionTrainerLibrary => 'Trainerbibliotheek';
+
+  @override
+  String get sectionFreeLibrary => 'Gratis bibliotheek';
+
+  @override
   String get advancedBadge => 'ADVANCED';
 
   @override

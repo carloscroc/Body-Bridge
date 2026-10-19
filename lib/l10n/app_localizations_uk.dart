@@ -3807,6 +3807,15 @@ class AppLocalizationsUk extends AppLocalizations {
   String get sourceCustom => 'Свої';
 
   @override
+  String get sourceAll => 'Усі';
+
+  @override
+  String get sectionTrainerLibrary => 'Бібліотека тренера';
+
+  @override
+  String get sectionFreeLibrary => 'Безкоштовна бібліотека';
+
+  @override
   String get advancedBadge => 'ADVANCED';
 
   @override

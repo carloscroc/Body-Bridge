@@ -3793,6 +3793,15 @@ class AppLocalizationsEn extends AppLocalizations {
   String get sourceCustom => 'Custom';
 
   @override
+  String get sourceAll => 'All';
+
+  @override
+  String get sectionTrainerLibrary => 'Trainer library';
+
+  @override
+  String get sectionFreeLibrary => 'Free library';
+
+  @override
   String get advancedBadge => 'ADVANCED';
 
   @override

@@ -6842,6 +6842,24 @@ abstract class AppLocalizations {
   /// **'Custom'**
   String get sourceCustom;
 
+  /// No description provided for @sourceAll.
+  ///
+  /// In en, this message translates to:
+  /// **'All'**
+  String get sourceAll;
+
+  /// No description provided for @sectionTrainerLibrary.
+  ///
+  /// In en, this message translates to:
+  /// **'Trainer library'**
+  String get sectionTrainerLibrary;
+
+  /// No description provided for @sectionFreeLibrary.
+  ///
+  /// In en, this message translates to:
+  /// **'Free library'**
+  String get sectionFreeLibrary;
+
   /// No description provided for @advancedBadge.
   ///
   /// In en, this message translates to:
