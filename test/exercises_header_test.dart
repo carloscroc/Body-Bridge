@@ -174,6 +174,35 @@ void main() {
             reason: 'the Exercises header no longer renders a bell (t_a9afb1b7)');
       });
     }
+
+    testWidgets('advanced: disc renders the chat glyph, no initials avatar',
+        (tester) async {
+      await pumpSurface(tester, AccountTier.advanced);
+      final disc = find.byKey(const ValueKey('exercises-coach-disc'));
+
+      expect(
+          find.descendant(
+              of: disc, matching: find.byIcon(PhosphorIconsRegular.chatCircle)),
+          findsOneWidget,
+          reason: 'both tiers render the outlined chat glyph (t_ec882f80)');
+      expect(
+          find.descendant(of: disc, matching: find.byType(TrainerAvatarDisc)),
+          findsNothing,
+          reason: 'the initials avatar is replaced by the chat glyph (t_ec882f80)');
+    });
+
+    for (final tier in [AccountTier.free, AccountTier.basic]) {
+      testWidgets('${tier.name}: disc renders the chat glyph', (tester) async {
+        await pumpSurface(tester, tier);
+        final disc = find.byKey(const ValueKey('exercises-coach-disc'));
+
+        expect(
+            find.descendant(
+                of: disc, matching: find.byIcon(PhosphorIconsRegular.chatCircle)),
+            findsOneWidget,
+            reason: 'both tiers render the outlined chat glyph (t_ec882f80)');
+      });
+    }
   });
 
   group('disc navigation: advanced opens the hub, back returns', () {

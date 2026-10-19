@@ -353,8 +353,9 @@ String trainerExercisesMeta(AppLocalizations t, int count, int minutes) =>
     t.exercisesMeta(count, minutes);
 
 /// Tier-aware 38dp coach disc for the Exercises header (contract t_a9afb1b7):
-/// advanced tiers get the trainer avatar with an unread-count pill and open
-/// the trainer hub; free tiers open the consultation sheet.
+/// both tiers render the outlined chat glyph — the coach button per Carlos
+/// mockup t_ec882f80 — with advanced tiers adding the unread-count pill and
+/// opening the trainer hub; free tiers open the consultation sheet.
 class ExercisesCoachDisc extends StatelessWidget {
   const ExercisesCoachDisc({
     super.key = const ValueKey('exercises-coach-disc'),
@@ -373,6 +374,7 @@ class ExercisesCoachDisc extends StatelessWidget {
   }
 
   Widget _advanced(BuildContext context) {
+    final gc = context.gc;
     return Semantics(
       button: true,
       label: t.myTrainer,
@@ -381,7 +383,22 @@ class ExercisesCoachDisc extends StatelessWidget {
         child: Stack(
           clipBehavior: Clip.none,
           children: [
-            TrainerAvatarDisc(initials: trainer.profile?.initials ?? '—', size: size),
+            Container(
+              width: size,
+              height: size,
+              alignment: Alignment.center,
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  colors: [gc.accent, gc.brass],
+                ),
+                shape: BoxShape.circle,
+              ),
+              child: Icon(PhosphorIconsRegular.chatCircle,
+                  size: size * 0.5,
+                  color: trainerPrimaryFg(gc, trainerIsDark(context))),
+            ),
             if (trainer.unreadTotal > 0)
               Positioned(
                 right: -2,
@@ -410,7 +427,7 @@ class ExercisesCoachDisc extends StatelessWidget {
           height: size,
           alignment: Alignment.center,
           decoration: BoxDecoration(color: gc.bgRaised, shape: BoxShape.circle),
-          child: Icon(PhosphorIconsRegular.userFocus, size: 19, color: gc.accent),
+          child: Icon(PhosphorIconsRegular.chatCircle, size: 19, color: gc.accent),
         ),
       ),
     );
