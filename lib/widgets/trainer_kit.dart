@@ -16,8 +16,7 @@ import '../theme/app_colors.dart';
 import '../theme/app_theme.dart';
 import 'premium_gate.dart';
 import 'consultation_sheet.dart';
-import 'svg_icon.dart';
-import 'ui_kit.dart' show Pressable, SoftCard;
+import 'ui_kit.dart' show Pressable;
 
 /// Trainer primary pill: terracotta in dark, deep green in light (mockup).
 Color trainerPrimaryBg(GymColors gc, bool dark) => dark ? gc.accent : gc.ember;
@@ -353,132 +352,65 @@ class TrainerAttachmentCard extends StatelessWidget {
 String trainerExercisesMeta(AppLocalizations t, int count, int minutes) =>
     t.exercisesMeta(count, minutes);
 
-/// Tier-aware entry into My Trainer, shown in the Exercises header between
-/// the title row and the search field (card t_fcd4945b). Advanced tiers get
-/// the identity card — avatar, name + credential, Message pill with the
-/// unread count; free tiers get the suggestion card that opens the
-/// Advanced gate.
-class TrainerEntryStrip extends StatelessWidget {
-  const TrainerEntryStrip({super.key});
+/// Tier-aware 38dp coach disc for the Exercises header (contract t_a9afb1b7):
+/// advanced tiers get the trainer avatar with an unread-count pill and open
+/// the trainer hub; free tiers open the consultation sheet.
+class ExercisesCoachDisc extends StatelessWidget {
+  const ExercisesCoachDisc({
+    super.key = const ValueKey('exercises-coach-disc'),
+    this.size = 38,
+  });
+
+  final double size;
 
   @override
   Widget build(BuildContext context) {
-    final unlocked = context.can(kCapCustomExercises);
     return AnimatedBuilder(
       animation: trainer,
-      builder: (context, _) => unlocked ? _advanced(context) : _suggestion(context),
+      builder: (context, _) =>
+          context.can(kCapCustomExercises) ? _advanced(context) : _consult(context),
     );
   }
 
   Widget _advanced(BuildContext context) {
-    final gc = context.gc;
-    final profile = trainer.profile;
-    return Pressable(
-      onTap: () => fit.pushRoute('trainer'),
-      child: SoftCard(
-        radius: 18,
-        padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
-        child: Row(
+    return Semantics(
+      button: true,
+      label: t.myTrainer,
+      child: Pressable(
+        onTap: () => fit.pushRoute('trainer'),
+        child: Stack(
+          clipBehavior: Clip.none,
           children: [
-            TrainerAvatarDisc(initials: profile?.initials ?? '—', size: 42),
-            const SizedBox(width: 12),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    profile?.displayName ?? '—',
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
-                    style: AppTheme.f(14.5, weight: FontWeight.w800, color: gc.text),
-                  ),
-                  const SizedBox(height: 2),
-                  if (profile != null)
-                    Text(
-                      profile.credential,
-                      maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
-                      style: AppTheme.f(11.5,
-                          weight: FontWeight.w500, color: gc.textSecondary),
-                    ),
-                ],
+            TrainerAvatarDisc(initials: trainer.profile?.initials ?? '—', size: size),
+            if (trainer.unreadTotal > 0)
+              Positioned(
+                right: -2,
+                top: -2,
+                child: TrainerCountPill(
+                  count: trainer.unreadTotal,
+                  size: 17,
+                  key: const ValueKey('disc-unread'),
+                ),
               ),
-            ),
-            const SizedBox(width: 10),
-            Container(
-              height: 34,
-              padding: const EdgeInsets.symmetric(horizontal: 13),
-              decoration: BoxDecoration(
-                color: trainerPrimaryBg(gc, trainerIsDark(context)),
-                borderRadius: BorderRadius.circular(100),
-              ),
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Icon(PhosphorIconsFill.chatCircleDots,
-                      size: 15, color: trainerPrimaryFg(gc, trainerIsDark(context))),
-                  if (trainer.unreadTotal > 0) ...[
-                    const SizedBox(width: 6),
-                    TrainerCountPill(
-                      count: trainer.unreadTotal,
-                      size: 17,
-                      key: const ValueKey('strip-unread'),
-                    ),
-                  ],
-                ],
-              ),
-            ),
           ],
         ),
       ),
     );
   }
 
-  Widget _suggestion(BuildContext context) {
+  Widget _consult(BuildContext context) {
     final gc = context.gc;
-    final dark = trainerIsDark(context);
-    return Pressable(
-      onTap: () => showConsultationSheet(context),
-      child: SoftCard(
-        radius: 18,
-        padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
-        child: Row(
-          children: [
-            Container(
-              width: 42,
-              height: 42,
-              alignment: Alignment.center,
-              decoration: BoxDecoration(
-                color: gc.accent.withValues(alpha: dark ? 0.16 : 0.10),
-                shape: BoxShape.circle,
-              ),
-              child: Icon(PhosphorIconsRegular.userFocus, size: 20, color: gc.accent),
-            ),
-            const SizedBox(width: 12),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    t.talkToTrainer,
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
-                    style: AppTheme.f(14.5, weight: FontWeight.w800, color: gc.text),
-                  ),
-                  const SizedBox(height: 2),
-                  Text(
-                    t.talkToTrainerSub,
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
-                    style: AppTheme.f(11.5,
-                        weight: FontWeight.w500, color: gc.textSecondary),
-                  ),
-                ],
-              ),
-            ),
-            const SizedBox(width: 10),
-            SvgPathIcon(Ic.chevronRight, size: 16, color: gc.textTertiary),
-          ],
+    return Semantics(
+      button: true,
+      label: t.talkToTrainer,
+      child: Pressable(
+        onTap: () => showConsultationSheet(context),
+        child: Container(
+          width: size,
+          height: size,
+          alignment: Alignment.center,
+          decoration: BoxDecoration(color: gc.bgRaised, shape: BoxShape.circle),
+          child: Icon(PhosphorIconsRegular.userFocus, size: 19, color: gc.accent),
         ),
       ),
     );
