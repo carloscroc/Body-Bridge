@@ -1,6 +1,6 @@
 // Book-a-call sheet (card t_9d175854 D3) — the 1:1 call request form the
 // trainer chat header calendar button opens. NO phone numbers and NO
-// dialer anywhere: the request is filed through the trainer seam and the
+// call handoff anywhere: the request is filed through the trainer seam and the
 // trainer confirms the time in chat. Two-door grammar mirrors the
 // consultation sheet: with a request already on file the sheet opens
 // directly on the confirmation state. v0 local stub — no backend yet.
@@ -88,7 +88,8 @@ class _BookCallSheetState extends State<BookCallSheet> {
   Widget _form(BuildContext context) {
     final gc = context.gc;
     final dark = trainerIsDark(context);
-    return Column(
+    return SingleChildScrollView(
+      child: Column(
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
@@ -167,13 +168,15 @@ class _BookCallSheetState extends State<BookCallSheet> {
           onTap: _sending ? () {} : _submit,
         ),
       ],
+      ),
     );
   }
 
   Widget _confirmation(BuildContext context, String name) {
     final gc = context.gc;
     final dark = trainerIsDark(context);
-    return Column(
+    return SingleChildScrollView(
+      child: Column(
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
@@ -209,6 +212,7 @@ class _BookCallSheetState extends State<BookCallSheet> {
           onTap: () => Navigator.of(context).pop(),
         ),
       ],
+      ),
     );
   }
 

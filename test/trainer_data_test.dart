@@ -183,6 +183,9 @@ void main() {
       final repo = LocalTrainerRepository();
       await repo.callRequest(day: 1, timeWindow: 'morning');
       repo.resetForTest();
+      // resetForTest purges prefs fire-and-forget (unawaited) — drain the
+      // mock's microtask chain before asserting on the persisted key.
+      await Future<void>.delayed(Duration.zero);
       final prefs = await SharedPreferences.getInstance();
       expect(prefs.getString('gymmane_call_v1'), isNull);
       expect(await LocalTrainerRepository().callGetMine(), isNull);

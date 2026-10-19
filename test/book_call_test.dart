@@ -9,7 +9,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:gymmane/l10n/l10n.dart';
 import 'package:gymmane/screens/trainer_chat_screen.dart';
-import 'package:gymmane/services/local_store.dart';
 import 'package:gymmane/state/account_gate.dart';
 import 'package:gymmane/state/fit_state.dart';
 import 'package:gymmane/state/trainer_state.dart';
@@ -50,13 +49,8 @@ class FakeGate extends AccountGate {
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
-  setUp(() async {
+  setUp(() {
     SharedPreferences.setMockInitialValues({});
-    await Store.instance.init();
-    fit.saveAndExit();
-    fit.sessions.clear();
-    fit.routines.clear();
-    fit.onboarded = true;
     fit.resetRoute('home');
     trainer.resetForTest();
     setAppLanguage('en');
@@ -69,6 +63,11 @@ void main() {
 
   Future<void> pumpChat(WidgetTester tester) async {
     trainer.openThreadId = 'thr_chat_marcus';
+    // Realistic phone surface (matches the capture harness) so the sheet
+    // content and submit button sit on-screen at tap time.
+    tester.view.physicalSize = const Size(411, 823);
+    tester.view.devicePixelRatio = 1.0;
+    addTearDown(tester.view.reset);
     final gate = FakeGate(AccountTier.advanced);
     AccountGate.install(gate);
     await tester.pumpWidget(
@@ -86,12 +85,15 @@ void main() {
       ),
     );
     await tester.pump(const Duration(milliseconds: 50));
-    await tester.pumpAndSettle();
+    // The chat surface never settles under pumpAndSettle on this host —
+    // fixed pumps, mirroring trainer_tier_test's proven pattern.
+    await tester.pump(const Duration(milliseconds: 400));
   }
 
   Future<void> openSheet(WidgetTester tester) async {
     await tester.tap(find.byIcon(PhosphorIconsRegular.calendarBlank));
-    await tester.pumpAndSettle();
+    await tester.pump(const Duration(milliseconds: 300));
+    await tester.pump(const Duration(milliseconds: 300));
   }
 
   // Scoped to the sheet so generic chip labels can't collide with any
@@ -132,7 +134,7 @@ void main() {
     await pumpChat(tester);
     await openSheet(tester);
     await tester.tap(inSheet(find.byType(PrimaryButton)));
-    await tester.pumpAndSettle();
+    await tester.pump(const Duration(milliseconds: 100));
     expect(find.text(t.callPickDayTime), findsOneWidget);
     expect(trainer.call, isNull);
   });
@@ -148,7 +150,8 @@ void main() {
     await tester.enterText(noteField(), 'Knee-friendly times please');
     await tester.pump();
     await tester.tap(inSheet(find.byType(PrimaryButton)));
-    await tester.pumpAndSettle();
+    await tester.pump(const Duration(milliseconds: 300));
+    await tester.pump(const Duration(milliseconds: 300));
     expect(find.text(t.callSentTitle), findsOneWidget);
     expect(find.text(t.callSentBody('Marcus')), findsOneWidget);
     expect(trainer.call!.day, 3);
@@ -158,8 +161,10 @@ void main() {
 
   testWidgets('two-door: request on file -> sheet opens on the confirmation',
       (tester) async {
-    await trainer.requestCall(day: 5, timeWindow: 'morning', notes: 'early');
     await pumpChat(tester);
+    await tester.pump(const Duration(milliseconds: 100));
+    await trainer.requestCall(day: 5, timeWindow: 'morning', notes: 'early');
+    await tester.pump(const Duration(milliseconds: 100));
     await openSheet(tester);
     expect(find.text(t.callSentTitle), findsOneWidget);
     expect(find.text(t.callSheetTitle), findsNothing);
