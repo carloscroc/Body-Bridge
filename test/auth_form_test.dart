@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:gymmane/l10n/l10n.dart';
@@ -25,6 +27,16 @@ class ScriptedGate extends AccountGate {
   /// first send (e.g. only the resend leg fails).
   OtpAuthException? requestFailure;
 
+  /// Thrown VERBATIM by requestEmailCode after [requestFailure], modeling a
+  /// raw transport error escaping the service seam (not an
+  /// OtpAuthException). Mutable so a test can arm it, then disarm to
+  /// prove the button re-armed.
+  Object? rawRequestFailure;
+
+  /// When true, requestEmailCode awaits a never-completing future — the
+  /// hung-send leg the send timeout must convert into a network failure.
+  bool hangRequest = false;
+
   /// Thrown by verifyEmailCode. A wrong code surfaces on the REAL gate as
   /// verifyEmailCode RETURNING FALSE (see [verifySuccess]); explicit
   /// OtpAuthException('codeInvalid') throws remain possible too — the form
@@ -50,6 +62,9 @@ class ScriptedGate extends AccountGate {
     sentCount++;
     final failure = requestFailure;
     if (failure != null) throw failure;
+    final raw = rawRequestFailure;
+    if (raw != null) throw raw;
+    if (hangRequest) await Completer<void>().future;
   }
 
   @override
@@ -695,4 +710,73 @@ void main() {
     expect(tester.takeException(), isNull);
     await unmount(tester);
   });
+  testWidgets(
+      'a raw transport failure re-arms the Continue button instead of'
+      ' dead-locking it', (tester) async {
+    // Regression: a non-OtpAuthException escaping the seam used to leave
+    // _busy set forever — every later tap returned at the busy guard and
+    // only an app restart cleared it (reproduced 3x on device).
+    final gate = ScriptedGate()..rawRequestFailure = Exception('socket closed');
+    await pumpEmailStep(tester, gate);
+
+    await tester.enterText(find.byType(TextField), 'racer@gymmane.dev');
+    await tester.pump();
+    await tester.tap(find.text(t.authCtaContinueEmail));
+    await tester.pump();
+    await tester.pump(const Duration(milliseconds: 100));
+    await tester.pump(const Duration(milliseconds: 100));
+
+    expect(find.text(t.authErrorUnknown), findsOneWidget,
+        reason: 'the raw failure surfaces the localized unknown error');
+    expect(find.text(t.authCodeTitle), findsNothing,
+        reason: 'the form stays on the email step');
+    expect(find.textContaining('socket closed'), findsNothing,
+        reason: 'raw exception text must never reach the UI');
+
+    // The button must be tappable again: the next tap reaches the gate.
+    gate.rawRequestFailure = null;
+    await tester.tap(find.text(t.authCtaContinueEmail));
+    await tester.pump();
+    await tester.pump(const Duration(milliseconds: 100));
+    await tester.pump(const Duration(milliseconds: 300));
+
+    expect(gate.sentCount, 2, reason: 'the second tap reaches the gate');
+    expect(find.text(t.authCodeTitle), findsOneWidget,
+        reason: 'the recovered send advances to the code step');
+    expect(tester.takeException(), isNull);
+    await unmount(tester);
+  });
+
+  testWidgets('a hung send times out into the network failure and re-arms',
+      (tester) async {
+    OtpAuthForm.sendTimeout = const Duration(milliseconds: 120);
+    addTearDown(() => OtpAuthForm.sendTimeout = const Duration(seconds: 20));
+    final gate = ScriptedGate()..hangRequest = true;
+    await pumpEmailStep(tester, gate);
+
+    await tester.enterText(find.byType(TextField), 'racer@gymmane.dev');
+    await tester.pump();
+    await tester.tap(find.text(t.authCtaContinueEmail));
+    await tester.pump(const Duration(milliseconds: 300));
+
+    expect(find.text(t.authErrorNetwork), findsOneWidget,
+        reason: 'the hung send surfaces as the network-class failure');
+    expect(find.text(t.authCodeTitle), findsNothing,
+        reason: 'a timed-out send keeps the email step');
+
+    // The never-completing request is a Future, not a Timer — the pending-
+    // timer check stays clean, and the re-armed button still works.
+    gate.hangRequest = false;
+    await tester.tap(find.text(t.authCtaContinueEmail));
+    await tester.pump();
+    await tester.pump(const Duration(milliseconds: 100));
+    await tester.pump(const Duration(milliseconds: 300));
+
+    expect(gate.sentCount, 2, reason: 'the re-armed button reaches the gate');
+    expect(find.text(t.authCodeTitle), findsOneWidget,
+        reason: 'the code step is reached after the recovery');
+    expect(tester.takeException(), isNull);
+    await unmount(tester);
+  });
+
 }

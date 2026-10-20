@@ -29,6 +29,11 @@ class OtpAuthForm extends StatefulWidget {
   @visibleForTesting
   static DateTime Function() now = DateTime.now;
 
+  /// Injectable send-leg timeout for tests: a hung request surfaces as
+  /// the network-class failure instead of wedging the form.
+  @visibleForTesting
+  static Duration sendTimeout = const Duration(seconds: 20);
+
   @override
   State<OtpAuthForm> createState() => _OtpAuthFormState();
 }
@@ -127,7 +132,16 @@ class _OtpAuthFormState extends State<OtpAuthForm>
     var stayPut = false;
     String? sendNotice;
     try {
-      await gate.requestEmailCode(email);
+      await gate.requestEmailCode(email).timeout(OtpAuthForm.sendTimeout);
+    } on TimeoutException {
+      // A hung send must never wedge the form: the timeout converts it
+      // into the network-class failure and re-arms the button.
+      stayPut = true;
+      if (!mounted) return;
+      setState(() {
+        _busy = false;
+        _emailError = _t.authErrorNetwork;
+      });
     } on OtpAuthException catch (e) {
       // Network NEVER advances — no request left the device, so a "check
       // your email" step would be a lie (defect D1): the blocking offline
@@ -159,12 +173,19 @@ class _OtpAuthFormState extends State<OtpAuthForm>
         sendNotice = _t.authFailedGeneric;
       }
     } catch (_) {
-      // Not an OtpAuthException (gate contract violated): stay put — on
-      // the wall when a Retry produced this — and re-arm the CTA so the
-      // Retry the wall promises never wedges on a permanent spinner.
+      // Not an OtpAuthException — a raw transport error escaped the seam
+      // (gate contract violated). It used to return without resetting
+      // _busy, so every later tap hit the `if (_busy) return` guard and
+      // the button died for the session. Stay put — on the wall when a
+      // Retry produced this —, re-arm the CTA, and surface the unknown
+      // error rather than staying silent. The wall ignores _emailError
+      // while it is up; _backToEmail clears it on the way back.
       stayPut = true;
       if (!mounted) return;
-      setState(() => _busy = false);
+      setState(() {
+        _busy = false;
+        _emailError = _t.authErrorUnknown;
+      });
     }
     if (!mounted || stayPut) return;
     setState(() => _busy = false);

@@ -114,6 +114,11 @@ class FakeConvexGateway implements ConvexGateway {
     events.add('clearAuth');
   }
 
+  /// Not scripted in these tests: connected-by-default matches the seam's
+  /// default, so any proactive probe loop stops after one call.
+  @override
+  Future<bool> probeConnection() async => true;
+
   @override
   Future<String> query(String name, Map<String, dynamic> args) async {
     events.add('query:$name');

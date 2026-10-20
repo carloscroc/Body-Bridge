@@ -31,6 +31,11 @@ class _ThrowingGateway implements ConvexGateway {
   @override
   Future<void> clearAuth() async {}
 
+  /// Implements does not inherit the seam's concrete default: this fake is
+  /// connected-by-default, so any proactive probe loop stops after one call.
+  @override
+  Future<bool> probeConnection() async => true;
+
   @override
   Stream<bool> get authState => const Stream.empty();
 
