@@ -36,6 +36,12 @@ abstract class ConvexGateway {
     required void Function(String) onUpdate,
     void Function(String, String?)? onError,
   });
+
+  /// Best-effort transport probe: issues one lightweight operation so a
+  /// lazily-connecting client opens its WebSocket; never throws. Returns
+  /// whether the transport reports connected afterwards. The default
+  /// reports connected — fakes only override this to observe probing.
+  Future<bool> probeConnection() async => true;
 }
 
 /// Auth session handle. Seam-owned wrapper type: the package's
@@ -54,6 +60,8 @@ abstract class ConvexSubscription {
 /// Production gateway: a thin delegate to `ConvexClient.instance` that wraps
 /// the package's frb opaque handles in the seam wrapper types.
 class RustConvexGateway implements ConvexGateway {
+  static const Duration _probeOpTimeout = Duration(seconds: 5);
+
   @override
   Future<void> initialize(ConvexConfig config) => ConvexClient.initialize(config);
 
@@ -106,6 +114,22 @@ class RustConvexGateway implements ConvexGateway {
       onError: onError ?? (_, _) {},
     );
     return _RustSubscription(handle);
+  }
+
+  @override
+  Future<bool> probeConnection() async {
+    try {
+      // Any answer — value or server error — proves the transport
+      // opened; the socket-open signal lands in the cached state while
+      // the op is in flight. users:getMe needs auth, so the expected
+      // unauthenticated answer is an error over an OPEN socket.
+      await ConvexClient.instance
+          .query('users:getMe', <String, dynamic>{})
+          .timeout(_probeOpTimeout);
+    } catch (_) {
+      // Offline / not yet initialized: fall through to the cached state.
+    }
+    return ConvexClient.instance.isConnected;
   }
 }
 

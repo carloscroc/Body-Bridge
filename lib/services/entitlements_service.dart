@@ -144,6 +144,11 @@ class EntitlementsService {
   static Duration authSettleTimeout = const Duration(seconds: 10);
   static Duration unauthenticatedRetryDelay = const Duration(milliseconds: 800);
 
+  /// Proactive-connect probe: attempts and backoff base. Tests shrink
+  /// both to keep the suite fast.
+  static int probeMaxAttempts = 6;
+  static Duration probeBackoffBase = const Duration(milliseconds: 500);
+
   /// Empty by default, which keeps the service dormant (guest/free).
   static const String _convexUrl = String.fromEnvironment('CONVEX_URL');
 
@@ -167,7 +172,16 @@ class EntitlementsService {
 
   /// Memoized and never throws. Empty CONVEX_URL means dormant free mode with
   /// no connection attempt beyond what initialize does locally.
-  Future<void> init() => _initFuture ??= _init();
+  Future<void> init() async {
+    await (_initFuture ??= _init());
+    // F2 proactive connect: driven from init() rather than _init() so it
+    // re-fires on later entries too — init() is memoized, and the first
+    // attempt budget can be spent while offline; bindToOtp / refresh /
+    // queryMe are natural moments to open the lazy WebSocket again.
+    // Dormant mode never reaches here (_ready stays false), and once
+    // connected a single probe confirms and the loop stops.
+    if (_ready) unawaited(_probeUntilConnected());
+  }
 
   /// Wires Convex auth to the OTP session stream; a signed-out snapshot
   /// clears. Idempotent: rebinding cancels the previous subscription, and
@@ -270,6 +284,23 @@ class EntitlementsService {
       debugPrint('Convex init unavailable: ${_brief(e, st)}');
     }
     _ready = true;
+  }
+
+  /// Forces the lazy native WebSocket open at warm-up time instead of
+  /// waiting for the first user poke, retrying with exponential backoff
+  /// until connected or the attempt budget is spent. Never throws and
+  /// never blocks callers of [init] — it runs unawaited.
+  Future<void> _probeUntilConnected() async {
+    for (var attempt = 0; attempt < probeMaxAttempts; attempt++) {
+      try {
+        if (await gateway.probeConnection()) return;
+      } catch (e, st) {
+        debugPrint('Convex probe failed: ${_brief(e, st)}');
+      }
+      if (attempt < probeMaxAttempts - 1) {
+        await Future<void>.delayed(probeBackoffBase * (1 << attempt));
+      }
+    }
   }
 
   Future<void> _onToken(String? token) async {

@@ -29,6 +29,11 @@ class OtpAuthForm extends StatefulWidget {
   @visibleForTesting
   static DateTime Function() now = DateTime.now;
 
+  /// Injectable send-leg timeout for tests: a hung request surfaces as
+  /// the network-class failure instead of wedging the form.
+  @visibleForTesting
+  static Duration sendTimeout = const Duration(seconds: 20);
+
   @override
   State<OtpAuthForm> createState() => _OtpAuthFormState();
 }
@@ -127,7 +132,16 @@ class _OtpAuthFormState extends State<OtpAuthForm>
     var stayPut = false;
     String? sendNotice;
     try {
-      await gate.requestEmailCode(email);
+      await gate.requestEmailCode(email).timeout(OtpAuthForm.sendTimeout);
+    } on TimeoutException {
+      // A hung send must never wedge the form: the timeout converts it
+      // into the network-class failure and re-arms the button.
+      stayPut = true;
+      if (!mounted) return;
+      setState(() {
+        _busy = false;
+        _emailError = _t.authErrorNetwork;
+      });
     } on OtpAuthException catch (e) {
       // Network stays on the email step; rate limit reports the inline
       // countdown there too; any other failure means the request row was
@@ -154,7 +168,15 @@ class _OtpAuthFormState extends State<OtpAuthForm>
         sendNotice = _t.authFailedGeneric;
       }
     } catch (_) {
+      // Dead-lock regression: raw transport errors escaping the seam used
+      // to return without resetting _busy, so every later tap hit the
+      // `if (_busy) return` guard and the button died for the session.
       stayPut = true;
+      if (!mounted) return;
+      setState(() {
+        _busy = false;
+        _emailError = _t.authErrorUnknown;
+      });
     }
     if (!mounted || stayPut) return;
     setState(() => _busy = false);
