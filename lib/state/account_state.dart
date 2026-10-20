@@ -183,7 +183,7 @@ class AccountState extends ChangeNotifier {
   };
 
   /// Sign out the account – cancels any pending streams and sets the phase to signedOut.
-  /// Under bypass, this does nothing (no Firebase/Convex calls) and simply switches
+  /// Under bypass, this does nothing (no OTP/Convex calls) and simply switches
   /// the internal phase to signedOut.
   void signOut() {
     _phase = AccountPhase.signedOut;
