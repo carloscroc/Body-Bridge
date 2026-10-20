@@ -3354,4 +3354,684 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get upgradeUpsellToast => 'Upgrade om meer te ontgrendelen';
+
+  @override
+  String get communityTab => 'Community';
+
+  @override
+  String get feedTab => 'Feed';
+
+  @override
+  String get membersTab => 'Leden';
+
+  @override
+  String get gateTitle => 'Community zit in Basic';
+
+  @override
+  String get gateBody => 'Voortgangsfoto’s, trainingslogboeken en mensen die je begrijpen.';
+
+  @override
+  String get gateCta => 'Community ontgrendelen';
+
+  @override
+  String get gateLinkOut => 'Ga verder op bodybridge.net';
+
+  @override
+  String get gateNotNow => 'Niet nu';
+
+  @override
+  String get optionsTitle => 'Berichtopties';
+
+  @override
+  String get sharePost => 'Bericht delen';
+
+  @override
+  String get savePost => 'Bericht opslaan';
+
+  @override
+  String get savedPost => 'Opgeslagen';
+
+  @override
+  String get copyPostLink => 'Berichtlink kopiëren';
+
+  @override
+  String get hidePost => 'Bericht verbergen';
+
+  @override
+  String get reportPost => 'Bericht melden';
+
+  @override
+  String get editPost => 'Bericht bewerken';
+
+  @override
+  String get deletePost => 'Bericht verwijderen…';
+
+  @override
+  String get deleteConfirmTitle => 'Dit bericht verwijderen?';
+
+  @override
+  String get deleteConfirmBody =>
+      'Hiermee worden het bericht, de foto en de reacties uit de Community verwijderd. Dit kan niet ongedaan worden gemaakt.';
+
+  @override
+  String get keepPost => 'Bericht bewaren';
+
+  @override
+  String get deleteAction => 'Verwijderen';
+
+  @override
+  String get postHiddenSnackbar => 'Bericht verborgen · Ongedaan maken';
+
+  @override
+  String get reportSheetTitle => 'Bericht melden';
+
+  @override
+  String get reportAnonymous => 'Je melding is anoniem.';
+
+  @override
+  String get reportSpam => 'Spam of oplichting';
+
+  @override
+  String get reportHarassment => 'Intimidatie of haat';
+
+  @override
+  String get reportInappropriate => 'Ongepaste foto’s';
+
+  @override
+  String get reportSubmit => 'Melden';
+
+  @override
+  String get reportSent => 'Melding verzonden';
+
+  @override
+  String get shareSheetTitle => 'Bericht delen';
+
+  @override
+  String get copyLink => 'Link kopiëren';
+
+  @override
+  String get linkCopied => 'Link gekopieerd';
+
+  @override
+  String get shareMessages => 'Berichten';
+
+  @override
+  String get shareMail => 'Mail';
+
+  @override
+  String get shareInstagram => 'Instagram';
+
+  @override
+  String get shareMore => 'Meer';
+
+  @override
+  String get newPostTitle => 'Nieuw bericht';
+
+  @override
+  String get modeProgress => 'Voortgang';
+
+  @override
+  String get modeWorkout => 'Training';
+
+  @override
+  String progressPhotosCount(int n) {
+    return 'VOORTGANGSFOTO’S · $n VAN 4';
+  }
+
+  @override
+  String get addPhotoTile => 'Toevoegen';
+
+  @override
+  String get photoPickerPending => 'Foto toevoegen heeft een afbeeldingskiezer nodig — komt binnenkort';
+
+  @override
+  String get captionHint => 'Deel je week: wat is er veranderd, wat heb je geleerd...';
+
+  @override
+  String get photosPrivate => 'Foto’s blijven privé tot je plaatst.';
+
+  @override
+  String get sessionPreview => 'TRAININGSVOORBEELD';
+
+  @override
+  String get autoFilled => 'Automatisch ingevuld vanuit de training van vandaag';
+
+  @override
+  String get contextHint => 'Voeg context toe — hoe voelde het?';
+
+  @override
+  String get postToCommunity => 'Plaatsen in Community';
+
+  @override
+  String get commentsTitle => 'Reacties';
+
+  @override
+  String commentCount(int n) {
+    String _temp0 = intl.Intl.pluralLogic(n, locale: localeName, other: '$n reacties', one: '$n reactie');
+    return '$_temp0';
+  }
+
+  @override
+  String get addCommentHint => 'Voeg een reactie toe...';
+
+  @override
+  String replyingTo(String name) {
+    return 'Reageren op $name';
+  }
+
+  @override
+  String get opChip => 'OP';
+
+  @override
+  String get noPostsTitle => 'Nog geen berichten';
+
+  @override
+  String get noPostsBody => 'Wees de eerste die zijn week deelt.';
+
+  @override
+  String get createFirstPost => 'Eerste bericht plaatsen';
+
+  @override
+  String get progressPhotoLabel => 'VOORTGANGSFOTO';
+
+  @override
+  String get progressChip => 'VOORTGANG';
+
+  @override
+  String get workoutChip => 'TRAINING';
+
+  @override
+  String get prChip => 'PR';
+
+  @override
+  String workoutStats(int min, int sets, String volume) {
+    return '$min min · $sets sets · $volume kg volume';
+  }
+
+  @override
+  String get composeDisabledHint => 'Ontgrendel Community om te plaatsen';
+
+  @override
+  String get inboxComingSoon => 'De inbox komt binnenkort';
+
+  @override
+  String get timeAgoNow => 'nu';
+
+  @override
+  String timeAgoMinutes(int n) {
+    return '$n min';
+  }
+
+  @override
+  String timeAgoHours(int n) {
+    return '$n u';
+  }
+
+  @override
+  String timeAgoDays(int n) {
+    return '$n d';
+  }
+
+  @override
+  String get trainerChip => 'TRAINER';
+
+  @override
+  String get myTrainer => 'MIJN TRAINER';
+
+  @override
+  String get assignedWorkouts => 'TOEGEWEZEN WORKOUTS';
+
+  @override
+  String get messageTrainer => 'Bericht';
+
+  @override
+  String trainerSince(String date) {
+    return 'Jouw trainer sinds $date';
+  }
+
+  @override
+  String replyWindow(int hours) {
+    return 'Reageert meestal binnen $hours u';
+  }
+
+  @override
+  String get chipNew => 'NIEUW';
+
+  @override
+  String get chipInProgress => 'BEZIG';
+
+  @override
+  String get chipCompleted => 'VOLTOOID';
+
+  @override
+  String sentCardMeta(String date, int count, int minutes) {
+    return 'Verzonden $date · $count oefeningen · ~$minutes min';
+  }
+
+  @override
+  String sentByTrainerOn(String date) {
+    return 'Verzonden door je trainer op $date';
+  }
+
+  @override
+  String progressPct(int pct) {
+    return '$pct%';
+  }
+
+  @override
+  String get coachNote => 'COACHNOTITIE';
+
+  @override
+  String restLabel(String duration) {
+    return 'Rust $duration';
+  }
+
+  @override
+  String askAboutThis(String name) {
+    return 'Vraag het aan $name';
+  }
+
+  @override
+  String messageHint(String name) {
+    return 'Bericht aan $name...';
+  }
+
+  @override
+  String get tapToOpen => 'Tik om te openen';
+
+  @override
+  String get todayDivider => 'VANDAAG';
+
+  @override
+  String trainerVideoMeta(String duration) {
+    return 'Trainervideo · $duration';
+  }
+
+  @override
+  String get gateBenefitWorkouts => 'Workouts afgestemd op jouw lichaam en blessures';
+
+  @override
+  String get gateBenefitChat => 'Direct berichtverkeer met je trainer';
+
+  @override
+  String get gateBenefitVideo => 'Video-feedback op je techniek';
+
+  @override
+  String get gateDismiss => 'Niet nu';
+
+  @override
+  String get gateFootnote => 'Upgrades gaan via bodybridge.net — je plan blijft in de app.';
+
+  @override
+  String bannerNewWorkout(String name) {
+    return 'Nieuwe workout van $name';
+  }
+
+  @override
+  String get bannerTapToView => 'Tik om te bekijken';
+
+  @override
+  String get callKicker => 'PERSONAL TRAINING';
+
+  @override
+  String get callSheetTitle => 'Plan een 1-op-1 gesprek';
+
+  @override
+  String get callNotesHint => 'Iets specifieks om te bespreken? (optioneel)';
+
+  @override
+  String get callPickDayTime => 'Kies een dag en een tijdsvenster';
+
+  @override
+  String get callSubmit => 'Verzoek versturen';
+
+  @override
+  String get callSentTitle => 'Verzoek verzonden';
+
+  @override
+  String callSentBody(String name) {
+    return '$name bevestigt je tijd';
+  }
+
+  @override
+  String get callDone => 'Klaar';
+
+  @override
+  String get bookCallA11y => 'Een 1-op-1 gesprek plannen';
+
+  @override
+  String get startSoonTitle => 'Persoonlijke sessies komen snel';
+
+  @override
+  String get startSoonBody =>
+      'Begeleide sessies komen samen met trainervideo\'s. Vraag ondertussen je trainer over dit plan.';
+
+  @override
+  String exercisesMeta(int count, int minutes) {
+    return '$count oefeningen · ~$minutes min';
+  }
+
+  @override
+  String get talkToTrainer => 'Praat met je trainer';
+
+  @override
+  String get talkToTrainerSub => 'Persoonlijke workouts en 1-op-1 chat';
+
+  @override
+  String get notifications => 'Meldingen';
+
+  @override
+  String get consultCardKicker => 'PERSONAL COACHING';
+
+  @override
+  String get consultCardTitle => 'Een consultatie aanvragen';
+
+  @override
+  String get consultCardSub => 'Een kort 1:1-gesprek voor je richting';
+
+  @override
+  String get consultCardSubDone => 'Je aanvraag is verstuurd — bekijken';
+
+  @override
+  String get consultSheetTitle => 'Train één-op-één met een coach';
+
+  @override
+  String get consultSheetBody =>
+      'Een gecertificeerde trainer stelt je programmering samen en blijft aan je zijde.';
+
+  @override
+  String get consultDoorHow => 'Hoe het werkt';
+
+  @override
+  String get consultDoorHowSub => 'Wat het 1:1-gesprek behandelt';
+
+  @override
+  String get consultDoorRequest => 'Consult aanvragen';
+
+  @override
+  String get consultDoorRequestSub => 'Twee minuten, geen verplichtingen';
+
+  @override
+  String get consultDoorView => 'Je aanvraag bekijken';
+
+  @override
+  String get consultDoorViewSub => 'Al verstuurd — geen duplicaten';
+
+  @override
+  String get introTitle => 'Coaching, om jou heen gebouwd';
+
+  @override
+  String get introP1 =>
+      'Een consult is een kort 1:1-gesprek met je trainer. Je brengt doelen, historie en blessures mee — je trainer maakt er een plan van dat bij jouw lichaam past.';
+
+  @override
+  String get introP2 => 'Geen standaardsjablonen. Jouw plan is voor jou geschreven en beweegt met je mee.';
+
+  @override
+  String get introPoint1 => 'Doelen, historie en blessures als eerste gehoord';
+
+  @override
+  String get introPoint2 => 'Eigen trainingen direct in de app';
+
+  @override
+  String get introPoint3 => 'Feedback die je plan bijstuurt';
+
+  @override
+  String get introCta => 'Consult aanvragen';
+
+  @override
+  String get requestTitle => 'Consult aanvragen';
+
+  @override
+  String get requestSub => 'Een coach leest dit voordat hij opvolgt — je schrijft je nergens voor in.';
+
+  @override
+  String get requestGoalKicker => 'HOOFDDOEL';
+
+  @override
+  String get goalStrength => 'Sterker worden';
+
+  @override
+  String get goalFatLoss => 'Vet verliezen';
+
+  @override
+  String get goalMobility => 'Mobiliteit verbeteren';
+
+  @override
+  String get goalConsistency => 'Vasthouden';
+
+  @override
+  String get requestExpKicker => 'ERVARING';
+
+  @override
+  String get expNew => 'Nieuw met krachttraining';
+
+  @override
+  String get expReturning => 'Weer terug na een pauze';
+
+  @override
+  String get expSeasoned => 'Traint al jaren';
+
+  @override
+  String get requestTimeKicker => 'BESTE TIJD OM JOU TE BEREIKEN · OPTIONEEL';
+
+  @override
+  String get timeMorning => 'Ochtend';
+
+  @override
+  String get timeAfternoon => 'Middag';
+
+  @override
+  String get timeEvening => 'Avond';
+
+  @override
+  String get requestNotesKicker => 'BERICHT · OPTIONEEL';
+
+  @override
+  String get requestNotesHint => 'Blessures, schema, materiaal…';
+
+  @override
+  String get requestSubmit => 'Aanvraag versturen';
+
+  @override
+  String get requestPickBoth => 'Kies eerst een doel';
+
+  @override
+  String get sentChip => 'VERSTUURD';
+
+  @override
+  String get sentTitle => 'Consultatieaanvraag ontvangen';
+
+  @override
+  String get sentBody =>
+      'Iemand van ons coachingsteam neemt contact op om je doelen en de beschikbare coachingsopties te bespreken.';
+
+  @override
+  String get sentSummaryKicker => 'STATUS AANVRAAG';
+
+  @override
+  String get sentContinue => 'Terug naar oefeningen';
+
+  @override
+  String get welcomeTitle => 'Welkom bij persoonlijke coaching';
+
+  @override
+  String get welcomeFlag => 'Je trainer reageert binnen 24–48 uur';
+
+  @override
+  String get welcomeStep1 => 'Je trainer bekijkt je aanvraag en reageert in de chat';
+
+  @override
+  String get welcomeStep2 => 'Jullie plannen een moment voor het 1:1';
+
+  @override
+  String get welcomeStep3 => 'Na het gesprek volgt je eerste eigen plan';
+
+  @override
+  String get welcomeDone => 'Terug naar Mijn trainer';
+
+  @override
+  String get consultPrimary => 'Consultatie aanvragen';
+
+  @override
+  String get exploreCoachingPlans => 'Coachingplannen bekijken';
+
+  @override
+  String get consultBenefit1 => 'Workouts op maat op basis van jouw historie';
+
+  @override
+  String get consultBenefit2 => 'App je trainer tussen de sessies door';
+
+  @override
+  String get consultBenefit3 => 'Video en uitvoeringstips bij elke oefening';
+
+  @override
+  String get consultFootnote =>
+      'Een coach neemt contact op om je doelen te bespreken — er wordt niets geboekt of gefactureerd totdat je een plan kiest.';
+
+  @override
+  String get goalRecover => 'Herstellen van een blessure';
+
+  @override
+  String get goalUnsure => 'Weet ik nog niet';
+
+  @override
+  String get timeWeekdayMornings => 'Doordeweekse ochtenden';
+
+  @override
+  String get timeWeekdayEvenings => 'Doordeweekse avonden';
+
+  @override
+  String get timeWeekends => 'In het weekend';
+
+  @override
+  String get requestNameKicker => 'NAAM · UIT JE ACCOUNT';
+
+  @override
+  String get requestEmailKicker => 'E-MAIL · UIT JE ACCOUNT';
+
+  @override
+  String get requestVerified => 'Geverifieerd op je account';
+
+  @override
+  String get srcLocked => 'VERGRENDELD';
+
+  @override
+  String get sentRequestedLabel => 'Aangevraagd';
+
+  @override
+  String get sentContactLabel => 'Contact';
+
+  @override
+  String get sentGoalLabel => 'Doel';
+
+  @override
+  String get sentNote =>
+      'Je kunt gewoon blijven trainen — er verandert niets in de app totdat je kiest voor een abonnement.';
+
+  @override
+  String get welcomeBody =>
+      'Je abonnement is actief. Je persoonlijke trainer neemt binnen 24–48 uur contact op.';
+
+  @override
+  String get welcomeStepsLabel => 'WAT NU GEBEURT';
+
+  @override
+  String get welcomeStep1T => 'Abonnement actief';
+
+  @override
+  String get welcomeStep1S => 'Advanced is actief op dit account';
+
+  @override
+  String get welcomeStep2T => 'Trainer wordt toegewezen';
+
+  @override
+  String get welcomeStep2S => 'We zoeken de juiste coach voor je';
+
+  @override
+  String get welcomeStep3T => 'Eerste bericht binnen 24–48 uur';
+
+  @override
+  String get welcomeStep3S => 'Je trainer zegt hallo in de chat';
+
+  @override
+  String get welcomePendingT => 'Je trainer verschijnt hier';
+
+  @override
+  String get welcomePendingS => 'Zodra de toewijzing er is, open je profiel en chat vanaf dit scherm.';
+
+  @override
+  String get welcomeFootnote => 'Ondertussen staat de trainerbibliotheek open — kijk gerust rond.';
+
+  @override
+  String get trainerGateTitle => '1:1 trainerbegeleiding';
+
+  @override
+  String get trainerGateBody => 'Persoonlijke workouts en directe trainerchat horen bij Advanced.';
+
+  @override
+  String get trainerGateCta => 'Bekijk Advanced';
+
+  @override
+  String get sourceFree => 'Gratis';
+
+  @override
+  String get sourceTrainer => 'Trainer';
+
+  @override
+  String get sourceCustom => 'Eigen';
+
+  @override
+  String get sourceAll => 'Alles';
+
+  @override
+  String get sectionTrainerLibrary => 'Trainerbibliotheek';
+
+  @override
+  String get sectionFreeLibrary => 'Gratis bibliotheek';
+
+  @override
+  String get advancedBadge => 'ADVANCED';
+
+  @override
+  String get unlockAdvancedTitle => 'ADVANCED ontgrendelen';
+
+  @override
+  String get benefitTrainerLibrary => 'Complete trainervideobibliotheek';
+
+  @override
+  String get benefitCoachAssignments => 'Oefeningen persoonlijk toegewezen door je coach';
+
+  @override
+  String get benefitMonthlySessions => 'Elke maand nieuwe trainersessies';
+
+  @override
+  String get continueOnSite => 'Ga verder op bodybridge.net';
+
+  @override
+  String get notNow => 'Niet nu';
+
+  @override
+  String get lockAdvancedMessage => 'Door trainers opgenomen oefeningen maken deel uit van ADVANCED';
+
+  @override
+  String get setsLabel => 'Sets';
+
+  @override
+  String get repsLabel => 'Reps';
+
+  @override
+  String get trainerCatStrength => 'Kracht';
+
+  @override
+  String get trainerCatMobility => 'Mobiliteit';
+
+  @override
+  String get trainerCatCore => 'Core';
+
+  @override
+  String get trainerCatCorrective => 'Corrigerend';
+
+  @override
+  String get trainerCatWarmup => 'Opwarmen';
 }

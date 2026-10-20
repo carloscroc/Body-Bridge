@@ -59,10 +59,10 @@ class _FakeGate extends AccountGate {
   bool canAccess(String feature) => tierCan(tier, feature);
 
   @override
-  Future<void> signIn(String email, String password) async {}
+  Future<void> requestEmailCode(String email) async {}
 
   @override
-  Future<void> signUp(String email, String password) async {}
+  Future<bool> verifyEmailCode(String email, String code) async => false;
 
   @override
   Future<void> signOut() async {}
@@ -70,8 +70,6 @@ class _FakeGate extends AccountGate {
   @override
   Future<void> deleteAccount() async {}
 
-  @override
-  Future<void> sendPasswordReset(String email) async {}
 }
 
 Future<void>? _fontsFuture;
