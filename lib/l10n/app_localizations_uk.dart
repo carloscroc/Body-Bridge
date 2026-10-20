@@ -3014,18 +3014,6 @@ class AppLocalizationsUk extends AppLocalizations {
   String get authErrorInvalidEmail => 'Адреса електронної пошти виглядає неправильною.';
 
   @override
-  String get authErrorWrongPassword => 'Неправильна пошта або пароль.';
-
-  @override
-  String get authErrorUserNotFound => 'Акаунт з такою поштою не знайдено.';
-
-  @override
-  String get authErrorEmailAlreadyInUse => 'Для цієї пошти вже є акаунт.';
-
-  @override
-  String get authErrorWeakPassword => 'Пароль занадто слабкий.';
-
-  @override
   String get authErrorTooManyRequests => 'Забагато спроб. Спробуйте пізніше.';
 
   @override
@@ -3039,26 +3027,6 @@ class AppLocalizationsUk extends AppLocalizations {
 
   @override
   String get emailHint => 'you@example.com';
-
-  @override
-  String get passwordHint => 'Щонайменше 6 символів';
-
-  @override
-  String get forgotPassword => 'Забули пароль?';
-
-  @override
-  String get resetSend => 'Надіслати посилання для скидання';
-
-  @override
-  String get resetSentTitle => 'Перевірте пошту';
-
-  @override
-  String resetSentBody(String email) {
-    return 'Ми надіслали посилання для скидання на $email.';
-  }
-
-  @override
-  String get backToSignIn => 'Повернутися до входу';
 
   @override
   String get accountTitle => 'Акаунт';
@@ -3084,22 +3052,10 @@ class AppLocalizationsUk extends AppLocalizations {
   String get signIn => 'Увійти';
 
   @override
-  String get createAccount => 'Створити акаунт';
-
-  @override
-  String get startFree => 'Почати безкоштовно';
-
-  @override
   String get emailLabel => 'Ел. пошта';
 
   @override
-  String get passwordLabel => 'Пароль';
-
-  @override
   String get emailInvalid => 'Введіть коректну адресу ел. пошти';
-
-  @override
-  String get passwordTooShort => 'Пароль має містити щонайменше 6 символів';
 
   @override
   String get authFailedGeneric => 'Не вдалося виконати запит.';
@@ -3140,9 +3096,6 @@ class AppLocalizationsUk extends AppLocalizations {
 
   @override
   String get deleteAccountDone => 'Акаунт видалено.';
-
-  @override
-  String get deleteAccountReauth => 'Увійдіть знову, щоб видалити акаунт.';
 
   @override
   String get deleteAccountFailed => 'Не вдалося видалити акаунт. Спробуйте ще раз.';
@@ -3198,689 +3151,204 @@ class AppLocalizationsUk extends AppLocalizations {
   String get billingComingSoon => 'Оплата скоро з\'явиться.';
 
   @override
-  String get communityTab => 'Спільнота';
+  String get authWelcomeTitle => 'Ласкаво просимо до Body Bridge';
 
   @override
-  String get feedTab => 'Стрічка';
+  String get authWelcomeSubline => 'Один лист. Без пароля. Ви вже всередині.';
 
   @override
-  String get membersTab => 'Учасники';
+  String get authCtaContinueEmail => 'Продовжити електронною поштою';
 
   @override
-  String get gateTitle => 'Спільнота входить до тарифу Basic';
+  String get authTrustMicrocopy => 'Ми надішлемо 6-значний код. Пароль не потрібен.';
 
   @override
-  String get gateBody => 'Фото прогресу, щоденники тренувань і люди, які розуміють.';
+  String get authPrivacyLine1 => 'Ваші дані залишаються на пристрої.';
 
   @override
-  String get gateCta => 'Відкрити спільноту';
+  String get authPrivacyLine2 => 'Завжди спершу офлайн.';
 
   @override
-  String get gateLinkOut => 'Продовжити на bodybridge.net';
+  String get authCodeKicker => 'Перевірте пошту';
 
   @override
-  String get gateNotNow => 'Не зараз';
+  String get authCodeTitle => 'Введіть код';
 
   @override
-  String get optionsTitle => 'Дії з публікацією';
-
-  @override
-  String get sharePost => 'Поділитися публікацією';
-
-  @override
-  String get savePost => 'Зберегти публікацію';
-
-  @override
-  String get savedPost => 'Збережено';
-
-  @override
-  String get copyPostLink => 'Копіювати посилання на публікацію';
-
-  @override
-  String get hidePost => 'Приховати публікацію';
-
-  @override
-  String get reportPost => 'Поскаржитися на публікацію';
-
-  @override
-  String get editPost => 'Змінити публікацію';
-
-  @override
-  String get deletePost => 'Видалити публікацію…';
-
-  @override
-  String get deleteConfirmTitle => 'Видалити цю публікацію?';
-
-  @override
-  String get deleteConfirmBody =>
-      'Публікацію, її фото та коментарі буде видалено зі Спільноти. Цю дію не можна скасувати.';
-
-  @override
-  String get keepPost => 'Залишити публікацію';
-
-  @override
-  String get deleteAction => 'Видалити';
-
-  @override
-  String get postHiddenSnackbar => 'Публікацію приховано · Скасувати';
-
-  @override
-  String get reportSheetTitle => 'Скарга на публікацію';
-
-  @override
-  String get reportAnonymous => 'Ваша скарга анонімна.';
-
-  @override
-  String get reportSpam => 'Спам або шахрайство';
-
-  @override
-  String get reportHarassment => 'Цькування або ненависть';
-
-  @override
-  String get reportInappropriate => 'Неприпустимі фото';
-
-  @override
-  String get reportSubmit => 'Поскаржитися';
-
-  @override
-  String get reportSent => 'Скаргу надіслано';
-
-  @override
-  String get shareSheetTitle => 'Поділитися публікацією';
-
-  @override
-  String get copyLink => 'Копіювати посилання';
-
-  @override
-  String get linkCopied => 'Посилання скопійовано';
-
-  @override
-  String get shareMessages => 'Повідомлення';
-
-  @override
-  String get shareMail => 'Пошта';
-
-  @override
-  String get shareInstagram => 'Instagram';
-
-  @override
-  String get shareMore => 'Більше';
-
-  @override
-  String get newPostTitle => 'Нова публікація';
-
-  @override
-  String get modeProgress => 'Прогрес';
-
-  @override
-  String get modeWorkout => 'Тренування';
-
-  @override
-  String progressPhotosCount(int n) {
-    return 'ФОТО ПРОГРЕСУ · $n З 4';
+  String otpSentTo(String email) {
+    return 'Ми надіслали 6-значний код на $email';
   }
 
   @override
-  String get addPhotoTile => 'Додати';
-
-  @override
-  String get photoPickerPending => 'Додавання фото потребує вибору зображень — незабаром';
-
-  @override
-  String get captionHint => 'Розкажіть про свій тиждень: що змінилося, чому ви навчилися...';
-
-  @override
-  String get photosPrivate => 'Фото залишаються приватними, доки ви їх не опублікуєте.';
-
-  @override
-  String get sessionPreview => 'ОГЛЯД ТРЕНУВАННЯ';
-
-  @override
-  String get autoFilled => 'Заповнено автоматично з сьогоднішнього тренування';
-
-  @override
-  String get contextHint => 'Додайте контекст — які відчуття?';
-
-  @override
-  String get postToCommunity => 'Опублікувати у спільноті';
-
-  @override
-  String get commentsTitle => 'Коментарі';
-
-  @override
-  String commentCount(int n) {
-    String _temp0 = intl.Intl.pluralLogic(
-      n,
-      locale: localeName,
-      other: '$n коментаря',
-      many: '$n коментарів',
-      few: '$n коментарі',
-      one: '$n коментар',
-    );
-    return '$_temp0';
+  String authCodeExpires(String time) {
+    return 'Код діє ще $time';
   }
 
   @override
-  String get addCommentHint => 'Додайте коментар...';
+  String get authCodeExpiredVerdict => 'Термін дії коду минув';
 
   @override
-  String replyingTo(String name) {
-    return 'У відповідь $name';
+  String get authCodeExpired => 'Цей код прострочений. Надішліть собі новий.';
+
+  @override
+  String get authResendPrompt => 'Не отримали код? ';
+
+  @override
+  String get authResendAction => 'Надіслати ще раз';
+
+  @override
+  String authResendIn(String time) {
+    return 'Надіслати ще раз за $time';
   }
 
   @override
-  String get opChip => 'АВТОР';
+  String get authVerifying => 'Перевіряємо код…';
 
   @override
-  String get noPostsTitle => 'Публікацій ще немає';
-
-  @override
-  String get noPostsBody => 'Будьте першим, хто розповість про свій тиждень.';
-
-  @override
-  String get createFirstPost => 'Створити першу публікацію';
-
-  @override
-  String get progressPhotoLabel => 'ФОТО ПРОГРЕСУ';
-
-  @override
-  String get progressChip => 'ПРОГРЕС';
-
-  @override
-  String get workoutChip => 'ТРЕНУВАННЯ';
-
-  @override
-  String get prChip => 'РЕКОРД';
-
-  @override
-  String workoutStats(int min, int sets, String volume) {
-    return '$min хв · $sets підходів · $volume кг об’єму';
+  String authCodeInvalid(int n) {
+    return 'Цей код не збігся. Залишилося спроб: $n.';
   }
 
   @override
-  String get composeDisabledHint => 'Відкрийте спільноту, щоб публікувати';
+  String get otpChangeEmail => 'Використати іншу пошту';
 
   @override
-  String get inboxComingSoon => 'Вхідні з’являться незабаром';
+  String get authRateLimitTitle => 'Забагато спроб';
 
   @override
-  String get timeAgoNow => 'зараз';
+  String get authRateLimitBody => 'Видихніть — спробуйте ще раз за кілька хвилин. Ваш акаунт у безпеці.';
 
   @override
-  String timeAgoMinutes(int n) {
-    return '$n хв';
+  String authRateLimitCta(String time) {
+    return 'Спробувати ще раз за $time';
   }
 
   @override
-  String timeAgoHours(int n) {
-    return '$n год';
+  String get authRateLimitRule => '10 невірних кодів блокують запити на годину.';
+
+  @override
+  String authRateLimitBanner(String time) {
+    return 'Забагато спроб. Спробуйте ще раз за $time.';
   }
 
   @override
-  String timeAgoDays(int n) {
-    return '$n д';
+  String get authWelcomeBackKicker => 'З поверненням';
+
+  @override
+  String authWelcomeBackTitle(String name) {
+    return 'З поверненням, $name';
   }
 
   @override
-  String get trainerChip => 'ТРЕНЕР';
+  String get authWelcomeBackBody => 'Продовжуємо з того місця, де ви зупинилися.';
 
   @override
-  String get myTrainer => 'МІЙ ТРЕНЕР';
+  String get authSetupKicker => 'Налаштуємо все';
 
   @override
-  String get assignedWorkouts => 'ПРИЗНАЧЕНІ ТРЕНУВАННЯ';
-
-  @override
-  String get messageTrainer => 'Повідомлення';
-
-  @override
-  String trainerSince(String date) {
-    return 'Ваш тренер з $date';
+  String authSetupTitle(String name) {
+    return 'Налаштуємо все, $name';
   }
 
   @override
-  String replyWindow(int hours) {
-    return 'Зазвичай відповідає протягом $hours год';
-  }
+  String get authSetupBody => 'П\'ять швидких кроків — і застосунок ваш.';
 
   @override
-  String get chipNew => 'НОВЕ';
+  String get authChipName => 'Ім\'я';
 
   @override
-  String get chipInProgress => 'У ПРОЦЕСІ';
+  String get authChipUnits => 'Одиниці';
 
   @override
-  String get chipCompleted => 'ЗАВЕРШЕНО';
+  String get authChipBody => 'Тіло';
 
   @override
-  String sentCardMeta(String date, int count, int minutes) {
-    return 'Надіслано $date · $count вправ · ~$minutes хв';
-  }
+  String get authChipGoal => 'Мета';
 
   @override
-  String sentByTrainerOn(String date) {
-    return 'Надіслав тренер $date';
-  }
+  String get authChipPlaces => 'Місця';
 
   @override
-  String progressPct(int pct) {
-    return '$pct%';
-  }
+  String get proBadgeLabel => 'PRO';
 
   @override
-  String get coachNote => 'ПРИМІТКА ТРЕНЕРА';
+  String get upgradeSheetTitle => 'Body Bridge Преміум';
 
   @override
-  String restLabel(String duration) {
-    return 'Відпочинок $duration';
-  }
+  String get upgradeSheetSubtitle => 'Відкрийте всі можливості Body Bridge';
 
   @override
-  String askAboutThis(String name) {
-    return 'Запитайте $name про це';
-  }
+  String get upgradeClose => 'Закрити';
 
   @override
-  String messageHint(String name) {
-    return 'Повідомлення для $name...';
-  }
+  String get billingMonthly => 'ЩОМІСЯЧНО';
 
   @override
-  String get tapToOpen => 'Торкніться, щоб відкрити';
+  String get billingAnnual => 'ЩОРОЧНО';
 
   @override
-  String get todayDivider => 'СЬОГОДНІ';
+  String get planMostPopular => 'Найпопулярніший';
 
   @override
-  String trainerVideoMeta(String duration) {
-    return 'Відео тренера · $duration';
-  }
+  String get planFactFullHistory => 'Повна історія';
 
   @override
-  String get gateBenefitWorkouts => 'Тренування під ваше тіло та травми';
+  String get planFactCloudSync => 'Хмарна резервна копія та синхронізація';
 
   @override
-  String get gateBenefitChat => 'Прямі повідомлення тренеру';
+  String get planFactUnlimitedRoutines => 'Необмежені комплекси';
 
   @override
-  String get gateBenefitVideo => 'Відео-розбір вашої техніки';
+  String get planFactChartsCommunity => 'Графіки та спільнота';
 
   @override
-  String get gateDismiss => 'Не зараз';
+  String get planFactEverythingInBasic => 'Усе з Basic';
 
   @override
-  String get gateFootnote => 'Оновлення відбувається на bodybridge.net — ваш тариф залишається в додатку.';
+  String get planFactAdvancedAnalytics => 'Розширена аналітика';
 
   @override
-  String bannerNewWorkout(String name) {
-    return 'Нове тренування від $name';
-  }
+  String get planFactPremiumPrograms => 'Преміум-програми та відео';
 
   @override
-  String get bannerTapToView => 'Торкніться, щоб переглянути';
+  String get planFactTrainerContent => 'Контент тренерів';
 
   @override
-  String get callKicker => 'ПЕРСОНАЛЬНИЙ ТРЕНІНГ';
+  String get upgradeCtaContinueOnWeb => 'Продовжити на bodybridge.net';
 
   @override
-  String get callSheetTitle => 'Записатися на дзвінок 1 на 1';
+  String get checkoutComingSoon => 'Онлайн-оплата незабаром';
 
   @override
-  String get callNotesHint => 'Щось конкретне обговорити? (необов\'язково)';
+  String get enterpriseContactSales => 'Enterprise — зв\'язатися з відділом продажів';
 
   @override
-  String get callPickDayTime => 'Виберіть день і проміжок часу';
+  String get finePrintBilling => 'Оплата безпечно проходить на bodybridge.net — не через Play Маркет.';
 
   @override
-  String get callSubmit => 'Надіслати запит';
+  String get lockAnalyticsTitle => 'Розширена аналітика';
 
   @override
-  String get callSentTitle => 'Запит надіслано';
+  String get lockAnalyticsMeta => 'Тренди обсягу · оцінка 1ПМ · розподіл м’язів';
 
   @override
-  String callSentBody(String name) {
-    return '$name підтвердить час';
-  }
+  String get lockAnalyticsUpsell => 'Відкрийте розширену аналітику з Body Bridge Pro.';
 
   @override
-  String get callDone => 'Готово';
+  String get premiumProgramLabel => 'Преміум-програма';
 
   @override
-  String get bookCallA11y => 'Записатися на дзвінок 1 на 1';
+  String get premiumProgramTitle => 'Блоки гіпертрофії';
 
   @override
-  String get startSoonTitle => 'Індивідуальні сесії скоро з\'являться';
+  String get premiumProgramMeta => '8 тижнів · 4 тренування / тиждень · з тренером';
 
   @override
-  String get startSoonBody =>
-      'Керовані сесії з\'являться разом із відео тренера. А тим часом запитайте тренера про цю програму.';
+  String get premiumProgramUpsell => 'Преміум-програми та відео тренерів входять до Pro.';
 
   @override
-  String exercisesMeta(int count, int minutes) {
-    return '$count вправ · ~$minutes хв';
-  }
+  String get unlockWithPro => 'Відкрити з Pro';
 
   @override
-  String get talkToTrainer => 'Зверніться до тренера';
-
-  @override
-  String get talkToTrainerSub => 'Індивідуальні тренування та особистий чат';
-
-  @override
-  String get notifications => 'Сповіщення';
-
-  @override
-  String get consultCardKicker => 'ПЕРСОНАЛЬНИЙ КОУЧИНГ';
-
-  @override
-  String get consultCardTitle => 'Запросити консультацію';
-
-  @override
-  String get consultCardSub => 'Коротке 1:1, щоб окреслити напрямок';
-
-  @override
-  String get consultCardSubDone => 'Запит надіслано — переглянути';
-
-  @override
-  String get consultSheetTitle => 'Займайтеся один на один із коучем';
-
-  @override
-  String get consultSheetBody => 'Сертифікований тренер складе вашу програму та буде поруч.';
-
-  @override
-  String get consultDoorHow => 'Як це працює';
-
-  @override
-  String get consultDoorHowSub => 'Що охоплює 1:1';
-
-  @override
-  String get consultDoorRequest => 'Запросити консультацію';
-
-  @override
-  String get consultDoorRequestSub => 'Дві хвилини, без зобов\'язань';
-
-  @override
-  String get consultDoorView => 'Переглянути запит';
-
-  @override
-  String get consultDoorViewSub => 'Вже надіслано — без дублікатів';
-
-  @override
-  String get introTitle => 'Тренінг, зібраний під тебе';
-
-  @override
-  String get introP1 =>
-      'Консультація — коротке 1:1 з тренером. Ти розповідаєш про цілі, минуле та травми — тренер перетворює це на план, який пасує твоєму тілу.';
-
-  @override
-  String get introP2 => 'Жодних шаблонів. Твій план написаний для тебе і змінюється разом із тобою.';
-
-  @override
-  String get introPoint1 => 'Спочатку слухаємо: цілі, історія, травми';
-
-  @override
-  String get introPoint2 => 'Власні тренування просто в застосунку';
-
-  @override
-  String get introPoint3 => 'Зворотний зв\'язок, що змінює план';
-
-  @override
-  String get introCta => 'Запросити консультацію';
-
-  @override
-  String get requestTitle => 'Запросити консультацію';
-
-  @override
-  String get requestSub => 'Коуч прочитає це, перш ніж зв\'язатися — нічого не підписує.';
-
-  @override
-  String get requestGoalKicker => 'ОСНОВНА МЕТА';
-
-  @override
-  String get goalStrength => 'Набрати силу';
-
-  @override
-  String get goalFatLoss => 'Прибрати жир';
-
-  @override
-  String get goalMobility => 'Покращити рухливість';
-
-  @override
-  String get goalConsistency => 'Тримати ритм';
-
-  @override
-  String get requestExpKicker => 'ДОСВІД';
-
-  @override
-  String get expNew => 'Тільки починаю';
-
-  @override
-  String get expReturning => 'Повертаюся після перерви';
-
-  @override
-  String get expSeasoned => 'Роки тренувань';
-
-  @override
-  String get requestTimeKicker => 'ЗРУЧНИЙ ЧАС ДЛЯ ЗВ\'ЯЗКУ · ЗА БАЖАННЯМ';
-
-  @override
-  String get timeMorning => 'Ранок';
-
-  @override
-  String get timeAfternoon => 'День';
-
-  @override
-  String get timeEvening => 'Вечір';
-
-  @override
-  String get requestNotesKicker => 'ПОВІДОМЛЕННЯ · ЗА БАЖАННЯМ';
-
-  @override
-  String get requestNotesHint => 'Травми, розклад, інвентар…';
-
-  @override
-  String get requestSubmit => 'Надіслати запит';
-
-  @override
-  String get requestPickBoth => 'Спочатку виберіть мету';
-
-  @override
-  String get sentChip => 'НАДІСЛАНО';
-
-  @override
-  String get sentTitle => 'Запит на консультацію отримано';
-
-  @override
-  String get sentBody =>
-      'Учасник нашої коучингової команди зв\'яжеться з вами, щоб обговорити ваші цілі та доступні варіанти коучингу.';
-
-  @override
-  String get sentSummaryKicker => 'СТАТУС ЗАПИТУ';
-
-  @override
-  String get sentContinue => 'Повернутися до вправ';
-
-  @override
-  String get welcomeTitle => 'Ласкаво просимо до персонального коучингу';
-
-  @override
-  String get welcomeFlag => 'Тренер відповість протягом 24–48 годин';
-
-  @override
-  String get welcomeStep1 => 'Тренер перегляне запит і відповість у чаті';
-
-  @override
-  String get welcomeStep2 => 'Ви домовитеся про час 1:1';
-
-  @override
-  String get welcomeStep3 => 'Після дзвінка прийде перша особиста програма';
-
-  @override
-  String get welcomeDone => 'Повернутися до Мого тренера';
-
-  @override
-  String get consultPrimary => 'Запросити консультацію';
-
-  @override
-  String get exploreCoachingPlans => 'Переглянути плани коучингу';
-
-  @override
-  String get consultBenefit1 => 'Індивідуальні тренування з урахуванням вашої історії';
-
-  @override
-  String get consultBenefit2 => 'Пишіть тренеру між заняттями';
-
-  @override
-  String get consultBenefit3 => 'Відео та підказки щодо техніки до кожної вправи';
-
-  @override
-  String get consultFootnote =>
-      'Коуч зв\'яжеться з вами, щоб обговорити ваші цілі — нічого не бронюється і не списується, доки ви не оберете план.';
-
-  @override
-  String get goalRecover => 'Відновитися після травми';
-
-  @override
-  String get goalUnsure => 'Ще не знаю';
-
-  @override
-  String get timeWeekdayMornings => 'У будні вранці';
-
-  @override
-  String get timeWeekdayEvenings => 'У будні ввечері';
-
-  @override
-  String get timeWeekends => 'У вихідні';
-
-  @override
-  String get requestNameKicker => 'ІМ\'Я · З ВАШОГО АККАУНТА';
-
-  @override
-  String get requestEmailKicker => 'EMAIL · З ВАШОГО АККАУНТА';
-
-  @override
-  String get requestVerified => 'Підтверджено у вашому акаунті';
-
-  @override
-  String get srcLocked => 'ЗАКРИТО';
-
-  @override
-  String get sentRequestedLabel => 'Надіслано';
-
-  @override
-  String get sentContactLabel => 'Контакт';
-
-  @override
-  String get sentGoalLabel => 'Мета';
-
-  @override
-  String get sentNote =>
-      'Ви можете тренуватися як зазвичай — у застосунку нічого не зміниться, доки ви не вирішите оформити підписку.';
-
-  @override
-  String get welcomeBody =>
-      'Ваша підписка активна. Ваш персональний тренер зв\'яжеться протягом 24–48 годин.';
-
-  @override
-  String get welcomeStepsLabel => 'ЩО ДАЛІ';
-
-  @override
-  String get welcomeStep1T => 'Підписка активна';
-
-  @override
-  String get welcomeStep1S => 'Advanced активний на цьому акаунті';
-
-  @override
-  String get welcomeStep2T => 'Призначення тренера триває';
-
-  @override
-  String get welcomeStep2S => 'Ми підбираємо для вас відповідного коуча';
-
-  @override
-  String get welcomeStep3T => 'Перше повідомлення протягом 24–48 годин';
-
-  @override
-  String get welcomeStep3S => 'Ваш тренер привітається прямо в чаті';
-
-  @override
-  String get welcomePendingT => 'Ваш тренер з\'явиться тут';
-
-  @override
-  String get welcomePendingS => 'Після призначення профіль і чат відкриються з цього екрана.';
-
-  @override
-  String get welcomeFootnote => 'А поки бібліотека тренера відкрита — погляньте, що там є.';
-
-  @override
-  String get trainerGateTitle => 'Персональний тренер 1:1';
-
-  @override
-  String get trainerGateBody =>
-      'Індивідуальні тренування та прямий чат з тренером входять до тарифу Advanced.';
-
-  @override
-  String get trainerGateCta => 'Про Advanced';
-
-  @override
-  String get sourceFree => 'Безкоштовно';
-
-  @override
-  String get sourceTrainer => 'Тренер';
-
-  @override
-  String get sourceCustom => 'Свої';
-
-  @override
-  String get sourceAll => 'Усі';
-
-  @override
-  String get sectionTrainerLibrary => 'Бібліотека тренера';
-
-  @override
-  String get sectionFreeLibrary => 'Безкоштовна бібліотека';
-
-  @override
-  String get advancedBadge => 'ADVANCED';
-
-  @override
-  String get unlockAdvancedTitle => 'Відкрийте ADVANCED';
-
-  @override
-  String get benefitTrainerLibrary => 'Повна відеобібліотека тренера';
-
-  @override
-  String get benefitCoachAssignments => 'Вправи, підібрані особисто вашим тренером';
-
-  @override
-  String get benefitMonthlySessions => 'Нові заняття щомісяця';
-
-  @override
-  String get continueOnSite => 'Продовжити на bodybridge.net';
-
-  @override
-  String get notNow => 'Не зараз';
-
-  @override
-  String get lockAdvancedMessage => 'Вправи у записі тренера входять до ADVANCED';
-
-  @override
-  String get setsLabel => 'Підходи';
-
-  @override
-  String get repsLabel => 'Повт.';
-
-  @override
-  String get trainerCatStrength => 'Сила';
-
-  @override
-  String get trainerCatMobility => 'Мобільність';
-
-  @override
-  String get trainerCatCore => 'Кор';
-
-  @override
-  String get trainerCatCorrective => 'Корекція';
-
-  @override
-  String get trainerCatWarmup => 'Розминка';
+  String get upgradeUpsellToast => 'Покращіть тариф, щоб відкрити більше';
 }

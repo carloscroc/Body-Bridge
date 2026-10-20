@@ -2913,18 +2913,6 @@ class AppLocalizationsJa extends AppLocalizations {
   String get authErrorInvalidEmail => 'メールアドレスが正しくないようです。';
 
   @override
-  String get authErrorWrongPassword => 'メールアドレスまたはパスワードが違います。';
-
-  @override
-  String get authErrorUserNotFound => 'そのメールアドレスのアカウントが見つかりません。';
-
-  @override
-  String get authErrorEmailAlreadyInUse => 'そのメールアドレスはすでに登録済みです。';
-
-  @override
-  String get authErrorWeakPassword => 'パスワードが弱すぎます。';
-
-  @override
   String get authErrorTooManyRequests => '試行回数が多すぎます。しばらくしてからお試しください。';
 
   @override
@@ -2938,26 +2926,6 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get emailHint => 'you@example.com';
-
-  @override
-  String get passwordHint => '6文字以上';
-
-  @override
-  String get forgotPassword => 'パスワードをお忘れですか？';
-
-  @override
-  String get resetSend => '再設定リンクを送信';
-
-  @override
-  String get resetSentTitle => 'メールを確認してください';
-
-  @override
-  String resetSentBody(String email) {
-    return '$email に再設定リンクを送信しました。';
-  }
-
-  @override
-  String get backToSignIn => 'サインインに戻る';
 
   @override
   String get accountTitle => 'アカウント';
@@ -2983,22 +2951,10 @@ class AppLocalizationsJa extends AppLocalizations {
   String get signIn => 'サインイン';
 
   @override
-  String get createAccount => 'アカウントを作成';
-
-  @override
-  String get startFree => '無料で始める';
-
-  @override
   String get emailLabel => 'メールアドレス';
 
   @override
-  String get passwordLabel => 'パスワード';
-
-  @override
   String get emailInvalid => '有効なメールアドレスを入力してください';
-
-  @override
-  String get passwordTooShort => 'パスワードは6文字以上で入力してください';
 
   @override
   String get authFailedGeneric => 'リクエストを完了できませんでした。';
@@ -3038,9 +2994,6 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get deleteAccountDone => 'アカウントを削除しました。';
-
-  @override
-  String get deleteAccountReauth => 'アカウントを削除するには再度サインインしてください。';
 
   @override
   String get deleteAccountFailed => 'アカウントを削除できませんでした。もう一度お試しください。';
@@ -3096,674 +3049,204 @@ class AppLocalizationsJa extends AppLocalizations {
   String get billingComingSoon => '課金機能はまもなく提供予定です。';
 
   @override
-  String get communityTab => 'コミュニティ';
+  String get authWelcomeTitle => 'Body Bridge へようこそ';
 
   @override
-  String get feedTab => 'フィード';
+  String get authWelcomeSubline => 'メールアドレスだけ。パスワード不要。すぐに使えます。';
 
   @override
-  String get membersTab => 'メンバー';
+  String get authCtaContinueEmail => 'メールアドレスで続行';
 
   @override
-  String get gateTitle => 'コミュニティはBasicに含まれます';
+  String get authTrustMicrocopy => '6桁のコードを送信します。パスワードは不要です。';
 
   @override
-  String get gateBody => '進捗写真、トレーニング記録、そして分かり合える仲間。';
+  String get authPrivacyLine1 => 'データは端末内に保存されます。';
 
   @override
-  String get gateCta => 'コミュニティを解錠';
+  String get authPrivacyLine2 => 'オフラインファースト、いつでも。';
 
   @override
-  String get gateLinkOut => 'bodybridge.net で続ける';
+  String get authCodeKicker => 'メールを確認してください';
 
   @override
-  String get gateNotNow => '後で';
+  String get authCodeTitle => 'コードを入力';
 
   @override
-  String get optionsTitle => '投稿の操作';
-
-  @override
-  String get sharePost => '投稿をシェア';
-
-  @override
-  String get savePost => '投稿を保存';
-
-  @override
-  String get savedPost => '保存しました';
-
-  @override
-  String get copyPostLink => '投稿リンクをコピー';
-
-  @override
-  String get hidePost => '投稿を非表示';
-
-  @override
-  String get reportPost => '投稿を報告';
-
-  @override
-  String get editPost => '投稿を編集';
-
-  @override
-  String get deletePost => '投稿を削除…';
-
-  @override
-  String get deleteConfirmTitle => 'この投稿を削除しますか？';
-
-  @override
-  String get deleteConfirmBody => '投稿・写真・コメントがコミュニティから削除されます。この操作は元に戻せません。';
-
-  @override
-  String get keepPost => '保持する';
-
-  @override
-  String get deleteAction => '削除';
-
-  @override
-  String get postHiddenSnackbar => '投稿を非表示にしました · 元に戻す';
-
-  @override
-  String get reportSheetTitle => '投稿を報告';
-
-  @override
-  String get reportAnonymous => '報告は匿名で送信されます。';
-
-  @override
-  String get reportSpam => 'スパムまたは詐欺';
-
-  @override
-  String get reportHarassment => '嫌がらせまたはヘイト';
-
-  @override
-  String get reportInappropriate => '不適切な写真';
-
-  @override
-  String get reportSubmit => '報告';
-
-  @override
-  String get reportSent => '報告を送信しました';
-
-  @override
-  String get shareSheetTitle => '投稿をシェア';
-
-  @override
-  String get copyLink => 'リンクをコピー';
-
-  @override
-  String get linkCopied => 'リンクをコピーしました';
-
-  @override
-  String get shareMessages => 'メッセージ';
-
-  @override
-  String get shareMail => 'メール';
-
-  @override
-  String get shareInstagram => 'Instagram';
-
-  @override
-  String get shareMore => 'その他';
-
-  @override
-  String get newPostTitle => '新規投稿';
-
-  @override
-  String get modeProgress => '進捗';
-
-  @override
-  String get modeWorkout => 'トレーニング';
-
-  @override
-  String progressPhotosCount(int n) {
-    return '進捗写真 · $n / 4';
+  String otpSentTo(String email) {
+    return '$email に6桁のコードを送信しました';
   }
 
   @override
-  String get addPhotoTile => '追加';
-
-  @override
-  String get photoPickerPending => '写真の追加には画像ピッカーが必要です — 近日対応';
-
-  @override
-  String get captionHint => '今週の変化や学んだことをシェアしましょう...';
-
-  @override
-  String get photosPrivate => '写真は投稿するまで非公開です。';
-
-  @override
-  String get sessionPreview => 'セッションプレビュー';
-
-  @override
-  String get autoFilled => '今日のセッションから自動入力';
-
-  @override
-  String get contextHint => 'コンディションや感想を追加';
-
-  @override
-  String get postToCommunity => 'コミュニティに投稿';
-
-  @override
-  String get commentsTitle => 'コメント';
-
-  @override
-  String commentCount(int n) {
-    String _temp0 = intl.Intl.pluralLogic(n, locale: localeName, other: '$n件のコメント');
-    return '$_temp0';
+  String authCodeExpires(String time) {
+    return 'コードの有効期限は残り $time';
   }
 
   @override
-  String get addCommentHint => 'コメントを追加...';
+  String get authCodeExpiredVerdict => 'コードの期限切れ';
 
   @override
-  String replyingTo(String name) {
-    return '$name に返信中';
+  String get authCodeExpired => 'このコードは期限切れです。新しいコードを送信してください。';
+
+  @override
+  String get authResendPrompt => '届かない場合 ';
+
+  @override
+  String get authResendAction => '再送信';
+
+  @override
+  String authResendIn(String time) {
+    return '$time 後に再送信';
   }
 
   @override
-  String get opChip => '投稿者';
+  String get authVerifying => 'コードを確認中…';
 
   @override
-  String get noPostsTitle => '投稿はまだありません';
-
-  @override
-  String get noPostsBody => '最初に今週をシェアしましょう。';
-
-  @override
-  String get createFirstPost => '最初の投稿を作成';
-
-  @override
-  String get progressPhotoLabel => '進捗写真';
-
-  @override
-  String get progressChip => '進捗';
-
-  @override
-  String get workoutChip => 'トレーニング';
-
-  @override
-  String get prChip => 'PR';
-
-  @override
-  String workoutStats(int min, int sets, String volume) {
-    return '$min分 · $setsセット · ボリューム $volume kg';
+  String authCodeInvalid(int n) {
+    return 'コードが一致しません。残り $n 回です。';
   }
 
   @override
-  String get composeDisabledHint => '投稿するにはコミュニティを解錠';
+  String get otpChangeEmail => '別のメールアドレスを使う';
 
   @override
-  String get inboxComingSoon => '受信トレイは近日公開';
+  String get authRateLimitTitle => '試行回数が多すぎます';
 
   @override
-  String get timeAgoNow => 'たった今';
+  String get authRateLimitBody => '少し落ち着いて、数分後にまたお試しください。アカウントは安全です。';
 
   @override
-  String timeAgoMinutes(int n) {
-    return '$n分';
+  String authRateLimitCta(String time) {
+    return '$time 後に再試行';
   }
 
   @override
-  String timeAgoHours(int n) {
-    return '$n時間';
+  String get authRateLimitRule => '間違ったコードを10回入力すると、1時間リクエストが制限されます。';
+
+  @override
+  String authRateLimitBanner(String time) {
+    return '試行回数が多すぎます。$time 後にもう一度お試しください。';
   }
 
   @override
-  String timeAgoDays(int n) {
-    return '$n日';
+  String get authWelcomeBackKicker => 'おかえりなさい';
+
+  @override
+  String authWelcomeBackTitle(String name) {
+    return 'おかえりなさい、$nameさん';
   }
 
   @override
-  String get trainerChip => 'トレーナー';
+  String get authWelcomeBackBody => '前回の続きから始めましょう。';
 
   @override
-  String get myTrainer => 'マイトレーナー';
+  String get authSetupKicker => '初期設定をしましょう';
 
   @override
-  String get assignedWorkouts => '割り当てられたワークアウト';
-
-  @override
-  String get messageTrainer => 'メッセージ';
-
-  @override
-  String trainerSince(String date) {
-    return '$dateからあなたのトレーナー';
+  String authSetupTitle(String name) {
+    return '$nameさん、初期設定をしましょう';
   }
 
   @override
-  String replyWindow(int hours) {
-    return '通常$hours時間以内に返信';
-  }
+  String get authSetupBody => '5つのステップで準備完了です。';
 
   @override
-  String get chipNew => '新規';
+  String get authChipName => '名前';
 
   @override
-  String get chipInProgress => '進行中';
+  String get authChipUnits => '単位';
 
   @override
-  String get chipCompleted => '完了';
+  String get authChipBody => '身体';
 
   @override
-  String sentCardMeta(String date, int count, int minutes) {
-    return '$date送信 · $count種目 · 約$minutes分';
-  }
+  String get authChipGoal => '目標';
 
   @override
-  String sentByTrainerOn(String date) {
-    return 'トレーナーが$dateに送信';
-  }
+  String get authChipPlaces => '場所';
 
   @override
-  String progressPct(int pct) {
-    return '$pct%';
-  }
+  String get proBadgeLabel => 'PRO';
 
   @override
-  String get coachNote => 'コーチメモ';
+  String get upgradeSheetTitle => 'Body Bridge プレミアム';
 
   @override
-  String restLabel(String duration) {
-    return '休憩$duration';
-  }
+  String get upgradeSheetSubtitle => 'Body Bridge のすべての機能をアンロック';
 
   @override
-  String askAboutThis(String name) {
-    return '$nameにこの件を質問';
-  }
+  String get upgradeClose => '閉じる';
 
   @override
-  String messageHint(String name) {
-    return '$nameにメッセージ...';
-  }
+  String get billingMonthly => '月額';
 
   @override
-  String get tapToOpen => 'タップして開く';
+  String get billingAnnual => '年額';
 
   @override
-  String get todayDivider => '今日';
+  String get planMostPopular => '一番人気';
 
   @override
-  String trainerVideoMeta(String duration) {
-    return 'トレーナー動画 · $duration';
-  }
+  String get planFactFullHistory => '全履歴';
 
   @override
-  String get gateBenefitWorkouts => 'あなたの体とケガに合わせたワークアウト';
+  String get planFactCloudSync => 'クラウドバックアップと同期';
 
   @override
-  String get gateBenefitChat => 'トレーナーとのダイレクトメッセージ';
+  String get planFactUnlimitedRoutines => 'ルーティン無制限';
 
   @override
-  String get gateBenefitVideo => 'フォームのビデオフィードバック';
+  String get planFactChartsCommunity => 'グラフとコミュニティ';
 
   @override
-  String get gateDismiss => '後で';
+  String get planFactEverythingInBasic => 'Basic のすべて';
 
   @override
-  String get gateFootnote => 'アップグレードはbodybridge.netで行われます — プラン管理はアプリ内で継続します。';
+  String get planFactAdvancedAnalytics => '高度な分析';
 
   @override
-  String bannerNewWorkout(String name) {
-    return '$nameからの新しいワークアウト';
-  }
+  String get planFactPremiumPrograms => 'プレミアムプログラムと動画';
 
   @override
-  String get bannerTapToView => 'タップして表示';
+  String get planFactTrainerContent => 'トレーナーコンテンツ';
 
   @override
-  String get callKicker => 'パーソナルトレーニング';
+  String get upgradeCtaContinueOnWeb => 'bodybridge.net で続行';
 
   @override
-  String get callSheetTitle => '1対1の通話を予約';
+  String get checkoutComingSoon => 'オンライン決済は近日公開';
 
   @override
-  String get callNotesHint => '特に話したいことはありますか？（任意）';
+  String get enterpriseContactSales => 'Enterprise — 法人向けお問い合わせ';
 
   @override
-  String get callPickDayTime => '曜日と時間帯を選んでください';
+  String get finePrintBilling => '課金は bodybridge.net で安全に処理されます — Play ストア経由ではありません。';
 
   @override
-  String get callSubmit => 'リクエストを送信';
+  String get lockAnalyticsTitle => '高度な分析';
 
   @override
-  String get callSentTitle => 'リクエストを送信しました';
+  String get lockAnalyticsMeta => 'ボリューム推移 · 1RM 推定 · 部位別バランス';
 
   @override
-  String callSentBody(String name) {
-    return '$nameが時間を確認します';
-  }
+  String get lockAnalyticsUpsell => 'Body Bridge Pro で高度な分析をアンロック。';
 
   @override
-  String get callDone => '完了';
+  String get premiumProgramLabel => 'プレミアムプログラム';
 
   @override
-  String get bookCallA11y => '1対1の通話を予約';
+  String get premiumProgramTitle => '筋肥大ブロック';
 
   @override
-  String get startSoonTitle => 'カスタムセッションはもうすぐ登場';
+  String get premiumProgramMeta => '8 週間 · 週 4 セッション · トレーナー監修';
 
   @override
-  String get startSoonBody => 'ガイド付きセッションはトレーナー動画と共に提供されます。それまではトレーナーにこのプランについて質問してください。';
+  String get premiumProgramUpsell => 'プレミアムプログラムとトレーナー動画は Pro の特典です。';
 
   @override
-  String exercisesMeta(int count, int minutes) {
-    return '$count種目 · 約$minutes分';
-  }
+  String get unlockWithPro => 'Pro でアンロック';
 
   @override
-  String get talkToTrainer => 'トレーナーに相談する';
-
-  @override
-  String get talkToTrainerSub => 'カスタムワークアウトと1対1のチャット';
-
-  @override
-  String get notifications => '通知';
-
-  @override
-  String get consultCardKicker => 'パーソナルコーチング';
-
-  @override
-  String get consultCardTitle => '相談をリクエスト';
-
-  @override
-  String get consultCardSub => '方向性を決める短い1:1';
-
-  @override
-  String get consultCardSubDone => 'リクエスト送信済み — 見る';
-
-  @override
-  String get consultSheetTitle => 'コーチとマンツーマンで取り組む';
-
-  @override
-  String get consultSheetBody => '資格を持つトレーナーがあなたのプログラムを作り、ずっとそばで支えます。';
-
-  @override
-  String get consultDoorHow => '仕組み';
-
-  @override
-  String get consultDoorHowSub => '1:1でわかること';
-
-  @override
-  String get consultDoorRequest => '相談をリクエスト';
-
-  @override
-  String get consultDoorRequestSub => '2分、義務はなし';
-
-  @override
-  String get consultDoorView => 'リクエストを見る';
-
-  @override
-  String get consultDoorViewSub => '送信済み — 重複なし';
-
-  @override
-  String get introTitle => 'あなたのために作るコーチング';
-
-  @override
-  String get introP1 => '相談はトレーナーとの短い1:1です。目標やケガの履歴を伝えると、トレーナーがあなたの体に合うプランに変えます。';
-
-  @override
-  String get introP2 => 'テンプレートはありません。プランはあなたのために書かれ、あなたと一緒に進化します。';
-
-  @override
-  String get introPoint1 => '目標・履歴・ケガを最初にヒアリング';
-
-  @override
-  String get introPoint2 => 'アプリにカスタムメニューをお届け';
-
-  @override
-  String get introPoint3 => 'フィードバックでプランを再構築';
-
-  @override
-  String get introCta => '相談をリクエスト';
-
-  @override
-  String get requestTitle => '相談をリクエスト';
-
-  @override
-  String get requestSub => 'コーチがフォローアップの前に読みます — 何も登録されません。';
-
-  @override
-  String get requestGoalKicker => '主な目標';
-
-  @override
-  String get goalStrength => '筋力をつける';
-
-  @override
-  String get goalFatLoss => '体脂肪を落とす';
-
-  @override
-  String get goalMobility => '可動域を改善';
-
-  @override
-  String get goalConsistency => '習慣を続ける';
-
-  @override
-  String get requestExpKicker => '経験';
-
-  @override
-  String get expNew => 'はじめて';
-
-  @override
-  String get expReturning => 'ブランクあり';
-
-  @override
-  String get expSeasoned => '長年の経験あり';
-
-  @override
-  String get requestTimeKicker => '連絡のとりやすい時間帯 · 任意';
-
-  @override
-  String get timeMorning => '午前';
-
-  @override
-  String get timeAfternoon => '午後';
-
-  @override
-  String get timeEvening => '夜';
-
-  @override
-  String get requestNotesKicker => 'メッセージ · 任意';
-
-  @override
-  String get requestNotesHint => 'ケガ、スケジュール、器具など…';
-
-  @override
-  String get requestSubmit => 'リクエストを送信';
-
-  @override
-  String get requestPickBoth => 'まず目標を選んでください';
-
-  @override
-  String get sentChip => '送信済み';
-
-  @override
-  String get sentTitle => '相談リクエストを受け付けました';
-
-  @override
-  String get sentBody => 'コーチングチームのメンバーが、目標やご利用できるコーチング選択肢についてご連絡します。';
-
-  @override
-  String get sentSummaryKicker => 'リクエスト状況';
-
-  @override
-  String get sentContinue => 'エクササイズに戻る';
-
-  @override
-  String get welcomeTitle => 'パーソナルコーチングへようこそ';
-
-  @override
-  String get welcomeFlag => 'トレーナーは24〜48時間以内に返信します';
-
-  @override
-  String get welcomeStep1 => 'トレーナーがリクエストを確認し、チャットで返信します';
-
-  @override
-  String get welcomeStep2 => '1:1の日時を決めます';
-
-  @override
-  String get welcomeStep3 => '通話後に最初のカスタムプランをお届けします';
-
-  @override
-  String get welcomeDone => 'マイトレーナーへ戻る';
-
-  @override
-  String get consultPrimary => '相談をリクエスト';
-
-  @override
-  String get exploreCoachingPlans => 'コーチングプランを見る';
-
-  @override
-  String get consultBenefit1 => 'あなたの履歴に合わせたカスタムワークアウト';
-
-  @override
-  String get consultBenefit2 => 'セッションの合間にトレーナーとメッセージ';
-
-  @override
-  String get consultBenefit3 => 'すべてのエクササイズに動画とフォームのヒント';
-
-  @override
-  String get consultFootnote => 'コーチが目標について相談のためにフォローアップします。プランを選ぶまで、予約も請求も一切ありません。';
-
-  @override
-  String get goalRecover => 'ケガからの回復';
-
-  @override
-  String get goalUnsure => 'まだわからない';
-
-  @override
-  String get timeWeekdayMornings => '平日の午前';
-
-  @override
-  String get timeWeekdayEvenings => '平日の夜';
-
-  @override
-  String get timeWeekends => '週末';
-
-  @override
-  String get requestNameKicker => '名前 · アカウントから';
-
-  @override
-  String get requestEmailKicker => 'メールアドレス · アカウントから';
-
-  @override
-  String get requestVerified => 'アカウントで確認済み';
-
-  @override
-  String get srcLocked => 'ロック';
-
-  @override
-  String get sentRequestedLabel => 'リクエスト日時';
-
-  @override
-  String get sentContactLabel => '連絡先';
-
-  @override
-  String get sentGoalLabel => '目標';
-
-  @override
-  String get sentNote => 'これまでどおりトレーニングを続けられます。登録を選択するまで、アプリ内では何も変わりません。';
-
-  @override
-  String get welcomeBody => 'サブスクリプションが有効です。担当トレーナーが24〜48時間以内にご連絡します。';
-
-  @override
-  String get welcomeStepsLabel => 'このあとの流れ';
-
-  @override
-  String get welcomeStep1T => 'サブスクリプション有効';
-
-  @override
-  String get welcomeStep1S => 'このアカウントでAdvancedが利用可能です';
-
-  @override
-  String get welcomeStep2T => 'トレーナーの割り当てを進行中';
-
-  @override
-  String get welcomeStep2S => 'あなたに合ったコーチを選定しています';
-
-  @override
-  String get welcomeStep3T => '24〜48時間以内に最初の連絡';
-
-  @override
-  String get welcomeStep3S => 'トレーナーがこのチャットでご挨拶します';
-
-  @override
-  String get welcomePendingT => '担当トレーナーはここに表示されます';
-
-  @override
-  String get welcomePendingS => '割り当てが完了すると、この画面からプロフィールとチャットを開けます。';
-
-  @override
-  String get welcomeFootnote => 'その間もトレーナーライブラリは開放されています。ぜひご覧ください。';
-
-  @override
-  String get trainerGateTitle => 'トレーナーの1対1サポート';
-
-  @override
-  String get trainerGateBody => 'カスタムワークアウトとトレーナーとの直接チャットはAdvancedの機能です。';
-
-  @override
-  String get trainerGateCta => 'Advancedを見る';
-
-  @override
-  String get sourceFree => '無料';
-
-  @override
-  String get sourceTrainer => 'トレーナー';
-
-  @override
-  String get sourceCustom => 'カスタム';
-
-  @override
-  String get sourceAll => 'すべて';
-
-  @override
-  String get sectionTrainerLibrary => 'トレーナーライブラリ';
-
-  @override
-  String get sectionFreeLibrary => '無料ライブラリ';
-
-  @override
-  String get advancedBadge => 'ADVANCED';
-
-  @override
-  String get unlockAdvancedTitle => 'ADVANCEDをアンロック';
-
-  @override
-  String get benefitTrainerLibrary => 'トレーナー動画のフルライブラリ';
-
-  @override
-  String get benefitCoachAssignments => 'コーチが直接割り当てた種目';
-
-  @override
-  String get benefitMonthlySessions => '毎月新しいトレーナーセッション';
-
-  @override
-  String get continueOnSite => 'bodybridge.netで続ける';
-
-  @override
-  String get notNow => '後で';
-
-  @override
-  String get lockAdvancedMessage => 'トレーナー収録の種目はADVANCEDの一部です';
-
-  @override
-  String get setsLabel => 'セット';
-
-  @override
-  String get repsLabel => 'レップ';
-
-  @override
-  String get trainerCatStrength => 'ストレングス';
-
-  @override
-  String get trainerCatMobility => 'モビリティ';
-
-  @override
-  String get trainerCatCore => 'コア';
-
-  @override
-  String get trainerCatCorrective => '矯正';
-
-  @override
-  String get trainerCatWarmup => 'ウォームアップ';
+  String get upgradeUpsellToast => 'アップグレードでさらにアンロック';
 }

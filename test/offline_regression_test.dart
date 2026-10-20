@@ -32,7 +32,9 @@ void main() {
 
       expect(find.byType(AuthWallScreen), findsOneWidget,
           reason: 'signed-out cold start must hit the blocking auth wall');
-      expect(find.text('Body Bridge'), findsOneWidget,
+      // D-E1: the approved mockups render the wordmark uppercase
+      // (BODY BRIDGE, w900, tracked) — see card t_29a599a5.
+      expect(find.text('BODY BRIDGE'), findsOneWidget,
           reason: 'the wall carries the Body Bridge wordmark');
     });
 

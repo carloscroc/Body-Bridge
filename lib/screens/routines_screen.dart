@@ -16,6 +16,7 @@ import '../widgets/premium_gate.dart';
 import '../widgets/routine_folder.dart';
 import '../widgets/svg_icon.dart';
 import '../widgets/ui_kit.dart';
+import '../widgets/upgrade_sheet.dart';
 import 'plan_import_sheet.dart';
 
 class RoutinesScreen extends StatelessWidget {
@@ -286,9 +287,92 @@ class RoutinesScreen extends StatelessWidget {
               SheetTitle(t.templates, subtitle: t.templatesHint),
               const SizedBox(height: 16),
               for (final template in kProgramTemplates) _templateCard(context, gc, sheet, template),
+              _premiumProgramCard(context, gc, sheet),
             ],
           ),
         ),
+      ),
+    );
+  }
+
+  /// Premium teaser card at the bottom of the templates sheet. Hidden for
+  /// tiers that already have premium_programs; the pill pops the sheet and
+  /// opens the upgrade sheet.
+  Widget _premiumProgramCard(BuildContext context, GymColors gc, BuildContext sheet) {
+    final tier = context.accountGate.snapshot.tier;
+    if (!tier.isSignedIn || tierCan(tier, kCapPremiumPrograms)) return const SizedBox.shrink();
+    final dark = gc.bg.computeLuminance() < 0.5;
+    return Container(
+      margin: const EdgeInsets.only(top: 10),
+      padding: const EdgeInsets.all(14),
+      decoration: BoxDecoration(
+        color: gc.bgRaised,
+        borderRadius: BorderRadius.circular(20),
+        border: Border.all(color: gc.border),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Row(
+            children: [
+              Expanded(
+                child: Text(t.premiumProgramLabel.toUpperCase(),
+                    style: AppTheme.f(10.5, weight: FontWeight.w700, color: gc.textTertiary, letterSpacing: 1.4)),
+              ),
+              Icon(PhosphorIconsRegular.lockSimple, size: 14, color: gc.textSecondary),
+            ],
+          ),
+          const SizedBox(height: 6),
+          Text(t.premiumProgramTitle, style: AppTheme.f(18, weight: FontWeight.w800, color: gc.textSecondary)),
+          const SizedBox(height: 2),
+          Text(t.premiumProgramMeta, style: AppTheme.f(13, weight: FontWeight.w600, color: gc.textTertiary)),
+          const SizedBox(height: 12),
+          ClipRRect(
+            borderRadius: BorderRadius.circular(12),
+            child: Container(
+              height: 108,
+              color: gc.bgRaised2,
+              child: Stack(
+                fit: StackFit.expand,
+                children: [
+                  Center(child: Icon(PhosphorIconsRegular.playCircle, size: 34, color: gc.textTertiary)),
+                  ColoredBox(
+                    color: dark ? Colors.black.withValues(alpha: 0.55) : gc.bg.withValues(alpha: 0.6),
+                    child: Center(
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Icon(PhosphorIconsRegular.lockSimple, size: 20, color: gc.text),
+                          const SizedBox(height: 10),
+                          GestureDetector(
+                            behavior: HitTestBehavior.opaque,
+                            onTap: () {
+                              Navigator.pop(sheet);
+                              showUpgradeSheet(context);
+                            },
+                            child: Container(
+                              height: 44,
+                              padding: const EdgeInsets.symmetric(horizontal: 20),
+                              alignment: Alignment.center,
+                              decoration: BoxDecoration(
+                                color: gc.accent,
+                                borderRadius: BorderRadius.circular(999),
+                              ),
+                              child: Text(t.unlockWithPro,
+                                  style: AppTheme.f(13, weight: FontWeight.w700, color: gc.onEmber)),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+          const SizedBox(height: 10),
+          Text(t.premiumProgramUpsell, style: AppTheme.f(13, weight: FontWeight.w600, color: gc.textTertiary)),
+        ],
       ),
     );
   }

@@ -3011,18 +3011,6 @@ class AppLocalizationsTr extends AppLocalizations {
   String get authErrorInvalidEmail => 'E-posta adresi yanlış görünüyor.';
 
   @override
-  String get authErrorWrongPassword => 'E-posta veya şifre hatalı.';
-
-  @override
-  String get authErrorUserNotFound => 'Bu e-posta ile hesap bulunamadı.';
-
-  @override
-  String get authErrorEmailAlreadyInUse => 'Bu e-posta zaten bir hesaba kayıtlı.';
-
-  @override
-  String get authErrorWeakPassword => 'Şifre çok zayıf.';
-
-  @override
   String get authErrorTooManyRequests => 'Çok fazla deneme. Daha sonra tekrar deneyin.';
 
   @override
@@ -3036,26 +3024,6 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get emailHint => 'you@example.com';
-
-  @override
-  String get passwordHint => 'En az 6 karakter';
-
-  @override
-  String get forgotPassword => 'Şifreni mi unuttun?';
-
-  @override
-  String get resetSend => 'Sıfırlama bağlantısı gönder';
-
-  @override
-  String get resetSentTitle => 'E-postanı kontrol et';
-
-  @override
-  String resetSentBody(String email) {
-    return '$email adresine sıfırlama bağlantısı gönderdik.';
-  }
-
-  @override
-  String get backToSignIn => 'Oturum açmaya dön';
 
   @override
   String get accountTitle => 'Hesap';
@@ -3081,22 +3049,10 @@ class AppLocalizationsTr extends AppLocalizations {
   String get signIn => 'Giriş yap';
 
   @override
-  String get createAccount => 'Hesap oluştur';
-
-  @override
-  String get startFree => 'Ücretsiz başla';
-
-  @override
   String get emailLabel => 'E-posta';
 
   @override
-  String get passwordLabel => 'Şifre';
-
-  @override
   String get emailInvalid => 'Geçerli bir e-posta adresi gir';
-
-  @override
-  String get passwordTooShort => 'Şifre en az 6 karakter olmalı';
 
   @override
   String get authFailedGeneric => 'İstek tamamlanamadı.';
@@ -3137,9 +3093,6 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get deleteAccountDone => 'Hesap silindi.';
-
-  @override
-  String get deleteAccountReauth => 'Hesabınızı silmek için tekrar giriş yapın.';
 
   @override
   String get deleteAccountFailed => 'Hesap silinemedi. Tekrar deneyin.';
@@ -3195,681 +3148,205 @@ class AppLocalizationsTr extends AppLocalizations {
   String get billingComingSoon => 'Ödeme çok yakında.';
 
   @override
-  String get communityTab => 'Topluluk';
+  String get authWelcomeTitle => 'Body Bridge\'e hoş geldin';
 
   @override
-  String get feedTab => 'Akış';
+  String get authWelcomeSubline => 'Tek e-posta. Şifre yok. İçeridesin.';
 
   @override
-  String get membersTab => 'Üyeler';
+  String get authCtaContinueEmail => 'E-postayla devam et';
 
   @override
-  String get gateTitle => 'Topluluk, Basic’in bir parçasıdır';
+  String get authTrustMicrocopy => 'Sana 6 haneli bir kod göndereceğiz. Şifre gerekmez.';
 
   @override
-  String get gateBody => 'İlerleme fotoğrafları, antrenman kayıtları ve seni anlayan insanlar.';
+  String get authPrivacyLine1 => 'Verilerin cihazında kalır.';
 
   @override
-  String get gateCta => 'Topluluğun kilidini aç';
+  String get authPrivacyLine2 => 'Her zaman önce çevrimdışı.';
 
   @override
-  String get gateLinkOut => 'bodybridge.net’te devam et';
+  String get authCodeKicker => 'E-postanı kontrol et';
 
   @override
-  String get gateNotNow => 'Şimdi değil';
+  String get authCodeTitle => 'Kodunu gir';
 
   @override
-  String get optionsTitle => 'Gönderi seçenekleri';
-
-  @override
-  String get sharePost => 'Gönderiyi paylaş';
-
-  @override
-  String get savePost => 'Gönderiyi kaydet';
-
-  @override
-  String get savedPost => 'Kaydedildi';
-
-  @override
-  String get copyPostLink => 'Gönderi bağlantısını kopyala';
-
-  @override
-  String get hidePost => 'Gönderiyi gizle';
-
-  @override
-  String get reportPost => 'Gönderiyi bildir';
-
-  @override
-  String get editPost => 'Gönderiyi düzenle';
-
-  @override
-  String get deletePost => 'Gönderiyi sil…';
-
-  @override
-  String get deleteConfirmTitle => 'Bu gönderi silinsin mi?';
-
-  @override
-  String get deleteConfirmBody =>
-      'Gönderi, fotoğrafı ve yorumları Topluluk’tan kaldırılır. Bu işlem geri alınamaz.';
-
-  @override
-  String get keepPost => 'Gönderiyi koru';
-
-  @override
-  String get deleteAction => 'Sil';
-
-  @override
-  String get postHiddenSnackbar => 'Gönderi gizlendi · Geri al';
-
-  @override
-  String get reportSheetTitle => 'Gönderiyi bildir';
-
-  @override
-  String get reportAnonymous => 'Bildiriminiz anonimdir.';
-
-  @override
-  String get reportSpam => 'Spam veya dolandırıcılık';
-
-  @override
-  String get reportHarassment => 'Taciz veya nefret';
-
-  @override
-  String get reportInappropriate => 'Uygunsuz fotoğraflar';
-
-  @override
-  String get reportSubmit => 'Bildir';
-
-  @override
-  String get reportSent => 'Bildirim gönderildi';
-
-  @override
-  String get shareSheetTitle => 'Gönderiyi paylaş';
-
-  @override
-  String get copyLink => 'Bağlantıyı kopyala';
-
-  @override
-  String get linkCopied => 'Bağlantı kopyalandı';
-
-  @override
-  String get shareMessages => 'Mesajlar';
-
-  @override
-  String get shareMail => 'Posta';
-
-  @override
-  String get shareInstagram => 'Instagram';
-
-  @override
-  String get shareMore => 'Daha fazla';
-
-  @override
-  String get newPostTitle => 'Yeni gönderi';
-
-  @override
-  String get modeProgress => 'İlerleme';
-
-  @override
-  String get modeWorkout => 'Antrenman';
-
-  @override
-  String progressPhotosCount(int n) {
-    return 'İLERLEME FOTOĞRAFLARI · $n / 4';
+  String otpSentTo(String email) {
+    return '$email adresine 6 haneli bir kod gönderdik';
   }
 
   @override
-  String get addPhotoTile => 'Ekle';
-
-  @override
-  String get photoPickerPending => 'Fotoğraf eklemek bir resim seçici gerektiriyor — yakında';
-
-  @override
-  String get captionHint => 'Haftanı paylaş: ne değişti, ne öğrendin...';
-
-  @override
-  String get photosPrivate => 'Fotoğraflar paylaşana kadar gizli kalır.';
-
-  @override
-  String get sessionPreview => 'ANTRENMAN ÖNİZLEMESİ';
-
-  @override
-  String get autoFilled => 'Bugünün antrenmanından otomatik dolduruldu';
-
-  @override
-  String get contextHint => 'Bağlam ekle — nasıl hissettirdi?';
-
-  @override
-  String get postToCommunity => 'Topluluğa gönder';
-
-  @override
-  String get commentsTitle => 'Yorumlar';
-
-  @override
-  String commentCount(int n) {
-    String _temp0 = intl.Intl.pluralLogic(n, locale: localeName, other: '$n yorum', one: '$n yorum');
-    return '$_temp0';
+  String authCodeExpires(String time) {
+    return 'Kod $time içinde sona eriyor';
   }
 
   @override
-  String get addCommentHint => 'Yorum ekle...';
+  String get authCodeExpiredVerdict => 'Kodun süresi doldu';
 
   @override
-  String replyingTo(String name) {
-    return '$name kişisine yanıt';
+  String get authCodeExpired => 'Bu kodun süresi doldu. Kendine yenisini gönder.';
+
+  @override
+  String get authResendPrompt => 'Kod mu gelmedi? ';
+
+  @override
+  String get authResendAction => 'Yeniden gönder';
+
+  @override
+  String authResendIn(String time) {
+    return '$time içinde yeniden gönder';
   }
 
   @override
-  String get opChip => 'OP';
+  String get authVerifying => 'Kodun kontrol ediliyor…';
 
   @override
-  String get noPostsTitle => 'Henüz gönderi yok';
-
-  @override
-  String get noPostsBody => 'Haftanı paylaşan ilk kişi ol.';
-
-  @override
-  String get createFirstPost => 'İlk gönderiyi oluştur';
-
-  @override
-  String get progressPhotoLabel => 'İLERLEME FOTOĞRAFI';
-
-  @override
-  String get progressChip => 'İLERLEME';
-
-  @override
-  String get workoutChip => 'ANTRENMAN';
-
-  @override
-  String get prChip => 'REKOR';
-
-  @override
-  String workoutStats(int min, int sets, String volume) {
-    return '$min dk · $sets set · $volume kg hacim';
+  String authCodeInvalid(int n) {
+    return 'Bu kod eşleşmedi. $n deneme hakkın kaldı.';
   }
 
   @override
-  String get composeDisabledHint => 'Gönderi yapmak için Topluluğun kilidini aç';
+  String get otpChangeEmail => 'Farklı bir e-posta kullan';
 
   @override
-  String get inboxComingSoon => 'Gelen kutusu çok yakında';
+  String get authRateLimitTitle => 'Çok fazla deneme';
 
   @override
-  String get timeAgoNow => 'şimdi';
+  String get authRateLimitBody => 'Bir nefes al — birkaç dakika sonra tekrar dene. Hesabın güvende.';
 
   @override
-  String timeAgoMinutes(int n) {
-    return '$n dk';
+  String authRateLimitCta(String time) {
+    return '$time içinde tekrar dene';
   }
 
   @override
-  String timeAgoHours(int n) {
-    return '$n sa';
+  String get authRateLimitRule => '10 yanlış kod, istekleri bir saat boyunca kilitler.';
+
+  @override
+  String authRateLimitBanner(String time) {
+    return 'Çok fazla deneme. $time içinde tekrar dene.';
   }
 
   @override
-  String timeAgoDays(int n) {
-    return '$n g';
+  String get authWelcomeBackKicker => 'Tekrar hoş geldin';
+
+  @override
+  String authWelcomeBackTitle(String name) {
+    return 'Tekrar hoş geldin, $name';
   }
 
   @override
-  String get trainerChip => 'ANTRENÖR';
+  String get authWelcomeBackBody => 'Kaldığın yerden devam ediyoruz.';
 
   @override
-  String get myTrainer => 'ANTRENÖRÜM';
+  String get authSetupKicker => 'Seni hazırlayalım';
 
   @override
-  String get assignedWorkouts => 'ATANAN ANTRENMANLAR';
-
-  @override
-  String get messageTrainer => 'Mesaj';
-
-  @override
-  String trainerSince(String date) {
-    return 'Antrenörünüz: $date tarihinden beri';
+  String authSetupTitle(String name) {
+    return 'Seni hazırlayalım, $name';
   }
 
   @override
-  String replyWindow(int hours) {
-    return 'Genellikle $hours sa içinde yanıtlar';
-  }
+  String get authSetupBody => 'Beş hızlı adım ve uygulama senin.';
 
   @override
-  String get chipNew => 'YENİ';
+  String get authChipName => 'İsim';
 
   @override
-  String get chipInProgress => 'DEVAM EDİYOR';
+  String get authChipUnits => 'Birimler';
 
   @override
-  String get chipCompleted => 'TAMAMLANDI';
+  String get authChipBody => 'Vücut';
 
   @override
-  String sentCardMeta(String date, int count, int minutes) {
-    return '$date gönderildi · $count egzersiz · ~$minutes dk';
-  }
+  String get authChipGoal => 'Hedef';
 
   @override
-  String sentByTrainerOn(String date) {
-    return 'Antrenörün $date tarihinde gönderdi';
-  }
+  String get authChipPlaces => 'Mekânlar';
 
   @override
-  String progressPct(int pct) {
-    return '%$pct';
-  }
+  String get proBadgeLabel => 'PRO';
 
   @override
-  String get coachNote => 'ANTRENÖR NOTU';
+  String get upgradeSheetTitle => 'Body Bridge Premium';
 
   @override
-  String restLabel(String duration) {
-    return 'Dinlenme $duration';
-  }
+  String get upgradeSheetSubtitle => 'Tüm Body Bridge deneyiminin kilidini aç';
 
   @override
-  String askAboutThis(String name) {
-    return 'Bunun hakkında $name\'e sor';
-  }
+  String get upgradeClose => 'Kapat';
 
   @override
-  String messageHint(String name) {
-    return '$name adına mesaj...';
-  }
+  String get billingMonthly => 'AYLIK';
 
   @override
-  String get tapToOpen => 'Açmak için dokun';
+  String get billingAnnual => 'YILLIK';
 
   @override
-  String get todayDivider => 'BUGÜN';
+  String get planMostPopular => 'En popüler';
 
   @override
-  String trainerVideoMeta(String duration) {
-    return 'Antrenör videosu · $duration';
-  }
+  String get planFactFullHistory => 'Tüm geçmiş';
 
   @override
-  String get gateBenefitWorkouts => 'Vücudunuza ve sakatlıklarınıza özel antrenmanlar';
+  String get planFactCloudSync => 'Bulut yedekleme ve eşitleme';
 
   @override
-  String get gateBenefitChat => 'Antrenörünle doğrudan mesajlaşma';
+  String get planFactUnlimitedRoutines => 'Sınırsız rutin';
 
   @override
-  String get gateBenefitVideo => 'Formunuz için video geri bildirimi';
+  String get planFactChartsCommunity => 'Grafikler ve topluluk';
 
   @override
-  String get gateDismiss => 'Şimdi değil';
+  String get planFactEverythingInBasic => 'Basic\'teki her şey';
 
   @override
-  String get gateFootnote => 'Yükseltmeler bodybridge.net üzerinden yapılır — planınız uygulamada kalır.';
+  String get planFactAdvancedAnalytics => 'Gelişmiş analizler';
 
   @override
-  String bannerNewWorkout(String name) {
-    return '$name\'den yeni antrenman';
-  }
+  String get planFactPremiumPrograms => 'Premium programlar ve videolar';
 
   @override
-  String get bannerTapToView => 'Görüntülemek için dokun';
+  String get planFactTrainerContent => 'Antrenör içerikleri';
 
   @override
-  String get callKicker => 'PERSONEL ANTRENMANI';
+  String get upgradeCtaContinueOnWeb => 'bodybridge.net\'te devam et';
 
   @override
-  String get callSheetTitle => 'Birebir görüşme ayarla';
+  String get checkoutComingSoon => 'Çevrimiçi ödeme yakında';
 
   @override
-  String get callNotesHint => 'Özel olarak ele alınacak bir konu var mı? (isteğe bağlı)';
+  String get enterpriseContactSales => 'Enterprise — Satışlarla iletişime geç';
 
   @override
-  String get callPickDayTime => 'Bir gün ve bir zaman aralığı seçin';
+  String get finePrintBilling =>
+      'Ödeme güvenle bodybridge.net üzerinden yapılır — Play Store üzerinden değil.';
 
   @override
-  String get callSubmit => 'Talep gönder';
+  String get lockAnalyticsTitle => 'Gelişmiş analizler';
 
   @override
-  String get callSentTitle => 'Talep gönderildi';
+  String get lockAnalyticsMeta => 'Hacim eğilimleri · 1RM tahminleri · kas dağılımı';
 
   @override
-  String callSentBody(String name) {
-    return '$name zamanı onaylayacak';
-  }
+  String get lockAnalyticsUpsell => 'Body Bridge Pro ile gelişmiş analizlerin kilidini aç.';
 
   @override
-  String get callDone => 'Tamam';
+  String get premiumProgramLabel => 'Premium program';
 
   @override
-  String get bookCallA11y => 'Birebir görüşme ayarla';
+  String get premiumProgramTitle => 'Hipertrofi Blokları';
 
   @override
-  String get startSoonTitle => 'Özel seanslar yakında';
+  String get premiumProgramMeta => '8 hafta · haftada 4 seans · antrenörlü';
 
   @override
-  String get startSoonBody =>
-      'Rehberli seanslar antrenör videosuyla geliyor. Bu arada bu planı antrenörünüze sorun.';
+  String get premiumProgramUpsell => 'Premium programlar ve antrenör videoları Pro\'nun parçasıdır.';
 
   @override
-  String exercisesMeta(int count, int minutes) {
-    return '$count egzersiz · ~$minutes dk';
-  }
+  String get unlockWithPro => 'Pro ile aç';
 
   @override
-  String get talkToTrainer => 'Antrenörünüzle konuşun';
-
-  @override
-  String get talkToTrainerSub => 'Özel antrenmanlar ve birebir sohbet';
-
-  @override
-  String get notifications => 'Bildirimler';
-
-  @override
-  String get consultCardKicker => 'KİŞİSEL KOACHING';
-
-  @override
-  String get consultCardTitle => 'Danışmanlık isteyin';
-
-  @override
-  String get consultCardSub => 'Yönünü belirleyecek kısa bir 1:1';
-
-  @override
-  String get consultCardSubDone => 'Talebin gönderildi — görüntüle';
-
-  @override
-  String get consultSheetTitle => 'Bir koçla birebir çalışın';
-
-  @override
-  String get consultSheetBody => 'Sertifikalı bir antrenör programınızı hazırlar ve yanınızda kalır.';
-
-  @override
-  String get consultDoorHow => 'Nasıl çalışır';
-
-  @override
-  String get consultDoorHowSub => '1:1\'de neler var';
-
-  @override
-  String get consultDoorRequest => 'Danışma talep et';
-
-  @override
-  String get consultDoorRequestSub => 'İki dakika, taahhüt yok';
-
-  @override
-  String get consultDoorView => 'Talebini görüntüle';
-
-  @override
-  String get consultDoorViewSub => 'Zaten gönderildi — kopya yok';
-
-  @override
-  String get introTitle => 'Sana göre kurgulanan koçluk';
-
-  @override
-  String get introP1 =>
-      'Danışma, antrenörünle kısa bir 1:1\'dir. Hedeflerini, geçmişini ve sakatlıklarını anlatırsın — antrenör bunları bedenine uyan bir plana çevirir.';
-
-  @override
-  String get introP2 => 'Hazır şablon yok. Planın senin için yazılır ve seninle birlikte değişir.';
-
-  @override
-  String get introPoint1 => 'Önce dinlenir: hedefler, geçmiş, sakatlıklar';
-
-  @override
-  String get introPoint2 => 'Kendi antrenmanları doğrudan uygulamada';
-
-  @override
-  String get introPoint3 => 'Planını yeniden şekillendiren geri bildirim';
-
-  @override
-  String get introCta => 'Danışma talep et';
-
-  @override
-  String get requestTitle => 'Danışma talep et';
-
-  @override
-  String get requestSub => 'Koç dönüş yapmadan önce bunu okur — hiçbir şeye abone olmazsınız.';
-
-  @override
-  String get requestGoalKicker => 'ANA HEDEF';
-
-  @override
-  String get goalStrength => 'Güç kazanmak';
-
-  @override
-  String get goalFatLoss => 'Yağ yakmak';
-
-  @override
-  String get goalMobility => 'Hareketliliği geliştir';
-
-  @override
-  String get goalConsistency => 'Düzenli kalmak';
-
-  @override
-  String get requestExpKicker => 'DENEYİM';
-
-  @override
-  String get expNew => 'Yeni başlıyorum';
-
-  @override
-  String get expReturning => 'Aradan sonra dönüyorum';
-
-  @override
-  String get expSeasoned => 'Yılların tecrübesi';
-
-  @override
-  String get requestTimeKicker => 'SİZE ULAŞMAK İÇİN EN İYİ ZAMAN · İSTEĞE BAĞLI';
-
-  @override
-  String get timeMorning => 'Sabah';
-
-  @override
-  String get timeAfternoon => 'Öğleden sonra';
-
-  @override
-  String get timeEvening => 'Akşam';
-
-  @override
-  String get requestNotesKicker => 'MESAJ · İSTEĞE BAĞLI';
-
-  @override
-  String get requestNotesHint => 'Sakatlıklar, program, ekipman…';
-
-  @override
-  String get requestSubmit => 'Talebi gönder';
-
-  @override
-  String get requestPickBoth => 'Önce bir hedef seçin';
-
-  @override
-  String get sentChip => 'GÖNDERİLDİ';
-
-  @override
-  String get sentTitle => 'Danışmanlık talebi alındı';
-
-  @override
-  String get sentBody =>
-      'Koçluk ekibimizden biri hedeflerinizi ve mevcut koçluk seçeneklerinizi görüşmek üzere size dönecek.';
-
-  @override
-  String get sentSummaryKicker => 'TALEP DURUMU';
-
-  @override
-  String get sentContinue => 'Egzersizlere Dön';
-
-  @override
-  String get welcomeTitle => 'Kişisel Koaching\'e Hoş Geldiniz';
-
-  @override
-  String get welcomeFlag => 'Antrenörün 24–48 saat içinde yanıtlar';
-
-  @override
-  String get welcomeStep1 => 'Antrenör talebini inceler ve sohbette yanıt verir';
-
-  @override
-  String get welcomeStep2 => '1:1 için bir zaman belirlersiniz';
-
-  @override
-  String get welcomeStep3 => 'Görüşmenin ardından ilk özel planın gelir';
-
-  @override
-  String get welcomeDone => 'Antrenörüme dön';
-
-  @override
-  String get consultPrimary => 'Danışmanlık İsteyin';
-
-  @override
-  String get exploreCoachingPlans => 'Koçluk Planlarını Keşfet';
-
-  @override
-  String get consultBenefit1 => 'Geçmişinize göre özel antrenmanlar';
-
-  @override
-  String get consultBenefit2 => 'Antrenmanlar arasında antrenörünüze yazın';
-
-  @override
-  String get consultBenefit3 => 'Her egzersizde video ve form ipuçları';
-
-  @override
-  String get consultFootnote =>
-      'Bir koç hedeflerinizi görüşmek üzere size dönecek — plan seçene kadar hiçbir rezervasyon veya ücretlendirme yapılmaz.';
-
-  @override
-  String get goalRecover => 'Sakatlıktan toparlanmak';
-
-  @override
-  String get goalUnsure => 'Henüz emin değilim';
-
-  @override
-  String get timeWeekdayMornings => 'Hafta içi sabahları';
-
-  @override
-  String get timeWeekdayEvenings => 'Hafta içi akşamları';
-
-  @override
-  String get timeWeekends => 'Hafta sonları';
-
-  @override
-  String get requestNameKicker => 'İSİM · HESABINIZDAN';
-
-  @override
-  String get requestEmailKicker => 'E-POSTA · HESABINIZDAN';
-
-  @override
-  String get requestVerified => 'Hesabınızda doğrulandı';
-
-  @override
-  String get srcLocked => 'KİLİTLİ';
-
-  @override
-  String get sentRequestedLabel => 'Talep edildi';
-
-  @override
-  String get sentContactLabel => 'İletişim';
-
-  @override
-  String get sentGoalLabel => 'Hedef';
-
-  @override
-  String get sentNote =>
-      'Her zamanki gibi antrenmana devam edebilirsiniz — abone olmaya karar verene kadar uygulamada hiçbir şey değişmez.';
-
-  @override
-  String get welcomeBody =>
-      'Aboneliğiniz aktif. Kişisel antrenörünüz 24-48 saat içinde sizinle iletişime geçecek.';
-
-  @override
-  String get welcomeStepsLabel => 'SONRAKİ ADIMLAR';
-
-  @override
-  String get welcomeStep1T => 'Abonelik aktif';
-
-  @override
-  String get welcomeStep1S => 'Advanced bu hesapta etkin';
-
-  @override
-  String get welcomeStep2T => 'Antrenör ataması sürüyor';
-
-  @override
-  String get welcomeStep2S => 'Size en uygun koçu eşleştiriyoruz';
-
-  @override
-  String get welcomeStep3T => 'İlk iletişim 24-48 saat içinde';
-
-  @override
-  String get welcomeStep3S => 'Antrenörünüz doğrudan burada, sohbette selam verecek';
-
-  @override
-  String get welcomePendingT => 'Antrenörünüz burada görünecek';
-
-  @override
-  String get welcomePendingS => 'Atandığında profili ve sohbet bu ekrandan açılacak.';
-
-  @override
-  String get welcomeFootnote => 'Bu arada Antrenör Kütüphanesi açık — göz atın.';
-
-  @override
-  String get trainerGateTitle => '1:1 antrenör desteği';
-
-  @override
-  String get trainerGateBody => 'Özel antrenmanlar ve doğrudan antrenör sohbeti Advanced kapsamındadır.';
-
-  @override
-  String get trainerGateCta => 'Advanced\'ı gör';
-
-  @override
-  String get sourceFree => 'Ücretsiz';
-
-  @override
-  String get sourceTrainer => 'Antrenör';
-
-  @override
-  String get sourceCustom => 'Özel';
-
-  @override
-  String get sourceAll => 'Tümü';
-
-  @override
-  String get sectionTrainerLibrary => 'Antrenör kütüphanesi';
-
-  @override
-  String get sectionFreeLibrary => 'Ücretsiz kütüphane';
-
-  @override
-  String get advancedBadge => 'ADVANCED';
-
-  @override
-  String get unlockAdvancedTitle => 'ADVANCED\'i Aç';
-
-  @override
-  String get benefitTrainerLibrary => 'Tam antrenör video kütüphanesi';
-
-  @override
-  String get benefitCoachAssignments => 'Koçun kişiye özel atadığı egzersizler';
-
-  @override
-  String get benefitMonthlySessions => 'Her ay yeni antrenör seansları';
-
-  @override
-  String get continueOnSite => 'bodybridge.net\'te devam et';
-
-  @override
-  String get notNow => 'Şimdi değil';
-
-  @override
-  String get lockAdvancedMessage => 'Antrenör çekimi egzersizler ADVANCED kapsamındadır';
-
-  @override
-  String get setsLabel => 'Set';
-
-  @override
-  String get repsLabel => 'Tekrar';
-
-  @override
-  String get trainerCatStrength => 'Güç';
-
-  @override
-  String get trainerCatMobility => 'Mobilite';
-
-  @override
-  String get trainerCatCore => 'Core';
-
-  @override
-  String get trainerCatCorrective => 'Düzeltici';
-
-  @override
-  String get trainerCatWarmup => 'Isınma';
+  String get upgradeUpsellToast => 'Daha fazlası için yükselt';
 }

@@ -5378,30 +5378,6 @@ abstract class AppLocalizations {
   /// **'Email address looks wrong.'**
   String get authErrorInvalidEmail;
 
-  /// No description provided for @authErrorWrongPassword.
-  ///
-  /// In en, this message translates to:
-  /// **'Wrong email or password.'**
-  String get authErrorWrongPassword;
-
-  /// No description provided for @authErrorUserNotFound.
-  ///
-  /// In en, this message translates to:
-  /// **'No account found for that email.'**
-  String get authErrorUserNotFound;
-
-  /// No description provided for @authErrorEmailAlreadyInUse.
-  ///
-  /// In en, this message translates to:
-  /// **'That email already has an account.'**
-  String get authErrorEmailAlreadyInUse;
-
-  /// No description provided for @authErrorWeakPassword.
-  ///
-  /// In en, this message translates to:
-  /// **'Password is too weak.'**
-  String get authErrorWeakPassword;
-
   /// No description provided for @authErrorTooManyRequests.
   ///
   /// In en, this message translates to:
@@ -5431,42 +5407,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'you@example.com'**
   String get emailHint;
-
-  /// No description provided for @passwordHint.
-  ///
-  /// In en, this message translates to:
-  /// **'At least 6 characters'**
-  String get passwordHint;
-
-  /// No description provided for @forgotPassword.
-  ///
-  /// In en, this message translates to:
-  /// **'Forgot password?'**
-  String get forgotPassword;
-
-  /// No description provided for @resetSend.
-  ///
-  /// In en, this message translates to:
-  /// **'Send reset link'**
-  String get resetSend;
-
-  /// No description provided for @resetSentTitle.
-  ///
-  /// In en, this message translates to:
-  /// **'Check your email'**
-  String get resetSentTitle;
-
-  /// No description provided for @resetSentBody.
-  ///
-  /// In en, this message translates to:
-  /// **'We sent a reset link to {email}.'**
-  String resetSentBody(String email);
-
-  /// No description provided for @backToSignIn.
-  ///
-  /// In en, this message translates to:
-  /// **'Back to sign in'**
-  String get backToSignIn;
 
   /// No description provided for @accountTitle.
   ///
@@ -5510,41 +5450,17 @@ abstract class AppLocalizations {
   /// **'Sign in'**
   String get signIn;
 
-  /// No description provided for @createAccount.
-  ///
-  /// In en, this message translates to:
-  /// **'Create account'**
-  String get createAccount;
-
-  /// No description provided for @startFree.
-  ///
-  /// In en, this message translates to:
-  /// **'Start free'**
-  String get startFree;
-
   /// No description provided for @emailLabel.
   ///
   /// In en, this message translates to:
   /// **'Email'**
   String get emailLabel;
 
-  /// No description provided for @passwordLabel.
-  ///
-  /// In en, this message translates to:
-  /// **'Password'**
-  String get passwordLabel;
-
   /// No description provided for @emailInvalid.
   ///
   /// In en, this message translates to:
   /// **'Enter a valid email address'**
   String get emailInvalid;
-
-  /// No description provided for @passwordTooShort.
-  ///
-  /// In en, this message translates to:
-  /// **'Password must be at least 6 characters'**
-  String get passwordTooShort;
 
   /// No description provided for @authFailedGeneric.
   ///
@@ -5623,12 +5539,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Account deleted.'**
   String get deleteAccountDone;
-
-  /// No description provided for @deleteAccountReauth.
-  ///
-  /// In en, this message translates to:
-  /// **'Sign in again to delete your account.'**
-  String get deleteAccountReauth;
 
   /// No description provided for @deleteAccountFailed.
   ///
@@ -5732,1271 +5642,377 @@ abstract class AppLocalizations {
   /// **'Billing is coming soon.'**
   String get billingComingSoon;
 
-  /// Bottom navigation label for the community tab.
+  /// No description provided for @authWelcomeTitle.
   ///
   /// In en, this message translates to:
-  /// **'Community'**
-  String get communityTab;
+  /// **'Welcome to Body Bridge'**
+  String get authWelcomeTitle;
 
-  /// Community feed tab label.
+  /// No description provided for @authWelcomeSubline.
   ///
   /// In en, this message translates to:
-  /// **'Feed'**
-  String get feedTab;
+  /// **'One email. No password. You\'re in.'**
+  String get authWelcomeSubline;
 
-  /// Community members tab label.
+  /// No description provided for @authCtaContinueEmail.
   ///
   /// In en, this message translates to:
-  /// **'Members'**
-  String get membersTab;
+  /// **'Continue with email'**
+  String get authCtaContinueEmail;
 
-  /// Gate card title shown when community is locked.
+  /// No description provided for @authTrustMicrocopy.
   ///
   /// In en, this message translates to:
-  /// **'Community is part of Basic'**
-  String get gateTitle;
+  /// **'We\'ll send a 6-digit code. No password needed.'**
+  String get authTrustMicrocopy;
 
-  /// Gate card supporting body copy.
+  /// No description provided for @authPrivacyLine1.
   ///
   /// In en, this message translates to:
-  /// **'Progress pics, workout logs, and people who get it.'**
-  String get gateBody;
+  /// **'Your data stays on your device.'**
+  String get authPrivacyLine1;
 
-  /// Gate unlock button label.
+  /// No description provided for @authPrivacyLine2.
   ///
   /// In en, this message translates to:
-  /// **'Unlock Community'**
-  String get gateCta;
+  /// **'Offline-first, always.'**
+  String get authPrivacyLine2;
 
-  /// Gate continue-on-web button label.
+  /// No description provided for @authCodeKicker.
   ///
   /// In en, this message translates to:
-  /// **'Continue on bodybridge.net'**
-  String get gateLinkOut;
+  /// **'Check your email'**
+  String get authCodeKicker;
 
-  /// Gate dismiss button label.
+  /// No description provided for @authCodeTitle.
   ///
   /// In en, this message translates to:
-  /// **'Not now'**
-  String get gateNotNow;
+  /// **'Enter your code'**
+  String get authCodeTitle;
 
-  /// Post options sheet title.
+  /// No description provided for @otpSentTo.
   ///
   /// In en, this message translates to:
-  /// **'Post options'**
-  String get optionsTitle;
+  /// **'We sent a 6-digit code to {email}'**
+  String otpSentTo(String email);
 
-  /// Share post option label.
+  /// No description provided for @authCodeExpires.
   ///
   /// In en, this message translates to:
-  /// **'Share post'**
-  String get sharePost;
+  /// **'Code expires in {time}'**
+  String authCodeExpires(String time);
 
-  /// Save post option label.
+  /// No description provided for @authCodeExpiredVerdict.
   ///
   /// In en, this message translates to:
-  /// **'Save post'**
-  String get savePost;
+  /// **'Code expired'**
+  String get authCodeExpiredVerdict;
 
-  /// Confirmation snackbar after saving a post.
+  /// No description provided for @authCodeExpired.
   ///
   /// In en, this message translates to:
-  /// **'Saved'**
-  String get savedPost;
+  /// **'This code expired. Send yourself a new one.'**
+  String get authCodeExpired;
 
-  /// Copy post link option label.
+  /// No description provided for @authResendPrompt.
   ///
   /// In en, this message translates to:
-  /// **'Copy post link'**
-  String get copyPostLink;
+  /// **'Didn\'t get it? '**
+  String get authResendPrompt;
 
-  /// Hide post option label.
+  /// No description provided for @authResendAction.
   ///
   /// In en, this message translates to:
-  /// **'Hide post'**
-  String get hidePost;
+  /// **'Resend'**
+  String get authResendAction;
 
-  /// Report post option label.
+  /// No description provided for @authResendIn.
   ///
   /// In en, this message translates to:
-  /// **'Report post'**
-  String get reportPost;
+  /// **'Resend in {time}'**
+  String authResendIn(String time);
 
-  /// Edit own post option label.
+  /// No description provided for @authVerifying.
   ///
   /// In en, this message translates to:
-  /// **'Edit post'**
-  String get editPost;
+  /// **'Checking your code…'**
+  String get authVerifying;
 
-  /// Delete own post option label.
+  /// No description provided for @authCodeInvalid.
   ///
   /// In en, this message translates to:
-  /// **'Delete post…'**
-  String get deletePost;
+  /// **'That code didn\'t match. {n} attempts left.'**
+  String authCodeInvalid(int n);
 
-  /// Delete confirmation dialog title.
+  /// No description provided for @otpChangeEmail.
   ///
   /// In en, this message translates to:
-  /// **'Delete this post?'**
-  String get deleteConfirmTitle;
+  /// **'Use a different email'**
+  String get otpChangeEmail;
 
-  /// Delete confirmation dialog body.
+  /// No description provided for @authRateLimitTitle.
   ///
   /// In en, this message translates to:
-  /// **'This removes the post, its photo, and its comments from Community. This can\'t be undone.'**
-  String get deleteConfirmBody;
+  /// **'Too many attempts'**
+  String get authRateLimitTitle;
 
-  /// Keep post dialog action label.
+  /// No description provided for @authRateLimitBody.
   ///
   /// In en, this message translates to:
-  /// **'Keep post'**
-  String get keepPost;
+  /// **'Take a breath — try again in a few minutes. Your account is safe.'**
+  String get authRateLimitBody;
 
-  /// Confirm delete dialog action label.
+  /// No description provided for @authRateLimitCta.
   ///
   /// In en, this message translates to:
-  /// **'Delete'**
-  String get deleteAction;
+  /// **'Try again in {time}'**
+  String authRateLimitCta(String time);
 
-  /// Snackbar shown after hiding a post, with undo.
+  /// No description provided for @authRateLimitRule.
   ///
   /// In en, this message translates to:
-  /// **'Post hidden · Undo'**
-  String get postHiddenSnackbar;
+  /// **'10 wrong codes lock requests for an hour.'**
+  String get authRateLimitRule;
 
-  /// Report sheet title.
+  /// No description provided for @authRateLimitBanner.
   ///
   /// In en, this message translates to:
-  /// **'Report post'**
-  String get reportSheetTitle;
+  /// **'Too many attempts. Try again in {time}.'**
+  String authRateLimitBanner(String time);
 
-  /// Note that reports are anonymous.
+  /// No description provided for @authWelcomeBackKicker.
   ///
   /// In en, this message translates to:
-  /// **'Your report is anonymous.'**
-  String get reportAnonymous;
+  /// **'Welcome back'**
+  String get authWelcomeBackKicker;
 
-  /// Report reason: spam or scam.
+  /// No description provided for @authWelcomeBackTitle.
   ///
   /// In en, this message translates to:
-  /// **'Spam or scam'**
-  String get reportSpam;
+  /// **'Welcome back, {name}'**
+  String authWelcomeBackTitle(String name);
 
-  /// Report reason: harassment or hate.
+  /// No description provided for @authWelcomeBackBody.
   ///
   /// In en, this message translates to:
-  /// **'Harassment or hate'**
-  String get reportHarassment;
+  /// **'Picking up where you left off.'**
+  String get authWelcomeBackBody;
 
-  /// Report reason: inappropriate photos.
+  /// No description provided for @authSetupKicker.
   ///
   /// In en, this message translates to:
-  /// **'Inappropriate photos'**
-  String get reportInappropriate;
+  /// **'Let\'s set you up'**
+  String get authSetupKicker;
 
-  /// Report sheet submit button label.
+  /// No description provided for @authSetupTitle.
   ///
   /// In en, this message translates to:
-  /// **'Report'**
-  String get reportSubmit;
+  /// **'Let\'s set you up, {name}'**
+  String authSetupTitle(String name);
 
-  /// Snackbar shown after a report is sent.
+  /// No description provided for @authSetupBody.
   ///
   /// In en, this message translates to:
-  /// **'Report sent'**
-  String get reportSent;
+  /// **'Five quick steps and the app is yours.'**
+  String get authSetupBody;
 
-  /// Share sheet title.
+  /// No description provided for @authChipName.
   ///
   /// In en, this message translates to:
-  /// **'Share post'**
-  String get shareSheetTitle;
+  /// **'Name'**
+  String get authChipName;
 
-  /// Copy link option label.
+  /// No description provided for @authChipUnits.
   ///
   /// In en, this message translates to:
-  /// **'Copy link'**
-  String get copyLink;
+  /// **'Units'**
+  String get authChipUnits;
 
-  /// Snackbar shown after copying a link.
+  /// No description provided for @authChipBody.
   ///
   /// In en, this message translates to:
-  /// **'Link copied'**
-  String get linkCopied;
+  /// **'Body'**
+  String get authChipBody;
 
-  /// Share target: Messages.
-  ///
-  /// In en, this message translates to:
-  /// **'Messages'**
-  String get shareMessages;
-
-  /// Share target: Mail.
-  ///
-  /// In en, this message translates to:
-  /// **'Mail'**
-  String get shareMail;
-
-  /// Share target: Instagram.
-  ///
-  /// In en, this message translates to:
-  /// **'Instagram'**
-  String get shareInstagram;
-
-  /// Share target: More.
-  ///
-  /// In en, this message translates to:
-  /// **'More'**
-  String get shareMore;
-
-  /// Composer screen title.
-  ///
-  /// In en, this message translates to:
-  /// **'New post'**
-  String get newPostTitle;
-
-  /// Progress mode segment label.
-  ///
-  /// In en, this message translates to:
-  /// **'Progress'**
-  String get modeProgress;
-
-  /// Workout mode segment label.
-  ///
-  /// In en, this message translates to:
-  /// **'Workout'**
-  String get modeWorkout;
-
-  /// Progress photo counter label.
-  ///
-  /// In en, this message translates to:
-  /// **'PROGRESS PHOTOS · {n} OF 4'**
-  String progressPhotosCount(int n);
-
-  /// Add photo tile label.
-  ///
-  /// In en, this message translates to:
-  /// **'Add'**
-  String get addPhotoTile;
-
-  /// Why the Add photo tile is disabled: the image picker dependency is not available yet.
-  ///
-  /// In en, this message translates to:
-  /// **'Add photo needs an image picker — coming soon'**
-  String get photoPickerPending;
-
-  /// Caption text field hint.
-  ///
-  /// In en, this message translates to:
-  /// **'Share your week — what changed, what you learned...'**
-  String get captionHint;
-
-  /// Privacy note about staged photos.
-  ///
-  /// In en, this message translates to:
-  /// **'Photos stay private until you post.'**
-  String get photosPrivate;
-
-  /// Workout preview header label.
-  ///
-  /// In en, this message translates to:
-  /// **'SESSION PREVIEW'**
-  String get sessionPreview;
-
-  /// Note that the session preview is auto-filled.
-  ///
-  /// In en, this message translates to:
-  /// **'Auto-filled from today\'s session'**
-  String get autoFilled;
-
-  /// Context text field hint.
-  ///
-  /// In en, this message translates to:
-  /// **'Add context — how did it feel?'**
-  String get contextHint;
-
-  /// Composer submit button label.
-  ///
-  /// In en, this message translates to:
-  /// **'Post to Community'**
-  String get postToCommunity;
-
-  /// Comments section title.
-  ///
-  /// In en, this message translates to:
-  /// **'Comments'**
-  String get commentsTitle;
-
-  /// Pluralized comment count.
-  ///
-  /// In en, this message translates to:
-  /// **'{n, plural, =1{{n} comment} other{{n} comments}}'**
-  String commentCount(int n);
-
-  /// Comment input hint.
-  ///
-  /// In en, this message translates to:
-  /// **'Add a comment...'**
-  String get addCommentHint;
-
-  /// Reply indicator above the composer.
-  ///
-  /// In en, this message translates to:
-  /// **'Replying to {name}'**
-  String replyingTo(String name);
-
-  /// Chip marking the original poster.
-  ///
-  /// In en, this message translates to:
-  /// **'OP'**
-  String get opChip;
-
-  /// Empty feed title.
-  ///
-  /// In en, this message translates to:
-  /// **'No posts yet'**
-  String get noPostsTitle;
-
-  /// Empty feed body copy.
-  ///
-  /// In en, this message translates to:
-  /// **'Be the first to share your week.'**
-  String get noPostsBody;
-
-  /// Empty feed call to action.
-  ///
-  /// In en, this message translates to:
-  /// **'Create first post'**
-  String get createFirstPost;
-
-  /// Label on a progress photo tile.
-  ///
-  /// In en, this message translates to:
-  /// **'PROGRESS PHOTO'**
-  String get progressPhotoLabel;
-
-  /// Kind chip for progress posts.
-  ///
-  /// In en, this message translates to:
-  /// **'PROGRESS'**
-  String get progressChip;
-
-  /// Kind chip for workout posts.
-  ///
-  /// In en, this message translates to:
-  /// **'WORKOUT'**
-  String get workoutChip;
-
-  /// Personal record chip.
-  ///
-  /// In en, this message translates to:
-  /// **'PR'**
-  String get prChip;
-
-  /// Workout stats line with minutes, sets and volume.
-  ///
-  /// In en, this message translates to:
-  /// **'{min} min · {sets} sets · {volume} kg volume'**
-  String workoutStats(int min, int sets, String volume);
-
-  /// Tooltip on the composer entry when community is locked.
-  ///
-  /// In en, this message translates to:
-  /// **'Unlock Community to post'**
-  String get composeDisabledHint;
-
-  /// Snackbar stub for the inbox action.
-  ///
-  /// In en, this message translates to:
-  /// **'Inbox is coming soon'**
-  String get inboxComingSoon;
-
-  /// Time-ago label for under a minute.
-  ///
-  /// In en, this message translates to:
-  /// **'now'**
-  String get timeAgoNow;
-
-  /// Time-ago label in minutes.
-  ///
-  /// In en, this message translates to:
-  /// **'{n}m'**
-  String timeAgoMinutes(int n);
-
-  /// Time-ago label in hours.
-  ///
-  /// In en, this message translates to:
-  /// **'{n}h'**
-  String timeAgoHours(int n);
-
-  /// Time-ago label in days.
-  ///
-  /// In en, this message translates to:
-  /// **'{n}d'**
-  String timeAgoDays(int n);
-
-  /// Badge chip for certified trainers.
-  ///
-  /// In en, this message translates to:
-  /// **'TRAINER'**
-  String get trainerChip;
-
-  /// Trainer feature (card t_d788f36e)
-  ///
-  /// In en, this message translates to:
-  /// **'MY TRAINER'**
-  String get myTrainer;
-
-  /// Trainer feature (card t_d788f36e)
-  ///
-  /// In en, this message translates to:
-  /// **'ASSIGNED WORKOUTS'**
-  String get assignedWorkouts;
-
-  /// Trainer feature (card t_d788f36e)
-  ///
-  /// In en, this message translates to:
-  /// **'Message'**
-  String get messageTrainer;
-
-  /// No description provided for @trainerSince.
-  ///
-  /// In en, this message translates to:
-  /// **'Your trainer since {date}'**
-  String trainerSince(String date);
-
-  /// No description provided for @replyWindow.
-  ///
-  /// In en, this message translates to:
-  /// **'Usually replies within {hours}h'**
-  String replyWindow(int hours);
-
-  /// Trainer feature (card t_d788f36e)
-  ///
-  /// In en, this message translates to:
-  /// **'NEW'**
-  String get chipNew;
-
-  /// Trainer feature (card t_d788f36e)
-  ///
-  /// In en, this message translates to:
-  /// **'IN PROGRESS'**
-  String get chipInProgress;
-
-  /// Trainer feature (card t_d788f36e)
-  ///
-  /// In en, this message translates to:
-  /// **'COMPLETED'**
-  String get chipCompleted;
-
-  /// No description provided for @sentCardMeta.
-  ///
-  /// In en, this message translates to:
-  /// **'Sent {date} · {count} exercises · ~{minutes} min'**
-  String sentCardMeta(String date, int count, int minutes);
-
-  /// No description provided for @sentByTrainerOn.
-  ///
-  /// In en, this message translates to:
-  /// **'Sent by your trainer on {date}'**
-  String sentByTrainerOn(String date);
-
-  /// No description provided for @progressPct.
-  ///
-  /// In en, this message translates to:
-  /// **'{pct}%'**
-  String progressPct(int pct);
-
-  /// Trainer feature (card t_d788f36e)
-  ///
-  /// In en, this message translates to:
-  /// **'COACH NOTE'**
-  String get coachNote;
-
-  /// No description provided for @restLabel.
-  ///
-  /// In en, this message translates to:
-  /// **'Rest {duration}'**
-  String restLabel(String duration);
-
-  /// No description provided for @askAboutThis.
-  ///
-  /// In en, this message translates to:
-  /// **'Ask {name} about this'**
-  String askAboutThis(String name);
-
-  /// No description provided for @messageHint.
-  ///
-  /// In en, this message translates to:
-  /// **'Message {name}...'**
-  String messageHint(String name);
-
-  /// Trainer feature (card t_d788f36e)
-  ///
-  /// In en, this message translates to:
-  /// **'Tap to open'**
-  String get tapToOpen;
-
-  /// Trainer feature (card t_d788f36e)
-  ///
-  /// In en, this message translates to:
-  /// **'TODAY'**
-  String get todayDivider;
-
-  /// No description provided for @trainerVideoMeta.
-  ///
-  /// In en, this message translates to:
-  /// **'Trainer video · {duration}'**
-  String trainerVideoMeta(String duration);
-
-  /// Trainer feature (card t_d788f36e)
-  ///
-  /// In en, this message translates to:
-  /// **'Workouts built for your body and your injuries'**
-  String get gateBenefitWorkouts;
-
-  /// Trainer feature (card t_d788f36e)
-  ///
-  /// In en, this message translates to:
-  /// **'Direct messaging with your trainer'**
-  String get gateBenefitChat;
-
-  /// Trainer feature (card t_d788f36e)
-  ///
-  /// In en, this message translates to:
-  /// **'Video feedback on your form'**
-  String get gateBenefitVideo;
-
-  /// Trainer feature (card t_d788f36e)
-  ///
-  /// In en, this message translates to:
-  /// **'Not now'**
-  String get gateDismiss;
-
-  /// Trainer feature (card t_d788f36e)
-  ///
-  /// In en, this message translates to:
-  /// **'Upgrades happen on bodybridge.net — your plan stays in the app.'**
-  String get gateFootnote;
-
-  /// No description provided for @bannerNewWorkout.
-  ///
-  /// In en, this message translates to:
-  /// **'New workout from {name}'**
-  String bannerNewWorkout(String name);
-
-  /// Trainer feature (card t_d788f36e)
-  ///
-  /// In en, this message translates to:
-  /// **'Tap to view'**
-  String get bannerTapToView;
-
-  /// Trainer feature (card t_9d175854 D3)
-  ///
-  /// In en, this message translates to:
-  /// **'PERSONAL TRAINING'**
-  String get callKicker;
-
-  /// Trainer feature (card t_9d175854 D3)
-  ///
-  /// In en, this message translates to:
-  /// **'Book a 1-1 call'**
-  String get callSheetTitle;
-
-  /// Trainer feature (card t_9d175854 D3)
-  ///
-  /// In en, this message translates to:
-  /// **'Anything specific to cover? (optional)'**
-  String get callNotesHint;
-
-  /// Trainer feature (card t_9d175854 D3)
-  ///
-  /// In en, this message translates to:
-  /// **'Pick a day and a time window'**
-  String get callPickDayTime;
-
-  /// Trainer feature (card t_9d175854 D3)
-  ///
-  /// In en, this message translates to:
-  /// **'Send request'**
-  String get callSubmit;
-
-  /// Trainer feature (card t_9d175854 D3)
-  ///
-  /// In en, this message translates to:
-  /// **'Request sent'**
-  String get callSentTitle;
-
-  /// Trainer feature (card t_9d175854 D3)
-  ///
-  /// In en, this message translates to:
-  /// **'{name} will confirm your time'**
-  String callSentBody(String name);
-
-  /// Trainer feature (card t_9d175854 D3)
-  ///
-  /// In en, this message translates to:
-  /// **'Done'**
-  String get callDone;
-
-  /// Trainer feature (card t_9d175854 D3)
-  ///
-  /// In en, this message translates to:
-  /// **'Book a 1-1 call'**
-  String get bookCallA11y;
-
-  /// Trainer feature (card t_d788f36e)
-  ///
-  /// In en, this message translates to:
-  /// **'Custom sessions land soon'**
-  String get startSoonTitle;
-
-  /// Trainer feature (card t_d788f36e)
-  ///
-  /// In en, this message translates to:
-  /// **'Guided sessions arrive with trainer video. Meanwhile, ask your trainer about this plan.'**
-  String get startSoonBody;
-
-  /// No description provided for @exercisesMeta.
-  ///
-  /// In en, this message translates to:
-  /// **'{count} exercises · ~{minutes} min'**
-  String exercisesMeta(int count, int minutes);
-
-  /// Trainer entry rework (card t_fcd4945b)
-  ///
-  /// In en, this message translates to:
-  /// **'Talk to your trainer'**
-  String get talkToTrainer;
-
-  /// Trainer entry rework (card t_fcd4945b)
-  ///
-  /// In en, this message translates to:
-  /// **'Custom workouts and 1:1 chat'**
-  String get talkToTrainerSub;
-
-  /// Trainer feature (card t_fcd4945b)
-  ///
-  /// In en, this message translates to:
-  /// **'Notifications'**
-  String get notifications;
-
-  /// No description provided for @consultCardKicker.
-  ///
-  /// In en, this message translates to:
-  /// **'PERSONAL COACHING'**
-  String get consultCardKicker;
-
-  /// No description provided for @consultCardTitle.
-  ///
-  /// In en, this message translates to:
-  /// **'Request a consultation'**
-  String get consultCardTitle;
-
-  /// No description provided for @consultCardSub.
-  ///
-  /// In en, this message translates to:
-  /// **'A short 1:1 to set your direction'**
-  String get consultCardSub;
-
-  /// No description provided for @consultCardSubDone.
-  ///
-  /// In en, this message translates to:
-  /// **'Your request is in — view it'**
-  String get consultCardSubDone;
-
-  /// No description provided for @consultSheetTitle.
-  ///
-  /// In en, this message translates to:
-  /// **'Work one-on-one with a coach'**
-  String get consultSheetTitle;
-
-  /// No description provided for @consultSheetBody.
-  ///
-  /// In en, this message translates to:
-  /// **'A certified trainer builds your programming and stays in your corner.'**
-  String get consultSheetBody;
-
-  /// No description provided for @consultDoorHow.
-  ///
-  /// In en, this message translates to:
-  /// **'How it works'**
-  String get consultDoorHow;
-
-  /// No description provided for @consultDoorHowSub.
-  ///
-  /// In en, this message translates to:
-  /// **'What the 1:1 covers'**
-  String get consultDoorHowSub;
-
-  /// No description provided for @consultDoorRequest.
-  ///
-  /// In en, this message translates to:
-  /// **'Request a consultation'**
-  String get consultDoorRequest;
-
-  /// No description provided for @consultDoorRequestSub.
-  ///
-  /// In en, this message translates to:
-  /// **'Two minutes, no strings'**
-  String get consultDoorRequestSub;
-
-  /// No description provided for @consultDoorView.
-  ///
-  /// In en, this message translates to:
-  /// **'View your request'**
-  String get consultDoorView;
-
-  /// No description provided for @consultDoorViewSub.
-  ///
-  /// In en, this message translates to:
-  /// **'Already sent — no duplicates'**
-  String get consultDoorViewSub;
-
-  /// No description provided for @introTitle.
-  ///
-  /// In en, this message translates to:
-  /// **'Coaching, built around you'**
-  String get introTitle;
-
-  /// No description provided for @introP1.
-  ///
-  /// In en, this message translates to:
-  /// **'A consultation is a short 1:1 with your trainer. You bring goals, history and injuries — your trainer turns them into a plan that fits your body.'**
-  String get introP1;
-
-  /// No description provided for @introP2.
-  ///
-  /// In en, this message translates to:
-  /// **'No templates. Your plan is written for you and it moves as you do.'**
-  String get introP2;
-
-  /// No description provided for @introPoint1.
-  ///
-  /// In en, this message translates to:
-  /// **'Goals, history and injuries heard first'**
-  String get introPoint1;
-
-  /// No description provided for @introPoint2.
-  ///
-  /// In en, this message translates to:
-  /// **'Custom workouts delivered in the app'**
-  String get introPoint2;
-
-  /// No description provided for @introPoint3.
-  ///
-  /// In en, this message translates to:
-  /// **'Feedback that reshapes your plan'**
-  String get introPoint3;
-
-  /// No description provided for @introCta.
-  ///
-  /// In en, this message translates to:
-  /// **'Request a consultation'**
-  String get introCta;
-
-  /// No description provided for @requestTitle.
-  ///
-  /// In en, this message translates to:
-  /// **'Request a consultation'**
-  String get requestTitle;
-
-  /// No description provided for @requestSub.
-  ///
-  /// In en, this message translates to:
-  /// **'A coach reads this before following up — it doesn\'t subscribe you to anything.'**
-  String get requestSub;
-
-  /// No description provided for @requestGoalKicker.
-  ///
-  /// In en, this message translates to:
-  /// **'PRIMARY GOAL'**
-  String get requestGoalKicker;
-
-  /// No description provided for @goalStrength.
-  ///
-  /// In en, this message translates to:
-  /// **'Build strength'**
-  String get goalStrength;
-
-  /// No description provided for @goalFatLoss.
-  ///
-  /// In en, this message translates to:
-  /// **'Lose fat'**
-  String get goalFatLoss;
-
-  /// No description provided for @goalMobility.
-  ///
-  /// In en, this message translates to:
-  /// **'Improve mobility'**
-  String get goalMobility;
-
-  /// No description provided for @goalConsistency.
-  ///
-  /// In en, this message translates to:
-  /// **'Stay consistent'**
-  String get goalConsistency;
-
-  /// No description provided for @requestExpKicker.
-  ///
-  /// In en, this message translates to:
-  /// **'EXPERIENCE'**
-  String get requestExpKicker;
-
-  /// No description provided for @expNew.
-  ///
-  /// In en, this message translates to:
-  /// **'New to lifting'**
-  String get expNew;
-
-  /// No description provided for @expReturning.
-  ///
-  /// In en, this message translates to:
-  /// **'Returning after a break'**
-  String get expReturning;
-
-  /// No description provided for @expSeasoned.
-  ///
-  /// In en, this message translates to:
-  /// **'Lifting for years'**
-  String get expSeasoned;
-
-  /// No description provided for @requestTimeKicker.
-  ///
-  /// In en, this message translates to:
-  /// **'BEST TIME TO REACH YOU · OPTIONAL'**
-  String get requestTimeKicker;
-
-  /// No description provided for @timeMorning.
-  ///
-  /// In en, this message translates to:
-  /// **'Morning'**
-  String get timeMorning;
-
-  /// No description provided for @timeAfternoon.
-  ///
-  /// In en, this message translates to:
-  /// **'Afternoon'**
-  String get timeAfternoon;
-
-  /// No description provided for @timeEvening.
-  ///
-  /// In en, this message translates to:
-  /// **'Evening'**
-  String get timeEvening;
-
-  /// No description provided for @requestNotesKicker.
-  ///
-  /// In en, this message translates to:
-  /// **'MESSAGE · OPTIONAL'**
-  String get requestNotesKicker;
-
-  /// No description provided for @requestNotesHint.
-  ///
-  /// In en, this message translates to:
-  /// **'Injuries, schedule, equipment…'**
-  String get requestNotesHint;
-
-  /// No description provided for @requestSubmit.
-  ///
-  /// In en, this message translates to:
-  /// **'Send request'**
-  String get requestSubmit;
-
-  /// No description provided for @requestPickBoth.
-  ///
-  /// In en, this message translates to:
-  /// **'Pick a goal first'**
-  String get requestPickBoth;
-
-  /// No description provided for @sentChip.
-  ///
-  /// In en, this message translates to:
-  /// **'SUBMITTED'**
-  String get sentChip;
-
-  /// No description provided for @sentTitle.
-  ///
-  /// In en, this message translates to:
-  /// **'Consultation request received'**
-  String get sentTitle;
-
-  /// No description provided for @sentBody.
-  ///
-  /// In en, this message translates to:
-  /// **'A member of our coaching team will follow up to discuss your goals and available coaching options.'**
-  String get sentBody;
-
-  /// No description provided for @sentSummaryKicker.
-  ///
-  /// In en, this message translates to:
-  /// **'REQUEST STATUS'**
-  String get sentSummaryKicker;
-
-  /// No description provided for @sentContinue.
-  ///
-  /// In en, this message translates to:
-  /// **'Back to Exercises'**
-  String get sentContinue;
-
-  /// No description provided for @welcomeTitle.
-  ///
-  /// In en, this message translates to:
-  /// **'Welcome to Personal Coaching'**
-  String get welcomeTitle;
-
-  /// No description provided for @welcomeFlag.
-  ///
-  /// In en, this message translates to:
-  /// **'Your trainer replies within 24–48 hours'**
-  String get welcomeFlag;
-
-  /// No description provided for @welcomeStep1.
-  ///
-  /// In en, this message translates to:
-  /// **'Your trainer reviews your request and replies in chat'**
-  String get welcomeStep1;
-
-  /// No description provided for @welcomeStep2.
-  ///
-  /// In en, this message translates to:
-  /// **'You agree on a time for the 1:1'**
-  String get welcomeStep2;
-
-  /// No description provided for @welcomeStep3.
-  ///
-  /// In en, this message translates to:
-  /// **'Your first custom plan follows the call'**
-  String get welcomeStep3;
-
-  /// No description provided for @welcomeDone.
-  ///
-  /// In en, this message translates to:
-  /// **'Back to My Trainer'**
-  String get welcomeDone;
-
-  /// No description provided for @consultPrimary.
-  ///
-  /// In en, this message translates to:
-  /// **'Request Consultation'**
-  String get consultPrimary;
-
-  /// No description provided for @exploreCoachingPlans.
-  ///
-  /// In en, this message translates to:
-  /// **'Explore Coaching Plans'**
-  String get exploreCoachingPlans;
-
-  /// No description provided for @consultBenefit1.
-  ///
-  /// In en, this message translates to:
-  /// **'Custom workouts built around your history'**
-  String get consultBenefit1;
-
-  /// No description provided for @consultBenefit2.
-  ///
-  /// In en, this message translates to:
-  /// **'Message your trainer between sessions'**
-  String get consultBenefit2;
-
-  /// No description provided for @consultBenefit3.
-  ///
-  /// In en, this message translates to:
-  /// **'Video and form cues on every exercise'**
-  String get consultBenefit3;
-
-  /// No description provided for @consultFootnote.
-  ///
-  /// In en, this message translates to:
-  /// **'A coach follows up to discuss your goals — nothing is booked or billed until you choose a plan.'**
-  String get consultFootnote;
-
-  /// No description provided for @goalRecover.
-  ///
-  /// In en, this message translates to:
-  /// **'Recover from an injury'**
-  String get goalRecover;
-
-  /// No description provided for @goalUnsure.
-  ///
-  /// In en, this message translates to:
-  /// **'Not sure yet'**
-  String get goalUnsure;
-
-  /// No description provided for @timeWeekdayMornings.
-  ///
-  /// In en, this message translates to:
-  /// **'Weekday mornings'**
-  String get timeWeekdayMornings;
-
-  /// No description provided for @timeWeekdayEvenings.
-  ///
-  /// In en, this message translates to:
-  /// **'Weekday evenings'**
-  String get timeWeekdayEvenings;
-
-  /// No description provided for @timeWeekends.
-  ///
-  /// In en, this message translates to:
-  /// **'Weekends'**
-  String get timeWeekends;
-
-  /// No description provided for @requestNameKicker.
-  ///
-  /// In en, this message translates to:
-  /// **'NAME · FROM YOUR ACCOUNT'**
-  String get requestNameKicker;
-
-  /// No description provided for @requestEmailKicker.
-  ///
-  /// In en, this message translates to:
-  /// **'EMAIL · FROM YOUR ACCOUNT'**
-  String get requestEmailKicker;
-
-  /// No description provided for @requestVerified.
-  ///
-  /// In en, this message translates to:
-  /// **'Verified on your account'**
-  String get requestVerified;
-
-  /// No description provided for @srcLocked.
-  ///
-  /// In en, this message translates to:
-  /// **'LOCKED'**
-  String get srcLocked;
-
-  /// No description provided for @sentRequestedLabel.
-  ///
-  /// In en, this message translates to:
-  /// **'Requested'**
-  String get sentRequestedLabel;
-
-  /// No description provided for @sentContactLabel.
-  ///
-  /// In en, this message translates to:
-  /// **'Contact'**
-  String get sentContactLabel;
-
-  /// No description provided for @sentGoalLabel.
+  /// No description provided for @authChipGoal.
   ///
   /// In en, this message translates to:
   /// **'Goal'**
-  String get sentGoalLabel;
+  String get authChipGoal;
 
-  /// No description provided for @sentNote.
+  /// No description provided for @authChipPlaces.
   ///
   /// In en, this message translates to:
-  /// **'You can keep training as usual — nothing changes in the app until you choose to subscribe.'**
-  String get sentNote;
+  /// **'Places'**
+  String get authChipPlaces;
 
-  /// No description provided for @welcomeBody.
+  /// No description provided for @proBadgeLabel.
   ///
   /// In en, this message translates to:
-  /// **'Your subscription is active. Your personal trainer will reach out within 24–48 hours.'**
-  String get welcomeBody;
+  /// **'PRO'**
+  String get proBadgeLabel;
 
-  /// No description provided for @welcomeStepsLabel.
+  /// No description provided for @upgradeSheetTitle.
   ///
   /// In en, this message translates to:
-  /// **'WHAT HAPPENS NEXT'**
-  String get welcomeStepsLabel;
+  /// **'Body Bridge Premium'**
+  String get upgradeSheetTitle;
 
-  /// No description provided for @welcomeStep1T.
+  /// No description provided for @upgradeSheetSubtitle.
   ///
   /// In en, this message translates to:
-  /// **'Subscription active'**
-  String get welcomeStep1T;
+  /// **'Unlock the full Body Bridge experience'**
+  String get upgradeSheetSubtitle;
 
-  /// No description provided for @welcomeStep1S.
+  /// No description provided for @upgradeClose.
   ///
   /// In en, this message translates to:
-  /// **'Advanced is live on this account'**
-  String get welcomeStep1S;
+  /// **'Close'**
+  String get upgradeClose;
 
-  /// No description provided for @welcomeStep2T.
+  /// No description provided for @billingMonthly.
   ///
   /// In en, this message translates to:
-  /// **'Trainer assignment in progress'**
-  String get welcomeStep2T;
+  /// **'MONTHLY'**
+  String get billingMonthly;
 
-  /// No description provided for @welcomeStep2S.
+  /// No description provided for @billingAnnual.
   ///
   /// In en, this message translates to:
-  /// **'We\'re matching you with the right coach'**
-  String get welcomeStep2S;
+  /// **'ANNUAL'**
+  String get billingAnnual;
 
-  /// No description provided for @welcomeStep3T.
+  /// No description provided for @planMostPopular.
   ///
   /// In en, this message translates to:
-  /// **'First outreach within 24–48 hours'**
-  String get welcomeStep3T;
+  /// **'Most popular'**
+  String get planMostPopular;
 
-  /// No description provided for @welcomeStep3S.
+  /// No description provided for @planFactFullHistory.
   ///
   /// In en, this message translates to:
-  /// **'Your trainer says hello right here in chat'**
-  String get welcomeStep3S;
+  /// **'Full history'**
+  String get planFactFullHistory;
 
-  /// No description provided for @welcomePendingT.
+  /// No description provided for @planFactCloudSync.
   ///
   /// In en, this message translates to:
-  /// **'Your trainer will appear here'**
-  String get welcomePendingT;
+  /// **'Cloud backup & sync'**
+  String get planFactCloudSync;
 
-  /// No description provided for @welcomePendingS.
+  /// No description provided for @planFactUnlimitedRoutines.
   ///
   /// In en, this message translates to:
-  /// **'Once assigned, their profile and chat open from this screen.'**
-  String get welcomePendingS;
+  /// **'Unlimited routines'**
+  String get planFactUnlimitedRoutines;
 
-  /// No description provided for @welcomeFootnote.
+  /// No description provided for @planFactChartsCommunity.
   ///
   /// In en, this message translates to:
-  /// **'Meanwhile, the Trainer Library is open — take a look around.'**
-  String get welcomeFootnote;
+  /// **'Charts & community'**
+  String get planFactChartsCommunity;
 
-  /// Trainer feature (card t_d788f36e)
+  /// No description provided for @planFactEverythingInBasic.
   ///
   /// In en, this message translates to:
-  /// **'1:1 trainer guidance'**
-  String get trainerGateTitle;
+  /// **'Everything in Basic'**
+  String get planFactEverythingInBasic;
 
-  /// Trainer feature (card t_d788f36e)
+  /// No description provided for @planFactAdvancedAnalytics.
   ///
   /// In en, this message translates to:
-  /// **'Custom workouts and direct trainer chat are part of Advanced.'**
-  String get trainerGateBody;
+  /// **'Advanced analytics'**
+  String get planFactAdvancedAnalytics;
 
-  /// Trainer feature (card t_d788f36e)
+  /// No description provided for @planFactPremiumPrograms.
   ///
   /// In en, this message translates to:
-  /// **'See Advanced'**
-  String get trainerGateCta;
+  /// **'Premium programs & videos'**
+  String get planFactPremiumPrograms;
 
-  /// No description provided for @sourceFree.
+  /// No description provided for @planFactTrainerContent.
   ///
   /// In en, this message translates to:
-  /// **'Free'**
-  String get sourceFree;
+  /// **'Trainer content'**
+  String get planFactTrainerContent;
 
-  /// No description provided for @sourceTrainer.
-  ///
-  /// In en, this message translates to:
-  /// **'Trainer'**
-  String get sourceTrainer;
-
-  /// No description provided for @sourceCustom.
-  ///
-  /// In en, this message translates to:
-  /// **'Custom'**
-  String get sourceCustom;
-
-  /// No description provided for @sourceAll.
-  ///
-  /// In en, this message translates to:
-  /// **'All'**
-  String get sourceAll;
-
-  /// No description provided for @sectionTrainerLibrary.
-  ///
-  /// In en, this message translates to:
-  /// **'Trainer library'**
-  String get sectionTrainerLibrary;
-
-  /// No description provided for @sectionFreeLibrary.
-  ///
-  /// In en, this message translates to:
-  /// **'Free library'**
-  String get sectionFreeLibrary;
-
-  /// No description provided for @advancedBadge.
-  ///
-  /// In en, this message translates to:
-  /// **'ADVANCED'**
-  String get advancedBadge;
-
-  /// No description provided for @unlockAdvancedTitle.
-  ///
-  /// In en, this message translates to:
-  /// **'Unlock Advanced'**
-  String get unlockAdvancedTitle;
-
-  /// No description provided for @benefitTrainerLibrary.
-  ///
-  /// In en, this message translates to:
-  /// **'Full trainer video library'**
-  String get benefitTrainerLibrary;
-
-  /// No description provided for @benefitCoachAssignments.
-  ///
-  /// In en, this message translates to:
-  /// **'Exercises assigned personally by your coach'**
-  String get benefitCoachAssignments;
-
-  /// No description provided for @benefitMonthlySessions.
-  ///
-  /// In en, this message translates to:
-  /// **'New trainer sessions monthly'**
-  String get benefitMonthlySessions;
-
-  /// No description provided for @continueOnSite.
+  /// No description provided for @upgradeCtaContinueOnWeb.
   ///
   /// In en, this message translates to:
   /// **'Continue on bodybridge.net'**
-  String get continueOnSite;
+  String get upgradeCtaContinueOnWeb;
 
-  /// No description provided for @notNow.
+  /// No description provided for @checkoutComingSoon.
   ///
   /// In en, this message translates to:
-  /// **'Not now'**
-  String get notNow;
+  /// **'Online checkout coming soon'**
+  String get checkoutComingSoon;
 
-  /// No description provided for @lockAdvancedMessage.
+  /// No description provided for @enterpriseContactSales.
   ///
   /// In en, this message translates to:
-  /// **'Trainer-recorded exercises are part of Advanced'**
-  String get lockAdvancedMessage;
+  /// **'Enterprise — Contact Sales'**
+  String get enterpriseContactSales;
 
-  /// No description provided for @setsLabel.
+  /// No description provided for @finePrintBilling.
   ///
   /// In en, this message translates to:
-  /// **'Sets'**
-  String get setsLabel;
+  /// **'Billing is handled securely on bodybridge.net — not through the Play Store.'**
+  String get finePrintBilling;
 
-  /// No description provided for @repsLabel.
+  /// No description provided for @lockAnalyticsTitle.
   ///
   /// In en, this message translates to:
-  /// **'Reps'**
-  String get repsLabel;
+  /// **'Advanced analytics'**
+  String get lockAnalyticsTitle;
 
-  /// No description provided for @trainerCatStrength.
+  /// No description provided for @lockAnalyticsMeta.
   ///
   /// In en, this message translates to:
-  /// **'Strength'**
-  String get trainerCatStrength;
+  /// **'Volume trends · 1RM estimates · muscle split'**
+  String get lockAnalyticsMeta;
 
-  /// No description provided for @trainerCatMobility.
+  /// No description provided for @lockAnalyticsUpsell.
   ///
   /// In en, this message translates to:
-  /// **'Mobility'**
-  String get trainerCatMobility;
+  /// **'Unlock advanced analytics with Body Bridge Pro.'**
+  String get lockAnalyticsUpsell;
 
-  /// No description provided for @trainerCatCore.
+  /// No description provided for @premiumProgramLabel.
   ///
   /// In en, this message translates to:
-  /// **'Core'**
-  String get trainerCatCore;
+  /// **'Premium program'**
+  String get premiumProgramLabel;
 
-  /// No description provided for @trainerCatCorrective.
+  /// No description provided for @premiumProgramTitle.
   ///
   /// In en, this message translates to:
-  /// **'Corrective'**
-  String get trainerCatCorrective;
+  /// **'Hypertrophy Blocks'**
+  String get premiumProgramTitle;
 
-  /// No description provided for @trainerCatWarmup.
+  /// No description provided for @premiumProgramMeta.
   ///
   /// In en, this message translates to:
-  /// **'Warm-up'**
-  String get trainerCatWarmup;
+  /// **'8 weeks · 4 sessions / week · trainer-led'**
+  String get premiumProgramMeta;
+
+  /// No description provided for @premiumProgramUpsell.
+  ///
+  /// In en, this message translates to:
+  /// **'Premium programs and trainer videos are part of Pro.'**
+  String get premiumProgramUpsell;
+
+  /// No description provided for @unlockWithPro.
+  ///
+  /// In en, this message translates to:
+  /// **'Unlock with Pro'**
+  String get unlockWithPro;
+
+  /// No description provided for @upgradeUpsellToast.
+  ///
+  /// In en, this message translates to:
+  /// **'Upgrade to unlock more'**
+  String get upgradeUpsellToast;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

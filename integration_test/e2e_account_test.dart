@@ -1,19 +1,21 @@
-// T-C E2E device test: sign-up -> Convex user doc -> re-login -> delete account.
+// T-C E2E device test: onboarding -> guest data seeding -> OTP wall surface.
 //
-// Runs the REAL app on the device (real Firebase Auth cloud + real Convex
-// local backend via `adb reverse tcp:3210 tcp:3210`). The boot sequence below
-// replicates lib/main.dart for phone (integration tests replace main.dart as
-// the entry point), so production native plugin paths are exercised.
+// Runs the REAL app on the device (real Convex local backend via
+// `adb reverse tcp:3210 tcp:3210`). The boot sequence below replicates
+// lib/main.dart for phone (integration tests replace main.dart as the entry
+// point), so production native plugin paths are exercised.
 //
-// Host-side verification (Firebase REST account checks, Convex doc dumps) is
-// performed by the bash driver around this run and posted to the Kanban card.
+// The old password-flow cases (sign-up -> re-login -> delete account) have no
+// OTP equivalent on a real backend: the verification code arrives by email,
+// which nothing in this harness can read. They were removed per the contract;
+// the deterministic OTP surface (email step renders, invalid email arms the
+// inline error and stays on the wall) is covered instead. Host-side
+// verification (Convex doc dumps) is performed by the bash driver around this
+// run and posted to the Kanban card.
 //
 // Run (from worktree root):
 //   adb reverse tcp:3210 tcp:3210
 //   flutter test integration_test/e2e_account_test.dart \
-//     --dart-define=FB_API_KEY=... --dart-define=FB_APP_ID=... \
-//     --dart-define=FB_SENDER_ID=... --dart-define=FB_PROJECT_ID=motionletics \
-//     --dart-define=FB_AUTH_DOMAIN=... --dart-define=FB_STORAGE_BUCKET=... \
 //     --dart-define=CONVEX_URL=http://127.0.0.1:3210
 library;
 
@@ -29,12 +31,10 @@ import 'package:gymmane/services/rest_alarm.dart';
 import 'package:gymmane/services/workout_import.dart';
 import 'package:gymmane/state/account_gate.dart';
 import 'package:gymmane/state/fit_state.dart';
+import 'package:gymmane/widgets/ui_kit.dart';
 import 'package:intl/date_symbol_data_local.dart';
 import 'package:integration_test/integration_test.dart';
 import 'package:phosphoricons_flutter/phosphoricons_flutter.dart';
-
-const String kEmail = 'tc-e2e-20260930@motionletics-test.com';
-const String kPassword = 'Tc!E2ePass2026x';
 
 late final l10n.AppLocalizations t;
 
@@ -131,7 +131,7 @@ Future<void> main() async {
   binding.framePolicy = LiveTestWidgetsFlutterBindingFramePolicy.fullyLive;
   t = l10n.lookupAppLocalizations(const Locale('en'));
 
-  testWidgets('T-C signup -> convex user -> relogin -> delete account', (tester) async {
+  testWidgets('T-C onboarding -> guest data -> OTP wall surface', (tester) async {
     await _bootLikeMain();
 
     await tester.pumpWidget(const GymManeApp());
@@ -154,7 +154,8 @@ Future<void> main() async {
     fit.gamification = false;
     _seedGuestWorkouts();
     final guestCountBefore = fit.sessions.length;
-    expect(guestCountBefore, 2, reason: 'seeded workouts must be present before the delete step');
+    expect(guestCountBefore, 2,
+        reason: 'seeded workouts must be present before the auth surface is exercised');
     debugPrint('E2E_STATE|seeded|sessions=$guestCountBefore');
 
     // ---------- Settings -> Account ----------
@@ -172,68 +173,26 @@ Future<void> main() async {
     await tester.pump(const Duration(seconds: 1));
     _dump('account-screen-signed-out');
 
-    // ---------- Create account ("Create account" segment is the default) ----------
-    // Field layout: label Text is a SIBLING of its TextField (Column), so
-    // target fields positionally: index 0 = email, index 1 = password.
-    await _pumpUntil(tester, find.text(t.emailLabel));
-    await tester.enterText(find.byType(TextField).at(0), kEmail);
-    await tester.enterText(find.byType(TextField).at(1), kPassword);
-    FocusManager.instance.primaryFocus?.unfocus();
-    await tester.pump(const Duration(milliseconds: 400));
-    await tester.tap(find.text(t.startFree));
-    debugPrint('E2E_STATE|signup-submitted');
+    // ---------- OTP wall: the email step is the default ----------
+    await _pumpUntil(tester, find.text(titleCase(t.authCtaContinueEmail)),
+        timeout: const Duration(seconds: 30));
+    _dump('wall-email-step');
 
-    // Signed-in view replaces the form: FREE badge + Sign out only render once
-    // Firebase auth resolved AND entitlements came back from Convex
-    // (users:ensureUser + entitlements:get).
-    await _pumpUntil(tester, find.text(t.tierFree), timeout: const Duration(seconds: 90));
-    await _pumpUntil(tester, find.text(t.signOut), timeout: const Duration(seconds: 60));
-    _dump('signed-up');
-    await tester.pump(const Duration(seconds: 2));
-    expect(AccountGate.instance.snapshot.tier.isSignedIn, isTrue);
-    expect(AccountGate.instance.snapshot.email, kEmail);
-
-    // ---------- Sign out ----------
-    await tester.tap(find.text(t.signOut));
-    await _pumpUntil(tester, find.text(t.startFree), timeout: const Duration(seconds: 60));
-    _dump('signed-out');
+    // An invalid email arms the inline validation error and stays on the
+    // wall: nothing is sent and no app content is revealed.
+    await tester.enterText(find.byType(TextField).at(0), 'not-an-email');
+    await tester.pump(const Duration(milliseconds: 100));
+    await tester.tap(find.text(titleCase(t.authCtaContinueEmail)));
+    await _pumpUntil(tester, find.text(t.authErrorInvalidEmail));
+    _dump('wall-invalid-email');
+    expect(find.text(t.authErrorInvalidEmail), findsOneWidget);
     expect(AccountGate.instance.snapshot.tier.isSignedIn, isFalse);
 
-    // ---------- Sign back in (same user; driver checks no duplicate doc) ----------
-    await tester.tap(find.text(t.signIn).last);
-    await tester.pump();
-    await tester.enterText(find.byType(TextField).at(0), kEmail);
-    await tester.enterText(find.byType(TextField).at(1), kPassword);
-    FocusManager.instance.primaryFocus?.unfocus();
-    await tester.pump(const Duration(milliseconds: 400));
-    await tester.tap(find.text(t.signIn).last);
-    debugPrint('E2E_STATE|signin-submitted');
-    await _pumpUntil(tester, find.text(t.tierFree), timeout: const Duration(seconds: 90));
-    _dump('signed-back-in');
-    expect(AccountGate.instance.snapshot.email, kEmail);
-
-    // ---------- Delete account ----------
-    await _pumpUntil(tester, find.text(t.deleteAccount));
-    await tester.tap(find.text(t.deleteAccount));
-    await tester.pump();
-    await _pumpUntil(tester, find.text(t.deleteAccountConfirmTitle));
-    debugPrint('E2E_STATE|confirm-dialog-shown');
-    await tester.tap(find.text(t.deleteAccountDelete));
-    debugPrint('E2E_STATE|delete-confirmed');
-
-    // App returns to guest mode: the signed-out form (email/password fields)
-    // renders again. Note: the form keeps its last segment (Sign in) after a
-    // delete, so the submit button reads "Sign in", not "Start free".
-    await _pumpUntil(tester, find.byType(TextField), timeout: const Duration(seconds: 90));
-    _dump('after-delete');
-    expect(AccountGate.instance.snapshot.tier.isSignedIn, isFalse);
-    await _pumpUntil(tester, find.text(t.deleteAccountDone), timeout: const Duration(seconds: 30));
-
-    // ---------- Local workouts preserved ----------
+    // ---------- Guest data untouched by the auth surface ----------
     expect(
       fit.sessions.length,
       guestCountBefore,
-      reason: 'delete account must not touch local workout data',
+      reason: 'the auth surface must not touch local workout data',
     );
     debugPrint('E2E_STATE|local-preserved|sessions=${fit.sessions.length}');
     debugPrint('E2E_DONE|ok');

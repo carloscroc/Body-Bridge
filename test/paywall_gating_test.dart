@@ -27,10 +27,10 @@ class FakeGate extends AccountGate {
   bool canAccess(String feature) => tierCan(tier, feature);
 
   @override
-  Future<void> signIn(String email, String password) async {}
+  Future<void> requestEmailCode(String email) async {}
 
   @override
-  Future<void> signUp(String email, String password) async {}
+  Future<bool> verifyEmailCode(String email, String code) async => true;
 
   @override
   Future<void> signOut() async => signOutCalled = true;
@@ -38,8 +38,6 @@ class FakeGate extends AccountGate {
   @override
   Future<void> deleteAccount() async {}
 
-  @override
-  Future<void> sendPasswordReset(String email) async {}
 
 }
 
@@ -74,14 +72,19 @@ void main() {
   FeatureGate gatedFeature({VoidCallback? onTap}) =>
       FeatureGate(feature: kCapAiPlan, onTap: onTap ?? () {}, child: const Text('AI plan'));
 
-  group('FeatureGate: locked tap -> PaywallScreen', () {
-    testWidgets('guest tapping the gated feature lands on the paywall', (tester) async {
+  group('FeatureGate: locked tap -> upgrade sheet', () {
+    testWidgets('guest tapping the gated feature opens the upgrade sheet', (tester) async {
       await pumpHost(tester, gatedFeature());
 
       await tester.tap(find.text('AI plan'));
       await tester.pumpAndSettle();
 
-      expect(fit.route, 'paywall', reason: 'guests must see the paywall, never the locked feature');
+      expect(find.text(t.upgradeSheetTitle), findsOneWidget,
+          reason: 'guests must get the upgrade sheet, never the locked feature');
+      expect(find.text(t.upgradeUpsellToast), findsOneWidget);
+      expect(fit.route, isNot('paywall'));
+      await tester.pump(const Duration(seconds: 4)); // let the notch toast auto-dismiss
+      await tester.pumpAndSettle();
     });
 
     testWidgets('free user sees the gate too', (tester) async {
@@ -91,7 +94,11 @@ void main() {
       await tester.tap(find.text('AI plan'));
       await tester.pumpAndSettle();
 
-      expect(fit.route, 'paywall');
+      expect(find.text(t.upgradeSheetTitle), findsOneWidget);
+      expect(find.text(t.upgradeUpsellToast), findsOneWidget);
+      expect(fit.route, isNot('paywall'));
+      await tester.pump(const Duration(seconds: 4)); // let the notch toast auto-dismiss
+      await tester.pumpAndSettle();
     });
 
     testWidgets('basic unlocks its ladder but not the advanced features', (tester) async {
@@ -118,7 +125,10 @@ void main() {
 
       await tester.tap(find.text('AI plan'));
       await tester.pumpAndSettle();
-      expect(fit.route, 'paywall', reason: 'personalized_programs stays locked below advanced');
+      expect(find.text(t.upgradeSheetTitle), findsOneWidget,
+          reason: 'personalized_programs stays locked below advanced');
+      await tester.pump(const Duration(seconds: 4)); // let the notch toast auto-dismiss
+      await tester.pumpAndSettle();
     });
 
     testWidgets('advanced user passes the AI plan through', (tester) async {
@@ -159,7 +169,7 @@ void main() {
       expect(fit.route, isNot('paywall'));
     });
 
-    testWidgets('signed-in free hits the FREE limits: trio gates route to paywall', (tester) async {
+    testWidgets('signed-in free hits the FREE limits: trio gates open the upgrade sheet', (tester) async {
       var activated = 0;
       AccountGate.install(FakeGate(AccountTier.free));
       await pumpHost(
@@ -178,10 +188,13 @@ void main() {
       );
 
       // On free the capabilities are absent from the plan, so the gates
-      // route to the paywall: zero activations.
+      // open the upgrade sheet: zero activations.
       await tester.tap(find.text('Routines'));
       await tester.pumpAndSettle();
-      expect(fit.route, 'paywall', reason: 'free lacks unlimited_routines -> paywall');
+      expect(find.text(t.upgradeSheetTitle), findsOneWidget,
+          reason: 'free lacks unlimited_routines -> upgrade sheet');
+      await tester.pump(const Duration(seconds: 4)); // let the notch toast auto-dismiss
+      await tester.pumpAndSettle();
       expect(activated, 0);
     });
   });

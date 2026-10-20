@@ -2928,18 +2928,6 @@ class AppLocalizationsKo extends AppLocalizations {
   String get authErrorInvalidEmail => '이메일 주소가 올바르지 않은 것 같습니다.';
 
   @override
-  String get authErrorWrongPassword => '이메일 또는 비밀번호가 틀셨습니다.';
-
-  @override
-  String get authErrorUserNotFound => '해당 이메일로 등록된 계정이 없습니다.';
-
-  @override
-  String get authErrorEmailAlreadyInUse => '이 이메일로 이미 계정이 있습니다.';
-
-  @override
-  String get authErrorWeakPassword => '비밀번호가 너무 약합니다.';
-
-  @override
   String get authErrorTooManyRequests => '시도 횟수가 너무 많습니다. 잠시 후 다시 시도해 주세요.';
 
   @override
@@ -2953,26 +2941,6 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get emailHint => 'you@example.com';
-
-  @override
-  String get passwordHint => '6자 이상';
-
-  @override
-  String get forgotPassword => '비밀번호를 잊으셨나요?';
-
-  @override
-  String get resetSend => '재설정 링크 보내기';
-
-  @override
-  String get resetSentTitle => '이메일을 확인하세요';
-
-  @override
-  String resetSentBody(String email) {
-    return '$email로 재설정 링크를 보냈습니다.';
-  }
-
-  @override
-  String get backToSignIn => '로그인으로 돌아가기';
 
   @override
   String get accountTitle => '계정';
@@ -2998,22 +2966,10 @@ class AppLocalizationsKo extends AppLocalizations {
   String get signIn => '로그인';
 
   @override
-  String get createAccount => '계정 만들기';
-
-  @override
-  String get startFree => '무료로 시작';
-
-  @override
   String get emailLabel => '이메일';
 
   @override
-  String get passwordLabel => '비밀번호';
-
-  @override
   String get emailInvalid => '올바른 이메일 주소를 입력하세요';
-
-  @override
-  String get passwordTooShort => '비밀번호는 6자 이상이어야 합니다';
 
   @override
   String get authFailedGeneric => '요청을 완료할 수 없습니다.';
@@ -3053,9 +3009,6 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get deleteAccountDone => '계정이 삭제되었습니다.';
-
-  @override
-  String get deleteAccountReauth => '계정을 삭제하려면 다시 로그인하세요.';
 
   @override
   String get deleteAccountFailed => '계정을 삭제하지 못했습니다. 다시 시도해 주세요.';
@@ -3111,674 +3064,204 @@ class AppLocalizationsKo extends AppLocalizations {
   String get billingComingSoon => '결제 기능이 곧 제공될 예정입니다.';
 
   @override
-  String get communityTab => '커뮤니티';
+  String get authWelcomeTitle => 'Body Bridge에 오신 것을 환영합니다';
 
   @override
-  String get feedTab => '피드';
+  String get authWelcomeSubline => '이메일 한 번이면 끝. 비밀번호는 필요 없어요.';
 
   @override
-  String get membersTab => '멤버';
+  String get authCtaContinueEmail => '이메일로 계속하기';
 
   @override
-  String get gateTitle => '커뮤니티는 Basic에 포함되어 있습니다';
+  String get authTrustMicrocopy => '6자리 코드를 보내드릴게요. 비밀번호는 필요 없어요.';
 
   @override
-  String get gateBody => '진행 사진, 운동 기록, 그리고 서로를 이해하는 사람들.';
+  String get authPrivacyLine1 => '데이터는 기기에만 저장돼요.';
 
   @override
-  String get gateCta => '커뮤니티 잠금 해제';
+  String get authPrivacyLine2 => '언제나 오프라인 우선.';
 
   @override
-  String get gateLinkOut => 'bodybridge.net에서 계속';
+  String get authCodeKicker => '이메일을 확인해 주세요';
 
   @override
-  String get gateNotNow => '나중에';
+  String get authCodeTitle => '코드를 입력하세요';
 
   @override
-  String get optionsTitle => '게시물 옵션';
-
-  @override
-  String get sharePost => '게시물 공유';
-
-  @override
-  String get savePost => '게시물 저장';
-
-  @override
-  String get savedPost => '저장됨';
-
-  @override
-  String get copyPostLink => '게시물 링크 복사';
-
-  @override
-  String get hidePost => '게시물 숨기기';
-
-  @override
-  String get reportPost => '게시물 신고';
-
-  @override
-  String get editPost => '게시물 수정';
-
-  @override
-  String get deletePost => '게시물 삭제…';
-
-  @override
-  String get deleteConfirmTitle => '이 게시물을 삭제할까요?';
-
-  @override
-  String get deleteConfirmBody => '게시물, 사진, 댓글이 커뮤니티에서 삭제됩니다. 되돌릴 수 없습니다.';
-
-  @override
-  String get keepPost => '유지';
-
-  @override
-  String get deleteAction => '삭제';
-
-  @override
-  String get postHiddenSnackbar => '게시물 숨김 · 실행 취소';
-
-  @override
-  String get reportSheetTitle => '게시물 신고';
-
-  @override
-  String get reportAnonymous => '신고는 익명으로 전송됩니다.';
-
-  @override
-  String get reportSpam => '스팸 또는 사기';
-
-  @override
-  String get reportHarassment => '괴롭힘 또는 혐오';
-
-  @override
-  String get reportInappropriate => '부적절한 사진';
-
-  @override
-  String get reportSubmit => '신고';
-
-  @override
-  String get reportSent => '신고가 전송되었습니다';
-
-  @override
-  String get shareSheetTitle => '게시물 공유';
-
-  @override
-  String get copyLink => '링크 복사';
-
-  @override
-  String get linkCopied => '링크가 복사되었습니다';
-
-  @override
-  String get shareMessages => '메시지';
-
-  @override
-  String get shareMail => '메일';
-
-  @override
-  String get shareInstagram => 'Instagram';
-
-  @override
-  String get shareMore => '더보기';
-
-  @override
-  String get newPostTitle => '새 게시물';
-
-  @override
-  String get modeProgress => '진행';
-
-  @override
-  String get modeWorkout => '운동';
-
-  @override
-  String progressPhotosCount(int n) {
-    return '진행 사진 · $n / 4';
+  String otpSentTo(String email) {
+    return '$email으로 6자리 코드를 보냈어요';
   }
 
   @override
-  String get addPhotoTile => '추가';
-
-  @override
-  String get photoPickerPending => '사진 추가에는 이미지 피커가 필요합니다 — 곧 제공';
-
-  @override
-  String get captionHint => '이번 주의 변화와 배운 점을 공유해 보세요...';
-
-  @override
-  String get photosPrivate => '사진은 게시할 때까지 비공개입니다.';
-
-  @override
-  String get sessionPreview => '세션 미리보기';
-
-  @override
-  String get autoFilled => '오늘 세션에서 자동 입력됨';
-
-  @override
-  String get contextHint => '컨디션이나 느낌을 추가해 보세요';
-
-  @override
-  String get postToCommunity => '커뮤니티에 게시';
-
-  @override
-  String get commentsTitle => '댓글';
-
-  @override
-  String commentCount(int n) {
-    String _temp0 = intl.Intl.pluralLogic(n, locale: localeName, other: '댓글 $n개');
-    return '$_temp0';
+  String authCodeExpires(String time) {
+    return '코드 만료까지 $time';
   }
 
   @override
-  String get addCommentHint => '댓글 추가...';
+  String get authCodeExpiredVerdict => '코드 만료됨';
 
   @override
-  String replyingTo(String name) {
-    return '$name님에게 답장 중';
+  String get authCodeExpired => '이 코드는 만료되었어요. 새 코드를 받아보세요.';
+
+  @override
+  String get authResendPrompt => '안 받으셨나요? ';
+
+  @override
+  String get authResendAction => '다시 보내기';
+
+  @override
+  String authResendIn(String time) {
+    return '$time 후 다시 보내기';
   }
 
   @override
-  String get opChip => '작성자';
+  String get authVerifying => '코드를 확인하고 있어요…';
 
   @override
-  String get noPostsTitle => '아직 게시물이 없습니다';
-
-  @override
-  String get noPostsBody => '먼저 이번 주를 공유해 보세요.';
-
-  @override
-  String get createFirstPost => '첫 게시물 작성';
-
-  @override
-  String get progressPhotoLabel => '진행 사진';
-
-  @override
-  String get progressChip => '진행';
-
-  @override
-  String get workoutChip => '운동';
-
-  @override
-  String get prChip => 'PR';
-
-  @override
-  String workoutStats(int min, int sets, String volume) {
-    return '$min분 · $sets세트 · 볼륨 $volume kg';
+  String authCodeInvalid(int n) {
+    return '코드가 일치하지 않아요. $n번 기회가 남았어요.';
   }
 
   @override
-  String get composeDisabledHint => '게시하려면 커뮤니티를 잠금 해제하세요';
+  String get otpChangeEmail => '다른 이메일 사용하기';
 
   @override
-  String get inboxComingSoon => '받은편지함이 곧 제공됩니다';
+  String get authRateLimitTitle => '시도 횟수가 너무 많아요';
 
   @override
-  String get timeAgoNow => '방금';
+  String get authRateLimitBody => '잠시 숨을 고르고 몇 분 후에 다시 시도해 주세요. 계정은 안전해요.';
 
   @override
-  String timeAgoMinutes(int n) {
-    return '$n분';
+  String authRateLimitCta(String time) {
+    return '$time 후 다시 시도';
   }
 
   @override
-  String timeAgoHours(int n) {
-    return '$n시간';
+  String get authRateLimitRule => '잘못된 코드를 10번 입력하면 1시간 동안 요청이 제한돼요.';
+
+  @override
+  String authRateLimitBanner(String time) {
+    return '시도 횟수가 너무 많아요. $time 후에 다시 시도해 주세요.';
   }
 
   @override
-  String timeAgoDays(int n) {
-    return '$n일';
+  String get authWelcomeBackKicker => '다시 오신 것을 환영해요';
+
+  @override
+  String authWelcomeBackTitle(String name) {
+    return '다시 오신 것을 환영해요, $name님';
   }
 
   @override
-  String get trainerChip => '트레이너';
+  String get authWelcomeBackBody => '지난번 하던 곳에서 이어서 시작해요.';
 
   @override
-  String get myTrainer => '내 트레이너';
+  String get authSetupKicker => '기본 설정을 해요';
 
   @override
-  String get assignedWorkouts => '할당된 운동';
-
-  @override
-  String get messageTrainer => '메시지';
-
-  @override
-  String trainerSince(String date) {
-    return '$date부터 당신의 트레이너';
+  String authSetupTitle(String name) {
+    return '$name님, 기본 설정을 해요';
   }
 
   @override
-  String replyWindow(int hours) {
-    return '보통 $hours시간 안에 답장';
-  }
+  String get authSetupBody => '5단계만 거치면 앱이 준비돼요.';
 
   @override
-  String get chipNew => 'NEW';
+  String get authChipName => '이름';
 
   @override
-  String get chipInProgress => '진행 중';
+  String get authChipUnits => '단위';
 
   @override
-  String get chipCompleted => '완료';
+  String get authChipBody => '신체';
 
   @override
-  String sentCardMeta(String date, int count, int minutes) {
-    return '$date 전송 · $count개 운동 · ~$minutes분';
-  }
+  String get authChipGoal => '목표';
 
   @override
-  String sentByTrainerOn(String date) {
-    return '트레이너가 $date에 전송';
-  }
+  String get authChipPlaces => '장소';
 
   @override
-  String progressPct(int pct) {
-    return '$pct%';
-  }
+  String get proBadgeLabel => 'PRO';
 
   @override
-  String get coachNote => '코치 노트';
+  String get upgradeSheetTitle => 'Body Bridge 프리미엄';
 
   @override
-  String restLabel(String duration) {
-    return '휴식 $duration';
-  }
+  String get upgradeSheetSubtitle => 'Body Bridge의 모든 기능을 잠금 해제하세요';
 
   @override
-  String askAboutThis(String name) {
-    return '$name에게 이에 대해 물어보기';
-  }
+  String get upgradeClose => '닫기';
 
   @override
-  String messageHint(String name) {
-    return '$name에게 메시지...';
-  }
+  String get billingMonthly => '월간';
 
   @override
-  String get tapToOpen => '탭하여 열기';
+  String get billingAnnual => '연간';
 
   @override
-  String get todayDivider => '오늘';
+  String get planMostPopular => '가장 인기';
 
   @override
-  String trainerVideoMeta(String duration) {
-    return '트레이너 영상 · $duration';
-  }
+  String get planFactFullHistory => '전체 기록';
 
   @override
-  String get gateBenefitWorkouts => '당신의 몸과 부상에 맞춘 운동';
+  String get planFactCloudSync => '클라우드 백업 및 동기화';
 
   @override
-  String get gateBenefitChat => '트레이너와 직접 메시지';
+  String get planFactUnlimitedRoutines => '무제한 루틴';
 
   @override
-  String get gateBenefitVideo => '자세 비디오 피드백';
+  String get planFactChartsCommunity => '차트 및 커뮤니티';
 
   @override
-  String get gateDismiss => '나중에';
+  String get planFactEverythingInBasic => 'Basic의 모든 기능';
 
   @override
-  String get gateFootnote => '업그레이드는 bodybridge.net에서 진행됩니다 — 플랜 관리는 앱에서 계속됩니다.';
+  String get planFactAdvancedAnalytics => '고급 분석';
 
   @override
-  String bannerNewWorkout(String name) {
-    return '$name의 새 운동';
-  }
+  String get planFactPremiumPrograms => '프리미엄 프로그램 및 영상';
 
   @override
-  String get bannerTapToView => '탭하여 보기';
+  String get planFactTrainerContent => '트레이너 콘텐츠';
 
   @override
-  String get callKicker => '퍼스널 트레이닝';
+  String get upgradeCtaContinueOnWeb => 'bodybridge.net에서 계속';
 
   @override
-  String get callSheetTitle => '1:1 통화 예약하기';
+  String get checkoutComingSoon => '온라인 결제가 곧 제공됩니다';
 
   @override
-  String get callNotesHint => '특별히 다룰 주제가 있나요? (선택)';
+  String get enterpriseContactSales => 'Enterprise — 영업팀 문의';
 
   @override
-  String get callPickDayTime => '요일과 시간대를 선택해 주세요';
+  String get finePrintBilling => '결제는 bodybridge.net에서 안전하게 처리됩니다 — Play 스토어를 통하지 않습니다.';
 
   @override
-  String get callSubmit => '요청 보내기';
+  String get lockAnalyticsTitle => '고급 분석';
 
   @override
-  String get callSentTitle => '요청이 전송되었습니다';
+  String get lockAnalyticsMeta => '볼륨 추이 · 1RM 추정 · 부위별 분포';
 
   @override
-  String callSentBody(String name) {
-    return '$name님이 시간을 확정해 드립니다';
-  }
+  String get lockAnalyticsUpsell => 'Body Bridge Pro로 고급 분석을 잠금 해제하세요.';
 
   @override
-  String get callDone => '완료';
+  String get premiumProgramLabel => '프리미엄 프로그램';
 
   @override
-  String get bookCallA11y => '1:1 통화 예약';
+  String get premiumProgramTitle => '비대 블록';
 
   @override
-  String get startSoonTitle => '맞춤 세션이 곧 제공됩니다';
+  String get premiumProgramMeta => '8주 · 주 4회 세션 · 트레이너 지도';
 
   @override
-  String get startSoonBody => '가이드 세션은 트레이너 영상과 함께 제공됩니다. 그동안 트레이너에게 이 플랜에 대해 문의하세요.';
+  String get premiumProgramUpsell => '프리미엄 프로그램과 트레이너 영상은 Pro에 포함되어 있습니다.';
 
   @override
-  String exercisesMeta(int count, int minutes) {
-    return '$count개 운동 · ~$minutes분';
-  }
+  String get unlockWithPro => 'Pro로 잠금 해제';
 
   @override
-  String get talkToTrainer => '트레이너와 대화하기';
-
-  @override
-  String get talkToTrainerSub => '맞춤 운동과 1:1 채팅';
-
-  @override
-  String get notifications => '알림';
-
-  @override
-  String get consultCardKicker => '퍼스널 코칭';
-
-  @override
-  String get consultCardTitle => '상담 요청하기';
-
-  @override
-  String get consultCardSub => '방향을 정하는 짧은 1:1';
-
-  @override
-  String get consultCardSubDone => '요청 완료 — 보기';
-
-  @override
-  String get consultSheetTitle => '코치와 1:1로 함께하세요';
-
-  @override
-  String get consultSheetBody => '공인 트레이너가 프로그램을 설계하고 늘 곁에서 응원합니다.';
-
-  @override
-  String get consultDoorHow => '진행 방식';
-
-  @override
-  String get consultDoorHowSub => '1:1에서 다루는 내용';
-
-  @override
-  String get consultDoorRequest => '상담 요청하기';
-
-  @override
-  String get consultDoorRequestSub => '2분이면 충분, 부담 없음';
-
-  @override
-  String get consultDoorView => '내 요청 보기';
-
-  @override
-  String get consultDoorViewSub => '이미 전송됨 — 중복 없음';
-
-  @override
-  String get introTitle => '당신을 위해 만든 코칭';
-
-  @override
-  String get introP1 => '상담은 트레이너와의 짧은 1:1입니다. 목표, 운동 이력, 부상을 이야기하면 트레이너가 당신의 몸에 맞는 플랜으로 만들어 줍니다.';
-
-  @override
-  String get introP2 => '밀리지 않는 템플릿 따위 없습니다. 플랜은 당신만을 위해 작성되고 당신과 함께 변합니다.';
-
-  @override
-  String get introPoint1 => '목표·이력·부상을 먼저 듣습니다';
-
-  @override
-  String get introPoint2 => '앱 안에서 커스텀 운동을 전달합니다';
-
-  @override
-  String get introPoint3 => '피드백으로 플랜을 다듬습니다';
-
-  @override
-  String get introCta => '상담 요청하기';
-
-  @override
-  String get requestTitle => '상담 요청';
-
-  @override
-  String get requestSub => '코치가 연락 전에 읽습니다 — 어떤 구독도 생기지 않아요.';
-
-  @override
-  String get requestGoalKicker => '주요 목표';
-
-  @override
-  String get goalStrength => '근력 키우기';
-
-  @override
-  String get goalFatLoss => '체지방 줄이기';
-
-  @override
-  String get goalMobility => '가동성 개선';
-
-  @override
-  String get goalConsistency => '꾸준함 유지';
-
-  @override
-  String get requestExpKicker => '경험';
-
-  @override
-  String get expNew => '이제 시작';
-
-  @override
-  String get expReturning => '잠깐 쉬었다 옴';
-
-  @override
-  String get expSeasoned => '오랜 경험자';
-
-  @override
-  String get requestTimeKicker => '연락받기 좋은 시간 · 선택';
-
-  @override
-  String get timeMorning => '오전';
-
-  @override
-  String get timeAfternoon => '오후';
-
-  @override
-  String get timeEvening => '저녁';
-
-  @override
-  String get requestNotesKicker => '메시지 · 선택';
-
-  @override
-  String get requestNotesHint => '부상, 일정, 장비…';
-
-  @override
-  String get requestSubmit => '요청 보내기';
-
-  @override
-  String get requestPickBoth => '먼저 목표를 선택해 주세요';
-
-  @override
-  String get sentChip => '전송됨';
-
-  @override
-  String get sentTitle => '상담 요청이 접수되었습니다';
-
-  @override
-  String get sentBody => '코칭 팀의 한 명이 연락드려 목표와 이용 가능한 코칭 옵션을 함께 이야기합니다.';
-
-  @override
-  String get sentSummaryKicker => '요청 상태';
-
-  @override
-  String get sentContinue => '운동으로 돌아가기';
-
-  @override
-  String get welcomeTitle => '퍼스널 코칭에 오신 것을 환영합니다';
-
-  @override
-  String get welcomeFlag => '트레이너가 24~48시간 안에 답장합니다';
-
-  @override
-  String get welcomeStep1 => '트레이너가 요청을 확인하고 채팅으로 답장합니다';
-
-  @override
-  String get welcomeStep2 => '1:1 시간을 정합니다';
-
-  @override
-  String get welcomeStep3 => '통화 후 첫 커스텀 플랜을 전달합니다';
-
-  @override
-  String get welcomeDone => '내 트레이너로 돌아가기';
-
-  @override
-  String get consultPrimary => '상담 요청하기';
-
-  @override
-  String get exploreCoachingPlans => '코칭 플랜 살펴보기';
-
-  @override
-  String get consultBenefit1 => '내 기록에 맞춘 맞춤 운동';
-
-  @override
-  String get consultBenefit2 => '세션 사이에 트레이너와 메시지';
-
-  @override
-  String get consultBenefit3 => '모든 운동에 동영상과 자세 팁';
-
-  @override
-  String get consultFootnote => '코치가 목표를 논의하기 위해 연락드립니다. 플랜을 선택하기 전까지 예약이나 결제는 없습니다.';
-
-  @override
-  String get goalRecover => '부상에서 회복';
-
-  @override
-  String get goalUnsure => '아직 잘 모르겠어요';
-
-  @override
-  String get timeWeekdayMornings => '평일 오전';
-
-  @override
-  String get timeWeekdayEvenings => '평일 저녁';
-
-  @override
-  String get timeWeekends => '주말';
-
-  @override
-  String get requestNameKicker => '이름 · 계정에서 가져옴';
-
-  @override
-  String get requestEmailKicker => '이메일 · 계정에서 가져옴';
-
-  @override
-  String get requestVerified => '계정에서 인증됨';
-
-  @override
-  String get srcLocked => '잠김';
-
-  @override
-  String get sentRequestedLabel => '요청 일시';
-
-  @override
-  String get sentContactLabel => '연락처';
-
-  @override
-  String get sentGoalLabel => '목표';
-
-  @override
-  String get sentNote => '평소처럼 운동을 계속할 수 있어요. 구독을 선택하기 전까지 앱은 그대로입니다.';
-
-  @override
-  String get welcomeBody => '구독이 활성화되었습니다. 담당 트레이너가 24~48시간 안에 연락드립니다.';
-
-  @override
-  String get welcomeStepsLabel => '앞으로의 단계';
-
-  @override
-  String get welcomeStep1T => '구독 활성화됨';
-
-  @override
-  String get welcomeStep1S => '이 계정에서 Advanced를 이용할 수 있어요';
-
-  @override
-  String get welcomeStep2T => '트레이너 배정 진행 중';
-
-  @override
-  String get welcomeStep2S => '당신에게 맞는 코치를 매칭하고 있어요';
-
-  @override
-  String get welcomeStep3T => '24~48시간 안에 첫 연락';
-
-  @override
-  String get welcomeStep3S => '트레이너가 바로 이 채팅에서 인사드려요';
-
-  @override
-  String get welcomePendingT => '담당 트레이너가 여기에 표시돼요';
-
-  @override
-  String get welcomePendingS => '배정되면 이 화면에서 프로필과 채팅을 열 수 있어요.';
-
-  @override
-  String get welcomeFootnote => '그동안 트레이너 라이브러리는 열려 있어요. 한번 둘러보세요.';
-
-  @override
-  String get trainerGateTitle => '1:1 트레이너 코칭';
-
-  @override
-  String get trainerGateBody => '맞춤 운동과 트레이너 직접 채팅은 Advanced에 포함됩니다.';
-
-  @override
-  String get trainerGateCta => 'Advanced 보기';
-
-  @override
-  String get sourceFree => '무료';
-
-  @override
-  String get sourceTrainer => '트레이너';
-
-  @override
-  String get sourceCustom => '커스텀';
-
-  @override
-  String get sourceAll => '전체';
-
-  @override
-  String get sectionTrainerLibrary => '트레이너 라이브러리';
-
-  @override
-  String get sectionFreeLibrary => '무료 라이브러리';
-
-  @override
-  String get advancedBadge => 'ADVANCED';
-
-  @override
-  String get unlockAdvancedTitle => 'ADVANCED 잠금 해제';
-
-  @override
-  String get benefitTrainerLibrary => '전체 트레이너 영상 라이브러리';
-
-  @override
-  String get benefitCoachAssignments => '코치가 직접 할당한 운동';
-
-  @override
-  String get benefitMonthlySessions => '매달 새로운 트레이너 세션';
-
-  @override
-  String get continueOnSite => 'bodybridge.net에서 계속하기';
-
-  @override
-  String get notNow => '나중에';
-
-  @override
-  String get lockAdvancedMessage => '트레이너 촬영 운동은 ADVANCED에 포함됩니다';
-
-  @override
-  String get setsLabel => '세트';
-
-  @override
-  String get repsLabel => '횟수';
-
-  @override
-  String get trainerCatStrength => '근력';
-
-  @override
-  String get trainerCatMobility => '모빌리티';
-
-  @override
-  String get trainerCatCore => '코어';
-
-  @override
-  String get trainerCatCorrective => '교정';
-
-  @override
-  String get trainerCatWarmup => '웜업';
+  String get upgradeUpsellToast => '업그레이드하고 더 잠금 해제';
 }

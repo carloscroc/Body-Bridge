@@ -1,12 +1,12 @@
 import 'dart:async';
 
-import '../services/auth_service.dart';
+import '../services/otp_auth_service.dart';
 import 'account_gate.dart';
 import 'account_state.dart';
 
-/// Production [AccountGate] backed by the C2 services: the global [account]
-/// (AuthService + EntitlementsService sync) is the source of truth and
-/// [AuthService] performs the real sign-in/sign-up/sign-out.
+/// Production [AccountGate] backed by the OTP services: the global [account]
+/// (OtpAuthService + EntitlementsService sync) is the source of truth and
+/// [otpAuthService] performs the real email-code sign-in.
 ///
 /// Offline-first invariant: construction, [snapshot] and [canAccess] never
 /// throw and never touch platform channels; auth is mandatory, so any
@@ -18,7 +18,7 @@ class RealAccountGate extends AccountGate {
     // land on the guest stub.
     AccountGate.install(this);
     account.addListener(_forward);
-    // Pick up a persisted/restored Firebase session at composition time;
+    // Pick up a persisted/restored OTP session at composition time;
     // warmUp is memoized, never throws and never blocks startup.
     unawaited(account.warmUp());
   }
@@ -43,47 +43,35 @@ class RealAccountGate extends AccountGate {
     email: _email(),
   );
 
-  String? _email() {
-    try {
-      return AuthService.instance.current.email;
-    } catch (_) {
-      return null;
-    }
-  }
+  String? _email() => otpAuthService.email;
 
   @override
   bool canAccess(String feature) => tierCan(snapshot.tier, feature);
 
   @override
-  Future<void> signIn(String email, String password) async {
+  Future<void> requestEmailCode(String email) async {
     await account.warmUp();
-    await AuthService.instance.signIn(email: email, password: password);
+    await otpAuthService.requestEmailCode(email);
   }
 
   @override
-  Future<void> signUp(String email, String password) async {
+  Future<bool> verifyEmailCode(String email, String code) async {
     await account.warmUp();
-    await AuthService.instance.signUp(email: email, password: password);
+    return otpAuthService.verifyEmailCode(email, code);
   }
 
   @override
   Future<void> signOut() async {
     await account.warmUp();
-    // AuthService.signOut already clears the entitlements; the phase change
+    // OtpAuthService.signOut clears the session; the phase change
     // propagates back through the [account] listener.
-    await AuthService.instance.signOut();
+    await otpAuthService.signOut();
   }
 
   @override
   Future<void> deleteAccount() async {
     await account.warmUp();
-    await AuthService.instance.deleteAccount();
-  }
-
-  @override
-  Future<void> sendPasswordReset(String email) async {
-    await account.warmUp();
-    await AuthService.instance.sendPasswordReset(email: email);
+    await otpAuthService.deleteAccount();
   }
 
   @override

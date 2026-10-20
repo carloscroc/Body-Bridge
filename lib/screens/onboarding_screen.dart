@@ -4,6 +4,7 @@ import 'package:phosphoricons_flutter/phosphoricons_flutter.dart';
 import '../catalog/exercise_catalog.dart';
 import '../l10n/l10n.dart';
 import '../state/fit_state.dart';
+import '../state/onboarding_gate.dart';
 import '../theme/app_colors.dart';
 import '../theme/app_theme.dart';
 import '../widgets/app_background.dart';
@@ -49,6 +50,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       if (id.isNotEmpty) first ??= id;
     }
     if (first != null && fit.activePlaceId != first) fit.setActivePlace(first);
+    onboardingGate.completeOnboarding();
     fit.completeOnboarding();
   }
 

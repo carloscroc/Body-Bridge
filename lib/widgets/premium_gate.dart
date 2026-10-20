@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:phosphoricons_flutter/phosphoricons_flutter.dart';
 
+import '../l10n/l10n.dart';
 import '../state/account_gate.dart';
-import '../state/fit_state.dart';
+import '../theme/app_colors.dart';
+import 'liquid_notch.dart';
 import 'ui_kit.dart';
+import 'upgrade_sheet.dart';
 
 class PremiumGate extends InheritedWidget {
   const PremiumGate({super.key, required this.gate, required super.child});
@@ -37,8 +41,35 @@ class FeatureGate extends StatelessWidget {
   final Widget child;
 
   @override
-  Widget build(BuildContext context) => Pressable(
-    onTap: context.canAccess(feature) ? onTap : fit.goPaywall,
-    child: IgnorePointer(child: child),
-  );
+  Widget build(BuildContext context) {
+    final unlocked = context.canAccess(feature);
+    if (unlocked) return Pressable(onTap: onTap, child: IgnorePointer(child: child));
+    final gc = context.gc;
+    return Pressable(
+      onTap: () {
+        showNotchToast(context, t.upgradeUpsellToast, icon: PhosphorIconsRegular.lockSimple, accent: gc.brass);
+        showUpgradeSheet(context);
+      },
+      child: Stack(
+        clipBehavior: Clip.none,
+        children: [
+          Opacity(opacity: 0.45, child: IgnorePointer(child: child)),
+          Positioned(
+            top: 6,
+            right: 6,
+            child: Container(
+              width: 26,
+              height: 26,
+              decoration: BoxDecoration(
+                color: gc.bgRaised2,
+                shape: BoxShape.circle,
+                border: Border.all(color: gc.border),
+              ),
+              child: Icon(PhosphorIconsRegular.lockSimple, size: 13, color: gc.textSecondary),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
 }

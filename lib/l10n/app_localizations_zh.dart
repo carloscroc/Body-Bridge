@@ -2873,18 +2873,6 @@ class AppLocalizationsZh extends AppLocalizations {
   String get authErrorInvalidEmail => '邮箱地址好像不对。';
 
   @override
-  String get authErrorWrongPassword => '邮箱或密码错误。';
-
-  @override
-  String get authErrorUserNotFound => '没有找到该邮箱的账号。';
-
-  @override
-  String get authErrorEmailAlreadyInUse => '该邮箱已注册账号。';
-
-  @override
-  String get authErrorWeakPassword => '密码太弱。';
-
-  @override
   String get authErrorTooManyRequests => '尝试次数过多，请稍后再试。';
 
   @override
@@ -2898,26 +2886,6 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get emailHint => 'you@example.com';
-
-  @override
-  String get passwordHint => '至少 6 个字符';
-
-  @override
-  String get forgotPassword => '忘记密码？';
-
-  @override
-  String get resetSend => '发送重置链接';
-
-  @override
-  String get resetSentTitle => '请查收邮件';
-
-  @override
-  String resetSentBody(String email) {
-    return '我们已将重置链接发送至 $email。';
-  }
-
-  @override
-  String get backToSignIn => '返回登录';
 
   @override
   String get accountTitle => '账户';
@@ -2943,22 +2911,10 @@ class AppLocalizationsZh extends AppLocalizations {
   String get signIn => '登录';
 
   @override
-  String get createAccount => '创建账户';
-
-  @override
-  String get startFree => '免费开始';
-
-  @override
   String get emailLabel => '邮箱';
 
   @override
-  String get passwordLabel => '密码';
-
-  @override
   String get emailInvalid => '请输入有效的邮箱地址';
-
-  @override
-  String get passwordTooShort => '密码至少需要 6 个字符';
 
   @override
   String get authFailedGeneric => '无法完成该请求。';
@@ -2998,9 +2954,6 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get deleteAccountDone => '账号已删除。';
-
-  @override
-  String get deleteAccountReauth => '请重新登录以删除你的账号。';
 
   @override
   String get deleteAccountFailed => '删除账号失败，请重试。';
@@ -3056,676 +3009,206 @@ class AppLocalizationsZh extends AppLocalizations {
   String get billingComingSoon => '付费功能即将上线。';
 
   @override
-  String get communityTab => '社区';
+  String get authWelcomeTitle => '欢迎使用 Body Bridge';
 
   @override
-  String get feedTab => '动态';
+  String get authWelcomeSubline => '一个邮箱，无需密码，即刻开启。';
 
   @override
-  String get membersTab => '成员';
+  String get authCtaContinueEmail => '使用邮箱继续';
 
   @override
-  String get gateTitle => '社区包含在 Basic 中';
+  String get authTrustMicrocopy => '我们将发送 6 位数字验证码，无需密码。';
 
   @override
-  String get gateBody => '进度照片、训练记录，还有懂你的人。';
+  String get authPrivacyLine1 => '你的数据只留在设备上。';
 
   @override
-  String get gateCta => '解锁社区';
+  String get authPrivacyLine2 => '始终离线优先。';
 
   @override
-  String get gateLinkOut => '前往 bodybridge.net';
+  String get authCodeKicker => '查看你的邮箱';
 
   @override
-  String get gateNotNow => '暂不';
+  String get authCodeTitle => '输入验证码';
 
   @override
-  String get optionsTitle => '帖子选项';
-
-  @override
-  String get sharePost => '分享帖子';
-
-  @override
-  String get savePost => '保存帖子';
-
-  @override
-  String get savedPost => '已保存';
-
-  @override
-  String get copyPostLink => '复制帖子链接';
-
-  @override
-  String get hidePost => '隐藏帖子';
-
-  @override
-  String get reportPost => '举报帖子';
-
-  @override
-  String get editPost => '编辑帖子';
-
-  @override
-  String get deletePost => '删除帖子…';
-
-  @override
-  String get deleteConfirmTitle => '删除这条帖子？';
-
-  @override
-  String get deleteConfirmBody => '帖子、照片和评论将从社区中移除，且无法撤销。';
-
-  @override
-  String get keepPost => '保留帖子';
-
-  @override
-  String get deleteAction => '删除';
-
-  @override
-  String get postHiddenSnackbar => '帖子已隐藏 · 撤销';
-
-  @override
-  String get reportSheetTitle => '举报帖子';
-
-  @override
-  String get reportAnonymous => '举报是匿名的。';
-
-  @override
-  String get reportSpam => '垃圾信息或诈骗';
-
-  @override
-  String get reportHarassment => '骚扰或仇恨';
-
-  @override
-  String get reportInappropriate => '不当照片';
-
-  @override
-  String get reportSubmit => '举报';
-
-  @override
-  String get reportSent => '举报已发送';
-
-  @override
-  String get shareSheetTitle => '分享帖子';
-
-  @override
-  String get copyLink => '复制链接';
-
-  @override
-  String get linkCopied => '链接已复制';
-
-  @override
-  String get shareMessages => '信息';
-
-  @override
-  String get shareMail => '邮件';
-
-  @override
-  String get shareInstagram => 'Instagram';
-
-  @override
-  String get shareMore => '更多';
-
-  @override
-  String get newPostTitle => '新帖子';
-
-  @override
-  String get modeProgress => '进度';
-
-  @override
-  String get modeWorkout => '训练';
-
-  @override
-  String progressPhotosCount(int n) {
-    return '进度照片 · $n / 4';
+  String otpSentTo(String email) {
+    return '我们已向 $email 发送 6 位验证码';
   }
 
   @override
-  String get addPhotoTile => '添加';
-
-  @override
-  String get photoPickerPending => '添加照片需要图片选择器 — 即将支持';
-
-  @override
-  String get captionHint => '分享这一周的变化和心得...';
-
-  @override
-  String get photosPrivate => '照片在发布前保持私密。';
-
-  @override
-  String get sessionPreview => '训练概览';
-
-  @override
-  String get autoFilled => '已自动填入今天的训练';
-
-  @override
-  String get contextHint => '补充状态或感受';
-
-  @override
-  String get postToCommunity => '发布到社区';
-
-  @override
-  String get commentsTitle => '评论';
-
-  @override
-  String commentCount(int n) {
-    String _temp0 = intl.Intl.pluralLogic(n, locale: localeName, other: '$n条评论');
-    return '$_temp0';
+  String authCodeExpires(String time) {
+    return '验证码将在 $time 后过期';
   }
 
   @override
-  String get addCommentHint => '添加评论...';
+  String get authCodeExpiredVerdict => '验证码已过期';
 
   @override
-  String replyingTo(String name) {
-    return '回复 $name';
+  String get authCodeExpired => '该验证码已过期，请重新获取一个。';
+
+  @override
+  String get authResendPrompt => '没有收到？ ';
+
+  @override
+  String get authResendAction => '重新发送';
+
+  @override
+  String authResendIn(String time) {
+    return '$time 后可重新发送';
   }
 
   @override
-  String get opChip => '楼主';
+  String get authVerifying => '正在验证你的验证码…';
 
   @override
-  String get noPostsTitle => '暂无帖子';
-
-  @override
-  String get noPostsBody => '来做第一个分享这一周的人。';
-
-  @override
-  String get createFirstPost => '发布第一个帖子';
-
-  @override
-  String get progressPhotoLabel => '进度照片';
-
-  @override
-  String get progressChip => '进度';
-
-  @override
-  String get workoutChip => '训练';
-
-  @override
-  String get prChip => '纪录';
-
-  @override
-  String workoutStats(int min, int sets, String volume) {
-    return '$min 分钟 · $sets 组 · 总量 $volume kg';
+  String authCodeInvalid(int n) {
+    return '验证码不匹配，还剩 $n 次机会。';
   }
 
   @override
-  String get composeDisabledHint => '解锁社区后即可发帖';
+  String get otpChangeEmail => '使用其他邮箱';
 
   @override
-  String get inboxComingSoon => '收件箱即将推出';
+  String get authRateLimitTitle => '尝试次数过多';
 
   @override
-  String get timeAgoNow => '刚刚';
+  String get authRateLimitBody => '深呼吸——几分钟后重试。你的账号很安全。';
 
   @override
-  String timeAgoMinutes(int n) {
-    return '$n分钟';
+  String authRateLimitCta(String time) {
+    return '$time 后重试';
   }
 
   @override
-  String timeAgoHours(int n) {
-    return '$n小时';
+  String get authRateLimitRule => '连续输错 10 次将锁定请求一小时。';
+
+  @override
+  String authRateLimitBanner(String time) {
+    return '尝试次数过多。请在 $time 后重试。';
   }
 
   @override
-  String timeAgoDays(int n) {
-    return '$n天';
+  String get authWelcomeBackKicker => '欢迎回来';
+
+  @override
+  String authWelcomeBackTitle(String name) {
+    return '欢迎回来，$name';
   }
 
   @override
-  String get trainerChip => '教练';
+  String get authWelcomeBackBody => '从上次离开的地方继续。';
 
   @override
-  String get myTrainer => '我的教练';
+  String get authSetupKicker => '来完成初始设置';
 
   @override
-  String get assignedWorkouts => '已分配的训练';
-
-  @override
-  String get messageTrainer => '发消息';
-
-  @override
-  String trainerSince(String date) {
-    return '自$date起担任你的教练';
+  String authSetupTitle(String name) {
+    return '$name，来完成初始设置';
   }
 
   @override
-  String replyWindow(int hours) {
-    return '通常在$hours小时内回复';
-  }
+  String get authSetupBody => '五个快速步骤，应用就归你了。';
 
   @override
-  String get chipNew => '新';
+  String get authChipName => '姓名';
 
   @override
-  String get chipInProgress => '进行中';
+  String get authChipUnits => '单位';
 
   @override
-  String get chipCompleted => '已完成';
+  String get authChipBody => '身体';
 
   @override
-  String sentCardMeta(String date, int count, int minutes) {
-    return '$date发送 · $count个动作 · 约$minutes分钟';
-  }
+  String get authChipGoal => '目标';
 
   @override
-  String sentByTrainerOn(String date) {
-    return '你的教练于$date发送';
-  }
+  String get authChipPlaces => '场馆';
 
   @override
-  String progressPct(int pct) {
-    return '$pct%';
-  }
+  String get proBadgeLabel => 'PRO';
 
   @override
-  String get coachNote => '教练备注';
+  String get upgradeSheetTitle => 'Body Bridge 高级版';
 
   @override
-  String restLabel(String duration) {
-    return '休息 $duration';
-  }
+  String get upgradeSheetSubtitle => '解锁完整的 Body Bridge 体验';
 
   @override
-  String askAboutThis(String name) {
-    return '就此询问$name';
-  }
+  String get upgradeClose => '关闭';
 
   @override
-  String messageHint(String name) {
-    return '给$name发消息...';
-  }
+  String get billingMonthly => '按月';
 
   @override
-  String get tapToOpen => '点按打开';
+  String get billingAnnual => '按年';
 
   @override
-  String get todayDivider => '今天';
+  String get planMostPopular => '最受欢迎';
 
   @override
-  String trainerVideoMeta(String duration) {
-    return '教练视频 · $duration';
-  }
+  String get planFactFullHistory => '完整历史';
 
   @override
-  String get gateBenefitWorkouts => '为你的身体和伤病量身定制的训练';
+  String get planFactCloudSync => '云备份与同步';
 
   @override
-  String get gateBenefitChat => '与教练直接消息沟通';
+  String get planFactUnlimitedRoutines => '无限训练计划';
 
   @override
-  String get gateBenefitVideo => '针对你动作的视频反馈';
+  String get planFactChartsCommunity => '图表与社区';
 
   @override
-  String get gateDismiss => '暂不';
+  String get planFactEverythingInBasic => '包含 Basic 全部功能';
 
   @override
-  String get gateFootnote => '升级在 bodybridge.net 完成 — 你的计划保留在应用内。';
+  String get planFactAdvancedAnalytics => '高级分析';
 
   @override
-  String bannerNewWorkout(String name) {
-    return '$name发来了新训练';
-  }
+  String get planFactPremiumPrograms => '高级课程与视频';
 
   @override
-  String get bannerTapToView => '点按查看';
+  String get planFactTrainerContent => '教练内容';
 
   @override
-  String get callKicker => '私人教练';
+  String get upgradeCtaContinueOnWeb => '前往 bodybridge.net 继续';
 
   @override
-  String get callSheetTitle => '预约一对一通话';
+  String get checkoutComingSoon => '在线支付即将上线';
 
   @override
-  String get callNotesHint => '有什么特别想聊的吗？（可选）';
+  String get enterpriseContactSales => '企业版 — 联系销售';
 
   @override
-  String get callPickDayTime => '请选择日期和时间段';
+  String get finePrintBilling => '付款通过 bodybridge.net 安全处理 — 不经过 Play 商店。';
 
   @override
-  String get callSubmit => '发送请求';
+  String get lockAnalyticsTitle => '高级分析';
 
   @override
-  String get callSentTitle => '请求已发送';
+  String get lockAnalyticsMeta => '容量趋势 · 1RM 估算 · 肌肉分布';
 
   @override
-  String callSentBody(String name) {
-    return '$name会与你确认时间';
-  }
+  String get lockAnalyticsUpsell => '使用 Body Bridge Pro 解锁高级分析。';
 
   @override
-  String get callDone => '完成';
+  String get premiumProgramLabel => '高级课程';
 
   @override
-  String get bookCallA11y => '预约一对一通话';
+  String get premiumProgramTitle => '增肌训练块';
 
   @override
-  String get startSoonTitle => '自定义课程即将上线';
+  String get premiumProgramMeta => '8 周 · 每周 4 次 · 教练指导';
 
   @override
-  String get startSoonBody => '引导式课程将随教练视频一起推出。在此期间，请向教练咨询这个计划。';
+  String get premiumProgramUpsell => '高级课程和教练视频是 Pro 的一部分。';
 
   @override
-  String exercisesMeta(int count, int minutes) {
-    return '$count个动作 · 约$minutes分钟';
-  }
+  String get unlockWithPro => '用 Pro 解锁';
 
   @override
-  String get talkToTrainer => '与你的教练交流';
-
-  @override
-  String get talkToTrainerSub => '自定义训练和一对一聊天';
-
-  @override
-  String get notifications => '通知';
-
-  @override
-  String get consultCardKicker => '私人教练';
-
-  @override
-  String get consultCardTitle => '申请咨询';
-
-  @override
-  String get consultCardSub => '一次简短的 1:1，定下方向';
-
-  @override
-  String get consultCardSubDone => '请求已提交 — 查看';
-
-  @override
-  String get consultSheetTitle => '与教练一对一训练';
-
-  @override
-  String get consultSheetBody => '认证教练为你定制训练计划，并始终伴你左右。';
-
-  @override
-  String get consultDoorHow => '如何进行';
-
-  @override
-  String get consultDoorHowSub => '1:1 都聊什么';
-
-  @override
-  String get consultDoorRequest => '申请咨询';
-
-  @override
-  String get consultDoorRequestSub => '两分钟，毫无负担';
-
-  @override
-  String get consultDoorView => '查看我的请求';
-
-  @override
-  String get consultDoorViewSub => '已提交 — 不会重复';
-
-  @override
-  String get introTitle => '为你而建的训练';
-
-  @override
-  String get introP1 => '咨询是与教练的一次简短 1:1。你带来目标、训练历史和伤病，教练把它们变成适合你身体的计划。';
-
-  @override
-  String get introP2 => '没有模板。你的计划专为你书写，并随你一起调整。';
-
-  @override
-  String get introPoint1 => '先听你说：目标、历史、伤病';
-
-  @override
-  String get introPoint2 => '定制训练直达应用内';
-
-  @override
-  String get introPoint3 => '反馈会持续重塑你的计划';
-
-  @override
-  String get introCta => '申请咨询';
-
-  @override
-  String get requestTitle => '申请咨询';
-
-  @override
-  String get requestSub => '教练会在跟进前阅读这段话——不会为你订阅任何东西。';
-
-  @override
-  String get requestGoalKicker => '主要目标';
-
-  @override
-  String get goalStrength => '增肌变强';
-
-  @override
-  String get goalFatLoss => '减脂';
-
-  @override
-  String get goalMobility => '改善活动度';
-
-  @override
-  String get goalConsistency => '保持规律';
-
-  @override
-  String get requestExpKicker => '经验';
-
-  @override
-  String get expNew => '刚开始训练';
-
-  @override
-  String get expReturning => '休息后回归';
-
-  @override
-  String get expSeasoned => '多年训练经验';
-
-  @override
-  String get requestTimeKicker => '方便联系的时间 · 可选';
-
-  @override
-  String get timeMorning => '上午';
-
-  @override
-  String get timeAfternoon => '下午';
-
-  @override
-  String get timeEvening => '晚上';
-
-  @override
-  String get requestNotesKicker => '留言 · 可选';
-
-  @override
-  String get requestNotesHint => '伤病、日程、器械…';
-
-  @override
-  String get requestSubmit => '发送请求';
-
-  @override
-  String get requestPickBoth => '请先选择一个目标';
-
-  @override
-  String get sentChip => '已提交';
-
-  @override
-  String get sentTitle => '已收到咨询申请';
-
-  @override
-  String get sentBody => '我们的教练团队会与你跟进，讨论你的目标和可选的教练方案。';
-
-  @override
-  String get sentSummaryKicker => '申请状态';
-
-  @override
-  String get sentContinue => '返回练习';
-
-  @override
-  String get welcomeTitle => '欢迎来到私人教练服务';
-
-  @override
-  String get welcomeFlag => '教练会在 24–48 小时内回复';
-
-  @override
-  String get welcomeStep1 => '教练会查看你的请求并在聊天中回复';
-
-  @override
-  String get welcomeStep2 => '一起确定 1:1 的时间';
-
-  @override
-  String get welcomeStep3 => '通话后你会收到第一份定制计划';
-
-  @override
-  String get welcomeDone => '回到我的教练';
-
-  @override
-  String get consultPrimary => '申请咨询';
-
-  @override
-  String get exploreCoachingPlans => '浏览教练方案';
-
-  @override
-  String get consultBenefit1 => '根据你的训练史定制训练';
-
-  @override
-  String get consultBenefit2 => '课间随时与教练私信';
-
-  @override
-  String get consultBenefit3 => '每个练习都有视频与动作提示';
-
-  @override
-  String get consultFootnote => '教练会跟进并与你讨论目标——在你选择方案之前，不会预订任何服务，也不会产生任何费用。';
-
-  @override
-  String get goalRecover => '从伤病中恢复';
-
-  @override
-  String get goalUnsure => '还没想好';
-
-  @override
-  String get timeWeekdayMornings => '工作日上午';
-
-  @override
-  String get timeWeekdayEvenings => '工作日晚上';
-
-  @override
-  String get timeWeekends => '周末';
-
-  @override
-  String get requestNameKicker => '姓名 · 来自你的账户';
-
-  @override
-  String get requestEmailKicker => '邮箱 · 来自你的账户';
-
-  @override
-  String get requestVerified => '已在你的账户中验证';
-
-  @override
-  String get srcLocked => '已锁定';
-
-  @override
-  String get sentRequestedLabel => '申请时间';
-
-  @override
-  String get sentContactLabel => '联系方式';
-
-  @override
-  String get sentGoalLabel => '目标';
-
-  @override
-  String get sentNote => '你可以照常训练——在你选择订阅之前，应用内不会有任何变化。';
-
-  @override
-  String get welcomeBody => '订阅已生效。你的私人教练将在 24–48 小时内与你联系。';
-
-  @override
-  String get welcomeStepsLabel => '接下来会发生什么';
-
-  @override
-  String get welcomeStep1T => '订阅已生效';
-
-  @override
-  String get welcomeStep1S => '此账户已启用 Advanced';
-
-  @override
-  String get welcomeStep2T => '正在为你分配教练';
-
-  @override
-  String get welcomeStep2S => '我们正在为你匹配合适的教练';
-
-  @override
-  String get welcomeStep3T => '24–48 小时内首次联系';
-
-  @override
-  String get welcomeStep3S => '教练会直接在这里的聊天中向你问好';
-
-  @override
-  String get welcomePendingT => '你的教练将出现在这里';
-
-  @override
-  String get welcomePendingS => '分配完成后，即可在此页面打开教练的资料和聊天。';
-
-  @override
-  String get welcomeFootnote => '在此期间，教练库已开放——欢迎先去逛逛。';
-
-  @override
-  String get trainerGateTitle => '1对1教练指导';
-
-  @override
-  String get trainerGateBody => '自定义训练和教练直接聊天属于 Advanced 功能。';
-
-  @override
-  String get trainerGateCta => '了解 Advanced';
-
-  @override
-  String get sourceFree => '免费';
-
-  @override
-  String get sourceTrainer => '教练';
-
-  @override
-  String get sourceCustom => '自定义';
-
-  @override
-  String get sourceAll => '全部';
-
-  @override
-  String get sectionTrainerLibrary => '教练库';
-
-  @override
-  String get sectionFreeLibrary => '免费库';
-
-  @override
-  String get advancedBadge => 'ADVANCED';
-
-  @override
-  String get unlockAdvancedTitle => '解锁 ADVANCED';
-
-  @override
-  String get benefitTrainerLibrary => '完整教练视频库';
-
-  @override
-  String get benefitCoachAssignments => '教练亲自布置的动作';
-
-  @override
-  String get benefitMonthlySessions => '每月更新教练课程';
-
-  @override
-  String get continueOnSite => '前往 bodybridge.net';
-
-  @override
-  String get notNow => '暂不';
-
-  @override
-  String get lockAdvancedMessage => '教练示范的动作属于 ADVANCED';
-
-  @override
-  String get setsLabel => '组';
-
-  @override
-  String get repsLabel => '次';
-
-  @override
-  String get trainerCatStrength => '力量';
-
-  @override
-  String get trainerCatMobility => '灵活性';
-
-  @override
-  String get trainerCatCore => '核心';
-
-  @override
-  String get trainerCatCorrective => '矫正';
-
-  @override
-  String get trainerCatWarmup => '热身';
+  String get upgradeUpsellToast => '升级以解锁更多';
 }
 
 /// The translations for Chinese, using the Han script (`zh_Hant`).
@@ -6621,18 +6104,6 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
   String get authErrorInvalidEmail => '電子郵件地址好像不正確。';
 
   @override
-  String get authErrorWrongPassword => '電子郵件或密碼錯誤。';
-
-  @override
-  String get authErrorUserNotFound => '找不到該電子郵件的帳號。';
-
-  @override
-  String get authErrorEmailAlreadyInUse => '該電子郵件已有帳號。';
-
-  @override
-  String get authErrorWeakPassword => '密碼太弱。';
-
-  @override
   String get authErrorTooManyRequests => '嘗試次數過多，請稍後再試。';
 
   @override
@@ -6646,26 +6117,6 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
 
   @override
   String get emailHint => 'you@example.com';
-
-  @override
-  String get passwordHint => '至少 6 個字元';
-
-  @override
-  String get forgotPassword => '忘記密碼？';
-
-  @override
-  String get resetSend => '傳送重設連結';
-
-  @override
-  String get resetSentTitle => '請查看郵件';
-
-  @override
-  String resetSentBody(String email) {
-    return '我們已將重設連結寄至 $email。';
-  }
-
-  @override
-  String get backToSignIn => '返回登入';
 
   @override
   String get accountTitle => '帳號';
@@ -6691,22 +6142,10 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
   String get signIn => '登入';
 
   @override
-  String get createAccount => '建立帳號';
-
-  @override
-  String get startFree => '免費開始';
-
-  @override
   String get emailLabel => '電子郵件';
 
   @override
-  String get passwordLabel => '密碼';
-
-  @override
   String get emailInvalid => '請輸入有效的電子郵件地址';
-
-  @override
-  String get passwordTooShort => '密碼至少需要 6 個字元';
 
   @override
   String get authFailedGeneric => '無法完成該請求。';
@@ -6746,9 +6185,6 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
 
   @override
   String get deleteAccountDone => '帳號已刪除。';
-
-  @override
-  String get deleteAccountReauth => '請重新登入以刪除你的帳號。';
 
   @override
   String get deleteAccountFailed => '無法刪除帳號，請再試一次。';
@@ -6804,674 +6240,204 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
   String get billingComingSoon => '付費功能即將上線。';
 
   @override
-  String get communityTab => '社群';
+  String get authWelcomeTitle => '歡迎使用 Body Bridge';
 
   @override
-  String get feedTab => '動態';
+  String get authWelcomeSubline => '一個信箱，免密碼，即刻開始。';
 
   @override
-  String get membersTab => '成員';
+  String get authCtaContinueEmail => '使用信箱繼續';
 
   @override
-  String get gateTitle => '社群包含於 Basic 方案';
+  String get authTrustMicrocopy => '我們將寄送 6 位數驗證碼，無需密碼。';
 
   @override
-  String get gateBody => '進度照片、訓練記錄，還有懂你的人。';
+  String get authPrivacyLine1 => '你的資料只會留在裝置上。';
 
   @override
-  String get gateCta => '解鎖社群';
+  String get authPrivacyLine2 => '永遠離線優先。';
 
   @override
-  String get gateLinkOut => '前往 bodybridge.net';
+  String get authCodeKicker => '請查看你的信箱';
 
   @override
-  String get gateNotNow => '暫不';
+  String get authCodeTitle => '輸入驗證碼';
 
   @override
-  String get optionsTitle => '貼文選項';
-
-  @override
-  String get sharePost => '分享貼文';
-
-  @override
-  String get savePost => '儲存貼文';
-
-  @override
-  String get savedPost => '已儲存';
-
-  @override
-  String get copyPostLink => '複製貼文連結';
-
-  @override
-  String get hidePost => '隱藏貼文';
-
-  @override
-  String get reportPost => '檢舉貼文';
-
-  @override
-  String get editPost => '編輯貼文';
-
-  @override
-  String get deletePost => '刪除貼文…';
-
-  @override
-  String get deleteConfirmTitle => '刪除這則貼文？';
-
-  @override
-  String get deleteConfirmBody => '貼文、照片與留言將從社群中移除，且無法復原。';
-
-  @override
-  String get keepPost => '保留貼文';
-
-  @override
-  String get deleteAction => '刪除';
-
-  @override
-  String get postHiddenSnackbar => '貼文已隱藏 · 復原';
-
-  @override
-  String get reportSheetTitle => '檢舉貼文';
-
-  @override
-  String get reportAnonymous => '檢舉為匿名提交。';
-
-  @override
-  String get reportSpam => '垃圾訊息或詐騙';
-
-  @override
-  String get reportHarassment => '騷擾或仇恨';
-
-  @override
-  String get reportInappropriate => '不當照片';
-
-  @override
-  String get reportSubmit => '檢舉';
-
-  @override
-  String get reportSent => '檢舉已送出';
-
-  @override
-  String get shareSheetTitle => '分享貼文';
-
-  @override
-  String get copyLink => '複製連結';
-
-  @override
-  String get linkCopied => '連結已複製';
-
-  @override
-  String get shareMessages => '訊息';
-
-  @override
-  String get shareMail => '郵件';
-
-  @override
-  String get shareInstagram => 'Instagram';
-
-  @override
-  String get shareMore => '更多';
-
-  @override
-  String get newPostTitle => '新貼文';
-
-  @override
-  String get modeProgress => '進度';
-
-  @override
-  String get modeWorkout => '訓練';
-
-  @override
-  String progressPhotosCount(int n) {
-    return '進度照片 · $n / 4';
+  String otpSentTo(String email) {
+    return '我們已寄送 6 位數驗證碼至 $email';
   }
 
   @override
-  String get addPhotoTile => '新增';
-
-  @override
-  String get photoPickerPending => '新增照片需要圖片選擇器 — 即將支援';
-
-  @override
-  String get captionHint => '分享這一週的變化與心得...';
-
-  @override
-  String get photosPrivate => '照片在發佈前保持私密。';
-
-  @override
-  String get sessionPreview => '訓練概覽';
-
-  @override
-  String get autoFilled => '已自動填入今天的訓練';
-
-  @override
-  String get contextHint => '補充狀態或感受';
-
-  @override
-  String get postToCommunity => '發佈到社群';
-
-  @override
-  String get commentsTitle => '留言';
-
-  @override
-  String commentCount(int n) {
-    String _temp0 = intl.Intl.pluralLogic(n, locale: localeName, other: '$n則留言');
-    return '$_temp0';
+  String authCodeExpires(String time) {
+    return '驗證碼將於 $time 後失效';
   }
 
   @override
-  String get addCommentHint => '新增留言...';
+  String get authCodeExpiredVerdict => '驗證碼已失效';
 
   @override
-  String replyingTo(String name) {
-    return '回覆 $name';
+  String get authCodeExpired => '此驗證碼已失效，請重新索取一組。';
+
+  @override
+  String get authResendPrompt => '沒收到嗎？ ';
+
+  @override
+  String get authResendAction => '重新寄送';
+
+  @override
+  String authResendIn(String time) {
+    return '$time 後可重新寄送';
   }
 
   @override
-  String get opChip => '樓主';
+  String get authVerifying => '正在驗證你的驗證碼…';
 
   @override
-  String get noPostsTitle => '目前沒有貼文';
-
-  @override
-  String get noPostsBody => '成為第一個分享這一週的人。';
-
-  @override
-  String get createFirstPost => '發佈第一則貼文';
-
-  @override
-  String get progressPhotoLabel => '進度照片';
-
-  @override
-  String get progressChip => '進度';
-
-  @override
-  String get workoutChip => '訓練';
-
-  @override
-  String get prChip => '紀錄';
-
-  @override
-  String workoutStats(int min, int sets, String volume) {
-    return '$min 分鐘 · $sets 組 · 總量 $volume kg';
+  String authCodeInvalid(int n) {
+    return '驗證碼不符，還剩 $n 次機會。';
   }
 
   @override
-  String get composeDisabledHint => '解鎖社群後即可發文';
+  String get otpChangeEmail => '使用其他信箱';
 
   @override
-  String get inboxComingSoon => '收件匣即將推出';
+  String get authRateLimitTitle => '嘗試次數過多';
 
   @override
-  String get timeAgoNow => '剛剛';
+  String get authRateLimitBody => '深呼吸——幾分鐘後再試一次。你的帳號很安全。';
 
   @override
-  String timeAgoMinutes(int n) {
-    return '$n分鐘';
+  String authRateLimitCta(String time) {
+    return '$time 後再試一次';
   }
 
   @override
-  String timeAgoHours(int n) {
-    return '$n小時';
+  String get authRateLimitRule => '連續輸錯 10 次將鎖定請求一小時。';
+
+  @override
+  String authRateLimitBanner(String time) {
+    return '嘗試次數過多。請於 $time 後再試。';
   }
 
   @override
-  String timeAgoDays(int n) {
-    return '$n天';
+  String get authWelcomeBackKicker => '歡迎回來';
+
+  @override
+  String authWelcomeBackTitle(String name) {
+    return '歡迎回來，$name';
   }
 
   @override
-  String get trainerChip => '教練';
+  String get authWelcomeBackBody => '從上次離開的地方繼續。';
 
   @override
-  String get myTrainer => '我的教練';
+  String get authSetupKicker => '來完成初始設定';
 
   @override
-  String get assignedWorkouts => '已指派的訓練';
-
-  @override
-  String get messageTrainer => '傳訊息';
-
-  @override
-  String trainerSince(String date) {
-    return '自$date起擔任你的教練';
+  String authSetupTitle(String name) {
+    return '$name，來完成初始設定';
   }
 
   @override
-  String replyWindow(int hours) {
-    return '通常在$hours小時內回覆';
-  }
+  String get authSetupBody => '五個快速步驟，應用程式就是你的了。';
 
   @override
-  String get chipNew => '新';
+  String get authChipName => '姓名';
 
   @override
-  String get chipInProgress => '進行中';
+  String get authChipUnits => '單位';
 
   @override
-  String get chipCompleted => '已完成';
+  String get authChipBody => '身體';
 
   @override
-  String sentCardMeta(String date, int count, int minutes) {
-    return '$date傳送 · $count個動作 · 約$minutes分鐘';
-  }
+  String get authChipGoal => '目標';
 
   @override
-  String sentByTrainerOn(String date) {
-    return '你的教練於$date傳送';
-  }
+  String get authChipPlaces => '場館';
 
   @override
-  String progressPct(int pct) {
-    return '$pct%';
-  }
+  String get proBadgeLabel => 'PRO';
 
   @override
-  String get coachNote => '教練備註';
+  String get upgradeSheetTitle => 'Body Bridge 進階版';
 
   @override
-  String restLabel(String duration) {
-    return '休息 $duration';
-  }
+  String get upgradeSheetSubtitle => '解鎖完整的 Body Bridge 體驗';
 
   @override
-  String askAboutThis(String name) {
-    return '就此詢問$name';
-  }
+  String get upgradeClose => '關閉';
 
   @override
-  String messageHint(String name) {
-    return '傳訊息給$name...';
-  }
+  String get billingMonthly => '按月';
 
   @override
-  String get tapToOpen => '點按開啟';
+  String get billingAnnual => '按年';
 
   @override
-  String get todayDivider => '今天';
+  String get planMostPopular => '最受歡迎';
 
   @override
-  String trainerVideoMeta(String duration) {
-    return '教練影片 · $duration';
-  }
+  String get planFactFullHistory => '完整歷史';
 
   @override
-  String get gateBenefitWorkouts => '為你的身體與傷痛量身打造的訓練';
+  String get planFactCloudSync => '雲端備份與同步';
 
   @override
-  String get gateBenefitChat => '與教練直接訊息溝通';
+  String get planFactUnlimitedRoutines => '無限訓練計畫';
 
   @override
-  String get gateBenefitVideo => '針對你動作的影片回饋';
+  String get planFactChartsCommunity => '圖表與社群';
 
   @override
-  String get gateDismiss => '暫不';
+  String get planFactEverythingInBasic => '包含 Basic 全部功能';
 
   @override
-  String get gateFootnote => '升級在 bodybridge.net 完成 — 你的方案保留在應用程式內。';
+  String get planFactAdvancedAnalytics => '進階分析';
 
   @override
-  String bannerNewWorkout(String name) {
-    return '$name傳來了新訓練';
-  }
+  String get planFactPremiumPrograms => '進階課程與影片';
 
   @override
-  String get bannerTapToView => '點按查看';
+  String get planFactTrainerContent => '教練內容';
 
   @override
-  String get callKicker => '私人教練';
+  String get upgradeCtaContinueOnWeb => '前往 bodybridge.net 繼續';
 
   @override
-  String get callSheetTitle => '預約一對一通話';
+  String get checkoutComingSoon => '線上付款即將推出';
 
   @override
-  String get callNotesHint => '有什麼特別想聊的嗎？（可選）';
+  String get enterpriseContactSales => '企業版 — 聯絡銷售';
 
   @override
-  String get callPickDayTime => '請選擇日期和時段';
+  String get finePrintBilling => '付款透過 bodybridge.net 安全處理 — 不經過 Play 商店。';
 
   @override
-  String get callSubmit => '傳送請求';
+  String get lockAnalyticsTitle => '進階分析';
 
   @override
-  String get callSentTitle => '請求已傳送';
+  String get lockAnalyticsMeta => '容量趨勢 · 1RM 估算 · 肌肉分布';
 
   @override
-  String callSentBody(String name) {
-    return '$name會與你確認時間';
-  }
+  String get lockAnalyticsUpsell => '使用 Body Bridge Pro 解鎖進階分析。';
 
   @override
-  String get callDone => '完成';
+  String get premiumProgramLabel => '進階課程';
 
   @override
-  String get bookCallA11y => '預約一對一通話';
+  String get premiumProgramTitle => '增肌訓練塊';
 
   @override
-  String get startSoonTitle => '自訂課程即將上線';
+  String get premiumProgramMeta => '8 週 · 每週 4 次 · 教練指導';
 
   @override
-  String get startSoonBody => '引導式課程將隨教練影片一起推出。在此期間，請向教練諮詢這個計畫。';
+  String get premiumProgramUpsell => '進階課程與教練影片是 Pro 的一部分。';
 
   @override
-  String exercisesMeta(int count, int minutes) {
-    return '$count個動作 · 約$minutes分鐘';
-  }
+  String get unlockWithPro => '用 Pro 解鎖';
 
   @override
-  String get talkToTrainer => '與你的教練交流';
-
-  @override
-  String get talkToTrainerSub => '自訂訓練與一對一聊天';
-
-  @override
-  String get notifications => '通知';
-
-  @override
-  String get consultCardKicker => '私人教練';
-
-  @override
-  String get consultCardTitle => '申請諮詢';
-
-  @override
-  String get consultCardSub => '一次簡短的 1:1，定下方向';
-
-  @override
-  String get consultCardSubDone => '請求已送出 — 查看';
-
-  @override
-  String get consultSheetTitle => '與教練一對一訓練';
-
-  @override
-  String get consultSheetBody => '認證教練為你打造訓練計畫，並始終在你身邊。';
-
-  @override
-  String get consultDoorHow => '如何進行';
-
-  @override
-  String get consultDoorHowSub => '1:1 都聊什麼';
-
-  @override
-  String get consultDoorRequest => '申請諮詢';
-
-  @override
-  String get consultDoorRequestSub => '兩分鐘，毫無負擔';
-
-  @override
-  String get consultDoorView => '查看我的請求';
-
-  @override
-  String get consultDoorViewSub => '已送出 — 不會重複';
-
-  @override
-  String get introTitle => '為你而建的訓練';
-
-  @override
-  String get introP1 => '諮詢是與教練的一次簡短 1:1。你帶來目標、訓練歷史與傷病，教練把它們變成適合你身體的計畫。';
-
-  @override
-  String get introP2 => '沒有範本。你的計畫專為你書寫，並隨你一起調整。';
-
-  @override
-  String get introPoint1 => '先聽你說：目標、歷史、傷病';
-
-  @override
-  String get introPoint2 => '客製訓練直達應用程式內';
-
-  @override
-  String get introPoint3 => '回饋會持續重塑你的計畫';
-
-  @override
-  String get introCta => '申請諮詢';
-
-  @override
-  String get requestTitle => '申請諮詢';
-
-  @override
-  String get requestSub => '教練會在跟進前閱讀這段話——不會為你訂閱任何東西。';
-
-  @override
-  String get requestGoalKicker => '主要目標';
-
-  @override
-  String get goalStrength => '增肌變強';
-
-  @override
-  String get goalFatLoss => '減脂';
-
-  @override
-  String get goalMobility => '改善活動度';
-
-  @override
-  String get goalConsistency => '保持規律';
-
-  @override
-  String get requestExpKicker => '經驗';
-
-  @override
-  String get expNew => '剛開始訓練';
-
-  @override
-  String get expReturning => '休息後回歸';
-
-  @override
-  String get expSeasoned => '多年訓練經驗';
-
-  @override
-  String get requestTimeKicker => '方便聯絡的時間 · 可選';
-
-  @override
-  String get timeMorning => '上午';
-
-  @override
-  String get timeAfternoon => '下午';
-
-  @override
-  String get timeEvening => '晚上';
-
-  @override
-  String get requestNotesKicker => '留言 · 可選';
-
-  @override
-  String get requestNotesHint => '傷病、行程、器材…';
-
-  @override
-  String get requestSubmit => '送出請求';
-
-  @override
-  String get requestPickBoth => '請先選擇一個目標';
-
-  @override
-  String get sentChip => '已送出';
-
-  @override
-  String get sentTitle => '已收到諮詢申請';
-
-  @override
-  String get sentBody => '我們的教練團隊會與你跟進，討論你的目標和可選的教練方案。';
-
-  @override
-  String get sentSummaryKicker => '申請狀態';
-
-  @override
-  String get sentContinue => '返回練習';
-
-  @override
-  String get welcomeTitle => '歡迎來到私人教練服務';
-
-  @override
-  String get welcomeFlag => '教練會在 24–48 小時內回覆';
-
-  @override
-  String get welcomeStep1 => '教練會查看你的請求並在聊天中回覆';
-
-  @override
-  String get welcomeStep2 => '一起確定 1:1 的時間';
-
-  @override
-  String get welcomeStep3 => '通話後你會收到第一份客製計畫';
-
-  @override
-  String get welcomeDone => '回到我的教練';
-
-  @override
-  String get consultPrimary => '申請諮詢';
-
-  @override
-  String get exploreCoachingPlans => '瀏覽教練方案';
-
-  @override
-  String get consultBenefit1 => '根據你的訓練史量身打造訓練';
-
-  @override
-  String get consultBenefit2 => '課間隨時與教練私訊';
-
-  @override
-  String get consultBenefit3 => '每個練習都有影片與動作提示';
-
-  @override
-  String get consultFootnote => '教練會跟進並與你討論目標——在你選擇方案之前，不會預訂任何服務，也不會產生任何費用。';
-
-  @override
-  String get goalRecover => '從傷痛中恢復';
-
-  @override
-  String get goalUnsure => '還沒想好';
-
-  @override
-  String get timeWeekdayMornings => '工作日上午';
-
-  @override
-  String get timeWeekdayEvenings => '工作日晚上';
-
-  @override
-  String get timeWeekends => '週末';
-
-  @override
-  String get requestNameKicker => '姓名 · 來自你的帳戶';
-
-  @override
-  String get requestEmailKicker => '信箱 · 來自你的帳戶';
-
-  @override
-  String get requestVerified => '已在你的帳戶中驗證';
-
-  @override
-  String get srcLocked => '已鎖定';
-
-  @override
-  String get sentRequestedLabel => '申請時間';
-
-  @override
-  String get sentContactLabel => '聯絡方式';
-
-  @override
-  String get sentGoalLabel => '目標';
-
-  @override
-  String get sentNote => '你可以照常訓練——在你選擇訂閱之前，應用程式內不會有任何變化。';
-
-  @override
-  String get welcomeBody => '訂閱已生效。你的私人教練將在 24–48 小時內與你聯繫。';
-
-  @override
-  String get welcomeStepsLabel => '接下來會發生什麼';
-
-  @override
-  String get welcomeStep1T => '訂閱已生效';
-
-  @override
-  String get welcomeStep1S => '此帳戶已啟用 Advanced';
-
-  @override
-  String get welcomeStep2T => '正在為你分配教練';
-
-  @override
-  String get welcomeStep2S => '我們正在為你配對合適的教練';
-
-  @override
-  String get welcomeStep3T => '24–48 小時內首次聯繫';
-
-  @override
-  String get welcomeStep3S => '教練會直接在這裡的聊天中向你問好';
-
-  @override
-  String get welcomePendingT => '你的教練將出現在這裡';
-
-  @override
-  String get welcomePendingS => '分配完成後，即可在此頁面開啟教練的資料和聊天。';
-
-  @override
-  String get welcomeFootnote => '在此期間，教練庫已開放——歡迎先去逛逛。';
-
-  @override
-  String get trainerGateTitle => '1對1教練指導';
-
-  @override
-  String get trainerGateBody => '自訂訓練與教練直接聊天屬於 Advanced 功能。';
-
-  @override
-  String get trainerGateCta => '了解 Advanced';
-
-  @override
-  String get sourceFree => '免費';
-
-  @override
-  String get sourceTrainer => '教練';
-
-  @override
-  String get sourceCustom => '自訂';
-
-  @override
-  String get sourceAll => '全部';
-
-  @override
-  String get sectionTrainerLibrary => '教練庫';
-
-  @override
-  String get sectionFreeLibrary => '免費庫';
-
-  @override
-  String get advancedBadge => 'ADVANCED';
-
-  @override
-  String get unlockAdvancedTitle => '解鎖 ADVANCED';
-
-  @override
-  String get benefitTrainerLibrary => '完整教練影片庫';
-
-  @override
-  String get benefitCoachAssignments => '教練親自指派的動作';
-
-  @override
-  String get benefitMonthlySessions => '每月更新教練課程';
-
-  @override
-  String get continueOnSite => '前往 bodybridge.net';
-
-  @override
-  String get notNow => '暫不';
-
-  @override
-  String get lockAdvancedMessage => '教練示範的動作屬於 ADVANCED';
-
-  @override
-  String get setsLabel => '組';
-
-  @override
-  String get repsLabel => '次';
-
-  @override
-  String get trainerCatStrength => '力量';
-
-  @override
-  String get trainerCatMobility => '靈活度';
-
-  @override
-  String get trainerCatCore => '核心';
-
-  @override
-  String get trainerCatCorrective => '矯正';
-
-  @override
-  String get trainerCatWarmup => '熱身';
+  String get upgradeUpsellToast => '升級以解鎖更多';
 }

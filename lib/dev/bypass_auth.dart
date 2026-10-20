@@ -38,7 +38,7 @@ AccountTier resolveBypassTier(String tier) {
 /// Bypass tier resolved at compile-time.
 AccountTier get kBypassTier => resolveBypassTier(_rawBypassTier);
 
-/// Bypass account gate that mirrors the account state without Firebase/Convex calls.
+/// Bypass account gate that mirrors the account state without OTP/Convex calls.
 class BypassAccountGate extends AccountGate {
   BypassAccountGate() {
     AccountGate.install(this);
@@ -69,15 +69,17 @@ class BypassAccountGate extends AccountGate {
   @override
   bool canAccess(String feature) => tierCan(snapshot.tier, feature);
 
-  @override
-  Future<void> signIn(String email, String password) async {
-    await account.warmUp();
-  }
+  // The wall never shows under bypass (warmUp signs the account straight in),
+  // so the email-code surface is unreachable here; mirror [SignedOutGate]'s
+  // failure mode for safety.
 
   @override
-  Future<void> signUp(String email, String password) async {
-    await account.warmUp();
-  }
+  Future<void> requestEmailCode(String email) =>
+      Future<void>.error(StateError('auth unavailable: bypass active'));
+
+  @override
+  Future<bool> verifyEmailCode(String email, String code) =>
+      Future<bool>.error(StateError('auth unavailable: bypass active'));
 
   @override
   Future<void> signOut() async {
@@ -86,11 +88,6 @@ class BypassAccountGate extends AccountGate {
 
   @override
   Future<void> deleteAccount() async {
-    await account.warmUp();
-  }
-
-  @override
-  Future<void> sendPasswordReset(String email) async {
     await account.warmUp();
   }
 
