@@ -3076,6 +3076,16 @@ class AppLocalizationsFr extends AppLocalizations {
   String get authWallRetry => 'Réessayer';
 
   @override
+  String get authOfflineTitle => 'Impossible de joindre Body Bridge';
+
+  @override
+  String get authOfflineBody =>
+      'Vous êtes hors ligne, le code n\'a pas été envoyé. Reconnectez-vous et réessayez.';
+
+  @override
+  String get authOfflineRetry => 'Réessayer';
+
+  @override
   String get tierFree => 'FREE';
 
   @override

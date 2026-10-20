@@ -3081,6 +3081,16 @@ class AppLocalizationsDe extends AppLocalizations {
   String get authWallRetry => 'Erneut versuchen';
 
   @override
+  String get authOfflineTitle => 'Body Bridge ist nicht erreichbar';
+
+  @override
+  String get authOfflineBody =>
+      'Du bist offline, deshalb wurde der Code nicht gesendet. Stell eine Verbindung her und versuche es erneut.';
+
+  @override
+  String get authOfflineRetry => 'Erneut versuchen';
+
+  @override
   String get tierFree => 'FREE';
 
   @override

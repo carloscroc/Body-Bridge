@@ -3058,6 +3058,15 @@ class AppLocalizationsAr extends AppLocalizations {
   String get authWallRetry => 'حاول مجددًا';
 
   @override
+  String get authOfflineTitle => 'تعذّر الوصول إلى Body Bridge';
+
+  @override
+  String get authOfflineBody => 'أنت غير متصل، لذلك لم يُرسَل الرمز. اتصل بالإنترنت وحاول مجددًا.';
+
+  @override
+  String get authOfflineRetry => 'حاول مجددًا';
+
+  @override
   String get tierFree => 'FREE';
 
   @override

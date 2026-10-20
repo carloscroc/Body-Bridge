@@ -5486,6 +5486,24 @@ abstract class AppLocalizations {
   /// **'Try again'**
   String get authWallRetry;
 
+  /// No description provided for @authOfflineTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Can\'t reach Body Bridge'**
+  String get authOfflineTitle;
+
+  /// No description provided for @authOfflineBody.
+  ///
+  /// In en, this message translates to:
+  /// **'You\'re offline, so your code wasn\'t sent. Reconnect and try again.'**
+  String get authOfflineBody;
+
+  /// No description provided for @authOfflineRetry.
+  ///
+  /// In en, this message translates to:
+  /// **'Try again'**
+  String get authOfflineRetry;
+
   /// No description provided for @tierFree.
   ///
   /// In en, this message translates to:

@@ -2969,6 +2969,15 @@ class AppLocalizationsJa extends AppLocalizations {
   String get authWallRetry => '再試行';
 
   @override
+  String get authOfflineTitle => 'Body Bridge に接続できません';
+
+  @override
+  String get authOfflineBody => 'オフラインのため、コードは送信されませんでした。接続を戻してもう一度お試しください。';
+
+  @override
+  String get authOfflineRetry => '再試行';
+
+  @override
   String get tierFree => 'FREE';
 
   @override

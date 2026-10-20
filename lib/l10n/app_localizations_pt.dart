@@ -3066,6 +3066,16 @@ class AppLocalizationsPt extends AppLocalizations {
   String get authWallRetry => 'Tentar novamente';
 
   @override
+  String get authOfflineTitle => 'Não foi possível ligar ao Body Bridge';
+
+  @override
+  String get authOfflineBody =>
+      'Estás offline, por isso o código não foi enviado. Reconecta e tenta novamente.';
+
+  @override
+  String get authOfflineRetry => 'Tentar novamente';
+
+  @override
   String get tierFree => 'FREE';
 
   @override

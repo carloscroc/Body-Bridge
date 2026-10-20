@@ -2929,6 +2929,15 @@ class AppLocalizationsZh extends AppLocalizations {
   String get authWallRetry => '重试';
 
   @override
+  String get authOfflineTitle => '无法连接 Body Bridge';
+
+  @override
+  String get authOfflineBody => '当前离线，验证码未发送。请恢复网络后重试。';
+
+  @override
+  String get authOfflineRetry => '重试';
+
+  @override
   String get tierFree => 'FREE';
 
   @override
@@ -6830,6 +6839,15 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
 
   @override
   String get authWallRetry => '重試';
+
+  @override
+  String get authOfflineTitle => '無法連線至 Body Bridge';
+
+  @override
+  String get authOfflineBody => '目前離線，驗證碼未送出。請恢復網路後再試一次。';
+
+  @override
+  String get authOfflineRetry => '重試';
 
   @override
   String get tierFree => 'FREE';

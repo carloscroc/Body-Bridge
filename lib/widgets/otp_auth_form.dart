@@ -33,7 +33,7 @@ class OtpAuthForm extends StatefulWidget {
   State<OtpAuthForm> createState() => _OtpAuthFormState();
 }
 
-enum _Step { email, code }
+enum _Step { email, code, offline }
 
 enum _CodeVerdict { invalid, expired, network, error }
 
@@ -129,16 +129,20 @@ class _OtpAuthFormState extends State<OtpAuthForm>
     try {
       await gate.requestEmailCode(email);
     } on OtpAuthException catch (e) {
-      // Network stays on the email step; rate limit reports the inline
-      // countdown there too; any other failure means the request row was
-      // committed — the code step is still the right place to be, with a
-      // banner explaining the send could not complete.
+      // Network NEVER advances — no request left the device, so a "check
+      // your email" step would be a lie (defect D1): the blocking offline
+      // wall owns that outcome and keeps the typed email for its Retry.
+      // Rate limit reports the inline countdown on the email step (a
+      // Retry from the wall that lands rate-limited drops back there).
+      // Any other failure means the request row was committed — the code
+      // step is still the right place to be, with a banner explaining the
+      // send could not complete.
       if (e.key == 'network') {
         stayPut = true;
         if (!mounted) return;
         setState(() {
           _busy = false;
-          _emailError = _t.authErrorNetwork;
+          _step = _Step.offline;
         });
       } else if (e.key == 'rateLimit') {
         stayPut = true;
@@ -146,6 +150,7 @@ class _OtpAuthFormState extends State<OtpAuthForm>
         if (!mounted) return;
         setState(() {
           _busy = false;
+          _step = _Step.email;
           _emailError = secs != null
               ? _t.authRateLimitBanner(_fmtPadded(secs))
               : _t.authErrorTooManyRequests;
@@ -154,7 +159,12 @@ class _OtpAuthFormState extends State<OtpAuthForm>
         sendNotice = _t.authFailedGeneric;
       }
     } catch (_) {
+      // Not an OtpAuthException (gate contract violated): stay put — on
+      // the wall when a Retry produced this — and re-arm the CTA so the
+      // Retry the wall promises never wedges on a permanent spinner.
       stayPut = true;
+      if (!mounted) return;
+      setState(() => _busy = false);
     }
     if (!mounted || stayPut) return;
     setState(() => _busy = false);
@@ -300,14 +310,23 @@ class _OtpAuthFormState extends State<OtpAuthForm>
   Widget build(BuildContext context) {
     return LayoutBuilder(builder: (context, constraints) {
       final locked = _step == _Step.code && _lockSeconds() > 0;
-      final Widget step =
-          _step == _Step.email ? _emailStep(context) : _codeStep(context);
+      final Widget step = switch (_step) {
+        _Step.email => _emailStep(context),
+        _Step.code => _codeStep(context),
+        _Step.offline => _offlineWall(context),
+      };
       return SingleChildScrollView(
         child: ConstrainedBox(
           constraints: BoxConstraints(
             minHeight: constraints.hasBoundedHeight ? constraints.maxHeight : 0,
           ),
-          child: locked ? step : IntrinsicHeight(child: step),
+          // The lock calm and the offline wall bring their own full-height
+          // ConstrainedBox (a LayoutBuilder reports 0 intrinsic height, so
+          // IntrinsicHeight would collapse them to nothing) — every other
+          // step needs the IntrinsicHeight wrapper for its Spacers.
+          child: (locked || _step == _Step.offline)
+              ? step
+              : IntrinsicHeight(child: step),
         ),
       );
     });
@@ -909,6 +928,84 @@ class _OtpAuthFormState extends State<OtpAuthForm>
                 textAlign: TextAlign.center,
                 style: AppTheme.f(12,
                     weight: FontWeight.w500, color: gc.textTertiary)),
+          ]),
+        ),
+      );
+    });
+  }
+
+  /// Defect D1 wall: a network failure on the send leg is a blocking
+  /// full-step state — no email was sent, so advancing to "check your
+  /// email" would mislead. Mirrors [_lockCalm]'s centered calm layout
+  /// (danger-tinted); the typed email survives in the controller and the
+  /// Retry re-runs the same [_send] path.
+  Widget _offlineWall(BuildContext context) {
+    final gc = context.gc;
+    final animates = RiseScope.animates(context);
+    if (animates && !_breath.isAnimating) {
+      _breath.repeat(reverse: true);
+    }
+    final motionOk =
+        animates && MediaQuery.maybeDisableAnimationsOf(context) != true;
+    final disc = Container(
+      width: 72,
+      height: 72,
+      decoration: BoxDecoration(
+        shape: BoxShape.circle,
+        color: gc.danger.withValues(alpha: 0.06),
+        border: Border.all(color: gc.danger, width: 1.5),
+        boxShadow: [
+          BoxShadow(
+            color: gc.danger.withValues(alpha: 0.07),
+            blurRadius: 0,
+            spreadRadius: 12,
+          ),
+        ],
+      ),
+      alignment: Alignment.center,
+      child: Icon(PhosphorIconsRegular.wifiSlash, size: 28, color: gc.danger),
+    );
+    return LayoutBuilder(builder: (context, constraints) {
+      final minH = constraints.hasBoundedHeight
+          ? constraints.maxHeight
+          : MediaQuery.sizeOf(context).height;
+      return ConstrainedBox(
+        constraints: BoxConstraints(minHeight: minH),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: riseAll([
+            motionOk
+                ? AnimatedBuilder(
+                    animation: _breath,
+                    builder: (context, child) =>
+                        Transform.scale(scale: _breath.value, child: child),
+                    child: disc,
+                  )
+                : disc,
+            const SizedBox(height: 32),
+            Text(_t.authOfflineTitle,
+                textAlign: TextAlign.center,
+                style:
+                    AppTheme.d(28, weight: FontWeight.w800, color: gc.text)),
+            const SizedBox(height: 8),
+            ConstrainedBox(
+              constraints: const BoxConstraints(maxWidth: 280),
+              child: Text(_t.authOfflineBody,
+                  textAlign: TextAlign.center,
+                  style: AppTheme.f(15,
+                      weight: FontWeight.w400,
+                      color: gc.textSecondary,
+                      height: 1.6)),
+            ),
+            const SizedBox(height: 40),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 32),
+              child: _cta(context,
+                  label: _t.authOfflineRetry, onTap: _send, busy: _busy),
+            ),
+            const SizedBox(height: 16),
+            _backLink(gc),
           ]),
         ),
       );

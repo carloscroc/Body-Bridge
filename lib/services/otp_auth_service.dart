@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:convert';
 
+import 'package:convex_flutter/convex_flutter.dart';
 import 'package:flutter/foundation.dart';
 
 import 'convex_gateway.dart';
@@ -291,7 +292,25 @@ class OtpAuthService {
     }
   }
 
+  /// Error classification, transport-vs-backend contract first: the typed
+  /// convex_flutter `ClientError`s are matched BEFORE the marker scan
+  /// because their `toString()` is just the variant name — the marker
+  /// scan cannot see the payload. `ClientError.internalError` is
+  /// client-local (the request never left the device: airplane mode, dead
+  /// socket, failed handshake) ⇒ `network`. `convexError`/`serverError`
+  /// mean the backend WAS reached, so only their payload text is parsed
+  /// (rateLimit / codeExpired / codeInvalid, default `unknown`) — a
+  /// backend answer is never a transport failure, so those variants can
+  /// never yield `network`. Every other error type (SocketException,
+  /// TimeoutException, plain strings) keeps the marker scan unchanged.
   OtpAuthException _classify(Object error) {
+    if (error is ClientError) {
+      return switch (error) {
+        ClientError_InternalError() => const OtpAuthException('network'),
+        ClientError_ConvexError(:final data) => _classifyBackend(data, error),
+        ClientError_ServerError(:final msg) => _classifyBackend(msg, error),
+      };
+    }
     final text = '$error'.toLowerCase();
     const networkMarkers = <String>[
       'socket',
@@ -304,10 +323,17 @@ class OtpAuthService {
       'handshake',
     ];
     if (networkMarkers.any(text.contains)) return const OtpAuthException('network');
+    return _classifyBackend('$error', error);
+  }
+
+  /// Backend-reached payload parse shared by the marker-scan tail and the
+  /// typed convex variants above; deliberately carries no network markers.
+  OtpAuthException _classifyBackend(String raw, Object error) {
+    final text = raw.toLowerCase();
     if (text.contains('too many') || text.contains('rate limit')) {
       return OtpAuthException(
         'rateLimit',
-        retryAfterSeconds: _parseSeconds('$error'),
+        retryAfterSeconds: _parseSeconds(raw),
         cause: error,
       );
     }

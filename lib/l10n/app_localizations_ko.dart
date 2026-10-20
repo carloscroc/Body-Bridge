@@ -2984,6 +2984,15 @@ class AppLocalizationsKo extends AppLocalizations {
   String get authWallRetry => '다시 시도';
 
   @override
+  String get authOfflineTitle => 'Body Bridge에 연결할 수 없어요';
+
+  @override
+  String get authOfflineBody => '오프라인 상태라 코드가 전송되지 않았어요. 연결을 복구하고 다시 시도해 주세요.';
+
+  @override
+  String get authOfflineRetry => '다시 시도';
+
+  @override
   String get tierFree => 'FREE';
 
   @override

@@ -3064,6 +3064,15 @@ class AppLocalizationsEn extends AppLocalizations {
   String get authWallRetry => 'Try again';
 
   @override
+  String get authOfflineTitle => 'Can\'t reach Body Bridge';
+
+  @override
+  String get authOfflineBody => 'You\'re offline, so your code wasn\'t sent. Reconnect and try again.';
+
+  @override
+  String get authOfflineRetry => 'Try again';
+
+  @override
   String get tierFree => 'FREE';
 
   @override

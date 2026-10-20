@@ -3070,6 +3070,16 @@ class AppLocalizationsUk extends AppLocalizations {
   String get authWallRetry => 'Спробувати ще раз';
 
   @override
+  String get authOfflineTitle => 'Не вдалося з’єднатися з Body Bridge';
+
+  @override
+  String get authOfflineBody =>
+      'Ви не в мережі, тому код не надіслано. Відновте з’єднання та спробуйте ще раз.';
+
+  @override
+  String get authOfflineRetry => 'Спробувати ще раз';
+
+  @override
   String get tierFree => 'FREE';
 
   @override

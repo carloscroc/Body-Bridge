@@ -3067,6 +3067,16 @@ class AppLocalizationsTr extends AppLocalizations {
   String get authWallRetry => 'Tekrar dene';
 
   @override
+  String get authOfflineTitle => 'Body Bridge\'e ulaşılamıyor';
+
+  @override
+  String get authOfflineBody =>
+      'Çevrimdışısın, bu yüzden kod gönderilmedi. Bağlantını geri getir ve tekrar dene.';
+
+  @override
+  String get authOfflineRetry => 'Tekrar dene';
+
+  @override
   String get tierFree => 'FREE';
 
   @override

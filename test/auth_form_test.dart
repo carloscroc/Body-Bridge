@@ -162,9 +162,11 @@ void main() {
     await unmount(tester);
   });
 
-  testWidgets('a network failure sending the code stays put with a localized error',
+  testWidgets(
+      'a network failure sending the code blocks on the offline wall',
       (tester) async {
-    final gate = ScriptedGate(requestFailure: const OtpAuthException('network'));
+    final gate =
+        ScriptedGate(requestFailure: const OtpAuthException('network'));
     await pumpEmailStep(tester, gate);
 
     await tester.enterText(find.byType(TextField), 'racer@gymmane.dev');
@@ -172,15 +174,127 @@ void main() {
     await tester.tap(find.text(t.authCtaContinueEmail));
     await tester.pump();
     await tester.pump(const Duration(milliseconds: 100));
-    await tester.pump(const Duration(milliseconds: 100));
+    await tester.pump(const Duration(milliseconds: 300));
 
-    expect(find.text(t.authErrorNetwork), findsOneWidget,
-        reason: 'the network key maps to the localized message');
+    expect(find.text(t.authOfflineTitle), findsOneWidget,
+        reason: 'defect D1: an offline send is a blocking full-step wall');
+    expect(find.text(t.authOfflineRetry), findsOneWidget,
+        reason: 'the wall offers the Retry CTA');
+    expect(find.text(t.otpChangeEmail), findsOneWidget,
+        reason: 'the secondary link offers the email escape hatch');
     expect(find.text(t.authCodeTitle), findsNothing,
-        reason: 'a network failure keeps the email step');
+        reason: 'no email was sent — advancing to "check your email" would lie');
+    expect(gate.sentCount, 1, reason: 'the send attempt did reach the gate');
     expect(find.textContaining('OtpAuthException('), findsNothing,
         reason: 'raw exception text must never reach the UI');
     expect(tester.takeException(), isNull);
+    await unmount(tester);
+  });
+
+  testWidgets('Retry with the network still down stays on the wall',
+      (tester) async {
+    final gate =
+        ScriptedGate(requestFailure: const OtpAuthException('network'));
+    await pumpEmailStep(tester, gate);
+
+    await tester.enterText(find.byType(TextField), 'racer@gymmane.dev');
+    await tester.pump();
+    await tester.tap(find.text(t.authCtaContinueEmail));
+    await tester.pump();
+    await tester.pump(const Duration(milliseconds: 1000));
+
+    await tester.tap(find.text(t.authOfflineRetry));
+    await tester.pump();
+    await tester.pump(const Duration(milliseconds: 400));
+
+    expect(find.text(t.authOfflineTitle), findsOneWidget,
+        reason: 'a second network failure keeps the wall up');
+    expect(find.text(t.authCodeTitle), findsNothing,
+        reason: 'the retry never advances while offline');
+    expect(gate.sentCount, 2, reason: 'the retry re-ran the same send leg');
+    expect(tester.takeException(), isNull);
+    await unmount(tester);
+  });
+
+  testWidgets('Retry once the network heals lands armed on the code step',
+      (tester) async {
+    final gate =
+        ScriptedGate(requestFailure: const OtpAuthException('network'));
+    await pumpEmailStep(tester, gate);
+
+    await tester.enterText(find.byType(TextField), 'racer@gymmane.dev');
+    await tester.pump();
+    await tester.tap(find.text(t.authCtaContinueEmail));
+    await tester.pump();
+    await tester.pump(const Duration(milliseconds: 1000));
+
+    gate.requestFailure = null; // the network heals
+    await tester.tap(find.text(t.authOfflineRetry));
+    await tester.pump();
+    await tester.pump(const Duration(milliseconds: 100));
+    await tester.pump(const Duration(milliseconds: 300));
+
+    expect(find.text(t.authCodeTitle), findsOneWidget,
+        reason: 'the healed retry advances exactly like the healthy path');
+    expect(find.text(t.authCodeExpires('5:00')), findsOneWidget,
+        reason: 'the session is armed — the expiry row is visible');
+    expect(find.text(t.authFailedGeneric), findsNothing,
+        reason: 'a healed retry is a clean send — no failure banner');
+    expect(gate.sentCount, 2, reason: 'the retry re-sent the same email');
+    expect(find.textContaining('racer@gymmane.dev', findRichText: true),
+        findsOneWidget,
+        reason: 'the code step echoes the address the wall remembered');
+    expect(tester.takeException(), isNull);
+    await unmount(tester);
+  });
+
+  testWidgets(
+      'the wall secondary link returns to the email step with the typed address',
+      (tester) async {
+    final gate =
+        ScriptedGate(requestFailure: const OtpAuthException('network'));
+    await pumpEmailStep(tester, gate);
+
+    await tester.enterText(find.byType(TextField), 'racer@gymmane.dev');
+    await tester.pump();
+    await tester.tap(find.text(t.authCtaContinueEmail));
+    await tester.pump();
+    await tester.pump(const Duration(milliseconds: 1000));
+
+    await tester.tap(find.text(t.otpChangeEmail));
+    await tester.pump();
+    await tester.pump(const Duration(milliseconds: 300));
+
+    expect(find.text(t.authOfflineTitle), findsNothing,
+        reason: 'the wall is gone');
+    expect(find.text(t.authCtaContinueEmail), findsOneWidget,
+        reason: 'the email step is back');
+    expect(find.text('racer@gymmane.dev'), findsOneWidget,
+        reason: 'the typed address survived in the field');
+    expect(tester.takeException(), isNull);
+    await unmount(tester);
+  });
+
+  testWidgets('the offline wall fits 320x640 without overflow',
+      (tester) async {
+    tester.view.physicalSize = const Size(320 * 3, 640 * 3);
+    tester.view.devicePixelRatio = 3;
+    addTearDown(tester.view.resetPhysicalSize);
+    addTearDown(tester.view.resetDevicePixelRatio);
+
+    final gate =
+        ScriptedGate(requestFailure: const OtpAuthException('network'));
+    await pumpEmailStep(tester, gate);
+    await tester.enterText(find.byType(TextField), 'racer@gymmane.dev');
+    await tester.pump();
+    await tester.tap(find.text(t.authCtaContinueEmail));
+    await tester.pump();
+    await tester.pump(const Duration(milliseconds: 400));
+
+    expect(find.text(t.authOfflineTitle), findsOneWidget,
+        reason: 'the wall is up at the compact size');
+    expect(tester.takeException(), isNull,
+        reason: 'zero RenderFlex overflow at 320x640');
     await unmount(tester);
   });
 

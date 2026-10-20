@@ -3155,6 +3155,16 @@ class AppLocalizationsRu extends AppLocalizations {
   String get authWallRetry => 'Повторить';
 
   @override
+  String get authOfflineTitle => 'Не удаётся связаться с Body Bridge';
+
+  @override
+  String get authOfflineBody =>
+      'Вы не в сети, поэтому код не был отправлен. Восстановите подключение и попробуйте снова.';
+
+  @override
+  String get authOfflineRetry => 'Повторить';
+
+  @override
   String get tierFree => 'FREE';
 
   @override
