@@ -297,7 +297,7 @@ class _UpgradeSheetState extends State<UpgradeSheet> {
   }
 
   List<InlineSpan> _finePrintSpans(GymColors gc) {
-    const site = 'bodybridge.net';
+    const site = 'bodybridge.fit';
     final full = t.finePrintBilling;
     final base = AppTheme.f(11, weight: FontWeight.w500, color: gc.textTertiary);
     final i = full.indexOf(site);

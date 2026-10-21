@@ -156,7 +156,7 @@ void main() {
   }
 
   Finder ctaFinder() => find.byWidgetPredicate(
-      (w) => w is Text && (w.data ?? '').toLowerCase().contains('bodybridge.net'));
+      (w) => w is Text && (w.data ?? '').toLowerCase().contains('bodybridge.fit'));
 
   // The title row fades out as the header docks (Opacity 1-progress).
   double titleOpacity(WidgetTester tester) => tester
@@ -312,7 +312,7 @@ void main() {
       expect(find.byType(TrainerLockOverlay), findsOneWidget);
       expect(find.text(t.lockAdvancedMessage), findsOneWidget,
           reason: 'the dim overlay explains the lock');
-      expect(ctaFinder(), findsOneWidget, reason: 'the CTA names bodybridge.net');
+      expect(ctaFinder(), findsOneWidget, reason: 'the CTA names bodybridge.fit');
       expect(find.textContaining(r'$'), findsNothing, reason: 'no prices anywhere');
     });
   });

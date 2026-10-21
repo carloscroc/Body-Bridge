@@ -3181,7 +3181,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get planFactTrainerContent => '教练内容';
 
   @override
-  String get upgradeCtaContinueOnWeb => '前往 bodybridge.net 继续';
+  String get upgradeCtaContinueOnWeb => '前往 bodybridge.fit 继续';
 
   @override
   String get checkoutComingSoon => '在线支付即将上线';
@@ -3190,7 +3190,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get enterpriseContactSales => '企业版 — 联系销售';
 
   @override
-  String get finePrintBilling => '付款通过 bodybridge.net 安全处理 — 不经过 Play 商店。';
+  String get finePrintBilling => '付款通过 bodybridge.fit 安全处理 — 不经过 Play 商店。';
 
   @override
   String get lockAnalyticsTitle => '高级分析';
@@ -3238,7 +3238,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get gateCta => '解锁社区';
 
   @override
-  String get gateLinkOut => '前往 bodybridge.net';
+  String get gateLinkOut => '前往 bodybridge.fit';
 
   @override
   String get gateNotNow => '暂不';
@@ -3523,7 +3523,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get gateDismiss => '暂不';
 
   @override
-  String get gateFootnote => '升级在 bodybridge.net 完成 — 你的计划保留在应用内。';
+  String get gateFootnote => '升级在 bodybridge.fit 完成 — 你的计划保留在应用内。';
 
   @override
   String bannerNewWorkout(String name) {
@@ -3862,7 +3862,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get benefitMonthlySessions => '每月更新教练课程';
 
   @override
-  String get continueOnSite => '前往 bodybridge.net';
+  String get continueOnSite => '前往 bodybridge.fit';
 
   @override
   String get notNow => '暂不';
@@ -7093,7 +7093,7 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
   String get planFactTrainerContent => '教練內容';
 
   @override
-  String get upgradeCtaContinueOnWeb => '前往 bodybridge.net 繼續';
+  String get upgradeCtaContinueOnWeb => '前往 bodybridge.fit 繼續';
 
   @override
   String get checkoutComingSoon => '線上付款即將推出';
@@ -7102,7 +7102,7 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
   String get enterpriseContactSales => '企業版 — 聯絡銷售';
 
   @override
-  String get finePrintBilling => '付款透過 bodybridge.net 安全處理 — 不經過 Play 商店。';
+  String get finePrintBilling => '付款透過 bodybridge.fit 安全處理 — 不經過 Play 商店。';
 
   @override
   String get lockAnalyticsTitle => '進階分析';
@@ -7150,7 +7150,7 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
   String get gateCta => '解鎖社群';
 
   @override
-  String get gateLinkOut => '前往 bodybridge.net';
+  String get gateLinkOut => '前往 bodybridge.fit';
 
   @override
   String get gateNotNow => '暫不';
@@ -7435,7 +7435,7 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
   String get gateDismiss => '暫不';
 
   @override
-  String get gateFootnote => '升級在 bodybridge.net 完成 — 你的方案保留在應用程式內。';
+  String get gateFootnote => '升級在 bodybridge.fit 完成 — 你的方案保留在應用程式內。';
 
   @override
   String bannerNewWorkout(String name) {
@@ -7774,7 +7774,7 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
   String get benefitMonthlySessions => '每月更新教練課程';
 
   @override
-  String get continueOnSite => '前往 bodybridge.net';
+  String get continueOnSite => '前往 bodybridge.fit';
 
   @override
   String get notNow => '暫不';

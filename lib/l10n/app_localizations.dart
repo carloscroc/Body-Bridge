@@ -5957,7 +5957,7 @@ abstract class AppLocalizations {
   /// No description provided for @upgradeCtaContinueOnWeb.
   ///
   /// In en, this message translates to:
-  /// **'Continue on bodybridge.net'**
+  /// **'Continue on bodybridge.fit'**
   String get upgradeCtaContinueOnWeb;
 
   /// No description provided for @checkoutComingSoon.
@@ -5975,7 +5975,7 @@ abstract class AppLocalizations {
   /// No description provided for @finePrintBilling.
   ///
   /// In en, this message translates to:
-  /// **'Billing is handled securely on bodybridge.net — not through the Play Store.'**
+  /// **'Billing is handled securely on bodybridge.fit — not through the Play Store.'**
   String get finePrintBilling;
 
   /// No description provided for @lockAnalyticsTitle.
@@ -6071,7 +6071,7 @@ abstract class AppLocalizations {
   /// Gate continue-on-web button label.
   ///
   /// In en, this message translates to:
-  /// **'Continue on bodybridge.net'**
+  /// **'Continue on bodybridge.fit'**
   String get gateLinkOut;
 
   /// Gate dismiss button label.
@@ -6575,7 +6575,7 @@ abstract class AppLocalizations {
   /// Trainer feature (card t_d788f36e)
   ///
   /// In en, this message translates to:
-  /// **'Upgrades happen on bodybridge.net — your plan stays in the app.'**
+  /// **'Upgrades happen on bodybridge.fit — your plan stays in the app.'**
   String get gateFootnote;
 
   /// No description provided for @bannerNewWorkout.
@@ -7241,7 +7241,7 @@ abstract class AppLocalizations {
   /// No description provided for @continueOnSite.
   ///
   /// In en, this message translates to:
-  /// **'Continue on bodybridge.net'**
+  /// **'Continue on bodybridge.fit'**
   String get continueOnSite;
 
   /// No description provided for @notNow.

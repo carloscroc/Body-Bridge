@@ -235,7 +235,7 @@ class _PostOptionsSheet extends StatelessWidget {
               ..showSnackBar(SnackBar(content: Text(t.linkCopied)));
           },
           trailing: Text(
-            'bodybridge.net/p/${post.slug}',
+            'bodybridge.fit/p/${post.slug}',
             style: AppTheme.f(10.5, weight: FontWeight.w700, color: gc.textTertiary),
           ),
         ),

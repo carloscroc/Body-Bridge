@@ -105,7 +105,7 @@ void main() {
   }
 
   Finder ctaFinder() =>
-      find.byWidgetPredicate((w) => w is Text && (w.data ?? '').toLowerCase().contains('bodybridge.net'));
+      find.byWidgetPredicate((w) => w is Text && (w.data ?? '').toLowerCase().contains('bodybridge.fit'));
 
   // Padlocks shown on the locked segments only — the screen has other, unrelated
   // lock icons, so the finder is scoped to the source tab strip.
@@ -201,7 +201,7 @@ void main() {
       expect(find.text(t.benefitTrainerLibrary), findsOneWidget);
       expect(find.text(t.benefitCoachAssignments), findsOneWidget);
       expect(find.text(t.benefitMonthlySessions), findsOneWidget);
-      expect(ctaFinder(), findsOneWidget, reason: 'the CTA names bodybridge.net');
+      expect(ctaFinder(), findsOneWidget, reason: 'the CTA names bodybridge.fit');
       expect(find.textContaining(r'$'), findsNothing, reason: 'no prices anywhere in the sheet');
 
       // Composite legibility: no route-level dim or blur; the scrim lives only

@@ -3410,7 +3410,7 @@ class AppLocalizationsRu extends AppLocalizations {
   String get planFactTrainerContent => 'Контент тренеров';
 
   @override
-  String get upgradeCtaContinueOnWeb => 'Продолжить на bodybridge.net';
+  String get upgradeCtaContinueOnWeb => 'Продолжить на bodybridge.fit';
 
   @override
   String get checkoutComingSoon => 'Онлайн-оплата скоро появится';
@@ -3419,7 +3419,7 @@ class AppLocalizationsRu extends AppLocalizations {
   String get enterpriseContactSales => 'Enterprise — связаться с отделом продаж';
 
   @override
-  String get finePrintBilling => 'Оплата безопасно проходит на bodybridge.net — не через Play Маркет.';
+  String get finePrintBilling => 'Оплата безопасно проходит на bodybridge.fit — не через Play Маркет.';
 
   @override
   String get lockAnalyticsTitle => 'Расширенная аналитика';
@@ -3467,7 +3467,7 @@ class AppLocalizationsRu extends AppLocalizations {
   String get gateCta => 'Открыть сообщество';
 
   @override
-  String get gateLinkOut => 'Продолжить на bodybridge.net';
+  String get gateLinkOut => 'Продолжить на bodybridge.fit';
 
   @override
   String get gateNotNow => 'Не сейчас';
@@ -3760,7 +3760,7 @@ class AppLocalizationsRu extends AppLocalizations {
   String get gateDismiss => 'Не сейчас';
 
   @override
-  String get gateFootnote => 'Обновление происходит на bodybridge.net — ваш тариф остаётся в приложении.';
+  String get gateFootnote => 'Обновление происходит на bodybridge.fit — ваш тариф остаётся в приложении.';
 
   @override
   String bannerNewWorkout(String name) {
@@ -4105,7 +4105,7 @@ class AppLocalizationsRu extends AppLocalizations {
   String get benefitMonthlySessions => 'Новые занятия каждый месяц';
 
   @override
-  String get continueOnSite => 'Продолжить на bodybridge.net';
+  String get continueOnSite => 'Продолжить на bodybridge.fit';
 
   @override
   String get notNow => 'Не сейчас';

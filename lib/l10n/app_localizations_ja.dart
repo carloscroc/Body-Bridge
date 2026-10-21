@@ -3221,7 +3221,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get planFactTrainerContent => 'トレーナーコンテンツ';
 
   @override
-  String get upgradeCtaContinueOnWeb => 'bodybridge.net で続行';
+  String get upgradeCtaContinueOnWeb => 'bodybridge.fit で続行';
 
   @override
   String get checkoutComingSoon => 'オンライン決済は近日公開';
@@ -3230,7 +3230,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get enterpriseContactSales => 'Enterprise — 法人向けお問い合わせ';
 
   @override
-  String get finePrintBilling => '課金は bodybridge.net で安全に処理されます — Play ストア経由ではありません。';
+  String get finePrintBilling => '課金は bodybridge.fit で安全に処理されます — Play ストア経由ではありません。';
 
   @override
   String get lockAnalyticsTitle => '高度な分析';
@@ -3278,7 +3278,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get gateCta => 'コミュニティを解錠';
 
   @override
-  String get gateLinkOut => 'bodybridge.net で続ける';
+  String get gateLinkOut => 'bodybridge.fit で続ける';
 
   @override
   String get gateNotNow => '後で';
@@ -3563,7 +3563,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get gateDismiss => '後で';
 
   @override
-  String get gateFootnote => 'アップグレードはbodybridge.netで行われます — プラン管理はアプリ内で継続します。';
+  String get gateFootnote => 'アップグレードはbodybridge.fitで行われます — プラン管理はアプリ内で継続します。';
 
   @override
   String bannerNewWorkout(String name) {
@@ -3902,7 +3902,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get benefitMonthlySessions => '毎月新しいトレーナーセッション';
 
   @override
-  String get continueOnSite => 'bodybridge.netで続ける';
+  String get continueOnSite => 'bodybridge.fitで続ける';
 
   @override
   String get notNow => '後で';

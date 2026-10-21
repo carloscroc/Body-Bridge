@@ -4,7 +4,7 @@
 // request is on file the primary door flips to the SUBMITTED status instead
 // (first-wins — repeat taps never reopen a fresh form). Secondary "Explore
 // Coaching Plans" hands off to the app's EXISTING upgrade journey (the
-// bodybridge.net link-out already used by the gate — zero invented pricing).
+// bodybridge.fit link-out already used by the gate — zero invented pricing).
 
 import 'package:flutter/material.dart';
 import 'package:phosphoricons_flutter/phosphoricons_flutter.dart';

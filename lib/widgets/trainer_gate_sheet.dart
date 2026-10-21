@@ -1,7 +1,7 @@
 // Advanced gate sheet (card t_d788f36e) — what Free/Basic members see when
 // they tap a trainer feature. iOS-safe per the approved mockup: NO prices,
 // NO tier ranking, NO external-purchase callouts; a single link-out to
-// bodybridge.net ("See Advanced") and a footnote explaining upgrades happen
+// bodybridge.fit ("See Advanced") and a footnote explaining upgrades happen
 // on web so plan management stays in-app.
 
 import 'package:flutter/material.dart';
@@ -15,7 +15,7 @@ import 'glass.dart';
 import 'trainer_kit.dart';
 import 'ui_kit.dart';
 
-const String kBodyBridgeUrl = 'https://bodybridge.net';
+const String kBodyBridgeUrl = 'https://bodybridge.fit';
 
 Future<void> _openSeeAdvanced() async {
   try {

@@ -3328,7 +3328,7 @@ class AppLocalizationsPl extends AppLocalizations {
   String get planFactTrainerContent => 'Materiały trenerów';
 
   @override
-  String get upgradeCtaContinueOnWeb => 'Kontynuuj na bodybridge.net';
+  String get upgradeCtaContinueOnWeb => 'Kontynuuj na bodybridge.fit';
 
   @override
   String get checkoutComingSoon => 'Płatność online już wkrótce';
@@ -3338,7 +3338,7 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String get finePrintBilling =>
-      'Płatność jest bezpiecznie obsługiwana na bodybridge.net — nie przez Play Store.';
+      'Płatność jest bezpiecznie obsługiwana na bodybridge.fit — nie przez Play Store.';
 
   @override
   String get lockAnalyticsTitle => 'Zaawansowane analizy';
@@ -3386,7 +3386,7 @@ class AppLocalizationsPl extends AppLocalizations {
   String get gateCta => 'Odblokuj społeczność';
 
   @override
-  String get gateLinkOut => 'Kontynuuj na bodybridge.net';
+  String get gateLinkOut => 'Kontynuuj na bodybridge.fit';
 
   @override
   String get gateNotNow => 'Nie teraz';
@@ -3679,7 +3679,7 @@ class AppLocalizationsPl extends AppLocalizations {
   String get gateDismiss => 'Nie teraz';
 
   @override
-  String get gateFootnote => 'Ulepszenia odbywają się na bodybridge.net — Twój plan zostaje w aplikacji.';
+  String get gateFootnote => 'Ulepszenia odbywają się na bodybridge.fit — Twój plan zostaje w aplikacji.';
 
   @override
   String bannerNewWorkout(String name) {
@@ -4025,7 +4025,7 @@ class AppLocalizationsPl extends AppLocalizations {
   String get benefitMonthlySessions => 'Nowe sesje trenera co miesiąc';
 
   @override
-  String get continueOnSite => 'Kontynuuj na bodybridge.net';
+  String get continueOnSite => 'Kontynuuj na bodybridge.fit';
 
   @override
   String get notNow => 'Nie teraz';

@@ -3321,7 +3321,7 @@ class AppLocalizationsTr extends AppLocalizations {
   String get planFactTrainerContent => 'Antrenör içerikleri';
 
   @override
-  String get upgradeCtaContinueOnWeb => 'bodybridge.net\'te devam et';
+  String get upgradeCtaContinueOnWeb => 'bodybridge.fit\'te devam et';
 
   @override
   String get checkoutComingSoon => 'Çevrimiçi ödeme yakında';
@@ -3331,7 +3331,7 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get finePrintBilling =>
-      'Ödeme güvenle bodybridge.net üzerinden yapılır — Play Store üzerinden değil.';
+      'Ödeme güvenle bodybridge.fit üzerinden yapılır — Play Store üzerinden değil.';
 
   @override
   String get lockAnalyticsTitle => 'Gelişmiş analizler';
@@ -3379,7 +3379,7 @@ class AppLocalizationsTr extends AppLocalizations {
   String get gateCta => 'Topluluğun kilidini aç';
 
   @override
-  String get gateLinkOut => 'bodybridge.net’te devam et';
+  String get gateLinkOut => 'bodybridge.fit’te devam et';
 
   @override
   String get gateNotNow => 'Şimdi değil';
@@ -3665,7 +3665,7 @@ class AppLocalizationsTr extends AppLocalizations {
   String get gateDismiss => 'Şimdi değil';
 
   @override
-  String get gateFootnote => 'Yükseltmeler bodybridge.net üzerinden yapılır — planınız uygulamada kalır.';
+  String get gateFootnote => 'Yükseltmeler bodybridge.fit üzerinden yapılır — planınız uygulamada kalır.';
 
   @override
   String bannerNewWorkout(String name) {
@@ -4010,7 +4010,7 @@ class AppLocalizationsTr extends AppLocalizations {
   String get benefitMonthlySessions => 'Her ay yeni antrenör seansları';
 
   @override
-  String get continueOnSite => 'bodybridge.net\'te devam et';
+  String get continueOnSite => 'bodybridge.fit\'te devam et';
 
   @override
   String get notNow => 'Şimdi değil';

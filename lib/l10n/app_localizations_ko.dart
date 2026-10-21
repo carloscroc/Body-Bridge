@@ -3236,7 +3236,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get planFactTrainerContent => '트레이너 콘텐츠';
 
   @override
-  String get upgradeCtaContinueOnWeb => 'bodybridge.net에서 계속';
+  String get upgradeCtaContinueOnWeb => 'bodybridge.fit에서 계속';
 
   @override
   String get checkoutComingSoon => '온라인 결제가 곧 제공됩니다';
@@ -3245,7 +3245,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get enterpriseContactSales => 'Enterprise — 영업팀 문의';
 
   @override
-  String get finePrintBilling => '결제는 bodybridge.net에서 안전하게 처리됩니다 — Play 스토어를 통하지 않습니다.';
+  String get finePrintBilling => '결제는 bodybridge.fit에서 안전하게 처리됩니다 — Play 스토어를 통하지 않습니다.';
 
   @override
   String get lockAnalyticsTitle => '고급 분석';
@@ -3293,7 +3293,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get gateCta => '커뮤니티 잠금 해제';
 
   @override
-  String get gateLinkOut => 'bodybridge.net에서 계속';
+  String get gateLinkOut => 'bodybridge.fit에서 계속';
 
   @override
   String get gateNotNow => '나중에';
@@ -3578,7 +3578,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get gateDismiss => '나중에';
 
   @override
-  String get gateFootnote => '업그레이드는 bodybridge.net에서 진행됩니다 — 플랜 관리는 앱에서 계속됩니다.';
+  String get gateFootnote => '업그레이드는 bodybridge.fit에서 진행됩니다 — 플랜 관리는 앱에서 계속됩니다.';
 
   @override
   String bannerNewWorkout(String name) {
@@ -3917,7 +3917,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get benefitMonthlySessions => '매달 새로운 트레이너 세션';
 
   @override
-  String get continueOnSite => 'bodybridge.net에서 계속하기';
+  String get continueOnSite => 'bodybridge.fit에서 계속하기';
 
   @override
   String get notNow => '나중에';

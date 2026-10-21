@@ -145,7 +145,7 @@ void main() {
       expect(find.text(t.upgradeCtaContinueOnWeb), findsOneWidget);
       expect(find.text(t.enterpriseContactSales), findsOneWidget);
       expect(find.text(t.checkoutComingSoon), findsNothing, reason: 'the stub stays hidden until a tap');
-      expect(find.textContaining('bodybridge.net'), findsNWidgets(2),
+      expect(find.textContaining('bodybridge.fit'), findsNWidgets(2),
           reason: 'the CTA and the fine print both point at the site');
     });
 

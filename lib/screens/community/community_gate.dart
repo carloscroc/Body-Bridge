@@ -11,7 +11,7 @@ import '../../theme/app_colors.dart';
 import '../../theme/app_theme.dart';
 import '../../widgets/ui_kit.dart';
 
-const String kCommunityUrl = 'https://bodybridge.net';
+const String kCommunityUrl = 'https://bodybridge.fit';
 
 /// Community is a paid-tier feature: basic and above unlock the feed.
 bool communityUnlocked(AccountSnapshot snapshot) => switch (snapshot.tier) {

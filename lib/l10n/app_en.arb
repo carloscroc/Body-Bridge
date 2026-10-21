@@ -1739,10 +1739,10 @@
   "planFactAdvancedAnalytics": "Advanced analytics",
   "planFactPremiumPrograms": "Premium programs & videos",
   "planFactTrainerContent": "Trainer content",
-  "upgradeCtaContinueOnWeb": "Continue on bodybridge.net",
+  "upgradeCtaContinueOnWeb": "Continue on bodybridge.fit",
   "checkoutComingSoon": "Online checkout coming soon",
   "enterpriseContactSales": "Enterprise — Contact Sales",
-  "finePrintBilling": "Billing is handled securely on bodybridge.net — not through the Play Store.",
+  "finePrintBilling": "Billing is handled securely on bodybridge.fit — not through the Play Store.",
   "lockAnalyticsTitle": "Advanced analytics",
   "lockAnalyticsMeta": "Volume trends · 1RM estimates · muscle split",
   "lockAnalyticsUpsell": "Unlock advanced analytics with Body Bridge Pro.",
@@ -1776,7 +1776,7 @@
   "@gateCta": {
     "description": "Gate unlock button label."
   },
-  "gateLinkOut": "Continue on bodybridge.net",
+  "gateLinkOut": "Continue on bodybridge.fit",
   "@gateLinkOut": {
     "description": "Gate continue-on-web button label."
   },
@@ -2195,7 +2195,7 @@
   "@gateDismiss": {
     "description": "Trainer feature (card t_d788f36e)"
   },
-  "gateFootnote": "Upgrades happen on bodybridge.net — your plan stays in the app.",
+  "gateFootnote": "Upgrades happen on bodybridge.fit — your plan stays in the app.",
   "@gateFootnote": {
     "description": "Trainer feature (card t_d788f36e)"
   },
@@ -2385,7 +2385,7 @@
   "benefitTrainerLibrary": "Full trainer video library",
   "benefitCoachAssignments": "Exercises assigned personally by your coach",
   "benefitMonthlySessions": "New trainer sessions monthly",
-  "continueOnSite": "Continue on bodybridge.net",
+  "continueOnSite": "Continue on bodybridge.fit",
   "notNow": "Not now",
   "lockAdvancedMessage": "Trainer-recorded exercises are part of Advanced",
   "setsLabel": "Sets",

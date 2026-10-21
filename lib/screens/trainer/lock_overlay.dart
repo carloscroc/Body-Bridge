@@ -119,7 +119,7 @@ Future<void> showTrainerUpsellSheet(BuildContext context) async {
             icon: const [IconPath('M7 17L17 7', strokeWidth: 2), IconPath('M7 7H17V17', strokeWidth: 2)],
             onTap: () async {
               try {
-                await launchUrl(Uri.parse('https://bodybridge.net'), mode: LaunchMode.externalApplication);
+                await launchUrl(Uri.parse('https://bodybridge.fit'), mode: LaunchMode.externalApplication);
               } catch (_) {}
             },
           ),
